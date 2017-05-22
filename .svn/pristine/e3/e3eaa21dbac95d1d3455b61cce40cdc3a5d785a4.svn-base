@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("tr:even").addClass('item1');
+		$("tr:odd").addClass('item2');
+		
+	$("td").click(function(){
+		$(this).addClass('item3');
+	})
+});
+	
+</script>
+
+<style type="text/css">
+	.item1{background-color:#00AAFF;}
+	.item2{background-color:#AADDFD;}
+	.item3{background-color:yellow;}
+</style>
+</head>
+<body>
+<table height=200; width=300;>
+<tr><td></td><td></td></tr>
+<tr><td></td><td></td></tr>
+</table>
+</body>
+</html>

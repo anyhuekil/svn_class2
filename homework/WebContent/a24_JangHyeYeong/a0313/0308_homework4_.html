@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function send(){
+		
+		/**개수**/
+		var inApple = document.shop.appleNum.value; //입력받은 사과 개수
+		var inBanana = document.shop.bananaNum.value; //입력받은 바나나 개수
+		var inStro = document.shop.stroNum.value; //입력받은 딸기개수
+		
+		var chFruits=document.shop.fruits; //체크된 과일 배열
+		
+	
+		
+		var minus=inApple<0||inBanana<0||inStro<0 //음수의 경우
+		
+		
+		/**가격**/
+		var applePrice=inApple*3000; //사과가격
+		var bananaPrice=inBanana*5000; //바나나가격
+		var stroPrice=inStro*8000; //딸기가격
+		
+		var totalPrice=0;
+		
+		/**합계*/
+		for(var idx=0;idx<chFruits.length;idx++){
+			if(chFruits[idx].checked){ //트루값만 더 해준다.
+				if(chFruits[idx].value=="apple")
+					totalPrice+=applePrice;
+				else if(chFruits[idx].value=="banana")
+					totalPrice+=bananaPrice;
+				else
+					totalPrice+=stroPrice;
+			}
+			else{ //체크하지 않고 개수만 올릴 경우 초기화
+				if(chFruits[idx].value=="apple")
+					inApple=0;
+				else if(chFruits[idx].value=="banana")
+					inBanana=0;
+				else
+					inStro=0;
+			}
+				
+			
+		}
+		
+		
+		//var totalPrice=applePrice+bananaPrice+stroPrice;
+		
+		
+		/**예외처리**/
+		if(minus) alert("양수값을 입력해주세요."); 
+		else if(totalPrice==0) alert("구매하지 않으셨습니다.");
+		else alert("고객님의 구매내역입니다.\n사과:"+inApple+"개\n바나나: "+inBanana+"개\n딸기: "+inStro+"개\n총"+totalPrice+"원 구매하셨습니다.");
+		
+	}
+</script>
+<style type="text/css">
+caption{color:blue; background-color:yellow;}
+tr{text-align:center;}
+input[type=number]{background:yellow; text-align:right;}
+.product{background-color:pink;}
+</style>
+</head>
+<body>
+<center>
+	어서오세요..<br>
+	즐거운 쇼핑 되시길..<br><br>
+	<form name="shop">
+	<table>
+		<caption>판매물품현황</caption>
+		<tr><th>ch</th><th>물건명</th><th>가격</th><th>개수</th></tr>
+		<tr><td><input type="checkbox" name="fruits" value="apple"/></td><td class="product">사과</td><td>3000</td><td><input type="number" name="appleNum" value="0"/></td></tr>
+		<tr><td><input type="checkbox" name="fruits" value="banana"/></td><td class="product">바나나</td><td>5000</td><td><input type="number" name="bananaNum" value="0"/></td></tr>
+		<tr><td><input type="checkbox" name="fruits" value="stroberry"/></td><td class="product">딸기</td><td>8000</td><td><input type="number" name="stroNum" value="0" /></td></tr>
+	</table><br>
+	</form>
+	<input type="button" value="구매" onclick="javascript:send();"/><br>
+</center>
+</body>
+</html>

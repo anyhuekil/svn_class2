@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Wrong Color Find!</title>
+<style type="text/css">
+@font-face {
+	font-family : 'nm';
+	src: url('../font/NM_EB.ttf');
+}
+*{
+	font-family:'nm';
+}
+table#myt{ 
+	width:500px;
+	height:500px;
+	background-size: cover;
+}
+td{
+	border-radius: 5px 5px;
+}
+h1{
+	text-align: center;
+}
+div#indiv{
+	display: inline-block;
+}
+div#alldiv{
+	margin: auto auto;
+	text-align: center;
+}
+#hint{
+	color:lightgray;
+}
+.colB{
+	background-color: lightblue;
+}
+
+</style>
+<script src="http://code.jquery.com/jquery-1.10.2.js">
+</script>
+<script type="text/javascript">
+/* 
+	
+*/
+	var idx = 2;
+	var idx2 = -1;
+	//level Arr1 > 색상 값 차이 레벨				1 ~ 18
+	//level Arr2 > 레벨별 테이블 행열 갯수 			1 ~ 9   (levelArr1)+1 = levelArr2;
+		
+	var cR,cG,cB,cA,cW;
+	
+	var levelArr1=[0,0,50,45,40,35,30,27,25,23,20,17,15,13,10, 9,  8];
+	var levelArr2=[0,0, 4, 4, 9, 9,16,16,25,25,36,36,49,49,64,64, 81];	
+	//					2  3  4  5  6  7  8  9 10 11 12 13 14 15  16
+	var level = levelArr1[idx];
+	
+	var correct = document.getElementsByTagName("td");
+
+	function nextQ(shownum){
+		var colorR = parseInt( Math.random()*255+1 );
+		var colorG = parseInt( Math.random()*255+1 );
+		var colorB = parseInt( Math.random()*255+1 );
+		
+		var colorRR = colorR+levelArr1[idx];
+		var colorGG = colorG+levelArr1[idx];
+		var colorBB = colorB+levelArr1[idx];
+		
+		cR = colorRR;
+		cG = colorGG;
+		cB = colorBB;
+		
+		if( colorRR > 255 ) colorRR=255;
+		if( colorGG > 255 ) colorGG=255;
+		if( colorBB > 255 ) colorBB=255;
+		
+		var color = "rgb("+colorR+","+colorG+","+colorB+")";			//"rgb(100,100,100)"
+		var colorWrong = "rgb("+colorRR+","+colorGG+","+colorBB+")";	//"rgb(125,125,125)"
+		cW=colorWrong;
+		var colorArr = parseInt(Math.random()*levelArr2[idx]);
+		cA = colorArr;
+		var show="";
+		if(shownum==2||shownum==3){
+			show+="<tr><td></td><td></td></tr>";
+			show+="<tr><td></td><td></td></tr>";
+		}
+		
+		else if(shownum==4||shownum==5){
+			show+="<tr><td></td><td></td><td></td></tr>";
+			show+="<tr><td></td><td></td><td></td></tr>";
+			show+="<tr><td></td><td></td><td></td></tr>";
+		}
+		
+		else if (shownum==6||shownum==7){
+			show+="<tr><td></td><td></td><td></td><td></td></tr>";
+			show+="<tr><td></td><td></td><td></td><td></td></tr>";
+			show+="<tr><td></td><td></td><td></td><td></td></tr>";
+			show+="<tr><td></td><td></td><td></td><td></td></tr>";			
+		}
+		
+		else if (shownum==8||shownum==9){
+			show+="<tr><td></td><td></td><td></td><td></td><td></td></tr>";
+			show+="<tr><td></td><td></td><td></td><td></td><td></td></tr>";
+			show+="<tr><td></td><td></td><td></td><td></td><td></td></tr>";
+			show+="<tr><td></td><td></td><td></td><td></td><td></td></tr>";
+			show+="<tr><td></td><td></td><td></td><td></td><td></td></tr>";
+		}
+		else if (shownum==10||shownum==11){
+			show+="<tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>";
+			show+="<tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>";
+			show+="<tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>";
+			show+="<tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>";
+			show+="<tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>";
+			show+="<tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>";
+		}
+		else if (shownum==12||shownum==13){
+			show+="<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>";
+			show+="<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>";
+			show+="<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>";
+			show+="<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>";
+			show+="<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>";
+			show+="<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>";
+			show+="<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>";
+		}
+		else if (shownum==14||shownum==15){
+			show+="<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>";
+			show+="<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>";
+			show+="<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>";
+			show+="<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>";
+			show+="<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>";
+			show+="<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>";
+			show+="<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>";
+			show+="<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>";
+		}
+		else if (shownum==16){
+			show+="<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>";
+			show+="<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>";
+			show+="<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>";
+			show+="<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>";
+			show+="<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>";
+			show+="<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>";
+			show+="<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>";
+			show+="<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>";
+			show+="<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>";
+		}
+		
+		$("#myt").html(show);
+		$("td").css("background",color);
+		$("td").eq(colorArr).css("background",colorWrong);
+		
+		document.getElementById("levelHtml").innerHTML = levelArr1[idx];
+		document.getElementById("hint").innerHTML = (parseInt(colorArr/Math.sqrt(levelArr2[idx]))+1)+"번째 줄"+parseInt( colorArr % (Math.sqrt(levelArr2[idx]))+1 )+"번째 값 ";
+		document.getElementById("qnum").innerHTML = ++idx2;
+		correct[colorArr].onclick=function(){
+			if(idx<16) nextQ(++idx);
+			else nextQ(idx);
+		}
+		correct[!colorArr].onclick=function(){
+			alert("정답이 아닙니다!");
+		}
+	}
+	
+	function btn_hint(){
+		cR-=levelArr1[idx]+levelArr1[idx];
+		cG-=levelArr1[idx]+levelArr1[idx];
+		cB-=levelArr1[idx]+levelArr1[idx];
+		cW = "rgb("+cR+","+cG+","+cB+")";
+		$("td").eq(cA).css("background",cW);
+	}
+	
+	function btn_next(){
+		if(idx<16) nextQ(++idx);
+		else nextQ(idx);
+	}
+	
+	$(document).ready(function(){
+		nextQ(idx);
+	});
+	
+</script>
+</head>
+<body>
+	<h1>Wrong Color Find</h1>
+	<br><br><br>
+	<div id=alldiv>
+		<div id=indiv style="width:600px; height: 600px;">
+			<table align = center id="myt" border>
+			</table>
+		</div>
+		<div id=indiv style="width:200px; height: 600px;">
+			<table align= center style="border: solid 2px black;">
+				<tr> <th>밝기 차이</th> <th id="levelHtml"></th> </tr>
+				<tr> <th>문제 수</th> <th id="qnum">1</th> </tr>
+				<tr> <th colspan="2"><span id="hint">hint</span></th> </tr>
+				<tr> <th colspan="2"><input type="button" onclick="location.reload()" value="새로고침" style="width: 100%; background-color: white;" /></th> </tr>
+				<tr> <th colspan="2"><input type="button" onclick="btn_hint()" value="힌트" style="width: 100%; background-color: white;" /></th> </tr>
+				<tr> <th colspan="2"><input type="button" onclick="btn_next()" value="다음문제" style="width: 100%; background-color: white;"/></th> </tr>
+			</table>
+		</div>
+	</div>
+</body>
+</html>

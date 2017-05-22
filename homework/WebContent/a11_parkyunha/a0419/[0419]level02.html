@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <title>
+        Memory Game
+    </title>
+    <style>
+        .before {
+            background-color: blue;
+        }
+        .after {
+            background-color: lightcoral;
+        }
+    </style>
+    <script
+        src="http://code.jquery.com/jquery-3.2.1.js"
+        integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+        crossorigin="anonymous">
+        // http://code.jquery.com
+    </script>
+    <script>
+        /*
+            Lv.1
+            초기 : class가 적용되지 않음
+            onload 시 : 아래와 가이 배경 색상 처리(2X2 아래 위 다름)
+            클릭 시 : 배경 색상이 노랑색으로 변경
+
+            Lv.2
+            NxN 테이블에 랜덤으로 타일 색을 표시
+            게임 세팅을 누르면 전체 같은 색으로 변경
+            게임 진행 : 기존 타일 색을 맞추면 성공, 틀리면 실패
+            게임 종료 : 전부 성공
+
+        */
+
+        $(document).ready(function() {
+            $("td").click(function() {
+                if(checkZeroElements(checkArray) != 0) {
+                    (checkArray[this.innerHTML] != 0) ? 
+                        (checkArray[this.innerHTML] = 0) : alert("wrong");
+                    (checkZeroElements(checkArray) == 0) ? $("h1").html("Job Done!") : 0
+                } else {
+                    $("h1").html("Job Done!");
+                }
+
+                console.log(checkArray);
+                console.log("[Remaining Tile] " + checkZeroElements(checkArray));
+            });
+        });
+
+        var checkArray = [];
+
+        function init() {
+            var mymap = generateRandomNumberWithIndex(16, 5);
+            for(var index = 0; index < mymap.length; index++) {
+                (mymap[index] != 0) ? $("td").eq(index).addClass('before') : 0;
+            }
+            var timer = 4;
+            var myVar = setInterval(countdown, 1000);
+            function countdown() {
+                if(timer == 0) {
+                    hide();
+                    $("h1").html("Game Start");
+                    clearInterval(myVar);
+                } else {
+                    $("h1").html(--timer);
+                }
+            }
+        }
+
+        function hide() {
+            $("td").removeClass('before');
+        }
+
+        function generateRandomNumberWithIndex(maxValue, number) {
+            // initialize array to 0
+            checkArray = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+
+            // check the number of value is not 0 while generate random number
+            while(checkZeroElements(checkArray) < number) {
+                checkArray[Math.floor(Math.random() * maxValue)]++;
+            }
+            
+            console.log(checkArray);            
+            return checkArray;
+        }
+
+        function checkZeroElements(array) {
+            var count = 0;
+            // check the number of value 0 in array
+            for(var i = 0; i < array.length; i++) {
+                (array[i] != 0) ? count++ : null;
+            }
+
+            return count;
+        }
+    </script>
+    
+</head>
+<body>
+    <button onclick="init()">Start</button>
+    <h1>COUNTDOWN</h1>
+    <table width="600" height="600" border>
+        <tr>
+            <td>0</td>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>5</td>
+            <td>6</td>
+            <td>7</td>
+        </tr>
+        <tr>
+            <td>8</td>
+            <td>9</td>
+            <td>10</td>
+            <td>11</td>
+        </tr>
+        <tr>
+            <td>12</td>
+            <td>13</td>
+            <td>14</td>
+            <td>15</td>
+        </tr>
+    </table>
+</body>
+</html>

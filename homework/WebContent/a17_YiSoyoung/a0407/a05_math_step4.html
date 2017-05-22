@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">#wrap {width:400px; margin:0 auto;}
+input[type='button']{text-align: center; padding:10px; margin: 10px 40px;}
+p{text-align: center;}
+.sec, .result{font-size: 1.5em;text-align: center;}
+</style>
+<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+<script>
+/* 수학 연습 사이트!!
+
+	1단계 	[  xx  ] +  [ xx  ] = [입력하세요]
+								입력하세요에 클릭하는 순간 입력이 가능하게 text가 사라진다.
+								해당 정답이 맞을 때 정답이라고 틀렸을 때 오답이라고 나온다
+
+	2단계 	[  xx  ] @  [ xx  ] = [입력하세요]
+	              Math.random()을 확용하여 사칙연산 임의
+								입력하세요에 클릭하는 순간 입력이 가능하게 text가 사라진다.
+								해당 정답이 맞을 때 정답이라고 틀렸을 때 오답이라고 나온다
+    3단계(숙제)
+      - 문제 10문제를 시간 count down 처리해서 시간이 지나면 맞은 문제 갯수를 10점 환산에 점수 계산하여 출력
+ */
+ 	var s = 20;
+ 	var c = ["+","-","*","/"];
+	var spanIdx = [];
+	var num1 = document.getElementsByClassName("num1");
+	var num2 = document.getElementsByClassName("num2");
+	var sum = document.getElementsByClassName("sum");
+	var span = document.getElementsByTagName("span");
+ 	var id = setInterval(function() {
+		s --;
+		var sec = document.querySelector(".sec");
+		if(s>=0){
+			sec.innerHTML = "<font color='red'>" + s+"초 남음/제한시간(20초)</font>";
+		}else{
+			var score = 0, n1, n2;
+			for(var i=0 ; i<num1.length ; i++){
+				n1 = num1[i].value;
+				n2 = num2[i].value;
+				var cVal = [n1+n2, n1-n2, n1*n2, n1/n2];
+				var temp = cVal[spanIdx[i]];
+				if(sum[i].value=="")
+					sum[i].value="오답";
+				if(temp==sum[i].value){
+					score += 10;
+				}
+			}
+			$(".result").html("점수 : "+score+" - 경과시간 : "+(20-s)+"초");
+			clearInterval(id);
+		}
+	},1000);
+	$(document).ready(function() {
+ 		for(var i=0 ; i<num1.length ; i++){
+ 			num1[i].value = parseInt(Math.random()*10);
+ 			num2[i].value = parseInt(Math.random()*10);
+ 			spanIdx[i] = parseInt(Math.random()*4);
+ 			span[i].innerHTML = c[spanIdx[i]];
+ 		}
+ 		
+ 		
+
+		$("#cal").click(function() {
+			var score = 0, n1, n2;
+			for(var i=0 ; i<num1.length ; i++){
+				n1 = num1[i].value;
+				n2 = num2[i].value;
+				var cVal = [n1+n2, n1-n2, n1*n2, n1/n2];
+				var temp = cVal[spanIdx[i]];
+				if(sum[i].value=="")
+					sum[i].value="오답";
+				if(temp==sum[i].value){
+					score += 10;
+				}
+			}
+			$(".result").html("점수 : "+score+" - 경과시간 : "+(20-s)+"초");
+			clearInterval(id);
+		});
+		$("#reset").click(function() {
+			location.href = "a05_math_step4.html";
+		});
+		$("input[type='text']").click(function() {
+			$("input:focus").css("background-color","lightyellow");
+		});
+	});
+</script>
+</head>
+<body>
+	<div id="wrap">
+		<p> 
+			1번 : 
+			<input type="text" class="num1" size="5"> <span>s</span> 
+			<input type="text" class="num2" size="5"> = 
+			<input type="text" placeholder="입력하세요" class="sum" size="5">
+		</p>
+		<p> 
+			2번 : 
+			<input type="text" class="num1" size="5"> <span>s</span> 
+			<input type="text" class="num2" size="5"> = 
+			<input type="text" placeholder="입력하세요" class="sum" size="5">
+		</p>
+		<p> 
+			3번 : 
+			<input type="text" class="num1" size="5"> <span>s</span> 
+			<input type="text" class="num2" size="5"> = 
+			<input type="text" placeholder="입력하세요" class="sum" size="5">
+		</p>
+		<p> 
+			4번 : 
+			<input type="text" class="num1" size="5"> <span>s</span> 
+			<input type="text" class="num2" size="5"> = 
+			<input type="text" placeholder="입력하세요" class="sum" size="5">
+		</p>
+		<p> 
+			5번 : 
+			<input type="text" class="num1" size="5"> <span>s</span> 
+			<input type="text" class="num2" size="5"> = 
+			<input type="text" placeholder="입력하세요" class="sum" size="5">
+		</p>
+		<p> 
+			6번 : 
+			<input type="text" class="num1" size="5"> <span>s</span> 
+			<input type="text" class="num2" size="5"> = 
+			<input type="text" placeholder="입력하세요" class="sum" size="5">
+		</p>
+		<p> 
+			7번 : 
+			<input type="text" class="num1" size="5"> <span>s</span> 
+			<input type="text" class="num2" size="5"> = 
+			<input type="text" placeholder="입력하세요" class="sum" size="5">
+		</p>
+		<p> 
+			8번 : 
+			<input type="text" class="num1" size="5"> <span>s</span> 
+			<input type="text" class="num2" size="5"> = 
+			<input type="text" placeholder="입력하세요" class="sum" size="5">
+		</p>
+		<p> 
+			9번 : 
+			<input type="text" class="num1" size="5"> <span>s</span> 
+			<input type="text" class="num2" size="5"> = 
+			<input type="text" placeholder="입력하세요" class="sum" size="5">
+		</p>
+		<p> 
+			10번 : 
+			<input type="text" class="num1" size="5"> <span>s</span> 
+			<input type="text" class="num2" size="5"> = 
+			<input type="text" placeholder="입력하세요" class="sum" size="5">
+		</p>
+		<p>
+		<input type="button" value="다시해봐" id="reset">
+		<input type="button" value="채점해봐" id="cal">
+		</p>
+		<hr>
+		<h3 class="sec"></h3>
+		<h1 class="result"></h1>
+	</div>
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>z99_homework0313</title>
+<style type="text/css">
+/*
+과제
+아래와 같은 화면을 list형태로 구현하세요
+	사원 정보 list(테이블list) : 데이터 홀/짝 배경색상 처리 마우스커서 hover시 글자 굵기,크기 배경색변경
+	
+사원번호 	사원명		연봉		주업무홈피(link)
+7709		홍길동		3,000만원	구글
+7710		김길동		4,000만원	네이버
+7711		박길동		5,000만원	다음
+중앙		왼쪽		오른쪽		왼쪽 (under line없이)
+*/
+	tr{font-size:15px;}
+	.noLine{text-decoration:none;}
+	tr:nth-child(2n){background-color:#cccccc; }
+	tr:nth-child(2n+1){background-color:#666666; }
+/*	.hover01:hover{background-color:#000000;color:#ffffff;}*/
+/*	td:HOVER{font-size:30px;border:5px;}*/
+	.alignC{text-align:center;}
+	.alignR{text-align:right;}
+	.alignL{text-align:left;}
+	td:nth-child(4n+1){text-align:center;}
+	td:nth-child(4n+2){text-align:left;}
+	td:nth-child(4n+3){text-align:right;}
+	td:nth-child(4n){text-align:left;}
+	table{width:800px;height:400px;}
+	th{font-size:15px;margin:10px;padding:10px;}
+	tr:hover{font-size:30px;background-color:#000000;color:#ffffff;font-weight:bold;}
+	td{width:200px;height:100px;}
+
+
+
+
+/*과제
+	- 말게임 만들기
+*/
+
+
+
+</style>
+<script type="text/javascript">
+/*
+
+*/
+
+</script>
+</head>
+<body>
+<form name="dataList">
+	<table>
+		<tr>
+			<th>사원번호</td>
+			<th>사원명</td>
+			<th>연봉</td>
+			<th>주업무페이지</td>
+		</tr>
+		<tr class="hover01">
+			<td>7709</td>
+			<td>홍길동</td>
+			<td>3,000만원</td>
+			<td><a href="https://www.google.co.kr" class="noLine">구글</a></td>
+		</tr>
+		<tr class="hover01">
+			<td>7710</td>
+			<td>김길동</td>
+			<td>4,000만원</td>
+			<td><a href="https://www.naver.co.kr" class="noLine">네이버</a></td>
+		</tr>
+		<tr class="hover01">
+			<td>7711</td>
+			<td>박길동</td>
+			<td>5,000만원</td>
+			<td><a href="https://www.daum.net" class="noLine">다음</a></td>
+		</tr>
+		
+	
+	
+	
+	</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</form>
+
+
+
+
+
+
+</body>
+</html>

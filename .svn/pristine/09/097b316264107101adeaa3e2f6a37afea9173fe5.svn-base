@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>roulette Game</title>
+
+<link href="style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<div class="spinner">
+
+		<div class="ball"><span></span></div>
+		<div class="platebg"></div>
+		<div class="platetop"></div>
+		<div id="toppart" class="topnodebox">
+			<div class="silvernode"></div>
+			<div class="topnode silverbg"></div>
+			<span class="top silverbg"></span>
+			<span class="right silverbg"></span>
+			<span class="down silverbg"></span>
+			<span class="left silverbg"></span>
+		</div>
+		<div id="rcircle" class="pieContainer">
+			<div class="pieBackground"></div>
+		</div>
+	</div>
+
+<div id="btnSpin" class="button">Spin</div>
+<div id="btnb" class="button">Bigger</div>
+<div id="btns" class="button">Smaller</div>
+<div id="readyG" class="button">룰렛시작</div>
+
+
+
+ 
+<script src='jquery.keyframes.min_.js'></script>
+
+<script src='roulette_.js'></script> 
+
+</body>
+</html>

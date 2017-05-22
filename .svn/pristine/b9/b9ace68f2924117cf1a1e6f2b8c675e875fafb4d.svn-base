@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="Text/css">
+	.after{background-color: yellow;}
+	.before{background-color: blue;}
+</style>
+<script src="http://code.jquery.com/jquery-1.10.2.js "></script>
+<script type="text/javascript">
+var gameClear=0;
+$(document).ready(function(){
+	/*
+	1단계: 
+		초기: class가 적용되지 않음
+		onload 시: 아래와 같이 배경 색상 처리
+		클릭 시: 배경색상이 노랑으로 변경(remove, add class)
+	*/
+	$("td").each(function(item, index){
+		var rand=Math.random();		
+		console.log(rand);
+		if(rand>0.5){
+			$(this).addClass("after");
+			gameClear++;
+			console.log(gameClear);
+		}
+		else
+		$(this).addClass("before");
+	});
+	$("td").on("click",function(item,index){
+		if($(this).attr("class")=="after" && gameClear!=0){
+			$(this).css("background","yellow");
+			$(this).removeClass("before");
+			if(--gameClear==0)
+				alert("Game clear!!!!");
+			console.log(gameClear);
+		}else{
+			alert("틀렸습니다");
+		}
+	})
+	
+	
+});
+function gameStart(){
+	$("td").each(function(item,index){
+		if($(this).attr("class")=="after"){
+			$(this).css("background","blue");
+		}
+	});
+	
+}
+</script>
+</head>
+<body>
+<input type="button" value="게임시작" onclick="javascript:gameStart()"/>
+<table align="center" width="300" height="300">
+<tr><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td></tr>
+
+</table>
+
+</body>
+</html>

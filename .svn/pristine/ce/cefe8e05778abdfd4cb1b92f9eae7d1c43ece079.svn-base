@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>20170310 과제 2</title>
+<script type="text/javascript">
+	function register(){
+		var inKey=document.getElementById("inputKeyword");
+		
+		if(inKey.value=="java" || inKey.value=="jsp" || inKey.value=="c#" || inKey.value=="파이션")
+			alert("등록되었습니다.");
+		else
+			alert("등록불가합니다.\n목록을 확인해주세요.");
+		
+	}
+	function change(obj){
+		var tabText=document.getElementById("ableKeyword");
+		var Lists=document.getElementsByTagName("ul")[0];
+		
+		
+		if(obj.value=="펼치기"){
+			
+			Lists.style.visibility="visible"
+			obj.value="접기"
+			tabText.innerHTML="java<br>jsp<br>c#<br>파이션"
+		
+			
+		}else{
+			
+			Lists.style.visibility="hidden"
+			obj.value="펼치기"
+		}
+
+	}
+</script>
+<style type="text/css">
+	ul{visibility:hidden;}
+</style>
+</head>
+<body>
+keyword 등록 <input id="inputKeyword" type="text"  />
+<input type="button" value="등록" onclick="javascript:register()"/> <br>
+등록할 수 있는 keyword <input type="button" value="펼치기" onclick="javascript:change(this)"/><br>
+<ul>
+	<li value="java">java</li>
+	<li value="jsp">jsp</li>
+	<li value="c#">c#</li>
+	<li value="파이션">파이션</li>
+</ul>
+</body>
+</html>

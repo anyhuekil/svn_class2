@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	@import url(http://fonts.googleapis.com/earlyaccess/hanna.css);
+	/* font-family: 'Hanna', serif; */
+	@import url('https://fonts.googleapis.com/css?family=Anton');
+	/* font-family: 'Anton', sans-serif; */
+	
+	.container{width: 100%; display: inline-block;}
+	.block{width: 1000px; margin: auto;}
+	
+	.whiteHeight{height: 760px;}
+	.blueHeight{height:300px;}
+
+	.bgBlue{background-color: #46BCFF;}
+	
+		
+	#home{width: 20%; height: 100px; float: left; cursor: pointer;}
+	#homeText{margin-top: 20px; margin-left: 10px; font-family: 'Hanna', serif;}
+	#homeBlock{width: 80%; height: 100px; float: right;}
+	
+	
+	#name{width: 65%; height: 250px; float: left;}
+	#nameLast{margin-top: 20px; margin-bottom:0px; font-family: 'Anton', sans-serif;
+				font-size: 85px; line-height:100%; color: #4FBFFF}
+	#nameFirst{margin-top: 0px; font-family: 'Anton', sans-serif;
+				font-size: 120px; color: #4FBFFF}
+	
+	
+	#tag{width: 65%; height: 150px; float: left;}
+	#tagList{margin-top: 0px; font-family: 'Anton', sans-serif;
+				color: #838383}
+	
+	
+	#img{width: 35%; height: 400px; float: right;}
+	#imgFile{width: 300px; height: 300px; border-radius: 50%;}
+	
+	
+	#intro{width: 20%; height: 250px; float: left;}
+	#whoIAm{font-size:20px; font-family: 'Anton', sans-serif; border-radius: 50%; margin-top: 20px;
+			width:175px; height:175px; background-color: #46BCFF; color: white;
+			display: flex; align-items: center; justify-content: center;}
+	#introContent{width: 80%; height: 250px; float: right;}
+	
+
+	#contactBlock{width: 70%; height: 100px; float: left;}
+	#contact{width: 30%; height: 100px; float: right;}
+	#contactHeader{font-size:40px; font-family: 'Anton', sans-serif; margin-top: 20px; 
+					font-weight: bold; color: white; float: right;}
+	
+	
+	.contactInput{width: 95%; height: 95%; padding-left: 10px; float: right;}
+	.contactInputDiv{width: 50%; height: 50px; float: left;}
+	
+	
+	#contactContent{width: 50%; height: 150px; float: right;}
+	#contactContentText{padding-top: 10px;}
+	
+	#contactSendBlock{width: 90%; height: 50px; float: left;}
+	#contactSend{width: 10%; height: 50px; float: right;}
+	#contactSendButton{float:right; background-color: gray;color: white;border: 0px;
+						width: 50px;height: 30px;margin-top: 10px;}
+
+</style>
+<script type="text/javascript">
+	function sendMail() {
+	    var link = "mailto:" + "주지훈" + "<datajihoon@naver.com>"
+	    		+ "?subject=" + document.getElementById('contactTitle').value
+	             + "&body=" + document.getElementById('contactContentText').value
+	             + escape("\n") + "보낸 분 이름 : " + document.getElementById('contactName').value
+	             + escape("\n") + "보낸 분 메일 : " + document.getElementById('contactEmail').value
+	    ;
+	
+	    window.location.href = link;
+	}
+</script>
+</head>
+<body>
+	<div class="container whiteHeight">
+		<div class="block whiteHeight">
+			<div id="home" class="bgBlue" onclick="window.location='main.html';">
+				<h6 id="homeText">TEAM MEMBER</h6>
+			</div>
+			
+			<div id="homeBlock"></div>
+			<div id="name">
+				<h2 id="nameLast">Ju</h2>
+				<h1 id="nameFirst">Jihoon</h1>
+			</div>
+			<div id="img">
+				<img src="/homework/a00_project/a01_team/M_Photo_First_View.jpg" id="imgFile">
+			</div>
+			<div id="tag">
+				<h4 id="tagList">PROGRAMMER - JUNIOR DATA SCIENTIST - ACORN ACADEMY STUDENT</h4>
+			</div>
+		
+			<hr>
+		
+			<div id="intro">
+				<div id="whoIAm">WHO I AM</div>
+			</div>
+			<div id="introContent">
+				<p id="introContentText">
+					1조 외노자의 길 팀원 주지훈입니다. 웹쪽으로는 아는게 많지 않아 부족한 점이 많네요.
+					하지만 저의 경우 최대한 이미지를 배제하고 수업시간에 배운 태그와 스타일시트를 적절히 사용하여
+					최대한 참고 사이트와 비슷한 형태로 만들어 보고자 하였습니다. 아쉬운 점이 있다면
+					메일 보내기 기능이 데이터 입력 내용과 상관없이 전송되게 구현되어 있습니다.
+					메일 유효성 체크 및 미입력 사항 체크 로직도 구현하면 깔끔한 홈페이지형 명함이
+					될 것 같네요.  
+				</p>
+			</div>
+		</div>
+	</div>
+	
+	<div class="container blueHeight bgBlue">
+		<div class="block blueHeight bgBlue">
+			<div id="contactBlock" class="bgBlue"></div>
+			<div id="contact" class="bgBlue">
+				<h5 id="contactHeader">CONTACT ME</h5>
+			</div>
+			<div class="contactInputDiv bgBlue">
+				<input id="contactName" class="contactInput" type="text" placeholder="이름"/>
+			</div>
+			<div id="contactContent" class="bgBlue">
+				<textarea id="contactContentText" class="contactInput" placeholder="메시지"></textarea>
+			</div>
+			<div class="contactInputDiv bgBlue">
+				<input id="contactEmail" class="contactInput" type="text" placeholder="이메일"/>
+			</div>
+			<div class="contactInputDiv bgBlue">
+				<input id="contactTitle" class="contactInput" type="text" placeholder="제목"/>
+			</div>
+			<div id="contactSendBlock" class="bgBlue"></div>
+			<div id="contactSend" class="bgBlue">
+				<input id="contactSendButton" type="button" value="Send" onclick="sendMail()">
+			</div>
+		</div>
+	</div>
+</body>
+</html>

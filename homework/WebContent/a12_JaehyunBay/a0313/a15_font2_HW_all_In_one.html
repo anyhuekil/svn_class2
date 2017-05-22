@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>a15_HW</title>
+<style type = "text/css">
+/*
+	a15_ font2 	종합예제/과제
+		아래와 같은 화면을 list형태로 구현하세요.
+			사원	정보	List   // 데이터 홀/짝 배경색상 처리.
+									// 마우스 hover , 굵기, 크기, 배경색, 변경.
+		사원번호	사원명	   연봉		주업무홈피(link)
+		   7709		홍길동	3,000만원	구글-http://www.google.com
+		   7710		김길동	4,000만원	네이버-http://www.naver.com
+		   7711		신길동	5,000만원	다음-http://www.daum.net
+align 		C				L			R +"만원"		왼쪽 +line없이.  + hover, after attr( "-" )
+
+*/
+	td, a{ text-decoration: none;  }
+	
+	tr:nth-child(2n){background-color: yellow; font-weight: bold; }
+	tr:nth-child(2n+1){background-color: lime; font-weight: thin; }
+	
+	#hong::after{   content : " - " attr(data-page)  "http://www.google.com "; }
+	#kim::after{content : " - " attr(data-page) "http://www.naver.com" ; }
+	#shin::after{content : " - " attr(data-page) "http://www.daum.net" ; }
+	/*   attr만 처리하면됨.
+	*/
+	
+	
+	tr:hover{background-color: pink; font-weight:bolder ; font-size: 16pt; }
+	.personCode{ width: 200px; text-align: center;  font-weight: thin; }
+	.personName{ width: 200px; text-align: left;  color: gray ; font-weight: bold;   }
+	.wage{ width: 200px; text-align: right; font-weight: bold;   }
+	.mainWorkPage{ width: 400px; text-align: left;  font-weight: normal; text-decoration: none;  }
+	
+
+
+</style>
+
+<script>
+/*
+ 
+*/
+
+</script>
+
+</head>
+<body>
+<!-- -->
+	<table>
+		<tr>
+			<td class= "personCode">사원번호</td>
+			<td class= "personName">사원명</td>
+			<td class = "wage">연봉</td>
+			<td class = "mainWorkPage" >주업무홈피</td>
+		</tr>
+		<tr>
+			<td class= "personCode">7709</td>
+			<td class= "personName">홍길동</td>
+			<td class = "wage">3000만원</td>
+			<td class = "mainWorkPage" ><a  id = "hong" href ="http://www.google.com">구글</a></td>
+		</tr>
+		<tr>
+			<td class= "personCode">7710</td>
+			<td class= "personName">김길동</td>
+			<td class = "wage">4000만원</td>
+			<td class = "mainWorkPage" ><a  id = "kim" href ="http://www.naver.com">네이버</a></td>
+		</tr>
+		<tr>
+			<td class= "personCode">7711</td>
+			<td class= "personName">신길동</td>
+			<td class = "wage">5000만원</td>
+			<td class = "mainWorkPage"><a  id = "shin" href ="http://www.daum.net">다음</a></td>
+		</tr>	
+	
+	</table>
+
+
+
+
+
+</body>
+</html>

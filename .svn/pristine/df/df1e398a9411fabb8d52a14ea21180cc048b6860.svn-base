@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+/*
+
+*/
+	td{width:33%;height:33%;text-align:center;}
+/**/
+</style>
+<script src="http://code.jquery.com/jquery-1.10.2.js">
+</script>
+<script type="text/javascript">
+var point=0;
+$(document).ready(function(){
+	$("td").first().css("background","yellow");
+	$("td").last().css("background","pink");
+	// eq(index)
+	setInterval(function(){
+		// 초기화..
+		$("td").html("");
+		var ranIdx=parseInt(Math.random()*9);
+		$("td").eq( ranIdx).html("두더지 출현");
+		/* 시간 처리에 대한 부분으로  event가 반복적으로 처리..*/
+		
+	}, 1000); // 단계별로 게임 level upgrade
+
+	$("td").click(function(){
+		// 현재 문자열이 "두더지 출현"이라는 문자열이면
+		// 점수를 카운트up하게 처리..
+		// $(this) : td의 배열가운에 현재 클릭한 td를 지칭
+		// 이미지 $(this).html()!=""
+		if($(this).html()=="두더지 출현"){
+			point++;
+			$("h1").html("점수:"+point)
+		}
+	});
+
+});
+</script>
+</head>
+<body>
+<h1 align="center">점수 : 0</h1>
+<table align="center" width="300pt" height="300pt" border>
+	<tr><td></td><td></td><td></td></tr>
+	<tr><td></td><td></td><td></td></tr>
+	<tr><td></td><td></td><td></td></tr>
+</table>
+
+</body>
+</html>

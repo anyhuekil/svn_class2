@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	#wrap{width:600px;  margin: 10px auto; text-align: center;}
+	#wrap table{width:100%; height:600px;}
+	#wrap input[type=button]{
+		width:200px; height:70px; line-height: 70px;
+		background-color: #2d1152;
+		border: 0;
+		color:white;
+		font-size: 1.5em;
+		font-weight: bold;
+		border-radius: 20px;
+	}
+	.odd {background-color: #90D4A2; }
+	.even{background-color: #C4F5D1;}
+	.random {background-color: orange;}
+	
+</style>
+<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+<script>
+	$(document).ready(function() {
+		var tot = 0;
+		var ran = [];
+		var cnt = 0;
+		$('td').each(function() {
+			if(parseInt(Math.random()*2)==1){
+				$(this).addClass('random');
+				ran[cnt++] = "ok";
+				tot++;
+			}else{
+				ran[cnt++] = "no";
+			}
+		});
+		$('#gameOn').click(function() {
+			if($(this).val()=='게임 시작'){
+				$(this).val('게임 중');
+				$('h1').html('잘 찾아 보세요');
+				$('td').removeClass('random');
+			}else if($(this).val()=='게임 리셋'){
+				$('td').removeClass('random');
+				tot = 0; cnt=0;
+				$('td').each(function() {
+					if(parseInt(Math.random()*2)==1){
+						$(this).addClass('random');
+						ran[cnt++] = "ok";
+						tot++;
+					}else{
+						ran[cnt++] = "no";
+					}
+				});
+				$('#gameOn').val('게임 시작');
+				$('h1').html('위치 기억 후 게임시작');
+			}
+		});
+		$('td').click(function() {
+			if(ran[this.id]=='ok'){
+				$(this).addClass('random');
+				tot--;
+				if(tot==0){
+					$('#gameOn').val('게임 리셋');
+					$('h1').html('<font color="red">게임이 종료되었습니다</font>');
+				}
+			}else{
+				alert('실패');
+			}
+		});
+	});
+</script>
+</head>
+<body>
+	<div id="wrap">
+		<input type="button" id="gameOn" value="게임 시작"><br><br>
+		<h1>위치 기억 후 게임시작</h1>
+		<table>
+			<tr><td id="0" class="even"></td><td id="1" class="odd"></td><td id="2" class="even"></td><td id="3" class="odd"></td></tr>
+			<tr><td id="4" class="odd"></td><td id="5" class="even"></td><td id="6" class="odd"></td><td id="7" class="even"></td></tr>
+			<tr><td id="8" class="even"></td><td id="9" class="odd"></td><td id="10" class="even"></td><td id="11" class="odd"></td></tr>
+			<tr><td id="12" class="odd"></td><td id="13" class="even"></td><td id="14" class="odd"></td><td id="15" class="even"></td></tr>
+		</table>
+	</div>
+</body>
+</html>

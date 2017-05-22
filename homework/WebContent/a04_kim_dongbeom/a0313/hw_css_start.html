@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Homework CSS Start!</title>
+		<style type="text/css">
+		/*
+		
+		*/
+		</style>
+		<script type="text/javascript">
+			var fruit = [];
+			var fruit_checked = [];
+			var lastPrice = 0;
+			var cnt = 0;
+			function calcu()
+			{
+				var cnt=0;
+				for(var i=0; i<=2; i++)
+				{
+					fruit[i] = document.form01.ckFruit[i];					// array기 때문에 [i]를 반드시 붙여주자!!!
+					if(fruit[i].checked)
+					{
+						fruit_checked[cnt] = parseInt(fruit[i].value);		// check 된 과일을 새배열에 이식
+						cnt++;
+					}														// fruit_checked[i] = parseInt(fruit_checked[i]);
+				}
+				switch(cnt)
+				{
+					case 0:
+						lastPrice = "입력오류! 이거 참 나";
+						break;
+					case 1:
+						lastPrice = fruit_checked[0]*document.getElementById("eaApl").value;
+						break;
+					case 10:
+						lastPrice = fruit_checked[0]*document.getElementById("eaBnn").value;
+						break;
+					case 100:
+						lastPrice = fruit_checked[0]*document.getElementById("eaStb").value;
+						break;
+					case 11:
+						lastPrice = fruit_checked[0]*document.getElementById("eaApl").value;
+						lastPrice += fruit_checked[1]*document.getElementById("eaBnn").value;
+						break;
+					case 101:
+						lastPrice = fruit_checked[0]*document.getElementById("eaApl").value;
+						lastPrice += fruit_checked[1]*document.getElementById("eaStb").value;
+						break;
+					case 110:
+						lastPrice = fruit_checked[0]*document.getElementById("eaBnn").value;
+						lastPrice += fruit_checked[1]*document.getElementById("eaStb").value;
+						break;
+					default:
+						lastPrice = fruit_checked[0]*document.getElementById("eaApl").value;
+						lastPrice += fruit_checked[1]*document.getElementById("eaBnn").value;
+						lastPrice += fruit_checked[2]*document.getElementById("eaStb").value;
+						break;
+				}
+				alert(lastPrice+"원..");
+			}
+			
+			function enableF(obj)
+			{
+				if(obj==0) cnt+=1;
+				else if(obj==1) cnt+=10;
+				else cnt+=100;
+			}
+		</script>
+	</head>
+	<body>
+	<!-- 과제!!
+		어서오세요
+		즐거운 쇼핑되시길
+		
+	판매물폼현황
+	ch		물건명		가격			수량
+	[]		[사과]		[3000]		[	]
+	[]		[바나나]		[8000]		[	]
+	[]		[딸기]		[5000]		[	]
+				  [구매]
+	-- 화면 처리 사항(기본 글자 색상 검정)
+	1. title 부분은 배경색상 노랑 txt 파랑
+	2. 물건명에 해당하는 배경색상 pink
+	3. 개수 부분 입력하는 배경색상 노랑, 글자정렬 오른쪽.(text-align 활용)
+	-->
+		<h1>어서오세요, 즐거운 쇼핑 되시길!</h1>
+		<form name="form01">
+		<table>
+			<caption>판매물품현황</caption>
+			<tr>
+				<th>check</th>
+				<th>Product</th>
+				<th>Price</th>
+				<th>Amount</th>
+			</tr>
+			<tr>
+				<th><input name="ckFruit" type="checkbox" value="3000" onclick="javascript:enableF(0);"/></th>
+				<td>Apple</td>
+				<td>3000</td>
+				<td><input id="eaApl" type="number" /></td>
+			</tr>
+			<tr>
+				<th><input name="ckFruit" type="checkbox" value="10000" onclick="javascript:enableF(1);"/></th>
+				<td>Banana</td>
+				<td>10000</td>
+				<td><input id="eaBnn" type="number" /></td>
+			</tr>
+			<tr>
+				<th><input name="ckFruit" type="checkbox" value="8000" onclick="javascript:enableF(2);"/></th>
+				<td>Strawberry</td>
+				<td>8000</td>
+				<td><input id="eaStb" type="number" /></td>
+			</tr>
+			<tr>
+				<th colspan="4">
+					<input type="button" value="구매!" onclick="javascript:calcu();">
+				</th>
+			</tr>
+		</table>
+		</form>
+		
+	</body>
+</html>

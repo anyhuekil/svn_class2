@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+/*  
+	확인예제(숙제)
+	homepage에 메뉴 구성을 할려고 한다..
+	home 인사 총무 자재관리 관리자
+	==> 위 메뉴 항목을 초기에 클릭하는 순간 css 글자와 배경색을 다르게 처리하고 
+	임의의 페이지로 이동하는 link를 매핑시킨다
+	=>  메뉴항목은 radius를 활용하여 둥근 모양
+*/
+	#nav { width:800px; margin: 0 auto;}
+	#nav ul {overflow: hidden;}
+	#nav ul li{
+		float:left;
+		text-align: center;
+		list-style: none;
+	}
+	a {
+		text-decoration: none;
+		color:black;
+		font-size: 1.2em;
+		display: block;
+		padding: 10px 30px;
+		border: 2px solid red;
+	}
+	a:hover {color:white; background-color:red; }
+	li:first-child a{border-radius: 30px 0 0 30px;}
+	li:last-child a{border-radius: 0 30px 30px 0;}
+</style>
+<script>
+</script>
+</head>
+<body>
+	<div id="nav">
+		<ul>
+			<li><a href="#home">home</a></li>
+			<li><a href="#insa">인사</a></li>
+			<li><a href="#home">총무</a></li>
+			<li><a href="#home">자재관리</a></li>
+			<li><a href="#home">관리자</a></li>
+		</ul>
+	</div>
+</body>
+</html>

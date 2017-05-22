@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+
+</style>
+<script type="text/javascript">
+
+/*
+숙제! (계산기 만들기)
+함수 객체 : Calculator
+입력 값 : num01, num02
+메서드 : plus(), minus(), multi(), div();를 통해 각 기능별로 출력처리
+@@@ + @@@ = @@@ return 값은 결과값만
+*/
+function Calculator(num01, num02){
+	  this.num01=num01;
+	  this.num02=num02;
+	  this.plus=function(){
+		  console.log(num01+"+"+num02+"="+(num01+num02));
+	  	  return num01+num02;
+	  }
+	  this.minus=function(){
+		  console.log(num01+"-"+num02+"="+(num01-num02));
+		  return num01-num02;
+	  }
+	  this.multi=function(){
+		  console.log(num01+"*"+num02+"="+num01*num02);
+		  return num01*num02;
+	  }
+	  this.div=function(){
+		  console.log(num01+"/"+num02+"="+num01/num02);
+		  return num01/num02;
+	  }
+}  
+var test01=new Calculator(2,5);
+console.log(test01.plus());
+console.log(test01.minus());
+console.log(test01.multi());
+console.log(test01.div());
+
+
+
+</script>
+
+</head>
+<body>
+
+</body>
+</html>

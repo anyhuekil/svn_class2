@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Homework Application</title>
+		<style type="text/css">
+			input[value$="하세요."]{color:gray;}
+			input[value$=".com"]{color:gray;}
+			input[value$="1234"]{color:gray;}
+			input[value$="94길 20"]{color:gray;}
+			input[value$="층"]{color:gray;}
+			input[value$="자리"]{color:gray;}	
+		</style>
+		<script type="text/javascript">
+		var cnt=0;
+		var input=[];
+		var check=[];
+		function dataClear(obj)
+		{
+			var objColor=obj.style.color;
+			if(objColor!="black")
+			{
+				obj.value = "";
+				obj.style.color="black";
+			}
+		}
+		function dataConfirm()
+		{
+			input[0] = document.memApp.inputId.value;				// ID
+			input[1] = document.memApp.inputPw.value;				// PW
+			input[2] = document.memApp.inputName.value;				// Name
+			input[3] = document.memApp.inputBirth.value;			// 주민번호 앞자리
+			input[4] = document.memApp.inputIdNum.value;			// 주민번호 뒷자리
+			input[5] = document.memApp.inputHNum01.value;			// 폰번호 1
+			input[6] = document.memApp.inputHNum02.value;			// 폰번호 2
+						
+			for(var i=0; i<=input.length; i++)
+			{
+				if(input[i]=="")
+				{
+					cnt++;
+				}
+			}
+			if(cnt!=0)
+			{
+				alert(cnt+"개 사항을 입력하지 않았습니다.");
+				cnt = 0;
+				for(i=0; i<=input.length; i++)
+				{
+					input[i]
+				}
+			}
+			else alert("입력 완료!");
+		}
+		function id_Check()
+		{
+			alert("사용 가능한 ID 입니다.");
+		}
+		function name_Check()
+		{
+			alert("실명이 확인 되었습니다.");
+		}
+		</script>
+	</head>
+	<body>
+	<div align="center">
+		<form name="memApp" action="hw_form2.jsp" >
+			<h1>회원가입 정보입력</h1>
+			<table>
+				<thead>
+				<tr>
+					<td colspan="2"><h3>기본 정보</h3></td>
+				</tr>
+				</thead>
+				<tr>
+					<td width="150">ID*</td>
+					<td><input type="text" name="inputId" value="ID를 입력하세요."
+						onclick="javascript:dataClear(this)" size="23">
+						<input type="button" name="checkId" value="중복 확인"
+						onclick="javascript:id_Check();"></td>
+				</tr>
+				<tr>
+					<td>PASSWORD*</td>
+					<td><input type="password" name="inputPw" size="23"></td>
+				</tr>
+				<tr>
+					<td colspan="2"><hr></td>
+				</tr>
+				<tr>
+					<td colspan="2"><h3>신상정보</h3></td>
+				</tr>
+				<tr>
+					<td>이름*</td>
+					<td><input type="text" name="inputName" value="이름을 입력하세요."
+						size="23" onclick="javascript:dataClear(this)"></td>
+				</tr>
+				<tr>
+					<td>주민번호*</td>
+					<td><input type="text" name="inputBirth" value="앞 6자리"
+						size="8" maxlength="6" onclick="javascript:dataClear(this)"/> - 
+					<input type="password" name="inputIdNum" size="8" maxlength="7"/>
+					<input type="button" name="inputCkId" value="실명 확인" 
+					onclick="javascript:name_Check()"/></td>
+				</tr>
+				<tr>
+					<td colspan="2" height="30"><hr></td>
+				</tr>
+				<tr>
+					<td>주소</td>
+					<td><input type="text" name="input_BigAdress" size="40" 
+						value="서울특별시 강남구 강남대로 94길 20"
+						onclick="javascript:dataClear(this)"></td>
+				</tr>
+				<tr>
+					<td>상세 주소</td>
+					<td><input type="text" name="input_SmallAdress"
+						value="3, 4층"
+						onclick="javascript:dataClear(this)"></td>
+				</tr>
+				<tr>
+					<td colspan="2" height="30"><hr></td>
+				</tr>
+				<tr>
+					<td>E-Mail 주소</td>
+					<td><input type="text" name="inputMailId" size="10"> @ 
+						<input type="text" name="inputMailAdr" value="acornacademy.com" size="15"
+						onclick="javascript:dataClear(this)"/>
+					</td>
+				</tr>
+				<tr>
+					<td>전화번호</td>
+					<td>
+						<select name="inputPhoneNum">
+							<option value="Seoul">02</option>
+							<option value="Busan">051</option>
+							<option value="Daegu">053</option>
+							<option value="Incheon">032</option>
+							<option value="Gwangju">062</option>
+							<option value="Daejeon">042</option>
+							<option value="Ulsan">052</option>
+							<option value="Sejong">044</option>
+							<option value="KyungKi">031</option>
+							<option value="Kangwon">033</option>
+							<option value="Chungbuk">043</option>
+							<option value="Chungnam">041</option>
+							<option value="Jeonbuk">063</option>
+							<option value="Jeonnam">061</option>
+							<option value="Kyungbuk">054</option>							
+							<option value="Kyungnam">055</option>							
+							<option value="Jeju">064</option>							
+						</select>
+						<input type="text" name="inputPNum01" value="1234"
+						size="2" maxlength="4" onclick="javascript:dataClear(this)"> - 
+						<input type="text" name="inputPNum02" value="1234"
+						size="2" maxlength="4" onclick="javascript:dataClear(this)">
+					</td>
+				</tr>
+				<tr>
+					<td>핸드폰 번호*</td>
+					<td>
+						<select name="inputHNum">
+							<option value="Hn10">010</option>
+							<option value="Hn11">011</option>
+							<option value="Hn16">016</option>
+							<option value="Hn17">017</option>
+							<option value="Hn18">018</option>
+							<option value="Hn19">019</option>							
+						</select>
+						<input type="text" name="inputHNum01" value="1234"
+						size="2" maxlength="4" onclick="javascript:dataClear(this)"> - 
+						<input type="text" name="inputHNum02" value="1234"
+						size="2" maxlength="4" onclick="javascript:dataClear(this)">
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" height="20"></td>
+				</tr>
+				<tr>
+					<td>SMS 수신 동의</td>
+					<td>
+						&nbsp;&nbsp;&nbsp;<input type="radio" name="inputSms" value="agreeSms"/> 예
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<input type="radio" name="inputSms" value="disagreeSms"/> 아니오
+					</td>
+				</tr><tr>
+					<td>이메일 수신 동의</td>
+					<td>
+						&nbsp;&nbsp;&nbsp;<input type="radio" name="inputEmail" value="agreeMail"/> 예
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<input type="radio" name="inputEmail" value="disagreeMail"/> 아니오
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2"></td>
+				</tr>
+				<tr>
+					<th colspan="2">*표시는 필수입력 사항</th>
+				</tr>
+				<tr>
+					<td colspan="2">
+					<div align="center">
+						<input type="button" name="confirm" value="확인"
+						onclick="javascript:dataConfirm();" />
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<input type="reset" value="취소"/>
+					</div>
+					</td>
+				</tr>
+			</table>
+		</form>
+	</div>
+
+	</body>
+</html>

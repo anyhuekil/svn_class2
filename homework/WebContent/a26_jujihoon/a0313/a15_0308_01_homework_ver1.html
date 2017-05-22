@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<!-- 
+https://www.godo.co.kr/member/regist_step02.php?k=general
+ -->
+<table width="800" height="200" border>
+	<tr>
+		<td>인증방식 선택</td>
+		<td colspan="3">
+			휴대폰 번호<input type="radio" name="certType" value="hp" />
+			이메일<input type="radio" name="certType" value="email" />
+		</td>
+	</tr>
+	<tr>
+		<td>휴대폰 번호</td>
+		<td colspan="3">
+			<select name="selhp">
+				<option value="hp010">010</option>
+				<option value="hp011">011</option>
+				<option value="hp016">016</option>
+				<option value="hp017">017</option>
+				<option value="hp018">018</option>
+				<option value="hp019">019</option>
+			</select>
+			-<input type="text" name="hpMid" />
+			-<input type="text" name="hpEnd" />
+			<input type="button" name="certBtn" value="인증번호 요청"
+				onclick="javascript:alert('감사합니다^^!!')"
+			/>
+		</td>
+	</tr>
+	<tr>
+		<td>인증번호</td>
+		<td colspan="3">
+			<input type="text" name="certNum" />
+		</td>
+	</tr>
+	<tr>
+		<td>이름</td>
+		<td colspan="3">
+			<input type="text" name="username" />가입자 본인의 실명을 입력하세요
+		</td>
+	</tr>
+	<tr>
+		<td>성별</td>
+		<td>
+			여자<input type="radio" name="gender" value="woman" />
+			남자<input type="radio" name="gender" value="man" />
+		</td>
+		<td>생년월일</td>
+		<td>
+			<select name="selyear">
+				<option value="yearDefault">년도</option>
+				<option value="year2017">2017</option>
+				<option value="year2016">2016</option>
+				<option value="year2015">2015</option>
+				<option value="year2014">2014</option>
+				<option value="year2013">2013</option>
+			</select>
+			<select name="selmonth">
+				<option value="monthDefault">월</option>
+				<option value="month01">1월</option>
+				<option value="month02">2월</option>
+				<option value="month03">3월</option>
+				<option value="month04">4월</option>
+				<option value="month05">5월</option>
+			</select>
+			<select name="selday">
+				<option value="dayDefault">일</option>
+				<option value="day01">1일</option>
+				<option value="day02">2일</option>
+				<option value="day03">3일</option>
+				<option value="day04">4일</option>
+				<option value="day05">5일</option>
+			</select>
+		</td>
+	</tr>
+</table>
+</body>
+</html>

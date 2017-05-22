@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Homework Data Control</title>
+		<style type="text/css">
+		/*
+			data는 2가지 형태로 나타난다.
+			1) tag 안에 label
+				ex) <h1>@@@@</h1>
+			2) input에 속성
+				ex) <input value="@@@@"/>
+				
+			!!!!!!!!!!!!!!과제!!!!!!!!!!!!!!!!!!!!!!!!
+			
+			색상과 글자입히기.
+			글자색 선택[select option] - 빨,주,노,초,파,남,보
+			입력할 내용 : [			]
+			[확인]
+			@@@@@@@@@@ : 확인 클릭 시 해당 글자의 배경에 글자와 색상 등장!
+		*/
+			h1{font-size:300%;}
+			#txtCol{width:150px;}
+			input[type=button]{width:180px;font-size:120%;}
+		</style>
+		<script type="text/javascript">
+		/*
+		*/
+			function changeAll()
+			{
+				var colTxt = document.getElementById("txtCol").value;
+				var colBgd = document.getElementById("bakCol").value;
+				var outTxt = document.getElementById("chgTxt");
+				var inputTxt = document.getElementById("inTxt").value;
+				
+				outTxt.innerHTML = inputTxt;
+				outTxt.style.color = colTxt;
+				outTxt.style.backgroundColor = colBgd;
+				
+			}
+		</script>
+	</head>
+	<body>
+		<div align="center">
+			<div id="title01">
+				<h1 id="chgTxt">TEXT</h1>
+			</div>
+			<br><hr>
+			<br><br>
+			출력하고자하는 글자와 글자색 및 배경색을 변경합니다.<br>
+			<table>
+				<tr>
+					<td width="200">Text Color :</td>
+					<td> 
+						<select id="txtCol" name="text_Color">
+							<option value="black">Choose Text Color</option>
+							<option value="red">Red</option>
+							<option value="orange">Orange</option>
+							<option value="yellow">Yellow</option>
+							<option value="green">Green</option>
+							<option value="blue">Blue</option>
+							<option value="navy">Navy</option>
+							<option value="purple">Purple</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td>Background Color :</td>
+					<td>
+						<select id="bakCol" name="back_Color">
+							<option value="white">Choose Text Color</option>
+							<option value="red">Red</option>
+							<option value="orange">Orange</option>
+							<option value="yellow">Yellow</option>
+							<option value="green">Green</option>
+							<option value="blue">Blue</option>
+							<option value="navy">Navy</option>
+							<option value="purple">Purple</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td>입력할 내용 :</td>
+					<td>
+						<input id="inTxt" type="text" />
+					</td>
+				</tr>
+			</table>
+			<br><br>
+			<input type="button" value="확인" onclick="javascript:changeAll();"/>
+		</div>
+	</body>
+</html>

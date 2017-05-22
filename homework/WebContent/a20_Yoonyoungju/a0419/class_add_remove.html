@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style type="text/css">
+/**/
+
+	.class0{background:blue;}
+	.class1{background:orange;}
+	.class2{background:#99ff99;}
+	.class3{background:yellow;}
+	
+	
+	
+</style>
+<script src ="http://code.jquery.com/jquery-1.10.2.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("td").addClass("class0");
+		var ranIdx = parseInt(Math.random()*16);
+		var ranIdx1 = parseInt(Math.random()*16);
+		$("td").eq(ranIdx).addClass("class1");
+		$("td").eq(ranIdx1).addClass("class1");
+		
+		$("td").on("click",function(){
+			var idx = $("td").index(this);
+			if ( idx == ranIdx ){
+				$("td").eq(ranIdx).removeClass("class2");
+				alert("정답~!");
+			}
+			else if( idx == ranIdx1){
+				$("td").eq(ranIdx1).removeClass("class2");
+				alert("정답~!");
+			}
+			else{
+				$("td").eq(idx).removeClass("class2");
+				alert("오답~!");
+			}
+			
+			
+				alert("clear Success!!");
+			
+		});	
+		
+	});
+	
+	function sameColor(obj){
+		$("td").addClass("class2");
+		
+
+	};
+
+	/*
+
+	-초기 화면에 .random 색상표시(주황색)
+	-게임시작 버튼 클릭시, 같은 색상으로 변경
+	-게임 시작 전, 노랑이었던 곳을 클릭해서
+	맞으면 노랑색으로 변경,틀리면 실패alert();
+	-전부다 맞으면 clear Success!!
+	*/
+</script>
+</head>
+<body>
+	<input align = "center" type ="button" value ="게임시작" onclick ="javascript:sameColor();"/>
+	<table align = "center"  height ="300" width ="300" border>
+		<tr><td></td><td></td><td></td><td></td></tr>
+		<tr><td></td><td></td><td></td><td></td></tr>
+		<tr><td></td><td></td><td></td><td></td></tr>
+		<tr><td></td><td></td><td></td><td></td></tr>
+	</table>
+
+</body>
+</html>

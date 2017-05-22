@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		var choice=document.querySelectorAll("td");
+		var ranIdx=parseInt(Math.random()*3);
+		//var img = document.createElement("img");
+		//img.setAttribute("src","../../img/ho.jpg");
+		// createElement를 적용하려면 td부터 다 만들어줘야함.
+		
+		for(var idx=0; idx<choice.length; idx++){
+			choice[idx].onclick=function(){
+				if(this.innerHTML==ranIdx+1){
+					alert("호떡 여깄다~!");
+					this.innerHTML="<img src='../../img/ho.jpg'/>";
+				}
+				else
+					alert("꽝");
+			};
+		}
+		
+		
+	
+		
+		
+	
+});
+	
+</script>
+
+<style type="text/css">
+h1,td{text-align:center;}
+td{font-size:90px;}
+</style>
+</head>
+<body>
+<h1>병만이가 호떡을 숨긴 곳은?</h1>
+<table width="600" height="200" align="center">
+<tr>
+	<td>1</td><td>2</td><td>3</td>
+</tr>
+</table>
+</body>
+</html>

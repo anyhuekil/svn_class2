@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+/*
+
+*/
+td{font-size:100pt;text-align:center;width:33%;}
+/**/
+</style>
+<script src="http://code.jquery.com/jquery-1.10.2.js">
+</script>
+<script type="text/javascript">
+var ranIdx=0;
+$(document).ready(function(){
+	var tds=document.querySelectorAll("td");
+	// 0 1 2 중에 임의값을 나와 ranIdx
+	ranIdx=parseInt(Math.random()*3);
+	for(var idx=0;idx<tds.length;idx++){
+		// 1 2 3 중에 클릭했을 때, 함수 result를 호출
+		tds[ idx ].onclick=result;
+	}
+});
+function result(){
+	// 현재 <td id ="0"
+	// td 중 하나를 클릭했을 때..
+	// this.id (0,1,2)  ranIdx값을 비교해서 같을 때..
+	if(parseInt(this.id) == ranIdx){
+		alert("호떡 여기에");
+		this.innerHTML="";
+		var img=document.createElement("img");
+		img.setAttribute("src","img04.PNG");
+		img.setAttribute("width","100%");
+		this.appendChild(img);	
+	}else{
+		alert("호떡 없습니다!");
+	}
+}
+
+</script>
+</head>
+<body>
+<h1 align="center">병만이가 호떡을 숨긴 곳은</h1>
+<table width="600" height="200" border>
+	<!--  td에 대한 id값 매핑 num1,num2.... -->
+	<tr><td id="0">1</td><td  id="1">2</td><td  id="2">3</td></tr>
+</table>
+
+</body>
+</html>

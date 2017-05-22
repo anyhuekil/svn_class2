@@ -1,0 +1,22 @@
+<table align="center" width="300" height="200" border>
+	<tr>
+		<td>과목</td>
+		<td>내용</td>
+		<td>비고</td>
+	</tr>
+	<tr>
+		<td rowspan="2">자바</td>
+		<td>기본문법</td>
+		<td rowspan="4"> </td>
+	</tr>
+	<tr>
+		<td>object</td>
+	</tr>
+	<tr>
+		<td rowspan="2">jsp</td>
+		<td>session</td>
+	</tr>
+	<tr>
+		<td>bean</td>
+	</tr>
+</table>

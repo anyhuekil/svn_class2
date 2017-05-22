@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	#wrap{width:600px; margin: 0 auto; overflow:hidden;}
+	table{widht:100%;}
+	td{
+		float: left;
+		width:160px; height:190px;line-height:100px;border: 2px solid red;
+		margin:5px;padding:10px; text-align:center;
+		font-size:3em;
+	}
+</style>
+<script>
+/* 이벤트 확인 예제 : 호떡이 있는 곳을 선택하세요
+ * 		병만이가 호떡을 숨긴 곳은?
+ * 		클릭시, 랜덤으로 숨긴 곳을 클릭했을 때 맞으면 정답 틀리면 다음 기회에..
+ */
+ 	window.onload = function() {
+		var tds = document.querySelectorAll('td');
+		var bbang = parseInt(Math.random()*3)+1;
+		alert("당신께만 알려드려요 호빵은"+ bbang+"번에 있어요");
+		tds[bbang-1].onclick = function() {
+			alert("호떡은 여기에");
+			var br = document.createElement('br');
+			this.appendChild(br);
+			var img = document.createElement('img');
+			img.setAttribute('src','bbang.jpg');
+			img.setAttribute('width',120);
+			img.setAttribute('height',90);
+			img.setAttribute('alt','호빵');
+			this.appendChild(img);
+		};
+	};
+</script>
+</head>
+<body>
+<div id="wrap">
+	<h2>병만이가 호떡을 숨긴 박스를 클릭해 보세요</h2>
+	<table>
+		<tr><td>1</td><td>2</td><td>3</td></tr>
+	</table>
+</div>
+</body>
+</html>

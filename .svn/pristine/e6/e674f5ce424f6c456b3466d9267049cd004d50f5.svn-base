@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="http://code.jquery.com/jquery-1.10.2.js">
+ </script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+});
+function Child(name01,name02,name03){
+	this.name01=name01;	//this.Child=arguments;//배열로 할당
+	this.name02=name02;
+	this.name03=name03;
+	this.printAll=function(){
+		console.log("추억의 친구들\n"+this.name01+","+this.name02+","+this.name03);
+		
+	};
+
+}
+var nameF = new Child("kkk","llll","ddddd");
+nameF.printAll();
+
+function Calculator(num01, num02){
+	this.num01=num01;
+	this.num02=num02;
+	this.plus=num01+num02;	
+	this.minus=num01-num02;	
+	this.multi=num01*num02;	
+	this.div=num01/num02;	
+	this.show=function(){
+		console.log(this.num01+"+"+this.num02+"="+this.plus);
+		console.log(this.num01+"-"+this.num02+"="+this.minus);
+		console.log(this.num01+"*"+this.num02+"="+this.multi);
+		console.log(this.num01+"/"+this.num02+"="+this.div);
+		return this.plus+"/"+this.minus+"/"+this.multi+"/"+this.div+"/"
+	};
+}
+var cal01= new Calculator(7,2);
+var cal02= new Calculator(0,2);
+var showr= cal01.show();
+showr+= cal02.show();
+console.log(showr);
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

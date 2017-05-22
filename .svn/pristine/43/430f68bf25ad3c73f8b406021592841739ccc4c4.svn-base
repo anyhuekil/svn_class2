@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+#wrap{
+	width:700px; height:500px; margin: 20px auto;
+}
+table{width: 100%; background-color: #3488d9;}
+table td{background-color: white;text-align: center;padding:20px;font-size: 1.5em;}
+input[type=text]{
+ 	border:0; 
+ 	color:#2d1152;
+ 	font-size:1.2em;
+ 	font-weight: bold;
+}
+#header{width: 90%; margin:0 auto; text-align: center;overflow: hidden;}
+p{ font-size: 2em; float: left;}
+img{margin-top: 20px;float: left;}
+.btnOk{
+    width:248px; height:76px;
+    background:url('../img/search_btn.png') no-repeat 0 0;
+    background-size:100%;
+    border: 0;
+    color: white;
+    font-size: 1.2em;
+}
+</style>
+<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+<script>
+	$(document).ready(function() {
+		var reserveDate = opener.document.getElementById("reserveDate").value;
+		$('.reserveDate').val(reserveDate);
+		var reserveLoc = opener.document.getElementById("reserveLoc").value;
+		$('.reserveLoc').val(reserveLoc);
+		var reserveTime = opener.document.getElementById("reserveTime").value;
+		$('.reserveTime').val(reserveTime);
+		var reserveSeat = opener.document.getElementById("reserveSeat").value;
+		$('.reserveSeat').val(reserveSeat);
+		var people = opener.document.getElementById("people").value;
+		$('.people').val(people);
+	});
+	function closeWin() {
+		window.close();
+		opener.location.href="main.html";
+	}
+</script>
+</head>
+<body>
+	<div id="wrap">
+		<div id="header">
+		<img src="image/reservation.png" width="100px"><p>예약이 완료되었습니다</p><img src="image/reservation.png" width="100px">
+		</div>
+		<table>
+			<tr><td>날짜</td><td><input type="text" class="reserveDate"></td></tr>
+			<tr><td>지점</td><td><input type="text" class="reserveLoc"></td></tr>
+			<tr><td>시간</td><td><input type="text" class="reserveTime"></td></tr>
+			<tr><td>좌석</td><td><input type="text" class="reserveSeat"></td></tr>
+			<tr><td>인원</td><td><input type="text" class="people"></td></tr>
+			<tr><td colspan="2"><input type="button" value="OK" class="btnOk" onclick="closeWin()"></td></tr>
+		</table>
+	</div>
+</body>
+</html>

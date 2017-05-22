@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	h1{background:yellow;color:blue;text-align:center;}
+	.name{background:pink;text-align:center;}
+	.amount{background:gold;text-align:right;}
+	.price{text-align:right;}
+</style>
+</head>
+<body>
+ <!-- 과제 :
+ 	어서오세요.
+ 	즐거운 쇼핑되시길!
+ 	
+ 	판매물품현황
+ 	ch	물품명	  가격	갯수
+ 	[]	[사과]	[3000]	[ ]
+ 	[]	[바나나]	[5000]	[ ]
+ 	[]	[딸기]	[8000]	[ ]
+ 			[구매]버튼
+ 	--화면 처리사항
+ 	1. title 배경색 노랑 / text색상 파랑
+ 	2. 물품명 배경색 pink
+ 	3. 갯수 배경색 노랑 / 글자정력 오른쪽(text-align활용)
+  -->
+	<h1>어서오세요.<br>즐거운 쇼핑되시길!</h1>
+	<br>
+	<h2 align="center">판매물품현황</h2>
+	<table align="center" border=1>
+		<tr align="center">
+			<td>ch.</td>
+			<td width="80">물품명</td>
+			<td width="80">가격</td>
+			<td width="50">갯수</td>
+		</tr>
+		<tr>
+			<td><input type="checkbox"/></td>
+			<td class="name">사과</td>
+			<td class="price">3000</td>
+			<td class="amount">3개</td>
+		</tr>
+		<tr>
+			<td><input type="checkbox"/></td>
+			<td class="name">바나나</td>
+			<td class="price">5000</td>
+			<td class="amount">5개</td>
+		</tr>
+		<tr>
+			<td><input type="checkbox"/></td>
+			<td class="name">딸기</td>
+			<td class="price">8000</td>
+			<td class="amount">10개</td>
+		</tr>
+	</table>
+	
+
+</body>
+</html>

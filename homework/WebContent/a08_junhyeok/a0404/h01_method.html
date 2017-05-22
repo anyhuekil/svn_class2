@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<!-- saved from url=(0071)http://localhost:7080/clientPrj/javascript_re/a06_functionObj/h_01.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>Insert title here</title>
+<style type="Text/css">
+
+</style>
+<script src="./Insert title here_files/jquery-1.10.2.js.다운로드"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+	
+	});
+	/* Calculator 만들기 
+	함수 객체: Calculator
+	입력값: num1, num2, 
+	메서드: plus(),minus(),multi(),div()
+	각 기능별로 출력 처리  ex) @@@ + @@@ = @@@ return 은 결과값
+	*/
+	
+	function Calculator(num01,num02){
+		this.num01=num01;
+		this.num02=num02;
+		
+		this.plus=function(){
+			return num01+num02;
+		}
+		this.minus=function(){
+			return num01-num02;
+		}
+		this.multi=function(){
+			return num01*num02;
+		}
+		this.div=function(){
+			return num01/num02;
+		}
+		
+	}
+	var cal01=new Calculator(1,4);
+	var cal02=new Calculator(5,8);
+	var cal03=new Calculator(4,2);
+	var cal04=new Calculator(16,4);
+	
+	console.log(cal01.num01+" + "+cal01.num02+" = "+cal01.plus());
+	console.log(cal02.num01+" - "+cal02.num02+" = "+cal02.minus());
+	console.log(cal03.num01+" * "+cal03.num02+" = "+cal03.multi());
+	console.log(cal04.num01+" / "+cal04.num02+" = "+cal04.div());
+</script>
+</head>
+<body>
+
+
+</body></html>

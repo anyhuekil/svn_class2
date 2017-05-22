@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style type="text/css">
+/**/
+</style>
+<script src ="http://code.jquery.com/jquery-1.10.2.js"></script>
+<script type="text/javascript">
+// 과제
+/*계산기 만들기
+함수객체 : Calculator
+입력값  : num01, num02    3   4 
+메서드 : plus(), minus(),multi(),div();를 
+통해서 각 기능별로 출력 처리 ex) @@@@ + @@@@ = @@@  3+4 =7 return 값은 결과값(7)
+ex) var result  = cal01.plus();
+
+*/
+function Calculator(num01,num02){
+		this.plus 	= function (){console.log(num01+"+"+num02+"="+(num01+num02));};
+		this.minus	= function (){console.log(num01+"-"+num02+"="+(num01-num02));};
+		this.multi 	= function (){console.log(num01+"*"+num02+"="+(num01*num02));};
+		this.div 	= function (){console.log(num01+"/"+num02+"="+(num01/num02));};
+
+};
+var cal01 = new Calculator(12,2);
+var cal03 = new Calculator(14,2);
+cal01.plus();
+cal01.minus();
+cal01.multi();
+cal01.div();
+cal03.plus();
+cal03.minus();
+cal03.multi();
+cal03.div();
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style type="text/css">
+/**/
+</style>
+<script src ="http://code.jquery.com/jquery-1.10.2.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		/*
+		확인예제 
+				   행복 마트  
+		
+		물건명 , 기격,     현재 고량,    비고 
+	   	사과		3000       30		입고중
+		바나나	4000	    300		재고 충분
+		딸기	    12000		50
+		
+			전공자는 data json배열로 처리   html("")
+		
+		//$(".name").eq(idx).html(list[idx].name);
+		 */
+		 $("h1").html("행복 마트");
+		var array = eval(
+				[	
+					{name : "사과",price : 3000,cnt : 30,etc : "입고중"},
+					{name : "바나나",price : 4000,cnt : 300,etc : "재고충분"},
+					{name : "딸기",price : 12000,cnt : 50,etc : ""}
+				]);
+		var arrayname = eval(
+				[
+					{"name" : "물건명"},{"name" : "가격"},{"name" : "현재수량"},{"name" : "비고"}
+				]);
+
+		var tds = document.querySelectorAll("td");
+		var i =0;
+			for(var idx =0; idx<tds.length;idx++){
+			// i == array배열 넘버구하기 
+				if (idx%4 == 0 && idx != 0 ){i++;}; 
+			//chr == array key의 value값 구하기 
+			var chr = idx%4 == 0 ? "name" : idx%4 == 1 ? "price" : idx%4 == 2 ? "cnt":"etc";
+				$(tds[idx]).html(array[i][chr]);
+			}
+		var ths = document.querySelectorAll("th");
+		for(var idx =0; idx<ths.length;idx++){
+			$(ths[idx]).html(arrayname[idx].name);
+		}		
+	});
+</script>
+</head>
+<body><center>
+<h1></h1>
+<table border>
+	<tr>
+		<th></th>
+		<th></th>
+		<th></th>
+		<th></th>
+	</tr>
+	<tr>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	</tr>
+		<tr>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	</tr>
+
+</table>
+</body>
+</html>

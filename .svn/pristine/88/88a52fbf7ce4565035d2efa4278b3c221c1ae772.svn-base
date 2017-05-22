@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>GUEST</title>
+<script src="http://code.jquery.com/jquery-1.10.2.js?ver=1 " charset="utf-8"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js?ver=1" charset="utf-8"></script>
+<script type="text/javascript">
+</script>
+<script>
+function renew(){
+   var betMoney = $('#money', parent.frames["my_iframe"].document).val();   
+   $("#curMoney").val(betMoney);
+}
+</script>
+<link href="css/game_guest.css" rel="stylesheet" type="text/css">
+<body>
+	<div id="game-container" align="center">
+		<canvas id="game" width="1536px" height="1000px"></canvas>
+		<div align="center" id="menus"> 
+			<div>
+				<h1>pent A corn 경마장</h1>
+			</div>
+			<br><br>
+			<h3>1등할 말을 골라주세요.</h3>
+			<img src="img/number1.png" height="50%" class="numberImg">
+			<img src="img/number2.png" height="50%" class="numberImg">
+			<img src="img/number3.png" height="50%" class="numberImg">
+			<table>
+				<tr>
+	               <th>1번 말</th><th>2번 말</th><th>3번 말</th><th>4번 말</th><th>5번 말</th><th></th>
+	            </tr>
+	            <tr align="center">
+	               <td class="horseSelect">
+	                  <img src="img/goldenHorse.png" height="50%" class="horseImg">
+	                  <div class="status">특징 : 최고속력은 느리지만<br>적당한 체력과<br>속력을 지녔습니다.
+	                  <br>배당률 : 1.8 배</div>
+	               </td>
+	               <td class="horseSelect">
+	                  <img src="img/brownHorse.png" height="50%" class="horseImg">
+	                  <div class="status">특징 : 꾸준히 앞으로<br>나아가는 말입니다.<br>배당률 : 1.9 배</div>
+	               </td>
+	               <td class="horseSelect">
+	                  <img src="img/blackHorse.png" height="50%" class="horseImg">
+	                  <div class="status">특징 : 뒤쳐지지 않고 꾸준히<br>앞으로 달려갑니다<br>
+	                  배당률 : 2.0 배</div>
+	               </td>
+	               <td class="horseSelect">
+	                  <img src="img/grayHorse.png" height="50%" class="horseImg">
+	                  <div class="status">특징 : 잘 지치지 않지만<br>치고 나가는<br>속도가 느립니다.
+	                  <br>배당률 : 2.3 배</div>
+	               </td>
+	               <td class="horseSelect">
+	                  <img src="img/whiteHorse.png" height="50%" class="horseImg">
+	                  <div class="status">특징 : 쉽게 쳐지지만<br>나가야 할 때는<br>폭발적으로 달립니다.
+	                  <br>배당률 : 2.5 배</div>
+	               </td>
+	            </tr>
+			</table><br><br><br>
+			현재 소지액 : <input type="text" id="curMoney" disabled/><br>
+			금액 : <input type="text" id="betMoney" class="betSys" value=0 />
+			<input type="button" value="Betting!" id="betBtn" class="betSys"/><br><br>
+			<input type="button" value="All In!!" id="allInBtn" class="betSys"/><br><br><br><br>
+			<div id="start-menu">
+				R E A D Y
+			</div>
+		</div>
+	</div>
+	<div id="game-ing" align="center">
+	<h1>준비완료</h1>
+	</div>
+</body>
+<script type="text/javascript" src="js/menu_guest.js?ver=1" charset="utf-8"></script>
+</head>
+
+
+</html>

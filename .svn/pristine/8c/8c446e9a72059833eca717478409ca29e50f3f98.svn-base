@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<!-- 
+테이블 과제1
+			2017년 KBO 리그 구단
+			
+구단명	연고지역	작년(2016)성적
+KIA		광주			@@@
+롯데		부산			@@승@@패(@@위)	
+ -->
+ 
+ <h1 align="center">2017 KBO League 구단</h1>
+<table border width="500" height="250" align="center">
+	<caption>2017 KBO League 구단</caption>
+	<tr>
+		<th>구단명</th><th>연고지역</th><th>작년(2016)성적</th>
+	</tr>
+	<tr align="center">
+		<td>KIA</td><td>광주</td><td>100패</td>
+	</tr>
+	<tr align="center">
+		<td>LOTTE</td><td>부산</td><td>100승</td>
+	</tr>
+</table>
+</body>
+</html>

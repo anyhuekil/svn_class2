@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+</script>
+<style type="text/css">
+	td:hover{font-weight:bold; font-size:150%; background-color:red;}
+	tr:nth-child(2n+1){background-color:yellow;}  /*홀수*/
+	tr:nth-child(2n){background-color:black; color:white;} /*짝수*/
+	caption{font-weight:bold; font-size:150%;}
+	a{text-decoration:none;}
+	.wokerNum{text-align:center;}
+	.wokerName{text-align:left;}
+	.link{text-align:left;}
+	.money{text-align:right;}
+	
+</style>
+</head>
+<body>
+	<table width="600" height="200" border="3">
+		<caption>사원 정보 List</caption>
+	<tr><td class="wokerNum">사원번호</td><td class="wokerName">사원명</td><td class="money">연봉</td><td class="link">주업무홈피(link)</td></tr>
+	<tr><td class="wokerNum">7709</td><td class="wokerName">홍길동</td><td class="money">3,000만원</td><td class="link">구글-<a href="http://www.google.com">http://www.google.com</a></td></tr>
+	<tr><td class="wokerNum">7710</td><td class="wokerName">김길동</td><td class="money">4,000만원</td><td class="link">네이버-<a href="http://www.naver.com">http://www.naver.com</a></td></tr>
+	<tr><td class="wokerNum">7711</td><td class="wokerName">신길동</td><td class="money">5,000만원</td><td class="link">다음-<a href="http://www.daum.net">http://www.daum.net</a></td></tr>
+	</table>
+</body>
+
+
+</html>

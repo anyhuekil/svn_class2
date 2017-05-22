@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+td{
+	width: 200px;
+	height: 200px;
+}
+</style>
+<script src="http://code.jquery.com/jquery-1.10.2.js">
+</script>
+<script type="text/javascript">
+/* 
+	
+*/
+var level=[9,16,25];
+var idx = 0;
+var a=0;
+function nextQ(shownum){
+	var show="";
+	
+	if(shownum==1){ // 9칸 1~9
+		show+="<tr><td></td><td></td><td></td></tr>";
+		show+="<tr><td></td><td></td><td></td></tr>";
+		show+="<tr><td></td><td></td><td></td></tr>";
+	}
+	
+	$("#myt").html(show);
+	$("td").css("background","lightblue");
+	for ( a=0; a<level[idx]; a++ ) 
+		document.getElementsByTagName('td').innerHTML = a;
+}
+function nextA(shownum){
+	var show="";
+	
+	if(shownum==1){ // 9칸 1~9
+		show+="<tr><td></td><td></td><td></td></tr>";
+		show+="<tr><td></td><td></td><td></td></tr>";
+		show+="<tr><td></td><td></td><td></td></tr>";
+	}
+	
+	$("#myt").html(show);
+	$("td").css("background","lightblue");
+}
+	$(document).ready(function(){
+		nextA(1);
+	});
+</script>
+</head>
+<body>
+<input type="button" value="1 추가" onclick="nextQ(1)"/>
+<table id="myt" border> </table>
+</body>
+</html>

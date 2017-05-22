@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style type="text/css">
+/**/
+</style>
+<script src ="http://code.jquery.com/jquery-1.10.2.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+	});
+	/*
+	가위바위보 
+	한 사람이 가위바위 보를 임의로 내고 
+	다음 사람이 가위바위보를 임의로 냈을떄 
+	승리는 prompt 처리 
+	팀명 입력하기 
+
+	*/
+	
+	var teamName = prompt("팀명을 입력하세요 !","홍팀");
+	//alert("입력한 팀이름:"+teamName);
+	var games = ["가위","바위","보"]; 
+
+	var ranIdx1 = parseInt(Math.random()*3);
+	alert(teamName+":"+games[ranIdx1]);
+	var teamName2 = prompt("팀명을 입력하세요 !","청팀");
+	var ranIdx2 = parseInt(Math.random()*3);
+	alert(teamName2+":"+games[ranIdx2]);
+	
+	if (games[ranIdx2] == games[ranIdx1] ){
+		alert("무승부");
+	}
+	else if ((ranIdx1==0  && ranIdx2 ==2) ||(ranIdx1==1  && ranIdx2 ==0)||(ranIdx1==2  && ranIdx2 ==1)){
+		alert(teamName+"팀 승");
+	}
+	else if  ((ranIdx1==0  && ranIdx2 ==1) ||(ranIdx1==1  && ranIdx2 ==2)||(ranIdx1==2  && ranIdx2 ==0)){
+		alert(teamName2+"팀 승");
+	}
+	/* 
+	가위바위보 게임 결과 처리 ... 
+	과제 ) 해당 팀에 대한 승패 
+		@@@ 팀 승 
+		무승부
+		
+	
+	
+	*/
+
+	
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

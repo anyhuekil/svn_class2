@@ -1,0 +1,88 @@
+癤?{
+    margin:0;
+    padding:0;
+}
+a{text-decoration:none; color:black;}
+#header_nav{
+    width:100%;
+    overflow: hidden;
+    background-color: #2d1152;
+}
+#header_nav .gnb{
+    width:700px;
+}
+#header_nav .gnb ul li{
+    font-size: 0.9em;
+    margin-right: 20px;
+    list-style: none;
+    float:left;
+}
+#header_nav .point{
+    float: right;
+    margin: 0 10px 0 0;
+}
+#header_nav a {
+    color:white;
+}
+#header_nav img{ height:15px;}
+#header_info{
+    width:1000px;
+    margin:0 auto;
+    overflow: hidden;
+}
+#header_info div{
+    margin-top:10px;
+    float:left;
+}
+#header_info .log img {width:100px;}
+#header_info .search input:not(.btn_search){
+    width:400px;
+    font-size:20px;
+    border: 1px solid #3488d9;
+    margin-top:6px;
+    padding:5px;
+}
+#header_info .search .btn_search{
+    width:124px; height:38px;
+    /*background-image: url('../reservation/image/search_btn.png');
+    background-repeat: no-repeat;
+    background-position: 0 0;*/
+    background:url('../img/search_btn.png') no-repeat 0 0;
+    border: 0;
+    color: white;
+    font-size:1.1em;
+}
+#header_info .service{
+    float:right;
+}
+#header_info .service ul li{
+    float:left;
+    list-style: none;
+    margin:15px 15px 0 0;
+}
+#header_info .service ul li a{
+    color: #2d1152;
+    font-weight: bold;
+}
+#content {width:1000px; height:720px; 
+	margin:20px auto 10px;
+}
+ul li {list-style: none;}
+footer{
+    width:1000px; height:90px;
+    margin:5px auto;
+    border: 1px solid lightgray;
+}
+footer ul{ overflow: hidden;}
+footer ul li:first-child{
+    float: left;
+    list-style: none;
+    line-height:90px;
+    margin: 20px 0 0 250px;
+}
+footer ul li:last-child{
+    float:left;
+    list-style:none;
+    line-height:130px;
+    margin: 0 50px;
+}

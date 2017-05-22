@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	#table01{visibility: hidden;}
+</style>
+<script type="text/javascript">
+	function send(obj) {
+		var tabObj=document.getElementsByTagName("table")[0];
+		
+		if (obj.value == "보이기") 
+		{
+			tabObj.style.visibility="visible";
+			obj.value = "보이지 않기"
+		} 
+		else 
+		{
+			tabObj.style.visibility="hidden";
+			obj.value = "보이기"
+		}
+	}
+</script>
+</head>
+<body>
+keyword등록<input type="text"/><br>
+등록할 수 있는 keyword<input type="button" value="보이기" onclick="javascript:send(this);"/><br>
+<table id="table01">
+	<tr><td>등록가능 keywords!!</td></tr>
+	<tr><td>java</td></tr>
+	<tr><td>jsp</td></tr>
+	<tr><td>c#</td></tr>
+	<tr><td>python</td></tr>
+</table>
+</body>
+</html>

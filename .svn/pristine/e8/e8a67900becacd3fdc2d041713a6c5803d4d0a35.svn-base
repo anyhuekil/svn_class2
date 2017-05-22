@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+
+	h3{visibility:hidden;}
+</style>
+<script type="text/javascript">
+/*
+과제
+keyword 등록 []
+등록할 수 있는 keyword[보이기] ==> 초기에는 등록가능 keyword가 보이지 않다가
+                       보이기버튼을 클릭하는 순간, 보이지 처리
+                       버튼에 잇는 lebel 보이지 않기<-->보이기
+등록가능 keywords!!
+java
+jsp
+c#
+파이션
+*/ 	
+    function call(num){
+        var lists = document.getElementsByTagName("h3")[0];
+   	 	var inputs=document.getElementsByTagName("input");
+   	 	if(num==1){
+   	 		document.getElementById("data01").innerHTML += inputs[0].value + "<br>";
+   	 	}
+   	 	if(num==2){
+	   	    if( inputs[2].value =="보이기"){
+	   	    	lists.style.visibility="visible";
+	  	     	inputs[2].value ="보이지않기";
+	     	}else{
+	     		lists.style.visibility="hidden";
+	     		inputs[2].value ="보이기";
+	     	}
+   	 	}
+   	 
+    }
+
+                       
+
+
+                       
+</script>
+</head>
+<body>
+ 	키워드입력:<input type="text" />
+ 	<input type="button" value="확인" onclick="javascript:call(1)" /><br>
+	<input type="button" value="보이기" onclick="javascript:call(2)" />
+	<h3 id="data01">java<br>jsp<br> c# <br>파이션 <br></h3>
+</body>
+</html>

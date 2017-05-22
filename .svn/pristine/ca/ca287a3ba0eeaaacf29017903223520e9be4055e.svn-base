@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="Text/css">
+html {
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	overflow: hidden;
+}
+
+@font-face {
+	font-family: 'starcraft'; /* 폰트 패밀리 이름 주기*/
+	src: url('fonts/Starcraft.ttf'); /*폰트 파일 주소*/
+}
+
+font {
+	color: white;
+}
+
+body {
+	background: url('img/backgnd_space.jpg') top left;
+	background-size: cover;
+}
+
+#jb-container {
+	margin-top: 2%;
+	margin-left: 8%;
+	width: 1600px;
+	height: 1000px;
+	background: url('img/login_bkg2.jpg') top no-repeat;
+	background-size: contain;
+	border: 1px solid rgba(255,255,255,0) ;
+}
+
+#loginForm {
+	margin-top: 15.9%;
+	height: 644px;
+}
+
+#left {
+	width: 49%;
+	height: 640px;
+	float: left;
+}
+
+#right {
+	width: 50.4%;
+	height: 640px;
+	float: left;
+}
+
+#input_area {
+	width: 535px;
+	height: 55px;
+	margin-top: 10.9%;
+	margin-left: 17.2%;
+}
+
+#id_input {
+	margin-top: 1.7%;
+	margin-bottom: 1%;
+	padding-left: 8px;
+	width: 535px;
+	height: 55px;
+	background-image: url('img/input_text.jpg');
+d	font-size: 1.5em;
+	border-color: rgba(255, 255, 255, 0);
+	color: white;
+}
+
+#password_input {
+	margin-top: 1.9%;
+	width: 535px;
+	height: 55px;
+	padding-left: 8px;
+	background-image: url('img/input_text.jpg');
+	font-size: 1.5em;
+	border-color: rgba(0, 0, 0, 0);
+	color: white;
+}
+
+#name_font {
+	font-size: 1.7em;
+}
+
+#pass_font {
+	font-size: 1.7em;
+}
+
+#btn_left_table {
+	margin-top: 3%;
+	margin-left: 21%;
+}
+
+.btn_left {
+	background: url('img/ccbtn01.jpg') top left;
+	width: 330px;
+	height: 62px;
+	background-size: 102% 100%;
+	border-color: rgba(0, 0, 0, 0);
+	color: white;
+	font-size: 1.5em;
+	border-width: grey;
+}
+
+#status {
+	margin-top: 16.8%;
+	margin-left: 7.6%;
+	width: 673px;
+	height: 375px;
+	background: url('img/ccprofilebkg.jpg') no-repeat;
+	background-size: 100% 100%;
+}
+
+#btn_right_table {
+	margin-top: 6.77%;
+	margin-left: 40.22%;
+}
+
+.btn_right {
+	width: 210px;
+	height: 70px;
+	margin-left: 5%;
+	background: url('img/ccbut_75x35_1.jpg');
+	background-size: 100% 100%;
+	border-left-color: rgb(56, 36, 20);
+	border-top-color: rgb(80, 44, 28);
+	border-right-color: rgb(129, 54, 0);
+	border-bottom-color: rgb(129, 54, 0);
+	border-width: thin;
+	color: white;
+	font-size: 1.5em;
+}
+#batLogo {
+	float: left;
+	margin-top: 7.6%;
+	margin-left: 14%;
+	width: 1178px;
+	height: 118px;
+	border-color: rgba(255,255,255,0);
+	background-size: 100% 100%;
+}
+#imgRotator{
+border-color: rgba(255,255,255,0);
+}
+button:ACTIVE {
+	background-image: url('img/bnbutton3.jpg');
+	border-color: white;
+}
+</style>
+<script type="text/javascript">
+	function login() {
+
+		var pageMove = document.getElementById("loginForm");
+		var id = document.getElementById("id_input").value;
+		var pw = document.getElementById("password_input").value;
+		//////////////////////		ID / PW		//////////////////////////
+		var idSet=new Set();
+		idSet.add("admin");
+		idSet.add("choi");
+		idSet.add("kim");
+		idSet.add("dong");
+		idSet.add("lee");
+		idSet.add("won");
+		var passSet=new Set();
+		passSet.add("admin");
+		passSet.add("choi");
+		passSet.add("kim");
+		passSet.add("dong");
+		passSet.add("lee");
+		passSet.add("won");
+		///////////////////////////////////////////////////////////////////
+		if(idSet.has(id) && passSet.has(pw) && (id==pw)){
+			alert(id+"님 환영합니다!!");
+			pageMove.action="main_tot.jsp";
+		}else{
+			alert("ID, PW를 올바르게 입력하세요.");
+		}
+	}
+</script>
+</head>
+<body>
+	<div id="jb-container">
+	<div id="batLogo"><iframe src="image_rotator.html" width=100% id="imgRotator"></iframe></div>            
+		<form id="loginForm" method="post">
+			<div id="left">
+				<div id="input_area">
+					<font id="name_font">Name:</font> <input type="text"
+						class="input_area" id="id_input" name="id" onkeypress="if(event.keyCode==13)login();"/> <font
+						id="pass_font">Password:</font> <input type="password"
+						class="input_area" id="password_input" name="pw" onkeypress="if(event.keyCode==13)login();" />
+					<table id="btn_left_table">
+						<tr>
+							<td><button class="btn_left">New Account</button></td>
+						</tr>
+						<tr>
+							<td><button class="btn_left">Change Password</button></td>
+						</tr>
+						<tr>
+							<td><button class="btn_left">Recover Password</button></td>
+						</tr>
+						<tr>
+							<td><button class="btn_left">Change Email</button></td>
+						</tr>
+					</table>
+				</div>
+
+			</div>
+			<div id="right">
+				<div id="status">
+				
+				</div>
+				<table id="btn_right_table">
+					<tr>
+						<td><button type="submit" class="btn_right"
+							onclick="login();">OK</button></td>
+						<td><button type="reset" class="btn_right">Cancel</button></td>
+					</tr>
+				</table>
+			</div>
+		</form>
+
+
+	</div>
+</body>
+</html>

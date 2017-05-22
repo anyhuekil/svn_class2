@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+input([value="ID"]:FOCUS, [value="PASSWORD"]:FOCUS) {
+	background-color: black;
+	color: white
+}
+
+input:DISABLED {
+	background-color: grey
+}
+
+input[id="inputId01"]:enabled, [id="inputId02"]:enabled {
+	background-color: pink
+}
+</style>
+<script>
+	function loginCall() {
+		var id = "future";
+		var password = '7777';
+		if (document.getElementsByTagName("input")[0].value == id
+				&& document.getElementsByTagName("input")[1].value == password) {
+			alert("로그인 성공");
+			document.getElementsByTagName("input")[3].value = "로그인 성공";
+			document.form01.input01.disabled = false;
+			document.form01.input01.value = "활성화";
+			document.form01.input02.value = "활성화";
+			document.form01.input02.disabled = false;
+		} else {
+			alert("로그인 실패");
+		}
+	}
+	function changeStatus(num, obj) {
+		if (num == 1) {
+			document.getElementsByTagName("input")[3].value = "1단계 성공";
+		}
+		if (num == 2) {
+			document.getElementsByTagName("input")[3].value = "2단계 성공";
+		}
+	}
+</script>
+</head>
+<body>
+	<form name="form01">
+		<h1>Log-In</h1>
+		<font>ID:</font> <input type="text" value="ID" /> <br> <font>PASS:</font><input
+			type="text" value="PASSWORD" /> <br> <input type="button"
+			value="로그인" onclick="javascript:loginCall()" /> <br> <font>status
+			:</font> <input type="text" value="로그인 전" /> <br> <font>1단계 주제를
+			입력하세요:</font> <input id="inputId01" value="비활성화" name="input01"
+			disabled="disabled" onclick="javascript:changeStatus('1', this)" />
+		<br> <font>2단계 세부주제를 입력하세요:</font> <input id="inputId02"
+			disabled="disabled" name="input02" value="비활성화"
+			onclick="javascript:changeStatus('2', this)" />
+	</form>
+</body>
+</html>

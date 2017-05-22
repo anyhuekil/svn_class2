@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<style type="text/css">
+*{
+margin : 0;
+padding : 0;
+}
+html{box-sizing: border-box;}
+*,
+*:after,
+*:BEFORE{box-sizing: inherit;}
+
+
+div{
+    
+}
+.answer[type="text"]:disabled {
+    background:url("img/pattern2.jpg") no-repeat;
+    background-size:cover;
+     
+}
+
+
+#quiz{
+	background:url("img/su.jpg") no-repeat;
+	background-size:cover;
+	border-collapse:collapse;
+	float:left;
+	
+	
+}
+#table01 {
+	width : 582px;
+	height : 320px;
+	table-layout:fixed;
+	border-collapse: collapse;
+	text-align: center;
+	border: 2px solid black;
+	border-spacing: 0px;
+
+	}
+.pro_table{
+	width : 350px;
+	height : 50px;
+	table-layout:fixed;
+	border-collapse: collapse;
+	text-align: center;
+	border: 2px solid transparent;
+	border-spacing: 0px;
+	float : left;
+	
+}
+
+.answer{
+	height : 100%;
+	width : 100%;
+    font-size : 16.8px;
+    text-align : center;
+    background-color:gold;
+    border-color: white;
+    color : black;
+    font-weight : 900;
+	
+	
+}
+
+#radio1, #radio2{
+	color:gold;
+}
+
+/*flap animation구현*/
+.container { 
+  width: 100%;
+  height: 38px;
+  position: relative;
+  perspective: 800px;
+  font-size:20px;
+   
+     
+}
+#card1,#card2 {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transform-style: preserve-3d;
+  transition: transform 1s;
+  
+}
+h6 {
+  margin: 0;
+  
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  
+
+ 
+   
+}
+#script_hori_f, #script_verti_f{
+	
+	background:gold;
+ }
+#script_hori_b, #script_verti_b{
+background: gold;
+transform: rotateY( 180deg );
+}
+
+@keyframes flip1{from {transform:rotateY( 0deg );}
+to {  transform:  rotateY( 180deg );}}
+@keyframes flip2{from {transform:rotateY( -180deg );}
+to {  transform:  rotateY( 0deg );}}
+
+
+
+
+</style>
+
+<script type="text/javascript">
+//17X17 2차원 Array 선언
+var X= new Array();
+X[0] = new Array();X[1] = new Array();X[2] = new Array();X[3] = new Array();X[4] = new Array();X[5] = new Array();X[6] = new Array();X[7] = new Array();X[8] = new Array();X[9] = new Array();X[10] = new Array();X[11] = new Array();X[12] = new Array();X[13] = new Array();X[14] = new Array();X[15] = new Array();X[16] = new Array();X[17] = new Array();
+
+//가로 및 세로 문제 풀이 stript에 사용될 array 선언
+var verti = new Array();
+var hori = new  Array();
+
+//17X17 2차원 Array 초기값 입력
+X[0][0]=""; X[1][0]=""; X[2][0]=""; X[3][0]="r"; X[4][0]=""; X[5][0]=""; X[6][0]=""; X[7][0]=""; X[8][0]=""; X[9][0]=""; X[10][0]=""; X[11][0]=""; X[12][0]=""; X[13][0]=""; X[14][0]=""; X[15][0]=""; X[16][0]=""; X[17][0]=""; 
+X[0][1]=""; X[1][1]=""; X[2][1]="c"; X[3][1]="o"; X[4][1]="m"; X[5][1]="m"; X[6][1]="i"; X[7][1]="t"; X[8][1]=""; X[9][1]=""; X[10][1]=""; X[11][1]=""; X[12][1]=""; X[13][1]=""; X[14][1]=""; X[15][1]=""; X[16][1]=""; X[17][1]=""; 
+X[0][2]=""; X[1][2]=""; X[2][2]=""; X[3][2]="l"; X[4][2]=""; X[5][2]=""; X[6][2]=""; X[7][2]="a"; X[8][2]="r"; X[9][2]="t"; X[10][2]="i"; X[11][2]="c"; X[12][2]="l"; X[13][2]="e"; X[14][2]=""; X[15][2]=""; X[16][2]=""; X[17][2]=""; 
+X[0][3]=""; X[1][3]=""; X[2][3]=""; X[3][3]="l"; X[4][3]=""; X[5][3]=""; X[6][3]=""; X[7][3]="g"; X[8][3]=""; X[9][3]=""; X[10][3]=""; X[11][3]=""; X[12][3]=""; X[13][3]=""; X[14][3]="m"; X[15][3]=""; X[16][3]="s"; X[17][3]=""; 
+X[0][4]=""; X[1][4]=""; X[2][4]=""; X[3][4]="b"; X[4][4]=""; X[5][4]=""; X[6][4]=""; X[7][4]=""; X[8][4]=""; X[9][4]=""; X[10][4]=""; X[11][4]="s"; X[12][4]="e"; X[13][4]="l"; X[14][4]="e"; X[15][4]="c"; X[16][4]="t"; X[17][4]=""; 
+X[0][5]=""; X[1][5]=""; X[2][5]="j"; X[3][5]="a"; X[4][5]="v"; X[5][5]="a"; X[6][5]="s"; X[7][5]="c"; X[8][5]="r"; X[9][5]="i"; X[10][5]="p"; X[11][5]="t"; X[12][5]=""; X[13][5]=""; X[14][5]="r"; X[15][5]=""; X[16][5]="a"; X[17][5]=""; 
+X[0][6]=""; X[1][6]=""; X[2][6]=""; X[3][6]="c"; X[4][6]=""; X[5][6]="l"; X[6][6]=""; X[7][6]="h"; X[8][6]=""; X[9][6]=""; X[10][6]=""; X[11][6]="y"; X[12][6]=""; X[13][6]=""; X[14][6]="g"; X[15][6]=""; X[16][6]="r"; X[17][6]=""; 
+X[0][7]=""; X[1][7]=""; X[2][7]=""; X[3][7]="k"; X[4][7]=""; X[5][7]="t"; X[6][7]=""; X[7][7]="e"; X[8][7]=""; X[9][7]="d"; X[10][7]="e"; X[11][7]="l"; X[12][7]="e"; X[13][7]="t"; X[14][7]="e"; X[15][7]=""; X[16][7]="t"; X[17][7]=""; 
+X[0][8]=""; X[1][8]=""; X[2][8]=""; X[3][8]=""; X[4][8]=""; X[5][8]="e"; X[6][8]=""; X[7][8]="c"; X[8][8]=""; X[9][8]=""; X[10][8]=""; X[11][8]="e"; X[12][8]=""; X[13][8]="r"; X[14][8]=""; X[15][8]=""; X[16][8]="w"; X[17][8]=""; 
+X[0][9]="p"; X[1][9]="r"; X[2][9]="i"; X[3][9]="m"; X[4][9]="a"; X[5][9]="r"; X[6][9]="y"; X[7][9]="k"; X[8][9]="e"; X[9][9]="y"; X[10][9]=""; X[11][9]=""; X[12][9]=""; X[13][9]="u"; X[14][9]=""; X[15][9]=""; X[16][9]="i"; X[17][9]=""; 
+X[0][10]=""; X[1][10]=""; X[2][10]=""; X[3][10]=""; X[4][10]="n"; X[5][10]=""; X[6][10]=""; X[7][10]="b"; X[8][10]=""; X[9][10]=""; X[10][10]=""; X[11][10]=""; X[12][10]=""; X[13][10]="n"; X[14][10]=""; X[15][10]=""; X[16][10]="t"; X[17][10]=""; 
+X[0][11]=""; X[1][11]="o"; X[2][11]=""; X[3][11]=""; X[4][11]="c"; X[5][11]=""; X[6][11]=""; X[7][11]="o"; X[8][11]=""; X[9][11]=""; X[10][11]=""; X[11][11]=""; X[12][11]=""; X[13][11]="c"; X[14][11]=""; X[15][11]=""; X[16][11]="h"; X[17][11]=""; 
+X[0][12]=""; X[1][12]="n"; X[2][12]=""; X[3][12]=""; X[4][12]="h"; X[5][12]=""; X[6][12]=""; X[7][12]="x"; X[8][12]=""; X[9][12]=""; X[10][12]=""; X[11][12]="s"; X[12][12]="p"; X[13][12]="a"; X[14][12]="n"; X[15][12]=""; X[16][12]=""; X[17][12]=""; 
+X[0][13]=""; X[1][13]="f"; X[2][13]=""; X[3][13]=""; X[4][13]="o"; X[5][13]=""; X[6][13]=""; X[7][13]=""; X[8][13]=""; X[9][13]=""; X[10][13]=""; X[11][13]=""; X[12][13]=""; X[13][13]="t"; X[14][13]=""; X[15][13]=""; X[16][13]=""; X[17][13]=""; 
+X[0][14]="h"; X[1][14]="o"; X[2][14]="v"; X[3][14]="e"; X[4][14]="r"; X[5][14]=""; X[6][14]=""; X[7][14]=""; X[8][14]=""; X[9][14]="c"; X[10][14]="o"; X[11][14]="n"; X[12][14]="n"; X[13][14]="e"; X[14][14]="c"; X[15][14]="t"; X[16][14]="b"; X[17][14]="y"; 
+X[0][15]=""; X[1][15]="c"; X[2][15]=""; X[3][15]=""; X[4][15]=""; X[5][15]=""; X[6][15]=""; X[7][15]=""; X[8][15]=""; X[9][15]=""; X[10][15]=""; X[11][15]=""; X[12][15]=""; X[13][15]=""; X[14][15]=""; X[15][15]=""; X[16][15]=""; X[17][15]=""; 
+X[0][16]=""; X[1][16]="u"; X[2][16]=""; X[3][16]=""; X[4][16]=""; X[5][16]=""; X[6][16]=""; X[7][16]=""; X[8][16]=""; X[9][16]=""; X[10][16]=""; X[11][16]=""; X[12][16]=""; X[13][16]=""; X[14][16]=""; X[15][16]=""; X[16][16]=""; X[17][16]=""; 
+X[0][17]=""; X[1][17]="s"; X[2][17]=""; X[3][17]=""; X[4][17]=""; X[5][17]=""; X[6][17]=""; X[7][17]=""; X[8][17]=""; X[9][17]=""; X[10][17]=""; X[11][17]=""; X[12][17]=""; X[13][17]=""; X[14][17]=""; X[15][17]=""; X[16][17]=""; X[17][17]=""; 
+
+//가로 및 세로 풀이 값 입력
+hori[0]="데이터베이스 트랜잭션의 내용 업데이트를 영구적으로 확정하는 것";
+hori[1]="Semantic Tag의 기본 구성요소로 글자가 많이 들어가는 부분을 의미";
+hori[2]="클라이언트단의 구성 요소 중 한 가지로 객체 기반의 스크립트 프로그래밍 언어";
+hori[3]="DB에서 Table 생성시 Data의 무결성 제약 조건의 한 가지로 공란 및 중복 불가를 설정할 때 사용됨";
+hori[4]="Html내의 Event의 한 종류로 마우스 포인트가 올라온 것을 감지함";
+hori[5]="SQL의 DML중 한 가지로 하나 또는 그 이상의 테이블에서 데이터를 추출하는 명령어";
+hori[6]="DB에서 Table내에 존재 하는 기록을 삭제할 때 사용하는 명령어";
+hori[7]="HTML내에서 Table을 구성할 때 행 또는 열을 확장할 때 사용하는 명령어";
+hori[8]="계층형 구조에서 Select 구문 이후에 각 행의 관계를 설정할 때 사용되는 명령어로 주로 prior와 함께 쓰인다.";
+verti[0]="SQL 명령어 중 하나로 트랜잭션 단위로 데이터 베이스에서 발생한 작업을 되돌릴 때 사용하는 명령어";
+verti[1]="HTML의 기본 구조를 구성하는 단위로 <   >를 의미함";
+verti[2]="DDL명령어의 한 종류로 Table 내에 존재하는 개체의 특성을 변경할 때 사용됨";
+verti[3]="Input type의 한 요소로 주어진 목록에서 다중선택이 가능함";
+verti[4]="다른 웹 혹은 동일 웹 내에 특정한 곳으로 이동시켜주는 a tag의 Full-name";
+verti[5]="주로 Input 태그내에서 발생되는 Event중에 해당 tag에 커서가 올라 왔을 때의 행동을 지정해주는 명령어";
+verti[6]="css 선언을 위해서 사용되는 tag";
+verti[7]="DDL명령어의 한 종류로 Table에서 모든 행을 삭제하는 명령어";
+verti[8]="주로 두 개의 Table을 합칠 때 사용하는 명령어로 조건에 따라 Update 혹은 Insert를 결합한 작업을 수행함";
+verti[9]="계층형 구조에서 사용되며, 최상위 계층 값에 따른 처리해야 할 값의 시작점을 설정해줌";
+
+//광역변수 선언 및 설정(가로세로풀이 script부분)
+var scr_verti_front="";
+var scr_verti_back ="";
+var scr_hori_front="";
+var scr_hori_back="";
+var i,j,k;
+
+
+var score=0;
+var num_ans=0;
+var cor_ans=0;
+var	initval;
+
+	
+	
+			
+	function startquiz(){
+		//모드에 따른 백그라운드 설정
+			if(document.getElementsByName("where_are")[1].checked==true)
+				document.getElementById("quiz").style.backgroundImage="url('img/example1.jpg')";
+			else
+				document.getElementById("quiz").style.backgroundImage="url('img/su.jpg')";
+//			document.body.style.backgroundImage = "url('img_tree.png')";
+		//스크립트 초기값넣기
+		for(i=0;i<X.length;i++){
+			for(j=0;j<X[i].length;j++){
+				k=i+j*18;
+				document.getElementsByClassName("answer")[k].disabled=null;	
+				document.getElementsByClassName("answer")[k].value="";
+			}
+		}
+		for(i=0;i<X.length;i++){
+			for(j=0;j<X[i].length;j++){
+				k=i+j*18;
+				if(document.getElementsByClassName("answer")[k].value == X[i][j])
+					document.getElementsByClassName("answer")[k].disabled="disabled";				
+			}			
+		}
+		
+		document.getElementById("check_ans").disabled=null;
+		init_score();
+		
+	}
+	
+	
+	
+	
+	function check_answer(){
+		for(i=0;i<X.length;i++){
+			for(j=0;j<X[i].length;j++){
+				k=i+j*18;
+				if(document.getElementsByClassName("answer")[k].value == X[i][j]){
+					document.getElementsByClassName("answer")[k].style.backgroundColor="transparent";
+					if(document.getElementsByClassName("answer")[k].disabled == false)
+						cor_ans++;
+				}
+				else document.getElementsByClassName("answer")[k].value="";
+				}
+			}
+		document.getElementById("show_score").innerText=Math.floor(cor_ans/num_ans*100);
+		if(document.getElementById("show_score").innerText == "100" || 
+				document.getElementById("test_check").value=="tes"){
+		document.getElementById("fin_hidden").disabled=null;
+		document.getElementById("fin_hidden").hidden=null;
+		}
+		cor_ans=0;
+	}
+	
+	function hidemenu(){
+		document.getElementById("table01").style.visibility="hidden";
+    }
+	
+	function init_score(){
+		num_ans=0;
+		initval=document.getElementsByClassName("answer");
+		for(i=0;i<X.length;i++){
+			for(j=0;j<X[i].length;j++){
+				k=i+j*18;
+				if(initval[k].disabled == false)
+					num_ans++;
+				}
+			}
+		document.getElementById("show_score").innerText=Math.floor(cor_ans/num_ans*100);
+		}
+	
+	function focus_wh(focus_here){	
+		 switch(focus_here)	{
+		 case 'in[0][14]' : scr_hori_back= hori[4];break;
+		 case 'in[0][9]' : scr_hori_back= hori[3];break;
+		 case 'in[1][11]' : scr_verti_back= verti[5];break;
+		 case 'in[1][12]' : scr_verti_back= verti[5];break;
+		 case 'in[1][13]' : scr_verti_back= verti[5];break;
+		 case 'in[1][14]' : scr_hori_back= hori[4];
+		 scr_verti_back= verti[5];break;
+		 case 'in[1][15]' : scr_verti_back= verti[5];break;
+		 case 'in[1][16]' : scr_verti_back= verti[5];break;
+		 case 'in[1][17]' : scr_verti_back= verti[5];break;
+		 case 'in[1][9]' : scr_hori_back= hori[3];break;
+		 case 'in[10][14]' : scr_hori_back= hori[8];break;
+		 case 'in[10][2]' : scr_hori_back= hori[1];break;
+		 case 'in[10][5]' : scr_hori_back= hori[2];break;
+		 case 'in[10][7]' : scr_hori_back= hori[6];break;
+		 case 'in[11][12]' : scr_hori_back= hori[7];break;
+		 case 'in[11][14]' : scr_hori_back= hori[8];break;
+		 case 'in[11][2]' : scr_hori_back= hori[1];break;
+		 case 'in[11][4]' : scr_hori_back= hori[5];
+		 scr_verti_back= verti[6];break;
+		 case 'in[11][5]' : scr_hori_back= hori[2];
+		 scr_verti_back= verti[6];break;
+		 case 'in[11][6]' : scr_verti_back= verti[6];break;
+		 case 'in[11][7]' : scr_hori_back= hori[6];
+		 scr_verti_back= verti[6];break;
+		 case 'in[11][8]' : scr_verti_back= verti[6];break;
+		 case 'in[12][12]' : scr_hori_back= hori[7];break;
+		 case 'in[12][14]' : scr_hori_back= hori[8];break;
+		 case 'in[12][2]' : scr_hori_back= hori[1];break;
+		 case 'in[12][4]' : scr_hori_back= hori[5];break;
+		 case 'in[12][7]' : scr_hori_back= hori[6];break;
+		 case 'in[13][10]' : scr_verti_back= verti[7];break;
+		 case 'in[13][11]' : scr_verti_back= verti[7];break;
+		 case 'in[13][12]' : scr_hori_back= hori[7];
+		 scr_verti_back= verti[7];break;
+		 case 'in[13][13]' : scr_verti_back= verti[7];break;
+		 case 'in[13][14]' : scr_hori_back= hori[8];
+		 scr_verti_back= verti[7];break;
+		 case 'in[13][2]' : scr_hori_back= hori[1];break;
+		 case 'in[13][4]' : scr_hori_back= hori[5];break;
+		 case 'in[13][7]' : scr_hori_back= hori[6];
+		 scr_verti_back= verti[7];break;
+		 case 'in[13][8]' : scr_verti_back= verti[7];break;
+		 case 'in[13][9]' : scr_verti_back= verti[7];break;
+		 case 'in[14][12]' : scr_hori_back= hori[7];break;
+		 case 'in[14][14]' : scr_hori_back= hori[8];break;
+		 case 'in[14][3]' : scr_verti_back= verti[8];break;
+		 case 'in[14][4]' : scr_hori_back= hori[5];
+		 scr_verti_back= verti[8];break;
+		 case 'in[14][5]' : scr_verti_back= verti[8];break;
+		 case 'in[14][6]' : scr_verti_back= verti[8];break;
+		 case 'in[14][7]' : scr_hori_back= hori[6];
+		 scr_verti_back= verti[8];break;
+		 case 'in[15][14]' : scr_hori_back= hori[8];break;
+		 case 'in[15][4]' : scr_hori_back= hori[5];break;
+		 case 'in[16][10]' : scr_verti_back= verti[9];break;
+		 case 'in[16][11]' : scr_verti_back= verti[9];break;
+		 case 'in[16][14]' : scr_hori_back= hori[8];break;
+		 case 'in[16][3]' : scr_verti_back= verti[9];break;
+		 case 'in[16][4]' : scr_hori_back= hori[5];
+		 scr_verti_back= verti[9];break;
+		 case 'in[16][5]' : scr_verti_back= verti[9];break;
+		 case 'in[16][6]' : scr_verti_back= verti[9];break;
+		 case 'in[16][7]' : scr_verti_back= verti[9];break;
+		 case 'in[16][8]' : scr_verti_back= verti[9];break;
+		 case 'in[16][9]' : scr_verti_back= verti[9];break;
+		 case 'in[17][14]' : scr_hori_back= hori[8];break;
+		 case 'in[2][1]' : scr_hori_back= hori[0];break;
+		 case 'in[2][14]' : scr_hori_back= hori[4];break;
+		 case 'in[2][5]' : scr_hori_back= hori[2];break;
+		 case 'in[2][9]' : scr_hori_back= hori[3];break;
+		 case 'in[3][0]' : scr_verti_back= verti[0];break;
+		 case 'in[3][1]' : scr_hori_back= hori[0];
+		 scr_verti_back= verti[0];break;
+		 case 'in[3][14]' : scr_hori_back= hori[4];break;
+		 case 'in[3][2]' : scr_verti_back= verti[0];break;
+		 case 'in[3][3]' : scr_verti_back= verti[0];break;
+		 case 'in[3][4]' : scr_verti_back= verti[0];break;
+		 case 'in[3][5]' : scr_hori_back= hori[2];
+		 scr_verti_back= verti[0];break;
+		 case 'in[3][6]' : scr_verti_back= verti[0];break;
+		 case 'in[3][7]' : scr_verti_back= verti[0];break;
+		 case 'in[3][9]' : scr_hori_back= hori[3];break;
+		 case 'in[4][1]' : scr_hori_back= hori[0];break;
+		 case 'in[4][10]' : scr_verti_back= verti[4];break;
+		 case 'in[4][11]' : scr_verti_back= verti[4];break;
+		 case 'in[4][12]' : scr_verti_back= verti[4];break;
+		 case 'in[4][13]' : scr_verti_back= verti[4];break;
+		 case 'in[4][14]' : scr_hori_back= hori[4];
+		 scr_verti_back= verti[4];break;
+		 case 'in[4][5]' : scr_hori_back= hori[2];break;
+		 case 'in[4][9]' : scr_hori_back= hori[3];
+		 scr_verti_back= verti[4];break;
+		 case 'in[5][1]' : scr_hori_back= hori[0];break;
+		 case 'in[5][5]' : scr_hori_back= hori[2];
+		 scr_verti_back= verti[2];break;
+		 case 'in[5][6]' : scr_verti_back= verti[2];break;
+		 case 'in[5][7]' : scr_verti_back= verti[2];break;
+		 case 'in[5][8]' : scr_verti_back= verti[2];break;
+		 case 'in[5][9]' : scr_hori_back= hori[3];
+		 scr_verti_back= verti[2];break;
+		 case 'in[6][1]' : scr_hori_back= hori[0];break;
+		 case 'in[6][5]' : scr_hori_back= hori[2];break;
+		 case 'in[6][9]' : scr_hori_back= hori[3];break;
+		 case 'in[7][1]' : scr_verti_back= verti[1];break;
+		 case 'in[7][10]' : scr_verti_back= verti[3];break;
+		 case 'in[7][11]' : scr_verti_back= verti[3];break;
+		 case 'in[7][12]' : scr_verti_back= verti[3];break;
+		 case 'in[7][2]' : scr_hori_back= hori[1];
+		 scr_verti_back= verti[1];break;
+		 case 'in[7][3]' : scr_verti_back= verti[1];break;
+		 case 'in[7][5]' : scr_hori_back= hori[2];
+		 scr_verti_back= verti[3];break;
+		 case 'in[7][6]' : scr_verti_back= verti[3];break;
+		 case 'in[7][7]' : scr_verti_back= verti[3];break;
+		 case 'in[7][8]' : scr_verti_back= verti[3];break;
+		 case 'in[7][9]' : scr_hori_back= hori[3];
+		 scr_verti_back= verti[3];break;
+		 case 'in[8][2]' : scr_hori_back= hori[1];break;
+		 case 'in[8][5]' : scr_hori_back= hori[2];break;
+		 case 'in[8][9]' : scr_hori_back= hori[3];break;
+		 case 'in[9][14]' : scr_hori_back= hori[8];break;
+		 case 'in[9][2]' : scr_hori_back= hori[1];break;
+		 case 'in[9][5]' : scr_hori_back= hori[2];break;
+		 case 'in[9][7]' : scr_hori_back= hori[6];break;
+		 case 'in[9][9]' : scr_hori_back= hori[3];break;
+		 }
+		
+		 document.getElementById("script_hori_f").innerText = scr_hori_front;
+		 document.getElementById("script_hori_b").innerText = scr_hori_back;
+		 document.getElementById("script_verti_f").innerText = scr_verti_front;
+		 document.getElementById("script_verti_b").innerText = scr_verti_back;
+		 
+		 if(scr_hori_front != scr_hori_back ){
+			 document.getElementById("script_hori_f").style.animation="flip1 1.5s";
+			 document.getElementById("script_hori_b").style.animation="flip2 1.5s forwards";		 
+		 }
+		 if(scr_verti_front != scr_verti_back ){
+			 document.getElementById("script_verti_f").style.animation="flip1 1.5s";
+			 document.getElementById("script_verti_b").style.animation="flip2 1.5s forwards";		 
+		 }
+		 
+	 }
+	 
+	 function blur_wh(blur_here){
+		 scr_hori_front = scr_hori_back;
+		 scr_verti_front = scr_verti_back;
+		 document.getElementById("script_hori_f").style.animation=null;
+		 document.getElementById("script_hori_b").style.animation=null;
+		 document.getElementById("script_verti_f").style.animation=null;
+		 document.getElementById("script_verti_b").style.animation=null;
+		 }
+		 
+				 
+		 
+
+	 
+
+</script>
+</head>
+<body>
+
+<div id="quiz" >
+
+<table id="table01" border="1">	
+	<tr><td><input id="in[0][0]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[1][0]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[2][0]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[3][0]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[4][0]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[5][0]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[6][0]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[7][0]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[8][0]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[9][0]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[10][0]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[11][0]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[12][0]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[13][0]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[14][0]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[15][0]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[16][0]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[17][0]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td></tr>
+	<tr><td><input id="in[0][1]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[1][1]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[2][1]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[3][1]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[4][1]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[5][1]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[6][1]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[7][1]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[8][1]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[9][1]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[10][1]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[11][1]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[12][1]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[13][1]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[14][1]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[15][1]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[16][1]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[17][1]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td></tr>
+	<tr><td><input id="in[0][2]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[1][2]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[2][2]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[3][2]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[4][2]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[5][2]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[6][2]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[7][2]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[8][2]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[9][2]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[10][2]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[11][2]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[12][2]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[13][2]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[14][2]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[15][2]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[16][2]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[17][2]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td></tr>
+	<tr><td><input id="in[0][3]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[1][3]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[2][3]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[3][3]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[4][3]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[5][3]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[6][3]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[7][3]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[8][3]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[9][3]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[10][3]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[11][3]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[12][3]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[13][3]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[14][3]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[15][3]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[16][3]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[17][3]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td></tr>
+	<tr><td><input id="in[0][4]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[1][4]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[2][4]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[3][4]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[4][4]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[5][4]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[6][4]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[7][4]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[8][4]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[9][4]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[10][4]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[11][4]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[12][4]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[13][4]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[14][4]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[15][4]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[16][4]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[17][4]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td></tr>
+	<tr><td><input id="in[0][5]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[1][5]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[2][5]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[3][5]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[4][5]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[5][5]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[6][5]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[7][5]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[8][5]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[9][5]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[10][5]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[11][5]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[12][5]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[13][5]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[14][5]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[15][5]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[16][5]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[17][5]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td></tr>
+	<tr><td><input id="in[0][6]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[1][6]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[2][6]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[3][6]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[4][6]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[5][6]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[6][6]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[7][6]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[8][6]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[9][6]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[10][6]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[11][6]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[12][6]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[13][6]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[14][6]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[15][6]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[16][6]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[17][6]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td></tr>
+	<tr><td><input id="in[0][7]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[1][7]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[2][7]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[3][7]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[4][7]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[5][7]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[6][7]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[7][7]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[8][7]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[9][7]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[10][7]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[11][7]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[12][7]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[13][7]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[14][7]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[15][7]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[16][7]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[17][7]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td></tr>
+	<tr><td><input id="in[0][8]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[1][8]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[2][8]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[3][8]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[4][8]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[5][8]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[6][8]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[7][8]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[8][8]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[9][8]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[10][8]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[11][8]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[12][8]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[13][8]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[14][8]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[15][8]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[16][8]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[17][8]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td></tr>
+	<tr><td><input id="in[0][9]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[1][9]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[2][9]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[3][9]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[4][9]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[5][9]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[6][9]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[7][9]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[8][9]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[9][9]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[10][9]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[11][9]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[12][9]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[13][9]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[14][9]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[15][9]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[16][9]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[17][9]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td></tr>
+	<tr><td><input id="in[0][10]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[1][10]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[2][10]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[3][10]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[4][10]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[5][10]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[6][10]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[7][10]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[8][10]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[9][10]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[10][10]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[11][10]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[12][10]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[13][10]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[14][10]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[15][10]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[16][10]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[17][10]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td></tr>
+	<tr><td><input id="in[0][11]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[1][11]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[2][11]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[3][11]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[4][11]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[5][11]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[6][11]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[7][11]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[8][11]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[9][11]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[10][11]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[11][11]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[12][11]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[13][11]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[14][11]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[15][11]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[16][11]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[17][11]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td></tr>
+	<tr><td><input id="in[0][12]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[1][12]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[2][12]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[3][12]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[4][12]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[5][12]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[6][12]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[7][12]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[8][12]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[9][12]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[10][12]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[11][12]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[12][12]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[13][12]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[14][12]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[15][12]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[16][12]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[17][12]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td></tr>
+	<tr><td><input id="in[0][13]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[1][13]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[2][13]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[3][13]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[4][13]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[5][13]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[6][13]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[7][13]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[8][13]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[9][13]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[10][13]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[11][13]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[12][13]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[13][13]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[14][13]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[15][13]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[16][13]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[17][13]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td></tr>
+	<tr><td><input id="in[0][14]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[1][14]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[2][14]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[3][14]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[4][14]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[5][14]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[6][14]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[7][14]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[8][14]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[9][14]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[10][14]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[11][14]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[12][14]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[13][14]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[14][14]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[15][14]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[16][14]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[17][14]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td></tr>
+	<tr><td><input id="in[0][15]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[1][15]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[2][15]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[3][15]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[4][15]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[5][15]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[6][15]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[7][15]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[8][15]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[9][15]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[10][15]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[11][15]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[12][15]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[13][15]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[14][15]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[15][15]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[16][15]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[17][15]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td></tr>
+	<tr><td><input id="in[0][16]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[1][16]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[2][16]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[3][16]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[4][16]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[5][16]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[6][16]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[7][16]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[8][16]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[9][16]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[10][16]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[11][16]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[12][16]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[13][16]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[14][16]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[15][16]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[16][16]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[17][16]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td></tr>
+	<tr><td><input id="in[0][17]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[1][17]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[2][17]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[3][17]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[4][17]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[5][17]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[6][17]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[7][17]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[8][17]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[9][17]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[10][17]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[11][17]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[12][17]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[13][17]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[14][17]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[15][17]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[16][17]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td><td><input id="in[17][17]" type="text" maxlength="1" class="answer" disabled="disabled" onfocus="focus_wh(this.id)" onblur="blur_wh(this.id)"></td></tr>
+</table>
+
+</div>
+
+<br>
+&ensp; <input type="radio" name="where_are" value="normal"><span id="radio1">일반모드</span><br>
+&ensp; <input type="radio" name="where_are" value="for19"><span id="radio2">성인모드</span><br>
+&ensp; <input type="button" value="시작" onclick="startquiz()"/>
+&ensp; <input id="check_ans" type="button" value="정답확인" onclick="check_answer()" disabled="disabled"/><br>
+&ensp; <span style="color:white;"> Score : </span><span id="show_score" style="color:white;"></span><span style="color:white;">%</span><br>
+
+&ensp; <input id="test_check" type="text" value="test" onclick="test()" style="width:30px;"/><br> 
+  
+&ensp; <input id="fin_hidden"type="button" value="끝!!" onclick="hidemenu()" hidden="hidden" disabled="disabled"/><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+
+
+<!-- 가로세로풀이 script table -->
+<table class="pro_table" border="1">
+<tr><td style="font-size:13px; color:gold;" height="30px">가로풀이</td></tr>
+<tr><td>
+<section class="container">
+<div id="card1">
+<h6 id="script_hori_f"></h6>
+<h6 id="script_hori_b"></h6>
+</div>
+</section>
+</td></tr>
+</table>
+<table class="pro_table" border="1">
+
+<tr><td style="font-size:13px; color:gold;" height="30px">세로풀이</td></tr>
+<tr><td><section class="container">
+<div id="card2">
+<h6 id="script_verti_f"></h6>
+<h6 id="script_verti_b"></h6>
+</div>
+</section></td></tr>
+</table>
+
+
+
+</body>
+</html>

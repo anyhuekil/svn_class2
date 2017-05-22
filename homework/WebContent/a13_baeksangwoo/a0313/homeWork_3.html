@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style type="text/css">
+p {
+	display: inline;
+	margin-left: 20px;
+}
+</style>
+<script>
+	/* 숙제!!
+	 색상과 글자입히기..
+	 글자색 선택 [select option] - 빨,주,노,초,파,남,보
+	 입력할 내용 :[      ]
+	 [확인]
+	 @@@@@@@@@@  : 확인을 클릭시, 해당 배경색에 입력할 내용에 
+	 입력한 글자 내용 표시..
+	 */
+
+	var i = ""; // 전역 변수로 option에서 색상 값 선택시 값 저장
+
+	//버튼 클릭 시 색상 변화 함수
+	function btCall() {
+		contextObj = document.getElementById("context"); // 입력 내용 객체 변수
+		// 입력 내용이 없으면 재입력 창 호출
+		if (contextObj.value == null || contextObj.value == "") {
+			alert("다시 입력해주세요.");
+			//내용이 입력되면 선택된 색상에 따라 내용 색상 변화
+		} else {
+			alert("색상 변화 성공");
+			contextObj.style.color = i;
+		}
+	}
+	//option에서 선택된 색상을 color 전역 변수에 저장하는 함수.
+	function selectCall(selectObj) {
+		if (selectObj.value == 'RED') {
+			i = "red";
+		}
+		if (selectObj.value == 'ORANGE') {
+			i = "orange";
+		}
+		if (selectObj.value == 'YELLOW') {
+			i = "yellow";
+		}
+		if (selectObj.value == 'GREEN') {
+			i = "green";
+		}
+		if (selectObj.value == 'BLUE') {
+			i = "blue";
+		}
+		if (selectObj.value == 'PUPPLE') {
+			i = "pupple";
+		}
+	}
+</script>
+</head>
+<body>
+	<label> 색상 선택 </label>
+	<select name="color" onchange="javascript:selectCall(this)">
+		<option>선택</option>
+		<option>RED</option>
+		<option>ORANGE</option>
+		<option>YELLOW</option>
+		<option>GREEN</option>
+		<option>BLUE</option>
+		<option>PUPPLE</option>
+	</select>
+	<p>입력할 내용</p>
+	<input type="text" id="context" value="type in" />
+	<input type="button" value="확인" onclick="javascript:btCall();" />
+</body>
+</html>

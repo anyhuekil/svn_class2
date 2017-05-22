@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+#btn { width: 300px; }
+</style>
+<script type="text/javascript">
+	function btn_click(){
+			document.getElementById("btn").innerHTML="일금 5억원정";
+            document.getElementById("btn").style.backgroundColor="pink";
+		} 
+</script>
+</head>
+<body>
+	<table border>
+		<tr align="center">
+			<td><h1 id="btn">금액 : 1,000원</h1></td>
+		</tr>
+		<tr align="center">
+			<td><input onclick=btn_click() id="btn" type="button"
+				value="로또 당첨" /></td>
+		</tr>
+	</table>
+</body>
+</html>
+
+
+
+
+
+

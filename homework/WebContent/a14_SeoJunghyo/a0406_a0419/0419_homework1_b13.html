@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.2.0.min.js">
+</script>
+<script type="text/javascript">
+/*
+ 1단계
+ 	초기 : class가 적용되지 않음
+ 	onload 시 : 아래와 같이 배경 색상 처리(2X2 아래 위 다름)
+ 	클릭 시 : 배경 색상이 노랑색으로 변경
+ 	
+ 2단계
+ 초기화면에 random 색상표시(핑크)
+ [] 	[] 		[] 		[핑크]
+ [핑크] 	[] 		[핑크] 	[]
+ [] 	[핑크] 	[] 		[]
+ [] 	[] 		[] 		[핑크]
+ [게임시작]
+ 게임시작 버튼을 클릭시 같은 색상으로 변경
+ 게임 시작 전에 노랑색이였던 곳을 클릭하여서 맞으면 노랑색으로 변경 틀리면 실패alert창 
+ 전부 다 맞으면 clear success!
+*/
+	$(document).ready(function(){
+		var show='';
+		 
+		for(var i=0; i<4; i++){
+			show+="<tr>";
+			for(var j=0; j<4; j++){
+				show+="<td class='block' onclick='javascript:check(this);'></td>";
+			}show+="</tr>";
+		}
+		$("table").html(show);
+		$("table").css({width:"400px", height:"400px", "border-collapse":"collapse", margin:"auto", background:"#99b3ff"});
+
+		var targetCnt = [0,0,0,0];
+		$.each(targetCnt, function(){
+			$("td").eq( Math.floor(Math.random()*16)).addClass("target remember");
+
+		})
+		/*
+		var tds=document.querySelectorAll("td");
+		var idx=parseInt(Math.random()*16);
+		for(i=1; i<6; i++){
+			$("td").eq( parseInt(Math.random()*16) ).addClass("target remember");
+		}*/
+	});
+	function start(){
+
+		$("td").removeClass("target");
+		$("td").removeClass("block");
+	}
+	function check(obj){
+			if($(obj).is(".block")){
+			}else if($(obj).is(".remember")){
+				alert("정답");
+				$(obj).addClass("block");
+				$(obj).css("background","pink");
+			}else{
+				alert("오답ㅋ");
+				$("td").addClass("block");
+			}
+	};
+	
+
+
+	
+</script>
+<style type="text/css">
+	.target{background:pink};
+</style>
+
+</head>
+<body>
+	<table border=1>
+	</table>
+	<button onclick="javascript:start(this)">게임시작</button>
+</body>
+</html>

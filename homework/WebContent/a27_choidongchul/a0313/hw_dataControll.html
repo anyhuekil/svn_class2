@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+/*
+숙제
+색상과 글자입히기
+
+글자색 선택 [select option] - 빨,주,노,초,파,남,보
+입력할 내용 : [	]
+[확인]
+@@@@@@@@ : 확인을 클릭시, 해당 배경색에 입력할 내용에 입력한 글자 내용 표시	
+
+*/
+</style>
+<script type="text/javascript">
+	function call(){
+		var selColor=document.getElementsByTagName("select")[0].value;
+		document.getElementById("result").style.backgroundColor=selColor;
+		document.getElementById("result").innerHTML=document.getElementById("orginal").value;
+	}
+</script>
+</head>
+<body>
+	글자색 선택 :
+	<select name="color">
+		<option value="red">빨</option>
+		<option value="orange">주</option>
+		<option value="yellow">노</option>
+		<option value="green">초</option>
+		<option value="blue">파</option>
+		<option value="navy">남</option>
+		<option value="purple">보</option>
+	</select><br>
+	입력할 내용 :<input type="text" id="orginal"/><br>
+	<input type="button" value="확인" onclick="javascript:call();"/><hr>
+	<h1 id="result"></h1>
+</body>
+</html>

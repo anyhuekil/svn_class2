@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <title>
+
+    </title>
+    <style>
+        .before01 {
+            background-color: blue;
+        }
+        .before02 {
+            background-color: skyblue;
+        }
+
+        .after {
+            background-color: lightcoral;
+        }
+    </style>
+    <script
+        src="http://code.jquery.com/jquery-3.2.1.js"
+        integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+        crossorigin="anonymous">
+        // http://code.jquery.com
+    </script>
+    <script>
+        /*
+            Lv.1
+            초기 : class가 적용되지 않음
+            onload 시 : 아래와 가이 배경 색상 처리(2X2 아래 위 다름)
+            클릭 시 : 배경 색상이 노랑색으로 변경
+
+            Lv.2
+            NxN 테이블에 랜덤으로 타일 색을 표시
+            게임 세팅을 누르면 전체 같은 색으로 변경
+            게임 진행 : 기존 타일 색을 맞추면 성공, 틀리면 실패
+            게임 종료 : 전부 성공
+
+        */
+        window.onload = function() {
+            init();
+
+            $("tr:even td").click(function() {
+                $(this).removeClass('before01').addClass('after');
+            });
+            $("tr:odd td").click(function() {
+                $(this).removeClass('before02').addClass('after');
+            });
+        }
+
+        function init() {
+            $("td").eq(0).addClass('before01');
+            $("td").eq(1).addClass('before01');
+            $("td").eq(2).addClass('before02');
+            $("td").eq(3).addClass('before02');
+        }
+        
+    </script>
+    
+</head>
+<body>
+    <table width="300" height="300" border>
+        <tr>
+            <td>1</td>
+            <td>2</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>4</td>
+        </tr>
+    </table>
+</body>
+</html>

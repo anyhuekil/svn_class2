@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+/*
+
+*/
+
+td{width:25%;border:1px blue solid;}
+.blueCls{background:blue;}
+.yellowCls{background:yellow;}
+/**/
+</style>
+<script src="http://code.jquery.com/jquery-1.10.2.js">
+</script>
+<script type="text/javascript">
+var cnt=10;
+$(document).ready(function(){
+	game();
+});
+function game(){
+	$("td").addClass("blueCls");
+	var tds=document.querySelectorAll("td");
+	var ranIdx=[];
+	var ranNum=0;
+	for(var idx=0;idx<10;idx++){
+		ranNum=parseInt( Math.random()*$("td").size() );
+		ranIdx[idx]=ranNum;
+		for(var odx=(idx-1);odx>=0;odx--){
+			if( ranIdx[odx] == ranNum){
+				idx--;
+			}
+		}		
+	}
+	
+	var restCnt=ranIdx.length;
+	for(var idx=0;idx<restCnt;idx++){
+		$("td").eq(ranIdx[idx]).removeClass("blueCls");
+		$("td").eq(ranIdx[idx]).addClass("yellowCls");
+
+	}
+
+	for(var idx=0;idx<tds.length;idx++){
+		tds[idx].onclick=ck2;
+		for(var odx=0;odx<ranIdx.length;odx++){
+			if(ranIdx[odx]==idx){
+				restCnt--;
+				tds[idx].onclick=ck;
+			}
+		}
+	}
+}
+function ck(){
+	$("h1").html("남은 갯수:"+(--cnt));
+	$(this).addClass("yellowCls");
+	if(cnt==0){
+		alert("clear success!!");
+		//location.href="a0419.html";
+	}
+
+}
+function ck2(){
+	alert("오답");
+}
+function start(){
+	$("td").removeClass("yellowCls");
+	$("td").addClass("blueCls");
+}
+</script>
+</head>
+<body>
+<h1 align="center" onclick="start();">게임 시작</h1>
+<table width="400" height="400" align="center">
+	<tr><td></td><td></td><td></td><td></td></tr>
+	<tr><td></td><td></td><td></td><td></td></tr>
+	<tr><td></td><td></td><td></td><td></td></tr>
+	<tr><td></td><td></td><td></td><td></td></tr>
+	<tr><td></td><td></td><td></td><td></td></tr>
+	<tr><td></td><td></td><td></td><td></td></tr>
+	<tr><td></td><td></td><td></td><td></td></tr>
+
+</table>
+</body>
+</html>

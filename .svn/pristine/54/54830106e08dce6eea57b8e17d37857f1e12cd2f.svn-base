@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	input[type="text"]:focus { background-color: lightblue; color: red; }
+	input[type="button"]{ height: 50px; border-radius: 10px; background-color: lightgray; }
+	
+	input[value="로그인 완료"]{background-color: lightgreen;}
+	
+	#id_status{ background-color: black; color:white;}
+	#id_success{ background-color:red; color:white;}
+</style>
+
+<script type="text/javascript">
+	function bt_login() 
+	{
+		if (document.log.id.value == "future") 
+		{
+			if (document.log.pw.value == "7777") 
+			{ 
+				document.log.status.value = "로그인 완료" ;
+				document.log.sub1.disabled=false;
+			}
+			
+			else document.log.status.value = "비밀번호 확인 요망";
+		}
+		else document.log.status.value = "아이디 확인요망";	
+	}
+	
+	function bt_check() {
+		if (document.log.id.value == "future") {
+			if (document.log.pw.value == "7777") {
+				if(document.log.sub1.value == "dream")
+				{
+					document.log.sub2.disabled=false;
+					document.log.status.value = "1단계 통과";
+					if(document.log.sub2.value == "hope")
+					{
+						document.log.status.value = "2단계 통과";
+						document.getElementById("id_success").style.backgroundColor="green";
+						alert("완료!");
+					}
+				}
+			}
+			else {
+				document.log.status.value = "비밀번호 확인 요망";
+				document.log.sub1.disabled=true;
+				document.log.sub2.disabled=true;
+			}
+		}
+		else {
+			document.log.status.value = "아이디 확인요망";
+			document.log.sub1.disabled=true;
+			document.log.sub2.disabled=true;
+		}
+		
+	}
+</script>
+</head>
+<body style="text-align: center">
+	<form name=log>
+		<h1></h1>
+		<h1>로그인</h1>
+		<h3>ID : future / PW : 7777</h3>
+		<h3>1단계 : dream / 2단계 : hope</h3>
+		
+		<table align="center" border>
+			<tr>
+				<td bgcolor="lightgray">ID</td> <td><input name="id"  type="text" ></td> 
+				<td rowspan="2"><input type="button" value="로그인" onclick="javascript:bt_login()"/></td>
+			</tr>
+			
+			<tr>
+				<td bgcolor="lightgray">Password</td> <td><input name="pw" type="password"></td>
+			</tr>
+		</table><br>
+
+<table align="center" border> <tr align="center"> <td>Status</td> <td><input id="id_status" name="status" type="text" value="로그인 미완료" /></td> </tr></table><br/>
+<table align="center" border> 
+	<tr align="center"> <td>1단계</td> <td rowspan="2">주제를 입력하세요</td> <td><input type="text" name="sub1" disabled="disabled"/></td> <td rowspan="2">
+						<input type="button" value="확인" onclick="javascript:bt_check()"/></td>
+	<tr align="center"> <td>2단계</td> <td><input type="text" name="sub2" disabled="disabled"/></td> </table><br>
+
+<table align="center" border> <tr align="center"> <td>완료여부</td> <td><input id="id_success" type="text"/></td> </tr></table><br/>
+
+
+</form>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+/*
+
+*/
+</style>
+
+<script src="http://code.jquery.com/jquery-1.10.2.js">
+</script>
+<script type="text/javascript">
+/**/
+$(document).ready(function(){
+	// 랜덤값과 배열선언
+	var num01=parseInt(Math.random()*10);
+	var num02=parseInt(Math.random()*10);
+	var ranIdx=parseInt(Math.random()*4);
+	var cal=["+","-","*","/"];
+	
+	
+	
+	// 랜덤으로 발생된 내용 각각 값에 입력
+	$("input[id='num01']").val(num01);
+	$("input[id='num02']").val(num02);
+	$("#cal").html( cal[ranIdx] );
+	
+	
+	var calVal=[num01+num02,num01-num02,num01*num02,num01/num02];
+	calResult=calVal[ranIdx];
+
+});
+
+function chk(){
+	$("input:focus").val("");
+}
+function result(){
+	var sumVal=parseInt($("input[id='id01']").val());
+	if (sumVal==calResult){
+		alert("정답");
+	}else{
+		alert("오답");
+	}
+}
+
+
+</script>
+</head>
+<body>
+	<h1>수학 문제</h1>
+	<input type="text" id="num01" value=""><span id="cal">##</span><input type="text" id="num02" value="">
+	=<input type="text" id="id01" value="입력하세요" onclick="chk();">
+	<input type="button" onclick="result();" value="확인">
+</body>
+</html>

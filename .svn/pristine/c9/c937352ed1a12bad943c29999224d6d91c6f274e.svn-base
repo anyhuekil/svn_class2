@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+input:focus{color: orange; background-color:green;}
+</style>
+<script type="text/javascript">
+ 	function lock(){
+ 		var id01=document.login.id.value;
+ 		var pw01=document.login.pw.value;
+ 	
+ 	if(id01=="future" && pw01== "7777" ){
+ 		alert("로그인 되었습니다.");
+        //alert(document.login.subject1.value);
+        //alert(document.login.subject1.disabled);
+ 		document.login.subject1.disabled=false;
+ 		document.login.subject2.disabled=false;
+ 		
+ 		
+ 	}
+
+ 		
+ 		
+ 	}
+
+</script>
+
+</head>
+<body>
+<center>
+<form name="login" border>
+로그인
+ID:<input type="text" name="id"><br>
+Pw:<input type = "password" name="pw"><br>
+1단계 주제를 입력하세요 :<input type="text" disabled="true" name="subject1"><br>
+2단계 세부 주제를 입력하세요 :<input type="text" disabled="true" name="subject2"><br>
+<input type ="button" name="confirm"  onclick="javascript:lock()" value="확인">
+
+</form>
+</center>
+</body>
+</html>

@@ -1,0 +1,3 @@
+navigator.registerProtocolHandler("mailto",
+                                  "https://mail.google.com/mail/?extsrc=mailto&url=%s",
+                                  "Gmail"); 

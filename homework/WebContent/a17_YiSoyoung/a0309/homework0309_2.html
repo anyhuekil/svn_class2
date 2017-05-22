@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	body { background-color: #FFF0B5; font-size: 12pt; }
+	td {text-align: center; padding: 10px 20px;}
+	caption {font-size: 2em; }
+	input:FOCUS {background-color: #FFFFAA; color:red;}
+</style>
+<script type="text/javascript">
+/*
+ * 확인 예제 및 과제
+ 아래와 같은 로그인 화면을 만들고,
+ 로그인 -- 입력시 마다 , focus 하는 곳에서 배경색, 글자색 변경처리
+  id  : [    ]
+ pass : [    ]
+ [로그인] -- id와 pass가 지정된 내용에 맞을 때, 다음 단계 활성화
+ 			future/7777
+	status : [] -- 상태 여부
+ 1단계 주제를 입력하세요: [  ] -- 초기 비 활성화 ==> 활성화
+ 							document.frm.st.disabled=false;
+ 2단계 세부주제을 입력하세요: [  ] -- 초기 비 활성화 ==> 활성화 
+ 	완료여부[ ]
+ document.form이름.element이름.value이용
+*/
+  function login() {
+	 	var id = document.getElementById("id");
+	 	var pass = document.getElementById("pass");
+	 	var status = document.getElementById("status");
+	 	var subject = document.getElementById("subject");
+		if(id.value == "future" && pass.value== "7777"){			
+			alert("성공");
+			status.value = "로그인 성공";
+			subject.disabled = false;
+		}
+	}
+ 	
+</script>
+</head>
+<body>
+	<table>
+		<caption>로그인</caption>
+		<tr><th>ID</th><td><input type="text" id="id"></td></tr>
+		<tr><th>PASS</th><td><input type="password" id="pass"></td></tr>
+		<tr><td colspan="2"><button onclick="javascript:login()">로그인</button></td></tr>
+		<tr><td>status</td><td><input type="text" id="status" value="로그인하세요"></td></tr>
+		<tr><td>주제</td><td><input type="text" id="subject" disabled="disabled"></td></tr>
+	</table>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+/*
+확인 예제:
+	아래와 같은 로그인 화면 만들고
+		로그인 -- 입력시 마다, focus 하는 곳에서 배경색, 글자색 변경처리
+	ID: [    ]
+	PW: [    ]
+	 [로그인]  -- id와 pw가 맞을 때, 다음 단계 활성화
+	status:[   ] -- 상태여부(로그인전/로그인성공/1단계 완료/2단계 완료)
+1단계 주제를 입력하세요: [  ] - 초기 비활성화
+2단계 세부주제를 입력하세요: [  ] - 초기 비활성화
+
+document.form이름.element이름.value 활용
+document.form이름.element이름.disabled=false; 활용 (1단계 주제입력 단계)
+
+TO DO
+1. id / pw 맞으면 로그인 성공 으로 넘어가도록 설정-성공
+2. 1단계 입력되면 상태여부 1단계 완료 로 넘어가도록 설정
+3. 2단계 입력되면 상태여부 2단계 완료 로 넘어가도록 설정
+
+*/
+	input[type=text]:focus{background:gold;color:white;}
+	input[type=password]:focus{background:tomato;color:white;}
+	div{background:yellow;display:inline;}
+</style>
+<script type="text/javascript">
+	function login(){
+		var validId=document.getElementById("inputID").value;
+		var validPw=document.getElementById("inputPW").value;
+		if(validId=="scott"&&validPw=="1111"){
+			document.getElementById("status").innerHTML="로그인성공";
+		}else{
+			alert("ID 또는 비밀번호를 확인하고 다시 로그인하세요.")
+		}
+	}
+	function inputText01(){
+		document.getElementById("status").innerHTML="1단계 완료"
+	}
+	function inputText02(){
+		document.getElementById("status").innerHTML="2단계 완료"
+	}
+	function res(){
+		document.getElementById("status").innerHTML="로그인 전"
+	}
+		
+</script>
+</head>
+<body>
+ <form>
+ 로그인<br>
+ <span>ID:</span>
+ <input type="text" id="inputID" placeholder="아이디 입력"/><br>
+ <span>PW:</span>
+ <input type="password" id="inputPW" placeholder="비밀번호 입력"/><br>
+ <input type="button" value="로그인"/ onclick="javascript:login()"><br><br>
+ 
+ status:<div id="status">로그인 전</div><br><br>
+ 1단계 주제를 입력하세요:
+ <input type="text" id="text01" placeholder="1단계 입력" onchange="javascript:inputText01()"/><br>
+2단계 주제를 입력하세요:
+ <input type="text" id="text02" placeholder="2단계 입력" onchange="javascript:inputText02()"/><br>
+ <input type="reset" value="입력 초기화" onclick="javascript:res()"/>
+ </form>
+</body>
+</html>

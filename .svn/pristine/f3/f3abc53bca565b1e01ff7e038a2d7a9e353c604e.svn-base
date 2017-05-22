@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<!-- 	테이블 과제 1
+	 	2017년 KBO리그 구단( 가운데 정렬)
+	 	구단명  연고지역  작년 (2016)성적
+	 	kia		광주		@@@@
+	 	롯데		부산		@@승@@패(@@위)
+	 	 -->
+	 
+
+<table align = "center" width ="300" height ="150" border>
+	<caption>table 야구 과제</caption>
+	<tr align ="center"><th>구단명</th><th>연고지역</th><th>작년(2016)성적</th></tr>
+	<tr align ="center"><th>KIA</th><th>광주</th><th>5승0무5패(5위)</th></tr>
+	<tr align ="center"><th>롯데</th><th>부산</th><th>5승0무5패(8위)</th></tr>
+
+
+</table>
+<table align ="center"width ="300" height ="300" border >
+	<caption>table 과제 1</caption>
+	<!-- 	<tr align ="center"><td width ="300">9 </td><td>10</td><td>11</td><td>12</td><td>13</td></tr>
+	 -->
+	<tr align ="center"><td>9 </td><td>10</td><td>11</td><td>12</td><td>13</td></tr>
+	<tr align ="center"><td>8 </td><td align = "center" colspan ="3" rowspan ="3">xx블루마블</td><td>14</td></tr>
+	<tr align ="center"><td>7 </td> <td>15</td></tr>
+	<tr align ="center"><td>6 </td><td>16</td></tr>
+	<tr align ="center"><td>5 </td><td>4</td><td>3</td><td>2</td><td>1</td></tr>
+</table>
+
+
+<table align  ="center" width ="300" height ="300" border>
+	<caption>table 과제 2</caption>
+	<tr align ="center"><td>과목</td><td>비용</td><td>비고</td></tr>
+	<tr align ="center"><td rowspan ="2">java</td><td>기본문법</td><td rowspan ="4"></td></tr>
+	<tr align ="center"><td>object</td></tr>
+	<tr align ="center"><td rowspan ="2">jsp</td><td>session</td></tr>
+	<tr align ="center"><td>bear</td></tr>		
+</table>
+
+
+<table align  ="center" width ="200" height ="200" border>
+	<thead>
+	<tr><td><strong>과목</td><td><strong>비용</td><td ><strong>비고</td></tr>
+	</thead>
+	<tbody>
+	<tr><td rowspan = "2">java</td><td>기본문법</td><td rowspan = "4"></td></tr>
+	<tr><td>object</td></tr>
+	<tr><td rowspan = "2">jsp</td><td>session</td></tr>
+	<tr><td>bear</td></tr>
+	</tbody>
+
+</table>
+
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	table{
+		width: 600px; margin: 30px auto; background-color: lightgreen;
+	}
+	caption{font-size:1.4em; font-weight: bold; margin-bottom: 10px; color:green;}
+	td {background-color: lightyellow; padding:10px; text-align: center;}
+	
+	th {padding:10px; font-size:1.2em; font-weight: bold;}
+</style>
+<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+<script>
+/* xml, json 데이터 확인예제(숙제)
+ * 현재 타격 list
+ 	- xml, json 문자열로 데이터를 만들고
+ 	- rank, 팀명, 선수이름, 타율, 홈런 3명 정도 데이터를 가져와서
+ 	- xml 문자열로 데이터를 만들고
+ * 방어율 list(json)
+ 	- rank, 팀명, 선수이름, 방어율(EarnedRunAvg), 피안타율 3명
+ 	- json 문자열로 데이터 만들고
+ */
+ var xml = "<list>";
+ xml += "	<person>";
+ xml += "		<rank>1</rank><teamName>삼성라이온즈</teamName><player>이승엽</player><battingAvg>0.307</battingAvg><homerun>20</homerun>"; 
+ xml += "	</person>";
+ xml += "	<person>";
+ xml += "		<rank>2</rank><teamName>두산베어스</teamName><player>김현수</player><battingAvg>0.291</battingAvg><homerun>10</homerun>"; 
+ xml += "	</person>";
+ xml += "	<person>";
+ xml += "		<rank>3</rank><teamName>sk와이번스</teamName><player>이호준</player><battingAvg>0.300</battingAvg><homerun>5</homerun>"; 
+ xml += "	</person>";
+ xml += "</list>";
+ var json="[{\"rank\":\"1\", \"teamName\":\"기아\", \"player\":\"양현종\",   \"rate\":\"0.800\", \"pianta\":\"24\"},";
+ json +=   "{\"rank\":\"2\", \"teamName\":\"SK\",  \"player\":\"세든\",     \"rate\":\"0.500\", \"pianta\":\"26\"},";
+ json +=   "{\"rank\":\"3\", \"teamName\":\"넥센\", \"player\":\"벤헤켄\",   \"rate\":\"0.600\", \"pianta\":\"29\"},";
+ json +=   "{\"rank\":\"4\", \"teamName\":\"넥센\", \"player\":\"나이트\",   \"rate\":\"1.000\", \"pianta\":\"28\"},";
+ json +=   "{\"rank\":\"5\", \"teamName\":\"두산\", \"player\":\"니퍼트\",   \"rate\":\"0.800\", \"pianta\":\"30\"},";
+ json +=   "{\"rank\":\"6\", \"teamName\":\"삼성\", \"player\":\"윤성환\",   \"rate\":\"0.750\", \"pianta\":\"25\"},";
+ json +=   "{\"rank\":\"7\", \"teamName\":\"KIA\", \"player\":\"김진우\",   \"rate\":\"0.667\", \"pianta\":\"22\"},";
+ json +=   "{\"rank\":\"8\", \"teamName\":\"삼성\", \"player\":\"로드리게스\",\"rate\":\"0.333\", \"pianta\":\"17\"},";
+ json +=   "{\"rank\":\"9\", \"teamName\":\"넥센\", \"player\":\"김영민\",   \"rate\":\"0.000\", \"pianta\":\"24\"},";
+ json +=   "{\"rank\":\"10\",\"teamName\":\"SK\",  \"player\":\"레이예스\",  \"rate\":\"0.750\", \"pianta\":\"30\"}]";
+ 
+ 
+	$(document).ready(function() {
+		var xmlObj = $.parseXML(xml);
+		$(xmlObj).find("person").each(function(index) {
+			$('#xmlTable td:nth-child(1)').eq(index).html($(this).find("rank"));
+			$('#xmlTable td:nth-child(2)').eq(index).html($(this).find("teamName"));
+			$('#xmlTable td:nth-child(3)').eq(index).html($(this).find("player"));
+			$('#xmlTable td:nth-child(4)').eq(index).html($(this).find("battingAvg"));
+			$('#xmlTable td:nth-child(5)').eq(index).html($(this).find("homerun"));
+		});
+		var jsonObj = $.parseJSON(json);
+		$(jsonObj).each(function(index, item) {
+			//alert(item.rank);
+			$('#jsonTable td:nth-child(1)').eq(index).html(item.rank);
+			$('#jsonTable td:nth-child(2)').eq(index).html(item.teamName);
+			$('#jsonTable td:nth-child(3)').eq(index).html(item.player);
+			$('#jsonTable td:nth-child(4)').eq(index).html(item.rate);
+			$('#jsonTable td:nth-child(5)').eq(index).html(item.pianta);
+		});
+	});
+</script>
+</head>
+<body>
+	<div id="wrap">
+		<table id="xmlTable">
+			<caption>현재 타격 list</caption>
+			<tr><th>rank</th><th>팀명</th><th>선수이름</th><th>타율</th><th>홈런</th></tr>
+			<tr><td></td><td></td><td></td><td></td><td></td></tr>
+			<tr><td></td><td></td><td></td><td></td><td></td></tr>
+			<tr><td></td><td></td><td></td><td></td><td></td></tr>
+		</table>
+		<table id="jsonTable">
+			<caption>방어율 list</caption>
+			<tr><th>rank</th><th>팀명</th><th>선수이름</th><th>승률</th><th>피안타율</th></tr>
+			<tr><td></td><td></td><td></td><td></td><td></td></tr>
+			<tr><td></td><td></td><td></td><td></td><td></td></tr>
+			<tr><td></td><td></td><td></td><td></td><td></td></tr>
+			<tr><td></td><td></td><td></td><td></td><td></td></tr>
+			<tr><td></td><td></td><td></td><td></td><td></td></tr>
+			<tr><td></td><td></td><td></td><td></td><td></td></tr>
+			<tr><td></td><td></td><td></td><td></td><td></td></tr>
+			<tr><td></td><td></td><td></td><td></td><td></td></tr>
+			<tr><td></td><td></td><td></td><td></td><td></td></tr>
+			<tr><td></td><td></td><td></td><td></td><td></td></tr>
+		</table>
+	</div>
+</body>
+</html>

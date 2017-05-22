@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>after0308</title>
+<style type="text/css">
+	#title01{color:blue;background-color:yellow;}
+	.fruit{background-color:pink;}
+	.num01{background-color:yellow;text-align:right;}
+
+	input[value="60"]{background:red;}
+	input[value="70"]{background-color:blue;}
+	input[value="80"]{background-color:yellow;}
+	input[value="90"]{background-color:green;}
+
+</style>
+<script type="text/javascript">
+
+	function send(){
+		var choiceTi=document.movie.title01.value;
+			document.movie.chTitle.value=choiceTi;		
+	}
+
+
+	function sum(){
+		var choiceTi=document.movie.title01.value;
+		var chPrice=parseInt(document.movie.price.value);
+			document.movie.chPrice01.value=chPrice;
+		var chPerson=parseInt(document.movie.person.value);
+			document.movie.chPerson01.value=chPerson;
+		var chPay=(chPrice*chPerson);
+			document.movie.chPay01.value=chPay;
+		document.movie.intro01.value=("영수증\n\n제목 : " + choiceTi + "\n" + "계산 : "
+				+ chPrice + " * " + chPerson + " = " + chPay + " 원" );
+	}
+
+	function re(){
+		var pass1=document.client.inPass1.value;
+		var pass2=document.client.inPass2.value;
+		if(pass1==pass2){
+			alert("비밀번호 확인!");			
+		}else{
+			alert("비밀번호가 다릅니다");
+		}
+	}
+
+
+</script>
+</head>
+<body>
+
+<form name="movie">
+
+	<h1 align="center">영화예매</h1>
+<table align="center" width="600" height="900" border>
+	<tr height="50">
+		<td align="center" width="200">영화제목
+		</td>
+		<td align="right"><input type="text" name="title01"/>
+		</td>
+	</tr>
+	<tr height="50">
+		<td align="center" width="200">관람료
+		</td>
+		<td align="right"><input type="text" name="price"/>
+		</td>
+	</tr>
+	<tr height="50">
+		<td align="center" width="200">인원
+		</td>
+		<td align="right"><input type="text" name="person"/>
+		</td>
+	</tr>
+	<tr height="50">
+		<td align="right" colspan="2">
+			<input type="button" align="center" value="확인" onclick="javascript:send();"/>
+			<input type="reset" value="입력초기화"/><br>
+			<input type="button" value="계산하기" onclick="javascript:sum();"/>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" colspan="2"><h3 align="center">영수증</h3><br>
+			<textarea name="intro01" rows=20 cols=30></textarea><br>
+			<p align="left">제목 : <input type="text" name="chTitle" /><br>
+			계산 : <input type="text" name="chPrice01"/>원 * <input type="text" name="chPerson01"/>명<br>
+			총계 : <input type="text" name="chPay01"/>원
+			</p>
+		</td>
+	</tr>
+
+
+</table>
+
+
+
+
+</form><br><br><br><br><br><hr><br>
+
+	<h1 align="center" id="title01">판매물품현황</h1>
+	<table align="center" width="500" height="300" border>
+		<tr>
+			<td>ch</td>
+			<td>물건명</td>
+			<td>가격</td>
+			<td>갯수</td>
+		</tr>
+		<tr>
+			<td><input type="checkbox"></td>
+			<td class="fruit">사과</td>
+			<td>3000</td>
+			<td class="num01"><input type="text" size="5"/>개</td>
+		</tr>	
+		<tr>
+			<td><input type="checkbox"></td>
+			<td class="fruit">바나나</td>
+			<td>5000</td>
+			<td class="num01"><input type="text" size="5"/>개</td>
+		</tr>	
+		<tr>
+			<td><input type="checkbox"></td>
+			<td class="fruit">딸기</td>
+			<td>8000</td>
+			<td class="num01"><input type="text" size="5"/>개</td>
+		</tr>
+		<tr>
+			<td align="center" colspan="4">
+			<input type="button" name="confirm" value="확인" onclick="javascricpt:alert('감사합니다!')">
+			<input type="button" name="cancle" value="취소" onclick="javascricpt:alert('취소되었습니다')">
+			</td>
+		</tr>	
+	
+	</table><br><br><br><br><br><hr><br><br><br><br>
+
+	<h1 align="center">과목별 학점</h1>
+	<table align="center" width="200" height="200" border>
+		<tr>
+			<td width="100">과목명</td>
+			<td>점수</td>
+		</tr>
+		<tr>
+			<td>국어</td>
+			<td><input type="text" size="5" value="70"/></td>
+		</tr>	
+		<tr>
+			<td>영어</td>
+			<td><input type="text" size="5" value="80"/></td>
+		</tr>	
+		<tr>
+			<td>수학</td>
+			<td><input type="text" size="5" value="60"/></td>
+		</tr>	
+	
+	
+	</table><br><br><br><br><hr><br><br>
+	<form name="client">
+	<center>
+	<h1>회원가입</h1><br>
+	ID:<input type="text" name="inId" /><br><br>
+	PASSWORD:<input type="password" name="inPass1" /><br><br>
+	PASSWORD확인:<input type="password" name="inPass2"/>
+	<input type="button" name="inPass2re" value="확인" onclick="javascript:re()"/><br><br>
+	이름:<input type="text" name="inName" /><br><br>
+	이메일:<input type="text" name="inMail" /><br><br>
+	닉네임:<input type="text" name="inNic" /><br><br>
+	성별:
+	남자<input type="radio" name="gender" value="man" /> 
+	여자<input type="radio" name="gender" value="woman" /><br><br>
+	비밀번호찾기 질문:
+	<select name="lostPass">
+	<option value="pa1">다른 이메일 주소는?</option>
+	<option value="pa2">나의 출신 초등학교는?</option>
+	<option value="pa3">나의 출신 고향은?</option>
+	<option value="pa4">가장 좋아하는 색깔은?</option>
+	<option value="pa5">어머니 성함은?</option>
+	</select><br>
+	답변:<input type="text" name="loPass" /><br><br>
+	메일링가입:
+	예<input type="radio" name="mailing" value="mailYes" />
+	아니오<input type="radio" name="mailing" value="mailNo" /><br><br><br>
+	
+	<input type="button" name="lastYes" value="확인">  <input type="button" name="cancel" value="취소">
+	
+
+
+	</center>
+	</form>
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+/*
+
+*/
+
+div{
+	margin:10px;
+	display:inline-block;
+	width:300px;
+	height:300px;
+	background-color:royalblue;
+	color: white;
+	font-size: 100px;
+	text-align: center;
+	vertical-align: middle;
+}
+
+</style>
+
+<script src="http://code.jquery.com/jquery-1.10.2.js">
+</script>
+<script type="text/javascript">
+/**/
+$(document).ready(function(){
+	var header = document.getElementById("header");
+	// 이벤트 연결 : 이벤트명=함수
+	header.onclick=function(){
+		alert("클릭 성공");
+		//this : 현재 클릭한 객체
+		this.align="center";		
+		this.style.backgroundColor="royalblue";		
+	};	
+/*	
+	var divs=document.querySelectorAll("div");
+	var ranIdx=parseInt(Math.random()*3);
+	divs[ ranIdx ].onclick=function(){
+		alert("호떡 여기에");
+	};
+*/	
+	var where = document.querySelectorAll("td");
+    var guess = Math.floor(Math.random()*3 );
+    for (i=0;i<3;i++){
+    	if (i==guess){
+    	where[i].onclick=function(){    
+          alert("정답");
+		var img = document.createElement("img");
+		img.setAttribute("src","img01.jpg");
+		img.setAttribute("width",500);
+		img.setAttribute("height",750);
+		document.body.appendChild(img);
+		
+		var winname = window.open("","","width=550,height=800");
+		winname.document.write("<img src='img01.jpg'>");
+    	};
+    	}else{
+    		where[i].onclick=function(){
+            alert("호떡이 없습니다");
+    		};
+    	}
+    	}
+	
+	
+	
+	
+	
+});
+
+/*과제
+다른 곳을 클릭했을 때는, 호떡이 없습니다
+맞는 곳을 클릭했을 때, createElement활용해서 img로 나오게 처리
+ 
+*/
+
+function game01(num){
+	var i = parseInt(Math.random()*3+1);
+	if (num==i){			
+		alert("정답");
+	}else{
+		alert("오답 정답은"+i);
+	}	
+}
+
+
+
+
+</script>
+</head>
+<body>
+	<h1 id="header">클릭해보세요</h1>
+<div id="div01" onclick="game01(1)">1</div>
+<div id="div02" onclick="game01(2)" >2</div>
+<div id="div03" onclick="game01(3)" >3</div> 클릭할때마다 랜덤
+<table width=600 height=400 border>
+<tr><td>신관용</td><td>서종원</td><td>서정효</td></tr>
+
+</table> 페이지 로드시 랜덤 설정 고정
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<h1>::요즘 관심분야::</h1>
+<ol>
+<li>학습 [Squre Type]
+	<ul type="square">
+		<li>프로그램</li><li>영어</li><li>화면설계</li>
+	</ul>
+</li>
+<li>휴식 [Circlr Type]
+	<ul type="circle">
+		<li>친구와 저녁만남</li><li>잠</li><li>음악</li>
+	</ul>
+</li>
+<li>취미 [Disc Type]
+	<ul type="disc">
+		<li>게임</li><li>자전거</li><li>영화감상</li>
+	</ul>
+</li>
+</ol>
+
+</body>
+</html>

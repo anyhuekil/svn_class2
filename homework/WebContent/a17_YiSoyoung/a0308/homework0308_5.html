@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	#wrap {width:300px; margin:0 auto;}
+	table {padding: 20px;}
+</style>
+<script type="text/javascript">
+	function chk() {
+		if(frm.id.value.length < 2 ){
+			alert("id는 2글자 이상으로 가입하세요");
+			frm.id.focus();
+			return false;
+		}
+		if(frm.pass.value!=frm.pass1.value){
+			alert("비밀번호가 일치하지 않습니다");
+			frm.pass.value = "";
+			frm.pass1.value = "";
+			frm.pass.focus();
+			return false;
+		}
+		return true;
+	}
+</script>
+</head>
+<body>
+	<div id="wrap">
+	 	<form action="" name="frm" onsubmit="return chk()">
+		    <table>
+		    	<caption>회원가입</caption>
+		    	<tr><th>아이디</th><td><input type="text" name="id" placeholder="ID는 2글자 이상"/></td></tr>
+		    	<tr><th>비밀번호</th><td><input type="password" name="pass"/></td></tr>
+		    	<tr><th>비번확인</th><td><input type="password" name="pass1"/></td></tr>
+		    	<tr><th>성별</th><td>
+		    				<input type="radio" name="gender" value="m" checked="checked"/>남
+		    				<input type="radio" name="gender" value="f"/>여</td></tr>
+		    	<tr><th>이메일</th><td><input type="email"/></td></tr>
+		    	<tr><td colspan="2" align="center"><input type="submit" value="가입"/></td></tr>
+		    </table>
+	    </form>
+    </div>
+</body>
+</html>

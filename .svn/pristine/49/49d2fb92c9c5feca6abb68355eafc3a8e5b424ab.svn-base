@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function send() 
+	{
+		var objSelectColor = document.getElementById("selectColor");
+		var objInput = document.getElementById("input");
+		var objShowResult = document.getElementById("showResult");
+		
+		objShowResult.innerHTML = objInput.value;
+		
+		switch (objSelectColor.value) 
+		{
+			case "빨":
+				objShowResult.style.backgroundColor = "red";
+				break;
+			case "주":
+				objShowResult.style.backgroundColor = "orange";
+				break;
+			case "노":
+				objShowResult.style.backgroundColor = "yellow";
+				break;
+			case "초":
+				objShowResult.style.backgroundColor = "green";
+				break;
+			case "파":
+				objShowResult.style.backgroundColor = "blue";
+				break;
+			case "남":
+				objShowResult.style.backgroundColor = "navy";
+				break;
+			case "보":
+				objShowResult.style.backgroundColor = "purple";
+				break;
+			default:
+				break;
+		}
+		
+		
+	}
+</script>
+</head>
+<body>
+<select id="selectColor">
+	<option>빨</option>
+	<option>주</option>
+	<option>노</option>
+	<option>초</option>
+	<option>파</option>
+	<option>남</option>
+	<option>보</option>
+</select><br>
+입력할 내용:<input type="text" id="input"/><br>
+<input type="button" value="확인" onclick="javascript:send();"/>
+<h1 id="showResult"></h1>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	body { background-color: #FFF0B5; font-size: 12pt; }
+	table { background-color: yellow;}
+	td {text-align: center; padding: 30px;}
+	tr {background-color: #FFE271; }
+</style>
+<script type="text/javascript">
+/*
+	색상과 글자 입히기...
+	글자색 선택 [ select option] - 빨주노초파남보
+	입력할 내용 : [            ]
+	     [확인]
+	@@@@@@ : 확인을 클릭시, 해당 배경색에 입력할 내용에 입력한 글자 내용 표시
+*/
+	function resultShow() {
+		var inputContent = document.getElementById("inputContent").value;
+		var choiceColor = document.getElementById("choiceColor").value;
+		var result = document.getElementById("result");
+		result.innerHTML = '입력한 값은 : '+ inputContent;
+		result.style.color = choiceColor;
+	}
+</script>
+</head>
+<body>
+	<table>
+		<tr>
+			<th>글자색 선택</th>
+			<td>
+				<select id="choiceColor">
+		            <option value="red">빨</option>
+		            <option value="orange">주</option>
+		            <option value="yellow">노</option>
+		            <option value="green">초</option>
+		            <option value="blue">파</option>
+		            <option value="navy">남</option>
+		            <option value="purple">보</option>
+        		</select>
+			</td>
+		</tr>
+		<tr>
+			<th>입력할 내용</th>
+			<td><input type="text" id="inputContent"/></td>
+		</tr>
+		<tr>
+			<td colspan="2"><input type="button" value="확인" onclick="javascript:resultShow()"/></td>
+		</tr>
+		<tr>
+			<td colspan="2"><span id="result">입력한 값은 : </span></td></tr>
+	</table>
+</body>
+</html>

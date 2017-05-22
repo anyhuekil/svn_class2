@@ -1,0 +1,10 @@
+인터페이스  
+AttackWay
+추상메서드  attack()
+RocketAttack : AttackWay를 상속받은 실제 클래스 
+attack() : 로켓공격하다.
+Robot클래스
+필드:AttackWay
+메서드 showAttack(){  
+attack();
+메서드  setAttackWay(AttackWay attway)

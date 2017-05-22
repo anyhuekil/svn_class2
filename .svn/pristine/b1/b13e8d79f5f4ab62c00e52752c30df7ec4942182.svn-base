@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Homework BoardGame</title>
+		<style type="text/css">
+		/* 과제!!
+			팀명			색상				확인		이동
+			A(text)		select 방식		버튼		버튼
+			B(text)		select 방식		버튼		버튼						// 이렇게 정하고
+			
+			
+			출발		1		2		3		4		5
+							A팀									// 이동 누르면 앞으로 한칸씩 이동
+			B팀													// 팀명 입력하면 이름뜨고, 팀색상도 표현
+		*/
+			.block_Board{width:100px;height:50px;border:1px double black;}
+			.gameTable{width:700px;height:250px;border:1px double black;}
+			.gameLabel{width:700px;height:100px;border:1px double black;}
+		</style>
+		<script type="text/javascript">
+			var name_A;
+			var name_B;
+			var color_A;
+			var color_B;
+			var cnt_A = 0;
+			var cnt_B = 0;
+			function clearData(obj)
+			{
+				obj.value = "";
+			}
+			function nameColor(obj,num)
+			{
+				if(num==0)
+				{
+					name_A = document.getElementById("team_A").value;
+					color_A = document.getElementById("color_At").value;
+					document.getElementById("a_0").innerHTML = name_A;
+					document.getElementById("a_0").style.backgroundColor = color_A;
+					document.getElementById("team_A").disabled = "true";
+					document.getElementById("color_At").disabled = "true";
+				}
+				else if(num==1)
+				{
+					name_B = document.getElementById("team_B").value;
+					color_B = document.getElementById("color_Bt").value;
+					document.getElementById("b_0").innerHTML = name_B;
+					document.getElementById("b_0").style.backgroundColor = color_B;
+					document.getElementById("team_B").disabled = "true";
+					document.getElementById("color_Bt").disabled = "true";
+				}
+				obj.disabled = "true";
+			}
+			
+			function moveFunc(obj)
+			{
+				if(obj==0)
+				{
+					document.getElementById("a_"+cnt_A).innerHTML = "";
+					document.getElementById("a_"+cnt_A).style.backgroundColor = "white";
+					document.getElementById("a_"+(cnt_A+1)).innerHTML = name_A;
+					document.getElementById("a_"+(cnt_A+1)).style.backgroundColor = color_A;
+					cnt_A++;
+					if(cnt_A==6)
+					{
+						cnt_A = 0;
+						alert(name_A+" 팀의 승리!");
+					}
+				}
+				else
+				{
+					document.getElementById("b_"+cnt_B).innerHTML = "";
+					document.getElementById("b_"+cnt_B).style.backgroundColor = "white";
+					document.getElementById("b_"+(cnt_B+1)).innerHTML = name_B;
+					document.getElementById("b_"+(cnt_B+1)).style.backgroundColor = color_B;
+					cnt_B++;
+					if(cnt_B==6)
+					{
+						cnt_B = 0;
+						alert(name_B+" 팀의 승리!");
+					}
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<table>
+			<tr>
+				<th>
+					팀명
+				</th>
+				<th>
+					색상
+				</th>
+				<th>
+				</th>
+				<th>
+					이동
+				</th>
+			</tr>
+			<tr>
+				<th>
+					<input type="text" id="team_A" value="팀명을 입력해주세요." onclick="javascript:clearData(this);" />
+				</th>
+				<th>
+					<select id="color_At">
+						<option value="red">RED</option>
+						<option value="Orange">ORANGE</option>
+						<option value="Yellow">YELLOW</option>
+						<option value="Green">GREEN</option>
+						<option value="Blue">BLUE</option>
+						<option value="Navy">NAVY</option>
+						<option value="Purple">PURPLE</option>
+					</select>
+				</th>
+				<th>
+					<input type="button" name="team_ACBtn" value="Confirm" onclick="javascript:nameColor(this,0);" />
+				</th>
+				<th>
+					<input type="button" name="team_AMBtn" value="Move!" onclick="javascript:moveFunc(0);" />
+				</th>
+			</tr>
+			<tr>
+				<th>
+					<input type="text" id="team_B" value="팀명을 입력해주세요." onclick="javascript:clearData(this);" />
+				</th>
+				<th>
+					<select id="color_Bt">
+						<option value="red">RED</option>
+						<option value="Orange">ORANGE</option>
+						<option value="Yellow">YELLOW</option>
+						<option value="Green">GREEN</option>
+						<option value="Blue">BLUE</option>
+						<option value="Navy">NAVY</option>
+						<option value="Purple">PURPLE</option>
+					</select>
+				</th>
+				<th>
+					<input type="button" name="team_BCBtn" value="Confirm" onclick="javascript:nameColor(this,1);" />
+				</th>
+				<th>
+					<input type="button" name="team_BMBtn" value="Move!" onclick="javascript:moveFunc(1);" />
+				</th>
+			</tr>
+		</table>
+		<br><br><br><hr>
+		<table class="gameTable">
+			<tr>
+				<th class="block_Board">
+					Start!
+				</th>
+				<th class="block_Board">
+					1
+				</th>
+				<th class="block_Board">
+					2
+				</th>
+				<th class="block_Board">
+					3
+				</th>
+				<th class="block_Board">
+					4
+				</th>
+				<th class="block_Board">
+					5
+				</th>
+				<th class="block_Board">
+					GOAL!
+				</th>
+			</tr>
+			<tr class="gameLabel">
+				<th id="a_0" class="block_Board">
+				</th>
+				<th id="a_1" class="block_Board">
+				</th>
+				<th id="a_2" class="block_Board">
+				</th>
+				<th id="a_3" class="block_Board">
+				</th>
+				<th id="a_4" class="block_Board">
+				</th>
+				<th id="a_5" class="block_Board">
+				</th>
+				<th id="a_6" class="block_Board">
+				</th>
+			</tr>
+			<tr class="gameLabel">
+				<th id="b_0" class="block_Board">
+				</th>
+				<th id="b_1" class="block_Board">
+				</th>
+				<th id="b_2" class="block_Board">
+				</th>
+				<th id="b_3" class="block_Board">
+				</th>
+				<th id="b_4" class="block_Board">
+				</th>
+				<th id="b_5" class="block_Board">
+				</th>
+				<th id="b_6" class="block_Board">
+				</th>
+			</tr>
+		</table>
+	</body>
+</html>

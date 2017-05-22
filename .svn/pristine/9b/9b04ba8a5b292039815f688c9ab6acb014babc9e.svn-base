@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function receipt(){
+		var titleValue=document.movieForm.title.value; //입력받은 제목
+		var priceValue=parseInt(document.movieForm.price.value); //입력받은 관람료 숫자로 전환
+		var peopleValue=parseInt(document.movieForm.people.value); //입력받은 인원 숫자로 전환
+		
+		
+		var inTitle=titleValue; //입력받은 제목을 영수증에 출력
+		var inPrice=priceValue; //입력받은 관람료를 영수증에 출력
+		var inPeople=peopleValue;//입력받은 인원을 영수증에 출력
+		
+		var result=priceValue*peopleValue; //곱한값을 출력
+		
+		var str="	 	제목 : " + inTitle + 
+		"\n		계산 : "+ inPrice +" * " + inPeople+" = "+result+"원";
+		
+		document.movieForm.bill.value=str;
+		//alert(str); 
+		//alert(result); 
+		/*제목 : <input type="text" name="inTitle"/>
+		계산 : <input type="text" name="inPrice"/> * <input type="text" name="inPeople"/> = <input type="text" name="result"/>*/
+	}
+</script>
+</head>
+<body>
+<form name="movieForm"><!--  parseInt()활용 -->
+	제목: <input type="text" name="title"/><br>
+	관람료: <input type="text" name="price"/><br>
+	인원: <input type="text" name="people"/><br>
+	<input type="button" value="계산" onclick="javascript:receipt()"/><br>
+	<center>
+	<h2 >영수증</h2><br>
+	<!--  form하위에 있으면, document.form이름.receipt.value="영수증" -->
+	<textarea name="bill" rows="20" cols="50">
+	</textarea>
+	</center>
+</form>
+</body>
+</html>

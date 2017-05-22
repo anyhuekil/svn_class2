@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	#kList{ visibility:hidden;}
+	li{list-style:none;}
+</style>
+<script type="text/javascript">
+/*
+ 	 keyword등록	[		]	
+ 	 등록할 수 있는 keyword[보이기] ==> 초기에는 등록가능 keywords 보이지 않다가
+ 	 													보이기버튼을 클릭하는 순간, 보이기 처리 버튼에 있는 label 보이지 않기 <--> 보이기
+ 	 등록가능 keywords!!
+ 	 java
+ 	 jsp
+ 	 c#
+ 	 python
+ */
+ 	function call(obj){
+ 	 	if(obj.value=="보이기"){
+			obj.value="보이지 않기"; 		
+			document.getElementById("kList").style.visibility="visible";
+ 		}else if(obj.value=="보이지 않기"){
+ 			obj.value="보이기";
+ 			document.getElementById("kList").style.visibility="hidden";
+ 		}
+ 	}
+</script>
+</head>
+<body>
+	keyword등록 : <input type="text"/><br>
+	등록할 수 있는 keyword <input type="button" value="보이기" onclick="javascript:call(this);"/><br><hr>
+	<ul id="kList">
+		<li>등록가능keywords</li>
+		<li>java</li>
+		<li>jsp</li>
+		<li>c#</li>
+		<li>python</li>
+	</ul>
+</body>
+</html>

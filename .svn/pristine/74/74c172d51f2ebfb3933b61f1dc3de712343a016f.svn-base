@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Homework Input Focus</title>
+		<style type="text/css">
+		/* 과제
+		아래와 같은 로그인 화면을 만들고
+		
+			   로그인				// 입력시마다 focus. 배경+글자 색 변경
+			id : [   ]
+			pw : [   ]
+			  [로그인]			// button. id와 pw 정해놓고 로그인 성공시 1단계 활성화 future - 7777
+			
+		1단계 주제를 입력하세요 : [     ][button]		// 처음엔 비활성화 - 로그인시 활성화
+		2단계 주제를 입력하세요 : [     ][button]		// 1단계 완료시 활성화 
+			status:[  ]		  			            // 상태여부(로그인 성공/1단계/2단계)
+		*/
+			caption{font-size:30px;font-weight:bold;}
+			#space01 td{height:30px;}
+			#loginT input:focus{background:pink;}
+			#subject01txt input:focus{background:orange;}
+			#subject02txt input:focus{background:yellow;}
+		</style>
+		<script type="text/javascript">
+			var cnt = 1;
+			function dataClear(obj)
+			{
+				if(obj.style.color!="black")
+				{
+					obj.value="";
+					obj.style.color = "black";
+				}
+			}
+			
+			function login(obj)
+			{
+				corId = document.assignmentLogin.inId.value;
+				corPw = parseInt(document.assignmentLogin.inPw.value);
+				
+				if((corId=="future")&&(corPw==7777))
+				{
+					alert("로그인 성공!");
+					document.assignmentLogin.subject01.disabled = false;
+					document.assignmentLogin.subject01.value = "1단계 주제를 입력해주세요.";
+					document.assignmentLogin.sub01_BT.disabled = false;
+					document.assignmentLogin.cur_Status.value = "로그인 성공";
+					document.assignmentLogin.inId.disabled = true;
+					document.assignmentLogin.inPw.disabled = true;
+					obj.disabled = true;
+					
+				}
+				else alert("ID 혹은 비밀번호가 잘못되었습니다.");
+			}
+			
+			function submit_Data(obj)
+			{
+				alert("입력되었습니다.");
+				obj.disabled = true;
+				if(cnt==1)
+				{					
+					document.assignmentLogin.subject02.disabled = false;
+					document.assignmentLogin.subject02.value = "2단계 주제를 입력해주세요.";
+					document.assignmentLogin.sub02_BT.disabled = false;	
+					document.assignmentLogin.cur_Status.value = "1단계 완료";
+					document.assignmentLogin.subject01.disabled = true;
+					cnt++;
+				}
+				else
+				{
+					document.assignmentLogin.cur_Status.value = "2단계 완료";
+					document.assignmentLogin.subject02.disabled = true;
+					cnt = 1;		
+				}
+			}
+		</script>
+	</head>
+	<body>
+	<form name="assignmentLogin">
+		<table>
+			<caption>로그인</caption>
+			<tr id="space01">
+				<td colspan="3">
+					<hr>
+				</td>
+			</tr>
+			<tr id="loginT">
+				<td width="150">ID</td>
+				<td colspan="2"><input type="text" name="inId" value="ID"
+				onclick="javascript:dataClear(this);"/></td>
+			</tr>
+			<tr>
+				<td>PASSWORD</td>
+				<td colspan="2"><input type="password" name="inPw" value="PASS"
+				onclick="javascript:dataClear(this);"/></td>
+			</tr>
+			<tr>
+				<th colspan="3">
+					<input type="button" name="loginBT" value="Log in!"
+					onclick="javascript:login(obj);" />
+				</th>
+			</tr>
+			<tr id="space01">
+				<td colspan="3">
+					<hr>
+				</td>
+			</tr>
+			<tr id="subject01txt">
+				<td>1단계 주제</td>
+				<td>
+					<input disabled type="text" name="subject01" value="로그인이 필요합니다."
+					onclick="javascript:dataClear(this);" />
+				</td>
+				<td>
+					<input disabled type="button" name="sub01_BT" value="확인"
+					onclick="javascript:submit_Data(this);" />
+				</td>
+			</tr>
+			<tr id="subject02txt">
+				<td>2단계 주제</td>
+				<td>
+					<input disabled type="text" name="subject02" value="로그인이 필요합니다."
+					onclick="javascript:dataClear(this);" />
+				</td>
+				<td>
+					<input disabled type="button" name="sub02_BT" value="확인"
+					onclick="javascript:submit_Data(this);" />
+				</td>
+			</tr>
+			<tr id="space01">
+				<td colspan="3">
+					<hr>
+				</td>
+			</tr>
+			<tr>
+				<th colspan="3">
+					상태 : <input disabled name="cur_Status" value=""/>
+				</th>
+			</tr>
+		</table>
+	</form>
+
+	</body>
+</html>

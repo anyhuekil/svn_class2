@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>web_client</title>
+<!-- Bootstrap Core CSS -->
+<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet" id="bootstrap-css">    
+<!-- Custom CSS -->
+<link href="css/stylish-portfolio.css" rel="stylesheet">
+<!-- Custom Fonts -->
+<link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+
+<style>
+body,html {
+    display: table;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: url(img/guest_bg03.png) no-repeat center center scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+    color:white;
+}
+.myColor{
+	color : black;
+}
+h4{
+	display : inline;
+}
+#myModal{
+	background: url(img/card.jpg) no-repeat center center scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+.modal-lg {
+    height: 742px;
+  }
+  
+.noscroll {
+  overflow: hidden;
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+  
+
+</style>
+</head>
+<body>	
+    <div class="text-vertical-center">                             
+            <br>
+    	    
+    	    <div class="container">
+				<div class="row">				
+					<h1 data-toggle="modal" href="#myModal" >&nbsp;Let's bet !!</h3>
+			        <div class="modal hide modal-lg " id="myModal">
+			          
+			          <button type="button" class="close" data-dismiss="modal">x&nbsp;&nbsp;</button>
+			         
+			         <br><br><br><br>
+			            <h1 id="id" class="myColor"></h1>
+			            <h3 class="myColor">You can do it !</h3>
+			         
+			          <div class="modal-body myColor noscroll">
+			       		<p><h4>Total</h4> :&nbsp;$<input type="text" class="span3 myColor" id="money" value="1000" disabled></p>   
+    					<p><h4>Betting</h4> :&nbsp;<input type="text" class="span3 myColor" id="answer" placeholder="betting할 번호를 입력하세요"></p>
+    					<p><h4>Money</h4> :&nbsp;$<input type="text" class="span3 myColor" id="batting_money" placeholder="betting 금액 입력하세요"></p>
+    					<p>
+    						<a class="btn btn-primary" onclick="javascript:sendAnswer();">Bet</a>
+    						
+    						
+    					</p>
+ 						<textarea id="messageTextArea" rows="10" cols="50"></textarea>
+    					<textarea id="messageFromServer" rows="10" cols="50"></textarea> &nbsp;&nbsp;&nbsp;&nbsp;
+			          </div>
+			          			            
+				     </div>
+			     </div>
+			</div>
+	</div>
+            
+            
+            
+        </div>
+ 
+ <!-- jQuery -->
+<script src="js/jquery.js"></script>
+<!-- Bootstrap Core JavaScript -->
+<script src="js/bootstrap.min.js"></script>  
+<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+
+    <script type="text/javascript">
+    $(document).ready(function(){
+    	var pid=$('#pid', window.parent.document).val();	
+    	$("#id").html(pid);
+    		
+    });	
+    
+        
+        var webSocket = new WebSocket("ws://192.168.0.76:6080/semi02_2/client_ws");
+        var webSocket1 = new WebSocket("ws://192.168.0.76:6080/semi02_2/server_ws");
+        var webSocket2 = new WebSocket("ws://192.168.0.76:6080/semi02_2/broadcast");
+        
+        var messageTextArea = document.getElementById("messageTextArea");
+        var i=0;
+        var money=1000;
+        var server_message=null;
+        
+        webSocket.onopen = function(message){
+            messageTextArea.value += "Server connect...\n";
+        };        
+        webSocket1.onopen = function(message){        	
+            messageTextArea.value += "Server1 connect...\n";
+        };        
+        webSocket2.onopen = function(message){        	
+            messageTextArea.value += "Server2 connect...\n";
+        };
+        
+        webSocket.onclose = function(message){
+            messageTextArea.value += "Server Disconnect...\n";
+        };
+        webSocket1.onclose = function(message){
+            messageTextArea.value += "Server1 Disconnect...\n";
+        };
+        webSocket2.onclose = function(message){
+            messageTextArea.value += "Server2 Disconnect...\n";
+        };
+        
+        
+        
+        webSocket.onerror = function(message){
+            messageTextArea.value += "error...\n";
+        };
+       
+        webSocket.onmessage = function(message){
+        	server_message = message.data; 
+        	if(message.data == "correct"){
+        		money = parseInt($("#money").val()) + parseInt($("#batting_money").val());
+        		}
+            else if(message.data == "wrong"){
+            	money = parseInt($("#money").val()) - parseInt($("#batting_money").val());
+            	}
+            };
+       
+            
+            webSocket2.onmessage = function(message) {
+            	if(server_message == null){
+            		i++;
+            		messageFromServer.value += "<공지사항"+i+">\n"+message.data;
+            		$("#answer").val("");
+            		$("#batting_money").val("");
+            		}
+            	
+            	if(server_message == "correct"){
+            		messageTextArea.value += $("#answer").val()+"에 걸어서 "+$("#batting_money").val()+"원 땄습니다.\n";
+            		messageTextArea.value += "현재 잔액 : "+ money +"원\n"
+            		$("#money").val(money);
+            		$("#answer").val("");
+            		$("#batting_money").val("");
+            		}
+            	else if(server_message == "wrong"){
+            		messageTextArea.value += $("#answer").val()+"에 걸어서 "+$("#batting_money").val()+"원 잃었습니다.\n";
+            		messageTextArea.value += "현재 잔액 : "+ money + "원\n"
+            		$("#money").val(money);
+            		$("#answer").val("");
+            		$("#batting_money").val("");
+            		}
+            	server_message=null;
+            	};
+            
+            	function sendJson(){
+                	var obj=JSON.parse('{"id":"' + $("#id").val() + '","money":' + $("#money").val()
+                		 + ',"answer":' + $("#answer").val() + ',"batting_money":' + $("#batting_money").val()+'}');
+                		 console.log(obj);
+                		 webSocket2.send(JSON.stringify(obj));
+                		 //console.log(JSON.stringify(jjj));   		
+                		
+                	//webSocket1.send(JSON.stringify(jjj));
+                	console.log(obj.id);
+                	console.log(obj.money);
+                	console.log(obj.answer);
+                	console.log(obj.batting_money);
+                	return false;
+                	//var obj = JSON.parse('{ "name":"John", "age":30, "city":"New York"}');
+                	//document.getElementById("demo").innerHTML = obj.name + ", " + obj.age;
+                	
+                }     
+           
+        
+    //websocekt1   
+        
+       
+        function sendReady(){
+    	
+            var message = $("#id").val()+"님이 입장했습니다.";          
+            webSocket1.send(message);
+            
+        }
+    
+
+   
+        function sendAnswer(){    
+        	var message = $("#answer").val();          
+            webSocket.send(message);
+            console.log(message);            
+            message.value = "";
+            messageTextArea.value += $("#id").html()+"님 배팅완료.\n";
+        } 
+      
+        function resultSend(){    
+        	var message = $("#money").val();          
+            webSocket.send(message);
+            console.log(message);            
+            message.value = "";
+            messageTextArea.value += $("#id").html()+"님 배팅완료.\n";
+        }
+        
+      
+        function disconnect(){
+            webSocket.close();
+        }
+    </script>
+
+<script type="text/javascript">
+ $( document ).ready(function() {
+    $(window).resize();
+ }); 
+ $(window).resize(function(){
+     $('.className').css({position:'absolute'}).css({
+         left: ($(window).width() - $('.className').outerWidth())/2,
+         top: ($(window).height() - $('.className').outerHeight())/2
+     });
+ });
+</script>
+
+</body>
+</html>

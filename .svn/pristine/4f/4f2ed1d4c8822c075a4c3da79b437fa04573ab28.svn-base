@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>a05_basic_tag</title>
+</head>
+<body>
+
+	<h1 align="center">오랜날 오랜밤</h1>
+	<hr />
+	<p align="center">
+		별 하나 있고<br> 너 하나 있는<br> 그곳이 내 오랜 밤 이었어<br> 사랑해란 말이
+		머뭇거리어도<br> 거짓은 없었어<br>
+	</p>
+	<br>
+	<p align="center">
+		넌 화나 있고<br> 참 조용했던<br> 그곳이 내 오랜 밤 이었어<br> 어둠 속에서도 잠
+		이루지못해<br> 흐느껴오는 너의 목소리<br>
+	</p>
+	<br>
+	<p align="center">
+		그대 곁이면<br> 그저 곁에서만 있어도<br> 행복했단 걸<br> 그 사실까지 나쁘게<br>
+		추억 말아요<br>
+	</p>
+	<br>
+	<p align="center">
+		그대 곁이면<br> 그저 곁에서만 있어도<br> 행복했단 걸<br> 그 사실까지 나쁘게<br>
+		추억 말아요<br>
+	</p>
+	<br>
+
+
+	<hr />
+</body>
+</html>

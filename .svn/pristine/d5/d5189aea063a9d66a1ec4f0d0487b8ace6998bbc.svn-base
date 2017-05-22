@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<TITLE>Document</TITLE>
+<STYLE>
+#table01 {
+	position:absolute;
+	background-image: url('ddd.png');
+	background-size: contain;
+	background-size: 100% 100%;
+	color: white;
+	text-align: center;
+}
+
+#table02 {
+	position:absolute;
+	background-image: url('ddd.png');
+	background-size: contain;
+	background-size: 100% 100%;
+	color: white;
+	text-align: center;
+	visibility: hidden;
+}
+</STYLE>
+<script type="text/javascript">
+	function onChange(){
+		var tab1=document.getElementById("table01");
+		var obj1=document.getElementById("selMonth1");
+		var tab2=document.getElementById("table02");
+		var obj2=document.getElementById("selMonth2");
+		switch(obj1.value){
+		case "3":
+			tab2.style.visibility="hidden";
+			obj2.style.visibility="hidden";
+			tab1.style.visibility="visible";
+			obj1.style.visibility="visible";
+			break;
+		case "4":
+			tab1.style.visibility="hidden";
+			obj1.style.visibility="hidden";
+			tab2.style.visibility="visible";
+			obj2.style.visibility="visible";
+			break;
+		}
+		switch(obj2.value){
+		case "3":
+			tab2.style.visibility="hidden";
+			obj2.style.visibility="hidden";
+			tab1.style.visibility="visible";
+			obj1.style.visibility="visible";
+			break;
+		case "4":
+			tab1.style.visibility="hidden";
+			obj1.style.visibility="hidden";
+			tab2.style.visibility="visible";
+			obj2.style.visibility="visible";
+			break;
+		}
+	}
+</script>
+</HEAD>
+<BODY>
+		<TABLE width="700" height="400" align="center" id="table01"
+			border="10">
+			<TBODY>
+				<TR>
+					<TD align="center" colspan="10">
+						<H1 id="month">MARCH</H1>
+						<SELECT name="month" id="selMonth1" onChange="onChange()"><OPTION value="-1">___________</OPTION>
+							<OPTION value="3">March</OPTION>
+							<OPTION value="4">April</OPTION>
+							<OPTION value="5">May</OPTION>
+							<OPTION value="6">June</OPTION>
+							<OPTION value="7">July</OPTION>
+					</SELECT>
+					</TD>
+				</TR>
+				<TR>
+					<TD align="center" class="grad1">SUN</TD>
+					<TD align="center" class="grad1">MON</TD>
+					<TD align="center" class="grad1">TUE</TD>
+					<TD align="center" class="grad1">WED</TD>
+					<TD align="center" class="grad1">THU</TD>
+					<TD align="center" class="grad1">FRI</TD>
+					<TD align="center" class="grad1">SAT</TD>
+				</TR>
+				<TR>
+					<TD></TD>
+					<TD></TD>
+					<TD></TD>
+					<TD>1</TD>
+					<TD>2</TD>
+					<TD>3</TD>
+					<TD>4</TD>
+				</TR>
+				<TR>
+					<TD></TD>
+					<TD></TD>
+					<TD></TD>
+					<TD style="background-color: rgb(36, 252, 255);"></TD>
+					<TD></TD>
+					<TD></TD>
+					<TD style="background-color: rgb(36, 252, 255);"></TD>
+				</TR>
+				<TR>
+					<TD>5</TD>
+					<TD>NCS</TD>
+					<TD>7</TD>
+					<TD>8</TD>
+					<TD>9</TD>
+					<TD>10</TD>
+					<TD>11</TD>
+				</TR>
+				<TR>
+					<TD style="background-color: rgb(36, 252, 255);"></TD>
+					<TD style="background-color: yellow;"></TD>
+					<TD></TD>
+					<TD></TD>
+					<TD></TD>
+					<TD></TD>
+					<TD style="background-color: rgb(36, 252, 255);"></TD>
+				</TR>
+				<TR>
+					<TD>12</TD>
+					<TD>TEST</TD>
+					<TD>14</TD>
+					<TD>15</TD>
+					<TD>16</TD>
+					<TD>17</TD>
+					<TD>18</TD>
+				</TR>
+				<TR>
+					<TD style="background-color: rgb(36, 252, 255);"></TD>
+					<TD style="background-color: yellow;"></TD>
+					<TD></TD>
+					<TD></TD>
+					<TD></TD>
+					<TD style="background-color: rgb(36, 252, 255);"></TD>
+					<TD style="background-color: rgb(36, 252, 255);"></TD>
+				</TR>
+				<TR>
+					<TD>19</TD>
+					<TD>20</TD>
+					<TD>TEST</TD>
+					<TD>22</TD>
+					<TD>23</TD>
+					<TD>24</TD>
+					<TD>25</TD>
+				</TR>
+				<TR>
+					<TD style="background-color: rgb(36, 252, 255);"></TD>
+					<TD></TD>
+					<TD style="background-color: yellow;"></TD>
+					<TD></TD>
+					<TD></TD>
+					<TD></TD>
+					<TD style="background-color: rgb(36, 252, 255);"></TD>
+				</TR>
+				<TR>
+					<TD>26</TD>
+					<TD>27</TD>
+					<TD>TEST</TD>
+					<TD>29</TD>
+					<TD>PJ</TD>
+					<TD>31</TD>
+					<TD></TD>
+				</TR>
+				<TR>
+					<TD style="background-color: rgb(36, 252, 255);"></TD>
+					<TD></TD>
+					<TD style="background-color: yellow;"></TD>
+					<TD></TD>
+					<TD style="background-color: yellow;"></TD>
+					<TD style="background-color: rgb(36, 252, 255);"></TD>
+					<TD></TD>
+				</TR>
+			</TBODY>
+			</TABLE>
+			
+			<TABLE width="700" height="400" align="center" id="table02" border="10" >
+				<TBODY>
+					<TR>
+						<TD align="center" colspan="10">
+							<H1>Aprill</H1>
+							<SELECT name="month"  id="selMonth2" onchange="onChange()"><OPTION value="-1" >___________</OPTION>
+								<OPTION value="3">March</OPTION>
+							<OPTION value="4">April</OPTION>
+							<OPTION value="5">May</OPTION>
+							<OPTION value="6">June</OPTION>
+							<OPTION value="7">July</OPTION>
+						</SELECT>
+					</TR>
+					<TR>
+						<TD align="center" class="grad1">SUN</TD>
+						<TD align="center" class="grad1">MON</TD>
+						<TD align="center" class="grad1">TUE</TD>
+						<TD align="center" class="grad1">WED</TD>
+						<TD align="center" class="grad1">THU</TD>
+						<TD align="center" class="grad1">FRI</TD>
+						<TD align="center" class="grad1">SAT</TD>
+					</TR>
+					<TR>
+						<TD></TD>
+						<TD></TD>
+						<TD></TD>
+						<TD></TD>
+						<TD></TD>
+						<TD></TD>
+						<TD>1</TD>
+					</TR>
+					<TR>
+						<TD></TD>
+						<TD></TD>
+						<TD></TD>
+						<TD></TD>
+						<TD></TD>
+						<TD></TD>
+						<TD style="background-color: rgb(36, 252, 255);"></TD>
+					</TR>
+					<TR>
+						<TD>2</TD>
+						<TD>3</TD>
+						<TD>4</TD>
+						<TD>5</TD>
+						<TD>6</TD>
+						<TD>7</TD>
+						<TD>8</TD>
+					</TR>
+					<TR>
+						<TD style="background-color: rgb(36, 252, 255);"></TD>
+						<TD></TD>
+						<TD></TD>
+						<TD></TD>
+						<TD></TD>
+						<TD></TD>
+						<TD style="background-color: rgb(36, 252, 255);"></TD>
+					</TR>
+					<TR>
+						<TD>9</TD>
+						<TD>10</TD>
+						<TD>11</TD>
+						<TD>12</TD>
+						<TD>13</TD>
+						<TD>14</TD>
+						<TD>15</TD>
+					</TR>
+					<TR>
+						<TD style="background-color: rgb(36, 252, 255);"></TD>
+						<TD></TD>
+						<TD></TD>
+						<TD></TD>
+						<TD></TD>
+						<TD style="background-color: rgb(36, 252, 255);"></TD>
+						<TD style="background-color: rgb(36, 252, 255);"></TD>
+					</TR>
+					<TR>
+						<TD>16</TD>
+						<TD>17</TD>
+						<TD>18</TD>
+						<TD>19</TD>
+						<TD>TEST</TD>
+						<TD>21</TD>
+						<TD>22</TD>
+					</TR>
+					<TR>
+						<TD style="background-color: rgb(36, 252, 255);"></TD>
+						<TD></TD>
+						<TD></TD>
+						<TD></TD>
+						<TD style="background-color: yellow;"></TD>
+						<TD></TD>
+						<TD style="background-color: rgb(36, 252, 255);"></TD>
+					</TR>
+					<TR>
+						<TD>23</TD>
+						<TD>24</TD>
+						<TD>25</TD>
+						<TD>26</TD>
+						<TD>27</TD>
+						<TD>TEST</TD>
+						<TD>29</TD>
+					</TR>
+					<TR>
+						<TD style="background-color: rgb(36, 252, 255);"></TD>
+						<TD></TD>
+						<TD></TD>
+						<TD></TD>
+						<TD></TD>
+						<TD style="background-color: yellow;"></TD>
+						<TD style="background-color: rgb(36, 252, 255);"></TD>
+					</TR>
+				</TBODY>
+			</TABLE>
+</BODY>
+</HTML>

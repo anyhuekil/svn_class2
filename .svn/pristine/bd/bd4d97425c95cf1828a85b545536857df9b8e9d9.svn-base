@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+/*
+	확인예제
+	좋아하는 격언, 팝송, 시를 p, h, br, hr를 활용하여 화면에 출력
+*/
+</style>
+<script type="text/javascript">
+</script>
+</head>
+<body>
+	<h1>좋아하는 격언</h1>
+	<p>겨울은 반드시 봄이 된다</p>
+	<hr>
+	<h1>좋아하는 팝송</h1>
+	<p>옛날 거만 생각나네요<br>
+	스티비 원더 -i just call to say i love you<br>
+	No New Year's Day to celebrate<br>
+	No chocolate covered candy<br>
+	hearts to give away<br>
+	No first of spring<br>
+	No song to sing<br>
+	In fact here's<br>
+	just another ordinary day<br>
+	No April rain No flower bloom<br>
+	No wedding Saturday<br>
+	within the month of June<br>
+	But what it is<br>
+	is something true<br>
+	Made up of these three words<br>
+	That I must say to you<br>
+	I just called to say<br>
+	I love you<br>
+	I just called to say<br>
+	how much I care<br>
+	I just called to say<br>
+	I love you<br>
+	And I mean it<br>
+	from the bottom of my heart<br>
+	No summer's high No warm July<br>
+	No harvest moon to light<br>
+	one tender August night<br>
+	No autumn breeze<br>
+	No falling leaves<br>
+	Not even time for birds<br>
+	to fly to southem skies<br>
+	No Libra sun No Halloween<br>
+	No giving thanks to all the<br>
+	Christmas joy you bring<br>
+	But what it is<br>
+	though old so new<br>
+	to fill your heart no<br>
+	three words could ever do<br>
+	I just called to say</p>
+	<hr>
+	<h1>좋아하는 시</h1>
+	<p>옛날 거만 생각나네요</p>
+</body>
+</html>

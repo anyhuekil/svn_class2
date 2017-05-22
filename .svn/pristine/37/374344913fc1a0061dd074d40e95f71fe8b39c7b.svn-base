@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+/*
+html 구성요소
+tag가 어떤의미가 있는지
+
+*/
+
+	pre{visibility:hidden;}
+
+
+</style>
+<script type="text/javascript">
+/* 과제
+**a10다시보기**
+색상과 글자입히기
+
+글자색 선택 [select option] - 빨,주,노,초,파,남,보
+입력할 내용 : [   ]
+[확인]
+@@@@@@ : 확인을 클릭시, 해당 배경색에 입력할 내용에 입력한 글자내용 표시
+
+*/
+
+/* 과제 a12
+	keyword등록 [      ]
+	등록할 수 있는 keyword[보이기] ==> 초기에는 등록가능 keywords 보이지 않다가
+										보이기버튼을 클릭하면 보이기처리
+										버튼에 있는 label 숨기기<==>보이기
+	등록가능 keywords
+	java
+	jsp
+	c#
+	파이썬
+*/
+/*복습때getElementsByTagName 써볼것*/
+	function colorSelect(seNum){
+		var laText=document.getElementById("show01");
+		if(seNum==1){
+			laText.style.color="red";			
+		}
+		var laText=document.getElementById("show01");
+		if(seNum==2){
+			laText.style.color="orange";			
+		}
+		var laText=document.getElementById("show01");
+		if(seNum==3){
+			laText.style.color="yellow";			
+		}
+		var laText=document.getElementById("show01");
+		if(seNum==4){
+			laText.style.color="green";			
+		}
+		var laText=document.getElementById("show01");
+		if(seNum==5){
+			laText.style.color="blue";			
+		}
+		var laText=document.getElementById("show01");
+		if(seNum==6){
+			laText.style.color="navy";			
+		}
+		var laText=document.getElementById("show01");
+		if(seNum==7){
+			laText.style.color="purple";			
+		}									
+	}
+										
+	function show0(){
+		var laText=document.getElementById("show01");
+		laText.innerHTML=document.getElementById("text01").value;
+	}
+
+
+	
+	function key01(keyObj){
+		/*alert("테스트");*/
+		var showKey=document.getElementsByTagName("pre")[0];
+		showKey.style.visibility="visible";
+		if(keyObj.value=="보이기"){
+			keyObj.value="숨기기"
+		}else{
+			showKey.style.visibility="hidden";
+			keyObj.value="보이기"
+		}
+		
+	}
+	
+	
+	function add01(){
+		var addList=document.getElementById("list01");
+		var nowList=document.getElementsByTagName("pre")[0];
+		nowList.innerHTML += "\n" + addList.value;
+		
+	}
+	
+	
+	
+	
+
+</script>
+</head>
+<body>
+
+	빨강:<input type="radio" name="color01" onclick="javascript:colorSelect(1);"/>
+	주황:<input type="radio" name="color01" onclick="javascript:colorSelect(2);"/>
+	노랑:<input type="radio" name="color01" onclick="javascript:colorSelect(3);"/>
+	초록:<input type="radio" name="color01" onclick="javascript:colorSelect(4);"/>
+	파랑:<input type="radio" name="color01" onclick="javascript:colorSelect(5);"/>
+	남색:<input type="radio" name="color01" onclick="javascript:colorSelect(6);"/>
+	보라:<input type="radio" name="color01" onclick="javascript:colorSelect(7);"/><br>
+	입력할내용:<input type="text" id="text01" value=""/><br>
+	<input type="button" value="확인" onclick="javascript:show0();"/>
+	<h3 id="show01">@@@@@@@</h3>
+	<br><br><br><br><br>
+	
+	키워드 등록:<input type="text" id="list01" value=""/>
+	<input type="button" value="추가" onclick="javascript:add01(this);"/><br>
+	등록 할 수 있는 keyword<input type="button" value="보이기" onclick="javascript:key01(this);"/><br>
+	<pre>
+java
+jsp
+c#
+파이썬</pre>
+
+
+
+
+
+</body>
+</html>

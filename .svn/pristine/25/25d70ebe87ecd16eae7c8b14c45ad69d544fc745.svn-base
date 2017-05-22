@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script type="text/javascript">
+function reciptepage()
+{
+
+	var title01   = document.recipte.title.value;
+	var cash01    = document.recipte.cash.value;
+	var people01  = document.recipte.people.value;
+	var nothing01 = document.recipte.nothing1.value;
+  	var total  = parseInt(cash01) * parseInt(people01);
+  	
+  	//document.recipte.title.value = "q";
+	document.recipte.nothing1.value = total;
+	document.recipte.calPage.value = 
+		"\t제목 : "+ document.recipte.title.value+
+		"\n\t계산 : "+ document.recipte.cash.value+" * "
+			   + document.recipte.people.value+" = "+total+"원\n\t입니다.감사합니다.";
+
+	}
+
+</script>
+</head>
+<body>
+
+<!-- 과제 
+	영화관에 가서 
+제목 :[  ]
+관람료 :[ ]
+인원 : [ ]
+	[계산]
+영수증 --textarea 이용 
+	제목 : @@@
+	계산 : @@@ * @@@ = @@@
+ -->
+
+
+<center>
+
+<form name  ="recipte">
+    제목 : <input type ="text" name = "title"/><br>
+ 관람료 : <input type ="text" name = "cash"/><br>
+    인원 : <input type ="text" name = "people"/><br> 
+       <input type ="text" name = "nothing1"/> 원 <br>
+ <input type="button" value ="계산" onclick ="javascript:reciptepage()"/><br>   
+  <p align = "center">영수증</p> <br>
+ <textarea name ="calPage" rows="10" cols="50" >
+ 
+ 
+ </textarea>
+
+  </form>
+  
+</body>
+</html>

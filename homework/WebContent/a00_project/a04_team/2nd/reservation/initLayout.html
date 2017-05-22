@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link href="../css/initLayout.css" rel="stylesheet">
+<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+<script>
+	$(document).ready(function() {
+		$('.btn_search').click(function() {
+			location.href="https://search.yahoo.com/search;_ylc=X3oDMTFiN25laTRvBF9TAzIwMjM1MzgwNzUEaXRjAzEEc2VjA3NyY2hfcWEEc2xrA3NyY2h3ZWI-?p="+$('.queryword').val()+"&fr=yfp-t&fp=1&toggle=1&cop=mss&ei=UTF-8";
+		});
+	});
+</script>
+</head>
+<body>
+	<header>
+		<div id="header_nav">
+			<div class="gnb">
+				<ul>
+					<li><img src="../img/home.png"/></li>
+					<li><a href="../reservation/main.html">NolJa Home</a></li>
+					<li><a href="#">두더지게임</a></li>
+					<li><a href="#">Game$</a></li>
+					<li><a href="#">Game@</a></li>
+					<li><a href="#">Game#</a></li>
+					<li><a href="../reservation/reservation.html">Reservation</a></li>
+					<li><a href="#">More ▼</a></li>
+				</ul>
+			</div>
+			<div class="point">
+                <a href="#" >
+                    <img src="../img/point.jpg" alt="point" onclick="alert('당신의 가용포인트는 5500점입니다')"/>
+                    <span onclick="alert('당신의 가용포인트는 5500점입니다')">Upgrade to the Point>></span>
+                </a>
+            </div>
+		</div>
+		<div id="header_info">
+			<div class="logo" onclick="location.href='../reservation/main.html'">
+               <img src="../img/logo.jpg" alt="nolja" />
+            </div>
+            <div class="search">
+                <form action="#">
+                    <input type="text" class="queryword" />
+                    <input class="btn_search" type="button" value="search web"/>
+                </form>
+            </div>
+            <div class="service">
+                <ul>
+                    <li><a href="../reservation/main.html">Nol Ja</a></li>
+                    <li><a href="../reservation/join.html">Join</a></li>
+                    <li><a href="../reservation/login.html">Login</a></li>
+                </ul>
+            </div>
+		</div>
+	</header>
+	<div id="content">content
+	</div>
+	<footer>
+		<ul>
+			<li><img src="../img/logo.jpg"></li>
+			<li><img src="../img/address.gif"></li>
+		</ul>
+	</footer>
+</body>
+</html>

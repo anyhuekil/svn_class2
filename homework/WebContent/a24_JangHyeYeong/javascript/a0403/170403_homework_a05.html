@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		
+});
+	
+	var teamName=prompt("팀명을 입력하세요","홍팀");
+	//alert("입력한 팀이름: "+teamName);
+	var games=["가위","바위","보"];
+	var ranIdx1=parseInt(Math.random()*3);
+	alert(teamName+": "+games[ranIdx1]);
+	var teamName2=prompt("팀명을 입력하세요","청팀");
+	var ranIdx2=parseInt(Math.random()*3);
+	alert(teamName2+": "+games[ranIdx2]);
+/* 과제) 해당 팀에 대한 승패
+ 	@@@ 팀 승
+ 	무승부
+ 	@@@ 팀 패
+ */
+ 
+ if(ranIdx1==ranIdx2){
+	 alert("무승부");
+ }else{ // 둘이 같지 않은 경우
+	 if(ranIdx1==0){ //팀1이 가위일때
+		 if(ranIdx2==2){
+			 alert(teamName+": "+games[ranIdx1]+"\n"+teamName2+": "+games[ranIdx2]+"\n\n"+teamName+" 승리!");
+		 }else{
+			 alert(teamName+": "+games[ranIdx1]+"\n"+teamName2+": "+games[ranIdx2]+"\n\n"+teamName+" 패배!");
+		 }
+	 }
+	 if(ranIdx1==1){ //팀1이 바위일때
+		 if(ranIdx2==0){
+			 alert(teamName+": "+games[ranIdx1]+"\n"+teamName2+": "+games[ranIdx2]+"\n\n"+teamName+" 승리!");
+		 }else{
+			 alert(teamName+": "+games[ranIdx1]+"\n"+teamName2+": "+games[ranIdx2]+"\n\n"+teamName+" 패배!");
+		 }
+	 }
+	 if(ranIdx1==2){ //팀1이 보일때
+		 if(ranIdx2==1){
+			 alert(teamName+": "+games[ranIdx1]+"\n"+teamName2+": "+games[ranIdx2]+"\n\n"+teamName+" 승리!");
+		 }else{
+			 alert(teamName+": "+games[ranIdx1]+"\n"+teamName2+": "+games[ranIdx2]+"\n\n"+teamName+" 패배!");
+		 }
+	 }
+ }
+</script>
+
+<style type="text/css">
+
+</style>
+</head>
+<body>
+
+</body>
+</html>

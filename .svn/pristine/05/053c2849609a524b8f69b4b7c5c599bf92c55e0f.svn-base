@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="http://code.jquery.com/jquery-1.10.2.js">
+ </script>
+<script type="text/javascript">
+$(document).ready(function(){
+	 
+});
+var teamName=prompt("팀이름을 정하세요","홍팀");
+alert("입력한 팀이름:"+teamName);
+var games=["가위","바위","보"];
+var ranIdx=parseInt(Math.random()*3);
+var score=[teamName+"승","무승부"];
+var ranIdx01=parseInt(Math.random()*2);
+alert(teamName+":"+games[ranIdx]);
+alert(score[ranIdx01]);
+
+
+/* 과제)해당 팀에 대한 승패
+ 	@@@팀 승
+	무승부
+ */
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

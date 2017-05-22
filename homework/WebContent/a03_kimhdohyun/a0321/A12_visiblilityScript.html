@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+</style>
+<script type="text/javascript">
+	function chVisible(obj){
+		var tabObj=document.getElementsByTagName("table")[0];
+				  
+		if(obj.innerHTML=="보이게 하세요!!"){
+			tabObj.style.visibility="visible";
+			obj.innerHTML="보이지 않게 하세요!!";
+		}else{
+			tabObj.style.visibility="hidden";
+			obj.innerHTML="보이게 하세요!!";
+		}
+	}
+	
+</script>
+</head>
+<body>
+<h1>Keyword 등록</h1>
+<input type="text"><br>
+<input type="button" onclick="chVisible(this)" value="보이기"><br>
+<table border="2px">
+	<tr> <td><span>등록가능한 키워드 : Java, C#, Python</span></td> </tr>
+</table>
+
+</body>
+</html>

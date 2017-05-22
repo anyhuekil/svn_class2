@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="Text/css">
+	tr:nth-child(odd){background-color:pink;}
+	tr:nth-child(even){background-color:green;}
+	tr:first-child{background-color:#443322;}
+	tr:hover:not([id="header"]){background-color:red; font-weight:bold; font-size:1.5em;}
+	a:LINK:AFTER{content: '-' attr(href);}
+	.homepage{text-decoration:none; text-align: left;}
+	.salary{text-align: right;}
+	.name{text-align:left;}
+	.id{text-align:center;}
+	
+	
+}
+		
+		
+		
+</style>
+<script type="text/javascript">
+
+</script>
+</head>
+<body>
+<!-- 확인 예제/ 과제
+	아래와 같은 화면을 list 형태로 구현하세요..
+	사원정보 list(table list): 데이터 홀/짝 배경색상 처리,
+							마우스 커서시: 글자 굵기, 크기, 배경색 변경
+사원번호	사원명	연봉			주업무홈피(link)
+7709	홍길동	3,000만원		구글-http://www.google.com		
+7710	김길동	4,000만원		네이버-http://www.naver.com		
+7711	신길동	50,00만원		다음-http://www.daum.net		
+중앙		왼쪽		오른쪽		왼쪽 line 없이
+-->
+<h1>사원정보 list</h1>
+	<table border>
+		<tr id="header">
+			<th class="id">사원번호</th><th class="name">사원명</th><th class="salary">연봉</th><th class="homepage">주업무 홈페이지</th>
+		</tr>
+		<tr>
+			<td class="id">7709</td><td class="name">홍길동</td><td class="salary">3,000만원</td><td><a class="homepage" href="http://www.google.com">구글</a></td>
+		</tr>
+		<tr>
+			<td class="id">7710</td><td class="name">김길동</td><td class="salary">4,000만원</td><td><a  class="homepage" href="http://www.naver.com">네이버</a></td>
+		</tr>
+		<tr>
+			<td class="id">7711</td><td class="name">신길동</td><td class="salary">5,000만원</td><td><a class="homepage" href="http://www.google.com">다음</a></td>
+		</tr>
+	</table>
+
+</body>
+</html>

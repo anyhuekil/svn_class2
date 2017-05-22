@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type = "text/css">
+/*
+
+*/
+
+</style>
+
+<script src = "http://code.jquery.com/jquery-1.10.2.js">
+</script>
+<script type = "text/javascript">
+$(document).ready(function(){
+		
+	
+});
+
+var team01 = {};
+var team02 = {};
+var teamName01 ="홍팀";
+// alert("입력한 팀이름" + teamName01);
+team01.name = teamName01;
+var teamName02 =  "청팀";
+team02.name = teamName02;
+var games = ["가위","바위", "보"];
+
+setInterval(function(){
+
+var r01 = parseInt(Math.random()*3);
+team01.value = games[r01];
+var r02 = parseInt(Math.random()*3);
+team02.value = games[r02];
+var MWQ;
+console.log(team01.name +"\t"+ team01.value +"\n"+ team02.name+"\t"+ team02.value);
+if(r01>r02){
+	if(r01==2 && r02 ==0){
+		MWQ = team01.name + "졋따!";		
+	}
+	else if(r02 == (r01 -1)){
+		MWQ = team01.name +"이겻따!";			
+	}
+}
+else if(r01<r02){
+	if(r02==2 && r01 ==0){
+		MWQ = team02.name + "졋따!";		
+	}
+	else if(r01 == (r02 -1)){
+		MWQ = team02.name +"이겻따!";			
+	}
+}
+else if(r01==r02){
+	MWQ = "비겻다!";
+}
+console.log(MWQ);
+}, 1000);
+
+
+</script>
+
+</script>
+
+</head>
+<body>
+<!-- -->
+
+
+
+</body>
+</html>

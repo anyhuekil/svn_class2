@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	var leftPos1=10;
+	var leftPos2=10;
+	var team1cnt=0;
+	var team2cnt=0;
+	
+	function movedTeam(obj){
+		
+		var inputTeamNames = document.getElementsByClassName("team"); //팀이름을 받아옴
+		var inputColors=document.getElementsByClassName("color"); //색상을 받아옴
+		var outputTeam=document.getElementsByClassName("teamHorse"); //팀에 내보냄
+		
+		var sameColor=(inputColors[0].value==inputColors[1].value);
+		var sameName=(inputTeamNames[0].value==inputTeamNames[1].value)
+
+		if(inputColors[obj].value=='yellow') //만약 배경색이 노란색일 경우 글자색 바꿈.
+			outputTeam[obj].style.color='black';
+		else //그 외는 계속 흰색 글자
+			outputTeam[obj].style.color='white';
+		
+		
+		/***색상과 이름이 다를 경우만 실행**/
+		if(!sameColor && !sameName){ 
+			if(obj==0) //A팀일경우
+			{	team1cnt++;
+				outputTeam[obj].innerHTML=inputTeamNames[obj].value; //팀이름을 내보냄
+				outputTeam[obj].style.background=inputColors[obj].value; //색상을 받아옴
+				if(team1cnt==6){ //도착지에 도착할 경우
+					alert(inputTeamNames[obj].value+"이(가) 승리!!");
+					/**승리할 경우 모두 초기화**/
+					outputTeam[obj].style.left=(leftPos1=10)+"px";
+					outputTeam[1].style.left=(leftPos2=10)+"px";
+					team1cnt=0;
+					team2cnt=0;
+				}
+				else
+					outputTeam[obj].style.left=(leftPos1+=50)+"px"; //말을 옮김
+				
+			}
+			
+			if(obj==1) //B팀일경우
+			{	team2cnt++;
+				outputTeam[obj].innerHTML=inputTeamNames[obj].value; //팀이름을 내보냄
+				outputTeam[obj].style.background=inputColors[obj].value; //색상을 받아옴
+				if(team2cnt==6){ //도착지에 도착할 경우
+					alert(inputTeamNames[obj].value+"이(가) 승리!!");
+				/**승리할 경우 모두 초기화**/
+					outputTeam[obj].style.left=(leftPos2=10)+"px";
+					outputTeam[0].style.left=(leftPos1=10)+"px";
+					team1cnt=0;
+					team2cnt=0;
+				}
+				else
+					outputTeam[obj].style.left=(leftPos2+=50)+"px"; //말을 옮김
+				
+			}
+		}
+		/**예외처리**/
+		else if(sameColor&&!sameName)
+			alert("색상이 중복됩니다. 다시 선택해주세요.");
+		else if(sameName&&!sameColor)
+			alert("팀이름이 중복됩니다. 다시 선택해주세요.");
+		else
+			alert("팀이름과 색상이 중복됩니다. 다시 선택해주세요.");
+		
+	}
+	
+</script>
+<style type="text/css">
+	tr{text-align:center;}
+	div{font-weight:bold; color:white; position:absolute;}
+</style>
+</head>
+<body>
+<!-- 이동 테이블 -->
+	<table>
+		<!-- 테이블 제목 -->
+		<tr><th>팀명</th><th>색상</th><th>이동</th></tr> 
+		
+		<!-- A팀 행 -->
+		<tr><td><input class="team" type="text" value="A팀"/></td>
+		<td><select class="color">
+			<option value="red">red</option>
+			<option value="orange">orange</option>
+			<option value="yellow">yellow</option>
+			<option value="green">green</option>
+			<option value="blue">blue</option>
+			<option value="navy">navy</option>
+			<option value="purple">purple</option>
+			</select>
+		</td>
+		<td><input id="team1Move" type="button" value="이동" onclick="javascript:movedTeam(0);"/></td></tr>
+		
+		<!-- B팀 행 -->
+		<tr><td><input class="team" type="text" value="B팀"/></td>
+		<td><select class="color">
+			<option value="red">red</option>
+			<option value="orange">orange</option>
+			<option value="yellow">yellow</option>
+			<option value="green">green</option>
+			<option value="blue">blue</option>
+			<option value="navy">navy</option>
+			<option value="purple">purple</option>
+			</select>
+		</td>
+		<td><input id="team2Move" type="button" value="이동" onclick="javascript:movedTeam(1);"/></td></tr>
+	</table><br>
+<!-- 결과 테이블 -->
+	<table width="300">
+		<!-- 테이블 제목 -->
+		<tr><th>&nbsp</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th></tr>
+		<!-- A팀 결과 -->
+		<tr><td><div style="background:red; width:100; height:100; top:165px" class="teamHorse">test</div></td><td>&nbsp</td><td>&nbsp</td>&nbsp<td>&nbsp</td><td>&nbsp</td><td>&nbsp</td></tr>
+		<!-- B팀 결과 -->
+		<tr><td><div style="background:blue; width:100; height:100; top:193px" class="teamHorse">test</div></td><td>&nbsp</td><td>&nbsp</td>&nbsp<td>&nbsp</td><td>&nbsp</td><td>&nbsp</td></tr>
+	</table>
+</body>
+</html>

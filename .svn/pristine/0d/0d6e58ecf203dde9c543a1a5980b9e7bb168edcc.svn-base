@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style type="text/css">
+/**/
+
+#num01{visibility:hidden;}
+#num02{visibility:hidden;}
+</style>
+<script type="text/javascript">
+/**/
+ 
+ function calla()
+ {
+	var teamName01_1 = document.getElementById("team01_1").value;
+	var teamName01_2 = document.getElementById("team01_2").value;
+	var colnamea ="";
+	var colnuma = document.getElementById("num01").value ;
+	document.getElementById("team01_2").value = teamName01_1;
+	document.getElementById("team01_2").style.backgroundColor=document.getElementById("sel01").value;
+	
+	 if ( colnuma < 6 ){
+		 colnamea ="acol" + colnuma;
+		 colnuma++;
+		 document.getElementById(colnamea).style.backgroundColor=document.getElementById("sel01").value;
+		 document.getElementById("num01").value =colnuma;
+	 }
+	 else
+		 {
+	 		alert("초기화 됩니다");
+		    document.getElementById("num01").value =1;
+		    for (var i = 1; i < 6; i++) { 
+		    	colnamea ="acol" + i;
+		    	document.getElementById(colnamea).style.backgroundColor = "white";
+		    }
+		 }
+
+
+ }
+ function callb()
+ {
+		var teamName02_1 = document.getElementById("team02_1").value;
+		var teamName02_2 = document.getElementById("team02_2").value;	
+		var colnameb ="";
+		var colnumb= document.getElementById("num02").value ;
+		document.getElementById("team02_2").value = teamName02_1;
+		document.getElementById("team02_2").style.backgroundColor=document.getElementById("sel02").value;
+		
+	 if ( colnumb < 6 ){
+		 colnameb ="bcol" + colnumb;
+		 colnumb++;
+		 document.getElementById(colnameb).style.backgroundColor=document.getElementById("sel02").value;
+		 document.getElementById("num02").value =colnumb;
+	 }
+	 else
+	 {
+	 		alert("초기화 됩니다");
+		    document.getElementById("num02").value =1;
+		    for (var i = 1; i < 6; i++) { 
+		    	colnameb ="bcol" + i;
+		    	document.getElementById(colnameb).style.backgroundColor = "white";
+		    }
+	 }
+	 
+ }
+ 
+
+</script>
+
+
+</head>
+<body>
+<table class = "tab01" border>
+
+	<tr><th>팀명</th><th>색상</th><th>이동</th></tr>
+	<tr><td><input type ="text" value ="팀명" id = "team01_1"/></td>
+		<td><select id ="sel01" style="width:100px;height:22px;" >
+				<option id ="color01" value = "red" style = "background-color:red">빨강</option>
+				<option id ="color02"  value = "orange" style = "background-color:orange">주황</option>
+				<option  id ="color03" value = "yellow" style = "background-color:yellow">노랑</option>
+				<option  id ="color04"  value = "green" style = "background-color:green">초록</option>				
+				<option id ="color05"  value = "blue" style = "background-color:blue">파랑</option>
+				<option id ="color06" value = "navy" style = "background-color:navy">남색</option>
+				<option   id ="color07"value = "purple" style = "background-color:purple">보라</option>
+			</select></td>
+		<td><input type = "button" value = "이동" onclick ="javascript:calla();"/></td></tr>		
+	<tr><td><input type ="text" value ="팀명" id = "team02_1"/></td>		
+		<td><select id ="sel02" style="width:100px;height:22px;">
+				<option id ="color01" value = "red" style = "background-color:red">빨강</option>
+				<option id ="color02"  value = "orange" style = "background-color:orange">주황</option>
+				<option  id ="color03" value = "yellow" style = "background-color:yellow">노랑</option>
+				<option  id ="color04"  value = "green" style = "background-color:green">초록</option>				
+				<option id ="color05"  value = "blue" style = "background-color:blue">파랑</option>
+				<option id ="color06" value = "navy" style = "background-color:navy">남색</option>
+				<option   id ="color07"value = "purple" style = "background-color:purple">보라</option>
+			</select></td>
+		<td><input type = "button" value = "이동" onclick ="javascript:callb();"/></td></tr>
+</table>
+
+<table class ="tab02" border>
+	<tr><th>팀명</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th></tr>
+    <tr><td><input type ="text" value ="팀명" id ="team01_2"/></td>
+    <td id = "acol1"></td><td id = "acol2"></td>
+    <td id = "acol3"></td><td id = "acol4"></td><td id = "acol5"></td></tr>
+    <tr><td><input type ="text" value ="팀명" id ="team02_2"/></td>
+    <td id = "bcol1"></td><td id = "bcol2"></td>
+    <td id = "bcol3"></td><td id = "bcol4"></td><td id = "bcol5"></td></tr>
+</table>
+<input type ="text" id = "num01" value ="1"/>
+<input type ="text" id = "num02" value ="1"/>
+</body>
+</html>

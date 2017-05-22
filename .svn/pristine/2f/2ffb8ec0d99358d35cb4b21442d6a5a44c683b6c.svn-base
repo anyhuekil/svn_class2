@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script src="http://code.jquery.com/jquery-1.10.2.js">
+</script>
+<style type="text/css">
+img{
+background-color: lightgrey;
+border: 1px solid green;
+width: 250px;
+height: 300px;
+transform-style: preserve-3d;
+position:absolute;
+}
+
+#pos0{
+transform:translate(30%,30%);
+}
+
+#pos1{
+transform:translate(180%,30%);
+}
+
+#pos2{
+transform:translate(330%,30%);
+}
+
+
+
+@keyframes move0_0{0% {transform:translate(30%,30%) rotateY(0deg);}
+100% {transform:translate(30%,30%) rotateY(360deg);}}
+
+@keyframes move0_1{0% {transform:translate(30%,30%);}
+100% {transform:translate(180%,30%);}}
+
+@keyframes move0_2{from {transform:translate(30%,30%);}
+50%{transform: translate(180%,0%);}
+to {  transform:translate(330%,30%);}}
+
+@keyframes move1_0{0% {transform:translate(180%,30%);}
+50%{transform: translate(105%,70%);}
+100% {transform:translate(30%,30%);}}
+
+@keyframes move1_1{0% {transform:translate(180%,30%) rotateY(0deg);}
+100% {transform:translate(180%,30%) rotateY(360deg);}}
+
+@keyframes move1_2{0% {transform:translate(180%,30%);}
+100% {transform:translate(330%,30%);}}
+
+@keyframes move2_0{0% {transform:translate(330%,30%);}
+50%{transform: translate(180%,90%);}
+100% {transform:translate(30%,30%);}}
+
+@keyframes move2_1{0% {transform:translate(330%,30%);}
+50%{transform: translate(255%,70%);}
+100% {transform:translate(180%,30%);}}
+
+@keyframes move2_2{0% {transform:translate(330%,30%) rotateY(0deg);}
+100% {transform:translate(330%,30%) rotateY(360deg);}}
+
+</style>
+
+
+
+
+
+<script type="text/javascript">
+
+var X_array_1 = new Array(3);
+X_array_1 = ["sel.jpg","su.jpg","bo.jpg"];
+var ran;
+var ran_a = new Array;
+var buffer;
+var myplay;
+var play_times=10;
+var i=0;
+
+//페이지 시작시에 animation움직임을 지정
+$(document).ready(function(){
+	var i=0;
+	
+	do{
+		ran = Math.floor(Math.random() * X_array_1.length);
+		if(ran != ran_a[i-1]){
+			ran_a[i] = ran;
+			i++;
+			}
+	}
+		
+	while(ran_a.length<10)
+	})
+
+function main_pjt(){
+	input_src(X_array_1[0],X_array_1[1],X_array_1[2]); //초기 이미지 출력	
+	myplay = setInterval(function(){ myTimer() }, 1010); //1.01초마다 myTimer라는 함수 실행
+}
+
+function myTimer() {
+
+	input_src(X_array_1[0],X_array_1[1],X_array_1[2]); 
+	ani(ran_a[i]);
+	swap_val(ran_a[i]);
+	i++;
+	if(i==play_times){
+		clearInterval(myplay);
+		console.log(X_array_1[0]);//확인용 
+		console.log(X_array_1[1]);
+		console.log(X_array_1[2]);
+	}
+}
+function myStopFunction() {
+    clearInterval(myplay);
+}
+
+
+		
+function check_val(){	
+	for(var i=0;i<ran_a.length;i++)
+	console.log(ran_a[i]);//random함수가 정상적으로 작동했는지 확인
+}
+
+
+	
+	
+function ani(i){
+	if(i == 0){
+		$("#pos0").css("animation","move0_0 1s linear forwards");
+		$("#pos1").css("animation","move1_2 1s linear forwards");
+		$("#pos2").css("animation","move2_1 1s linear forwards");
+		}
+	else if(i == 1){
+		$("#pos0").css("animation","move0_2 1s linear forwards");
+		$("#pos1").css("animation","move1_1 1s linear forwards");
+		$("#pos2").css("animation","move2_0 1s linear forwards");
+		}
+	else if(i == 2){
+		$("#pos0").css("animation","move0_1 1s linear forwards");
+		$("#pos1").css("animation","move1_0 1s linear forwards");
+		$("#pos2").css("animation","move2_2 1s linear forwards");
+		}
+}
+
+function swap_val(i){
+	if(i==0){
+		buffer = X_array_1[1];
+		X_array_1[1] = X_array_1[2];
+		X_array_1[2] = buffer;
+		}
+	else if(i==1){
+		buffer = X_array_1[0];
+		X_array_1[0] = X_array_1[2];
+		X_array_1[2] = buffer;
+		}
+	else if(i==2){
+		buffer = X_array_1[0];
+		X_array_1[0] = X_array_1[1];
+		X_array_1[1] = buffer;
+		}	
+}
+	
+	
+		
+
+function input_src(x,y,z){
+	$("#pos0").attr("src", x);
+	$("#pos1").attr("src", y);
+	$("#pos2").attr("src", z);
+}
+
+</script>
+</head>
+<body>
+<h1>수지찾기</h1>
+<img class="ani" id="pos0" ></img>
+<img class="ani" id="pos1" ></img>
+<img class="ani" id="pos2" ></img>
+<br>
+<input type="button" value="check!!!!" onclick="check_val()" />
+
+<input type="button" value="play!!!!" onclick="main_pjt()" />
+<input type="button" value="stop_play!!!!" onclick="myStopFunction()" />
+
+
+
+</body>
+</html>

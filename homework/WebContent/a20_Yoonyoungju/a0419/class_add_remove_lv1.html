@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+
+
+<style type="text/css">
+/**/
+
+	.class0{background:#33A8FF;}
+	.class1{background:#D6E3ED;}
+	.class2{background:yellow;}
+	
+	
+	
+</style>
+<script src ="http://code.jquery.com/jquery-1.10.2.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("td:eq(0)").addClass("class0");
+		$("td:eq(1)").addClass("class0");
+		$("td:eq(2)").addClass("class1");
+		$("td:eq(3)").addClass("class1");
+		
+		$("td").on("click",function(){
+
+			$(this).addClass("class2");
+
+		});	
+
+		
+	});
+	
+
+	/*
+	초기 : class가 적용되지 않음
+	
+	– onload 시 : 아래와 같이 배경 색상 처리
+	
+	– 클릭 시 : 배경 색상이 노랑으로 변경( remove,add Class)
+	*/
+</script>
+
+</head>
+<body>
+	<table align = "center"  height ="300" width ="300" border>
+		<tr><td></td><td></td></tr>
+		<tr><td></td><td></td></tr>
+
+	</table>
+</body>
+</html>

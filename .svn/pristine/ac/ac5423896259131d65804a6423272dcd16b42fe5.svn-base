@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css"> 
+/*
+
+*/
+</style>
+<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){
+    
+});
+/*
+var game=[];
+var gameList=parseInt(prompt("좋아하는 게임","1"));
+for(var idx=0; idx<gameList; idx++){
+	game[idx]= prompt((idx+1)+"번째 좋아한 게임","게임");
+}
+var favList="좋아한 게임 갯수:"+gameList+"\n";
+favList+="좋아하는 게임 List\n";
+for(var cnt=0; cnt<game.length; cnt++){
+	favList+=(cnt+1)+"."+game[cnt]+"\n";
+}
+alert(favList);
+*/
+/*
+var list=["서든어택","롤","오버워치"];
+var cnt=1;
+for(var idx in list ){
+	alert("["+(cnt++)+"]"+list[idx]);
+}
+*/
+</script>
+
+</head>
+<body>
+
+</body>
+</html>

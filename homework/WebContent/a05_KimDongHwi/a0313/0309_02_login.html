@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style type="text/css">
+
+input:focus{background-color: yellow;}
+
+</style>
+
+
+
+<script type="text/javascript">
+
+function logIn(){
+	
+	var inId = document.check.id.value;
+	var inPw = document.check.pw.value;
+	var rId = "future";
+	var rPw = "7777";
+	
+	
+	
+ 	if(inId == rId && inPw == rPw){
+		alert("ok 로그인 되셨습니다.");
+		document.state.title.disabled=false;
+		document.state.subTitle.disabled=false;		
+	
+	}else{
+		alert("입력아이디 or 비빌번호가 틀렸습니다.");
+	}
+}
+
+ 
+ </script>
+</head>
+<body> <center>
+
+<h1> 로그인 화면 </h1>
+
+<form name="check" class="inPut"> 
+
+아이디 입력 : <input type="text" name="id"/><br>
+비  번 입력 : <input type="password" name="pw"/><br>
+<input type="button" value="로그인버튼" onclick="javascript:logIn(this);"/><hr>
+
+</form> <br><br><br>  
+
+
+<form name="state">
+ 
+주제 입력: <input type="text" name="title" disabled/><br>
+세부 주제 입력: <input type="text" name="subTitle" disabled/><br>
+
+</form>
+
+
+
+<!-- 
+  status :[    ] -- 상태여부  (로그인성공/1단계/2단계)
+1단계:  주제 입력 : [       ]
+document.form01.input01.disabled=false;
+2단계:  세부주제 입력: [       ]
+documemt.form이름.element이름.value
+ -->
+
+
+
+</body>
+</html>
+
+
+<!-- 
+
+과제2
+아래와 같은 로그인화면을 만들고,
+로그인 -- 입력시 마다, focus하는 곳에서 배경색, 글자색 변경처리
+ID:	: [	]
+PW	: [	]
+     [로그인버튼] -- id와 pass가 지정된 내용에 맞을 때, 다음단계 활성화 
+future // 7777
+
+
+//로그인 성공후 하단 화면 비활성->활성화로 변경 
+
+
+  status :[    ] -- 상태여부  (로그인성공/1단계/2단계)
+1단계:  주제 입력 : [       ]
+document.form01.input01.disabled=false;
+2단계:  세부주제 입력: [       ]
+documemt.form이름.element이름.value
+
+
+
+
+ -->

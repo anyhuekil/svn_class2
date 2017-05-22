@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type = "text/css">
+/*
+
+*/
+
+</style>
+
+<script src = "http://code.jquery.com/jquery-1.10.2.js">
+</script>
+<script type = "text/javascript">
+$(document).ready(function(){
+		
+	
+});
+/*
+숙제: 계산기 만들기.
+함수객체: Calculator
+입력값: num01, num02
+메서드 : plus(), minus(), mul(), div(), remainder 등
+출력: ~~ +-/*% ~~ = ~~ 
+*/
+
+
+
+function Calculator(){ 
+	var result;
+	this.arithmetic = function(arith, num01,num02){
+		this.arith = arith;
+		switch(this.arith){
+		case "+" : result = (num01 + num02); 
+			break;			
+		case "-": result = (num01 - num02);
+			break;			
+		case "*": result = (num01 * num02);
+			break;			
+		case "/": result = Math.floor((num01 / num02)*100)/100;
+			break;			
+		case "%": result = (num01 % num02);
+			break;			
+		}
+		console.log("\n고고: "+num01 + arith + num02 +" = "+ result);
+	}
+} // function END
+
+	var calculation = []
+	var calc01 = new Calculator();
+	calc01.arithmetic("+",5,6);
+	calc01.arithmetic("-",5,6);
+	calc01.arithmetic("*",5,6);
+	calc01.arithmetic("/",5,6);
+	calc01.arithmetic("%",5,6);
+
+	
+	
+
+	
+	
+	
+	
+	
+</script>
+
+</script>
+
+</head>
+<body>
+<!-- -->
+
+
+
+</body>
+</html>

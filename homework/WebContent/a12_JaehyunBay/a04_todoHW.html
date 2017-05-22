@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type = "text/css">
+/*
+
+*/
+
+</style>
+
+<script src = "http://code.jquery.com/jquery-1.10.2.js">
+</script>
+<script type = "text/javascript">
+
+/*
+ 	수학연습사이트
+ 	1단계 
+ 	[@@] + [@@] = [입력하세요!]
+ 	입력하세요에 focus순간 입력가능. 문제삭제처리. 정답맞을떄,틀렷을때 문구.
+ 	
+ 	2단계 
+ 	Math.random()으로 ## 임의의 사칙연산 투입.
+ 	[@@] +-* /% [@@] = [입력하세요!]
+ 	위 내용 selector이용 선택처리.
+ 	
+ 	3단계 ##숙제!!!
+ 	10문제 각문제에 시간 count down처리. 
+ 	일정시간지나면 다음문제.
+ 	11번쨰에는 결과물.
+ 
+ */
+ var num01; // 연산숫자1
+ var num02; // 연산숫자2
+ var arith = ["+","-","*","/","%" ];
+ var ran;  // 연산random number.
+ var resultList ;  //연산값 저장.
+ var questionInt;  // 출제문제 interval
+ var timeCnt= 20; // 20초로 지정.
+ var answArr = [];
+ var howManyQ = timeCnt/5;
+ window.onload = function(){
+	$("#timeChk").html("지금 설정된 제한시간: " + timeCnt + "초");
+	 solveProb() 
+	$("#resultShow").css({"font-size":"12pt"});
+	
+ }
+ 
+ 
+
+ var questionInt = setInterval( function(){
+ 	 solveProb();
+  },5000);
+ 
+ var timeCons = setInterval(function(){
+	 $("#timeChk").html("지금 남은시간은..."+ (timeCnt-1)+ "초");
+	 timeCnt--;
+	 
+	if(timeCnt ==1){
+		clearInterval(questionInt);
+	}
+	else if(timeCnt == 0){
+		clearInterval(timeCons);
+		$(":button, input").attr("disabled","disabled");
+		answArr[answArr.length +1] = "<br/>정답개수: " + countCorr+ " /총 문제수: "+howManyQ ;
+		$("#resultShow").html(answArr);
+	}
+	else if(timeCnt%5 ==0 && timeCnt != 0 ){
+		$("input:button").removeAttr("disabled");
+	}
+},1000);
+ 
+ 
+ 
+ 
+ 
+ $(document).ready(function(){
+	/* for(var inx = 0; inx< 4; inx++){
+		$("input:eq("+inx+"):disabled").val();	
+	} */
+	
+	 
+	 //setInterval(반복함수, 반복할시간(1/1000))
+	timeCons;
+	questionInt;
+ });
+
+
+ 
+	function solveProb(){     // 문제없음. 값 추출.
+		 ran = parseInt(Math.random()*5);
+		 num01= parseInt(Math.random()*10);
+		 num02= parseInt(Math.random()*10);
+		 resultList = [(num01+num02) , 
+						 (num01-num02) , 
+						 (num01*num02) , 
+						 Math.trunc(num01/num02) , 
+						 (num01%num02) ];
+					 
+		$("input:eq(0)").val(num01);
+		$("input:eq(1)").val(arith[ran]);
+		$("input:eq(2)").val(num02);
+		$("input:eq(0)").attr("disabled","disabled");
+		$("input:eq(1)").attr("disabled","disabled");
+		$("input:eq(2)").attr("disabled","disabled");
+		
+		
+		$("input:eq(4)").val("goCheck!")
+		
+		$("input:eq(3)").on("click", function(){
+		$("input:eq(3):enabled").css("background-color", "lightblue");
+		$("input:eq(3):focus").val("");
+		});
+		console.log("???1"); 
+		checkAnsw();
+	}
+	
+	function checkAnsw(){
+		 $("input:button").unbind().click(function(){      //////////// unbind?? 
+				 /*
+				 onclick 성질: onclick하는순간. 메모리에 A값을 할당하는데.. 
+				 interval이란게 다른문제(B, C, D...)를 클릭하면서 전에 있던 문제들도 메모리에 저장하게된다.
+				 이런문제는 $(":button") = null;로 전에문제들의 메모리는 없애주거나(에러발생 하지만 작동은됨.)
+				 unbind()라는걸로 해결하는게 좋다.
+				 
+				 */
+			chk();
+			$("input:button").attr("disabled","disabled");
+		}); 
+		
+		
+		
+	}
+	
+
+var countCorr =0;
+var resultMsg = "";
+ 	function chk(){
+ 		console.log(arith[ran]);
+ 		var resultMath;
+ 		switch(arith[ran]){
+		 	case "+" : resultMath= resultList[0]
+				break;
+		 	case "-" : resultMath= resultList[1]
+				break;
+		 	case "*" : resultMath= resultList[2]
+				break;
+		 	case "/" : resultMath= resultList[3]
+		 		break;
+		 	case "%" : resultMath= resultList[4]
+				break;
+ 			default: console.log("그릉거없당.");
+ 		}
+ 	
+	
+		if(resultMath ==  parseInt($("input:eq(3)").val()) ){
+			countCorr++;
+			console.log("정답!  맞은갯수:" + countCorr);
+			
+		}
+		else{
+			console.log( resultMath );
+			console.log( parseInt($("input:eq(3)").val())  );
+			console.log("떙처리!");			
+		}
+		resultMsg ="<br/>문제: "+ parseInt($("input:eq(0)").val())+ arith[ran] +parseInt($("input:eq(2)").val()) 
+		+"<br/>입력한 답안: " + parseInt($("input:eq(3)").val())
+		+"<br/>정답: " + resultMath
+		+"<br/>정답여부: " + (resultMath ==  parseInt($("input:eq(3)").val())?  "정답입니다!" : "틀렷습니다ㅠㅠ" )
+		+"<br/>================<br/>";
+		answArr[answArr.length] = resultMsg;
+
+		
+ 	}
+ 
+ /*
+ 문제점: 
+	 1. 마지막번째 문제출제..안햇으면.
+	 2. answrArr에 답을 미기입해도 결과창에 나올수잇길.
+	 3. 좀더 간단하게..안되겟니..?
+ 
+ */
+ 
+
+
+</script>
+
+</head>
+<body>
+<!-- -->
+<h1 id = timeChk></h1>
+<input type = text /> <input type = text  /> <input type = text /> <input type = text value = "/는 정수만입력!"/>
+<input type = button />
+<h3 id = resultShow ></h3>
+</body>
+</html>

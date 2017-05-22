@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css"></style>
+<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		
+	});
+	/* 숙제 : 계산기 만들기 
+		함수객체 : Calculator
+			입력값 : num01, num02
+			메서드 : plus() minus() multi() div()를 통해서 각 기능별로
+			출력 처리 ex) @@@ + @@@ = @@@ return 값은 결과값
+	*/
+	function Calculator(num01, num02) {
+		this.num01 = num01;
+		this.num02 = num02;
+	}
+	Calculator.prototype.plus = function() {
+		var temp = this.num01+this.num02;
+		console.log(this.num01+" + "+this.num02+" = "+ temp);
+		return temp;
+	};
+	Calculator.prototype.minus = function() {
+		var temp = this.num01-this.num02;
+		console.log(this.num01+" - "+this.num02+" = "+ temp);
+		return temp;
+	};
+	Calculator.prototype.multi = function() {
+		var temp = this.num01*this.num02;
+		console.log(this.num01+" * "+this.num02+" = "+ temp);
+		return temp;
+	};
+	Calculator.prototype.div = function() {
+		var temp = this.num01/this.num02;
+		console.log(this.num01+" / "+this.num02+" = "+ temp);
+		return temp;
+	};
+	var tempNum1 = Number(prompt("첫번째 수를 입력하세요","10"));
+	var tempNum2 = Number(prompt("두번째 수를 입력하세요","5"));
+	var cal01 = new Calculator(tempNum1, tempNum2);
+	var result = cal01.plus();
+	var result1 = cal01.minus();
+	var result2 = cal01.multi();
+	var result3 = cal01.div();
+	console.log("결과들 한번 더 뿌려요 : "+result+" / "+result1+" / "+result2+" / "+result3);
+</script>
+</head>
+<body>
+
+</body>
+</html>

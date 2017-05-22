@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		
+});
+	function Calculator(num01, num02){
+		this.num01=num01;
+		this.num02=num02;
+		this.plus=function (){
+			return (this.num01+" + "+this.num02+" = "+(this.num01 + this.num02));
+		};	
+		this.minus=function (){			
+			return (this.num01+" - "+this.num02+" = "+(this.num01 - this.num02));	
+		};
+		this.multi=function (){	
+			return (this.num01+" * "+this.num02+" = "+(this.num01 * this.num02));
+		};
+		this.div=function (){	
+			return (this.num01+" / "+this.num02+" = "+(this.num01 / this.num02));
+		};
+	
+		
+	}
+	var num1 = prompt("숫자를 입력하세요",10);
+	var op= prompt("사칙연산을 입력하세요.(+,-,*,/)","+");
+	var num2 = prompt("숫자를 입력하세요",5);
+	var cal01 = new Calculator(parseInt(num1),parseInt(num2));
+	var result="";
+	switch(op){
+        case "+": result = cal01.plus(); break;
+        case "-": result = cal01.minus(); break;
+        case "*": result = cal01.multi(); break;
+        case "/": result = cal01.div(); break;
+        default : alert("사칙연산을 입력해주세요.");
+    }
+
+	console.log(result);
+
+</script>
+
+<style type="text/css">
+
+</style>
+</head>
+<body>
+
+</body>
+</html>

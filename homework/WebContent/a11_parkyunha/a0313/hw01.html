@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<!-- 
+		1. 아래와 같은 화면을 list 형태로 구현하세요.
+			사원 정보	list :데이터 홀/짝 배경색상 처리.
+						마우스 커서시, 글자 굵기,크기, 배경색, 변
+			사원번호	사원명	연봉			주업무홈피(link)
+			1234	홍길동	2,000만원 	구글-http://www.google.com
+			1235	김길동 	3,000만원 	네이버-http://www.naver.com
+			1236	박길동	4,000만원 	다음-http://www.daum.net
+			중앙		왼쪽		오른쪽 		왼쪽 line 없이.	
+		
+		Object
+		 * 
+		
+		History
+		 * author : Park, Yunha
+		 * Date : 2017-03-13	- v.1.0
+		 
+		Todo
+		 * 
+		 * 
+-->
+<style type="text/css">
+table {
+	width: 50%;
+	height: 300px;
+}
+.alignC {
+	text-align: center;
+}
+.alignR {
+	text-align: right;
+}
+.alignL {
+	text-align: left;
+}
+.link {
+	text-decoration: none;
+}
+tr:NTH-OF-TYPE(2n) {
+	background-color: lightyellow;
+}
+tr:NTH-OF-TYPE(2n+1) {
+	background-color: lightblue;
+}
+tr:HOVER {
+	background-color: purple;
+	color: white;
+	font-size: 2em;
+	font-weight: bold;
+}
+</style>
+<body>
+	<h1>사원 정보 list</h1>
+	<table>
+		<tr>
+			<th>사원번호</th>
+			<th>사원명</th>
+			<th>연봉</th>
+			<th>주업무페이지</th>
+		</tr>
+		<tr>
+			<td class="alignC">001</td>
+			<td class="alignL">박길동</td>
+			<td class="alignR">2,000만원</td>
+			<td class="alignL">
+				<a href="http://www.google.com" class="link">Google</a>
+			</td>
+		</tr>
+		<tr>
+			<td class="alignC">002</td>
+			<td class="alignL">김길동</td>
+			<td class="alignR">3,000만원</td>
+			<td class="alignL">
+				<a href="http://www.naver.com" class="link">Naver</a>
+			</td>
+		</tr>
+		<tr>
+			<td class="alignC">003</td>
+			<td class="alignL">홍길동</td>
+			<td class="alignR">4,000만원</td>
+			<td class="alignL">
+				<a href="http://www.daum.net" class="link">Daum</a>
+			</td>
+		</tr>
+		<tr>
+			<td class="alignC">004</td>
+			<td class="alignL">이길동</td>
+			<td class="alignR">2,500만</td>
+			<td class="alignL">
+				<a href="http://llighter.me" class="link">LLIGHTER</a>
+			</td>
+		</tr>
+	</table>
+	
+</body>
+</html>

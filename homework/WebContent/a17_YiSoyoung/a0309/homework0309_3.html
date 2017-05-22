@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<!--  
+	확인예제
+	h1을 이용하여 명언 5개를 list하고,
+	2개 단위로 다른 배경 색상으로 나타나게 처리하세요
+-->
+<style type="text/css">
+#wrap { width:500px; margin: 100px auto;}
+h1:NTH-CHILD(2n) {	
+	background-color: #ffff99;
+}
+h1:NTH-CHILD(2n+1) {	
+	background-color: #99ffff;
+}
+h1:hover {background-color: #0000ff;}
+h1 {text-align: center;}
+</style>
+</head>
+<body>
+	<div id="wrap">
+		<h1>겨울은 반드시 봄이 된다</h1>
+		<h1>아니 땐 굴뚝에 연기나랴?</h1>
+		<h1>음덕이 있으면 양보가 있다</h1>
+		<h1>천리길도 한걸음부터</h1>
+		<h1>갑자기 명언이 생각 안 나</h1>
+	</div>
+</body>
+</html>

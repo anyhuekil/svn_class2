@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.2.0.min.js">
+</script>
+<script type="text/javascript">
+/* 이벤트 확인예제
+ 호떡이 있는 곳을 선택하세요.
+ 용만이가 호떡을 숨긴 곳은?
+ 클릭시 랜덤으로 숨긴 곳을 클릭했을 때 맞으면 정답 틀리면 다음 기회에
+ Math.random()*3 활용
+ 나머지 숙제
+ 다른 곳을 클릭했을 때는 호떡이 없습니다.
+ 맞는 곳을 클릭했을 때 createElement활용해서 img로 호떡이 나오는 처리
+*/
+	$(document).ready(function(){
+		/* 강사님
+		var tds=documnet.querySelectorAll("td");
+		var ranIdx=parseInt((Math.random()*3 ));
+		tds[ranIdx].onclick=function(){
+			alert("호떡은 여기에");
+		}
+		*/
+		var box = document.querySelectorAll(".box");
+		var quiz=Math.floor(Math.random()*3);
+		for(var i=0; i<3; i++){
+			box[i].setAttribute("src","img02.png");
+			box[i].style.padding="100px";
+		}	
+		for(idx in box){
+			if(quiz==idx){
+				box[idx].onclick=function(){ 
+					alert("정답");
+					box[quiz].style.content="url('food03.JPG')";
+				}			
+			}else{
+				box[idx].onclick=function(){
+					alert("오답! 호떡은 "+(quiz+1)+"번째 박스에 있어요!");
+				}
+			}
+		}	
+	});
+
+</script>
+<style type="text/css">
+
+</style>
+
+</head>
+<body>
+	<img class="box"><img class="box"><img class="box">
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="ko">
+ <head>
+  <meta charset="UTF-8">
+  <title></title>
+  <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+  <script>
+  /*
+    가위 바위 보 게임
+    한 사람이 가위 바위 보를 임의로 내고 
+    다음 사람이 가위 바위 보를 임의로 냈을 때....
+    승리는 prompt 처리..
+
+    팀명 입력하기...
+    var teamName = prompt("팀명을 입력하세요!", "홍팀");
+    */
+    var games = ["가위","바위","보"];
+
+    var teamName1 = prompt("팀이름을 정하세요", "홍팀");
+    alert("입력한 팀이름:" + teamName1);
+    var first = parseInt(Math.random() * 3);
+    var firstTeam = games[first];
+    var firstresult;
+    
+    var teamName2 = prompt("팀이름을 정하세요", "홍팀");
+    alert("입력한 팀이름:" + teamName2);
+    var second = parseInt(Math.random() * 3);
+    var secondTeam = games[second];
+    var secondresult;
+
+    switch(first.toString() + second.toString())
+    {
+        case "00" : firstresult = "비김"; secondresult = "비김"; break;
+        case "01" : firstresult = "짐"; secondresult = "이김"; break;
+        case "02" : firstresult = "이김"; secondresult = "짐"; break;
+        case "10" : firstresult = "이김"; secondresult = "짐"; break;
+        case "11" : firstresult = "비김"; secondresult = "비김";break;
+        case "12" : firstresult = "짐"; secondresult = "이김";break;
+        case "20" : firstresult = "짐"; secondresult = "이김";break;
+        case "21" : firstresult = "이김"; secondresult = "짐";break;
+        case "22" : firstresult = "비김"; secondresult = "비김";break;
+    };
+
+    alert("결과는 \n" + teamName1 + " " + firstresult +" " + firstTeam +"\n"
+                   + teamName2 + " " + secondresult+ " " + secondTeam )
+
+    /* 과제) 해당 팀에 대한 승패 (가위바위보를 한 다음에)
+        @@@ 팀 승
+        무승부
+    */
+  </script>
+ </head>
+ <body>
+  
+ </body>
+</html>

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="Text/css">
+.computer td:nth-child(2) {
+	background-color: pink;
+}
+</style>
+<script type="text/javascript">
+	/* 전역변수   */
+	var userName = "";
+	var computerName = "computer";
+	var color = "";
+	var comColor = "pink";
+	var playerNodes;
+	var computerNodes;
+	var userPos = 0;
+	var computerPos = 0;
+	/*
+	 ready 버튼 클릭시 동작, user의 color와 name을 정하고, table에 나타낸다.
+	 */
+	function onReady(obj) {
+		color = document.getElementById("color").value;
+		userName = document.getElementById("teamName").value;
+		alert("Team color: " + color + "\nTeam name: " + userName);
+		playerNodes = document.getElementsByClassName("player");
+		computerNodes = document.getElementsByClassName("computer");
+		playerNodes[0].style.backgroundColor = color;
+		playerNodes[0].innerHTML = userName;
+		computerNodes[0].style.backgroundColor = comColor;
+		computerNodes[0].innerHTML = computerName;
+		set.disabled = true;
+		document.getElementById("go").disabled=false;
+	}
+
+	/*
+	 reset 버튼 클릭시 동작, user의 color와 name, table을 초기화 한다.
+	 */
+	function onReset() {
+		playerNodes[0].innerHTML = "start";
+		computerNodes[0].innerHTML = "start";
+		playerNodes[userPos].style.backgroundColor = "white";
+		if (userPos != 0)
+			playerNodes[userPos].innerHTML = "";
+		computerNodes[computerPos].style.backgroundColor = "white";
+		if (computerPos != 0)
+			computerNodes[computerPos].innerHTML = "";
+		playerNodes[playerNodes.length - 1].innerHTML = "goal";
+		computerNodes[computerNodes.length - 1].innerHTML = "goal";
+		set.disabled = false;
+		userName = "";
+		computerName = "computer";
+		color = "";
+		playerNodes;
+		computerNodes;
+		userPos = 0;
+		computerPos = 0;
+
+	}
+	/*
+	 주사위 굴리기 버튼 클릭시 동작. 
+	 */
+	function goForward() {
+		var userDistance = Math.floor(Math.random() * 5) + 1;
+		var computerDistance = Math.floor(Math.random() * 5) + 1;
+		alert(userName + " moved " + userDistance + " times.\n" + computerName
+				+ " moved " + computerDistance + " times.");
+
+		if (userPos + userDistance < 7) {
+			if (userPos == 0) {
+				playerNodes[userPos].innerHTML = "start";
+				playerNodes[userPos].style.backgroundColor = "white";
+			} else {
+				playerNodes[userPos].innerHTML = "";
+				playerNodes[userPos].style.backgroundColor = "white";
+			}
+			userPos += userDistance;
+			playerNodes[userPos].innerHTML = userName;
+			playerNodes[userPos].style.backgroundColor = color;
+
+			if (computerPos + computerDistance < 7) {
+				if (computerPos == 0) {
+					computerNodes[computerPos].innerHTML = "start";
+					computerNodes[computerPos].style.backgroundColor = "white";
+				} else {
+					computerNodes[computerPos].innerHTML = "";
+					computerNodes[computerPos].style.backgroundColor = "white";
+				}
+				computerPos += computerDistance;
+				computerNodes[computerPos].innerHTML = computerName;
+				computerNodes[computerPos].style.backgroundColor = comColor;
+			} else {
+				alert(computerName + " win!");
+				computerNodes[computerPos].innerHTML = "";
+				computerNodes[computerPos].style.backgroundColor = "white";
+				computerNodes[computerNodes.length - 1].innerHTML = userName;
+				computerNodes[computerNodes.length - 1].style.backgroundColor = comColor;
+				computerPos = computerNodes.length - 1;
+				document.getElementById("go").disabled=true;
+			}
+
+		} else {
+			alert(userName + " win!");
+			playerNodes[userPos].innerHTML = "";
+			playerNodes[userPos].style.backgroundColor = "white";
+			playerNodes[playerNodes.length - 1].innerHTML = userName;
+			playerNodes[playerNodes.length - 1].style.backgroundColor = color;
+			userPos = playerNodes.length - 1;
+			document.getElementById("go").disabled=true;
+		}
+
+	}
+</script>
+</head>
+<body>
+	<!--
+	팀 과제!!
+	말게임 만들기
+	select your horse: p1 or p2
+  p1\	\	\	\	\	\	goal
+  p2\	\	\	\	\	\	goal
+  
+  -->
+	<h1>horse game</h1>
+	<div id="set">
+		select your color: <select id="color">
+			<option>red</option>
+			<option>orange</option>
+			<option>yellow</option>
+			<option>green</option>
+			<option>blue</option>
+			<option>navy</option>
+			<option>purple</option>
+		</select> <input type="text" value="Enter your team name here" id="teamName"
+			size="30" /> <input type="button" value="ready" onclick="onReady()" />
+	</div>
+	<br>
+	<br>
+
+	<form>
+		<table id="area" border width="500">
+			<tr>
+				<td class="player" width="50">start</td>
+				<td class="player"></td>
+				<td class="player"></td>
+				<td class="player"></td>
+				<td class="player"></td>
+				<td class="player"></td>
+				<td class="player"></td>
+				<td class="player" width="50">goal</td>
+			</tr>
+			<tr>
+				<td class="computer">start</td>
+				<td class="computer"></td>
+				<td class="computer"></td>
+				<td class="computer"></td>
+				<td class="computer"></td>
+				<td class="computer"></td>
+				<td class="computer"></td>
+				<td class="computer">goal</td>
+			</tr>
+		</table>
+		<br> <br> <input type="button" value="주사위 굴리기"
+			onclick="goForward()" disabled id="go" /> <br> <br> <input
+			type="button" onclick="onReset()" value="reset" />
+
+	</form>
+
+
+</body>
+</html>

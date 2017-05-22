@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	table{width:300px; height:200px; margin: 10 auto;}
+	.onload {background-color: #99FF99;}
+	.onclick { background-color: yellow;}
+	
+</style>
+<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+<script>
+/* 1단계 : 
+	- 초기에는 class가 적용되지 않음
+	- onload 시 배경색상이 적용된다.
+	- click 시 배경 색상이 노랑색으로 변경 
+ * 
+ */
+	$(document).ready(function() {
+		$('td').addClass('onload');
+		$('td').click(function() {
+			$(this).addClass('onclick');
+		});
+	});
+</script>
+</head>
+<body>
+	<table>
+		<tr><td></td><td></td></tr>
+		<tr><td></td><td></td></tr>
+	</table>
+</body>
+</html>

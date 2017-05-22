@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	#line1:hover{background:red;color:blue;}
+	#line3:hover{background:red;color:blue;}
+	#line4:hover{background:red;color:blue;}
+	input[name="id"]:focus{background-color:#f5f5dc; color:#fa8072}
+	input[name="password"]:focus{background-color:#f5f5dc; color:#fa8072}
+	input[name="bigTitle"]:focus{background-color:#f5f5dc; color:#fa8072}
+	input[name="semiTitle"]:focus{background-color:#f5f5dc; color:#fa8072}
+	li{
+	float:left;
+	list-style:none;
+	padding:15px;
+	background-color:pink;
+	border-radius:10px 10px 10px 10px;
+	}
+	li:active{background-color:red; color:blue;}
+</style>
+<script type="text/javascript">
+	function chage(obj){
+		if(obj.value == "아이디를 입력하세요." || obj.value == "패스워드를 입력하세요." ){
+			obj.value="";
+		}
+	}
+	function login(){
+		if(document.Login.id.value == "future" && document.Login.password.value == "7777")
+		{
+			document.Login.status.value = "로그인성공";
+			
+				if(document.Login.status.value=="로그인성공")
+				{
+					document.Login.bigTitle.disabled = false;
+			    }
+				else{
+					document.Login.bigTitle.disabled = true;
+				}
+		}
+		else{
+			document.Login.status.value = "로그인실패";
+		}
+			
+	}
+	function bTitle(){
+		if(document.Login.bigTitle.value !="" && document.Login.bigTitle.value != null )
+		{
+			document.Login.semiTitle.disabled = false;
+			document.Login.status.value = "1단계 입력 완료"
+	    }
+		else{
+			document.Login.semiTitle.disabled = true;
+			document.Login.status.value=="로그인성공"
+		}
+	}
+	function sTitle(){
+		if(document.Login.semiTitle.value !="" && document.Login.bigTitle.value != null )
+		{
+			document.Login.status.value = "2단계 입력 완료"
+	    }
+		else{
+			document.Login.status.value = "1단계 입력 완료"
+		}
+	}
+</script>
+</head>
+<body>
+<table align="center" border="1" width="200" height="200">
+<caption>Best food list</caption>
+<tr>
+	<td>No</td>
+	<td>이름</td>
+	<td>가격</td>
+</tr>
+<tr id="line1">
+	<td>1</td>
+	<td>삼겹살</td>
+	<td>100</td>
+</tr>
+<tr>
+	<td>2</td>
+	<td>항정살</td>
+	<td>200</td>
+</tr>
+<tr id="line3">
+	<td>3</td>
+	<td>갈매기살</td>
+	<td>300</td>
+</tr>
+<tr id="line4">
+	<td>4</td>
+	<td>채끝살</td>
+	<td>400</td>
+</tr>
+<tr>
+	<td>5</td>
+	<td>머릿고기</td>
+	<td>500</td>
+</tr>
+</table>
+<br><br>
+<hr>
+<h1 align="center">로그인</h1>
+<form name="Login">
+ID:<input onclick="javascript:chage(this)" type="text" name="id" value="아이디를 입력하세요."/><br>
+Password<input onclick="javascript:chage(this)" type="text" name="password" value="패스워드를 입력하세요."/><br>
+<input type="button" value="로그인" onclick="javascript:login();"/><br>
+Status<input type="text" name="status" value="로그인전"/><br>
+1단계 주제를 입력하세요:<input type="text" name="bigTitle" value="" disabled/><input type="button" value="결정" onclick="javascript:bTitle();"/><br>
+2단계 세부주제를 입력하세요:<input type="text" name="semiTitle" value="" disabled /><input type="button" value="결정" onclick="javascript:sTitle();"/><br>
+</form>
+<br><br>
+<hr>
+	<ul>
+		<li><a href="http://www.naver.com">HOME</a></li>
+		<li><a href="http://www.gogole.co.kr">인사</a></li>
+		<li><a href="http://www.daum.net">총무</a></li>
+		<li><a href="http://www.w3schools.com">자재관리</a></li>
+		<li><a href="http://www.youtube.com">관리자</a></li>
+	</ul>
+</body>
+</html>

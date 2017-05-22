@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+p {
+	display: inline;
+}
+
+table {
+	visibility: hidden;
+}
+</style>
+
+<script>
+	/*	과제..
+	 keyword등록 [      ]
+	 등록할 수 있는 keyword[보이기]==> 초기에는 등록가능 keywords 보이지 않다가
+	 보이기버튼을 클릭하는 순간, 보이지 처리
+	 버튼에 있는 lebel 보이지 않기<-->보이기
+	 등록가능 keywords!!
+	 java
+	 jsp
+	 c#
+	 파이션
+	 */
+	var n = 0;
+	var arryWordList = [];
+	function kwRegister() {
+		var pIdObj = document.getElementById("pId");
+		var textObj = document.getElementById("text");
+		var bl;
+		arryWordList[n] = textObj.value;
+
+		if (n == 0) {
+			pIdObj.innerHTML = pIdObj.innerHTML + ", " + textObj.value;
+		} else {
+			for (i = 0; i < n; i++) {
+				if (arryWordList[i] == textObj.value) {
+					bl = false;
+					break;
+				} else {
+					bl = true;
+				}
+			}
+			if (bl == true) {
+				pIdObj.innerHTML = pIdObj.innerHTML + ", " + textObj.value;
+			} else {
+				alert("중복 오류입니다");
+			}
+		}
+		n = n + 1;
+	}
+
+	function kwListCall() {
+		var btObj = document.getElementById("bt");
+		var tbObj = document.getElementsByTagName("table")[0];
+
+		if (btObj.value == "보이기") {
+			tbObj.style.visibility = "visible";
+			btObj.value = "숨기기";
+		} else {
+			tbObj.style.visibility = "hidden";
+			btObj.value = "보이기";
+		}
+	}
+</script>
+</head>
+<body>
+	<input type="text" id="text" value="Keyword를 입력하세요" />
+	<input type="button" value="등록" onclick="javascript:kwRegister();" />
+	<br>
+	<p>등록할 수 있는 키워드 보이기</p>
+	<input type="button" id="bt" value="보이기"
+		onclick="javascript:kwListCall();" />
+	<br>
+	<table width="300" height="50">
+		<tr>
+			<td><p id="pId">자바, jsp, 파이선</p></td>
+		</tr>
+	</table>
+</body>
+</html>

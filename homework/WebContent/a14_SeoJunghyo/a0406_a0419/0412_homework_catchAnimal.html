@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.2.0.min.js">
+</script>
+<script type="text/javascript">
+/*
+위치 지정 선택
+- document객체.eq(index번호) : 특정 index위치에 있는 document 객체 선택.
+ex) $("h1").eq(5).html("데이터 변경");
+
+- document객체.first() : 해당 객체들 중에 첫번째
+- document객체.last() : 해당 객체들 중에 마지막
+- index 번호 (양수 : 0부터 앞에서부터 순서 / 음수 : 뒤에서부터 순서)
+*/
+	$(document).ready(function(){
+		var show="";
+		for(var i=0; i<3; i++){
+			show+="<tr>";
+			for(var j=0; j<3; j++){
+				show+="<td></td>";
+			}show+="</tr>";
+		}
+		$("table").html(show);
+		$("table").css({width:"300pt",height:"300pt"});
+		$("td").css({width:"100px", height:"100px", border:"1px solid black",textAlign:"center"});
+		$("td").first().css("background","tomato");
+		$("td").last().css("background","royalblue");
+		var score=0;
+		setInterval(function(){
+			$("td").html("");
+			// 초기화
+			var ranIdx=parseInt( Math.random()*9 );
+
+			$("td").eq(ranIdx).html("두더지 출현");	
+			$("td").eq(ranIdx).click(function(){
+				if($("td").eq(ranIdx).text()=="두더지 출현"){
+					score+=10;
+					$("h1").html(score+"점");
+					$("td").eq(ranIdx).html("");
+				}
+			})
+		},1000);
+		// 숙제 : 클릭시, 점수 올라가게 처리. 단계별로 게임 level upgrade
+		// 단계별 level upgrade 못하겠습니다.
+		
+		/* 강사님
+		$("td").click(function(){
+			// 현재 문자열이 "두더지 출현"이라는 문자열이면
+			// 점수를 카운트up하게 처리..
+			// $(this) : td의 배열가운에 현재 클릭한 td를 지칭
+			// 이미지 $(this).html()!=""
+			if($(this).html()=="두더지 출현"){
+				point++;
+				$("h1").html("점수:"+point)
+			}
+		});
+		*/
+		
+	});
+
+</script>
+<style type="text/css">
+
+</style>
+
+</head>
+<body>
+	<table>
+	</table>
+	<h1>0점</h1>
+</body>
+</html>

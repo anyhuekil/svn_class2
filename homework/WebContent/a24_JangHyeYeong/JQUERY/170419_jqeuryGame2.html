@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		var ran=[];
+		ran[0]=parseInt(Math.random()*16); //초기값 넣어줌
+		var bgcolor;
+		var ck=false;
+		var cnt;
+		
+		/***난수 넣어줌***/
+		for(var i=1; i<5; i++){ //1~4까지 넣어준다
+			var ranNum=parseInt(Math.random()*16); //난수 발생
+			ran[i]=ranNum;
+			for(var j=0; j<i; j++){ //앞에 값들 비교 (0~i)
+				if(ran[j]==ranNum){ //난수가 중복되면 다시 반복
+					 i--;
+				 }	 
+			 }
+		}
+		/*
+		for(var idx=0;idx<5;idx++){
+			ranNum=parseInt( Math.random()*$("td").size() );
+			ranIdx[idx]=ranNum;
+			for(var odx=(idx-1);odx>=0;odx--){
+				if( ranIdx[odx] == ranNum){
+					idx--;
+				}
+			}		
+		}*/
+		
+		/***난수 인덱스 색 변경***/
+		for(var i=0; i<5; i++){
+			 $("td").addClass(function(index){
+					if(index==ran[i])
+						return 'color';
+				});
+		}
+		
+		/** 게임시작 버튼**/
+		$("input").click(function(){
+			
+			for(var i=0; i<5; i++){
+				$("td").removeClass(function(index){
+					if(index==ran[i])
+						return 'color';
+				});
+			}
+			cnt=0;
+			ck=true;
+		});
+
+		/** 칸 클릭시 **/
+			$("td").click(function(){
+				// 정답 유무 판단. 랜덤배열중 정답 있을시 
+				// true로 바꿔주고 for문 빠져나감
+				for(var i=0; i<ran.length; i++){
+					var isAnwer=false;
+					if(this.id==ran[i]){ //인덱스 못불러와서 id 불러옴 ㅠ
+						isAnwer=true;
+						break;
+					}			
+				}
+				// ck=true일때 (게임시작이 눌렸을 때)
+				// isAnwer=true => 정답 띄워주고 카운트
+				if(ck){
+					if(isAnwer){
+						cnt++;
+						alert("정답! 현재 남은 개수: "+(ran.length-cnt));
+					}
+						
+					else
+						alert("오답");
+				// 정답을 랜덤배열만큼 눌렀을 때 클리어 띄워주고 초기화
+					if(cnt==ran.length){
+						alert("게임 클리어!");
+						cnt=0;
+						ck=false;
+					}
+						
+				}
+				
+			});
+		
+		
+		
+		/* 강사님 코드
+		for(var i=0; i<choice.length;i++){
+			choice[i].onclick=ck2;
+			for(var j=0; j<ran.length;j++){
+				if(ran[j]==i){
+					restCnt--;
+					choice[i].onclick=ck;
+				}
+			}
+		}
+			*/
+		
+});
+	
+	
+</script>
+
+<style type="text/css">
+	.color{background-color:tomato;}
+	td{background-color:#FFFFDD;}
+</style>
+</head>
+<body>
+<input type="button" value="게임시작""/>
+<br><br>
+<table width='400' height='300'>
+	<tr><td id=0></td><td id=1></td><td id=2></td><td id=3></td></tr>
+	<tr><td id=4></td><td id=5></td><td id=6></td><td id=7></td></tr>
+	<tr><td id=8></td><td id=9></td><td id=10></td><td id=11></td></tr>
+	<tr><td id=12></td><td id=13></td><td id=14></td><td id=15></td></tr>
+</table>
+</body>
+</html>

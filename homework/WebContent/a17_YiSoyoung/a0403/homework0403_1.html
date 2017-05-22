@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">h2{color:red;}</style>
+<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		
+	});
+	/* 가위 바위 보를 임의로 내고 다음 사람이 가위 바위 보를 임의로 냈을 때 승리는 prompt처리
+	1. 팀명 입력하기 prompt("팀명을 입력하세요","홍팀");
+	*/
+	var team1Name = prompt("첫번째 팀명을 입력하세요","홍팀");
+	var team2Name = prompt("두번째 팀명을 입력하세요","청팀");
+	var games =["가위","바위","보"];
+	var team1Index =parseInt(Math.random()*3);
+	var team2Index =parseInt(Math.random()*3);
+	document.writeln("<h1>"+team1Name + " : " + games[team1Index]+"</h1>");
+	document.writeln("<h1>"+team2Name + " : " + games[team2Index]+"</h1>");
+	document.writeln("<hr><h2>");
+	switch(team1Index){
+		case 0:
+			if(team2Index==0) document.writeln("무승부</h2>");
+			else if(team2Index==1) document.writeln(team2Name+" 승");
+			else document.writeln(team1Name+" 승</h2>");
+			break;
+		case 1:
+			if(team2Index==0) document.writeln(team1Index+" 승</h2>");
+			else if(team2Index==1) document.writeln("무승부</h2>");
+			else document.writeln(team2Name+" 승</h2>");
+			break;
+		case 2:
+			if(team2Index==0) document.writeln(team2Name+" 승</h2>");
+			else if(team2Index==1) document.writeln(team1Name+" 승");
+			else document.writeln("무승부</h2>");
+			break;
+	}
+</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="Text/css">
+
+</style>
+<script src="http://code.jquery.com/jquery-1.10.2.js "></script>
+<body>
+<canvas id="canvas01" width="1000" height="1000"></canvas>
+</body>
+<script type="text/javascript">
+var canvas;
+var ctx;
+$(document).ready(function(){
+	canvas=document.getElementById("canvas01");
+	ctx=canvas.getContext('2d');
+	drawBall();
+});
+
+
+window.main = function () {
+	  // Whatever your main loop needs to do.
+	
+	};
+
+	main(); //Start the cycle.
+	
+	function drawBall(){
+		ctx.beginPath();
+		ctx.fillRect(300,300,100,100);
+		ctx.closePath();
+	}
+
+</script>
+</head>
+
+</html>

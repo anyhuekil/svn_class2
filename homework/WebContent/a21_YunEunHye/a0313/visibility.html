@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+</style>
+
+<script type="text/javascript">
+	function show(obj){
+		var prog = document.getElementById("prog");
+		if(obj.value=="보이기"){
+			obj.value="보이지않기";
+			prog.style.visibility ="visible"
+		}else if (obj.value=="보이지않기"){
+			obj.value="보이기";
+			prog.style.visibility ="hidden";
+		}				
+	}
+
+
+</script>
+</head>
+<body>
+	<select id="prog" >
+		<option>java</option>
+		<option>jsp</option>
+		<option>C#</option>
+		<option>파이썬</option>
+	</select>
+	
+	<input type = "button" value="보이기" onclick="javascript:show(this)"/>	
+	
+</body>
+</html>

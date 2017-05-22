@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	ul{visibility:hidden;}
+
+/**/
+</style>
+<script type="text/javascript">
+/* 과제 :
+	keyword 등록 [ ] 아래 리스트에 있는거 외에 입력시 alert 호출 / 맞으면 맞다고 alert 호출
+	등록할 수 있는 keyword[보이기]==> 초기에는 keywords hidden 처리 / 보이기버튼 클릭 시 visible 처리
+								버튼 label도 보이기 / 숨기기 변경 처리
+	등록가능 keyword!
+	java
+	jsp
+	c#
+	python
+ */
+ 	function regist(){
+		var listOption=document.getElementById("option");
+		if(listOption.value=="java"){
+			alert("등록되었습니다!")
+		}else if(listOption.value=="jsp"){
+			alert("등록되었습니다!")
+		}else if(listOption.value=="c#"){
+			alert("등록되었습니다!")
+		}else if(listOption.value=="python"){
+			alert("등록되었습니다!")
+		}else{
+			alert("keyword를 확인해주세요!")
+		}
+	}
+ 
+ 	function hide(label){
+		var listObj=document.getElementById("keyList");
+		if(label.value=="보이기"){
+			listObj.style.visibility="visible";
+			label.value="숨기기";
+		}else{
+			listObj.style.visibility="hidden";
+			label.value="보이기";
+		}
+	}
+</script>
+</head>
+<body>
+	Keyword 등록:
+	<input type="text" id="option"/>
+	<input type="button" value="등록" onclick="javascript:regist(this)"/>
+	<br>
+	등록할 수 있는 keyword
+	<input type="button" value="보이기" 
+			onclick="javascript:hide(this)"/>
+	<ul id="keyList">
+		<li>java</li>
+		<li>jsp</li>
+		<li>c#</li>
+		<li>python</li>
+	</ul>
+</body>
+</html>

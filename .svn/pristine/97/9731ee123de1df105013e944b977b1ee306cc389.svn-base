@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+.hammer{
+height:240px;width:250px;position:absolute;background-image:url("hammer.png");
+}
+/*
+http://raia.tistory.com/2579 가서 배경 없애기 바뀐디그다
+*/
+.grass{
+background-image:url("grass.png");
+}
+.pushB{
+background:#99ff33 ;
+cursor: pointer;
+}
+.mole{
+text-align:center;
+}
+.sec{
+font-size: 1.5em;text-align:center;}
+</style>
+<script src="http://code.jquery.com/jquery-1.10.2.js">
+ </script>
+<script type="text/javascript">
+$(document).ready(function(){
+ //커서부분 처리 
+/* $("body").click(function(){
+   $("div").animate({left:event.pageX,top:event.pageY});
+	    });
+	*/   
+});
+
+var s = 60;
+var popup;
+var stopT;
+var point=0;
+
+
+//디그다 이미지 지정하기
+var digda1 = document.createElement("img");
+digda1.setAttribute("src","digda01.png");
+digda1.setAttribute("width",200);
+digda1.setAttribute("height",150);
+//잡은 디그다 이미지 지정하기
+var getdigda1 = document.createElement("img");
+getdigda1.setAttribute("src","getdigda01.png");
+getdigda1.setAttribute("width",200);
+getdigda1.setAttribute("height",150);
+
+
+
+//버튼 눌러야 게임 시작되게 하기
+function startG(){
+	popup = setInterval(function(){
+	   $(".mole").html("");
+	   var ranIdx=parseInt(Math.random()*9);
+	   $(".mole").eq(ranIdx).html(digda1);
+	   /*
+	   */
+	   //alert(sec.innerHTML);
+	   //alert("종료?"+ (sec.innerHTML == "게임종료"));
+	   if(sec.innerHTML == "게임종료"){
+		   clearInterval(popup);
+	   }
+		
+	},900);
+//점수부분
+	$(".mole").click(function(){
+		// 현재 문자열이 "두더지 출현"이라는 문자열이면
+		// 점수를 카운트up하게 처리..
+		// $(this) : td의 배열가운에 현재 클릭한 td를 지칭
+		// 이미지 $(this).html()!=""
+		if($(this).html()!=""&&sec.innerHTML!= "게임종료"){
+			point++;
+			$(this).html(getdigda1) ;
+			$("h1").html("점수:"+point)
+		}
+	});
+	//시간 돌아가는 부분
+	var sec;
+	
+	stopT=setInterval(function() {
+			s --;
+			sec = document.querySelector(".sec");
+			if(s<=0){
+				sec.innerHTML = "게임종료";
+				
+				clearInterval(stopT);
+
+			
+			}else{
+				sec.innerHTML = "남은시간 : " + s+"초";
+			}
+	},1000);
+
+
+	};
+</script>
+</head>
+<body>
+<h1 align="center"> 점수:</h1>
+<div>
+<h3 class="sec"></h3>
+<table align="center" class="grass" width="1000px" height="900px" >
+<tr height="300px"><td class="mole" width="335px"></td><td class="mole" width="335px"></td><td class="mole" width="330px"></td></tr>
+<tr height="300px"><td class="mole" width="335px"></td><td class="mole" width="335px"></td><td class="mole" width="330px"></td></tr>
+<tr height="300px"><td class="mole" width="335px" ></td><td class="mole" width="335px"></td><td class="mole" width="330px"></td></tr>
+</table>
+
+</div>
+<!--  <div class="hammer"></div>-->
+<br><br>
+<table align= "center" class="pushB" border> 
+<tr><td onclick="javascript:startG()">누르세요</td></tr>
+</table>
+</body>
+</html>

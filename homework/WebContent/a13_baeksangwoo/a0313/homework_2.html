@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+table {
+	text-align: center
+}
+
+input[type="text"] {
+	width: 60px
+}
+</style>
+<script type="text/javascript">
+	function teamNameCall(num) {
+		if (num == 1)
+			document.getElementById("t2_tnId1").value = document
+					.getElementById("t1_tnId1").value;
+		if (num == 2)
+			document.getElementById("t2_tnId2").value = document
+					.getElementById("t1_tnId2").value;
+	}
+
+	function colorCall(num, selectObj) {
+		if (num == 1) {
+			document.getElementsByClassName("tr1")[0].bgColor = selectObj.value;
+		}
+		if (num == 2) {
+			document.getElementsByClassName("tr2")[0].bgColor = selectObj.value;
+		}
+	}
+
+	var i = 0;
+	var j = 0;
+	var x = 0;
+	var y = 0;
+
+	function btCall(num) {
+		if (num == 1) {
+			if (i == 0) {
+				document.getElementsByClassName("fc1")[i].innerHTML = 'o';
+			} else {
+				document.getElementsByClassName("fc1")[j].style.visibility = "hidden";
+				document.getElementsByClassName("fc1")[i].innerHTML = 'o';
+			}
+			j = i;
+			++i;
+		}
+		if (num == 2) {
+			if (x == 0) {
+				document.getElementsByClassName("fc2")[x].innerHTML = 'o';
+			} else {
+				document.getElementsByClassName("fc2")[y].style.visibility = "hidden";
+				document.getElementsByClassName("fc2")[x].innerHTML = 'o';
+			}
+			y = x;
+			++x;
+		}
+	}
+</script>
+</head>
+<body>
+	<table align="center" name="firstTable">
+		<thead>
+			<tr>
+				<td>팀명</td>
+				<td>색상</td>
+				<td>이동</td>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td><input type="text" id="t1_tnId1" value="팀명 입력" /></td>
+				<td><select name="color" onclick="javascript:teamNameCall(1);" onchange="javascript:colorCall(1, this)">
+						<option>선택</option>
+						<option>blue</option>
+						<option>green</option>
+						<option>grey</option>
+				</select></td>
+				<td><input type="button" value="click"
+					onclick="javascript:btCall(1);" /></td>
+			</tr>
+			<tr>
+				<td><input type="text" id="t1_tnId2" value="팀명 입력" /></td>
+				<td><select name="color2" onclick="javascript:teamNameCall(2);" onchange="javascript:colorCall(2, this)">
+						<option>선택</option>
+						<option>blue</option>
+						<option>green</option>
+						<option>grey</option>
+				</select></td>
+				<td><input type="button" value="click"
+					onclick="javascript:btCall(2);" /></td>
+			</tr>
+		</tbody>
+	</table>
+	<br>
+	<br>
+	<table align="center" name="secondTable" border>
+		<col width="" />
+		<col width="40" />
+		<col width="40" />
+		<col width="40" />
+		<col width="40" />
+		<col width="40" />
+		<col width="40" />
+		<tr>
+			<td></td>
+			<td>1</td>
+			<td>2</td>
+			<td>3</td>
+			<td>4</td>
+			<td>5</td>
+			<td>6</td>
+		</tr>
+		<tr class="tr1">
+			<td><input type="text" value="" id="t2_tnId1" /></td>
+			<td><font class="fc1"></font></td>
+			<td><font class="fc1"></font></td>
+			<td><font class="fc1"></font></td>
+			<td><font class="fc1"></font></td>
+			<td><font class="fc1"></font></td>
+			<td><font class="fc1"></font></td>
+		</tr>
+		<tr class="tr2">
+			<td><input type="text" value="" id="t2_tnId2" /></td>
+			<td><font class="fc2"></font></td>
+			<td><font class="fc2"></font></td>
+			<td><font class="fc2"></font></td>
+			<td><font class="fc2"></font></td>
+			<td><font class="fc2"></font></td>
+			<td><font class="fc2"></font></td>
+		</tr>
+	</table>
+</body>
+</html>

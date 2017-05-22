@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+/*
+
+*/
+td{text-align:center;width:50%;height:50%;}
+/**/
+</style>
+<script src="http://code.jquery.com/jquery-1.10.2.js">
+</script>
+<script type="text/javascript">
+$(document).ready(function(){
+
+	setInterval(function(){
+		comeout();
+		
+	},2000);
+});
+
+function comeout(){
+   $(".ch").html("");
+   var ranIdx=parseInt(Math.random()*4);
+   $(".ch").eq(ranIdx).html("두더지 출현");
+}
+</script>
+</head>
+<body>
+<table  align="center" width="200" height="200" border>
+	<tr><td class="ch"></td><td class="ch"></td></tr>
+	<tr><td class="ch"></td><td class="ch"></td></tr>
+</table>
+</body>
+</html>

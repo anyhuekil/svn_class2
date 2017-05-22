@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	#wrap{width:600px; margin: 0 auto; overflow:hidden;}
+	h2{color:red; text-align:center;}
+	table{widht:100%;}
+	td{
+		float: left;
+		width:160px; height:190px;line-height:100px;border: 2px solid red;
+		margin:5px;padding:10px; text-align:center;
+		font-size:3em;
+	}
+	img{width:120px;height:90px;opacity: 0;}
+</style>
+<script>
+/* 이벤트 확인 예제 : 호떡이 있는 곳을 선택하세요
+ * 		병만이가 호떡을 숨긴 곳은?
+ * 		클릭시, 랜덤으로 숨긴 곳을 클릭했을 때 맞으면 정답 틀리면 다음 기회에..
+ */	var idx = 0;
+ 	var img = document.getElementsByTagName("img");
+ 	
+ 	window.onload = function() {
+		var interId = setInterval(function() {
+			img[idx].style.opacity = 0;
+			if(idx==2) idx=0
+			else idx ++;
+			img[idx].style.opacity = 1;
+		},200);
+		setTimeout(function() {
+			clearInterval(interId);
+			var h01Obj = document.createElement("h2");
+			var title01 = document.createTextNode("자 이제 진짜 맞춰 봐요");
+			h01Obj.appendChild(title01);
+			document.body.appendChild(h01Obj);
+			for(var i in img){
+				img[i].style.opacity = 0;
+			}
+		},5000);
+	};
+	function bbangHere(num) {
+		var bbang = parseInt(Math.random()*3)+1;
+		if(bbang==num){
+			alert("딩동댕 호떡이 "+num+"번 박스에 있어요");
+			img[num-1].style.opacity = 1;
+		}else{
+			alert("땡 거기엔 호떡이 없어요."+bbang+"번 박스에 있었죠");
+			var title01 = document.getElementsByTagName("h2")[1];
+			title01.innerHTML = "다시 골라봐. 호빵 위치 바꿨어요";
+		}
+	}
+</script>
+</head>
+<body>
+<div id="wrap">
+	<h2>병만이가 호떡을 숨긴 박스를 클릭해 보세요</h2>
+	<table>
+		<tr>
+			<td onclick="bbangHere(1)">1<br><img src="bbang.jpg"></td>
+			<td onclick="bbangHere(2)">2<br><img src="bbang.jpg"></td>
+			<td onclick="bbangHere(3)">3<br><img src="bbang.jpg"></td>
+		</tr>
+	</table>
+</div>
+</body>
+</html>

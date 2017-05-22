@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	.set1{background-color:teal;}
+	.set2{background-color:aqua;}
+	.left{text-align:left;}
+	.center{text-align:center;}
+	.right{text-align:right;}
+	.noLine{text-decoration:none;}
+	#change:hover{font-size:100%;font-weight:bold;background-color:white;}
+	
+</style>
+<script type="text/javascript">
+</script>
+</head>
+<body>
+	<table border="1" width="700" height="300">
+	<tr id="change" class="set1">
+	<td class="center">사원번호</td>
+	<td class="left">사원명</td>
+	<td class="right">연봉</td>
+	<td class="left">주업무홈피</td>
+	</tr>
+	<tr id="change" class="set2">
+	<td class="center">7709</td>
+	<td class="left">홍길동</td>
+	<td class="right">3,000</td>
+	<td class="left"><a class="noLine" href="https://www.google.co.kr">구글-https://www.google.co.kr</a></td>
+	</tr>
+	<tr id="change" class="set1">
+	<td class="center">7710</td>
+	<td class="left">김길동</td>
+	<td class="right">4,000</td>
+	<td class="left"><a class="noLine" href="https://www.naver.com">네이버-https://www.naver.com</a></td>
+	</tr>
+	<tr id="change" class="set2">
+	<td class="center">7711</td>
+	<td class="left">신길동</td>
+	<td class="right">5,000</td>
+	<td class="left"><a class="noLine" href="https://www.daum.net">다음-https://www.daum.net</a></td>
+	</tr>
+	</table>
+</body>
+</html>

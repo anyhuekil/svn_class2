@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+/*
+
+*/
+td{width:33%; height:33%;}
+</style>
+
+<script src="http://code.jquery.com/jquery-3.2.0.min.js">
+</script>
+<script type="text/javascript">
+/**/
+$(document).ready(function(){
+	$("td").first().css("background","skyblue");
+	$("td").last().css("background","red");
+	// eq(index)
+	var score=0;
+	
+	if(score<200){
+		setInterval(function(){
+			// 초기화
+			$("td").html("");
+			var ranIdx=parseInt(Math.random()*9);
+			$("td").eq(ranIdx).html("두더지 출현");
+			// 이벤트
+			// 클릭시 
+			$("td").eq(ranIdx).click(function(){
+				if($("td").eq(ranIdx).text()=="두더지 출현"){
+				score+=1;
+				$("h1").html(score);	
+				}			
+			});		
+		}, 1000 ); // 점수에 따른 시간변화 안됨..
+
+	}else if(score<500){
+		setInterval(function(){
+			$("td").html("");
+			var ranIdx=parseInt(Math.random()*9);
+			$("td").eq(ranIdx).html("두더지 출현");
+			$("td").eq(ranIdx).click(function(){
+				if($("td").eq(ranIdx).text()=="두더지 출현"){
+					score+=1;
+					$("h1").html(score);	
+				}
+			});
+		}, 500 );
+	}else{
+		setInterval(function(){
+			$("td").html("");
+			var ranIdx=parseInt(Math.random()*9);
+			$("td").eq(ranIdx).html("두더지 출현");
+			$("td").eq(ranIdx).click(function(){
+				if($("td").eq(ranIdx).text()=="두더지 출현"){
+					score+=1;
+					$("h1").html(score);
+				}
+			});
+		}, 300 );	
+	}
+	
+	
+	
+});
+</script>
+</head>
+<body>
+<h1>0</h1>
+<table align="center" width="300pt" height="300pt" border>
+	<tr><td></td><td></td><td></td></tr>
+	<tr><td></td><td></td><td></td></tr>
+	<tr><td></td><td></td><td></td></tr>
+
+
+</table>
+
+
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+/*
+
+*/
+
+/**/
+</style>
+<script src="http://code.jquery.com/jquery-1.10.2.js">
+</script>
+<script type="text/javascript">
+$(document).ready(function(){
+
+});
+/* 
+ 가위 바위 보  게임 결과 처리.. 
+ 과제)해당 팀에 대한 승패 
+ @@@ 팀 승
+  무승부
+*/
+var teamName1=prompt("팀이름을 정하세요","홍팀");
+//alert("입력한 팀이름:"+teamName);
+var games=["가위","바위","보"];
+var ranIdx1 = parseInt(Math.random()*3);
+alert(teamName1+":"+games[ranIdx1] );
+var teamName2=prompt("팀이름을 정하세요","청팀");
+var ranIdx2 = parseInt(Math.random()*3);
+alert(teamName2+":"+games[ranIdx2] );
+if(ranIdx1==ranIdx2){
+	alert("무승부");
+// 첫번째 팀의 index번호에서 2를 더한 값과 두번째 팀의 index
+// 비교해서 같으면 첫번째 팀이 승....
+}else if( ( ranIdx1+2 )%3 == ranIdx2 ){
+	alert(teamName1+"승");
+}else{
+	alert(teamName2+"승");
+}
+
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

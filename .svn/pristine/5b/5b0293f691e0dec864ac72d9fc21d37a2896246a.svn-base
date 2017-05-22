@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+/*
+
+*/
+div{font-size:20pt;background-color:lightblue;width:100pt;}
+/**/
+</style>
+<script src="http://code.jquery.com/jquery-1.10.2.js">
+</script>
+<script type="text/javascript">
+$(document).ready(function(){
+
+	var list=[
+			{name:"사과",price:3000,cnt:30,etc:"입고 중"},
+			{name:"바나나",price:4000,cnt:300,etc:"재고 충분"},
+			{name:"딸기",price:12000,cnt:50,etc:""}		
+		];
+	$("th").css("background","blue");
+	$("th").css("color","white");
+	$(".name").css("text-align","center");
+	$(".price").css("text-align","right");
+	$(".cnt").css("text-align","right");
+	
+	var names=document.querySelectorAll(".name");
+	var prices=document.querySelectorAll(".price");
+	var cnts=document.querySelectorAll(".cnt");
+	var etcs=document.querySelectorAll(".etc");
+	for(var idx=0;idx<list.length;idx++){
+		// $(".name").eq( idx ).html(list[idx].name);
+		names[idx].innerHTML=list[idx].name;
+		prices[idx].innerHTML=list[idx].price;
+		cnts[idx].innerHTML=list[idx].cnt;
+		etcs[idx].innerHTML=list[idx].etc;
+	}
+
+});
+</script>
+</head>
+<body><center>
+<div >행복마트</div>
+<br>
+<table width="600" border>
+	<tr><th>물건명</th><th>가격</th><th>현재고량</th><th>비고</th></tr>
+	<tr><td class="name"></td><td class="price"></td><td class="cnt"></td><td class="etc"></td></tr>
+	<tr><td class="name"></td><td class="price"></td><td class="cnt"></td><td class="etc"></td></tr>
+	<tr><td class="name"></td><td class="price"></td><td class="cnt"></td><td class="etc"></td></tr>
+</table>
+</body>
+</html>

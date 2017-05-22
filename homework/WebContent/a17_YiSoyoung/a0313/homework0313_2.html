@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+@font-face {
+	font-family : 'journal';
+	src: url('journal.ttf');
+}
+	body { font-size: 12pt; font-family: journal;}
+	table { background-color: #cccccc; margin: 0 auto;}
+	td {padding: 10px 2px; width:150px;text-align: center;}
+	tr {background-color: #FFFFFF; }
+	caption {font-size: 2em; }
+</style>
+<script type="text/javascript">
+	var aPos = 0;
+	var bPos = 0;
+	function aGo() {
+		var aTeam = document.getElementsByClassName("aTeam")[0].value;
+		var aName = document.getElementsByClassName("aName")[0];
+		aName.innerHTML = aTeam + "팀";
+		var aSelect = document.getElementsByClassName("aSelect")[0].value;
+		aPos++;
+		switch(aPos){
+			case 1: document.getElementsByClassName("a1")[0].style.backgroundColor = aSelect;break;
+			case 2: document.getElementsByClassName("a2")[0].style.backgroundColor = aSelect;break;
+			case 3: document.getElementsByClassName("a3")[0].style.backgroundColor = aSelect;break;
+			case 4: document.getElementsByClassName("a4")[0].style.backgroundColor = aSelect;break;
+			case 5: document.getElementsByClassName("a5")[0].style.backgroundColor = aSelect;break;
+			default:alert("니가 이겼어. 그만 끝내");
+		}
+	}
+	function bGo() {
+		var bTeam = document.getElementsByClassName("bTeam")[0].value;
+		var bName = document.getElementsByClassName("bName")[0];
+		bName.innerHTML = bTeam + "팀";
+		var bSelect = document.getElementsByClassName("bSelect")[0].value;
+		bPos++;
+		switch(bPos){
+			case 1: document.getElementsByClassName("b1")[0].style.backgroundColor = bSelect;break;
+			case 2: document.getElementsByClassName("b2")[0].style.backgroundColor = bSelect;break;
+			case 3: document.getElementsByClassName("b3")[0].style.backgroundColor = bSelect;break;
+			case 4: document.getElementsByClassName("b4")[0].style.backgroundColor = bSelect;break;
+			case 5: document.getElementsByClassName("b5")[0].style.backgroundColor = bSelect;break;
+			default: alert("니가 이겼어. 그만 끝내");
+		}
+	}
+</script>
+</head>
+<body>
+	<table>
+		<tr><th>Team Name</th><th>Color</th><th>Action</th></tr>
+		<tr>
+			<td><input type="text" class="aTeam"></td>
+			<td><select class="aSelect">
+					<option selected="selected">red</option><option>orange</option>
+					<option>yellow</option><option>green</option>
+					<option>blue</option><option>navy</option>
+					<option>purple</option>
+				</select>
+			</td>
+			<td><button onclick="aGo()">이동</button></td>
+		</tr>
+		<tr>
+			<td><input type="text"  class="bTeam"></td>
+			<td><select class="bSelect">
+					<option selected="selected">red</option><option>orange</option>
+					<option>yellow</option><option>green</option>
+					<option>blue</option><option>navy</option>
+					<option>purple</option>
+				</select>
+			</td>
+			<td><button onclick="bGo()">이동</button></td>
+		</tr>
+	</table><br><br><br>
+	<table id="result">
+		<caption>RESULT</caption>
+		<tr><td></td><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th></tr>
+		<tr><td class="aName"></td><td class="a1"></td><td class="a2"></td><td class="a3"></td><td class="a4"></td><td class="a5"></td></tr>
+		<tr><td class="bName"></td><td class="b1"></td><td class="b2"></td><td class="b3"></td><td  class="b4"></td><td class="b5"></td></tr>
+	</table>
+</body>
+</html>

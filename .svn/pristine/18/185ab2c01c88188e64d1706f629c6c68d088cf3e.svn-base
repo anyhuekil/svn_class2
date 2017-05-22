@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style type="text/css">
+input[type="button"]{background-color:white;}
+input:focus{background-color:black; color:white;}
+
+</style>
+<script type="text/javascript">
+var count=0;
+
+function login(){
+	count+=1;
+	var inputId=document.loginData.id.value; //입력받은 아이디
+	var inputPass=parseInt(document.loginData.pw.value); //입력받은 비밀번호
+	
+	if(inputId=="future" && inputPass==7777){
+		alert("로그인 성공")
+		var loginStatus=true;
+	}else alert("아이디 혹은 비밀번호를 확인하세요.");
+	
+	/*로그아웃 누를 경우*/
+	if(count==2){ 
+		var loginStatus=false;
+		document.loginData.id.value=""; //공백처리해준다
+		document.loginData.pw.value="";
+		count=0;
+	}
+	
+	/*status부분 처리*/
+	if(loginStatus){
+		document.statusData.status.value="로그인성공";
+		document.loginData.loginBtn.value="로그아웃";
+		document.statusData.first.disabled=false;
+		document.statusData.second.disabled=false;
+	}else{
+		document.statusData.status.value="로그인전";
+		document.loginData.loginBtn.value="로그인";
+		document.statusData.first.disabled=true;
+		document.statusData.second.disabled=true;
+	}
+	
+	
+
+	}
+	
+
+
+function inStatus(a,b){
+	
+
+	//var firstData=document.statusData.first.value;
+	//var secondData=document.statusData.second.value;
+	
+	
+	if(b==0 )
+		document.statusData.status.value="1단계";
+		
+			
+	else if(a==0)
+		document.statusData.status.value="2단계";
+		
+	
+
+}
+
+
+</script>
+
+</head>
+<body>
+<h3>LogIn</h3>
+<form name="loginData">
+ID: <input type="text" name="id"/><br>
+PASS : <input type="password" name="pw" /><br>
+<input name="loginBtn" type="button" value="로그인" onclick="javascript:login()"/>
+</form>
+<br><br>
+<form name="statusData">
+status: <input name="status" value="로그인전" /><br>
+[1단계] 주제를 입력하세요: <input name="first" onclick="javascript:inStatus(this,0)"disabled/><br>
+[2단계] 세부주제를 입력하세요: <input name="second" onclick="javascript:inStatus(0,this)" disabled />
+</form>
+</body>
+</html>

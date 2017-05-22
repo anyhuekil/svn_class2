@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>경마경마</title>
+<style type="Text/css">
+</style>
+<script src="http://code.jquery.com/jquery-1.10.2.js "></script>
+<body>
+		<canvas id="game" width="1536" height="1000"></canvas>
+</body>
+<script type="text/javascript" src="js/game1.js" charset="utf-8"></script>
+
+
+</head>
+
+
+</html>

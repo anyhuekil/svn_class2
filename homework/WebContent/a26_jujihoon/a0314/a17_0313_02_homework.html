@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	/* 1 2 3 4 5 line 만들기 */
+	li{float:left;list-style:none;padding:15px;background-color:pink;width:100px;height:50px;
+		text-align:center;margin-left: 10px;}
+	li:first-child{border-radius:10px 0 0 10px;}
+	li:last-child{border-radius:0 10px 10px 0;}
+	
+	/* 1 2 3 4 5 line 위치 잡기 */
+	#numDiv{position: absolute; top:100px; left:50px;}
+	
+	/* 위쪽 div 설정 */
+	#teamUpDiv{width:75px; height:75px; border-radius: 30px; background-color: yellow;
+				position: absolute; top:210px; left:0px; color:black;
+				/* text 정중앙에 위치 용도 */ 
+				display: flex; align-items: center; justify-content: center;
+				/* } */
+				visibility:hidden;}
+	
+	/* 아래쪽 div 설정 */
+	#teamDownDiv{width:75px; height:75px; border-radius: 30px; background-color: yellow;
+				position: absolute; top:300px; left:0px; color:black;
+				/* text 정중앙에 위치 용도 */
+				display: flex; align-items: center; justify-content: center;
+				/* } */
+				visibility:hidden;}
+</style>
+<script type="text/javascript">
+	// div 위치 정보 array
+	var leftPos = [125, 275, 410, 560, 690];
+	
+	// 위쪽 div 위치
+	var upIdx = 0;
+	
+	// 아래쪽 div 위치
+	var downIdx = 0;
+
+	// 위쪽 text나 select를 조작시 실행
+	function updateTeamUp() {
+		// 위쪽 text 및 select 정보 참조
+		var teamUpText = document.getElementsByClassName("teamUp")[0].value;
+		var teamUpColorSelect = document.getElementsByClassName("teamUp")[1];
+		var teamUpColor = teamUpColorSelect.options[teamUpColorSelect.selectedIndex].text;
+		
+		// 위쪽 div 정보 참조
+		var teamUpDiv = document.getElementById("teamUpDiv");
+		
+		// 위쪽 text가 공란이 아닐 때 (즉, 값이 입력되었을 때)
+		if(teamUpText != "")
+		{
+			// div에 text를 넣고 
+			teamUpDiv.innerHTML = teamUpText;
+			
+			// div 객체의 색상을 결정한다.
+			teamUpDiv.style.backgroundColor = teamUpColor;
+			
+			// 보이게 처리
+			teamUpDiv.style.visibility = "visible";
+		}
+		else
+		{
+			teamUpDiv.style.visibility = "hidden";
+		}
+	}
+	
+	// 아래쪽 text나 select를 조작시 실행
+	function updateTeamDown() {
+		// 위쪽 text 및 select 정보 참조
+		var teamDownText = document.getElementsByClassName("teamDown")[0].value;
+		var teamDownColorSelect = document.getElementsByClassName("teamDown")[1];
+		var teamDownColor = teamDownColorSelect.options[teamDownColorSelect.selectedIndex].text;
+		
+		// 위쪽 div 정보 참조
+		var teamDownDiv = document.getElementById("teamDownDiv");
+		
+		// 위쪽 text가 공란이 아닐 때 (즉, 값이 입력되었을 때)
+		if(teamDownText != "")
+		{
+			// div에 text를 넣고 
+			teamDownDiv.innerHTML = teamDownText;
+			
+			// div 객체의 색상을 결정한다.
+			teamDownDiv.style.backgroundColor = teamDownColor;
+			
+			// 보이게 처리
+			teamDownDiv.style.visibility = "visible";
+		}
+		else
+		{
+			teamDownDiv.style.visibility = "hidden";
+		}
+	}
+	
+	// 위쪽 button 클릭 시 실행
+	function goUp() {
+		// 위쪽 div 정보 참조
+		var teamUpDiv = document.getElementById("teamUpDiv");
+
+		// 마지막 위치를 벗어나지 않았을 때
+		if(upIdx < leftPos.length)
+		{
+			//leftPos에 저장된 위치로 이동시키고 upIdx를 증가
+			teamUpDiv.style.left = leftPos[upIdx++]+"px";
+		}
+		else
+		{
+			alert("더 이상 이동할 수 없습니다!");
+		}
+	}
+	
+	// 아래쪽 button 클릭 시 실행
+	function goDown() {
+		// 아래쪽 div 정보 참조
+		var teamDownDiv = document.getElementById("teamDownDiv");
+		
+		// 마지막 위치를 벗어나지 않았을 때
+		if(downIdx < leftPos.length)
+		{
+			//leftPos에 저장된 위치로 이동시키고 downIdx를 증가
+			teamDownDiv.style.left = leftPos[downIdx++]+"px";
+		}
+		else
+		{
+			alert("더 이상 이동할 수 없습니다!");
+		}
+	}
+</script>
+</head>
+<!--
+	과제!!
+	팀명	색상		이동
+	[text]	[select]	[button]
+	[text]	[select]	[button]
+
+			1	2	3	4	5
+	[text]
+	[text]
+	
+	1. 위 팀명에 입력한 팀명과 색상이 아래 div에 적용
+	2. 이동 버튼 클릭 시 해당 팀이 1칸씩 오른쪽으로 이동
+ -->
+<body>
+	<table>
+		<tr>
+			<td>팀명</td>
+			<td>색상</td>
+			<td>이동</td>
+		</tr>
+		
+		<tr>
+			<td><input type="text" class="teamUp" oninput="updateTeamUp()"/></td>
+			<td>
+				<select onchange="updateTeamUp()" class="teamUp">
+					<option>red</option>
+					<option>blue</option>
+					<option>green</option>
+				</select>
+			</td>
+			<td><input type="button" value="이동" onclick="goUp()"/></td>
+		</tr>
+		
+		<tr>
+			<td><input type="text" class="teamDown" oninput="updateTeamDown()"/></td>
+			<td>
+				<select onchange="updateTeamDown()" class="teamDown">
+					<option>red</option>
+					<option>blue</option>
+					<option>green</option>
+				</select>
+			</td>
+			<td><input type="button" value="이동" onclick="goDown()"/></td>
+		</tr>
+	</table>
+	
+	<div id="numDiv">
+		<ul>
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+		</ul>
+	</div>
+	
+	<div id="teamUpDiv"></div>
+	<div id="teamDownDiv"></div>
+</body>
+</html>

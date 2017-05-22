@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		//$("td").first().css("background","yellow");
+		//$("td").last().css("background","tomato");
+		//var choice=document.querySelectorAll("td");
+		var sum = 0;
+		var time=60;
+		var end=false;
+		var choicNum;
+	
+		
+		//남은 시간	
+		var count=setInterval(function(){
+		$("h2").css("textAlign","center").html(time+"초 남았습니다.");
+		time--;			
+		},1000);
+		
+		// 60초 뒤에 멈춘다	
+		var timeEnd=setTimeout(function(){
+		$("h2").css("textAlign","center").html("종료되었습니다.");
+		clearInterval(ranMole);
+		clearInterval(count);
+		clearTimeout(timeEnd);
+		end=true;
+		},60000);
+		$("h1").css("textAlign","center").html("현재 점수: "+sum+"점");
+	
+		// eq(index)
+		var ranMole=setInterval(function(){
+			//초기화	
+			$("td").html(" ");
+			var ranIdx=parseInt(Math.random()*9);
+			$("td").eq(ranIdx).html("<img style='width:80px;height:80px'src='../img/mole.png'/>");	
+			choicNum=ranIdx; // 랜덤함수 넘겨옴
+	
+		},600);
+		
+		
+		//클릭했을때 점수 올려주는 함수 ##### 종료된 뒤에도 점수 올라가는 것 고쳐야함 -- 고쳤음
+			//for(var idx=0; idx<9; idx++){
+			//	choice[idx].onclick=function(){
+				$("td").click(function(){
+					if(this.innerHTML!=null && this.innerHTML!=" " && !end){ //이미지가 있을 경우
+						sum+=10;
+						$("h1").css("textAlign","center").html("현재 점수: "+sum+"점");
+						$("td").eq(choicNum).html("<img style='width:80px;height:80px'src='../img/mole2.png'/>");
+					}		
+				});
+			//}
+	
+		/*$("td").click(function(){
+			// 현재 문자열이 "두더지 출현"이라는 문자열이면
+			// 점수를 카운트up하게 처리
+			// $(this) : td의 배열 가운데 현재 클릭한 td를 지칭
+			// 이미지 $(this).html()!=""
+			
+		});*/
+});
+
+</script>
+
+<style type="text/css">
+	td{width:33%; height:33%; text-align:center;}
+</style>
+</head>
+<body>
+<table align="center" width="300pt" height="300pt" border>
+	<tr><td></td><td></td><td></td></tr>
+	<tr><td></td><td></td><td></td></tr>
+	<tr><td></td><td></td><td></td></tr>
+</table>
+<h1></h1>
+<h2></h2>
+<h3></h3>
+</body>
+</html>

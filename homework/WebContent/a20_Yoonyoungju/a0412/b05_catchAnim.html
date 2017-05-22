@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style type="text/css">
+/**/
+td{width :33%; height:33%;text-align:center;}
+</style>
+<script src ="http://code.jquery.com/jquery-1.10.2.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("td").first().css("background","yellow");
+		$("td").last().css("background","pink");
+		  var img = document.createElement("img");
+		  img.setAttribute("width",90);
+		  img.setAttribute("height",85);
+
+		//eq (index)
+		var ranIdx ="";
+		var sum =0;
+	setInterval(function(){
+			//초기화 
+			$("td").html("");
+			ranIdx = parseInt(Math.random()*9);
+			 img.setAttribute("src","do1.png");//평범 두저지 이미지 
+			$("td").eq(ranIdx).html("do");
+			$("td").eq(ranIdx).html(img);
+			// 이벤트 처리 
+			// 클릭시 , 점수 올라가게 처리  (숙제 임 )
+		},700);// 단계별로 게임 level upgrade 점점 속도up	
+		//클릭시 점수 올라감 
+		var cntClick =0;
+		
+		$("td").click(function(){
+			if($(this).html() != ""){
+				cntClick++;
+				img.setAttribute("src","do2.png");//맞는 이미지
+				$("this").html(img);
+			}
+			$("h1").html("점수 :"+cntClick);
+		});
+	
+	
+	});
+</script>
+</head>
+<body>
+	<table align = "center" width ="300pt" height = "300pt" border>
+		<tr><td></td><td></td><td></td></tr>
+		<tr><td></td><td></td><td></td></tr>
+		<tr><td></td><td></td><td></td></tr>
+	</table>
+	<h1>점수 :</h1>
+</body>
+</html>

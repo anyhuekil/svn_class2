@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+/*
+
+*/
+td{text-align:center;}
+td.prob{width:50%;}
+/**/
+</style>
+<script src="http://code.jquery.com/jquery-1.10.2.js">
+</script>
+<script type="text/javascript">
+$(document).ready(function(){
+	init();
+	timming();
+});
+var mathCal=[];
+// 문제처리..
+function init(){
+	var pro; // 문제(단위)
+	var ranIdx; // 랜덤 index
+	var cal=["+","-","*","/"];	
+	var calVal;
+	// 10문 랜덤처리..
+	for(var idx=0;idx<10;idx++){
+		pro={};
+		//@@ [연산자] @@ = 
+		pro.num01=parseInt(Math.random()*10); // 0~9
+		pro.num02=parseInt(Math.random()*10);
+		ranIdx=parseInt( Math.random()*4); // 연산자 +,-,*,/
+		// 사칙연산 연산 결과..
+		calVal=[pro.num01+pro.num02,pro.num01-pro.num02,
+				pro.num01*pro.num02,pro.num01/pro.num02];
+		// 정답
+		pro.corResult=calVal[ranIdx];
+		// 배열에 등록..
+		mathCal.push(pro);
+		// class명이 prob 화면에 연산내용 출력..
+		$(".prob").eq(idx).html( pro.num01+" "+cal[ranIdx]+" "+pro.num02);	
+	}
+}
+// count down 처리..(10~0)
+// 0이 되었을 때, 종료와 동시에 점수..alert();
+function timming(){
+	var cnt=10;
+	var inter=setInterval(function(){
+		$("h3").html(cnt--);
+	},1000);
+	// 12초
+	setTimeout(function(){
+		clearInterval(inter);
+		var corCnt=0;
+		$.each(mathCal,function(index, item){
+			// 정답과 입력한 내용을 비교..
+			// 동일할 때, 10점씩..
+			if( $(".inputData").eq(index).val()!=""
+					&&item.corResult==$(".inputData").eq(index).val()){
+				corCnt+=10;
+			}
+		});
+		$("h3").html("최종점수:"+corCnt);
+	},12000);	
+}
+
+</script>
+</head>
+<body><center>
+<h2>수학 game!!</h2>
+<h3></h3>
+<table align="center" width='300' border>
+	<tr><td>1</td><td class="prob"></td><td><input size="3" class="inputData"/></td></tr>
+	<tr><td>2</td><td class="prob"></td><td><input size="3" class="inputData"/></td></tr>
+	<tr><td>3</td><td class="prob"></td><td><input size="3" class="inputData"/></td></tr>
+	<tr><td>4</td><td class="prob"></td><td><input size="3" class="inputData"/></td></tr>
+	<tr><td>5</td><td class="prob"></td><td><input size="3" class="inputData"/></td></tr>
+	<tr><td>6</td><td class="prob"></td><td><input size="3" class="inputData"/></td></tr>
+	<tr><td>7</td><td class="prob"></td><td><input size="3" class="inputData"/></td></tr>
+	<tr><td>8</td><td class="prob"></td><td><input size="3" class="inputData"/></td></tr>
+	<tr><td>9</td><td class="prob"></td><td><input size="3" class="inputData"/></td></tr>
+	<tr><td>10</td><td class="prob"></td><td><input size="3" class="inputData"/></td></tr>
+</table>
+</body>
+</html>

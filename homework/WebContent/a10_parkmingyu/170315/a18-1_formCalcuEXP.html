@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Form Calc. Tag Exercise</title>
+<script type="text/javascript">
+	function totalcost(){
+		var movTitle=document.movienight.title.value;
+		var movCost=document.movienight.cost.value;
+		var costValue=parseInt(movCost);
+		var hdCount=document.movienight.count.value;
+		var countValue=parseInt(hdCount);
+		var totCost=costValue*countValue;
+		document.getElementById('movieTitle').innerHTML=movTitle;
+		document.getElementById('movieCost').innerHTML=movCost;
+		document.getElementById('headCount').innerHTML=hdCount;
+		document.getElementById('totalCost').innerHTML=totCost;		
+	}
+</script>
+</head>
+<body>
+<h2>영화관람 이벤트</h2>
+<form name="movienight">
+	영화제목<input type="text" name="title"/><br>
+	티켓비용<input type="text" name="cost"/><br>
+	관람인원<input type="text" name="count"/><br><br>
+	<input type="button" value="영수증 출력" onclick="javascript:totalcost()"/><br><br>
+
+		<table border=1 align="left" width="200">
+			<tr height="50">
+				<th colspan="2">영화 티켓 영수증</th>
+			</tr>
+			<tr height="50" align="center">
+				<td width="70">제목</td>
+				<td id="movieTitle">
+				</td>
+			</tr>
+			<tr height="50" align="center">
+				<td width="70">금액</td>
+				<td id="movieCost">
+				</td>
+			</tr>
+			<tr height="50" align="center">
+				<td width="70">인원</td>
+				<td id="headCount">
+				</td>
+			</tr>
+			<tr height="100" align="center">
+				<td width="70">총금액</td>
+				<td  id="totalCost">
+				</td>
+			</tr>
+		</table>
+</form>
+<!-- 과제 :
+	영화관에서..
+		제목 : [   ]
+		관람료 : [   ]s
+		인원 : [   ]
+			[계산]버튼
+		영수증 --textarea
+			제목 : @@@
+			계산 : @@@ * @@@ = @@@
+ --> 
+</body>
+</html>

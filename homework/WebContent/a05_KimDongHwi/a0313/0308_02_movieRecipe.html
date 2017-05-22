@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+ 	function calc(){
+		var peoples = parseInt(document.inForm.people.value);
+		var mPrice = parseInt(document.inForm.price.value);
+		var tPrice = peoples * mPrice; //영화표 계산
+		
+		var mTitle = document.inForm.title.value; //제목 전송 메세지
+ 				
+		var lineC = peoples+"명 * "+mPrice+"원 = "+tPrice+"원"; // 계산 전송 메세지 1명 * 1원 = 1원
+		
+		var tRecipe = "영화 제목: "+mTitle+"\n가격 계산: "+lineC; //영수증 출력내용 정리  영화제목: ㅁㅁㅁ 
+																	//       계산가격: 121123  
+				document.outForm.recipe.value=tRecipe;
+				
+				alert("작동 : "+tPrice+"\n"+lineC);
+	} 
+
+ 	
+
+</script>
+</head>
+<body> <center>
+
+<form name="inForm">
+<h1>요금 계산기</h1>
+제목 : <input type="text" name="title"/> <br>
+관람료: <input type="text" name="price"/> <br>
+인원 : <input type="text" name="people"> <br>
+ <input type="button" value="계산하기" onclick="javascript:calc()"> <br>
+</form>
+ 
+ 
+<form name="outForm"> 
+ <h1>영수증</h1>
+ <textarea name="recipe" rows="10" cols="30"> </textarea><br>
+
+ 
+
+ </form>
+ 
+ 
+
+</body>
+</html>
+
+<!-- 
+과제2
+
+제목 : [		]
+관람료 : [ 	]	
+인원 : [   		 ]
+[계산]
+영수증  -- textarea
+제목 : @@@
+계산 : @@@ * @@@ = @@@
+ -->

@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <title>
+        Math Test
+    </title>
+    <script
+        src="http://code.jquery.com/jquery-3.2.1.js"
+        integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+        crossorigin="anonymous">
+        // http://code.jquery.com
+    </script>
+    <script>
+        var reportCard = [];
+        var problemNum = 1;
+
+        $(document).ready(function() {
+            /*
+                수학 연습사이트
+                - 1단계
+                - [ @@ ] + [ @@ ] = [ 입력하세요 ]
+                - 입력하세요에 클릭하는 순간 입력이 가능하게 문자 삭제 처리.
+                    해당 정답이 맞을 때!! 정답, 틀렸을 때 오답
+                - 2단계
+                - Math.random()을 활용하여 ##( 사칙연산 임의 )
+                - [ @@ ] ? [ @@ ] = [ 입력하세요 ]
+                - 위 내용 selector를 이용 선택 처리하게
+                - 3단계(숙제)
+                - 문제 10개를 시간 count down 처리해서 시간이 지나면 맞은 문제 갯수를
+                    10점으로 환산하여 출력
+            */
+            $("input[name='result']").click(function() {
+                $("input[name='result']").val("");
+            });
+
+            $("button[id='check']").click(function() {
+                var result = checkAnswer();
+                reportCard.push( result );
+                
+                $("div[id='record']").
+                    append("["+(result ? '+' : '-')+"] Problem " + problemNum + " result : " + result + "<br>");
+
+                if(reportCard.length == 10) {
+                    testOver();
+                    gradingScore(reportCard);
+                } else {
+                    // create new problem
+                    $("span[id='problem']").html(++problemNum);
+                    setOperands(2,10);
+                    setOperator(['+', '-', '*', '/']);
+                }
+            });
+
+            $("button[id='start']").click(function() {
+                var totalSec = 5;
+                var min = 0;
+                var sec = 0;
+
+                $("span[id='status']").html("Test Running");
+                $(":disabled").attr("disabled", false);
+                $("span[id='problem']").html(1);
+
+                var testTimer = setInterval(function(){
+                    min = (Math.floor(totalSec / 60)).toString();
+                    sec = (totalSec % 60).toString();
+
+                    // format : X -> 0X
+                    min = (min.length == 1) ? ("0"+min) : min;
+                    sec = (sec.length == 1) ? ("0"+sec) : sec;                    
+
+                    if(totalSec == 0 || reportCard.length == 10) {
+                        testOver();
+                        clearInterval(testTimer);
+                    } else {
+                        $("span[id='countdown']").html(min + " : " + sec);
+                        totalSec--;
+                    }
+                }, 1000);
+
+                
+            });
+
+        });
+
+        function createNumbers(num, range) {
+            var operands = [];
+
+            for(var i = 0; i < num; i++) {
+                operands.push(Math.floor(Math.random()*range));
+            }
+
+            return operands;
+        }
+
+        function setOperands(num, range) {
+            var operands = createNumbers(num, range);
+
+            $("input[name='operand01']").val(operands[0]);
+            $("input[name='operand02']").val(operands[1]);
+        }
+
+        function setOperator(operators) {
+            var idx = createNumbers(1, 4);
+
+            $("span[name='operator']").html(operators[idx]);
+        }
+
+        function checkAnswer() {
+            var op01 = parseInt($("input[name='operand01']").val());
+            var op02 = parseInt($("input[name='operand02']").val());
+            var result = parseInt($("input[name='result']").val());
+            var operator = $("span[name='operator']").html();
+            var isCorrect = false;
+
+            switch(operator) {
+                case "+":
+                    isCorrect = ((op01+op02) == result) ? true : false;
+                    break;
+                case "-":
+                    isCorrect = ((op01-op02) == result) ? true : false;
+                    break;
+                case "*":
+                    isCorrect = ((op01*op02) == result) ? true : false;
+                    break;
+                case "/":
+                    isCorrect = ((op01/op02).toFixed(2) == result) ? true : false;
+                    break;
+            }
+
+            return isCorrect;
+        }
+
+        function testOver() {
+            $("span[id='countdown']").html("Finished");
+            $("input").attr("disabled", true);
+            $("button").attr("disabled", true);
+            $("span[id='status']").html("Test End");
+        }
+
+        function gradingScore(myCard) {
+            var numOfCorrect = 0;
+            var numOfWrong = 0;
+
+            for(var i = 0; i < myCard.length; i++) {
+                myCard[i] == true ? numOfCorrect++ : numOfWrong++;
+            }
+
+            $("div[id='testResult']").append("Your Score : ( " + numOfCorrect + " / " + 10 + " )<br>");
+            $("div[id='testResult']").append("Total number of Problem : 10<br>");
+            $("div[id='testResult']").append("Your number of Try : " + myCard.length + "<br>");
+            $("div[id='testResult']").append("Your number of Correct : " + numOfCorrect + "<br>");
+            $("div[id='testResult']").append("Your number of Wrong : " + numOfWrong + "<br>");
+        }
+    </script>
+</head>
+<body>
+    <h1>Math Test</h1>
+    <div>Test Status : <span id="status">Before Start</span></div>
+    <div>Time : <span id="countdown">00 : 00</span></div>
+    <button id="start">Start</button>
+    <br><br>
+    <div>Problem <span id="problem">Ready</span></div>
+    <input type="text" name="operand01" value="5" disabled>
+    <span name="operator">+</span>
+    <input type="text" name="operand02" value="4"disabled>=
+    <input type="text" name="result" value="Enter the value" disabled>
+    <button id="check" disabled>Check</button>
+    <div id="record">cf. 나누기는 소수 2번째 자리까지 계산한다.<br><br></div>
+    <br>
+    <div id="testResult"></div>
+</body>
+</html>

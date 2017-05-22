@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style type="text/css">
+
+
+</style>
+
+<script type="text/javascript">
+</script>
+
+</head>
+<body>
+
+ 
+ <!-- a12과제
+ 
+ /*	과제..
+ 	
+ 	keyword등록 [      ]
+ 	등록할 수 있는 keyword[보이기]==> 초기에는 등록가능 keywords 보이지 않다가
+ 									 보이기버튼을 클릭하는 순간, 보이지 처리
+ 									 버튼에 있는 lebel 보이지 않기<->보이기
+ 	등록가능 keywords!!
+ 	java
+ 	jsp
+ 	c#
+ 	파이션.
+  */
+  -->
+ 
+
+</body>
+</html>

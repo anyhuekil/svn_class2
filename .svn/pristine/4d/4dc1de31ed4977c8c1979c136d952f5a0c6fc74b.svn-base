@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+/*
+
+*/
+table{margin: auto;}
+.item{background-color: yellow;}
+.ok{background-color: blue;}
+
+</style>
+
+<script src="http://code.jquery.com/jquery-3.2.0.min.js">
+</script>
+<script type="text/javascript">
+/**/
+$(document).ready(function(){
+	$("td").addClass(function(){
+		return 'block'
+	})
+	var ranI0=parseInt(Math.random()*16);
+	var ranI1=parseInt(Math.random()*16);
+	var ranI2=parseInt(Math.random()*16);
+	var ranI3=parseInt(Math.random()*16);
+	$("td").eq(ranI0).addClass(function(){
+		return 'item bingo';
+	});
+	$("td").eq(ranI1).addClass(function(){
+		return 'item bingo';
+	});
+	$("td").eq(ranI2).addClass(function(){
+		return 'item bingo';
+	});
+	$("td").eq(ranI3).addClass(function(){
+		return 'item bingo';
+	});
+	
+
+	$("td").click(function(){
+		if($(this).is(".block")){
+			
+		}else if($(this).is(".bingo")){
+			alert("정답");
+			$(this).addClass('ok');
+		}else{
+			alert("실패");
+		}
+	});
+	
+});
+
+function gameStart(){
+	$("td").removeClass("item");
+	$("td").removeClass("block");
+	
+}
+
+
+
+</script>
+</head>
+<body>
+<input type="button" value="게임시작" onclick="gameStart();">
+<table width="400" height="400" border>
+	<tr><td></td><td></td><td></td><td></td></tr>
+	<tr><td></td><td></td><td></td><td></td></tr>
+	<tr><td></td><td></td><td></td><td></td></tr>
+	<tr><td></td><td></td><td></td><td></td></tr>
+</table>
+
+</body>
+</html>

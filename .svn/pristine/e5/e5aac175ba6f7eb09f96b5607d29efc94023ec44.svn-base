@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	body {background-color: #ffffdd;}
+	#wrap {width:300px; margin: 0 auto;text-align: center;}
+/*
+	과제 ..
+	keyword 등록 [     ]
+	등록할 수 있는 keyword[보이기] => 초기에는 등록 가능 키워드 보이지 않다가
+								보이기 버튼을 클릭하는 순간, 보이기 처리
+								버튼에 있는 label 보이지 않기<-->보이기
+	등록 가능 keyword!!
+	java
+	jsp
+	C#
+	파이썬
+*/
+	#keyword {visibility: hidden;}
+</style>
+<script>
+	function showKeyword(obj){
+		var keyword = document.getElementById("keyword");
+		if(obj.value=="보이기"){
+			obj.value = "보이지않기";
+			keyword.style.visibility = "visible";
+		}else if(obj.value=="보이지않기"){
+			obj.value = "보이기";
+			keyword.style.visibility = "hidden";
+		}
+	}
+</script>
+</head>
+<body>
+	<div id="wrap">
+		<p>keyword 등록 : 
+			<select id="keyword">
+				<option>java</option>
+				<option>jsp</option>
+				<option>c#</option>
+				<option>파이썬</option>
+			</select>
+		</p>
+		<p><input type="button" value="보이기" onclick="javascript:showKeyword(this)"/></p>
+	</div>
+</body>
+</html>

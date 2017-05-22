@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("table").css("width","500");
+		$("table").css("height","300");
+		$("table").css("margin-left","auto");
+		$("table").css("margin-right","auto");
+		$("h1").css("color","white");
+		$("h1").css("background","#99DFFF");
+		$("h1").css("text-align","center");
+		$(".number").css("text-align","right");
+		$(".left").css("text-align","left");
+		
+		
+		var title=["물건명","가격","현 재고량","비고"];
+		
+		for(var i=0; i<title.length; i++){
+			$("th").eq(i).html(title[i]);
+		}
+
+		var fruits1 = {name:"사과",price:"3,000",total:30,note:"입고중"};
+		var fruits2 = {name:"바나나",price:"4,000",total:300,note:"재고충분"};
+		var fruits3 = {name:"딸기",price:"12,000",total:50,note:""};
+		var dataList=[fruits1,fruits2,fruits3];
+		
+		var j=0;
+		
+		for(var i=0; i<dataList.length ;i++){
+			$("td").eq(j).html(dataList[i].name);               
+			$("td").eq(++j).html(dataList[i].price);               
+			$("td").eq(++j).html(dataList[i].total);               
+			$("td").eq(++j).html(dataList[i].note); 
+			j++;
+		}
+			
+		
+		
+});
+	
+	
+	
+	
+</script>
+
+<style type="text/css">
+
+</style>
+</head>
+<body>
+<h1>행복 마트</h1>
+<table>
+<tr>
+	<th></th>
+	<th></th>
+	<th></th>
+	<th></th>
+</tr>
+<tr>
+	<td></td>
+	<td class="number"></td>
+	<td class="number"></td>
+	<td class="left"></td>
+</tr>
+<tr>
+	<td></td>
+	<td class="number"></td>
+	<td class="number"></td>
+	<td class="left"></td>
+</tr>
+<tr>
+	<td></td>
+	<td class="number"></td>
+	<td class="number"></td>
+	<td></td>
+</tr>
+</table>
+</body>
+</html>

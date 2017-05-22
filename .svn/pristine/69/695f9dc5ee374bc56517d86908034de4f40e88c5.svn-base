@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body> <center>
+
+<h1> 회원가입 양식</h1>
+아이디 : <input type="text" name="inId"/><br>
+비밀번호 : <input type="password" name="inPw"/><br>
+비밀번호 확인 : <input type="password" name="inPw2"/><br>
+이름 : <input type="text" name="name"/><br><hr>
+성별<br>
+남자 : <input type="radio" name="sex" value="male">
+여자 : <input type="radio" name="sex" value="female"><hr>
+생일 : <input type="date"	name="brith" ><br>
+이메일 : <input type="email" name="email" ><br>
+휴대폰 : <input type="tel" name="phone" ><br>
+
+</body>
+</html>
+
+
+<!--
+
+아이디
+비밀번호
+비밀번호 확인
+이름
+성별(남/여)
+생일
+이메일
+휴대폰
+
+가입하기 버튼 
+
+쇼핑몰, 게임사이트 등의 회원가입란 확인하고 
+지금까지 배운 내용으로 화면 구현
+(form과 table을 함께사용하여 효과적으로 처리)
+-->
