@@ -1,9 +1,9 @@
 /*
 3/20
-¼÷Á¦01
-emp03 Å×ÀÌºí º¹»ç »ý¼º
-1. empnoÀÇ °¡Àå ÀÛÀº¼öº¸´Ù -1, mgr:cleark ÀÔ·Â, sal:Æò±Õ¿¬ºÀ, comm: ÀüÃ¼ÀÇ comm ÇÕ°è
-2. ¼öÁ¤ ename: '½Å±æµ¿',jobÀº superman, hiredate´Â ÃÖ±ÙÀÏ +1
+ìˆ™ì œ01
+emp03 í…Œì´ë¸” ë³µì‚¬ ìƒì„±
+1. empnoì˜ ê°€ìž¥ ìž‘ì€ìˆ˜ë³´ë‹¤ -1, mgr:cleark ìž…ë ¥, sal:í‰ê· ì—°ë´‰, comm: ì „ì²´ì˜ comm í•©ê³„
+2. ìˆ˜ì • ename: 'ì‹ ê¸¸ë™',jobì€ superman, hiredateëŠ” ìµœê·¼ì¼ +1
 */
 select min(empno)-1 from emp; -- 7369 
 select avg(sal) from emp; -- 2,073.21
@@ -14,14 +14,14 @@ create table emp003
 
 select * from emp003;
 
---1¹ø empnoÀÇ °¡Àå ÀÛÀº¼öº¸´Ù -1, mgr:cleark ÀÔ·Â, sal:Æò±Õ¿¬ºÀ, comm: ÀüÃ¼ÀÇ comm ÇÕ°è
+--1ë²ˆ empnoì˜ ê°€ìž¥ ìž‘ì€ìˆ˜ë³´ë‹¤ -1, mgr:cleark ìž…ë ¥, sal:í‰ê· ì—°ë´‰, comm: ì „ì²´ì˜ comm í•©ê³„
 insert into emp003(empno, mgr, sal, comm) 
 		values(7368,7902,2073,2200);
 		
---2¹ø ¼öÁ¤ ename: '½Å±æµ¿',jobÀº superman, hiredate´Â ÃÖ±ÙÀÏ +1
+--2ë²ˆ ìˆ˜ì • ename: 'ì‹ ê¸¸ë™',jobì€ superman, hiredateëŠ” ìµœê·¼ì¼ +1
 
 update emp003
-	set ename='½Å±æµ¿',	
+	set ename='ì‹ ê¸¸ë™',	
 		job='SUPERMAN',
 		hiredate=sysdate+1
 	where empno=7368;
@@ -31,10 +31,10 @@ select * from emp003;
 
 
 /*
-¼÷Á¦02
- login ÇÏ´Â È­¸éÀ» ¸¸µé°í id¿Í password¸¦ Ã¼Å©ÇÏ°í, ´ÙÀ½È­¸é¿¡¼­  
-'id@@@´Ô È¯¿µÇÕ´Ï´Ù. ³²Àº point´Â @@@ÀÔ´Ï´Ù' ¶ó´Â ³»¿ëÀÌ ³ªÅ¸³­´Ù°í ÇÑ´Ù.
-ÀÌ¿¡ ÇÊ¿ä·ÎÇÏ´Â Å×ÀÌºí°ú Å×ÀÌºí ±¸Á¶¸¦ ¸¸µå¼¼¿ä
+ìˆ™ì œ02
+ login í•˜ëŠ” í™”ë©´ì„ ë§Œë“¤ê³  idì™€ passwordë¥¼ ì²´í¬í•˜ê³ , ë‹¤ìŒí™”ë©´ì—ì„œ  
+'id@@@ë‹˜ í™˜ì˜í•©ë‹ˆë‹¤. ë‚¨ì€ pointëŠ” @@@ìž…ë‹ˆë‹¤' ë¼ëŠ” ë‚´ìš©ì´ ë‚˜íƒ€ë‚œë‹¤ê³  í•œë‹¤.
+ì´ì— í•„ìš”ë¡œí•˜ëŠ” í…Œì´ë¸”ê³¼ í…Œì´ë¸” êµ¬ì¡°ë¥¼ ë§Œë“œì„¸ìš”
 */
 create table idNpw(id varchar2(20), pw varchar2(20), point number(6));
 select * from idNpw;
@@ -44,12 +44,12 @@ insert into idnpw(id, pw, point) values('kmk',1111,30000);
 insert into idnpw(id, pw, point) values('jgh',1111,40000);
 
 /*
-¼÷Á¦03
-ÂüÁ¶Å° °ü°è¿¡ ÀÖ´Â Å×ÀÌºí ±¸¼ºÇÏ±â
-¸ÞÀÎÅ×ÀÌºí STUDENT_MAIN(ID, PASS, NAME) : ¾ÆÀÌµð, ÆÐ½º¿öµå, ÀÌ¸§
-¼­ºêÅ×ÀÌºí STUDENT_POINT(ID, SUBJECT); ¾ÆÀÌµð, °ú¸ñ, Á¡¼ö
-    STUDENT_MAIN°ú STUDENT_POINT ID·Î FOREIGN KEY °ü°è¸¦ ¼³Á¤ÇÏ°í,
-    STUDENT_MAIN¿¡ µ¥ÀÌÅÍ°¡ ÀÖ¾î¾ß¸¸ STUDENT_POINT¸¦ ÀÔ·ÂÇÒ ¼ö ÀÖ°Ô²û Ã³¸®
+ìˆ™ì œ03
+ì°¸ì¡°í‚¤ ê´€ê³„ì— ìžˆëŠ” í…Œì´ë¸” êµ¬ì„±í•˜ê¸°
+ë©”ì¸í…Œì´ë¸” STUDENT_MAIN(ID, PASS, NAME) : ì•„ì´ë””, íŒ¨ìŠ¤ì›Œë“œ, ì´ë¦„
+ì„œë¸Œí…Œì´ë¸” STUDENT_POINT(ID, SUBJECT); ì•„ì´ë””, ê³¼ëª©, ì ìˆ˜
+    STUDENT_MAINê³¼ STUDENT_POINT IDë¡œ FOREIGN KEY ê´€ê³„ë¥¼ ì„¤ì •í•˜ê³ ,
+    STUDENT_MAINì— ë°ì´í„°ê°€ ìžˆì–´ì•¼ë§Œ STUDENT_POINTë¥¼ ìž…ë ¥í•  ìˆ˜ ìžˆê²Œë” ì²˜ë¦¬
 */
 create table student_main(
 							id varchar2(20) PRIMARY KEY, 
@@ -64,15 +64,15 @@ create table student_point(
 							point number(6)
 							);
 
-INSERT INTO STUDENT_MAIN (ID, PASS, NAME) VALUES('KDH',1111,'±èµ¿ÈÖ');
-INSERT INTO STUDENT_MAIN (ID, PASS, NAME) VALUES('KWM',1111,'°­¿ø¹Î');
-INSERT INTO STUDENT_MAIN (ID, PASS, NAME) VALUES('KMK',1111,'±è¹Î°æ');
-INSERT INTO STUDENT_MAIN (ID, PASS, NAME) VALUES('JGH',1111,'ÁÖÁöÈÆ');
+INSERT INTO STUDENT_MAIN (ID, PASS, NAME) VALUES('KDH',1111,'ê¹€ë™íœ˜');
+INSERT INTO STUDENT_MAIN (ID, PASS, NAME) VALUES('KWM',1111,'ê°•ì›ë¯¼');
+INSERT INTO STUDENT_MAIN (ID, PASS, NAME) VALUES('KMK',1111,'ê¹€ë¯¼ê²½');
+INSERT INTO STUDENT_MAIN (ID, PASS, NAME) VALUES('JGH',1111,'ì£¼ì§€í›ˆ');
 
-INSERT INTO STUDENT_POINT (ID, SUBJECT, POINT) VALUES('JGH','¼öÇÐ',100);
-INSERT INTO STUDENT_POINT (ID, SUBJECT, POINT) VALUES('KDH','¿µ¾î',50);
-/* ¾ÆÀÌµð°ª ¾øÀ¸¹Ç·Î ÀÔ·ÂÀÌ ¾ÈµÊ*/
-INSERT INTO STUDENT_POINT (ID, SUBJECT, POINT) VALUES('KKK','¼öÇÐ',100); 
+INSERT INTO STUDENT_POINT (ID, SUBJECT, POINT) VALUES('JGH','ìˆ˜í•™',100);
+INSERT INTO STUDENT_POINT (ID, SUBJECT, POINT) VALUES('KDH','ì˜ì–´',50);
+/* ì•„ì´ë””ê°’ ì—†ìœ¼ë¯€ë¡œ ìž…ë ¥ì´ ì•ˆë¨*/
+INSERT INTO STUDENT_POINT (ID, SUBJECT, POINT) VALUES('KKK','ìˆ˜í•™',100); 
 
 
 SELECT * FROM STUDENT_MAIN;

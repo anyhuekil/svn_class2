@@ -11,19 +11,19 @@ interface ShowColor{
 class Duck_Model implements SoundWay, FlyWay1, ShowColor{
 	private String modelType;
 	Duck_Model(){
-		modelType="¿À¸® ÃÊ±â ¸ğµ¨ ";
+		modelType="ì˜¤ë¦¬ ì´ˆê¸° ëª¨ë¸ ";
 	}	
 	@Override
 	public void paint() {
-		System.out.println(modelType+" »ö»óÀº Èò»ö");
+		System.out.println(modelType+" ìƒ‰ìƒì€ í°ìƒ‰");
 	}
 	@Override
 	public void flying() {
-		System.out.println(modelType+" ³ª¸£Áö ¸ø ÇÑ´Ù");	
+		System.out.println(modelType+" ë‚˜ë¥´ì§€ ëª» í•œë‹¤");	
 	}
 	@Override
 	public void sound() {
-		System.out.println(modelType+" ²Ğ²Ğ°Å¸°´Ù!!");
+		System.out.println(modelType+" ê½¥ê½¥ê±°ë¦°ë‹¤!!");
 	}
 }
 

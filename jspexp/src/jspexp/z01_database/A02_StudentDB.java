@@ -40,7 +40,7 @@ public class A02_StudentDB {
 			e.printStackTrace();
 		}finally{
 			
-			// ÀÚ¿ø ÇØÁ¦
+			// ìì› í•´ì œ
 			try {
 				if(rs!=null)rs.close();
 				if(stmt!=null)stmt.close();	
@@ -52,7 +52,7 @@ public class A02_StudentDB {
 		}
 		return list;
 	}	
-	// ÀÔ·Â¸Ş¼­µå ¸¸µé±â..
+	// ì…ë ¥ë©”ì„œë“œ ë§Œë“¤ê¸°..
 	public void insertStudent(Student ins){
 		try {
 			con=A00_DB.conn();
@@ -66,7 +66,7 @@ public class A02_StudentDB {
 			pstmt.setInt(5, ins.getEng());
 			pstmt.setInt(6, ins.getMath());
 			pstmt.executeUpdate();
-			// Á¤»óÀûÀ¸·Î Ã³¸® µÇ¾úÀ» ¶§, commit
+			// ì •ìƒì ìœ¼ë¡œ ì²˜ë¦¬ ë˜ì—ˆì„ ë•Œ, commit
 			con.commit();
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
@@ -74,7 +74,7 @@ public class A02_StudentDB {
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-			// µî·Ï½Ã, ¿¹¿Ü ¹ß»ıÀ¸·Î ÀüÃ¼ µ¥ÀÌÅÍ ÀÔ·Â Ãë¼Ò
+			// ë“±ë¡ì‹œ, ì˜ˆì™¸ ë°œìƒìœ¼ë¡œ ì „ì²´ ë°ì´í„° ì…ë ¥ ì·¨ì†Œ
 			try {
 				con.rollback();
 			} catch (SQLException e1) {
@@ -102,7 +102,7 @@ public class A02_StudentDB {
 		A02_StudentDB dao=new A02_StudentDB();
 		System.out.println(dao.stuList().size());
 		Student ins = new Student();
-		ins.setName("ÀÌ±âÀÚ");
+		ins.setName("ì´ê¸°ì");
 		ins.setGrade(3);
 		ins.setSect(2);
 		ins.setKor(70);

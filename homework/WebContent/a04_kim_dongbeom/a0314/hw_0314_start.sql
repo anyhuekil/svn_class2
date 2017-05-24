@@ -1,16 +1,16 @@
-/*°úÁ¦
-1. enameÀº ÇöÀç ¿¬ºÀÀÌ @@@¸¸¿øÀÎµ¥, ÃÖ±Ù¿¡ 5% ÀÎ»óµÈ ±Ý¾×ÀÌ¸ç, ÀÛ³â ¿¬ºÀÀº @@@¸¸¿øÀÌ¾ú½À´Ï´Ù.
-2. enameÀÇ ÀÔ»çÀÏÀº hiredate ÀÔ´Ï´Ù.
-3. Á÷Ã¥ÀÎ @@@ÀÎ @@@Àº ºÎ¼­¹øÈ£°¡ @@@ ÀÔ´Ï´Ù.
-4. @@@´ÔÀº ÇöÀç ¿¬ºÀ°ú º¸³Ê½ºÀÇ ÇÕ»ê¾×ÀÌ @@@ÀÔ´Ï´Ù.
+/*ê³¼ì œ
+1. enameì€ í˜„ìž¬ ì—°ë´‰ì´ @@@ë§Œì›ì¸ë°, ìµœê·¼ì— 5% ì¸ìƒëœ ê¸ˆì•¡ì´ë©°, ìž‘ë…„ ì—°ë´‰ì€ @@@ë§Œì›ì´ì—ˆìŠµë‹ˆë‹¤.
+2. enameì˜ ìž…ì‚¬ì¼ì€ hiredate ìž…ë‹ˆë‹¤.
+3. ì§ì±…ì¸ @@@ì¸ @@@ì€ ë¶€ì„œë²ˆí˜¸ê°€ @@@ ìž…ë‹ˆë‹¤.
+4. @@@ë‹˜ì€ í˜„ìž¬ ì—°ë´‰ê³¼ ë³´ë„ˆìŠ¤ì˜ í•©ì‚°ì•¡ì´ @@@ìž…ë‹ˆë‹¤.
 */
 select * from emp;
 
--- 1¹ø
-select ename||'Àº ÇöÀç ¿¬ºÀÀÌ '||sal||'¸¸¿øÀÎµ¥, ÃÖ±Ù¿¡ 5% ÀÎ»óµÈ ±Ý¾×ÀÌ¸ç, ÀÛ³â ¿¬ºÀÀº '||0.95*sal||'¸¸¿ø ÀÌ¾ú½À´Ï´Ù.' from emp;
--- 2¹ø
-select ename||'ÀÇ ÀÔ»çÀÏÀº '||hiredate||' ÀÔ´Ï´Ù.' from emp;
--- 3¹ø
-select 'Á÷Ã¥ÀÌ '||job||'ÀÎ '||ename||'Àº ºÎ¼­¹øÈ£°¡ '||deptno||' ÀÔ´Ï´Ù.' from emp;
--- 4¹ø
-select ename||'´ÔÀº ÇöÀç ¿¬ºÀ°ú º¸³Ê½º ÇÕ»ê¾×ÀÌ '||(sal+nvl(comm,0))||'¸¸¿ø ÀÔ´Ï´Ù.' from emp;
+-- 1ë²ˆ
+select ename||'ì€ í˜„ìž¬ ì—°ë´‰ì´ '||sal||'ë§Œì›ì¸ë°, ìµœê·¼ì— 5% ì¸ìƒëœ ê¸ˆì•¡ì´ë©°, ìž‘ë…„ ì—°ë´‰ì€ '||0.95*sal||'ë§Œì› ì´ì—ˆìŠµë‹ˆë‹¤.' from emp;
+-- 2ë²ˆ
+select ename||'ì˜ ìž…ì‚¬ì¼ì€ '||hiredate||' ìž…ë‹ˆë‹¤.' from emp;
+-- 3ë²ˆ
+select 'ì§ì±…ì´ '||job||'ì¸ '||ename||'ì€ ë¶€ì„œë²ˆí˜¸ê°€ '||deptno||' ìž…ë‹ˆë‹¤.' from emp;
+-- 4ë²ˆ
+select ename||'ë‹˜ì€ í˜„ìž¬ ì—°ë´‰ê³¼ ë³´ë„ˆìŠ¤ í•©ì‚°ì•¡ì´ '||(sal+nvl(comm,0))||'ë§Œì› ìž…ë‹ˆë‹¤.' from emp;

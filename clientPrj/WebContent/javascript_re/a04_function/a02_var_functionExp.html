@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+/*
+
+*/
+
+/**/
+</style>
+<script src="http://code.jquery.com/jquery-1.10.2.js">
+</script>
+<script type="text/javascript">
+$(document).ready(function(){
+
+});
+var introMyfamily=function (mem01, mem02, mem03,
+		                    mem04, mem05){
+	var show="우리 가족들을 소개합니다.\n"; // \n 줄바꿈
+	// show에서 +=하면 문자 누적처리..
+	show+="아버지 "+mem01+","; 
+	show+="어머니 "+mem02+","; 
+	show+="나 "+mem03+","; 
+	show+="형1 "+mem04+","; 
+	show+="형2 "+mem05+" 으로 되어 있습니다.";
+	alert( show );  // 현재문자열을 alert으로 출력처리..
+};
+introMyfamily("홍상직","옥영향","홍길동","홍귀동","홍일동");
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

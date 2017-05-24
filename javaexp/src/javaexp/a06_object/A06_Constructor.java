@@ -1,24 +1,24 @@
 package javaexp.a06_object;
 
 class Car{
-	/* this Å°¿öµå´Â field¸íÀ» Áö¿ªº¯¼ö¿Í µ¿ÀÏÇÒ ¶§,
-	 * ±¸ºĞÇØÁÖ´Â ¿ªÇÒÀ» ÇÒ »Ó¸¸ ¾Æ´Ï¶ó,
-	 * ¼±¾ğµÇ¾î ÀÖ´Â »ı¼ºÀÚ¸¦ ÀçÈ°¿ëÇÒ ¶§µµ È°¿ëµÈ´Ù.
-	 * ps) super. :»ó¼ÓÀÌ ÀÏ¾î³¯ ¶§, µ¿ÀÏÇÑ ¿ªÇÒ·Î »óÀ§ Å¬·¡½ºÀÇ
-	 * field¸í, »ı¼ºÀÚ, ¸Ş¼­µå¸¦ È£ÃâÇÒ ¶§, ÇöÀçÅ¬·¡½º¿Í ±¸ºĞÇÏ±â
-	 * À§ÇÏ¿© È°¿ëµÈ´Ù.
+	/* this í‚¤ì›Œë“œëŠ” fieldëª…ì„ ì§€ì—­ë³€ìˆ˜ì™€ ë™ì¼í•  ë•Œ,
+	 * êµ¬ë¶„í•´ì£¼ëŠ” ì—­í• ì„ í•  ë¿ë§Œ ì•„ë‹ˆë¼,
+	 * ì„ ì–¸ë˜ì–´ ìˆëŠ” ìƒì„±ìë¥¼ ì¬í™œìš©í•  ë•Œë„ í™œìš©ëœë‹¤.
+	 * ps) super. :ìƒì†ì´ ì¼ì–´ë‚  ë•Œ, ë™ì¼í•œ ì—­í• ë¡œ ìƒìœ„ í´ë˜ìŠ¤ì˜
+	 * fieldëª…, ìƒì„±ì, ë©”ì„œë“œë¥¼ í˜¸ì¶œí•  ë•Œ, í˜„ì¬í´ë˜ìŠ¤ì™€ êµ¬ë¶„í•˜ê¸°
+	 * ìœ„í•˜ì—¬ í™œìš©ëœë‹¤.
 	 * */
-	// field ¼±¾ğ!!
+	// field ì„ ì–¸!!
 	String model;
 	String color;
 	int maxSpeed;
 	Car(String model){
-		// this.field¸í : ·ÎÄÃº¯¼ö¿Í field¸íÀÌ µ¿ÀÏÇÒ ¶§
-		// ±¸ºĞÇÏ±âÀ§ÇÏ¿© È°¿ë.
-		// Áßº¹ÄÚµå°¡ ¹ß»ıÇÏ´Â °ÍÀ» ¸·±âÀ§ÇØ..±âÁ¸¿¡ ±¸ÇöµÈ »ı¼ºÀÚ¸¦ È°¿ë
-		this(model, "Àº»ö", 250);
+		// this.fieldëª… : ë¡œì»¬ë³€ìˆ˜ì™€ fieldëª…ì´ ë™ì¼í•  ë•Œ
+		// êµ¬ë¶„í•˜ê¸°ìœ„í•˜ì—¬ í™œìš©.
+		// ì¤‘ë³µì½”ë“œê°€ ë°œìƒí•˜ëŠ” ê²ƒì„ ë§‰ê¸°ìœ„í•´..ê¸°ì¡´ì— êµ¬í˜„ëœ ìƒì„±ìë¥¼ í™œìš©
+		this(model, "ì€ìƒ‰", 250);
 //		this.model=model; 
-//		color="Àº»ö";
+//		color="ì€ìƒ‰";
 //		maxSpeed=250;
 	}
 	Car(String model, String color){
@@ -39,18 +39,18 @@ public class A06_Constructor {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		Car c1 = new Car("Æ÷¸£½¦");
-		System.out.println("c1ÀÇ Â÷Á¾"+c1.model);
-		System.out.println("c1ÀÇ »ö»ó"+c1.color);
-		System.out.println("c1ÀÇ ÃÖ°í¼Óµµ"+c1.maxSpeed);
-		Car c2 = new Car("BMW","Èò»ö");
-		System.out.println("c2ÀÇ Â÷Á¾"+c2.model);
-		System.out.println("c2ÀÇ »ö»ó"+c2.color);
-		System.out.println("c2ÀÇ ÃÖ°í¼Óµµ"+c2.maxSpeed);
-		Car c3 = new Car("Àç±Ô¾î","ÁøÇÑºí·ç",280);
-		System.out.println("c3ÀÇ Â÷Á¾"+c3.model);
-		System.out.println("c3ÀÇ »ö»ó"+c3.color);
-		System.out.println("c3ÀÇ ÃÖ°í¼Óµµ"+c3.maxSpeed);		
+		Car c1 = new Car("í¬ë¥´ì‰");
+		System.out.println("c1ì˜ ì°¨ì¢…"+c1.model);
+		System.out.println("c1ì˜ ìƒ‰ìƒ"+c1.color);
+		System.out.println("c1ì˜ ìµœê³ ì†ë„"+c1.maxSpeed);
+		Car c2 = new Car("BMW","í°ìƒ‰");
+		System.out.println("c2ì˜ ì°¨ì¢…"+c2.model);
+		System.out.println("c2ì˜ ìƒ‰ìƒ"+c2.color);
+		System.out.println("c2ì˜ ìµœê³ ì†ë„"+c2.maxSpeed);
+		Car c3 = new Car("ì¬ê·œì–´","ì§„í•œë¸”ë£¨",280);
+		System.out.println("c3ì˜ ì°¨ì¢…"+c3.model);
+		System.out.println("c3ì˜ ìƒ‰ìƒ"+c3.color);
+		System.out.println("c3ì˜ ìµœê³ ì†ë„"+c3.maxSpeed);		
 		
 	}
 

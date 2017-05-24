@@ -5,4 +5,4 @@ CREATE SEQUENCE EMP_SEQ START WITH 7935
                             NOORDER
                             NOCYCLE
                             CACHE 20;
-INSERT INTO EMP VALUES( EMP_SEQ.NEXTVAL, 'ȫ�浿','SUPERMAN',	7839,SYSDATE,4000,100,40);                            
+INSERT INTO EMP VALUES( EMP_SEQ.NEXTVAL, '홍길동','SUPERMAN',	7839,SYSDATE,4000,100,40);                            

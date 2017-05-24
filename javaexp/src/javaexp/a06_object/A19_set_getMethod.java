@@ -3,7 +3,7 @@ package javaexp.a06_object;
 class Car01{
 	private String kind;
 	private int curSpeed;
-	// »ı¼ºÀÚ ÀÚµ¿ »ı¼º..
+	// ìƒì„±ì ìë™ ìƒì„±..
 	public Car01(String kind) {
 		this.kind = kind;
 	}
@@ -20,13 +20,13 @@ class Car01{
 		this.curSpeed = curSpeed;
 	}
 	public void speedUP(){
-		System.out.println(kind+" ¼Óµµ¸¦ ¿Ã¸³´Ï´Ù!! excel");
+		System.out.println(kind+" ì†ë„ë¥¼ ì˜¬ë¦½ë‹ˆë‹¤!! excel");
 		curSpeed+=10;
 		if(curSpeed>=120){
-			System.out.println("Á¦ÇÑ ¼Óµµ ÀÔ´Ï´Ù!!");
+			System.out.println("ì œí•œ ì†ë„ ì…ë‹ˆë‹¤!!");
 			curSpeed=120;
 		}
-		System.out.println("ÇöÀç ¼Óµµ´Â "+curSpeed+"(km/h)~~~");
+		System.out.println("í˜„ì¬ ì†ë„ëŠ” "+curSpeed+"(km/h)~~~");
 	}
 	
 	
@@ -41,7 +41,7 @@ public class A19_set_getMethod {
 		c.speedUP();
 		c.speedUP();
 		c.setCurSpeed(200);
-		System.out.println("µî·ÏµÈ ¼Óµµ°ª:"+c.getCurSpeed());
+		System.out.println("ë“±ë¡ëœ ì†ë„ê°’:"+c.getCurSpeed());
 		c.speedUP();
 				
 	}

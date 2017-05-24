@@ -30,11 +30,11 @@ public class A02_basicExp {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		ArrayList<Food> flist = new ArrayList<Food>();
-		flist.add(new Food("»ç°ú",3000));
-		flist.add(new Food("Â¥Àå¸é",5000));
-		flist.add(new Food("Â«»Í",6000));
-		System.out.println("NO\tÀ½½Ä¸í\t°¡°İ");
-		// collectionÀº Å©±â´Â .size()
+		flist.add(new Food("ì‚¬ê³¼",3000));
+		flist.add(new Food("ì§œì¥ë©´",5000));
+		flist.add(new Food("ì§¬ë½•",6000));
+		System.out.println("NO\tìŒì‹ëª…\tê°€ê²©");
+		// collectionì€ í¬ê¸°ëŠ” .size()
 		for(int idx=0;idx<flist.size();idx++){
 			System.out.println((idx+1)
 					 +"\t"+flist.get(idx).getType()

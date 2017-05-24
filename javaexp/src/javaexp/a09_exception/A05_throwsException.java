@@ -1,16 +1,16 @@
 package javaexp.a09_exception;
 
-// ¿©·¯ ºÐ»êµÈ Å¬·¡½ºÀÇ µ¿ÀÏÇÑ ¿¹¿ÜÃ³¸®´Â ¶°³Ñ±â±â·Î Ã³¸®ÇØ¼­,
-// È£ÃâÇÏ´Â Å¬·¡½º³ª main()¿¡¼­ ÇÑ²¨¹ø¿¡ Ã³¸®ÇÒ ¼ö ÀÖ´Ù.
+// ì—¬ëŸ¬ ë¶„ì‚°ëœ í´ëž˜ìŠ¤ì˜ ë™ì¼í•œ ì˜ˆì™¸ì²˜ë¦¬ëŠ” ë– ë„˜ê¸°ê¸°ë¡œ ì²˜ë¦¬í•´ì„œ,
+// í˜¸ì¶œí•˜ëŠ” í´ëž˜ìŠ¤ë‚˜ main()ì—ì„œ í•œêº¼ë²ˆì— ì²˜ë¦¬í•  ìˆ˜ ìžˆë‹¤.
 class MakeClass01{
-	// ¿¹¿Ü ¹ß»ýÀ» ¶°³Ñ±â±â1
-	// ¸Þ¼­µå¸í throws ¿¹¿Ü ³Ñ±â±â ..
+	// ì˜ˆì™¸ ë°œìƒì„ ë– ë„˜ê¸°ê¸°1
+	// ë©”ì„œë“œëª… throws ì˜ˆì™¸ ë„˜ê¸°ê¸° ..
 	public static void findClass() throws ClassNotFoundException{
 		Class cass=Class.forName("java.lang.String");
 	}
 }
 class MakeClass02{
-	// ¿¹¿Ü ¹ß»ýÀ» ¶°³Ñ±â±â2
+	// ì˜ˆì™¸ ë°œìƒì„ ë– ë„˜ê¸°ê¸°2
 	public static void findClass() throws ClassNotFoundException{
 		Class cass=Class.forName("java.lang.String");
 	}
@@ -19,8 +19,8 @@ public class A05_throwsException {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		// ¿©·¯ ºÐ»êµÈ Å¬·¡½ºÀÇ µ¿ÀÏÇÑ ¿¹¿ÜÃ³¸®´Â ¶°³Ñ±â±â·Î Ã³¸®ÇØ¼­,
-		// È£ÃâÇÏ´Â Å¬·¡½º³ª main()¿¡¼­ ÇÑ²¨¹ø¿¡ Ã³¸®ÇÒ ¼ö ÀÖ´Ù.
+		// ì—¬ëŸ¬ ë¶„ì‚°ëœ í´ëž˜ìŠ¤ì˜ ë™ì¼í•œ ì˜ˆì™¸ì²˜ë¦¬ëŠ” ë– ë„˜ê¸°ê¸°ë¡œ ì²˜ë¦¬í•´ì„œ,
+		// í˜¸ì¶œí•˜ëŠ” í´ëž˜ìŠ¤ë‚˜ main()ì—ì„œ í•œêº¼ë²ˆì— ì²˜ë¦¬í•  ìˆ˜ ìžˆë‹¤.
 		try {
 			MakeClass01.findClass();
 			MakeClass02.findClass();
@@ -28,11 +28,11 @@ public class A05_throwsException {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-//		main()¿¡¼­µµ ¿¹¿Ü¸¦ À§ÀÓÇÒ ¼ö ÀÖÁö¸¸, °á±¹Àº JVMÀÌ ÃÖÁ¾ÀûÀ¸·Î
-//		¿¹¿Ü¸¦ Ã³¸®ÇÏ¿©¾ß ÇÏ±â ¶§¹®¿¡, main()¿¡¼­ throws ExceptionÀ»
-//		ºÙÀÌ´Â °ÍÀº ÁÁÁö ¸øÇÑ ¿¹¿Ü Ã³¸®¹æ¹ýÀÌ´Ù.
-//		°³¹ßÀÚ°¡ ¿¹¿ÜÃ³¸®ÀÇ ÃÖÁ¾ÀûÀ¸·Î °ü¸®ÇÏ·Á¸é, main()¿¡¼­´Â À§ÀÓÇÏ±â
-//		º¸´Ù try~catch·Î Ã³¸®ÇÏ´Â °ÍÀÌ ÀÏ¹ÝÀûÀÌ´Ù.
+//		main()ì—ì„œë„ ì˜ˆì™¸ë¥¼ ìœ„ìž„í•  ìˆ˜ ìžˆì§€ë§Œ, ê²°êµ­ì€ JVMì´ ìµœì¢…ì ìœ¼ë¡œ
+//		ì˜ˆì™¸ë¥¼ ì²˜ë¦¬í•˜ì—¬ì•¼ í•˜ê¸° ë•Œë¬¸ì—, main()ì—ì„œ throws Exceptionì„
+//		ë¶™ì´ëŠ” ê²ƒì€ ì¢‹ì§€ ëª»í•œ ì˜ˆì™¸ ì²˜ë¦¬ë°©ë²•ì´ë‹¤.
+//		ê°œë°œìžê°€ ì˜ˆì™¸ì²˜ë¦¬ì˜ ìµœì¢…ì ìœ¼ë¡œ ê´€ë¦¬í•˜ë ¤ë©´, main()ì—ì„œëŠ” ìœ„ìž„í•˜ê¸°
+//		ë³´ë‹¤ try~catchë¡œ ì²˜ë¦¬í•˜ëŠ” ê²ƒì´ ì¼ë°˜ì ì´ë‹¤.
 	}
 
 }

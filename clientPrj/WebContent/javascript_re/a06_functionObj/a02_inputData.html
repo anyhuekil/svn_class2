@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+/*
+
+*/
+
+/**/
+</style>
+<script src="http://code.jquery.com/jquery-1.10.2.js">
+</script>
+<script type="text/javascript">
+$(document).ready(function(){
+
+});
+// 함수객체 구조가 입력값 4개가 데이터로 들어오게
+function Student(name, kor, eng, math){
+	// 각 입력된 데이터는 전역변수(this)에 할당.
+	this.name=name;
+	this.kor=kor;
+	this.eng=eng;
+	this.math=math;
+	// 내부에 있는 변수를 통해서, 새로운 변수를 처리..
+	this.avg = parseInt( (kor+eng+math)/3 );
+}
+// 각각 함수객체를 통해서 구조는 동일, 데이터 다양.
+var stu01 = new Student("이신영",80,90,90);
+var stu02 = new Student("홍길동",70,80,80);
+// 해당 정보를 기본 출력창으로 처리..
+console.log("stu01의 이름:"+stu01.name+", 평균점수:"+stu01.avg);
+console.log("stu02의 이름:"+stu02.name+", 평균점수:"+stu02.avg);
+
+
+
+
+
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

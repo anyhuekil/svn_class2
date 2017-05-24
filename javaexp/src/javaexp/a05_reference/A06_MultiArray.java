@@ -4,21 +4,21 @@ public class A06_MultiArray {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-/* ´ÙÂ÷¿ø ¹è¿­ ¼±¾ğ
- * µ¥ÀÌÅÍtype [][]  º¯¼ö¸í=new µ¥ÀÌÅÍtype[1Â÷¿øÅ©±â][2Â÷¿ø Å©±â][][][nÂ÷¿øÅ©±â]
- *          Â÷¿ø¼ö ¸¸Å­[][][]..n°³..
+/* ë‹¤ì°¨ì› ë°°ì—´ ì„ ì–¸
+ * ë°ì´í„°type [][]  ë³€ìˆ˜ëª…=new ë°ì´í„°type[1ì°¨ì›í¬ê¸°][2ì°¨ì› í¬ê¸°][][][nì°¨ì›í¬ê¸°]
+ *          ì°¨ì›ìˆ˜ ë§Œí¼[][][]..nê°œ..
  * */
 		String [][] products=new String[3][2];
-		products[0][0]="»ç°ú";
-		products[0][1]="¿À·»Áö";
-		products[1][0]="¿¬ÇÊ";
-		products[1][1]="º¼Ææ";
-		products[2][0]="¼¼Å¹±â";
+		products[0][0]="ì‚¬ê³¼";
+		products[0][1]="ì˜¤ë Œì§€";
+		products[1][0]="ì—°í•„";
+		products[1][1]="ë³¼íœ";
+		products[2][0]="ì„¸íƒê¸°";
 		products[2][1]="TV";
-//		products.length :°¡Àå ¿ÜºÎ¹è¿­ Å©±â
+//		products.length :ê°€ì¥ ì™¸ë¶€ë°°ì—´ í¬ê¸°
 		for(int idx=0;idx<products.length; idx++){
-			// products[idx].length:ÇØ´ç ¹è¿­¸¶´Ù Æ÷ÇÔµÈ ¹è¿­ÀÇ Å©±â..
-			System.out.println("°¡Àå ¿ÜºÎidx:"+idx);
+			// products[idx].length:í•´ë‹¹ ë°°ì—´ë§ˆë‹¤ í¬í•¨ëœ ë°°ì—´ì˜ í¬ê¸°..
+			System.out.println("ê°€ì¥ ì™¸ë¶€idx:"+idx);
 			for(int ix=0;ix<products[idx].length;ix++){
 				System.out.println( products[idx][ix] );
 			}

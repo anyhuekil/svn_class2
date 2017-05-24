@@ -2,11 +2,11 @@ package javaexp.a06_object;
 
 class SingleWoman{
 	private int num01;
-	// ½Ì±ÛÅæÀ» ÇÏ±âÀ§ÇØ ÇÊµå·Î °´Ã¼ »ı¼º
+	// ì‹±ê¸€í†¤ì„ í•˜ê¸°ìœ„í•´ í•„ë“œë¡œ ê°ì²´ ìƒì„±
 	private static SingleWoman singleWm = new SingleWoman();
-	// ¿ÜºÎ¿¡¼­ °´Ã¼»ı¼ºÀ» Â÷´Ü. : private ºÙÀ½..
-	private SingleWoman(){} // public SingleWoman(){} :¼±¾ğÇÏÁö ¾ÊÀ¸¸é
-	// staticÀ¸·Î ½Ì±ÛÅæ °´Ã¼¸¦ Á¢±ÙÇÏ°Ô Ã³¸®.
+	// ì™¸ë¶€ì—ì„œ ê°ì²´ìƒì„±ì„ ì°¨ë‹¨. : private ë¶™ìŒ..
+	private SingleWoman(){} // public SingleWoman(){} :ì„ ì–¸í•˜ì§€ ì•Šìœ¼ë©´
+	// staticìœ¼ë¡œ ì‹±ê¸€í†¤ ê°ì²´ë¥¼ ì ‘ê·¼í•˜ê²Œ ì²˜ë¦¬.
 	static SingleWoman getInstance(){
 		return singleWm;
 	}	
@@ -20,15 +20,15 @@ public class A13_SingleTon {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-//		SingleWoman w1 = new SingleWoman();¿¡·¯¹ß»ı »ı¼ºÀÚ  Á¢±ÙprivateÀÌ±â¿¡
+//		SingleWoman w1 = new SingleWoman();ì—ëŸ¬ë°œìƒ ìƒì„±ì  ì ‘ê·¼privateì´ê¸°ì—
 		SingleWoman w1 = SingleWoman.getInstance();
 		SingleWoman w2 = SingleWoman.getInstance();
 		SingleWoman w3 = SingleWoman.getInstance();
-		// w1, w2 ´Â °°Àº heap¿µ¿ª¿¡ °´Ã¼¸¦ ¹Ù¶óº¸°í ÀÖ´Â °Í..
+		// w1, w2 ëŠ” ê°™ì€ heapì˜ì—­ì— ê°ì²´ë¥¼ ë°”ë¼ë³´ê³  ìˆëŠ” ê²ƒ..
 		if( w1 == w2){
-			System.out.println("w1,w2´Â °°Àº °´Ã¼");
+			System.out.println("w1,w2ëŠ” ê°™ì€ ê°ì²´");
 		}else{
-			System.out.println("w1,w2´Â ´Ù¸¥ °´Ã¼");
+			System.out.println("w1,w2ëŠ” ë‹¤ë¥¸ ê°ì²´");
 		}
 		System.out.println(w1.getCount());
 		System.out.println(w1.getCount());

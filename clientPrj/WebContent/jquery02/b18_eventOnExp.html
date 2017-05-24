@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+/*
+
+*/
+td{text-align:center;font-size:50pt;}
+/**/
+</style>
+<script src="http://code.jquery.com/jquery-1.10.2.js">
+</script>
+<script type="text/javascript">
+$(document).ready(function(){
+	$("td").html( function(idx){
+		             return (idx)+1;
+		           }
+	             );
+	var ranIdx=parseInt(Math.random()*$("td").size());
+	$("td").on("click",function(){
+		// 초기화..
+		$("td").css("background","");
+		// 현재 클릭한 것..
+		$(this).css("background","green");
+		
+		if(  (parseInt( $(this).html() )-1)==ranIdx){
+			alert("떡발견");
+		}else{
+			alert("다음 기회에");
+		}
+		
+	});
+});
+</script>
+</head>
+<body>
+<table width="300px" height="300px" align="center" border>
+	<tr><td></td><td></td><td></td></tr>
+	<tr><td></td><td></td><td></td></tr>
+	<tr><td></td><td></td><td></td></tr>
+</table>
+
+</body>
+</html>

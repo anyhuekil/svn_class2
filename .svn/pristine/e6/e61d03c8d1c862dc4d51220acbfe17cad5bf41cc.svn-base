@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+/*
+
+*/
+
+/**/
+</style>
+	<!-- jquery lib 활용할려면 선언해서 호출해야 한다..
+		http://code.jquery.com/jquery-1.10.2.js:인터넷이 되는 상
+		황에서 활용하고자 할때..
+		http://code.jquery.com/jquery-3.2.1.js :최신 버젼
+			익스플로러에서는 위 주소를 입력하면 다운로드 할 수 있다.
+	 -->
+    <script src="http://code.jquery.com/jquery-1.10.2.js">
+    </script>
+    <!--  클라이언트로 서버 없이 jquery를 쓸때.. -->
+    <script src="../a01_com/jquery-1.10.2.js">
+    </script>   
+    <!-- 웹서버를 기동한 후에 jquery를 쓰고자 할 때 -->
+      <script src="/clientPrj/a01_com/jquery-1.10.2.js">
+    </script>      
+	<script type="text/javascript">
+// http://code.jquery.com/
+</script>
+</head>
+<body>
+
+</body>
+</html>

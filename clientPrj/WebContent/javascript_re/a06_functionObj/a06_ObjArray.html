@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+/*
+
+*/
+
+/**/
+</style>
+<script src="http://code.jquery.com/jquery-1.10.2.js">
+</script>
+<script type="text/javascript">
+$(document).ready(function(){
+
+});
+// 객체 배열..
+function Emp(empno, ename,sal){
+	this.empno=empno;
+	this.ename=ename;
+	this.sal=sal;
+}
+var empList=[];
+empList[0] = new Emp(1000,"홍길동",3000);
+empList[1] = new Emp(1001,"신길동",3500);
+for(var idx=0;idx< empList.length;idx++){
+	console.log(empList[idx].empno+":"+
+                  empList[idx].ename+":"+
+                  empList[idx].sal)                 
+}
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

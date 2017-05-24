@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus짰">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+  <script type="text/javascript">
+  <!--
+/*  if else if 臾?:二쇰줈 踰붿쐞?????泥섎━瑜??????ъ슜.
+    if(議곌굔1){
+        議곌굔1???대떦?섎뒗 ?댁슜泥섎━
+    }else if(議곌굔2){
+        議곌굔1???쒖쇅??議곌굔2瑜?泥섎━?섎뒗 ?댁슜
+    }else if(議곌굔3){
+        議곌굔1, 議곌굔2瑜??쒖쇅??議곌굔3??泥섎━?섎뒗 ?댁슜
+    }else{
+        ?곸쐞??紐⑤뱺 議곌굔???쒖쇅???댁슜..
+    }
+*/
+// if else if???댁슜???숈젏泥섎━.
+// 李멸퀬?ы빆 parseInt():臾몄옄?댁쓣 ?レ옄濡??꾪솚泥섎━ ?⑥닔..
+    var msg = "?띾뱷???먯닔瑜??낅젰?섏꽭??;
+    var isValid=true; // 珥덇린 ?좏슚??check
+    // ?낅젰諛쏆? ?곗씠?곕? ?⑥닔濡??レ옄濡?泥섎━..
+    var strNumber=prompt( msg, "0" );
+    // null怨?洹몄쇅 number媛 ?꾨땶 ?곗씠?? 泥섎━..
+   // alert( strNumber ); // 痍⑥냼 ?대┃?? null
+    //alert( isNaN( strNumber ) ); // ?レ옄媛 ?꾨땺?? true,
+                                 // ?レ옄???뚮뒗 false
+    // isNaN : Is not a Number?
+    if( strNumber == null || isNaN( strNumber ) ){
+        isValid=false; 
+        alert( "?レ옄瑜??낅젰?섍퀬 ?뺤씤踰꾪듉???대┃ ?섏꽭??" );
+    }
+
+    var inputPoint=parseInt( strNumber);
+    // 痍⑥냼瑜??대┃?덉쓣 ?? NaN???섏삩??
+    // ?レ옄媛 ?꾨땶 臾몄옄瑜??낅젰 ?덉쓣 ?뚮룄, NaN???섏삩??
+    // alert( inputPoint + 10 );
+    // typeof() : ?대떦 ?곗씠?곗쓽 ?좏삎??check?섎뒗 遺遺?.
+    //alert( typeof(inputPoint) );
+
+    var grade="";
+
+    if( inputPoint < 0 || inputPoint > 100 ){
+        alert( "踰붿쐞媛 0~100濡??낅젰?섏뿬???⑸땲??" );
+        isValid=false;        
+    }else if( inputPoint >= 90 ){ // 90~100
+        grade="A";
+    }else if( inputPoint >= 80 ){
+        grade="B";
+    }else if( inputPoint >= 70 ){
+        grade="C";
+    }else if( inputPoint >= 60 ){
+        grade="D";
+    // ?꾩뿉??吏?뺥븳 ?곗씠???댁쇅??寃쎌슦
+    }else{
+        grade="F";
+    }
+    // ?낅젰???먯닔??@@?닿퀬 ?깃툒? @@ ?낅땲??
+    // ?꾩쓽 ?좏슚??check瑜??듦낵??寃쎌슦留?
+    if( isValid ){
+        alert("?낅젰???먯닔??"+inputPoint+"?닿퀬 ?깃툒? "+grade+" ?낅땲??" ); 
+    }
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+  //-->
+  </script>
+ </head>
+ <body>
+  
+ </body>
+</html>

@@ -47,35 +47,35 @@ public class A04_listObject {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		// EmpÀÇ ¿©·¯ °´Ã¼¸¦ ´ãÀ» ¼ö ÀÖ´Â ArrayList »ı¼º..
-		// ArrayList<Emp>  ctrl+shift+O : import ÀÚµ¿ Ã³¸®
+		// Empì˜ ì—¬ëŸ¬ ê°ì²´ë¥¼ ë‹´ì„ ìˆ˜ ìˆëŠ” ArrayList ìƒì„±..
+		// ArrayList<Emp>  ctrl+shift+O : import ìë™ ì²˜ë¦¬
 		ArrayList<Emp> elist = new ArrayList<Emp>();
-		/* ´ÜÀ§ °´Ã¼ »ı¼º°ú list¿¡ µ¥ÀÌÅÍ ´ã±â
-		 * DB Ã³¸®½Ã, °¡Àå ¸¹ÀÌ È°¿ëµÇ´Â ¹æ¹ı
-		 * 1. °´Ã¼ »ı¼º°ú ¸Ş¼­µå¸¦ ÅëÇØ¼­ µ¥ÀÌÅÍ ´ã±â
+		/* ë‹¨ìœ„ ê°ì²´ ìƒì„±ê³¼ listì— ë°ì´í„° ë‹´ê¸°
+		 * DB ì²˜ë¦¬ì‹œ, ê°€ì¥ ë§ì´ í™œìš©ë˜ëŠ” ë°©ë²•
+		 * 1. ê°ì²´ ìƒì„±ê³¼ ë©”ì„œë“œë¥¼ í†µí•´ì„œ ë°ì´í„° ë‹´ê¸°
 		 * */
 		Emp p = new Emp();
 		p.setEmpno(7001);
-		p.setEname("ÇÏÀÌ¸Ç");
+		p.setEname("í•˜ì´ë§¨");
 		p.setSal(2000);
 		p.setDeptno(10);
 		elist.add(p);
-//		2. »ı¼ºÀÚ¸¦ ÅëÇØ¼­ »ı¼º°ú µ¿½Ã¿¡ µ¥ÀÌÅÍ ´ã±â.
-		Emp p2 = new Emp(7002, "È«±æµ¿", 3000, 20);
+//		2. ìƒì„±ìë¥¼ í†µí•´ì„œ ìƒì„±ê³¼ ë™ì‹œì— ë°ì´í„° ë‹´ê¸°.
+		Emp p2 = new Emp(7002, "í™ê¸¸ë™", 3000, 20);
 		elist.add(p2);
-//		3. ÂüÁ¶º¯¼ö ¾øÀÌ °´Ã¼ ¹Ù·Î »ı¼º°ú ÇÔ²² ÇÒ´ç.
-		elist.add(new Emp(7003, "½´ÆÛ¸Ç", 4000, 30));
-/* ÇÒ´çµÈ °´Ã¼ °¡Á®¿À±â 
- * 		elist.get(index) ==> ÇÒ´çµÈ À§Ä¡¿¡ ÀÖ´Â °´Ã¼ (Emp)
+//		3. ì°¸ì¡°ë³€ìˆ˜ ì—†ì´ ê°ì²´ ë°”ë¡œ ìƒì„±ê³¼ í•¨ê»˜ í• ë‹¹.
+		elist.add(new Emp(7003, "ìŠˆí¼ë§¨", 4000, 30));
+/* í• ë‹¹ëœ ê°ì²´ ê°€ì ¸ì˜¤ê¸° 
+ * 		elist.get(index) ==> í• ë‹¹ëœ ìœ„ì¹˜ì— ìˆëŠ” ê°ì²´ (Emp)
  * */
-//		µÎ¹øÂ° ÀÖ´Â Emp°´Ã¼ÀÇ ename°ªÀ» °¡Á®¿Â´Ù.
+//		ë‘ë²ˆì§¸ ìˆëŠ” Empê°ì²´ì˜ enameê°’ì„ ê°€ì ¸ì˜¨ë‹¤.
 		System.out.println(elist.get(1).getEname());
-//		Ã¹¹øÂ° ÀÖ´Â Emp °´Ã¼ÀÇ sal°ª °¡Á®¿Ã·Á¸é?
+//		ì²«ë²ˆì§¸ ìˆëŠ” Emp ê°ì²´ì˜ salê°’ ê°€ì ¸ì˜¬ë ¤ë©´?
 		System.out.println(elist.get(0).getSal());
-/*ÀüÃ¼ µ¥ÀÌÅÍ¸¦ list ÇÏ´Â ¹æ¹ı
- * 1) for(´ÜÀ§°´Ã¼:listÇü¹è¿­)
- * 2) for(int idx=0;idx<Å©±â;idx++)
- * Å©±â : elist.size(), elist.get(0)
+/*ì „ì²´ ë°ì´í„°ë¥¼ list í•˜ëŠ” ë°©ë²•
+ * 1) for(ë‹¨ìœ„ê°ì²´:listí˜•ë°°ì—´)
+ * 2) for(int idx=0;idx<í¬ê¸°;idx++)
+ * í¬ê¸° : elist.size(), elist.get(0)
  * */
 		for(Emp emp:elist){
 			System.out.print(emp.getEmpno()+"\t");

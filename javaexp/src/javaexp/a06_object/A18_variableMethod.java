@@ -2,7 +2,7 @@ package javaexp.a06_object;
 
 class GoRestaurant1{
 	public void orderFood(String ... foods){
-		System.out.print("ÁÖ¹®ÇÑ À½½ÄÀº!! :");
+		System.out.print("ì£¼ë¬¸í•œ ìŒì‹ì€!! :");
 		for(String food:foods){
 			System.out.print(food+",");
 		}
@@ -15,19 +15,19 @@ class GoRestaurant2{
 		this.name=name;
 	}
 	public void orderFood(String ... foods){
-		System.out.println("¾î¼­¿À¼¼¿ä!! "+name+"ÀÔ´Ï´Ù");
-		System.out.println("ÁÖ¹®ÇÑ À½½ÄÀº!! :");
+		System.out.println("ì–´ì„œì˜¤ì„¸ìš”!! "+name+"ì…ë‹ˆë‹¤");
+		System.out.println("ì£¼ë¬¸í•œ ìŒì‹ì€!! :");
 		int tot=0;
 		int price=0;
 		for(String food:foods){
-			if(food.equals("Â¥Àå¸é")) price=4000; 
-			if(food.equals("Â«»Í")) price=6000;
-			if(food.equals("ÅÁ¼öÀ°")) price=12000;
+			if(food.equals("ì§œì¥ë©´")) price=4000; 
+			if(food.equals("ì§¬ë½•")) price=6000;
+			if(food.equals("íƒ•ìˆ˜ìœ¡")) price=12000;
 			System.out.print(food+"("+price+"),");
 			tot+=price;
 		}
 		System.out.println();
-		System.out.println("ÃÑÇÕ»ê:"+tot);
+		System.out.println("ì´í•©ì‚°:"+tot);
 	}	
 }
 public class A18_variableMethod {
@@ -35,12 +35,12 @@ public class A18_variableMethod {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		GoRestaurant1 g1 = new GoRestaurant1();
-		g1.orderFood("Â¥Àå¸é");
-		g1.orderFood("Â¥Àå¸é","Â«»Í");
-		GoRestaurant2 g2 = new GoRestaurant2("ºÒ³ª´Â Â¥Àå!!");
-		g2.orderFood("Â¥Àå¸é");
-		g2.orderFood("Â¥Àå¸é","Â¥Àå¸é");
-		g2.orderFood("Â«»Í","Â¥Àå¸é","ÅÁ¼öÀ°");		
+		g1.orderFood("ì§œì¥ë©´");
+		g1.orderFood("ì§œì¥ë©´","ì§¬ë½•");
+		GoRestaurant2 g2 = new GoRestaurant2("ë¶ˆë‚˜ëŠ” ì§œì¥!!");
+		g2.orderFood("ì§œì¥ë©´");
+		g2.orderFood("ì§œì¥ë©´","ì§œì¥ë©´");
+		g2.orderFood("ì§¬ë½•","ì§œì¥ë©´","íƒ•ìˆ˜ìœ¡");		
 	}
 
 }

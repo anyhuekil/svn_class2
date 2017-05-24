@@ -1,13 +1,13 @@
 package javaexp.a08_objectdup;
-/* Button Å¬¸¯ÇßÀ» ¶§, ÀÌº¥Æ® Ã³¸®ÇÏ´Â ÁßÃ¸ ÀÎÅÍÆäÀÌ½º
- * È°¿ë..
+/* Button í´ë¦­í–ˆì„ ë•Œ, ì´ë²¤íŠ¸ ì²˜ë¦¬í•˜ëŠ” ì¤‘ì²© ì¸í„°í˜ì´ìŠ¤
+ * í™œìš©..
  * */
 class Button{
-	// ÀÎÅÍÆäÀÌ½º Å¸ÀÔ ÇÊµå..
+	// ì¸í„°í˜ì´ìŠ¤ íƒ€ì… í•„ë“œ..
 	OnClickListener listener;
 	
-	// ¿ÜºÎ¿¡¼­ ´Ù¾çÇÏ°Ô Ã³¸®ÇÏ´Â ½ÇÁ¦°´Ã¼¸¦ ¹Ş¾ÆµéÀÏ ¼ö ÀÖ°Ô
-	// ¸Ş¼­µå Á¤ÀÇ..
+	// ì™¸ë¶€ì—ì„œ ë‹¤ì–‘í•˜ê²Œ ì²˜ë¦¬í•˜ëŠ” ì‹¤ì œê°ì²´ë¥¼ ë°›ì•„ë“¤ì¼ ìˆ˜ ìˆê²Œ
+	// ë©”ì„œë“œ ì •ì˜..
 	void setOnClickListener(OnClickListener listener){
 		this.listener = listener;
 	}
@@ -15,55 +15,55 @@ class Button{
 		if(listener!=null){
 			listener.onClick();
 		}else{
-			System.out.println("¸®½º³Ê¿¡ ½ÇÁ¦ °´Ã¼ ÇÒ´çµÇÁö ¾ÊÀ½!!");
+			System.out.println("ë¦¬ìŠ¤ë„ˆì— ì‹¤ì œ ê°ì²´ í• ë‹¹ë˜ì§€ ì•ŠìŒ!!");
 		}
 	}
 	
-	// Button Å¬·¡½º¿¡ Á¾¼ÓµÈ ÁßÃ¸ ÀÎÅÍÆäÀÌ½º Á¤ÀÇ
+	// Button í´ë˜ìŠ¤ì— ì¢…ì†ëœ ì¤‘ì²© ì¸í„°í˜ì´ìŠ¤ ì •ì˜
 	interface OnClickListener{
-		// Ãß»ó¸Ş¼­µå ¼±¾ğ..
+		// ì¶”ìƒë©”ì„œë“œ ì„ ì–¸..
 		void onClick();
 	}
 }
-// ±¸Çö Å¬·¡½º Á¤ÀÇ..OnClickListener¸¦ implementsÇÑ...
-//  ¹öÆ°À» Å¬¸¯ÇßÀ» ¶§, ÀüÈ­¸¦ °É¾î ÁÖ´Â Å¬·¡½º..
-//                    ¸Ş½ÃÁö¸¦ º¸³» ÁÖ´Â Å¬·¡½º.
-// ÁßÃ¸ÀÎÅÍÆäÀÌ½º´Â Å¬·¡¸í.ÀÎÅÍÆäÀÌ½º¸í..Button.OnClickListener
+// êµ¬í˜„ í´ë˜ìŠ¤ ì •ì˜..OnClickListenerë¥¼ implementsí•œ...
+//  ë²„íŠ¼ì„ í´ë¦­í–ˆì„ ë•Œ, ì „í™”ë¥¼ ê±¸ì–´ ì£¼ëŠ” í´ë˜ìŠ¤..
+//                    ë©”ì‹œì§€ë¥¼ ë³´ë‚´ ì£¼ëŠ” í´ë˜ìŠ¤.
+// ì¤‘ì²©ì¸í„°í˜ì´ìŠ¤ëŠ” í´ë˜ëª….ì¸í„°í˜ì´ìŠ¤ëª…..Button.OnClickListener
 class CallListener implements Button.OnClickListener{
 
-	@Override  // Button.OnClickListener¿¡ onClick()Ãß»ó¸Ş¼­µå°¡
-	// Á¤ÀÇµÇ¾î ÀÖ±â ¶§¹®¿¡, ¹İµå½Ã implementsÇÏ´Â ¼ø°£ ÀçÁ¤ÀÇ ÇÏ¿©ÇÑ´Ù.
+	@Override  // Button.OnClickListenerì— onClick()ì¶”ìƒë©”ì„œë“œê°€
+	// ì •ì˜ë˜ì–´ ìˆê¸° ë•Œë¬¸ì—, ë°˜ë“œì‹œ implementsí•˜ëŠ” ìˆœê°„ ì¬ì •ì˜ í•˜ì—¬í•œë‹¤.
 	public void onClick() {
 		// TODO Auto-generated method stub
-		System.out.println("ÀüÈ­¸¦ °É´Ù!!");
+		System.out.println("ì „í™”ë¥¼ ê±¸ë‹¤!!");
 	}	
 }
-// ¸Ş¼¼Áö º¸³»ÁÖ´Â Å¬·¡½º..
+// ë©”ì„¸ì§€ ë³´ë‚´ì£¼ëŠ” í´ë˜ìŠ¤..
 class MessageListener implements Button.OnClickListener{
 	@Override
 	public void onClick() {
 		// TODO Auto-generated method stub
-		System.out.println("¸Ş½ÃÁö¸¦ º¸³À´Ï´Ù.");
+		System.out.println("ë©”ì‹œì§€ë¥¼ ë³´ëƒ…ë‹ˆë‹¤.");
 	}
 }
 class MusicStartListener implements Button.OnClickListener{
 	@Override
 	public void onClick() {
 		// TODO Auto-generated method stub
-		System.out.println("À½¾ÇÀÌ ÄÑÁı´Ï´Ù!!");
+		System.out.println("ìŒì•…ì´ ì¼œì§‘ë‹ˆë‹¤!!");
 	}
 }
 public class A02_dupInterface {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		// ¹öÆ° Å¬·¡½º »ı¼º.
+		// ë²„íŠ¼ í´ë˜ìŠ¤ ìƒì„±.
 		Button btn01 = new Button();
-		btn01.touch(); // Listener °´Ã¼°¡ ÇÒ´çµÇÁö ¾Ê¾Ò±â¿¡ 
-		// listener °´Ã¼ ÇÒ´ç°ü·Ã ¸Ş½ÃÁö Ç¥½Ã.. null.
+		btn01.touch(); // Listener ê°ì²´ê°€ í• ë‹¹ë˜ì§€ ì•Šì•˜ê¸°ì— 
+		// listener ê°ì²´ í• ë‹¹ê´€ë ¨ ë©”ì‹œì§€ í‘œì‹œ.. null.
 		// void setOnClickListener(OnClickListener listener)
-		// ÀÎÅÍÆäÀÌ½º¿¡ ½ÇÁ¦ °´Ã¼¸¦ ÇÒ´ç..
-		// µ¿ÀÏ: OnClickListener listener = new CallListener();
+		// ì¸í„°í˜ì´ìŠ¤ì— ì‹¤ì œ ê°ì²´ë¥¼ í• ë‹¹..
+		// ë™ì¼: OnClickListener listener = new CallListener();
 		btn01.setOnClickListener(new CallListener());
 		btn01.touch();
 		btn01.setOnClickListener(new MessageListener());

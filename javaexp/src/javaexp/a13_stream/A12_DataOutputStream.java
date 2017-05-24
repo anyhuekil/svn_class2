@@ -11,27 +11,27 @@ public class A12_DataOutputStream {
 		// TODO Auto-generated method stub
 		String dtfile="C:/a01_prog/eclipse/workspace_server"
 				+ "/javaexp/src/javaexp/a13_stream/dataFile.dat";
-		// ¹®ÀÚ¿­À» ÀúÀå È£Ãâ
-		// µ¥ÀÌÅÍ¸¦ ÇØ´ç typeÀ» ÀúÀå°ú È£Ãâ
-		// FileOutputStream : ÆÄÀÏ¸¦ ¾²´Â ½ºÆ®¸² Å¬·¡½º
-		// DataOutputStream : µ¥ÀÌÅÍ¸¦ ¾²´Â º¸Á¶ ½ºÆ®¸² Å¬·¡½º
+		// ë¬¸ìì—´ì„ ì €ì¥ í˜¸ì¶œ
+		// ë°ì´í„°ë¥¼ í•´ë‹¹ typeì„ ì €ì¥ê³¼ í˜¸ì¶œ
+		// FileOutputStream : íŒŒì¼ë¥¼ ì“°ëŠ” ìŠ¤íŠ¸ë¦¼ í´ë˜ìŠ¤
+		// DataOutputStream : ë°ì´í„°ë¥¼ ì“°ëŠ” ë³´ì¡° ìŠ¤íŠ¸ë¦¼ í´ë˜ìŠ¤
 		FileOutputStream fos=null;
 		DataOutputStream dos=null;
 		
-		// µ¥ÀÌÅÍ ÆÄÀÏ ºÒ·¯¿À±â..
+		// ë°ì´í„° íŒŒì¼ ë¶ˆëŸ¬ì˜¤ê¸°..
 		
 		try {
 			
 			fos = new FileOutputStream(dtfile);
 			dos = new DataOutputStream(fos);
-			// µ¥ÀÌÅÍ¸¦ ÇØ´ç ÆÄÀÏ¿¡ ¾²±â..
-			// È«±æµ¿, 95.5(½Ç¼ö), 1(Á¤¼ö)
-			dos.writeUTF("È«±æµ¿"); // ¹®ÀÚ¿­¾²±â..
-			dos.writeDouble(95.5); // ½Ç¼ö¾²±â
-			dos.writeInt(1); // Á¤¼ö¾²±â
-			dos.writeUTF("½Å±æµ¿"); // ¹®ÀÚ¿­¾²±â..
-			dos.writeDouble(80.5); // ½Ç¼ö¾²±â
-			dos.writeInt(2); // Á¤¼ö¾²±â			
+			// ë°ì´í„°ë¥¼ í•´ë‹¹ íŒŒì¼ì— ì“°ê¸°..
+			// í™ê¸¸ë™, 95.5(ì‹¤ìˆ˜), 1(ì •ìˆ˜)
+			dos.writeUTF("í™ê¸¸ë™"); // ë¬¸ìì—´ì“°ê¸°..
+			dos.writeDouble(95.5); // ì‹¤ìˆ˜ì“°ê¸°
+			dos.writeInt(1); // ì •ìˆ˜ì“°ê¸°
+			dos.writeUTF("ì‹ ê¸¸ë™"); // ë¬¸ìì—´ì“°ê¸°..
+			dos.writeDouble(80.5); // ì‹¤ìˆ˜ì“°ê¸°
+			dos.writeInt(2); // ì •ìˆ˜ì“°ê¸°			
 			
 			
 			
@@ -39,10 +39,10 @@ public class A12_DataOutputStream {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}catch(Exception e){
-			System.out.println("±âÅ¸ ¿¹¿Ü¹ß»ı");
+			System.out.println("ê¸°íƒ€ ì˜ˆì™¸ë°œìƒ");
 		}finally{
-			try { // ÀÚ¿ø ÇØÁ¦..
-				dos.flush();//Buff¸Ş¸ğ¸® È°¿ë½Ã
+			try { // ìì› í•´ì œ..
+				dos.flush();//Buffë©”ëª¨ë¦¬ í™œìš©ì‹œ
 				dos.close();
 				fos.close();
 			} catch (IOException e) {

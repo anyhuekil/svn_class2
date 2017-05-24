@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+/*
+
+*/
+
+/**/
+</style>
+<script src="http://code.jquery.com/jquery-1.10.2.js">
+</script>
+<script type="text/javascript">
+$(document).ready(function(){
+	var header = document.getElementById("header");
+	// 이벤트 연결 : 이벤트명=함수
+	header.onclick=function(){
+	     alert("클릭! 클릭! 성공!!");
+//	     this : 현재 이 클릭한 객체..
+		this.align="center";
+	    this.style.backgroundColor="green";
+	};
+});
+</script>
+</head>
+<body>
+<h1 id="header">클릭해보세요!!</h1>
+
+</body>
+</html>

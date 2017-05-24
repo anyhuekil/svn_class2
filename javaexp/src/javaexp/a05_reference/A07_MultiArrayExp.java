@@ -8,8 +8,8 @@ public class A07_MultiArrayExp {
 		for(int classIdx=0;classIdx<points.length;classIdx++){
 			for(int ptIdx=0;ptIdx<points[classIdx].length;ptIdx++){
 				points[classIdx][ptIdx]=(int)(Math.random()*101);
-				System.out.println((classIdx+1)+"¹Ý "+(ptIdx+1)+"¹ø "
-						+points[classIdx][ptIdx]+"Á¡");
+				System.out.println((classIdx+1)+"ë°˜ "+(ptIdx+1)+"ë²ˆ "
+						+points[classIdx][ptIdx]+"ì ");
 			}
 		}
 	}

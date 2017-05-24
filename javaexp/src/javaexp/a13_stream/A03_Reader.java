@@ -8,23 +8,23 @@ public class A03_Reader {
 		// TODO Auto-generated method stub
 /**/
 		InputStreamReader reader=null;
-		System.out.println("¹®ÀÚ¿­ÀÔ·Â:");
+		System.out.println("ë¬¸ìì—´ì…ë ¥:");
 		InputStream in = System.in;
 		reader = new InputStreamReader(in);
 		
 		try {
 			int n = reader.read();
-			System.out.println("ÀÔ·ÂµÈ ¹®ÀÚ¿­:"+(char)n);
-			// ÀÔ·ÂÇÒ ¹®ÀÚ¿­ ¹è¿­.
+			System.out.println("ì…ë ¥ëœ ë¬¸ìì—´:"+(char)n);
+			// ì…ë ¥í•  ë¬¸ìì—´ ë°°ì—´.
 			char[] chArr=new char[10];
 			int cnt = reader.read( chArr );
-			System.out.println("ÀÔ·ÂÇÒ ¹®ÀÚ¿­ÀÇ Å©±â:"+cnt);
-			System.out.print("ÀÔ·ÂÇÑ ¹®ÀÚ:");
+			System.out.println("ì…ë ¥í•  ë¬¸ìì—´ì˜ í¬ê¸°:"+cnt);
+			System.out.print("ì…ë ¥í•œ ë¬¸ì:");
 			for(char c:chArr){
 				System.out.print(c);
 			}
 			System.out.println();
-			System.out.println("ÀÔ·ÂÁ¾·á!!");
+			System.out.println("ì…ë ¥ì¢…ë£Œ!!");
 			
 			
 		} catch (IOException e) {

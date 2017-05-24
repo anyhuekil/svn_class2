@@ -5,43 +5,43 @@ public class jdbc_test {
 	
 	public static void main(String[] args){
 		/*
-		 * 1. µå¶óÀÌ¹ö ·Îµù
-		 * 2. µ¥ÀÌÅÍº£ÀÌ½º ¿¬°á
-		 * 3. sql¹® Àü¼ÛÀ» À§ÇÑ Äõ¸®¹® »ı¼º
-		 * 4. DB¿¡ sql¹® Àü¼Û
-		 * 5. data¸¦ °¡Á®¿Í¼­ Ãâ·Â
-		 * 6. DB¿Í ¿¬°áµÈ ÀÚ¿øÀ» ¹İ³³
+		 * 1. ë“œë¼ì´ë²„ ë¡œë”©
+		 * 2. ë°ì´í„°ë² ì´ìŠ¤ ì—°ê²°
+		 * 3. sqlë¬¸ ì „ì†¡ì„ ìœ„í•œ ì¿¼ë¦¬ë¬¸ ìƒì„±
+		 * 4. DBì— sqlë¬¸ ì „ì†¡
+		 * 5. dataë¥¼ ê°€ì ¸ì™€ì„œ ì¶œë ¥
+		 * 6. DBì™€ ì—°ê²°ëœ ìì›ì„ ë°˜ë‚©
 		 * */
 		
-		// 1. µå¶óÀÌ¹ö ·Îµù
-		// Class.forName("Å¬·¡½º ÀÌ¸§");		=> Á÷Á¢ ·Îµù. µ¿Àû¹ÙÀÎµù method
-		// 										(ÇÁ·Î±×·¥ ½ÇÇà½Ã µå¶óÀÌ¹ö ·Îµù)
-		// java.lang ÆĞÅ°Áö¿¡ ¼ÓÇØÀÖ´Â Å¬·¡½ºÀÌ´Ù.
+		// 1. ë“œë¼ì´ë²„ ë¡œë”©
+		// Class.forName("í´ë˜ìŠ¤ ì´ë¦„");		=> ì§ì ‘ ë¡œë”©. ë™ì ë°”ì¸ë”© method
+		// 										(í”„ë¡œê·¸ë¨ ì‹¤í–‰ì‹œ ë“œë¼ì´ë²„ ë¡œë”©)
+		// java.lang íŒ¨í‚¤ì§€ì— ì†í•´ìˆëŠ” í´ë˜ìŠ¤ì´ë‹¤.
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 			System.out.println("Find!");
 
-		// 2. DB¿Í ¿¬°á
+		// 2. DBì™€ ì—°ê²°
 			String url = "jdbc:oracle:thin:@localhost:1521:xe";
 			String user = "scott";
 			String pw = "tiger";
 			Connection con = DriverManager.getConnection(url,user,pw);
 			System.out.println("Sucess!");
 		
-		// 3. Äõ¸®¹®(statement °´Ã¼¸¦ »ı¼ºÇØ¾ßÇÔ)
+		// 3. ì¿¼ë¦¬ë¬¸(statement ê°ì²´ë¥¼ ìƒì„±í•´ì•¼í•¨)
 			String sql = "select ename from emp";
 			Statement st = con.createStatement();
 		
-		// 4. DB¿¡ sql¹® Àü¼Û
+		// 4. DBì— sqlë¬¸ ì „ì†¡
 			ResultSet rs = st.executeQuery(sql);
 		
-		// 5. data¸¦ °¡Á®¿Í¼­ Ãâ·Â
+		// 5. dataë¥¼ ê°€ì ¸ì™€ì„œ ì¶œë ¥
 			while(rs.next()){
 				String col1 = rs.getString(1);
 				System.out.println(col1);
 			}
 			
-		// 6. DB¿Í ¿¬°áµÈ ÀÚ¿ø ¹İ³³ (¹İ³³À» ÇØ¾ßÇÑ´Ü´Ù..)
+		// 6. DBì™€ ì—°ê²°ëœ ìì› ë°˜ë‚© (ë°˜ë‚©ì„ í•´ì•¼í•œë‹¨ë‹¤..)
 			if(con!=null) con.close();
 			if(st!=null) st.close();
 			if(rs!=null) rs.close();

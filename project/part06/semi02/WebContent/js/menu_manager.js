@@ -5,31 +5,31 @@ var player = [{
     myMoney: 5000,
     curMoney: 5000,
     playerBetMoney: 100,
-    horseNum: NaN
+    hnum: NaN
 }, {
     id: "team2",
     myMoney: 10000,
     curMoney: 10000,
     playerBetMoney: 6000,
-    horseNum: NaN
+    hnum: NaN
 }, {
     id: "team3",
     myMoney: 600000,
     curMoney: 600000,
     playerBetMoney: 600000,
-    horseNum: NaN
+    hnum: NaN
 }, {
     id: "team4",
     myMoney: 50000,
     curMoney: 50000,
     playerBetMoney: 1000,
-    horseNum: NaN
+    hnum: NaN
 }, {
     id: "team5",
     myMoney: 6000,
     curMoney: 6000,
     playerBetMoney: 3000,
-    horseNum: NaN
+    hnum: NaN
 }]
 
 
@@ -46,12 +46,12 @@ function allocHorse() {
         return arr;
     }
     var pool = generate(5);
-    pool.splice(pool.indexOf(player[0].horseNum), 1);
+    pool.splice(pool.indexOf(player[0].hnum), 1);
     for (var idx = 1; idx < player.length; idx++) {
-        player[idx].horseNum = pool[idx - 1];
+        player[idx].hnum = pool[idx - 1];
     }
     $.each(player, function(index, item) {
-        console.log(item.id + ": " + item.horseNum)
+        console.log(item.id + ": " + item.hnum)
     })
 }
 
@@ -77,8 +77,8 @@ $(document).ready(function() {
                     active: false,
                     collapsible: true
                 });
-                player[0].horseNum = (index + 1);
-                $("#selectedHorse").text(player[0].horseNum);
+                player[0].hnum = (index + 1);
+                $("#selectedHorse").text(player[0].hnum);
             }
         })
     })
@@ -146,7 +146,7 @@ function callResult() {
                         		"class=\"col-md-4 col-md-offset-8 col-sm-offset-8 col-sm-5 btn btn-primary btn-lg\" " +
                         		"id=\"restartBtn\" " +
                         		"onclick=\"window.location.reload()\">" +
-                        		"다시 하기" +
+                        		"占쎈뼄占쎈뻻 占쎈릭疫뀐옙" +
                         		"</button>");
                         clearInterval(showList);
                     } else {
@@ -173,10 +173,10 @@ function betting() {
     player[0].playerBetMoney = parseInt($("#amount").val().replace("$", ""));
     player[0].curMoney = player[0].myMoney - player[0].playerBetMoney;
     if (player[0].playerBetMoney + player[0].curMoney <= player[0].myMoney) {
-        if (Number(player[0].horseNum)) {
+        if (Number(player[0].hnum)) {
             console.log("rest money: " + player[0].curMoney);
             console.log("Betting money: " + player[0].playerBetMoney);
-            console.log("horse number: " + player[0].horseNum);
+            console.log("horse number: " + player[0].hnum);
 
             return true;
         } else
@@ -200,12 +200,12 @@ function calRank() {
 }
 
 function giveBackMoney(winner) {
-    console.log("Player select : " + player[0].horseNum);
+    console.log("Player select : " + player[0].hnum);
     console.log("winner : " + winner);
     $.each(player, function(index, item) {
-        if (item.horseNum == winner) {
+        if (item.hnum == winner) {
             item.myMoney = (item.playerBetMoney) *
-                horses[item.horseNum - 1].win_ratio + item.curMoney;
+                horses[item.hnum - 1].win_ratio + item.curMoney;
         } else {
             item.myMoney = item.curMoney;
         }

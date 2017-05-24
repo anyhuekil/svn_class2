@@ -1,18 +1,18 @@
 /*
-°úÁ¦1
-1. ÀÔ»çÀÏ ºĞ±âº°·Î °¡Àå ³ôÀº ¿¬ºÀÀ» ¹Ş´Â »ç¶÷À» Ãâ·ÂÇÏ¼¼¿ä.
-2. ¿¬ºÀÀÌ 3000ÀÌ»óÀÎ »ç¶÷ Áß¿¡, µî±Ş(Å×ÀÌºíÈ°¿ëµµ °¡´É)À» ³ª´©¾î¼­ 
-ÇØ´ç µî±Şº°·Î ÃÖ°í ¿¬ºÀÀ» ¹Ş´Â »ç¶÷À» ÀÌ¸§, µî±Ş, ¿¬ºÀÀ» Ãâ·ÂÇÏ¼¼¿ä
+ê³¼ì œ1
+1. ì…ì‚¬ì¼ ë¶„ê¸°ë³„ë¡œ ê°€ì¥ ë†’ì€ ì—°ë´‰ì„ ë°›ëŠ” ì‚¬ëŒì„ ì¶œë ¥í•˜ì„¸ìš”.
+2. ì—°ë´‰ì´ 3000ì´ìƒì¸ ì‚¬ëŒ ì¤‘ì—, ë“±ê¸‰(í…Œì´ë¸”í™œìš©ë„ ê°€ëŠ¥)ì„ ë‚˜ëˆ„ì–´ì„œ 
+í•´ë‹¹ ë“±ê¸‰ë³„ë¡œ ìµœê³  ì—°ë´‰ì„ ë°›ëŠ” ì‚¬ëŒì„ ì´ë¦„, ë“±ê¸‰, ì—°ë´‰ì„ ì¶œë ¥í•˜ì„¸ìš”
 
 
 */
 
 
-/********°úÁ¦1_1**********/
-select ename "ÀÌ¸§", sal "¿¬ºÀ", floor((TO_CHAR(HIREDATE,'MM')-1)/3)+1 "ÀÔ»ç ºĞ±â" from emp
+/********ê³¼ì œ1_1**********/
+select ename "ì´ë¦„", sal "ì—°ë´‰", floor((TO_CHAR(HIREDATE,'MM')-1)/3)+1 "ì…ì‚¬ ë¶„ê¸°" from emp
 where (sal,floor((TO_CHAR(HIREDATE,'MM')-1)/3)+1) 
 in (select max(sal),floor((TO_CHAR(HIREDATE,'MM')-1)/3)+1 from emp 
-group by floor((TO_CHAR(HIREDATE,'MM')-1)/3)+1); --ÀÔ»çºĞ±âº°
+group by floor((TO_CHAR(HIREDATE,'MM')-1)/3)+1); --ì…ì‚¬ë¶„ê¸°ë³„
 
 
 select max(sal),floor((TO_CHAR(HIREDATE,'MM')-1)/3)+1 
@@ -25,7 +25,7 @@ select max(sal) from emp where floor((TO_CHAR(HIREDATE,'MM')-1)/3)+1=3; --1500
 select max(sal) from emp where floor((TO_CHAR(HIREDATE,'MM')-1)/3)+1=4; --5000
 
 
-/**********°úÁ¦ 1_2*********/
+/**********ê³¼ì œ 1_2*********/
 SELECT ENAME, GRADE, SAL FROM EMP, SALGRADE 
 WHERE (GRADE, SAL) IN(SELECT GRADE, MAX(SAL) FROM EMP,SALGRADE WHERE SAL BETWEEN LOSAL AND HISAL AND SAL>=3000
 GROUP BY GRADE);
@@ -34,46 +34,46 @@ GROUP BY GRADE);
 
 
 /*
-°úÁ¦2
- 1. ºÎ¼­¹øÈ£°¡ 30ÀÎ »ç¶÷ Áß¿¡, °¡Àå ³ªÁß¿¡ ÀÔ»çÇÑ »ç¶÷º¸´Ù ¿¬ºÀÀÌ ¸¹À¸¸é Ãâ·ÂÇÏ¼¼¿ä.
- 2. Á÷±ŞÀÌ 'SALESMAN'ÀÎ »ç¿øÀÌ ¹Ş´Â ±Ş¿©µéÀÇ ÃÖ¼Ò ±Ş¿©º¸´Ù ¸¹ÀÌ ¹Ş´Â »ç¶÷µéÀÇ ÀÌ¸§°ú ±Ş¿©¸¦
- Ãâ·ÂÇÏµÇ ºÎ¼­¹øÈ£ 20¹øÀÎ »ç¿øÀº Á¦¿ÜÇÑ´Ù. (ANY ¿¬»êÀÚ ÀÌ¿ë)
+ê³¼ì œ2
+ 1. ë¶€ì„œë²ˆí˜¸ê°€ 30ì¸ ì‚¬ëŒ ì¤‘ì—, ê°€ì¥ ë‚˜ì¤‘ì— ì…ì‚¬í•œ ì‚¬ëŒë³´ë‹¤ ì—°ë´‰ì´ ë§ìœ¼ë©´ ì¶œë ¥í•˜ì„¸ìš”.
+ 2. ì§ê¸‰ì´ 'SALESMAN'ì¸ ì‚¬ì›ì´ ë°›ëŠ” ê¸‰ì—¬ë“¤ì˜ ìµœì†Œ ê¸‰ì—¬ë³´ë‹¤ ë§ì´ ë°›ëŠ” ì‚¬ëŒë“¤ì˜ ì´ë¦„ê³¼ ê¸‰ì—¬ë¥¼
+ ì¶œë ¥í•˜ë˜ ë¶€ì„œë²ˆí˜¸ 20ë²ˆì¸ ì‚¬ì›ì€ ì œì™¸í•œë‹¤. (ANY ì—°ì‚°ì ì´ìš©)
 */
 
-/********°úÁ¦2_1*********/
+/********ê³¼ì œ2_1*********/
 SELECT * FROM EMP WHERE SAL>=ALL(SELECT SAL FROM EMP WHERE HIREDATE=(SELECT MAX(HIREDATE) FROM EMP WHERE DEPTNO=30));
 
 
-/*********°úÁ¦2_2*********/
+/*********ê³¼ì œ2_2*********/
 
 SELECT ENAME, SAL, DEPTNO FROM EMP 
 WHERE DEPTNO!=20 AND SAL>ANY(SELECT SAL FROM EMP WHERE JOB='SALESMAN');
 
 /*
-°úÁ¦3
-´ÙÀ½°ú °°Àº ÇüÅÂÀÇ Å×ÀÌºíÀ» ±¸¼ºÇÏ¼¼¿ä.
-ÀÌ¸§(name) ¹øÈ£(no) ÀÔ»çÀÏ(credate)-¹®ÀÚ¿­ ¿ÃÇØ±âÁØ±Ù¹«¿¬¼ö(workyears)
-					@@@³â @@¿ù @@ÀÏ 				@@@@
-new_emp·Î ±¸¼ºÇÏ¼¼¿ä.
+ê³¼ì œ3
+ë‹¤ìŒê³¼ ê°™ì€ í˜•íƒœì˜ í…Œì´ë¸”ì„ êµ¬ì„±í•˜ì„¸ìš”.
+ì´ë¦„(name) ë²ˆí˜¸(no) ì…ì‚¬ì¼(credate)-ë¬¸ìì—´ ì˜¬í•´ê¸°ì¤€ê·¼ë¬´ì—°ìˆ˜(workyears)
+					@@@ë…„ @@ì›” @@ì¼ 				@@@@
+new_empë¡œ êµ¬ì„±í•˜ì„¸ìš”.
 */
 
 
-/***Å×ÀÌºíÆ² ¸¸µê**/
+/***í…Œì´ë¸”í‹€ ë§Œë“¦**/
 create table new_emp as select ename name, empno no, 
 '                    ' credate,
 0 workyears from emp where 1=0;
 
 select * from new_emp;
 
-/***µ¥ÀÌÅÍ »ğÀÔ**/
+/***ë°ì´í„° ì‚½ì…**/
 insert into new_emp 
 select ename name, empno no, 
-to_char(hiredate, 'YYYY"³â" MM"¿ù" DD"ÀÏ"') credate,
+to_char(hiredate, 'YYYY"ë…„" MM"ì›”" DD"ì¼"') credate,
 to_char(sysdate,'YYYY')-to_char(hiredate,'YYYY') workyears from emp;
 
 select ename name, empno no, 
-to_char(hiredate, 'YYYY"³â" MM"¿ù" DD"ÀÏ"') credate,
-to_char(sysdate,'YYYY')-to_char(hiredate,'YYYY')||'³â' workyears from emp;
+to_char(hiredate, 'YYYY"ë…„" MM"ì›”" DD"ì¼"') credate,
+to_char(sysdate,'YYYY')-to_char(hiredate,'YYYY')||'ë…„' workyears from emp;
 
 
 select * from new_emp;

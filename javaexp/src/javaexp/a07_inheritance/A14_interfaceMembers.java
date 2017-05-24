@@ -1,76 +1,76 @@
 package javaexp.a07_inheritance;
 
-// ÀÎÅÍÆäÀÌ½º ¼±¾ğ
+// ì¸í„°í˜ì´ìŠ¤ ì„ ì–¸
 interface RemoteControl{
-	// ÇÊµå ==> »ó¼ö [public static final] Å¸ÀÔ »ó¼ö¸í = °ª;
-	// »ó¼ö´Â ÀÏ¹İÀûÀ¸·Î ´ë¹®ÀÚ, _(¾ğ´õ¹Ù) ·Î ±¸¼º
+	// í•„ë“œ ==> ìƒìˆ˜ [public static final] íƒ€ì… ìƒìˆ˜ëª… = ê°’;
+	// ìƒìˆ˜ëŠ” ì¼ë°˜ì ìœ¼ë¡œ ëŒ€ë¬¸ì, _(ì–¸ë”ë°”) ë¡œ êµ¬ì„±
 	int MAX_VOLUME=10;
 	int MIN_VOLUME=0;
-	// Ãß»ó¸Ş¼­µå ¼±¾ğ [abstract]
+	// ì¶”ìƒë©”ì„œë“œ ì„ ì–¸ [abstract]
 	public void turnOn(); 
-	// ; body°¡ ¾ø´Â °ÍÀº »ó¼Ó(implements)¹ŞÀº Å¬·¡½º¿¡¼­
-	// ÀçÁ¤ÀÇ(overriding)¸¦ ¸ñÀûÀ¸·Î ÇÏ±â ¶§¹®¿¡.
+	// ; bodyê°€ ì—†ëŠ” ê²ƒì€ ìƒì†(implements)ë°›ì€ í´ë˜ìŠ¤ì—ì„œ
+	// ì¬ì •ì˜(overriding)ë¥¼ ëª©ì ìœ¼ë¡œ í•˜ê¸° ë•Œë¬¸ì—.
 	public void turnOff();
 	public void setVolume(int volumn);
-	/* java 8 ºÎÅÍ Áö¿ø */
-	// µğÆúÆ® ¸Ş¼Òµå : »ó¼Ó(implements)
-	// ¹Ş´Â ÇÏÀ§ Å¬·¡½º¿¡¼­ °øÅëÀ¸·Î »ç¿ë °¡´É
+	/* java 8 ë¶€í„° ì§€ì› */
+	// ë””í´íŠ¸ ë©”ì†Œë“œ : ìƒì†(implements)
+	// ë°›ëŠ” í•˜ìœ„ í´ë˜ìŠ¤ì—ì„œ ê³µí†µìœ¼ë¡œ ì‚¬ìš© ê°€ëŠ¥
 	default void setMute(boolean mute){
-		// ½ÇÁ¦ ³»¿ëÀ» ±¸Çö Ã¶..
+		// ì‹¤ì œ ë‚´ìš©ì„ êµ¬í˜„ ì² ..
 		if(mute){
-			System.out.println("¹«À½ Ã³¸®ÇÕ´Ï´Ù.");
+			System.out.println("ë¬´ìŒ ì²˜ë¦¬í•©ë‹ˆë‹¤.");
 		}else{
-			System.out.println("¹«À½ ÇØÁ¦ÇÕ´Ï´Ù!!");
+			System.out.println("ë¬´ìŒ í•´ì œí•©ë‹ˆë‹¤!!");
 		}
 	}
-	// Á¤Àû ¸Ş¼Òµå [public] static ¸®ÅÏÅ¸ÀÔ ¸Ş¼Òµå¸í(¸Å°³º¯¼ö...)
+	// ì •ì  ë©”ì†Œë“œ [public] static ë¦¬í„´íƒ€ì… ë©”ì†Œë“œëª…(ë§¤ê°œë³€ìˆ˜...)
 	static void changeBattery(){
-		System.out.println("°ÇÀüÁö¸¦ ±³È¯ÇÕ´Ï´Ù~~");
+		System.out.println("ê±´ì „ì§€ë¥¼ êµí™˜í•©ë‹ˆë‹¤~~");
 	}
 }
-// ½ÇÁ¦ implementsÇÑ Å¬·¡½º ±¸Çö
-// class ±¸ÇöÇÒ ½ÇÁ¦Å¬·¡½º¸í implments ÀÎÅÍÆäÀÌ½º¸í{}
+// ì‹¤ì œ implementsí•œ í´ë˜ìŠ¤ êµ¬í˜„
+// class êµ¬í˜„í•  ì‹¤ì œí´ë˜ìŠ¤ëª… implments ì¸í„°í˜ì´ìŠ¤ëª…{}
 class Television implements RemoteControl{
-	// ÇÊµå·Î volume ¼±¾ğ..
+	// í•„ë“œë¡œ volume ì„ ì–¸..
 	private int volume;
 	@Override
 	public void turnOn() {
 		// TODO Auto-generated method stub
-		System.out.println("TV¸¦ ÄÑ´Ù~~");
+		System.out.println("TVë¥¼ ì¼œë‹¤~~");
 	}
 	@Override
 	public void turnOff() {
 		// TODO Auto-generated method stub
-		System.out.println("TV¸¦ ²ô´Ù~~");
+		System.out.println("TVë¥¼ ë„ë‹¤~~");
 	}
 
 	@Override
 	public void setVolume(int volumn) {
 		// TODO Auto-generated method stub
-		// ÀÔ·ÂµÈ volume °ªÀÌ ÃÖ°íÄ¡º¸´Ù Å©¸é..
+		// ì…ë ¥ëœ volume ê°’ì´ ìµœê³ ì¹˜ë³´ë‹¤ í¬ë©´..
 		if( volumn >RemoteControl.MAX_VOLUME){
-			// ÇÊµå(volumn)°ªÀ» ÃÖ°íÄ¡·Î ¼³Á¤
+			// í•„ë“œ(volumn)ê°’ì„ ìµœê³ ì¹˜ë¡œ ì„¤ì •
 			this.volume=RemoteControl.MAX_VOLUME;
 		}else if(volumn < RemoteControl.MIN_VOLUME){
-			// ÇÊµå(volumn)°ªÀ» ÃÖÀúÄ¡·Î ¼³Á¤
+			// í•„ë“œ(volumn)ê°’ì„ ìµœì €ì¹˜ë¡œ ì„¤ì •
 			this.volume=RemoteControl.MIN_VOLUME;
 		}else{
-			// ¹üÀ§¿¡¼­ ¹ş¾î³ªÁö ¾ÊÀ¸¸é ÀÔ·Â°ªÀ¸·Î ÇÊµå°ªÇÒ´ç
+			// ë²”ìœ„ì—ì„œ ë²—ì–´ë‚˜ì§€ ì•Šìœ¼ë©´ ì…ë ¥ê°’ìœ¼ë¡œ í•„ë“œê°’í• ë‹¹
 			this.volume=volumn;
 		}		
-		System.out.println("ÇöÀç volumnÀº "+this.volume);
+		System.out.println("í˜„ì¬ volumnì€ "+this.volume);
 		
 	}}
 class Audio implements RemoteControl{
 	private int volume;
 	@Override
 	public void turnOn() {
-		System.out.println("¿Àµğ¿À¸¦ ÄÑ´Ù~~");
+		System.out.println("ì˜¤ë””ì˜¤ë¥¼ ì¼œë‹¤~~");
 	}
 	@Override
 	public void turnOff() {
 		// TODO Auto-generated method stub
-		System.out.println("¿Àµğ¿À¸¦ ²ô´Ù~~");
+		System.out.println("ì˜¤ë””ì˜¤ë¥¼ ë„ë‹¤~~");
 	}
 	@Override
 	public void setVolume(int volumn) {
@@ -82,16 +82,16 @@ class Audio implements RemoteControl{
 		}else{
 			this.volume=volumn;
 		}		
-		System.out.println("ÇöÀç ¿Àµğ¿ÀÀÇ volumnÀº "+this.volume);
+		System.out.println("í˜„ì¬ ì˜¤ë””ì˜¤ì˜ volumnì€ "+this.volume);
 		
 	}}
 public class A14_interfaceMembers {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		// static ÀÌ±â¿¡ °´Ã¼ »ı¼º¾øÀÌµµ È°¿ëÇÒ ¼ö ÀÖ´Ù.
-		System.out.println("ÃÖ´ëº¼·ıÅ©±â:"+RemoteControl.MAX_VOLUME);
-		// staic ¸Ş¼­µå °´Ã¼ »ı¼º ¾øÀÌ »ç¿ë°¡´É.
+		// static ì´ê¸°ì— ê°ì²´ ìƒì„±ì—†ì´ë„ í™œìš©í•  ìˆ˜ ìˆë‹¤.
+		System.out.println("ìµœëŒ€ë³¼ë¥¨í¬ê¸°:"+RemoteControl.MAX_VOLUME);
+		// staic ë©”ì„œë“œ ê°ì²´ ìƒì„± ì—†ì´ ì‚¬ìš©ê°€ëŠ¥.
 		RemoteControl.changeBattery();
 		
 		Television tv01 = new Television();

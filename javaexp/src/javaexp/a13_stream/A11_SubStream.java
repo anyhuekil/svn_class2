@@ -9,17 +9,17 @@ public class A11_SubStream {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-//		º¸Á¶½ºÆ®¸² È°¿ëÇÏ±â..
-//		1. ±âº» ½ºÆ®¸² Å¬·¡½º ¼±¾ğ ¹× °´Ã¼ »ı¼º.
+//		ë³´ì¡°ìŠ¤íŠ¸ë¦¼ í™œìš©í•˜ê¸°..
+//		1. ê¸°ë³¸ ìŠ¤íŠ¸ë¦¼ í´ë˜ìŠ¤ ì„ ì–¸ ë° ê°ì²´ ìƒì„±.
 		InputStream is = System.in;
-//		2. º¸Á¶ ½ºÆ®¸²1 È°¿ë.. »ı¼ºÀÚ¿¡ ÇÒ´ç
+//		2. ë³´ì¡° ìŠ¤íŠ¸ë¦¼1 í™œìš©.. ìƒì„±ìì— í• ë‹¹
 		InputStreamReader reader = new InputStreamReader(is);
-//		3. º¸Á¶ ½ºÆ®¸²2 È°¿ë .. »ı¼ºÀÚ ÇÒ´ç
+//		3. ë³´ì¡° ìŠ¤íŠ¸ë¦¼2 í™œìš© .. ìƒì„±ì í• ë‹¹
 		BufferedReader br = new BufferedReader(reader);
-		System.out.print("ÀÔ·Â:");
+		System.out.print("ì…ë ¥:");
 		try {
 			String lineString = br.readLine();
-			System.out.println("Ãâ·Â:"+lineString);
+			System.out.println("ì¶œë ¥:"+lineString);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

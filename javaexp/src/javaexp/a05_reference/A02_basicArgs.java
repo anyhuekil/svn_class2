@@ -7,9 +7,9 @@ public class A02_basicArgs {
 		String id= new String(args[0]);
 		String password = new String(args[1]);
 		if(id.equals("himan")&& password.equals("7777")){
-			System.out.println("ÀÎÁõ¼º°ø");
+			System.out.println("ì¸ì¦ì„±ê³µ");
 		}else{
-			System.out.println("ÀÎÁõµÈ °èÁ¤ÀÌ ¾Æ´Õ´Ï´Ù.");
+			System.out.println("ì¸ì¦ëœ ê³„ì •ì´ ì•„ë‹™ë‹ˆë‹¤.");
 		}
 	}
 

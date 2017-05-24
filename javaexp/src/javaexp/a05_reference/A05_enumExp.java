@@ -6,15 +6,15 @@ public class A05_enumExp {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		/*¿À´Ã ¿äÀÏ °ü·Ã enum ¼±¾ğ..*/
-		Week today=null; // °áÁ¤ µÇÁö ¾ÊÀº Week enum
-		// ¿À´Ã ³¯Â¥¿Í ¿äÀÏ °ü·Ã index°ª °¡Á®¿À±â..
+		/*ì˜¤ëŠ˜ ìš”ì¼ ê´€ë ¨ enum ì„ ì–¸..*/
+		Week today=null; // ê²°ì • ë˜ì§€ ì•Šì€ Week enum
+		// ì˜¤ëŠ˜ ë‚ ì§œì™€ ìš”ì¼ ê´€ë ¨ indexê°’ ê°€ì ¸ì˜¤ê¸°..
 		// Calendar.getInstance();
 		Calendar cal = Calendar.getInstance();
-		// Calendar.DAY_OF_WEEK:ÇöÀç ¿äÀÏ¿¡ °ü·ÃµÈ Á¤º¸ (1~7-ÀÏ¿ùÈ­...)
+		// Calendar.DAY_OF_WEEK:í˜„ì¬ ìš”ì¼ì— ê´€ë ¨ëœ ì •ë³´ (1~7-ì¼ì›”í™”...)
 		int week=cal.get(Calendar.DAY_OF_WEEK);
-		System.out.println("ÀüÃ¼ ¿äÀÏ °¹¼ö:"+Calendar.DAY_OF_WEEK);
-		System.out.println("¿À´Ã ¿äÀÏ index°ª:"+week);		
+		System.out.println("ì „ì²´ ìš”ì¼ ê°¯ìˆ˜:"+Calendar.DAY_OF_WEEK);
+		System.out.println("ì˜¤ëŠ˜ ìš”ì¼ indexê°’:"+week);		
 		switch(week){
 			case 1: today= Week.SUNDAY; break;
 			case 2: today= Week.MONDAY; break;
@@ -24,11 +24,11 @@ public class A05_enumExp {
 			case 6: today= Week.FRIDAY; break;
 			case 7: today= Week.SATURDAY; break;
 		}
-		System.out.println("¿À´ÃÀÇ ¿äÀÏÀº?"+today);
+		System.out.println("ì˜¤ëŠ˜ì˜ ìš”ì¼ì€?"+today);
 		if(today==Week.SUNDAY){
-			System.out.println("µî»êÀÌ³ª Ãë¹Ì »ıÈ°À» ÇÑ´Ù!!");
+			System.out.println("ë“±ì‚°ì´ë‚˜ ì·¨ë¯¸ ìƒí™œì„ í•œë‹¤!!");
 		}else{
-			System.out.println("¿­½ÉÈ÷ °øºÎÇÑ´Ù!!");
+			System.out.println("ì—´ì‹¬íˆ ê³µë¶€í•œë‹¤!!");
 		}
 		
 		

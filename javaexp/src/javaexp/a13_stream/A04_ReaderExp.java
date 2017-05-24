@@ -7,21 +7,21 @@ public class A04_ReaderExp {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		System.out.print("¿À´ÃÀÇ Á¡½ÉÀº?");
-		// ÀÔ·Â¹ŞÀº ¹®ÀÚ
+		System.out.print("ì˜¤ëŠ˜ì˜ ì ì‹¬ì€?");
+		// ì…ë ¥ë°›ì€ ë¬¸ì
 		char inArry[]=new char[20];
 		InputStreamReader isr = new InputStreamReader(System.in);	
 		try {
 		
 			isr.read(inArry);
-			System.out.print("¼±ÅÃÇÑ Á¡½ÉÀº ");
+			System.out.print("ì„ íƒí•œ ì ì‹¬ì€ ");
 			for(char c:inArry){
 				System.out.print(c);
 			}
 			System.out.println();
-			System.out.println("StringÀ¸·Î Ã³¸®..");
+			System.out.println("Stringìœ¼ë¡œ ì²˜ë¦¬..");
 			String chLunch = new String(inArry);
-			System.out.println("¼±ÅÃÇÑ Á¡½É:"+chLunch);
+			System.out.println("ì„ íƒí•œ ì ì‹¬:"+chLunch);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

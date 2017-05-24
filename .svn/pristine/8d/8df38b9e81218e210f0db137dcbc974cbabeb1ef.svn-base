@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+/*
+
+*/
+
+/**/
+</style>
+<script src="http://code.jquery.com/jquery-1.10.2.js">
+</script>
+<script type="text/javascript">
+$(document).ready(function(){
+
+});
+function DailyMoneyPocket(date, owner, initMn){
+	this.date =date;
+	this.owner = owner;
+	this.totMony=initMn; // 현잔액을 초기에 입력 처리..
+	this.spendMoney=function(spendCont, spendMn){
+		console.log("###"+this.owner+"님의 "+this.date+"일 지갑 ###");
+		if( this.totMony>=spendMn){
+			this.totMony-=spendMn;
+			console.log(spendCont+"에 "+spendMn+"원 지출");
+		}else{
+			console.log("잔액 부족");
+		}
+		return this.totMony;
+	}
+}
+var person01 = new DailyMoneyPocket("4/4", "홍길동",20000);
+person01.spendMoney("버스비용",2400);
+person01.spendMoney("지하철",1200);
+person01.spendMoney("점심식사 ",6000);
+person01.spendMoney("저녁식사 ",6000);
+person01.spendMoney("버스",2400);
+var rest=person01.spendMoney("지하철" ,1200);
+console.log("남은 잔액:"+rest);
+
+
+
+
+
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

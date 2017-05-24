@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+/*
+
+*/
+
+/**/
+</style>
+<script src="http://code.jquery.com/jquery-1.10.2.js">
+</script>
+<script type="text/javascript">
+$(document).ready(function(){
+
+});
+/*
+ 객체란?
+   자바스크립트에서 여러가지 속성값을 가진 구조를 활용
+   하여 프로그래밍의 보다 효과적으로 하기 위해서 사용
+   된다.
+ 예를 들어, 사람이라는 객체에는 여러 속성을 가지고 있다.
+ 속성:이름, 나이, 생김새, 기억  
+ 메서드 또는 기능(움직일수 있는) : 달리다(), 보다(), 
+ 프로그래밍을잘하다()
+ --> 자바스크립트에서는 주로 함수로 쓰이고 있다.
+ 속성과 메서는 상호작용을 하면서, 특정한 목적인 정보를 효과적으로
+ 처리 하는 객체를 만들 수 있다.
+ */
+// 객체를 선언하다!!
+	var person;
+// 객체를 할당하다..:자바스크립의 특징상 할당하는 data type에 따라서
+// 해당 변수의 데이터 형식이 지정된다.
+// 객체는   { }로 초기에 할당해서 type을 지정한다.
+//        cf)주의 자바에서는 배열로 인식!
+	person ={};
+// 객체에 속성지정하기
+// 속성이란? 객체에 포함한 고유의 데이터를 할당하기위한 변수를 말한다.
+//     또한 특징으로 볼 수 있어서, 이 데이터에 따라서 메서드(함수)에
+//     영향을 미칠 수 있다.
+// ex) 예를 들어 사람의 속성에 이름이하는 속성을 가지면, 이 이름으로
+//     다른 사람과 관계에 있어서 불려지는 것과 또는 다른 곳으로 전입/전출
+//    하는데, 또는 행정서류에 기입하는 내용이 달라지게 된다. 그 만큼
+//    속성값에 따라서 다른 처리를 하는 것을 말한다.
+// ex) tag의 h1이라는 객체에 속성이 align이 있는데, 이 align에 값이
+//     center, left, right에 따라서 화면에서 보여지는 것이 달라지게
+//    된다.
+// 속성지정하기..
+// 1) 객체명.속성명 = 데이터..  
+//    객체에 특정한 속성에 속성값을 할당한다.
+//    ex) 사람이라는 person 객체에  name 이라는 이름 정하고,
+//        문자열로 "홍길동"이라는 데이터를 할당하고자 하면 아래와 같이
+//        처리하면 된다..
+		person.name="홍길동";
+//    객체는 여러 속성을 가질 수 있다.. 동일한 객체에서 속성을 정의해서
+//    또다른 데이터를 할당 하는 것을 말한다.
+//   ex) person객체에 age라는 속성 새로 만들고 여기에 데이터가 29를
+//    할당한다..
+		person.age=29;  //다른 유형의 데이터를 할당할 수 있다.
+//    속성은 이렇게 한번 할당되면, 객체이름.속성 으로 호출하여 활용
+//    될 수 있다..
+//       console 로그에 출력.. console.log("출력 처리..");	
+		console.log("person의 이름은 "+person.name);
+		console.log("person의 나이는 "+person.age);
+//	2) 객체 선언과 동시에 속성 설정하기..
+//     객체는 생성 이후에,ex) var person={}; (생성) 
+//     속성 설정할 수 있지만,  person.name="홍길동"  (속성 설정 데이터할당)
+//     한꺼번에 생성과 속성선언과 할당을 할 수 있다..
+//     json(javascript Object Notation)형식으로.. 속성-값...
+//     형식은  var 객체명 = {속성:속성값,속성2:속성값2,};	
+//     ex) person를 json 형식으로 속성과 속성값을 지정해보자..
+		var person2 = { name : "홍길동", age:29, loc:"서울 강남" };
+//     이렇게 정의 객체는 객체명.속성으로 접근해서 활용할 수 있다..
+//     활용한다는 말은 호출하는 것 뿐만아니라, 재할당하는 것도 처리 된다는
+//     말이다..
+//     호출은 person2의 객체에 name이라는 이름으로 호출하여 사용될 수 있다.
+      	console.log("person2의 이름:"+ person2.name);
+      	console.log("person2의 나이:"+ person2.age);
+      	console.log("person2의 사는 곳:"+ person2.loc);
+//     이름을 변경하고자 한다..
+       	person2.name="신길동";
+       	console.log("person2의 이름:"+ person2.name);
+       	/*  확인예제..
+        객체명은 favorProduct로 하고,
+    	속성으로 물건명, 가격, 물건을구입내지취득한장소
+    	1) 객체 생성후, 속성값 지정.
+    	2) 객체 생성과 함께 속성값 지정..
+    	console.log로 출력하세요..
+
+    */       	
+ 		var favorProduct1={};
+ 		favorProduct1.pname="내방의 PC";
+ 		favorProduct1.price=1500000;
+ 		favorProduct1.getLoc="G마켓";
+ 		console.log("## 내가 좋아하는 물건들 ##");
+ 		console.log("물건1 이름:"+favorProduct1.pname);
+ 		console.log("물건1 가격:"+favorProduct1.price);
+ 		console.log("물건1 구매한 곳:"+favorProduct1.getLoc);
+ 		var favorProduct2={pname:"핸드폰",price:700000,getLoc:"통신판매상"};
+ 		console.log("물건2 이름:"+favorProduct2.pname);
+ 		console.log("물건2 가격:"+favorProduct2.price);
+ 		console.log("물건2 구매한 곳:"+favorProduct2.getLoc);
+ /*
+ 	배열
+ 	 	선언 : 
+ 	 		var 배열이름;
+ 		배열데이터 type 지정과 할당..
+ 			배열이름 = []; ex) var fruits=[];
+ 		데이터할당..
+ 			index : 배열을 접근하기 위한 고유 번호 0부터 시작..
+ 			배열이름[index]= 데이터;
+ 			ex) fruits[0] = "사과"; fruits[1] = "바나나";
+ 			    fruits[2] = "딸기";
+ 		배열의 갯수 : 배열이름.length;
+ 		배열의 선언, 데이터 할당..
+ 			var 배열이름 =[데이터1, 데이터2, 데이터3];
+ 			ex) var books=["html5","javascript","자바"];
+ 				books[0], books[1]			    
+ */
+ 		var books=["html5","javascript","자바"];
+ 		console.log("도서 1번째:"+books[0]);		
+ 		console.log("도서 2번째:"+books[1]);		
+ 		console.log("도서 3번째:"+books[2]);
+ 		books[2]="jsp";
+ 		console.log("도서 3번째(변경후):"+books[2]);
+ 		// 반복문을 통한 호출...
+ 		// books.length : 배열의 크기..
+ 		console.log("\tfor문을 통한 배열데이터 출력!!!");
+ 		for(var idx=0;idx<books.length;idx++){
+ 		//   초기값 idx=0 부터 시작해서 idx가 books의 크기보다 1적게.
+ 		//	 왜냐하면 index의 최종번호는 배열의 크기보다 1적기 때문에..
+ 		//    0, 1, 2 까지..   idx++ : 증가 연산자..
+ 			console.log("도서 "+(idx+1)+"번째 "+books[ idx] );
+ 		}
+ /* 확인예제..
+ 	1) weekendPlans이라는 배열을 만들고,
+ 		배열 객체 생성과 할당 처리해서..
+ 		반복문으로  화면단에 다음과 같이 출력하세요..
+ 			~~ 주말 계획 ~~
+ 				제목                                  시간       인원
+ 			1. 1차 프로젝트 쫑파티..    
+ 			2. 등산
+ 			3. Full sleeping day!!^^
+ */		
+ 		var weekendPlans=["1차 프로젝트 쫑파티..","등산","Full sleeping day!!^^"];
+ 		console.log("~~ 주말 계획 ~~");
+ 		for(var idx=0;idx<weekendPlans.length;idx++){
+ 			console.log((idx+1)+". "+weekendPlans[ idx ]);
+ 		}
+ /*  단일 배열은 단일 데이터만 출력해서 활용할 수 있다.. 
+ 	일때,  제목과 시간 인원이라는 속성 가진 객체단위 배열을 활용하면,
+ 	효과적으로 list를 처리할 수 있다..
+ 	1. 배열객체를 만들려면 단위 객체를 먼저 만들어야 한다..
+ 		1) 속성값이 무엇인지를 확인..
+ 	2. 단위를 배열에 할당처리..
+ 	3. 배열객체를 수정, 추가 등록, 삭제 할 수 있어야 한다..
+ */		
+ // 단위객체의 속성  및 속성값 설정하기..
+ // title, times, togethers
+ 	var weekPlan01 ={title:"1차 프로젝트 쫑파티",
+ 					times:"오늘 저녁(3/30)",
+ 					togethers:5};
+ 	var weekPlan02 ={title:"등산",
+					times:"토(4/1)",
+					togethers:4}; 		
+ 	var weekPlan03 ={title:"Full sleeping day!!^^",
+						times:"3/31",
+					togethers:1};
+ // 배열객체 선언과 할당
+ 	var weekendPlan2=[];
+//  index 번호로 할당..  배열이름[index-0부터]=할당할 객체..
+	weekendPlan2[0]=weekPlan01;// 배열에 객체가 할당된 상황..
+	weekendPlan2[1]=weekPlan02;
+	weekendPlan2[2]=weekPlan03;
+/*  배열 객체의 속성을 접근해서 호출하기...
+ 	 weekendPlan2[0]  ==> 실제들어가 있는 객체..weekPlan01
+ 	weekPlan01.title로 해당 속성의 title을 호출했듯이..
+ 	weekendPlan2의 할당된 첫번째 객체의 title을 호출할려면..
+ 	weekendPlan2[0].title로 호출하면 된다..
+ 
+ */
+ // 각각의 데이터 호출 할려면..
+ 	console.log("@@@ 배열 객체 첫번째 데이터 출력 @@@");
+ 	console.log(weekendPlan2[0].title+":"
+ 			+weekendPlan2[0].times+":"
+ 			+weekendPlan2[0].togethers);
+ // 두번째 데이터, 세번째 데이터를 호출할려면?
+//  err) 	weekendPlan2.title[1] (X)...
+//   객체배열이기에  배열명[index].속성값 설정..
+  	console.log(weekendPlan2[1].title+":"
+ 			+weekendPlan2[1].times+":"
+ 			+weekendPlan2[1].togethers);	 
+ 	console.log(weekendPlan2[2].title+":"
+ 			+weekendPlan2[2].times+":"
+ 			+weekendPlan2[2].togethers); 
+ /* 확인 예제...
+ 	변수로 favorMovies : 가장 좋아하는 영화~~
+ 		 title   관람일     관람장소
+ 	배열 객체 3개를 만들고, 데이터를 할당한 후에  출력하세요..
+ */
+ 	var movie01={title:"미녀와 야수", seeDay:"3/16", seeLoc:"롯데시네마"};
+ 	var movie02={title:"프리즌", seeDay:"3/23", seeLoc:"CGV"};
+ 	var movie03={title:"공각기동대", seeDay:"3/29", seeLoc:"메가박스"};
+ 	var favorMovies=[];
+ 	favorMovies[0]=movie01;
+ 	favorMovies[1]=movie02;
+ 	favorMovies[2]=movie03;
+ 	console.log("가장 좋아하는 영화");
+ 	console.log(favorMovies[0].title+"\t"+favorMovies[0].seeDay+"\t"
+ 			+favorMovies[0].seeLoc); 
+ 	console.log(favorMovies[1].title+"\t"+favorMovies[1].seeDay+"\t"
+ 			+favorMovies[1].seeLoc); 
+ 	console.log(favorMovies[2].title+"\t"+favorMovies[2].seeDay+"\t"
+ 			+favorMovies[2].seeLoc); 
+
+</script>
+</head>
+<body>
+	<h1></h1>
+	<p></p>
+	<table>
+		<tr><td>
+	</table>
+</body>
+</html>

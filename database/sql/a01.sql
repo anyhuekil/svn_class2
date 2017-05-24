@@ -1,3 +1,3 @@
 select * from emp;
 select * from dept;
--- º¯°æÇÕ´Ï´Ù..
+-- ë³€ê²½í•©ë‹ˆë‹¤..

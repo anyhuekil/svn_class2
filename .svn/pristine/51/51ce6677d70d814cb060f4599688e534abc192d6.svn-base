@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+/*
+
+*/
+
+/**/
+</style>
+<script src="http://code.jquery.com/jquery-1.10.2.js">
+</script>
+<script type="text/javascript">
+$(document).ready(function(){
+	$("#hide01").click(function(){
+		$("div").hide();
+	});
+	$("#show01").click(function(){
+		$("div").show();
+	});
+	
+/*
+ $(객체).toggle(속도) : 해당하는 객체가 보이는 것/
+ 보이지 않는 것을 반복 처리..
+ */
+ 	$("#btn01").click(function(){
+ 		$("div").toggle("slow");
+ 	});
+});
+
+</script>
+</head>
+<body>
+<input type="button" id="btn01" value="토글링!!"/>
+<h1 id="show01">보이게</h1>
+<h1 id="hide01">사라지게</h1>
+<div style="width:200px;height:200px;background:pink;">
+
+</div>
+
+</body>
+</html>

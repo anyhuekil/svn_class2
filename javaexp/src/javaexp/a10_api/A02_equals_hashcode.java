@@ -13,26 +13,26 @@ public class A02_equals_hashcode {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 /*
-equals : °´Ã¼ÀÇ ÁÖ¼Ò°¡ ´Ù¸£´õ¶óµµ °°Àº µ¥ÀÌÅÍ¸¦ °¡Áö°í °°Àº typeÀ»
-¾²°í ÀÖÀ¸¸é boolean°ªÀ» true·Î Ã³¸®ÇÑ´Ù.
+equals : ê°ì²´ì˜ ì£¼ì†Œê°€ ë‹¤ë¥´ë”ë¼ë„ ê°™ì€ ë°ì´í„°ë¥¼ ê°€ì§€ê³  ê°™ì€ typeì„
+ì“°ê³  ìˆìœ¼ë©´ booleanê°’ì„ trueë¡œ ì²˜ë¦¬í•œë‹¤.
  * */
-		String name01 = new String("È«±æµ¿");
-		String name02 = new String("È«±æµ¿");
-		System.out.println("ÁÖ¼ÒÈ®ÀÎ:"+(name01==name02));
-		// °°Àº class¸¦ »ç¿ëÇÏ°í, µ¥ÀÌÅÍµµ °°±â¿¡..
-		System.out.println("µ¥ÀÌÅÍÈ®ÀÎ:"+(name01.equals(name02)));
+		String name01 = new String("í™ê¸¸ë™");
+		String name02 = new String("í™ê¸¸ë™");
+		System.out.println("ì£¼ì†Œí™•ì¸:"+(name01==name02));
+		// ê°™ì€ classë¥¼ ì‚¬ìš©í•˜ê³ , ë°ì´í„°ë„ ê°™ê¸°ì—..
+		System.out.println("ë°ì´í„°í™•ì¸:"+(name01.equals(name02)));
 /*
- hashcode() : °´Ã¼¸¦ ½Äº°ÇÒ ¼ö ÀÖ´Â Á¤¼ö°ªÀ» °¡Áü.
+ hashcode() : ê°ì²´ë¥¼ ì‹ë³„í•  ìˆ˜ ìˆëŠ” ì •ìˆ˜ê°’ì„ ê°€ì§.
  * */		
-		Woman w01 = new Woman("ÀÌ¿µÈñ");
-		Woman w02 = new Woman("ÀÌ¿µÈñ");
+		Woman w01 = new Woman("ì´ì˜í¬");
+		Woman w02 = new Woman("ì´ì˜í¬");
 		
 		System.out.println("equals:"+w01.equals(w02));
-		System.out.println("w01ÀÇ hashCode:"+w01.hashCode());
-		System.out.println("w02ÀÇ hashCode:"+w02.hashCode());
-// toString() : °´Ã¼ ¹®ÀÚ Á¤º¸ 'Å¬·¡½º¸í@16Áø¼öÇØ½Ã ÄÚµå
-		System.out.println("w01ÀÇ °´Ã¼Á¤º¸:"+w01.toString());
-		System.out.println("w02ÀÇ °´Ã¼Á¤º¸:"+w02.toString());
+		System.out.println("w01ì˜ hashCode:"+w01.hashCode());
+		System.out.println("w02ì˜ hashCode:"+w02.hashCode());
+// toString() : ê°ì²´ ë¬¸ì ì •ë³´ 'í´ë˜ìŠ¤ëª…@16ì§„ìˆ˜í•´ì‹œ ì½”ë“œ
+		System.out.println("w01ì˜ ê°ì²´ì •ë³´:"+w01.toString());
+		System.out.println("w02ì˜ ê°ì²´ì •ë³´:"+w02.toString());
 	}
 
 }

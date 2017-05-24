@@ -7,25 +7,25 @@ public class A01_lang_package {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		// ÀÚ¹Ù ¸ğµç Å¬·¡½ºÀÇ ÃÖ»óÀ§ Å¬·¡½º
+		// ìë°” ëª¨ë“  í´ë˜ìŠ¤ì˜ ìµœìƒìœ„ í´ë˜ìŠ¤
 		Object o01 = new Object();
-		// java.lang.Object@15db9742 : Å¬·¡½º¸í@ÁÖ¼Ò°ª
-		System.out.println("ObjectÀÇ toString():"+o01.toString());
+		// java.lang.Object@15db9742 : í´ë˜ìŠ¤ëª…@ì£¼ì†Œê°’
+		System.out.println("Objectì˜ toString():"+o01.toString());
 		Person p = new Person();
 //		javaexp.a10_api.Person@6d06d69c
-		System.out.println("PersonÀÇ toString():"+p.toString());
+		System.out.println("Personì˜ toString():"+p.toString());
 		
-//		System.in : ÀÔ·Â °ü·Ã °´Ã¼.
-//		read()¸¦ ÅëÇØ ÀÔ·Â Ã³¸®
+//		System.in : ì…ë ¥ ê´€ë ¨ ê°ì²´.
+//		read()ë¥¼ í†µí•´ ì…ë ¥ ì²˜ë¦¬
 		try {
-			System.out.println("¹®ÀÚ ÇÑÀÚÀÔ·Â:"+(char)System.in.read());
+			System.out.println("ë¬¸ì í•œìì…ë ¥:"+(char)System.in.read());
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-//		System.out : Ãâ·Â °ü·Ã °´Ã¼.
-//		println()¸¦ ÅëÇØ¼­ Ãâ·Â Ã³¸®
-		System.err.println("¿¡·¯ ·Î±× Ã³¸® err.println()");
+//		System.out : ì¶œë ¥ ê´€ë ¨ ê°ì²´.
+//		println()ë¥¼ í†µí•´ì„œ ì¶œë ¥ ì²˜ë¦¬
+		System.err.println("ì—ëŸ¬ ë¡œê·¸ ì²˜ë¦¬ err.println()");
 		
 		
 	}

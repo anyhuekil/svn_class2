@@ -1,23 +1,23 @@
 /*
-¼÷Á¦
-	¿¬ºÀ´ÜÀ§º°·Î ÀÎ¿ø¼ö Ã¼Å©
-	¹üÀ§		»ç¿ø¼ö (ÃÖ°íÄ¡, ÃÖÀúÄ¡, Æò±ÕÄ¡)
-	1000¹Ì¸¸: 	@@
-	~2000¹Ì¸¸:	@@
-	~3000¹Ì¸¸:	@@
-	~4000¹Ì¸¸:	@@
-	~5000¹Ì¸¸:	@@
-	~6000¹Ì¸¸:	@@
+ìˆ™ì œ
+	ì—°ë´‰ë‹¨ìœ„ë³„ë¡œ ì¸ì›ìˆ˜ ì²´í¬
+	ë²”ìœ„		ì‚¬ì›ìˆ˜ (ìµœê³ ì¹˜, ìµœì €ì¹˜, í‰ê· ì¹˜)
+	1000ë¯¸ë§Œ: 	@@
+	~2000ë¯¸ë§Œ:	@@
+	~3000ë¯¸ë§Œ:	@@
+	~4000ë¯¸ë§Œ:	@@
+	~5000ë¯¸ë§Œ:	@@
+	~6000ë¯¸ë§Œ:	@@
 */
 
-	select trunc(sal,-3)+1000 ||'¹Ì¸¸', count(*)|| '¸í', max(sal), min(sal), avg(sal) from emp
+	select trunc(sal,-3)+1000 ||'ë¯¸ë§Œ', count(*)|| 'ëª…', max(sal), min(sal), avg(sal) from emp
 	group by (trunc(sal,-3))+1000
 	order by (trunc(sal,-3))+1000 asc;
 
 /*
-	°úÁ¦.
-		ºÎ¼­À§Ä¡º° »ç¿øÀÇ ¼ö¸¦ ¾Æ·¡Çü½ÄÀ¸·Î Ãâ·Â
-		ºÎ¼­À§Ä¡ »ç¿ø¼ö...
+	ê³¼ì œ.
+		ë¶€ì„œìœ„ì¹˜ë³„ ì‚¬ì›ì˜ ìˆ˜ë¥¼ ì•„ë˜í˜•ì‹ìœ¼ë¡œ ì¶œë ¥
+		ë¶€ì„œìœ„ì¹˜ ì‚¬ì›ìˆ˜...
 */
 
 select loc, count(*) from emp, dept
@@ -41,32 +41,32 @@ group by dept.loc;
 	insert into gradeCheck values( 80, 100, 'A'); 
 	
 	/*
-		1) ¾ÆÀÌµğ¸¦ Á¶ÀÎÇØ¼­ (equal join)ÇÏ°í
-			Ãâ·Â: ÀÌ¸§ °ú¸ñ Á¡¼ö
-		2) Á¡¼ö¸¦ Á¶ÀÎÇØ¼­ (not equal join)
-			Ãâ·Â: °ú¸ñ Á¡¼ö ÇĞÁ¡µî±Ş
-		3) student10 studentPoint gradeCheckÁ¶ÀÎÀ» ÇØ¼­ (3 equal join)
-			Ãâ·Â: ÀÌ¸§ °ú¸ñ ÇĞÁ¡µî±Ş
+		1) ì•„ì´ë””ë¥¼ ì¡°ì¸í•´ì„œ (equal join)í•˜ê³ 
+			ì¶œë ¥: ì´ë¦„ ê³¼ëª© ì ìˆ˜
+		2) ì ìˆ˜ë¥¼ ì¡°ì¸í•´ì„œ (not equal join)
+			ì¶œë ¥: ê³¼ëª© ì ìˆ˜ í•™ì ë“±ê¸‰
+		3) student10 studentPoint gradeCheckì¡°ì¸ì„ í•´ì„œ (3 equal join)
+			ì¶œë ¥: ì´ë¦„ ê³¼ëª© í•™ì ë“±ê¸‰
 	student10 s, studentpoint sp, gradeCheck gc
 	*/
 
-	select s.sname ÀÌ¸§, sp.spsub °ú¸ñ, sp.spGrade ¼ºÀû from student10 s, studentpoint sp
+	select s.sname ì´ë¦„, sp.spsub ê³¼ëª©, sp.spGrade ì„±ì  from student10 s, studentpoint sp
 	where s.sid = sp.spId;
 	
-	select sp.spsub °ú¸ñ, sp.spGrade ¼ºÀû, gc.subGrade  from gradeCheck gc, studentpoint sp
+	select sp.spsub ê³¼ëª©, sp.spGrade ì„±ì , gc.subGrade  from gradeCheck gc, studentpoint sp
 	where sp.spGrade between gc.lopoint and gc.hipoint;
 	
-	select s.sname ÀÌ¸§, sp.spsub °ú¸ñ, gc.subGrade ÇĞÁ¡ from student10 s, studentpoint sp, gradeCheck gc
+	select s.sname ì´ë¦„, sp.spsub ê³¼ëª©, gc.subGrade í•™ì  from student10 s, studentpoint sp, gradeCheck gc
 	where s.sid = sp.spId 
 	and sp.spGrade between gc.lopoint and gc.hipoint;
 
 
 /*
-		¼÷Á¦:
-			outer join, groupÀ» È°¿ëÇØ¼­ ¤·
-			ºÎ¼­¸íº° ÀÎ¿øÀ» È®ÀÎÇÏ·Á°íÇÑ´Ù.
-			¾Æ·¡ÀÇ Çü½ÄÀ¸·Î Ãâ·Â. ÀÎ¿øÀÌ¾ø´Â°÷Àº 0·Î Ç¥½Ã. nvl
-			ºÎ¼­¸í ÀÎ¿ø 
+		ìˆ™ì œ:
+			outer join, groupì„ í™œìš©í•´ì„œ ã…‡
+			ë¶€ì„œëª…ë³„ ì¸ì›ì„ í™•ì¸í•˜ë ¤ê³ í•œë‹¤.
+			ì•„ë˜ì˜ í˜•ì‹ìœ¼ë¡œ ì¶œë ¥. ì¸ì›ì´ì—†ëŠ”ê³³ì€ 0ë¡œ í‘œì‹œ. nvl
+			ë¶€ì„œëª… ì¸ì› 
 */
 	select * from dept;
 	
@@ -74,6 +74,6 @@ group by dept.loc;
 		where e.deptno(+) = d.deptno
 		group by d.dname;    
 		/*
-			Á¤º¸°¡ ´õ ¸¹ÀºÂÊ¿¡ (+) ¸¦ ºÙ¿©Áà¾ß 0ÂÊÀÌ »ı±ä´Ù. 
+			ì •ë³´ê°€ ë” ë§ì€ìª½ì— (+) ë¥¼ ë¶™ì—¬ì¤˜ì•¼ 0ìª½ì´ ìƒê¸´ë‹¤. 
 		
 		*/

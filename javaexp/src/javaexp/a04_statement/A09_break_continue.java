@@ -4,26 +4,26 @@ public class A09_break_continue {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		// break ÇØ´ç ºí·°({}) ÇÁ·Î¼¼½º ÀÚÃ¼¸¦ Áß´Ü½ÃÅ°´Â °Í.
-		System.out.println("## »ç°ú¸Ô´Â °õµ¹ÀÌ###");
+		// break í•´ë‹¹ ë¸”ëŸ­({}) í”„ë¡œì„¸ìŠ¤ ìì²´ë¥¼ ì¤‘ë‹¨ì‹œí‚¤ëŠ” ê²ƒ.
+		System.out.println("## ì‚¬ê³¼ë¨¹ëŠ” ê³°ëŒì´###");
 		for(int cnt=1;cnt<=10;cnt++){
-			System.out.println("°õµ¹ÀÌ°¡ »ç°ú¸¦ "+cnt+"°³ ¸Ô¾ú´Ù.");
+			System.out.println("ê³°ëŒì´ê°€ ì‚¬ê³¼ë¥¼ "+cnt+"ê°œ ë¨¹ì—ˆë‹¤.");
 			if(cnt==5){
-				System.out.println("5°³ ¸Ô´Â ¼ø°£!! ÀÌÁ¦ ±×¸¸!!");
+				System.out.println("5ê°œ ë¨¹ëŠ” ìˆœê°„!! ì´ì œ ê·¸ë§Œ!!");
 				break;
 			}
 		}
-		System.out.println("break ¿¹Á¦ ¿Ï·á!!!");
-		// continue ÇØ´ç ºí·°({})¿¡ Æ¯Á¤ ÇÁ·Î¼¼½º¸¸ pass Ã³¸®..
-		System.out.println("### ¶±¸Ô´Â º´¸¸ÀÌ ###");
+		System.out.println("break ì˜ˆì œ ì™„ë£Œ!!!");
+		// continue í•´ë‹¹ ë¸”ëŸ­({})ì— íŠ¹ì • í”„ë¡œì„¸ìŠ¤ë§Œ pass ì²˜ë¦¬..
+		System.out.println("### ë–¡ë¨¹ëŠ” ë³‘ë§Œì´ ###");
 		for(int cnt=1; cnt<=10;cnt++){
 			 if(cnt==6){
-				 System.out.println("6¹øÂ° ¶±Àº ½ÅÁö¿¡°Ô »©¾Ñ±è!!!");
+				 System.out.println("6ë²ˆì§¸ ë–¡ì€ ì‹ ì§€ì—ê²Œ ë¹¼ì•—ê¹€!!!");
 				 continue;
 			 }
-			 System.out.println("º´¸¸ÀÌ "+ cnt+"¹øÂ° ¶±À» ¸Ô´Ù!!!");
+			 System.out.println("ë³‘ë§Œì´ "+ cnt+"ë²ˆì§¸ ë–¡ì„ ë¨¹ë‹¤!!!");
 		}
-		System.out.println("continue¿Í º´¸¸ÀÌ ¿¹Á¦ ¿Ï·á!!");
+		System.out.println("continueì™€ ë³‘ë§Œì´ ì˜ˆì œ ì™„ë£Œ!!");
 		
 		
 	}

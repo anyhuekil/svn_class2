@@ -5,7 +5,7 @@ public class A01_Hello {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		// ctrl+F11  run!!
-		 System.out.println("¾È³çÇÏ¼¼¿ä!! ÀÚ¹Ù½ÃÀÛÀÔ´Ï´Ù!!");
+		 System.out.println("ì•ˆë…•í•˜ì„¸ìš”!! ìë°”ì‹œì‘ì…ë‹ˆë‹¤!!");
 	}
 
 }

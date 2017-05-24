@@ -1,8 +1,8 @@
 package javaexp.a06_object.access.room01;
 
 public class Woman {
-	// °°Àº package ÀÌ¹Ç·Î,
-	// Á¢±ÙÁ¦¾îÀÚ°¡ ºÙÁö ¾ÊÀº default ÀÌ»ó ÀÌ¸é
-	// ¼±¾ğÀÌ °¡´ÉÇÏ´Ù.
+	// ê°™ì€ package ì´ë¯€ë¡œ,
+	// ì ‘ê·¼ì œì–´ìê°€ ë¶™ì§€ ì•Šì€ default ì´ìƒ ì´ë©´
+	// ì„ ì–¸ì´ ê°€ëŠ¥í•˜ë‹¤.
 	Person p;
 }

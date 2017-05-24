@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+/*
+
+*/
+
+/**/
+</style>
+<script src="http://code.jquery.com/jquery-1.10.2.js">
+</script>
+<script type="text/javascript">
+$(document).ready(function(){
+	
+});
+function call(){
+	// html("html 코드 적용")
+	$("h1").html("<font color='blue'>Good afternoon!!</font>");
+	// text("html의 <> 내용을 화면에 그대로 보이고자 할때..")
+	$("h2").text("<font color='blue'>Good afternoon!!</font>");
+	// append:뒤에 추가, prepend:앞에 추가
+	$("h1").append("good job!! in this times!!");
+	$("h2").prepend("♡♡♡");
+	$("h2").append("♥♥♥");
+}
+</script>
+</head>
+<body>
+	<input type="button" value="click" 
+		onclick="javascript:call()"/>
+	<h1>안녕하세요~~</h1>
+	<h2>즐거운 오후 시작을~~</h2>
+</body>
+</html>

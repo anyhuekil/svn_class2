@@ -1,12 +1,12 @@
-/*¼÷Á¦(Á¶º°°úÁ¦)
-1. ÀÔ»çÀÏ ºÐ±âº°·Î °¡Àå ³ôÀº ¿¬ºÀÀ» ¹Þ´Â »ç¶÷À» Ãâ·ÂÇÏ¼¼¿ä
-2. ¿¬ºÀÀÌ 3000ÀÌ»óÀÎ »ç¶÷ Áß¿¡, µî±Þ(Å×ÀÌºíÈ°¿ëµµ °¡´É)À» ³ª´©¾î¼­ ÇØ´ç
- µî±Þº° ÃÖ°í ¿¬ºÀÀ» ¹Þ´Â »ç¶÷À» ÀÌ¸§, µî±Þ, ¿¬ºÀÀ» Ãâ·ÂÇÏ¼¼¿ä
+/*ìˆ™ì œ(ì¡°ë³„ê³¼ì œ)
+1. ìž…ì‚¬ì¼ ë¶„ê¸°ë³„ë¡œ ê°€ìž¥ ë†’ì€ ì—°ë´‰ì„ ë°›ëŠ” ì‚¬ëžŒì„ ì¶œë ¥í•˜ì„¸ìš”
+2. ì—°ë´‰ì´ 3000ì´ìƒì¸ ì‚¬ëžŒ ì¤‘ì—, ë“±ê¸‰(í…Œì´ë¸”í™œìš©ë„ ê°€ëŠ¥)ì„ ë‚˜ëˆ„ì–´ì„œ í•´ë‹¹
+ ë“±ê¸‰ë³„ ìµœê³  ì—°ë´‰ì„ ë°›ëŠ” ì‚¬ëžŒì„ ì´ë¦„, ë“±ê¸‰, ì—°ë´‰ì„ ì¶œë ¥í•˜ì„¸ìš”
 */
--- ¼÷Á¦ 1.
-SELECT CEIL(TO_NUMBER(TO_CHAR(HIREDATE,'MM'),'99')/3) "ºÐ±â", MAX(SAL) FROM EMP 
+-- ìˆ™ì œ 1.
+SELECT CEIL(TO_NUMBER(TO_CHAR(HIREDATE,'MM'),'99')/3) "ë¶„ê¸°", MAX(SAL) FROM EMP 
 GROUP BY CEIL(TO_NUMBER(TO_CHAR(HIREDATE,'MM'),'99')/3);
--- ¼÷Á¦ 2.
+-- ìˆ™ì œ 2.
 SELECT *
 FROM EMP E, SALGRADE S
 WHERE E.SAL BETWEEN S.LOSAL AND S.HISAL;
@@ -18,11 +18,11 @@ FROM EMP E, SALGRADE S
 WHERE E.SAL BETWEEN S.LOSAL AND S.HISAL) A
 WHERE SAL>=3000;
 
-¼÷Á¦
-1. ºÎ¼­¹øÈ£°¡ 30ÀÎ »ç¶÷ Áß¿¡, °¡Àå ³ªÁß¿¡ ÀÔ»çÇÑ »ç¶÷º¸´Ù ¿¬ºÀÀÌ ¸¹À¸¸é Ãâ·ÂÇÏ¼¼¿ä.
-2. Á÷±ÞÀÌ 'SALESMAN'ÀÎ »ç¿øÀÌ ¹Þ´Â ±Þ¿©µéÀÇ ÃÖ¼Ò ±Þ¿©º¸´Ù ¸¹ÀÌ ¹Þ´Â »ç¿øµéÀÇ ÀÌ¸§°ú ±Þ¿©¸¦ Ãâ·ÂÇÏµÇ, ºÎ¼­¹øÈ£ 20¹øÀÎ »ç¿øÀº Á¦¿ÜÇÑ´Ù (ANY ¿¬»êÀÚ ÀÌ¿ë)
+ìˆ™ì œ
+1. ë¶€ì„œë²ˆí˜¸ê°€ 30ì¸ ì‚¬ëžŒ ì¤‘ì—, ê°€ìž¥ ë‚˜ì¤‘ì— ìž…ì‚¬í•œ ì‚¬ëžŒë³´ë‹¤ ì—°ë´‰ì´ ë§Žìœ¼ë©´ ì¶œë ¥í•˜ì„¸ìš”.
+2. ì§ê¸‰ì´ 'SALESMAN'ì¸ ì‚¬ì›ì´ ë°›ëŠ” ê¸‰ì—¬ë“¤ì˜ ìµœì†Œ ê¸‰ì—¬ë³´ë‹¤ ë§Žì´ ë°›ëŠ” ì‚¬ì›ë“¤ì˜ ì´ë¦„ê³¼ ê¸‰ì—¬ë¥¼ ì¶œë ¥í•˜ë˜, ë¶€ì„œë²ˆí˜¸ 20ë²ˆì¸ ì‚¬ì›ì€ ì œì™¸í•œë‹¤ (ANY ì—°ì‚°ìž ì´ìš©)
 */
--- È®ÀÎ¿¹Á¦1
+-- í™•ì¸ì˜ˆì œ1
 SELECT EMPNO, SAL, HIREDATE
 FROM EMP
 WHERE HIREDATE>=ALL(
@@ -30,7 +30,7 @@ SELECT HIREDATE
 FROM EMP
 WHERE SAL<3000);
 
--- ¼÷Á¦ 1.
+-- ìˆ™ì œ 1.
 SELECT ENAME, SAL, HIREDATE, DEPTNO
 FROM EMP
 WHERE SAL>ALL(
@@ -40,7 +40,7 @@ WHERE HIREDATE=(SELECT MAX(HIREDATE)
 					FROM EMP))
 AND DEPTNO=30;
 
--- ¼÷Á¦ 2.
+-- ìˆ™ì œ 2.
 SELECT ENAME, SAL,DEPTNO
 FROM EMP
 WHERE SAL>ANY(
@@ -49,14 +49,14 @@ FROM EMP
 WHERE JOB='SALESMAN') AND DEPTNO!=20;
 
 /*
-¼÷Á¦
-´ÙÀ½°ú °°Àº ÇüÅÂÀÇ Å×ÀÌºíÀ» ±¸¼ºÇÏ¼¼¿ä.
-ÀÌ¸§(name) ¹øÈ£(no) ÀÔ»çÀÏ(credate)-¹®ÀÚ¿­		¿ÃÇØ±âÁØ±Ù¹«¿¬¼ö(2017)
-					@@@@³â @@@¿ù @@@ÀÏ		@@@
-new_emp·Î ±¸¼ºÇÏ¼¼¿ä
+ìˆ™ì œ
+ë‹¤ìŒê³¼ ê°™ì€ í˜•íƒœì˜ í…Œì´ë¸”ì„ êµ¬ì„±í•˜ì„¸ìš”.
+ì´ë¦„(name) ë²ˆí˜¸(no) ìž…ì‚¬ì¼(credate)-ë¬¸ìžì—´		ì˜¬í•´ê¸°ì¤€ê·¼ë¬´ì—°ìˆ˜(2017)
+					@@@@ë…„ @@@ì›” @@@ì¼		@@@
+new_empë¡œ êµ¬ì„±í•˜ì„¸ìš”
 					
 */
 CREATE TABLE NEW_EMP
 AS(
-select ename "ÀÌ¸§", empno "¹øÈ£", hiredate "ÀÔ»çÀÏ", CEIL(MONTHS_BETWEEN(SYSDATE,HIREDATE)/12)+1 "¿ÃÇØ±âÁØ±Ù¹«¿¬¼ö(2017)" FROM EMP);
+select ename "ì´ë¦„", empno "ë²ˆí˜¸", hiredate "ìž…ì‚¬ì¼", CEIL(MONTHS_BETWEEN(SYSDATE,HIREDATE)/12)+1 "ì˜¬í•´ê¸°ì¤€ê·¼ë¬´ì—°ìˆ˜(2017)" FROM EMP);
 SELECT * FROM NEW_EMP;

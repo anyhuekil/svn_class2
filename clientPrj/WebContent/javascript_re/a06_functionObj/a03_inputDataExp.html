@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+/*
+
+*/
+
+/**/
+</style>
+<script src="http://code.jquery.com/jquery-1.10.2.js">
+</script>
+<script type="text/javascript">
+$(document).ready(function(){
+
+});
+function CoffeeShop(kind, price, cnt){
+	this.kind=kind;
+	this.price=price;
+	this.cnt = cnt;
+	this.tot=price*cnt;
+	this.show=function(){  // show() 공통 출력물을 처리가 가능
+		console.log("주문한 커피는 "+this.kind+
+				", 가격"+this.price+",갯수"+this.cnt
+				+",총"+this.tot);		
+	};
+}
+var coffeeOrder01 = new CoffeeShop("아메리카노",3000,2);
+var coffeeOrder02 = new CoffeeShop("카푸치노",4000,3);
+coffeeOrder01.show();
+coffeeOrder02.show();
+
+
+
+
+
+
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

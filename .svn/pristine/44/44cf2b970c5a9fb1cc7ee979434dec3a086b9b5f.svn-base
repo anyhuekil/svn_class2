@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+/*
+
+*/
+
+/**/
+</style>
+<script src="http://code.jquery.com/jquery-1.10.2.js">
+</script>
+<script type="text/javascript">
+$(document).ready(function(){
+	//$.ajax({속성1:속성값1,속성2:속성값2});
+	//    dataType : 어떤 형태의 data인지? ex) xml, text, json
+	//    url : 자원을 넘겨주는 웹서버
+	//    success:function( 객체 ){} : 접속이 정상되었을 때,
+	//          가져오는 객체..
+	$.ajax({
+		  dataType: "json",
+		  url: "http://json-schema.org/draft-04/schema#",
+		  success: function(obj){
+			  $("td").eq(0).html(obj.id);
+			  $("td").eq(1).html(obj.$schema);
+			  $("td").eq(2).html(obj.description);
+			  $("td").eq(3).html(obj.type);			  
+		  }
+		});
+
+	
+});
+</script>
+</head>
+<body>
+<table align="center" border>
+	<tr><th>id</th><th>$schema</th><th>description</th><th>type</th></tr>
+	<tr><td></td><td></td><td></td><td></td></tr>
+</table>
+</body>
+</html>

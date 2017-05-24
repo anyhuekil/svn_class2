@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+/*
+
+*/
+
+/**/
+</style>
+<script src="http://code.jquery.com/jquery-1.10.2.js">
+</script>
+<script type="text/javascript">
+$(document).ready(function(){
+	// 초기 h1만 이벤트가 발생..
+	// append()나 html()로 추가되는 tag에 대해서는 event 발생하지 않음.
+	$("h1").on("click",function(){
+		var len=$("h1").length;
+		
+		$("#wrap").append("<h1>길이:"+len+"-오후와 함께</h1>");
+		
+	});
+	// jquery 1.9버전 이전
+	// $(객체).bind(현재존재객체만..);
+	// $(객체).delegate(현재/미래 존재객체만..);
+	// $(객체).live(현재/미래 존재객체만)
+	
+	// jquery-1.10.2.js
+	// $(객체).on(이벤트, 추가될 내용포함tag, 처리할 함수..)
+	$("#wrap2").on("click","h2",function(){
+		var len=$("h2").length;
+		$('#wrap2').append("<h2>길이:"+len+"-즐거운 오후와 함께</h2>");	
+	});	
+});
+</script>
+</head>
+<body><div id="wrap"><h1>잘자라!! 오후와 함께 하는...~~</h1></div>
+	<div id="wrap2"><h2>즐거운 오후와 함께 하는...~~</h2></div>
+</body>
+</html>

@@ -1,16 +1,16 @@
 package javaexp.a06_object.access.room02;
 
 import javaexp.a06_object.access.room01.Woman;
-// class Á¢±ÙÁ¦¾î°¡ public ¾Æ´Ï±â¿¡ ¼±¾ğÁ¶Â÷µµ
-// ¿ÜºÎÆĞÅ°Áö¿¡¼­ ÇÒ ¼ö ¾ø´Ù.
+// class ì ‘ê·¼ì œì–´ê°€ public ì•„ë‹ˆê¸°ì— ì„ ì–¸ì¡°ì°¨ë„
+// ì™¸ë¶€íŒ¨í‚¤ì§€ì—ì„œ í•  ìˆ˜ ì—†ë‹¤.
 //import javaexp.a06_object.access.room01.Person;
 
 public class Calling {
-	// import¸¸ ÇØÁÖ¸é ¼±¾ğÀÌ °¡´ÉÇÔ..
-	// class Á¢±ÙÁ¦¾îÀÚ public
+	// importë§Œ í•´ì£¼ë©´ ì„ ì–¸ì´ ê°€ëŠ¥í•¨..
+	// class ì ‘ê·¼ì œì–´ì public
 	Woman w;
-	// class Á¢±ÙÁ¦¾î°¡ public ¾Æ´Ï±â¿¡ ¼±¾ğÁ¶Â÷µµ
-	// ¿ÜºÎÆĞÅ°Áö¿¡¼­ ÇÒ ¼ö ¾ø´Ù.	
+	// class ì ‘ê·¼ì œì–´ê°€ public ì•„ë‹ˆê¸°ì— ì„ ì–¸ì¡°ì°¨ë„
+	// ì™¸ë¶€íŒ¨í‚¤ì§€ì—ì„œ í•  ìˆ˜ ì—†ë‹¤.	
 //	Person p;
 	
 

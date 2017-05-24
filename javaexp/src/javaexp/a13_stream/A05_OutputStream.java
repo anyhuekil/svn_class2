@@ -6,13 +6,13 @@ public class A05_OutputStream {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-//		System.out: ÀÚ¹Ù¿¡¼­ Áö¿øÇÏ´Â Ãâ·Â ±âº»°´Ã¼
-//		println() : È­¸é¿¡ Ãâ·ÂÃ³¸®¸Ş¼­µå
+//		System.out: ìë°”ì—ì„œ ì§€ì›í•˜ëŠ” ì¶œë ¥ ê¸°ë³¸ê°ì²´
+//		println() : í™”ë©´ì— ì¶œë ¥ì²˜ë¦¬ë©”ì„œë“œ
 //
 		String fileName="C:/a01_prog/eclipse/workspace_server/javaexp/src/javaexp/a13_stream/test01.txt";
 		try {
 			OutputStream os = new FileOutputStream(fileName);
-			// ÆÄÀÏ¿¡ Ãâ·ÂÇÒ ¹®ÀÚ¿­ ÁöÁ¤..
+			// íŒŒì¼ì— ì¶œë ¥í•  ë¬¸ìì—´ ì§€ì •..
 			byte[] data = "Good! Man2".getBytes();
 			for(byte b:data){
 				os.write(b);

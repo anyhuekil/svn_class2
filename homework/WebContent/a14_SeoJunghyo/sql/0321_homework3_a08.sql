@@ -1,6 +1,6 @@
-/* °úÁ¦(homework)
- outer join, groupÀ» È°¿ëÇÏ¿© ºÎ¼­¸íº° ÀÎ¿øÀ» È®ÀÎÇÏ·Á°í ÇÑ´Ù. ¾Æ·¡ÀÇ Çü½ÄÀ¸·Î Ãâ·ÂÇÏ¼¼¿ä. ÀÎ¿øÀÌ ¾ø´Â °÷Àº 0À¸·Î Ç¥½Ã
- ºÎ¼­¸í ÀÎ¿ø¼ö 
+/* ê³¼ì œ(homework)
+ outer join, groupì„ í™œìš©í•˜ì—¬ ë¶€ì„œëª…ë³„ ì¸ì›ì„ í™•ì¸í•˜ë ¤ê³  í•œë‹¤. ì•„ë˜ì˜ í˜•ì‹ìœ¼ë¡œ ì¶œë ¥í•˜ì„¸ìš”. ì¸ì›ì´ ì—†ëŠ” ê³³ì€ 0ìœ¼ë¡œ í‘œì‹œ
+ ë¶€ì„œëª… ì¸ì›ìˆ˜ 
 */
 
-select d.dname ºÎ¼­¸í, count(e.ename) ÀÎ¿ø¼ö from emp e, dept d where e.deptno(+)=d.deptno group by d.dname;
+select d.dname ë¶€ì„œëª…, count(e.ename) ì¸ì›ìˆ˜ from emp e, dept d where e.deptno(+)=d.deptno group by d.dname;

@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus짰">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+  <script type="text/javascript">
+  <!--
+/* 1. 議곌굔臾?: ?곗씠?곗쓽 ?댁슜???곕씪 議곌굔?곗궛?먮? 留뚮뱾怨?
+      議곌굔?곗궛?먯쓽 true/false???곕씪 ?ㅻⅨ ?꾨줈?몄뒪瑜?媛寃?
+      留뚮뱶??寃껋쓣 留먰븳??
+   2. ?뺤떇
+    1) if(議곌굔?곗궛??{
+            ?대떦 議곌굔???? 泥섎━???꾨줈?몄뒪 ?댁슜..
+       }
+*/        
+// ?먯닔媛 60?먯씠?곸씪?? ?⑷꺽 硫붿떆吏泥섎━ 洹몄쇅??遺덊빀寃?
+    var inputPoint=65;
+    var result="遺덊빀寃?;
+    if( inputPoint >= 60 ){
+        result="?⑷꺽";
+    }
+//    alert("?띾뱷?먯닔:"+inputPoint+"\n寃곌낵:"+result);
+/*
+    吏??諛곗슫 ?⑥닔 :
+        confirm() : true/false
+        prompt() : null/?낅젰??媛?.
+
+*/
+/*
+    
+*/  
+    var msg = "?⑷꺽?대㈃ ?뺤씤踰꾪듉??n 遺덊븰寃⑹씠硫?痍⑥냼踰꾪듉???대┃?섏꽭??";
+    var result="遺덊빀寃⑺븯?⑥뒿?덈떎!";
+    /*
+    var isPass = confirm( msg ); // isPass瑜??ы솢?⑹씠 ?꾩슂????
+    if( isPass ){
+        result="?⑷꺽?섏뀲?듬땲??";
+    }
+    */
+    //alert("true/false"+isPass);
+    //alert("寃곌낵??"+result);
+/* ?뺤씤?덉젣.
+    confirm???쒖슜?섏뿬.. 怨꾩냽 二쇰Ц?щ?瑜?check?섏꽭??.
+    
+    臾쇨굔??援щℓ?섏뀲?듬땲??!!
+    怨꾩냽 援щℓ?섏떆寃좎뒿?덇퉴?
+    - true ==> 臾쇨굔 援щℓ 怨꾩냽?섍쿋?듬땲??
+    - false ==> 媛먯궗?⑸땲??!
+*/
+    var buyMsg="臾쇨굔??援щℓ?섏뀲?듬땲??!!\n怨꾩냽 援щℓ?섏떆寃좎뒿?덇퉴?";
+    var resultMsg="媛먯궗?⑸땲??!";
+    if( confirm( buyMsg ) ){
+        resultMsg="臾쇨굔 援щℓ 怨꾩냽?섍쿋?듬땲??";
+    }
+    alert( resultMsg );
+/*
+    2)if( 議곌굔??{
+        議곌굔?앹씠 true???? 泥섎━???댁슜.
+      }else{
+        議곌굔?앹씠 false???? 泥섎━???댁슜.
+      }
+    if else臾몄? 踰붿쐞瑜?吏?뺥븯??泥섎━???꾩슂媛 ?덉쓣 ?? 二쇰줈 ?쒖슜?쒕떎.
+*/
+/*  泥?냼???좎씤 ?붽툑 吏?먯뿬遺 泥섎━..
+    8~18源뚯? 泥?냼???붽툑??吏??
+    洹몄쇅???대떦?ы빆 ?놁쓬..
+*/
+    var age = 10;
+    if( age>=8 && age<=18 ){
+ //       alert("泥?냼???좎씤 ?붽툑 吏??");
+    }else{
+//        alert("?대떦 ?섏씠??泥?냼???좎씤 ?붽툑??n 吏?먰븯吏 ?딆뒿?덈떎");
+    }
+/*  prompt("硫붿떆吏","default?낅젰媛?); 
+      ?뺤씤 : ?낅젰??臾몄옄??
+      痍⑥냼 : null??泥섎━..
+*/
+/*
+*怨쇱젣 怨듬갚怨?null 李⑥씠..
+媛??移쒗븳 移쒓뎄 3紐낆쓣 ?낅젰?섏꽭??
+    1. prompt
+    2. prompt
+    3. prompt
+    ?낅젰??媛믪씠 ?놁쓣 ??痍⑥냼瑜??꾨Ⅴ嫄곕굹, 媛믪쓣 ?낅젰?섏? ?딆?
+       ?곹깭濡??뺤씤???대┃??
+    ?낅젰??媛믪씠 ?놁뒿?덈떎! ?쇰뒗 硫붿떆吏瑜?異쒕젰.. 
+    寃곌낵媛?
+        媛??移쒗븳 移쒓뎄 list
+        1. @@@@
+        2. @@@
+        3. ?낅젰??媛믪씠 ?놁뒿?덈떎.
+*/
+    var inputMsg ="媛??移쒗븳 移쒓뎄 3紐낆쓣 ?낅젰?섏꽭??";
+ //   alert( inputMsg );
+    var number=1;
+    var friend01=prompt( ( number++ )+"踰덉㎏ 移쒓뎄瑜??낅젰?섏꽭??,"");
+    // 痍⑥냼瑜??꾨Ⅴ嫄곕굹 ?낅젰媛믪씠 ?녾퀬 ?뺤씤???대┃??.
+    if( friend01 ==null || friend01==""){
+        alert("?낅젰??媛믪씠 ?놁뒿?덈떎! ");
+        friend01="?낅젰??媛믪씠 ?놁뒿?덈떎! "
+    }else{ alert("?뺤긽?낅젰 ?꾨즺");     }
+    var friend02=prompt( ( number++ )+"踰덉㎏ 移쒓뎄瑜??낅젰?섏꽭??,""); if( friend02 ==null || friend02==""){
+        alert("?낅젰??媛믪씠 ?놁뒿?덈떎! ");
+        friend02="?낅젰??媛믪씠 ?놁뒿?덈떎! "
+    }else{ alert("?뺤긽?낅젰 ?꾨즺");     }
+    var friend03=prompt( ( number )+"踰덉㎏ 移쒓뎄瑜??낅젰?섏꽭??,"");  if( friend03 ==null || friend03==""){
+        alert("?낅젰??媛믪씠 ?놁뒿?덈떎! ");
+        friend03="?낅젰??媛믪씠 ?놁뒿?덈떎! "
+    }else{ alert("?뺤긽?낅젰 ?꾨즺");     }
+    number=1;
+    var friendList="\t媛??移쒗븳 移쒓뎄 list\n";
+    // += : ?꾩쟻泥섎━ 臾몄옄???꾩쟻, ?レ옄 ?꾩쟻?㏃뀍
+    //   1. @@@@
+    friendList += (number++)+". "+friend01+"\n";
+    friendList += (number++)+". "+friend02+"\n";
+    friendList += (number++)+". "+friend03+"\n";
+//    alert( friendList );
+/* ?뺤씤?덉젣..
+    吏곴툒???곕씪 蹂대꼫?ㅻ? ?ㅻⅤ寃?泥섎━?섎뒗 ?꾨줈洹몃옩??留뚮뱾?ㅺ퀬 ?쒕떎.
+    ?낅젰媛?prompt 吏곴툒:?ъ옣, ?댁궗, 遺?? 李⑥옣, 怨쇱옣, ?由? ?ъ썝
+                蹂대꼫??  0%   10%,  30%,  25%,  20%,  15%   10%
+           吏곴툒???대떦?섏? ?딅뒗 ?곗씠??: ?섎せ???곗씠???낅젰?낅땲??
+           null?닿굅?? 怨듬갚????: 吏곴툒???낅젰?섏뀛???⑸땲??
+    珥덇린 硫붿떆吏 : 吏곴툒???낅젰?섏꽭??.
+    異쒕젰 ?댁슜 : 吏곴툒? @@@ ?닿퀬, 蹂대꼫?ㅻ뒗 @@ %?낅땲??
+*/
+    var workerGrade=prompt("吏곴툒???낅젰?섏꽭??","");
+    var msg ="吏곴툒???낅젰?섏꽭??.";
+    var incentive=0;
+    if( workerGrade == "?댁궗" ||
+        workerGrade == "遺?? ||
+        workerGrade == "李⑥옣" ||
+        workerGrade == "怨쇱옣" ||
+        workerGrade == "?由? ||
+        workerGrade == "?ъ썝" ){ 
+        if( workerGrade == "?댁궗" ) incentive= 10;
+        if( workerGrade == "遺?? ) incentive= 30;
+        if( workerGrade == "李⑥옣" ) incentive= 25;
+        if( workerGrade == "怨쇱옣" ) incentive= 20;
+        if( workerGrade == "?由? ) incentive= 15;
+        if( workerGrade == "?ъ썝" ) incentive= 10;
+
+        msg ="吏곴툒? "+workerGrade+"?닿퀬, 蹂대꼫?ㅻ뒗 "+incentive+ " %?낅땲??";
+    }else{
+        msg="?섎せ???곗씠???낅젰?낅땲??";    
+    }
+    alert(msg);
+
+
+
+
+
+
+
+
+
+
+
+  //-->
+  </script>
+ </head>
+ <body>
+  
+ </body>
+</html>

@@ -15,9 +15,9 @@ class Patient extends Thread{
 class Exam{
 	synchronized void proc(){
 		for(int prcCnt=1;prcCnt<=10;prcCnt++){
-			System.out.print(" º´¿ø¿¡¼­ ");
+			System.out.print(" ë³‘ì›ì—ì„œ ");
 					System.out.print(prcCnt);
-							System.out.println("´Ü°è Á¶Ä¡¸¦ ÇÏ¿´½À´Ï´Ù.");
+							System.out.println("ë‹¨ê³„ ì¡°ì¹˜ë¥¼ í•˜ì˜€ìŠµë‹ˆë‹¤.");
 		}		
 	}	
 }
@@ -25,9 +25,9 @@ public class A03_priority {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		Patient[] arr={new Patient("Ä¡°úÈ¯ÀÚ"),new Patient("ÀÏ¹ÝÈ¯ÀÚ"),
-				new Patient("ÀÀ±ÞÈ¯ÀÚ")};
-		// ÇØ´ç ¾²·¹µå¿¡ ´ëÇÑ ¿ì¼±¼øÀ§¸¦ ³ôÀÌ Ã³¸®..
+		Patient[] arr={new Patient("ì¹˜ê³¼í™˜ìž"),new Patient("ì¼ë°˜í™˜ìž"),
+				new Patient("ì‘ê¸‰í™˜ìž")};
+		// í•´ë‹¹ ì“°ë ˆë“œì— ëŒ€í•œ ìš°ì„ ìˆœìœ„ë¥¼ ë†’ì´ ì²˜ë¦¬..
 		arr[2].setPriority(10);
 		for(Patient p:arr){
 			p.start();

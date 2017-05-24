@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+/*
+
+*/
+
+/**/
+</style>
+<script src="http://code.jquery.com/jquery-1.10.2.js">
+</script>
+<script type="text/javascript">
+$(document).ready(function(){
+
+});
+function ChildFriends(friend1,friend2,friend3){
+	this.friend1=friend1;   // this.friends= arguments; // 배열로 할당..
+	this.friend2=friend2;
+	this.friend3=friend3;
+	this.show=function(){
+		console.log("  ## 추억의 친구들 ##");
+		console.log(this.friend1+","+this.friend2+","+this.friend3);
+	};
+}
+var fri_Group01 = new ChildFriends("오광희","진재형","박달수");
+var fri_Group02 = new ChildFriends("김성철","박희관","오새영");
+fri_Group01.show();
+fri_Group02.show();
+
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

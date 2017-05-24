@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+/*
+
+*/
+
+/**/
+</style>
+<script src="http://code.jquery.com/jquery-1.10.2.js">
+</script>
+<script type="text/javascript">
+$(document).ready(function(){
+	$("td").each(function(){
+		// $(this) : td의 단위 객체
+		// td 중에 class가 ckcls인것은..
+		if( $(this).is(".ckcls") ){
+			$(this).css("background","orange");
+		}		
+	});
+});
+</script>
+</head>
+<body>
+	<table width="300"  align="center" border>
+		<tr><th>NO</th><th>이름</th><th>포인트 점수</th></tr>
+		<tr><td>1</td><td class="ckcls">홍길동</td>
+					  <td >3000점</td></tr>
+		<tr><td>2</td><td class="ckcls">김길동</td><td >5000점</td></tr>
+		<tr><td>3</td><td >신길동</td><td class="ckcls">7000점</td></tr>
+	</table>
+</body>
+</html>

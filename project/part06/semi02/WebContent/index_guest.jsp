@@ -1,9 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
-	pageEncoding="EUC-KR"
+	pageEncoding="EUC-KR"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<fmt:requestEncoding value="EUC-KR" />
+<c:set var="path" value="${pageContext.request.contextPath}" />
 	
 	
-	
-	%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -74,16 +76,17 @@
 				</div>
 				<div class="modal-body">
 					<form method="post" action="login.jsp">
+					<input type="hidden" name="proc" value="login"/>
 						<div class="form-group row">
 							<div class="col-md-offset-2 col-md-8">
 								<label for="inputId">ID</label> <input type="text"
-									class="form-control" id="inputId" placeholder="ID">
+									class="form-control" id="inputId" name="inputId" placeholder="ID">
 							</div>
 						</div>
 						<div class="form-group row">
 							<div class="col-md-offset-2 col-md-8">
 								<label for="inputPass">Password</label> <input
-									type="password" class="form-control" id="inputPass"
+									type="password" class="form-control" id="inputPass" name="inputPass"
 									placeholder="Password">
 							</div>
 						</div>
@@ -92,7 +95,7 @@
 					</form>
 				</div>
 				<div class="modal-footer">
-					<button type="button" class="btn btn-primary">Register</button>
+					<button type="button" class="btn btn-primary" onclick="$('#regModal').modal('show')">Register</button>
 					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 				</div>
 			</div>
@@ -112,51 +115,52 @@
 						pentAcorn</h4>
 				</div>
 				<div class="modal-body">
-					<form>
+					<form action="login.jsp">
+					<input type="hidden" name="proc" value="register"/>
 						<div class="row">
 							<div class="col-md-offset-2 col-md-5">
-								<label for="inputIdReg">ID</label>
+								<label for="idReg">ID</label>
 							</div>
 							<div>
 								<div class="col-md-5 col-md-offset-2">
-									<input type="text" class="form-control" id="inputIdReg"
+									<input type="text" class="form-control" id="idReg" name="idReg"
 										placeholder="ID">
 								</div>
-								<button class="btn btn-default col-md-2" type="button">Áßº¹
-									È®ÀÎ</button>
+								<button class="btn btn-default col-md-2" type="button">ì¤‘ë³µ
+									í™•ì¸</button>
 							</div>
 
 						</div>
 						<div class="row">
 							<div class="form-group col-md-offset-2 col-md-7">
-								<label for="inputPasswordReg">Password</label> <input
-									type="password" class="form-control" id="inputPasswordReg"
+								<label for="passReg">Password</label> <input
+									type="password" class="form-control" id="passReg" name="passReg"
 									placeholder="Password">
 							</div>
 						</div>
 						<div class="row">
 							<div class="form-group col-md-offset-2 col-md-7">
-								<label for="inputConfirmPassReg">Password È®ÀÎ</label> <input
-									type="password" class="form-control" id="inputConfirmPassReg"
-									placeholder="Password È®ÀÎ">
+								<label for="comfirmPassReg">Password í™•ì¸</label> <input
+									type="password" class="form-control" id="comfirmPassReg" name="comfirmPassReg"
+									placeholder="Password í™•ì¸">
 							</div>
 						</div>
 						<div class="row">
 							<div class="form-group col-md-offset-2 col-md-7">
-								<label for="inputName">ÀÌ¸§</label> <input type="text"
-									class="form-control" id="inputName" placeholder="ÀÌ¸§">
+								<label for="nameReg">ì´ë¦„</label> <input type="text"
+									class="form-control" id="nameReg" name="nameReg" placeholder="ì´ë¦„">
 							</div>
 						</div>
 						<div class="row">
 							<div class="form-group col-md-offset-2 col-md-7">
-								<label for="inputAddr">ÁÖ¼Ò</label> <input type="text"
-									class="form-control" id="inputAddr" placeholder="ÁÖ¼Ò">
+								<label for="emailReg">ì£¼ì†Œ</label> <input type="text"
+									class="form-control" id="emailReg" name="emailReg" placeholder="ì£¼ì†Œ">
 							</div>
 						</div>
 						<div class="row">
 							<div class="form-group col-md-offset-2 col-md-7">
-								<label for="inputTel">¿¬¶ôÃ³</label> <input type="text"
-									class="form-control" id="inputTel" placeholder="¿¬¶ôÃ³">
+								<label for="telReg">ì—°ë½ì²˜</label> <input type="text"
+									class="form-control" id="telReg" name="telReg" placeholder="ì—°ë½ì²˜">
 							</div>
 						</div>
 						<button type="submit" class="btn btn-primary col-md-offset-5">Register</button>
@@ -183,6 +187,7 @@
 				</div>
 				<div class="modal-body">
 					<form>
+					<input type="hidden" name="proc" value="modify"/>
 						<div class="form-group col-md-offset-2 col-md-7">
 							<label for="inputIdMod">ID</label> <input type="text"
 								class="form-control" id="inputIdMod" placeholder="ID"
@@ -195,21 +200,21 @@
 								placeholder="Password">
 						</div>
 						<div class="form-group col-md-offset-2 col-md-7">
-							<label for="inputConfirmPassMod">Password È®ÀÎ</label> <input
+							<label for="inputConfirmPassMod">Password í™•ì¸</label> <input
 								type="password" class="form-control" id="inputConfirmPassMod"
-								placeholder="Password È®ÀÎ">
+								placeholder="Password í™•ì¸">
 						</div>
 						<div class="form-group col-md-offset-2 col-md-7">
-							<label for="inputNameMod">ÀÌ¸§</label> <input type="text"
-								class="form-control" id="inputNameMod" placeholder="ÀÌ¸§">
+							<label for="inputNameMod">ì´ë¦„</label> <input type="text"
+								class="form-control" id="inputNameMod" placeholder="ì´ë¦„">
 						</div>
 						<div class="form-group col-md-offset-2 col-md-7">
-							<label for="inputAddrMod">ÁÖ¼Ò</label> <input type="text"
-								class="form-control" id="inputAddrMod" placeholder="ÁÖ¼Ò">
+							<label for="inputAddrMod">ì£¼ì†Œ</label> <input type="text"
+								class="form-control" id="inputAddrMod" placeholder="ì£¼ì†Œ">
 						</div>
 						<div class="form-group col-md-offset-2 col-md-7">
-							<label for="inputTelMod">¿¬¶ôÃ³</label> <input type="text"
-								class="form-control" id="inputTelMod" placeholder="¿¬¶ôÃ³">
+							<label for="inputTelMod">ì—°ë½ì²˜</label> <input type="text"
+								class="form-control" id="inputTelMod" placeholder="ì—°ë½ì²˜">
 						</div>
 						<button type="submit" class="btn btn-primary col-md-offset-5">Register</button>
 					</form>
@@ -229,24 +234,24 @@
 		<a id="menu-close" href="#"
 			class="btn btn-light btn-lg pull-right toggle"><i
 			class="fa fa-times"></i></a>
-		<!-- TODO: ·Î±×ÀÎ ½Ã idÃâ·Â, ·Î±×¾Æ¿ô ½Ã '·Î±×ÀÎ ÇØÁÖ¼¼¿ä' ¸Ş¼¼Áö Ãâ·Â  -->
+		<!-- TODO: ë¡œê·¸ì¸ ì‹œ idì¶œë ¥, ë¡œê·¸ì•„ì›ƒ ì‹œ 'ë¡œê·¸ì¸ í•´ì£¼ì„¸ìš”' ë©”ì„¸ì§€ ì¶œë ¥  -->
 		<li class="sidebar-brand"><a href="#top" onclick=$("#menu-close").click();>Wellcome,
-				<%=pid%></a></li>
-		<!-- ·Î±×¾Æ¿ô »óÅÂÀÏ ½Ã hidden -->
-		<li><a href="#portfolio" onclick=$("#menu-close").click();>·Î±×¾Æ¿ô</a>
+				${user.pid }</a></li>
+		<!-- ë¡œê·¸ì•„ì›ƒ ìƒíƒœì¼ ì‹œ hidden -->
+		<li><a onclick=$(location).attr("href","login.jsp?proc=logout");>ë¡œê·¸ì•„ì›ƒ</a>
 		</li>
-		<!-- TODO: ·Î±×ÀÎÀÌ µÇ¾î ÀÖÀ»½Ã hidden  -->
-		<li><a onclick=$("#loginModal").modal("show");>·Î±×ÀÎ</a></li>
-		<!-- TODO: ·Î±×ÀÎÀÌ µÇ¾î ÀÖÀ»½Ã hidden  -->
-		<li><a onclick=$("#regModal").modal("show");>È¸¿ø°¡ÀÔ</a></li>
-		<!-- TODO: ·Î±×¾Æ¿ôÀÌ µÇ¾î ÀÖÀ»½Ã hidden  -->
-		<li><a onclick=$("#modifyModal").modal("show");>È¸¿øÁ¤º¸ ¼öÁ¤</a></li>
+		<!-- TODO: ë¡œê·¸ì¸ì´ ë˜ì–´ ìˆì„ì‹œ hidden  -->
+		<li><a onclick=$("#loginModal").modal("show");>ë¡œê·¸ì¸</a></li>
+		<!-- TODO: ë¡œê·¸ì¸ì´ ë˜ì–´ ìˆì„ì‹œ hidden  -->
+		<li><a onclick=$("#regModal").modal("show");>íšŒì›ê°€ì…</a></li>
+		<!-- TODO: ë¡œê·¸ì•„ì›ƒì´ ë˜ì–´ ìˆì„ì‹œ hidden  -->
+		<li><a onclick=$("#modifyModal").modal("show");>íšŒì›ì •ë³´ ìˆ˜ì •</a></li>
 		<li><br> <br></li>
 		<li><a href="#top" onclick=$("#menu-close").click();>Home</a></li>
-		<li><a href="#search" onclick=$("#menu-close").click();>ÀüÀû °Ë»ö</a>
+		<li><a href="#search" onclick=$("#menu-close").click();>ì „ì  ê²€ìƒ‰</a>
 		</li>
-		<!-- ·Î±×¾Æ¿ô »óÅÂÀÏ ½Ã ¸ÕÀú ·Î±×ÀÎ Ã¢À» ¶ç¿î´Ù. -->
-		<li><a href="#game03" onclick=$("#menu-close").click();>°æ¸¶ ½ÃÀÛ</a></li>
+		<!-- ë¡œê·¸ì•„ì›ƒ ìƒíƒœì¼ ì‹œ ë¨¼ì € ë¡œê·¸ì¸ ì°½ì„ ë„ìš´ë‹¤. -->
+		<li><a href="#game03" onclick=$("#menu-close").click();>ê²½ë§ˆ ì‹œì‘</a></li>
 	</ul>
 	</nav>
 
@@ -254,15 +259,15 @@
 	<div class="text-vertical-center">
 		<h1>
 			Wellcome,
-			<%=pid%></h1>
+			${user.pid}</h1>
 		<h3>
-			ÇöÀç ¼øÀ§:
-			<%=rank%></h3>
+			í˜„ì¬ ìˆœìœ„:
+			??</h3>
 		<h3>
-			ÇöÀç ¼ÒÁö±İ:
-			<%=money%></h3>
-		<br> <a href="#search" class="btn btn-primary btn-lg">³» ÀüÀû
-			È®ÀÎÇÏ±â</a> <br>
+			í˜„ì¬ ì†Œì§€ê¸ˆ:
+			${user.curMoney}</h3>
+		<br> <a href="#search" class="btn btn-primary btn-lg">ë‚´ ì „ì 
+			í™•ì¸í•˜ê¸°</a> <br>
 	</div>
 	</section>
 	<section id="search"> <iframe width="100%" height="1400px"
@@ -280,17 +285,17 @@
 
 <!-- Custom Theme JavaScript -->
 <script type="text/javascript">
-    // ¸Ş´º ´İ±â
+    // ë©”ë‰´ ë‹«ê¸°
     $("#menu-close").click(function(e) {
         e.preventDefault();
         $("#sidebar-wrapper").toggleClass("active");
     });
-    // ¸Ş´º ¿­±â
+    // ë©”ë‰´ ì—´ê¸°
     $("#menu-toggle").click(function(e) {
         e.preventDefault();
         $("#sidebar-wrapper").toggleClass("active");
     });
-    // ½Ì±ÛÆäÀÌÁö ÇØ´ç ¸Ş´º·Î ÀÌµ¿
+    // ì‹±ê¸€í˜ì´ì§€ í•´ë‹¹ ë©”ë‰´ë¡œ ì´ë™
     $(function() {
         $('a[href*=#]:not([href=#],[data-toggle],[data-target],[data-slide])').click(function() {
             if (location.pathname.replace(/^\\/, '') == this.pathname.replace(/^\\/, '') || location.hostname == this.hostname) {

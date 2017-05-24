@@ -1,15 +1,15 @@
 package javaexp.a07_inheritance;
 
 /*
-Zerggling : ÆÄÃæ·ù
+Zerggling : íŒŒì¶©ë¥˜
      
-Larba(ÃÊ±â) : »óÀ§Å¬·¡½º
-	attack() Á¤ÀÇ
-»ó¼Ó¹ŞÀº ÇÏÀ§ °´Ã¼..
-   Dron  attack() ÀçÁ¤ÀÇ ´Ù¸¥ °ø°İ¹æ¹ı
-   Zerggling  attack() ÀçÁ¤ÀÇ ´Ù¸¥ °ø°İ¹æ¹ı
-   Hydrisk   attack() ÀçÁ¤ÀÇ ´Ù¸¥ °ø°İ¹æ¹ı
-»óÀ§..
+Larba(ì´ˆê¸°) : ìƒìœ„í´ë˜ìŠ¤
+	attack() ì •ì˜
+ìƒì†ë°›ì€ í•˜ìœ„ ê°ì²´..
+   Dron  attack() ì¬ì •ì˜ ë‹¤ë¥¸ ê³µê²©ë°©ë²•
+   Zerggling  attack() ì¬ì •ì˜ ë‹¤ë¥¸ ê³µê²©ë°©ë²•
+   Hydrisk   attack() ì¬ì •ì˜ ë‹¤ë¥¸ ê³µê²©ë°©ë²•
+ìƒìœ„..
 Larba l01 = new Dron();  l01.attack();
 Larba l02 = new Zerg();  l02.attack();
 Larba l03 = new Hydrisk();   l03.attack();  
@@ -17,42 +17,42 @@ Larba l03 = new Hydrisk();   l03.attack();
 class Larba{
 	String unitKind;
 	Larba(){
-		unitKind="¶ó¹Ù";
+		unitKind="ë¼ë°”";
 	}
 	public Larba(String unitKind) {
 		this.unitKind = unitKind;
 	}	
 	public void attack(){
-		System.out.println(unitKind+"°¡ °ø°İÀ» ÇÏ´Ù!!");
+		System.out.println(unitKind+"ê°€ ê³µê²©ì„ í•˜ë‹¤!!");
 	}
 }
 class Dron extends Larba{
 	Dron(){
-		super("µå·Ğ");
+		super("ë“œë¡ ");
 	}
-	// attack()À» ÀçÁ¤ÀÇ
+	// attack()ì„ ì¬ì •ì˜
 	public void attack(){
-		System.out.println(unitKind+"°¡ °ø°İ·Â 5·Î °ø°İÇÕ´Ï´Ù.");
+		System.out.println(unitKind+"ê°€ ê³µê²©ë ¥ 5ë¡œ ê³µê²©í•©ë‹ˆë‹¤.");
 	}
 }
 class Zerggling extends Larba{
 	Zerggling(){
-		super("Àú±×¸µ");
+		super("ì €ê·¸ë§");
 	}
-	// attack()À» ÀçÁ¤ÀÇ
+	// attack()ì„ ì¬ì •ì˜
 	public void attack(){
 		System.out.println(unitKind
-				+"°¡ °ø°İ·Â 5·Î ºü¸¥ Á¢±Ù °ø°İÇÕ´Ï´Ù.");
+				+"ê°€ ê³µê²©ë ¥ 5ë¡œ ë¹ ë¥¸ ì ‘ê·¼ ê³µê²©í•©ë‹ˆë‹¤.");
 	}
 }
 class Hydrarisk extends Larba{
 	Hydrarisk(){
-		super("È÷µå¶ó");
+		super("íˆë“œë¼");
 	}
-	// attack()À» ÀçÁ¤ÀÇ
+	// attack()ì„ ì¬ì •ì˜
 	public void attack(){
 		System.out.println(unitKind
-				+"°¡ °ø°İ·Â 10·Î ¹Ì»çÀÏ °ø°İÇÕ´Ï´Ù.");
+				+"ê°€ ê³µê²©ë ¥ 10ë¡œ ë¯¸ì‚¬ì¼ ê³µê²©í•©ë‹ˆë‹¤.");
 	}
 }
 public class A07_star_world_polymor {
@@ -61,7 +61,7 @@ public class A07_star_world_polymor {
 		// TODO Auto-generated method stub
 		Larba l01 = new Larba();
 		l01.attack();
-		// ´ÙÇü¼ºÀÌ ÀÏ¾î³ª ºÎ¸ğÅ¸ÀÔ¿¡ ¸ğµç ÀÚ½Ä °´Ã¼°¡ ´ëÀÔ°¡´É
+		// ë‹¤í˜•ì„±ì´ ì¼ì–´ë‚˜ ë¶€ëª¨íƒ€ì…ì— ëª¨ë“  ìì‹ ê°ì²´ê°€ ëŒ€ì…ê°€ëŠ¥
 		Larba l02 = new Dron();
 		Larba l03 = new Zerggling();
 		Larba l04 = new Hydrarisk();

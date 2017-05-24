@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+/*
+
+*/
+
+/**/
+</style>
+<script src="http://code.jquery.com/jquery-1.10.2.js">
+</script>
+<script type="text/javascript">
+$(document).ready(function(){
+
+});
+function chgSome(){
+	// body 태그의 바로 밑에 있는 객체들..
+	$("body > *").css("color","red");
+}
+function chgAttr(){
+	// $("요소[속성=속성값]").val("데이터 할당");
+	$("input[name='id01']").val("비가 올 듯 말듯!! 기분이 좋을 듯 말듯..");
+	// $("요소[속성!=속성값]") : 해당 객체가 아닌 것에 value값을 8888로 입력처리
+	$("input[type!='password']").val("8888");
+
+}
+function filterFun(){
+	alert("성별에 대한 처리 확인!!");
+	// name값으로 gender이 있는 것중에..
+	alert("성별은?"+$("input[name='gender']:checked").val());
+}
+</script>
+</head>
+<body>
+	<input type="button" value="filterData!!" onclick="filterFun()"/><br>
+	남자<input type="radio" name="gender" value="gentlman"/>
+	여자<input type="radio" name="gender" value="lady" checked/><br>
+	<input type="text"  name="id01"/>
+	<input type="password"/>
+	<input type="text"  name="id02"/>
+	<input type="radio"/>
+	<input type="checkbox"/>
+	<input type="file"/><br>
+	<input type="button" value="Shall we change?" onclick="chgAttr()"/>
+	<h1 onclick="javascript:chgSome();">화면 변경</h1>
+	<div style="color:blue;">
+		<ul>
+			<li>사과</li>
+			<li>강아지</li>
+			<li>가방</li>
+			<li>코끼리</li>
+		</ul>
+	</div>
+	
+
+</body>
+</html>

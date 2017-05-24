@@ -4,8 +4,8 @@ public class A05_system {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		// ÀÓÀÇ »óÅÂ°ªÀÌ 5ÀÏ¶§ Á¾·áÇÏ°í.
-		// ±×¿Ü¿¡´Â Security¿¹¿Ü¹ß»ı
+		// ì„ì˜ ìƒíƒœê°’ì´ 5ì¼ë•Œ ì¢…ë£Œí•˜ê³ .
+		// ê·¸ì™¸ì—ëŠ” Securityì˜ˆì™¸ë°œìƒ
 		System.setSecurityManager(new SecurityManager(){
 			@Override
 			public void checkExit(int status) {
@@ -17,13 +17,13 @@ public class A05_system {
 			}		
 		});
 		for(int cnt=0;cnt<=10;cnt++){
-			// count°ª Ãâ·Â
-			System.out.println("Ä«¿îÆ®:"+cnt);
-			// jvm Á¾·á ¿äÃ»
+			// countê°’ ì¶œë ¥
+			System.out.println("ì¹´ìš´íŠ¸:"+cnt);
+			// jvm ì¢…ë£Œ ìš”ì²­
 			try{
 				System.exit(cnt);
 			}catch(SecurityException e){
-				System.out.println("¿¹¿Ü Ã³¸® ¸Ş½ÃÁö:"+e.getMessage());
+				System.out.println("ì˜ˆì™¸ ì²˜ë¦¬ ë©”ì‹œì§€:"+e.getMessage());
 			}
 		}
 		

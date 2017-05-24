@@ -5,26 +5,26 @@ public class A01_basic {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 /* 
-## jvm¸Þ¸ð¸®1
-stack¿µ¿ª°ú heap¿µ¿ª
-stack¿µ¿ª : 
+## jvmë©”ëª¨ë¦¬1
+stackì˜ì—­ê³¼ heapì˜ì—­
+stackì˜ì—­ : 
 	1) primitive data type
-	   ±âº» µ¥ÀÌÅÍÅ¸ÀÔ(Á¤¼ö, ½Ç¼ö, boolean) ÇÒ´ç
-	   º¯¼ö ÀúÀå¿µ¿ª°ú ½ÇÁ¦ µ¥ÀÌÅÍÀÇ ¸Þ¸ð¸® ¿µ¿ªÀÌ µ¿ÀÏ.. 
-		== : ºñ±³¿¬»êÀÚ - ½ÇÁ¦ µ¥ÀÌÅÍ°ªÀ» ÀúÀå¿µ¿ªÀ» È®ÀÎÇÒ¼ö ÀÖ´Ù.
+	   ê¸°ë³¸ ë°ì´í„°íƒ€ìž…(ì •ìˆ˜, ì‹¤ìˆ˜, boolean) í• ë‹¹
+	   ë³€ìˆ˜ ì €ìž¥ì˜ì—­ê³¼ ì‹¤ì œ ë°ì´í„°ì˜ ë©”ëª¨ë¦¬ ì˜ì—­ì´ ë™ì¼.. 
+		== : ë¹„êµì—°ì‚°ìž - ì‹¤ì œ ë°ì´í„°ê°’ì„ ì €ìž¥ì˜ì—­ì„ í™•ì¸í• ìˆ˜ ìžˆë‹¤.
 	2) reference data type
-	  ÂüÁ¶Çü µ¥ÀÌÅÍÅ¸ÀÔ(°´Ã¼, ¹è¿­, ÀÎÅÍÆäÀÌ½º) ÇÒ´ç.
-	  º¯¼ö ÀúÀå¿µ¿ª¿¡´Â ½ÇÁ¦ µ¥ÀÌÅÍ ¸Þ¸ð¸®ÀÇ ÁÖ¼Ò°ªÀ» ÇÒ´çÇÏ°í,
-	  ½ÇÁ¦ µ¥ÀÌÅÍ´Â  heap¿µ¿ª¿¡ ÇÒ´çµÇ´Â °ÍÀ» ¸»ÇÑ´Ù.	
+	  ì°¸ì¡°í˜• ë°ì´í„°íƒ€ìž…(ê°ì²´, ë°°ì—´, ì¸í„°íŽ˜ì´ìŠ¤) í• ë‹¹.
+	  ë³€ìˆ˜ ì €ìž¥ì˜ì—­ì—ëŠ” ì‹¤ì œ ë°ì´í„° ë©”ëª¨ë¦¬ì˜ ì£¼ì†Œê°’ì„ í• ë‹¹í•˜ê³ ,
+	  ì‹¤ì œ ë°ì´í„°ëŠ”  heapì˜ì—­ì— í• ë‹¹ë˜ëŠ” ê²ƒì„ ë§í•œë‹¤.	
 	  javaexp.a05_reference.A01_basic@15db9742
-	  °´Ã¼¸í@heap¿µ¿ªÀÇ ÁÖ¼Ò°ªÀ» 16Áø¼öÄÚµå·Î ÇÒ´ç(JVM¿¡¼­ ÀÚµ¿ÇÒ´ç)
-	  stack¿µ¿ª¿¡´Â 15db9742ÁÖ¼Ò¸¸ ÇÒ´çÇÏ°í, ½ÇÁ¦ A01_basic()´Â
-	  heap¿µ¿ª¿¡ 15db9742ÁÖ¼Ò¿¡ °´Ã¼°¡ ÇÒ´çµÇ¾î ÀÖ´Ù.
-heap ¿µ¿ª
-	  ÂüÁ¶Çü µ¥ÀÌÅÍ°¡ µé¾î°¡´Â ½ÇÁ¦ ¸Þ¸ð¸®·Î stackÀÇ ÁÖ¼Ò°ª¿¡ ÀÇÇØ
-	  È£ÃâµÈ´Ù.
-##¸Þ¼Òµå¿µ¿ª : »ó¼öÇ®, ÇÊµåµ¥ÀÌÅÍ, ¸Þ¼Òµå µ¥ÀÌÅÍ, ¸Þ¼Òµå ÄÚµå, »ý¼ºÀÚ ÄÚµå µî
-     À» ºÐ·ùÇØ¼­ ÀúÀåÇÑ´Ù. jvmÀÌ ½ÃÀÛÇÒ ¶§ »ý¼ºµÇ°í ¸ðµç ½º·¹µå°¡ °øÀ¯ÇÏ´Â ¿µ¿ªÀÌ´Ù.
+	  ê°ì²´ëª…@heapì˜ì—­ì˜ ì£¼ì†Œê°’ì„ 16ì§„ìˆ˜ì½”ë“œë¡œ í• ë‹¹(JVMì—ì„œ ìžë™í• ë‹¹)
+	  stackì˜ì—­ì—ëŠ” 15db9742ì£¼ì†Œë§Œ í• ë‹¹í•˜ê³ , ì‹¤ì œ A01_basic()ëŠ”
+	  heapì˜ì—­ì— 15db9742ì£¼ì†Œì— ê°ì²´ê°€ í• ë‹¹ë˜ì–´ ìžˆë‹¤.
+heap ì˜ì—­
+	  ì°¸ì¡°í˜• ë°ì´í„°ê°€ ë“¤ì–´ê°€ëŠ” ì‹¤ì œ ë©”ëª¨ë¦¬ë¡œ stackì˜ ì£¼ì†Œê°’ì— ì˜í•´
+	  í˜¸ì¶œëœë‹¤.
+##ë©”ì†Œë“œì˜ì—­ : ìƒìˆ˜í’€, í•„ë“œë°ì´í„°, ë©”ì†Œë“œ ë°ì´í„°, ë©”ì†Œë“œ ì½”ë“œ, ìƒì„±ìž ì½”ë“œ ë“±
+     ì„ ë¶„ë¥˜í•´ì„œ ì €ìž¥í•œë‹¤. jvmì´ ì‹œìž‘í•  ë•Œ ìƒì„±ë˜ê³  ëª¨ë“  ìŠ¤ë ˆë“œê°€ ê³µìœ í•˜ëŠ” ì˜ì—­ì´ë‹¤.
      
 	 
  * */
@@ -33,81 +33,81 @@ heap ¿µ¿ª
 		A01_basic  p = new A01_basic();
 		System.out.println(p);
 /*
-¸Þ¸ð¸®ÀÇ ==, != ¿¬»êÀÚ È°¿ë
-	stackÁÖ¼Ò°ª¿¡ ´ëÇÑ ³»¿ëÀ¸·Î
-	 ±âº» µ¥ÀÌÅÍÇüÀÇ °ªÀÌ µ¿ÀÏÇÏ¸é true·Î.
-	 ÂüÁ¶Çüµ¥ÀÌÅÍÀÇ °ªÀº °´Ã¼°¡ µ¿ÀÏÇÏ´õ¶óµµ,
-	 	 heap ¿µ¿ª¿¡ ÂüÁ¶ °´Ã¼°¡ ´Ù¸£¹Ç·Î false°¡ ³ª¿Â´Ù. 
+ë©”ëª¨ë¦¬ì˜ ==, != ì—°ì‚°ìž í™œìš©
+	stackì£¼ì†Œê°’ì— ëŒ€í•œ ë‚´ìš©ìœ¼ë¡œ
+	 ê¸°ë³¸ ë°ì´í„°í˜•ì˜ ê°’ì´ ë™ì¼í•˜ë©´ trueë¡œ.
+	 ì°¸ì¡°í˜•ë°ì´í„°ì˜ ê°’ì€ ê°ì²´ê°€ ë™ì¼í•˜ë”ë¼ë„,
+	 	 heap ì˜ì—­ì— ì°¸ì¡° ê°ì²´ê°€ ë‹¤ë¥´ë¯€ë¡œ falseê°€ ë‚˜ì˜¨ë‹¤. 
  * */		
 		int num01 = 25;
 		int num02 = 25;
-		System.out.println("±âº»µ¥ÀÌÅÍÇü:"+(num01==num02));
+		System.out.println("ê¸°ë³¸ë°ì´í„°í˜•:"+(num01==num02));
 		A01_basic a01 = new A01_basic();
 		A01_basic a02 = new A01_basic();
-		// µ¿ÀÏÇÑ °´Ã¼¸¦ »ý¼ºÇÏ´õ¶óµµ, heap¿µ¿ª¿¡ ´Ù¸¥ À§Ä¡¸¦ ÂüÁ¶ÇÏ±â¿¡
-		// stack¿µ¿ªÀÇ ÁÖ¼Ò°ªÀÌ ´Ù¸£¹Ç·Î false°ªÀÌ ³ª¿Â´Ù.
-		System.out.println("ÂüÁ¶µ¥ÀÌÅÍÇü:"+(a01==a02));
+		// ë™ì¼í•œ ê°ì²´ë¥¼ ìƒì„±í•˜ë”ë¼ë„, heapì˜ì—­ì— ë‹¤ë¥¸ ìœ„ì¹˜ë¥¼ ì°¸ì¡°í•˜ê¸°ì—
+		// stackì˜ì—­ì˜ ì£¼ì†Œê°’ì´ ë‹¤ë¥´ë¯€ë¡œ falseê°’ì´ ë‚˜ì˜¨ë‹¤.
+		System.out.println("ì°¸ì¡°ë°ì´í„°í˜•:"+(a01==a02));
 /*
-null°ªÀÇ ÇÒ´ç!
-½ÇÁ¦ ÂüÁ¶ÇÒ °´Ã¼¸¦ ÇÒ´çÇÏÁö ¾ÊÀ» ¶§, Ã³¸® ºÎºÐ.
-ÀÏ¹ÝÀûÀ¸·Î °´Ã¼¸¦ ÃÊ±âÈ­ÇÒ ¶§, È°¿ëµÈ´Ù.
+nullê°’ì˜ í• ë‹¹!
+ì‹¤ì œ ì°¸ì¡°í•  ê°ì²´ë¥¼ í• ë‹¹í•˜ì§€ ì•Šì„ ë•Œ, ì²˜ë¦¬ ë¶€ë¶„.
+ì¼ë°˜ì ìœ¼ë¡œ ê°ì²´ë¥¼ ì´ˆê¸°í™”í•  ë•Œ, í™œìš©ëœë‹¤.
  * */		
 		A01_basic a03=null;
 		String name=null;
-		System.out.println("ÂüÁ¶°´Ã¼°¡ ¾øÀº ÂüÁ¶º¯¼ö");
+		System.out.println("ì°¸ì¡°ê°ì²´ê°€ ì—†ì€ ì°¸ì¡°ë³€ìˆ˜");
 		System.out.println("a03:"+a03);
 		System.out.println("name:"+name);
-//		int num07=null; ±âº»µ¥ÀÌÅÍÇüÀº ÂüÁ¶ÇüÀÌ ¾Æ´Ï±â¿¡ nullÀ» ÇÒ´çÇÒ ¼ö ¾ø´Ù.
-//	  ÂüÁ¶Çü¿¡ µ¥ÀÌÅÍ¸¦ ÇÒ´çµÇ¾úÀ» ¶§¿Í, ÇÒ´çµÇÁö ¾Ê¾ÒÀ» ¶§, ¿¡·¯¹ß»ýºÎºÐ..
-//		heap¿µ¿ª¿¡ µ¥ÀÌÅÍ°ª Áï, ½ÇÁ¦ °´Ã¼°¡ ÇÒ´çµÇÁö ¾Ê¾Ò±â¿¡..
-//		ÇÏÀ§¿¡ ¸Þ¼Òµå³ª º¯¼ö¸¦ È£ÃâÇÏ¸é NullPointerException  ¹ß»ýÇÑ´Ù.
-		String name02 = "¾È³çÇÏ¼¼¿ä!!!";// new String("¾È³çÇÏ¼¼¿ä!!!")
-		System.out.println("°´Ã¼°¡ ÇÒ´çµÈ °æ¿ì:"+name02.length());
-		// ¹®ÀÚ¿­.length():¹®ÀÚ¿­ÀÇ ±æÀÌ..
-//		System.out.println("°´Ã¼°¡ ÇÒ´çµÇÁö ¾ÊÀº °æ¿ì:"+name.length());
-//		NullPointerException : ÂüÁ¶µÇ´Â °´Ã¼°¡ ¾ø´Âµ¥, ÇØ´ç ÇÏÀ§ ¸Þ¼­µå¸¦ È£Ãâ
-//		                       ÇÏ½Ã¸é!!?? ¾ÊµÇÁÒ!!!
-//		¹è¿­¿¡¼­µµ ÇØ´ç °´Ã¼ÀÇ µ¥ÀÌÅÍ°¡ ÇÒ´çµÇÁö ¾Ê¾ÒÀ» ¶§..
-//		ArrayIndexOutOfBoundsException : ¹è¿­ÀÇ ÇØ´ç ¹üÀ§¿¡ µ¥ÀÌÅÍ°¡ ¾øÀ»À» ³ªÅ¸³¿.
+//		int num07=null; ê¸°ë³¸ë°ì´í„°í˜•ì€ ì°¸ì¡°í˜•ì´ ì•„ë‹ˆê¸°ì— nullì„ í• ë‹¹í•  ìˆ˜ ì—†ë‹¤.
+//	  ì°¸ì¡°í˜•ì— ë°ì´í„°ë¥¼ í• ë‹¹ë˜ì—ˆì„ ë•Œì™€, í• ë‹¹ë˜ì§€ ì•Šì•˜ì„ ë•Œ, ì—ëŸ¬ë°œìƒë¶€ë¶„..
+//		heapì˜ì—­ì— ë°ì´í„°ê°’ ì¦‰, ì‹¤ì œ ê°ì²´ê°€ í• ë‹¹ë˜ì§€ ì•Šì•˜ê¸°ì—..
+//		í•˜ìœ„ì— ë©”ì†Œë“œë‚˜ ë³€ìˆ˜ë¥¼ í˜¸ì¶œí•˜ë©´ NullPointerException  ë°œìƒí•œë‹¤.
+		String name02 = "ì•ˆë…•í•˜ì„¸ìš”!!!";// new String("ì•ˆë…•í•˜ì„¸ìš”!!!")
+		System.out.println("ê°ì²´ê°€ í• ë‹¹ëœ ê²½ìš°:"+name02.length());
+		// ë¬¸ìžì—´.length():ë¬¸ìžì—´ì˜ ê¸¸ì´..
+//		System.out.println("ê°ì²´ê°€ í• ë‹¹ë˜ì§€ ì•Šì€ ê²½ìš°:"+name.length());
+//		NullPointerException : ì°¸ì¡°ë˜ëŠ” ê°ì²´ê°€ ì—†ëŠ”ë°, í•´ë‹¹ í•˜ìœ„ ë©”ì„œë“œë¥¼ í˜¸ì¶œ
+//		                       í•˜ì‹œë©´!!?? ì•Šë˜ì£ !!!
+//		ë°°ì—´ì—ì„œë„ í•´ë‹¹ ê°ì²´ì˜ ë°ì´í„°ê°€ í• ë‹¹ë˜ì§€ ì•Šì•˜ì„ ë•Œ..
+//		ArrayIndexOutOfBoundsException : ë°°ì—´ì˜ í•´ë‹¹ ë²”ìœ„ì— ë°ì´í„°ê°€ ì—†ì„ì„ ë‚˜íƒ€ëƒ„.
 //		System.out.println(args[0]);
 		System.out.println(args.length);
-		// ¹è¿­ °´Ã¼°¡ »ý¼ºµÇÁö ¾Ê¾ÒÀ» ¶§, ÇØ´ç ³»¿ëÀ» È£ÃâÇÏ¸é,  NullPointerException
-		// ¹ß»ý..
+		// ë°°ì—´ ê°ì²´ê°€ ìƒì„±ë˜ì§€ ì•Šì•˜ì„ ë•Œ, í•´ë‹¹ ë‚´ìš©ì„ í˜¸ì¶œí•˜ë©´,  NullPointerException
+		// ë°œìƒ..
 		String names[]=null;
 	//	System.out.println(names[0]);
 /*
- 	String°ªÀÇ ÁÖ¼Ò¿Í ¹®ÀÚ¿­ÀÇ ºñ±³..
- 	1. StringÀº °´Ã¼ÀÌ´Ù..
- 		ÇÏÁö¸¸ ´ëÀÔ¿¬»êÀÚ¿¡ ÀÇÇØ¼­ Á÷Á¢ÀûÀ¸·Î ¹®ÀÚ¿­À» ÇÒ´çÇÏ¸é,
- 		¹®ÀÚ¿­ÀÌ °°Àº °ÍÀº °°Àº ÁÖ¼Ò¿¡ ÇÒ´çÀÌ µÈ´Ù...
+ 	Stringê°’ì˜ ì£¼ì†Œì™€ ë¬¸ìžì—´ì˜ ë¹„êµ..
+ 	1. Stringì€ ê°ì²´ì´ë‹¤..
+ 		í•˜ì§€ë§Œ ëŒ€ìž…ì—°ì‚°ìžì— ì˜í•´ì„œ ì§ì ‘ì ìœ¼ë¡œ ë¬¸ìžì—´ì„ í• ë‹¹í•˜ë©´,
+ 		ë¬¸ìžì—´ì´ ê°™ì€ ê²ƒì€ ê°™ì€ ì£¼ì†Œì— í• ë‹¹ì´ ëœë‹¤...
  		
  * */	
-		String name05 = "ÇÏÀÌ¸Ç";
-		String name06 = "ÇÏÀÌ¸Ç";
+		String name05 = "í•˜ì´ë§¨";
+		String name06 = "í•˜ì´ë§¨";
 		System.out.println(name05 == name06);
 /*
- 	2. °´Ã¼¸¦ ¿øÄ¢ÀûÀ¸·Î´Â  String ÂüÁ¶º¯¼ö= new String(¹®ÀÚ¿­)·Î 
- 	   »ý¼ºÀÌ µÇ¸é, ÀÏ¹ÝÀûÀÎ ÇÁ·¹ÀÓ¿÷³ª, µ¥ÀÌÅÍ ·Îµù¿¡ ÀÇÇØ¼­ Ã³¸® µÇ´Â °ÍÀº
- 	   ³»ºÎÀûÀ¸·Î ÀÌ¿Í °°Àº ¹æ½ÄÀ¸·Î Ã³¸®µÈ´Ù..
- 	   ÀÌ·¸°Ô µÉ ¶§´Â °´Ã¼ÀÇ ¹®ÀÚ¿­ÀÌ °°´õ¶óµµ ´Ù¸¥ ÂüÁ¶º¯¼ö¸¦ È°¿ëÇÏ±â¿¡
- 	   ´Ù¸¥ ÁÖ¼Ò·Î ÇÒ´çµÇ¾î, ÁÖ¼Ò°ª ºñ±³´Â false°ªÀÌ µÈ´Ù.
+ 	2. ê°ì²´ë¥¼ ì›ì¹™ì ìœ¼ë¡œëŠ”  String ì°¸ì¡°ë³€ìˆ˜= new String(ë¬¸ìžì—´)ë¡œ 
+ 	   ìƒì„±ì´ ë˜ë©´, ì¼ë°˜ì ì¸ í”„ë ˆìž„ì›ë‚˜, ë°ì´í„° ë¡œë”©ì— ì˜í•´ì„œ ì²˜ë¦¬ ë˜ëŠ” ê²ƒì€
+ 	   ë‚´ë¶€ì ìœ¼ë¡œ ì´ì™€ ê°™ì€ ë°©ì‹ìœ¼ë¡œ ì²˜ë¦¬ëœë‹¤..
+ 	   ì´ë ‡ê²Œ ë  ë•ŒëŠ” ê°ì²´ì˜ ë¬¸ìžì—´ì´ ê°™ë”ë¼ë„ ë‹¤ë¥¸ ì°¸ì¡°ë³€ìˆ˜ë¥¼ í™œìš©í•˜ê¸°ì—
+ 	   ë‹¤ë¥¸ ì£¼ì†Œë¡œ í• ë‹¹ë˜ì–´, ì£¼ì†Œê°’ ë¹„êµëŠ” falseê°’ì´ ëœë‹¤.
  * */	
-		String name07=new String("È«±æµ¿");
-		String name08=new String("È«±æµ¿");
-		System.out.println(name07==name08);// false°¡ ³ªÅ¸³²..
-/*  ¹®ÀÚ¿­ °´Ã¼¿¡ ´ëÇÑ ºñ±³´Â ¿øÄ¢ÀûÀ¸·Î ¹®ÀÚ¿­ °´Ã¼¿¡¼­ Áö¿øÇÏ´Â
- *  ¸Þ¼­µå(.equals)¸¦ È°¿ëÇØ¼­ Ã³¸®ÇÏ¿©¾ß ÇÑ´Ù.
- *     	¹®ÀÚ¿­º¯¼ö.equals("¹®ÀÚ¿­")
+		String name07=new String("í™ê¸¸ë™");
+		String name08=new String("í™ê¸¸ë™");
+		System.out.println(name07==name08);// falseê°€ ë‚˜íƒ€ë‚¨..
+/*  ë¬¸ìžì—´ ê°ì²´ì— ëŒ€í•œ ë¹„êµëŠ” ì›ì¹™ì ìœ¼ë¡œ ë¬¸ìžì—´ ê°ì²´ì—ì„œ ì§€ì›í•˜ëŠ”
+ *  ë©”ì„œë“œ(.equals)ë¥¼ í™œìš©í•´ì„œ ì²˜ë¦¬í•˜ì—¬ì•¼ í•œë‹¤.
+ *     	ë¬¸ìžì—´ë³€ìˆ˜.equals("ë¬¸ìžì—´")
  * */
 		System.out.println(name07.equals(name08));
-		//¹®ÀÚ¿­ÀÌ °°À» ¶§, true°ªÀÌ Ãâ·ÂµÈ´Ù.
-/* È®ÀÎ¿¹Á¦..
- * args °ªÀ¸·Î   id password
- * args[0] ==> id°ªÀ¸·Î ÇÒ´ç  new String(args[0]);
- * args[1] ==> password°ªÀ¸·Î ÇÒ´ç. new String(args[1]);
- * id´Â himan
- * password´Â 7777
-   ÀÔ·Â¹ÞÀ¸¸é ÀÎÁõ¼º°ø , ¾Æ´Ï¸é ÀÎÁõµÈ °èÁ¤ÀÌ ¾Æ´Õ´Ï´Ù.. 
+		//ë¬¸ìžì—´ì´ ê°™ì„ ë•Œ, trueê°’ì´ ì¶œë ¥ëœë‹¤.
+/* í™•ì¸ì˜ˆì œ..
+ * args ê°’ìœ¼ë¡œ   id password
+ * args[0] ==> idê°’ìœ¼ë¡œ í• ë‹¹  new String(args[0]);
+ * args[1] ==> passwordê°’ìœ¼ë¡œ í• ë‹¹. new String(args[1]);
+ * idëŠ” himan
+ * passwordëŠ” 7777
+   ìž…ë ¥ë°›ìœ¼ë©´ ì¸ì¦ì„±ê³µ , ì•„ë‹ˆë©´ ì¸ì¦ëœ ê³„ì •ì´ ì•„ë‹™ë‹ˆë‹¤.. 
  * */		
 		
 	}

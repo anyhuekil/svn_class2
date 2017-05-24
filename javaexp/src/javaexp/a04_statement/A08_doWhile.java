@@ -8,27 +8,27 @@ public class A08_doWhile {
 		// TODO Auto-generated method stub
 /*
 	do{
-		Ã¹¹øÂ° ¶Ç´Â ¹İº¹ÇÒ ±¸¹® Ã³¸®
-	}while(¹İº¹Á¶°Ç);
+		ì²«ë²ˆì§¸ ë˜ëŠ” ë°˜ë³µí•  êµ¬ë¬¸ ì²˜ë¦¬
+	}while(ë°˜ë³µì¡°ê±´);
  * */
 		char choieMenu='Q';
 		String choMenu="";
-		System.out.println("¸Ş´º¸¦ ¼±ÅÃÇÏ¼¼¿ä!(¹øÈ£ÀÔ·Â)");
-		System.out.println("1) Â¥Àå¸é");
-		System.out.println("2) Â«»Í");
-		System.out.println("3) ÅÁ¼öÀ°");
-		System.out.println("Á¾·áÇÏ½Ç·Á¸é Q¸¦ ÀÔ·Â!!");		
+		System.out.println("ë©”ë‰´ë¥¼ ì„ íƒí•˜ì„¸ìš”!(ë²ˆí˜¸ì…ë ¥)");
+		System.out.println("1) ì§œì¥ë©´");
+		System.out.println("2) ì§¬ë½•");
+		System.out.println("3) íƒ•ìˆ˜ìœ¡");
+		System.out.println("ì¢…ë£Œí•˜ì‹¤ë ¤ë©´ Që¥¼ ì…ë ¥!!");		
 		do{
 
 			choieMenu=(char)System.in.read();
-			if(choieMenu=='1') choMenu+="Â¥Àå¸é ¼±ÅÃ!!\n";
-			if(choieMenu=='2') choMenu+="Â«»Í ¼±ÅÃ!!\n";
-			if(choieMenu=='3') choMenu+="ÅÁ¼öÀ° ¼±ÅÃ!!\n";;
+			if(choieMenu=='1') choMenu+="ì§œì¥ë©´ ì„ íƒ!!\n";
+			if(choieMenu=='2') choMenu+="ì§¬ë½• ì„ íƒ!!\n";
+			if(choieMenu=='3') choMenu+="íƒ•ìˆ˜ìœ¡ ì„ íƒ!!\n";;
 			
 		}while(choieMenu!='Q');
-			System.out.println("ÁÖ¹®µÈ ³»¿ë");
+			System.out.println("ì£¼ë¬¸ëœ ë‚´ìš©");
 			System.out.println(choMenu);
-			System.out.println("ÁÖ¹® ¿Ï·á!!!");
+			System.out.println("ì£¼ë¬¸ ì™„ë£Œ!!!");
 		}
 
 }

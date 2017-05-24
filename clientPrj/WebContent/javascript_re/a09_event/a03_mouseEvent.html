@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+/*
+
+*/
+td{font-size:20pt;text-align:center;}
+/**/
+</style>
+<script src="http://code.jquery.com/jquery-1.10.2.js">
+</script>
+<script type="text/javascript">
+$(document).ready(function(){
+	
+	var ch01 = document.querySelector("#ch01");
+	var target01 = document.querySelector("#target01");
+	// 해당 객체를 마우스 오버 했을 때..
+	ch01.onmouseover=function(){
+		// 지정된 대상객체의 색상을 변경처리.this.innerHTML : 현재 label
+		document.querySelector("#target01").style.backgroundColor=this.innerHTML;
+	};
+	// 마우스를 벗어 났을 때.. 원복처리..
+	ch01.onmouseout=function(){
+		
+		document.querySelector("#target01").style.backgroundColor="";
+		
+	};	
+});
+</script>
+</head>
+<body><center>
+	<table width="600" height="50" border>
+		<tr>
+			<td id="ch01">red</td>
+			<td>orange</td>
+			<td>yellow</td>
+			<td>green</td>
+			<td>blue</td>
+			<td>navy</td>
+			<td>purple</td>
+		</tr>	 	
+	</table>
+	<br>
+	<div id="target01" style="width:300pt;height:300pt;background:pink;"></div>
+	
+
+
+</center>
+
+</body>
+</html>

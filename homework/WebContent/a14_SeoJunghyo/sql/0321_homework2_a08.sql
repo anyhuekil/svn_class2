@@ -1,8 +1,8 @@
-/* °úÁ¦ (homework )
- ºÎ¼­À§Ä¡º° »ç¿øÀÇ ¼ö¸¦ ¾Æ·¡ Çü½ÄÀ¸·Î Ãâ·ÂÇã¼¼¿ä.
- ºÎ¼­À§Ä¡		»ç¿ø¼ö		
+/* ê³¼ì œ (homework )
+ ë¶€ì„œìœ„ì¹˜ë³„ ì‚¬ì›ì˜ ìˆ˜ë¥¼ ì•„ë˜ í˜•ì‹ìœ¼ë¡œ ì¶œë ¥í—ˆì„¸ìš”.
+ ë¶€ì„œìœ„ì¹˜		ì‚¬ì›ìˆ˜		
 */
-select * from emp e, dept d where e.deptno(+)=d.deptno;           -- dept Å×ÀÌºí deptno 40¿¡´Â ÀüºÎ °ø¹é.
+select * from emp e, dept d where e.deptno(+)=d.deptno;           -- dept í…Œì´ë¸” deptno 40ì—ëŠ” ì „ë¶€ ê³µë°±.
 select d.loc, count(e.ename) from emp e, dept d where e.deptno(+)=d.deptno group by d.loc;   
 select d.loc, count(e.ename) from emp e, dept d where e.deptno=d.deptno group by d.loc;
 
@@ -10,37 +10,37 @@ select d.loc, count(e.ename) from emp e, dept d where e.deptno=d.deptno group by
 
 
 /*
- °úÁ¦(homework)
- student10 ¾ÆÀÌµğ, ÀÌ¸§
- studentPoint ¾ÆÀÌµğ, °ú¸ñ, Á¡¼ö
- gradeCheck ÃÖÀúÁ¡¼ölopoint, ÃÖ°íÁ¡¼öhipoint, ÇĞÁ¡µî±Ş(A~F)
- 1) ¾ÆÀÌµğ¸¦ Á¶ÀÎÇØ¼­(equal join)
- 	ÀÌ¸§ °ú¸ñ Á¡¼ö Ãâ·Â
- 2) Á¡¼ö¸¦ Á¶ÀÎÇØ¼­(not equal join)
- 	°ú¸ñ Á¡¼ö ÇĞÁ¡µî±Ş
- 3) student10 studentPoint gradeCheck Á¶ÀÎÀ» ÇÏ¿©
- 	ÀÌ¸§ °ú¸ñ ÇĞÁ¡µî±Ş	 	
+ ê³¼ì œ(homework)
+ student10 ì•„ì´ë””, ì´ë¦„
+ studentPoint ì•„ì´ë””, ê³¼ëª©, ì ìˆ˜
+ gradeCheck ìµœì €ì ìˆ˜lopoint, ìµœê³ ì ìˆ˜hipoint, í•™ì ë“±ê¸‰(A~F)
+ 1) ì•„ì´ë””ë¥¼ ì¡°ì¸í•´ì„œ(equal join)
+ 	ì´ë¦„ ê³¼ëª© ì ìˆ˜ ì¶œë ¥
+ 2) ì ìˆ˜ë¥¼ ì¡°ì¸í•´ì„œ(not equal join)
+ 	ê³¼ëª© ì ìˆ˜ í•™ì ë“±ê¸‰
+ 3) student10 studentPoint gradeCheck ì¡°ì¸ì„ í•˜ì—¬
+ 	ì´ë¦„ ê³¼ëª© í•™ì ë“±ê¸‰	 	
 */	
 
--- student_info Å×ÀÌºí Á¦ÀÛ ¹× µ¥ÀÌÅÍ ÀÔ·Â
+-- student_info í…Œì´ë¸” ì œì‘ ë° ë°ì´í„° ì…ë ¥
 	
 	create table student_info(
 		ID VARCHAR2(20),
 		NAME VARCHAR2(20)
 		);
 	
-	insert into student_info values('a','¼³¸®');	
-	insert into student_info values('b','ÃÊ¾Æ');	
-	insert into student_info values('c','¼³Çö');	
-	insert into student_info values('d','¼öÁö');	
-	insert into student_info values('e','¼ÖÁö');	
-	insert into student_info values('f','ÇÏ´Ï');	
-	insert into student_info values('g','ÂêÀ§');	
-	insert into student_info values('h','¸ğ¸ğ');	
+	insert into student_info values('a','ì„¤ë¦¬');	
+	insert into student_info values('b','ì´ˆì•„');	
+	insert into student_info values('c','ì„¤í˜„');	
+	insert into student_info values('d','ìˆ˜ì§€');	
+	insert into student_info values('e','ì†”ì§€');	
+	insert into student_info values('f','í•˜ë‹ˆ');	
+	insert into student_info values('g','ì¯”ìœ„');	
+	insert into student_info values('h','ëª¨ëª¨');	
 	select * from student_info;
 	
 	
--- student_point Å×ÀÌºí Á¦ÀÛ ¹× ÀÔ·Â	
+-- student_point í…Œì´ë¸” ì œì‘ ë° ì…ë ¥	
 	
 	create table student_point(
 		ID VARCHAR2(20),
@@ -48,59 +48,59 @@ select d.loc, count(e.ename) from emp e, dept d where e.deptno=d.deptno group by
 		POINT NUMBER
 		);
 	
-	insert into student_point values('a','±¹¾î',100);	
-	insert into student_point values('a','¿µ¾î',70);	
-	insert into student_point values('a','¼öÇĞ',40);	
-	insert into student_point values('b','±¹¾î',40);	
-	insert into student_point values('b','¿µ¾î',60);	
-	insert into student_point values('b','¼öÇĞ',70);	
-	insert into student_point values('c','±¹¾î',100);	
-	insert into student_point values('c','¿µ¾î',70);	
-	insert into student_point values('c','¼öÇĞ',40);	
-	insert into student_point values('d','±¹¾î',50);	
-	insert into student_point values('d','¿µ¾î',60);	
-	insert into student_point values('d','¼öÇĞ',20);
-	insert into student_point values('e','±¹¾î',30);	
-	insert into student_point values('e','¿µ¾î',10);	
-	insert into student_point values('e','¼öÇĞ',60);
-	insert into student_point values('f','±¹¾î',60);	
-	insert into student_point values('f','¿µ¾î',20);	
-	insert into student_point values('f','¼öÇĞ',30);
-	insert into student_point values('g','±¹¾î',60);	
-	insert into student_point values('g','¿µ¾î',30);	
-	insert into student_point values('g','¼öÇĞ',60);
-	insert into student_point values('h','±¹¾î',90);	
-	insert into student_point values('h','¿µ¾î',99);	
-	insert into student_point values('h','¼öÇĞ',80);
+	insert into student_point values('a','êµ­ì–´',100);	
+	insert into student_point values('a','ì˜ì–´',70);	
+	insert into student_point values('a','ìˆ˜í•™',40);	
+	insert into student_point values('b','êµ­ì–´',40);	
+	insert into student_point values('b','ì˜ì–´',60);	
+	insert into student_point values('b','ìˆ˜í•™',70);	
+	insert into student_point values('c','êµ­ì–´',100);	
+	insert into student_point values('c','ì˜ì–´',70);	
+	insert into student_point values('c','ìˆ˜í•™',40);	
+	insert into student_point values('d','êµ­ì–´',50);	
+	insert into student_point values('d','ì˜ì–´',60);	
+	insert into student_point values('d','ìˆ˜í•™',20);
+	insert into student_point values('e','êµ­ì–´',30);	
+	insert into student_point values('e','ì˜ì–´',10);	
+	insert into student_point values('e','ìˆ˜í•™',60);
+	insert into student_point values('f','êµ­ì–´',60);	
+	insert into student_point values('f','ì˜ì–´',20);	
+	insert into student_point values('f','ìˆ˜í•™',30);
+	insert into student_point values('g','êµ­ì–´',60);	
+	insert into student_point values('g','ì˜ì–´',30);	
+	insert into student_point values('g','ìˆ˜í•™',60);
+	insert into student_point values('h','êµ­ì–´',90);	
+	insert into student_point values('h','ì˜ì–´',99);	
+	insert into student_point values('h','ìˆ˜í•™',80);
 	select * from student_point;					
 
 
--- grade_check Å×ÀÌºí »ı¼º ¹× µ¥ÀÌÅÍ ÀÔ·Â
+-- grade_check í…Œì´ë¸” ìƒì„± ë° ë°ì´í„° ì…ë ¥
 	create table grade_check(
 		lopoint number,
 		hipoint number,
 		grade VARCHAR2(20)
 		);
 	
-	insert into GRADE_CHECK values(90, 100, 'Aµî±Ş');	
-	insert into GRADE_CHECK values(80, 89, 'Bµî±Ş');	
-	insert into GRADE_CHECK values(70, 79, 'Cµî±Ş');	
-	insert into GRADE_CHECK values(60, 69, 'Dµî±Ş');	
-	insert into GRADE_CHECK values(0, 59, 'Fµî±Ş');	
+	insert into GRADE_CHECK values(90, 100, 'Aë“±ê¸‰');	
+	insert into GRADE_CHECK values(80, 89, 'Bë“±ê¸‰');	
+	insert into GRADE_CHECK values(70, 79, 'Cë“±ê¸‰');	
+	insert into GRADE_CHECK values(60, 69, 'Dë“±ê¸‰');	
+	insert into GRADE_CHECK values(0, 59, 'Fë“±ê¸‰');	
 	select * from grade_check;
 
--- 1) ¾ÆÀÌµğ¸¦ Á¶ÀÎÇØ¼­(equal join) ÀÌ¸§ °ú¸ñ Á¡¼ö Ãâ·Â
+-- 1) ì•„ì´ë””ë¥¼ ì¡°ì¸í•´ì„œ(equal join) ì´ë¦„ ê³¼ëª© ì ìˆ˜ ì¶œë ¥
 	select * from student_info, student_point, grade_check;
 	
-	select i.name ÀÌ¸§, p.subject, p.point from student_info i, student_point p where i.id=p.id;
+	select i.name ì´ë¦„, p.subject, p.point from student_info i, student_point p where i.id=p.id;
 
--- 2) Á¡¼ö¸¦ Á¶ÀÎÇØ¼­(not equal join) °ú¸ñ Á¡¼ö ÇĞÁ¡µî±Ş
-	select i.name ÀÌ¸§, p.subject °ú¸ñ, p.point Á¡¼ö, g.grade ÇĞÁ¡µî±Ş from student_info i, student_point p, grade_check g
-		where i.id=p.id and (p.point between g.lopoint and g.hipoint) order by i.id, ÇĞÁ¡µî±Ş; 
+-- 2) ì ìˆ˜ë¥¼ ì¡°ì¸í•´ì„œ(not equal join) ê³¼ëª© ì ìˆ˜ í•™ì ë“±ê¸‰
+	select i.name ì´ë¦„, p.subject ê³¼ëª©, p.point ì ìˆ˜, g.grade í•™ì ë“±ê¸‰ from student_info i, student_point p, grade_check g
+		where i.id=p.id and (p.point between g.lopoint and g.hipoint) order by i.id, í•™ì ë“±ê¸‰; 
 	
-	select i.name ÀÌ¸§, avg(p.point) Æò±ÕÁ¡¼ö from student_info i, student_point p where i.id=p.id group by i.name;
+	select i.name ì´ë¦„, avg(p.point) í‰ê· ì ìˆ˜ from student_info i, student_point p where i.id=p.id group by i.name;
 	
-	select p.id ¾ÆÀÌµğ, p.subject °ú¸ñ, p.point Á¡¼ö, g.grade ÇĞÁ¡µî±Ş, g.lopoint ÃÖ¼ÒÁ¡¼ö, g.hipoint ÃÖ´ëÁ¡¼ö
+	select p.id ì•„ì´ë””, p.subject ê³¼ëª©, p.point ì ìˆ˜, g.grade í•™ì ë“±ê¸‰, g.lopoint ìµœì†Œì ìˆ˜, g.hipoint ìµœëŒ€ì ìˆ˜
 		from student_point p, grade_check g where p.point between g.lopoint and g.hipoint;
 		
 	

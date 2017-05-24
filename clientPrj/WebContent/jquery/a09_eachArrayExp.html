@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+/*
+
+*/
+
+/**/
+</style>
+<script src="http://code.jquery.com/jquery-1.10.2.js">
+</script>
+<script type="text/javascript">
+$(document).ready(function(){
+	var weekplans=[
+		{date:7,time:"19:00",plan:"불타는 금요일 시작!"},
+		{date:8,time:"06:00",plan:"등산!"},
+		{date:8,time:"19:00",plan:"친구와 저녁"},
+	];
+
+	var show="<tr><th>날짜 </th><th>시 간</th><th>계획내용</th></tr>";
+	$.each(weekplans,function(index, item){
+		show+="<tr><td>"+item.date+"</td><td>"+item.time+"</td><td>"+item.plan+"</td></tr>";
+	});
+	$("table").html(show);
+	
+});
+</script>
+</head>
+<body>
+<h1 align="center">This weekend is beautiful!</h1>
+<table width="300pt" align="center" border></table>
+</body>
+</html>

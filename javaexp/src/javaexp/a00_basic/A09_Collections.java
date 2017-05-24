@@ -6,35 +6,35 @@ public class A09_Collections {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-/*  Collection ÀÚ¹Ù¿¡¼­´Â ¿©·¯ ¸Ş¸ğ¸® ±¸Á¶¿¡ ÀÇÇØ
- *   µ¿ÀûÀÎ °´Ã¼°¡ µû·Î Áö¿øÇÑ´Ù.
+/*  Collection ìë°”ì—ì„œëŠ” ì—¬ëŸ¬ ë©”ëª¨ë¦¬ êµ¬ì¡°ì— ì˜í•´
+ *   ë™ì ì¸ ê°ì²´ê°€ ë”°ë¡œ ì§€ì›í•œë‹¤.
  * */
-		// ¹è¿­ÀÌ ÇÑ¹ø ¸¸µé¾î Áö¸é, 
-		// ÀÌ ¹è¿­·Î »õ·Î °´Ã¼³ª º¯¼ö¸¦ Ãß°¡ÇÒ·Á¸é, 
-		// »õ·Î¿î ¹è¿­À» ¼±¾ğÇØ¾ß ÇÏ´Â °íÁ¤ÀûÀÎ Æ¯¼ºÀÌ ¹è¿­¿¡ ÀÖ´Ù.
-		String []names={"È«±æµ¿","±è±æµ¿","½Å±æµ¿"};
-		// µ¿Àû¹è¿­À» À§ÇÏ¿© °´Ã¼°¡ Áö¿øÇÑ´Ù.
-		// 1) ArrayList<Type>    class¸íÀ§¿¡ import java.util.ArrayList;
-		//   ¼±¾ğ.
+		// ë°°ì—´ì´ í•œë²ˆ ë§Œë“¤ì–´ ì§€ë©´, 
+		// ì´ ë°°ì—´ë¡œ ìƒˆë¡œ ê°ì²´ë‚˜ ë³€ìˆ˜ë¥¼ ì¶”ê°€í• ë ¤ë©´, 
+		// ìƒˆë¡œìš´ ë°°ì—´ì„ ì„ ì–¸í•´ì•¼ í•˜ëŠ” ê³ ì •ì ì¸ íŠ¹ì„±ì´ ë°°ì—´ì— ìˆë‹¤.
+		String []names={"í™ê¸¸ë™","ê¹€ê¸¸ë™","ì‹ ê¸¸ë™"};
+		// ë™ì ë°°ì—´ì„ ìœ„í•˜ì—¬ ê°ì²´ê°€ ì§€ì›í•œë‹¤.
+		// 1) ArrayList<Type>    classëª…ìœ„ì— import java.util.ArrayList;
+		//   ì„ ì–¸.
 		ArrayList<String> list = new ArrayList<String>();
-		// add(Ãß°¡°´Ã¼)
-		list.add("»ç°ú");
-		list.add("¹Ù³ª³ª");
-		list.add("µş±â");
-		// .size() :  °´Ã¼ÀÇ Å©±â..
-		// .get(index) : ÇØ´ç °´Ã¼¸¦ °¡Á®¿Å
+		// add(ì¶”ê°€ê°ì²´)
+		list.add("ì‚¬ê³¼");
+		list.add("ë°”ë‚˜ë‚˜");
+		list.add("ë”¸ê¸°");
+		// .size() :  ê°ì²´ì˜ í¬ê¸°..
+		// .get(index) : í•´ë‹¹ ê°ì²´ë¥¼ ê°€ì ¸ì˜®
 		for(int idx=0;idx<list.size();idx++){
 			System.out.println( list.get(idx) );
 		}
-		// .remove(index) : Æ¯Á¤ °´Ã¼¸¦ »èÁ¦ ½ÃÅ´
-		// .set(index, °´Ã¼) : Æ¯Á¤ °´Ã¼¸¦ º¯°æÇÔ..
-		list.remove(0);//Ã¹¹øÂ° °´Ã¼¸¦ »èÁ¦..
-		System.out.println("»èÁ¦ ÈÄ!!!");
+		// .remove(index) : íŠ¹ì • ê°ì²´ë¥¼ ì‚­ì œ ì‹œí‚´
+		// .set(index, ê°ì²´) : íŠ¹ì • ê°ì²´ë¥¼ ë³€ê²½í•¨..
+		list.remove(0);//ì²«ë²ˆì§¸ ê°ì²´ë¥¼ ì‚­ì œ..
+		System.out.println("ì‚­ì œ í›„!!!");
 		for(int idx=0;idx<list.size();idx++){
 			System.out.println( list.get(idx) );
 		}		
-		list.set(1, "¿À·»Áö");//µÎ¹øÂ° °´Ã¼¸¦ ¿À·»Áö·Î º¯°æÇÔ..
-		System.out.println("º¯°æ ÈÄ!!!");
+		list.set(1, "ì˜¤ë Œì§€");//ë‘ë²ˆì§¸ ê°ì²´ë¥¼ ì˜¤ë Œì§€ë¡œ ë³€ê²½í•¨..
+		System.out.println("ë³€ê²½ í›„!!!");
 		for(int idx=0;idx<list.size();idx++){
 			System.out.println( list.get(idx) );
 		}		

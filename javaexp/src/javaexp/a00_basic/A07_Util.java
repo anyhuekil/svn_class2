@@ -7,14 +7,14 @@ import java.util.Random;
 public class A07_Util {
 	public static void main(String args[]){
 		String greet="Hello";
-		// ¹®ÀÚ¿­ ¹Ù²Ş Ã³¸® replace
+		// ë¬¸ìì—´ ë°”ê¿ˆ ì²˜ë¦¬ replace
 		System.out.println(greet.replace('o', 'i'));
-		// substring(ÀÎµ¦½º, ¼ø¼­) : ºÎºĞÃâ·Â..
+		// substring(ì¸ë±ìŠ¤, ìˆœì„œ) : ë¶€ë¶„ì¶œë ¥..
 		System.out.println(greet.substring(2, 4));
-		// length() : ¹®ÀÚ¿­ÀÇ ±æÀÌ Ãâ·Â..
+		// length() : ë¬¸ìì—´ì˜ ê¸¸ì´ ì¶œë ¥..
 		System.out.println(greet.length());
-		// Wrapper Å¬·¡½º
-		// primitive dataÀÇ °´Ã¼È­ ¿©·¯ ±â´É Ã³¸®¸¦ ÇÒ¼ö ÀÖ°Ô µµ¿ÍÁÜ..
+		// Wrapper í´ë˜ìŠ¤
+		// primitive dataì˜ ê°ì²´í™” ì—¬ëŸ¬ ê¸°ëŠ¥ ì²˜ë¦¬ë¥¼ í• ìˆ˜ ìˆê²Œ ë„ì™€ì¤Œ..
 		// int ==> Integer
 		// double ==> Double
 		// char ==> Character
@@ -24,30 +24,30 @@ public class A07_Util {
 		System.out.println(int01.toString());
 		System.out.println(dbl01.doubleValue());
 		System.out.println(c01.toString());
-		/* Random Å¬·¡½º
-		 * ÀÓÀÇÀÇ °ªÀ» ³ªÅ¸³²..
-		 * nextInt(100) : 1ºÎÅÍ 100 ÀÓÀÇÀÇ Á¤¼ö°ª Ãâ·Â..
-		 class¸í À§¿¡.. ¼±¾ğ 
+		/* Random í´ë˜ìŠ¤
+		 * ì„ì˜ì˜ ê°’ì„ ë‚˜íƒ€ë‚¨..
+		 * nextInt(100) : 1ë¶€í„° 100 ì„ì˜ì˜ ì •ìˆ˜ê°’ ì¶œë ¥..
+		 classëª… ìœ„ì—.. ì„ ì–¸ 
 		 import java.util.Random;
-		 import XXX  : Æ¯Á¤ÇÑ ±â´É Å¬·¡½º°¡ ±âº»ÀûÀ¸·Î Áö¿øµÇÁö ¾ÊÀ» ¶§, È°¿ë. 
+		 import XXX  : íŠ¹ì •í•œ ê¸°ëŠ¥ í´ë˜ìŠ¤ê°€ ê¸°ë³¸ì ìœ¼ë¡œ ì§€ì›ë˜ì§€ ì•Šì„ ë•Œ, í™œìš©. 
 		 * */
 		Random ran = new Random();
 		int num = ran.nextInt(100);
-		// Á¤Á¤ÇÕ´Ï´Ù - 0~99
+		// ì •ì •í•©ë‹ˆë‹¤ - 0~99
 		// uniformly distributed int value between 0 
 		// (inclusive) and the specified value (exclusive),
-		System.out.println("0~99 ÀÓÀÇÀÇ °ª:"+num);
+		System.out.println("0~99 ì„ì˜ì˜ ê°’:"+num);
 		float f = ran.nextFloat();
-		System.out.println("0.0ºÎÅÍ 1.0±îÁö ÀÓÀÇÀÇ °ª:"+f);
+		System.out.println("0.0ë¶€í„° 1.0ê¹Œì§€ ì„ì˜ì˜ ê°’:"+f);
 		boolean b = ran.nextBoolean();
-		System.out.println("true/false ÀÓÀÇÀÇ °ª:"+b);
-/*	SimpleDateFormat :  ³¯Â¥¸¦ ¿øÇÏ´Â Çü0½ÄÀ¸·Î Ãâ·ÂÇÒ ¶§, È°¿ëµÈ´Ù..*/
-/*	SimpleDateFormat("yyyy³â  MM¿ù ddÀÏ HH:mm:ss a")
- * 	yyyy : ³âµµ,  MM: ¿ù, dd: ÀÏ   HH:½Ã°£  mm:ºĞ  ss:ÃÊ  a:am/pm Ã³¸®.
+		System.out.println("true/false ì„ì˜ì˜ ê°’:"+b);
+/*	SimpleDateFormat :  ë‚ ì§œë¥¼ ì›í•˜ëŠ” í˜•0ì‹ìœ¼ë¡œ ì¶œë ¥í•  ë•Œ, í™œìš©ëœë‹¤..*/
+/*	SimpleDateFormat("yyyyë…„  MMì›” ddì¼ HH:mm:ss a")
+ * 	yyyy : ë…„ë„,  MM: ì›”, dd: ì¼   HH:ì‹œê°„  mm:ë¶„  ss:ì´ˆ  a:am/pm ì²˜ë¦¬.
  * */		
 		SimpleDateFormat sdf;
-		sdf = new SimpleDateFormat("yyyy³â  MM¿ù ddÀÏ HH:mm:ss a");
-		// .format() :¸Ş¼­µå¸¦ È°¿ëÇØ¼­ ÇöÀç ³¯Â¥¿¡ ´ëÇÑ ³»¿ëÀ» Ã³¸®..
+		sdf = new SimpleDateFormat("yyyyë…„  MMì›” ddì¼ HH:mm:ss a");
+		// .format() :ë©”ì„œë“œë¥¼ í™œìš©í•´ì„œ í˜„ì¬ ë‚ ì§œì— ëŒ€í•œ ë‚´ìš©ì„ ì²˜ë¦¬..
 		String date = sdf.format(new Date());
 		System.out.println(date);
 		

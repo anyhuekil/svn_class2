@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+/*
+
+*/
+
+/**/
+</style>
+<script type="text/javascript">
+	// 조건문
+	// if( 비교 연산자 )
+	if(1111 < 2222){  // 참일 때, 실행..
+		alert("참이라서 기뻐요!!");
+		
+	}
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

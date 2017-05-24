@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+/*
+
+*/
+
+/**/
+</style>
+<script type="text/javascript">
+	// 함수형 객체 선언..
+	function Student(){	
+	}
+	// 함수형 객체 생성 및 호출..
+	// 1. 변수선언..
+	var student01;
+	// 2. 생성자 호출.. new 객체명()
+	//     new 함께 객체명이 있는 것을 생성자라고 한다.
+	student01 = new Student();	
+	// 3. 활용?
+	student01.name="하이맨";		
+	alert(student01.name);
+</script>
+</head>
+<body>
+
+</body>
+</html>

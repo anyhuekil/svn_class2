@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+/*
+
+*/
+
+/**/
+</style>
+<script src="http://code.jquery.com/jquery-1.10.2.js">
+</script>
+<script type="text/javascript">
+$(document).ready(function(){
+
+});
+/*
+ 1. 변수 선언..
+ var 변수명;
+ 2. 데이터할당.
+ 변수명 = 실제데이터;
+ */
+	var name01;
+ 	// 변수명, 식별자 선언 규칙
+ 	// 1. 내장된 키워드를 사용해서는 안 된다.
+ 	//    ex) break, if, for, else 등..
+ 	// 2. 숫자로 시작해서는 안된다.
+ 	//    ex) 1student(X), 23name (X), name01(O), call20(O)
+ 	// 3. 특수 문자는 $, _만 선언할때 활용이 가능하다.
+ 	//    ex) #123(X), %himan(X), good**(X), $number01(O),_name(O))
+ 	// 4. 공백 문자를 포함 할 수 없다.
+ 	//    ex) var good product(X), var list line(X)
+ 	// 식별자를 가독성을 위한 관례
+ 	// 1. 생성자 함수는 항상 대문자로 시작하여 사용한다.
+ 	//    var obj01 = new Product();  - Product
+ 	// 2. 변수, 인스턴스, 함수, 메서드의 이름은 항상 소문자로 시작합니다.
+ 		  var num01=52;
+ 	//	  var obj01 = new Fruit(); // 인스턴스(obj01) - 객체의 참조변수.
+ 	// 3. 여러 단어의 합성어는 식별자의 각 단어의 첫 글자를 대문자로 합니다.
+ 		  var fruitCnt; var personName; var goodPay;
+
+ 	/*
+ 	데이터의 유형..
+ 	1. 문자
+ 	2. 숫자(정수, 실수형)
+ 	3. 객체
+ 	4. 배열..	
+ 	*/		
+ 		var name02="홍길동";
+ 		var name03='신길동'; // "",'' 사이에 데이터를 할당..
+ 		var age = 25;
+ 		var weight= 65.5; // 숫자는 할당하는 순간 데이터 유형이 된다.
+ 		var isTrue=true, isFalse=false; //  boolean 데이터 처리..
+ 		var person={};// 객체형에 대한 선언..초기 type 할당
+ 		person.name="마길동";
+ 		person.age=25; // 이름과 나이 할당..
+ 		// 객체명.속성  지정 및 할당이 가능하고, 재 활용이 가능하다.
+ 		//alert(person.name);
+ 		//alert(person.age);
+ /* 확인예제..
+ 	가지고 있는 책이라는 객체를 선언하고,
+ 	책의 구입시기, 책제목을 속성값으로 하여, alert()으로 출력하세요..
+ */		
+ 		var book={};
+ 		book.buyDays="2017/3/05";
+ 		book.title="정의론";
+ 		//alert(book.buyDays); alert(book.title);
+/*
+활용되는 이스케이프 문자..
+alert()에서, prompt에서 화면 label내용을 처리할 때,
+\n  : 줄바꿈 처리,
+\t  : 탭간격 처리..
+\'  : 작은따옴표 출력
+\"  : 큰따옴표 출력.
+ */ 		
+ 		var show ="안녕하세요!\n오늘의 과제\t @@@?";
+ 		show+="\'된장찌개\'입니다..\n";
+ 		show+="\"백종원\"표라서 더 맛있겠죠?";
+ //		alert(show);
+ 		console.log(show); 	
+// 크롬에서 console.log :출력내용 처리 줄바꿈 처리표시..
+// 크롬  --> 메뉴(오른쪽 상단) --> 도구 더보기 --> 개발도구
+/*
+ 숫자 및 연산자..
+ 2532, 433.222
+ +, - , *, /, %(나머지 연산자)
+ 
+ */
+ 	var num01=25;
+ 	var num02=27.5;
+ 	var sum=num01+num02;
+ 	console.log(num01+" + "+num02+" = "+ sum);
+ 	var modSum=25%7;
+ 	console.log(25+" % "+7+" = "+ modSum);
+/* 확인예제..
+ 	변수  appleCnt 25, orangeCnt 72
+ 	사칙연산 및 % 연산 처리 결과를 출력 하세요..
+ 		25 + @@ = @@
+ 		25 - @@ = @@
+ 		25 * @@ = @@
+ 		25 / @@ = @@
+ 		25 % @@ = @@
+ */ 	
+ 	var appleCnt = 25;
+	var oragneCnt = 72;
+	console.log(appleCnt+" + "+oragneCnt+ " = "+(appleCnt+oragneCnt));
+	console.log(appleCnt+" - "+oragneCnt+ " = "+(appleCnt-oragneCnt));
+	console.log(appleCnt+" * "+oragneCnt+ " = "+(appleCnt*oragneCnt));
+	console.log(appleCnt+" / "+oragneCnt+ " = "+(appleCnt/oragneCnt));
+	console.log(appleCnt+" % "+oragneCnt+ " = "+(appleCnt%oragneCnt));
+/*
+ 논리 연산
+ boolean 55>25, 
+ 비교연산자 >=, <=, !=(다르면 true), ==(동일하면 true)
+ if( 비교 연산자 ){
+	 true일 때, 처리
+ }else{
+	 false일 때, 처리	 
+ }
+ */	
+	if(253<25){
+		console.log("253<25 ?"+(253<25));
+	}else{
+		console.log("253<25 ?"+(253<25));		
+	}
+/* 비교연산자와 논리 연산자 혼합 내용
+ 	범위를 지정해서 처리할 때, 필요..
+ 	점수가..60이상이고 100이하면 합격 처리..
+ 	point >= 60   ;110, 1200..포함..
+ 	point <= 100   : 0, 7, 55 포함.
+ 	and 조건으로 두가지 내용을 다 포함한 내용으로 처리..
+ 	&& 기호로 연결 처리..
+ 	if( point >= 60 && point <= 100)
+ 	점수가 0점 미만이거나 100초과인 경우, 유효한범위가 
+ 	아님..
+ 	or조건으로 두가지 조건중 하나만 포함되더라도 처리ㅣ.
+ 	|| 기호로 연결 처리..
+ 	if( point < 0 || point >100 )
+ 	
+ */ 
+ 	var point = 70;
+ 	if( point >= 60 && point <= 100){
+ 		console.log("합격입니다.");
+ 	}
+ 	if( point < 0 || point >100 ){
+ 		console.log("점수의 범위가 유효하지 않습니다.");
+ 	}
+ /*
+ 확인예제..
+ 	구매비용 비교. 2000000이하만 구매가능.
+ 		구매비용 buypoint 
+ 		50000~ 100000 사이일 때, VIP 고객 3%할인
+ 		100000초과 200000 사이일때, VVIP 고객 5%할인
+ 		0미만  이거나 200000 초과시 유효한 비용처리 아님.표시
+ 		
+ */		
+ 		
+ 		
+ 		
+ 		
+ 		
+ 		
+ 		
+ 		
+ 		  
+ 		  
+ 		  
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,7 +1,7 @@
 package javaexp.a07_inheritance;
 
 public class A06_protectedAccess {
-// package javaexp.a07_inheritance.access ÆĞÅ°Áö Âü°í
+// package javaexp.a07_inheritance.access íŒ¨í‚¤ì§€ ì°¸ê³ 
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub

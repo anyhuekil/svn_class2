@@ -9,7 +9,7 @@ class Customer01 implements Runnable {
 	public void run() {
 		// TODO Auto-generated method stub
 		for(int workProc=1;workProc<=10;workProc++){
-			System.out.println(name+" °í°´´ÔÀÌ "+workProc+"¹øÂ° ÀýÂ÷¸¦ Ã³¸®ÇÕ´Ï´Ù!!");
+			System.out.println(name+" ê³ ê°ë‹˜ì´ "+workProc+"ë²ˆì§¸ ì ˆì°¨ë¥¼ ì²˜ë¦¬í•©ë‹ˆë‹¤!!");
 		}		
 	}	
 }
@@ -25,11 +25,11 @@ class Customer02 implements Runnable{
 	@Override
 	public void run() {
 		// TODO Auto-generated method stub
-		String []prc={"·Î±×ÀÎ","°èÁ¤È®ÀÎ","¹°°Ç±¸¸Å",
-				    "Àå¹Ù±¸´ÏÈ®ÀÎ","°áÀç","¹è¼ÛÃ³¸®","·Î±×¾Æ¿ô"};
+		String []prc={"ë¡œê·¸ì¸","ê³„ì •í™•ì¸","ë¬¼ê±´êµ¬ë§¤",
+				    "ìž¥ë°”êµ¬ë‹ˆí™•ì¸","ê²°ìž¬","ë°°ì†¡ì²˜ë¦¬","ë¡œê·¸ì•„ì›ƒ"};
 		for(int  prodIdx=0;prodIdx<prc.length;prodIdx++){
-			System.out.println(name+" °í°´´ÔÀÌ "+(prodIdx+1)+"¹øÂ° ÀýÂ÷ "
-					+prc[prodIdx]+"¸¦ Ã³¸®ÇÕ´Ï´Ù!!");
+			System.out.println(name+" ê³ ê°ë‹˜ì´ "+(prodIdx+1)+"ë²ˆì§¸ ì ˆì°¨ "
+					+prc[prodIdx]+"ë¥¼ ì²˜ë¦¬í•©ë‹ˆë‹¤!!");
 		}		
 	}	
 }
@@ -37,8 +37,8 @@ public class A02_basicExp {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		Customer01[] arrayCus={new Customer01("ÀÌÁ¤¹Î"),
-						new Customer01("¿Àµ¿¼ö"),new Customer01("ÀÌ¹Ì¿µ")};
+		Customer01[] arrayCus={new Customer01("ì´ì •ë¯¼"),
+						new Customer01("ì˜¤ë™ìˆ˜"),new Customer01("ì´ë¯¸ì˜")};
 		Thread t=null;
 		for(Customer01 cus:arrayCus){
 			t= new Thread(cus);
@@ -47,8 +47,8 @@ public class A02_basicExp {
 		
 		
 		
-		Customer02[] arrayCus2={new Customer02("ÀÌÁ¤¹Î"),
-				new Customer02("¿Àµ¿¼ö"),new Customer02("ÀÌ¹Ì¿µ")};
+		Customer02[] arrayCus2={new Customer02("ì´ì •ë¯¼"),
+				new Customer02("ì˜¤ë™ìˆ˜"),new Customer02("ì´ë¯¸ì˜")};
 		Thread t2=null;
 		for(Customer02 cus:arrayCus2){
 			t2= new Thread(cus);

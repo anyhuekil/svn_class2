@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+/*
+
+*/
+	.reverse{
+		background:blue;
+		color:yellow;
+	}
+/**/
+</style>
+<script src="http://code.jquery.com/jquery-1.10.2.js">
+</script>
+<script type="text/javascript">
+$(document).ready(function(){
+	// $("객체").hover(마우스오버시, 마우시 아웃시);
+	$("h1").hover(function(){
+		$(this).addClass("reverse");
+	}, function(){
+		$(this).removeClass("reverse");
+	});
+});
+</script>
+</head>
+<body>
+	<h1>후보들 토론회서 드러난 '아킬레스건' - 개선책 마련부심</h1>
+	<h1>대선 후보들, 토론회 대체로 아쉬움 드러내</h1>
+	<h1>안 토론서 '갑철수.MB아바타'발언 잘했나? 평가 엇갈려</h1>
+	<h1>후보들 토론회서 드러난 '아킬레스건' - 개선책 마련부심</h1>
+	<h1>후보들 토론회서 드러난 '아킬레스건' - 개선책 마련부심</h1>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+/*
+
+*/
+
+/**/
+</style>
+<script src="http://code.jquery.com/jquery-1.10.2.js">
+</script>
+<script type="text/javascript">
+$(document).ready(function(){
+
+});
+// window.open("url/file명","이름","옵션(옵션1=옵션1값,)")
+function openWin(){
+	window.open("http://www.naver.com","win01","width=600,height=300");
+}
+function openWin2(){
+	// 사용자 정의로 화면이 나타나는 창 열기(script)
+	var winname = window.open("","","width=300, height=200");
+	// 윈도이름.document.... --화면을 script로 나타낸다.
+	winname.document.write("<h1 align='center'>@@@ 창을 열고 등장</h1>");
+}
+</script>
+</head>
+<body>
+<h1 align="center"  onclick="javascript:openWin();">창 문을 열어다오!!!(네이버)</h1>
+<h1 align="center"  onclick="javascript:openWin2();">내 안에 창!! 열기</h1>
+</body>
+</html>

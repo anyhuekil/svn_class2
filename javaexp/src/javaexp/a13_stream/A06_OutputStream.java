@@ -8,11 +8,11 @@ public class A06_OutputStream {
 		// TODO Auto-generated method stub
 		InputStream is = System.in;
 		
-		System.out.println("ÆÄÀÏ¿¡ ÀúÀåÇÒ ³»¿ë ÀÔ·Â:");
+		System.out.println("íŒŒì¼ì— ì €ì¥í•  ë‚´ìš© ì…ë ¥:");
 		byte[] inputData=new byte[30];
 		OutputStream os=null;
 		try {
-			// read(byte[], ½ÃÀÛindex, ¸¶Áö¸·index)
+			// read(byte[], ì‹œì‘index, ë§ˆì§€ë§‰index)
 			is.read(inputData, 0, 30-2);
 			
 			String fileName="C:/a01_prog/eclipse/workspace_server/javaexp/src/javaexp/a13_stream/test02.txt";

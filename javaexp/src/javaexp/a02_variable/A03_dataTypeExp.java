@@ -4,19 +4,19 @@ public class A03_dataTypeExp {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		System.out.println("ÇÏ·ç ÁöÃâºñ¿ë list");
+		System.out.println("í•˜ë£¨ ì§€ì¶œë¹„ìš© list");
 		short tranPay=3000;
 		short foodPay=5000;
 		short spFoodPay=2000;
 		int tot=tranPay+foodPay+spFoodPay;
 		float avg=tot/3.0F;
 		boolean isTarget = tot<=10000;
-		System.out.println("±³Åëºñ:"+tranPay+"¿ø");
-		System.out.println("½Äºñ:"+foodPay+"¿ø");
-		System.out.println("´Ù°úºñ:"+spFoodPay+"¿ø");
-		System.out.println("Ç°¸ñº° Æò±Õ ºñ¿ë:"+avg+"¿ø");
-		System.out.println("ÃÑºñ¿ë:"+tot+"¿ø");
-		System.out.println("¸ñÇ¥ºñ¿ë ÃÊ°ú¿©ºÎ:"+isTarget+"(10000ÀÌÇÏ½Ã)");
+		System.out.println("êµí†µë¹„:"+tranPay+"ì›");
+		System.out.println("ì‹ë¹„:"+foodPay+"ì›");
+		System.out.println("ë‹¤ê³¼ë¹„:"+spFoodPay+"ì›");
+		System.out.println("í’ˆëª©ë³„ í‰ê·  ë¹„ìš©:"+avg+"ì›");
+		System.out.println("ì´ë¹„ìš©:"+tot+"ì›");
+		System.out.println("ëª©í‘œë¹„ìš© ì´ˆê³¼ì—¬ë¶€:"+isTarget+"(10000ì´í•˜ì‹œ)");
 	}
 
 }

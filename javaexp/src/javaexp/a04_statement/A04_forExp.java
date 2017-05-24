@@ -4,17 +4,17 @@ public class A04_forExp {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		String []products={"¶ó¸é","ÆÄ","¼Ò°í±â","°úÀÚ"};
+		String []products={"ë¼ë©´","íŒŒ","ì†Œê³ ê¸°","ê³¼ì"};
 		int []prices={5000,2000,22000,4000};
-		System.out.println("###¹°°Ç¸í###");
+		System.out.println("###ë¬¼ê±´ëª…###");
 		for(String product:products){
 			System.out.println(product);
 		}
-		System.out.println("###°¡°İ###");
+		System.out.println("###ê°€ê²©###");
 		for(int price:prices){
 			System.out.println(price);
 		}
-		System.out.println("###¹°°Ç¸í/°¡°İ###");
+		System.out.println("###ë¬¼ê±´ëª…/ê°€ê²©###");
 		for(int idx=0;idx<products.length;idx++){
 			System.out.println(products[idx]+"\t"+prices[idx]);
 		}

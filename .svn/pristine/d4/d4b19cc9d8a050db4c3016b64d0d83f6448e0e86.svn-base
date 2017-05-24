@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+/*
+
+*/
+
+/**/
+</style>
+<script src="http://code.jquery.com/jquery-1.10.2.js">
+</script>
+<script type="text/javascript">
+$(document).ready(function(){
+	$("h1").click(function(){
+		$(this).append("★");		
+	});
+	// 1초마다 정의된 이벤트에 내용 처리.
+	setInterval(function(){
+		$("h1").last().trigger("click");
+		
+	},1000);
+});
+</script>
+</head>
+<body>
+	<h1>Start:</h1>
+	<h1>Start:</h1>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+/*
+
+*/
+
+/**/
+</style>
+<script src="http://code.jquery.com/jquery-1.10.2.js">
+</script>
+<script type="text/javascript">
+$(document).ready(function(){
+	setTimeout(function(){
+		document.getElementsByTagName("h1")[0].innerHTML="로딩5초 후 출력";
+	},5000);
+});
+// setTimeout(함수, 시간); 시간이후에 처리할 내용. 
+setTimeout(function(){
+	alert("3초가 지났습니다.")
+	
+},3000);
+function call(){
+	alert("2초가 지남!!!")		
+}
+// 정의된 함수를 호출 처리..
+setTimeout(call,2000);
+// 2초 후에 call함수 호출, 3초 후에 함수 3초가 지났습니다. 호출..
+
+
+
+
+
+</script>
+</head>
+<body>
+	<h1>시작!!!</h1>
+</body>
+</html>

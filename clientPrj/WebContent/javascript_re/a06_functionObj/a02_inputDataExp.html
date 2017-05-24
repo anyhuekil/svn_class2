@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+/*
+
+*/
+
+/**/
+</style>
+<script src="http://code.jquery.com/jquery-1.10.2.js">
+</script>
+<script type="text/javascript">
+$(document).ready(function(){
+
+});
+function CoffeeShop(kind, price, cnt){
+	this.kind=kind;
+	this.price=price;
+	this.cnt = cnt;
+	this.tot=price*cnt;
+}
+var coffeeOrder01 = new CoffeeShop("아메리카노",3000,2);
+var coffeeOrder02 = new CoffeeShop("카푸치노",4000,3);
+// 계속 출력물을 변수를 이용해서 처리..
+// 만약 공통된 출력메서드가 있으면  메서드만 정의하면 된다..
+console.log("주문한 커피는 "+coffeeOrder01.kind+
+		", 가격"+coffeeOrder01.price+",갯수"+coffeeOrder01.cnt
+		+",총"+coffeeOrder01.tot);
+console.log("주문한 커피는 "+coffeeOrder02.kind+
+		", 가격"+coffeeOrder02.price+",갯수"+coffeeOrder02.cnt
+		+",총"+coffeeOrder02.tot);
+		
+
+
+
+
+
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+/*
+
+*/
+
+/**/
+</style>
+<script src="http://code.jquery.com/jquery-1.10.2.js">
+</script>
+<script type="text/javascript">
+$(document).ready(function(){
+
+});
+// 자판기 객체 선언해 놓기
+// 물건명과 가격이 있는 함수 객체선언
+function SellerBox(product, price){
+	this.product = product;  // 파는 물건명 setting
+	this.price = price; // 파는 가격..
+	this.insTotMn = 0; // 입력된 총금액..
+	// 돈을 입력하는 메서드 선언..
+	this.insertMoney = function(inMoney){
+		// process 처리..(입력된 돈이 누적처리...)
+		this.insTotMn+=inMoney;
+		console.log("###"+this.product+"자판기###");
+		console.log("현재 입력된 금액:"+this.insTotMn);
+	};
+	this.clickButton=function(){
+		var retVal=""; // 구매 버튼을 클릭시, 실제 나올 내용..
+		if( this.insTotMn >= this.price){
+			
+			this.insTotMn -= this.price;
+			console.log("현재 입력된 금액:"+this.insTotMn);
+			console.log("구매 성공 남은 잔액:"+this.insTotMn)
+			retVal="커피가 나왔습니다.";
+		}else{  // 잔액이 부족할 때..
+			console.log("잔액이 부족합니다..");
+		}
+		return retVal; // return 값 처리..
+	};
+	this.restMoneyBtn=function(){
+		return this.insTotMn;
+	}
+	
+}
+var box01= new SellerBox("아메리카노(커피)",1000);
+box01.insertMoney(500);
+box01.insertMoney(500);
+box01.insertMoney(500);
+
+var resultMsg = box01.clickButton();
+console.log("자판기 박스에서 구매버튼 클릭시 결과:"+resultMsg);
+var restMoney = box01.restMoneyBtn();
+console.log("나머지 돈은 "+restMoney);
+
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

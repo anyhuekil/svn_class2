@@ -1,9 +1,9 @@
 /*
-¼÷Á¦
-emp03 º¹»çÅ×ÀÌºí »ı¼º
-1. ÀÔ·Â empnoÀÇ °¡Àå ÀÛÀº¼öº¸´Ù -1, mgr:clarkÀÇ mgrÀÔ·Â, sal:Æò±Õ¿¬ºÀ,
-	comm:ÀüÃ¼ commÀÇ ÇÕ°è
-2. ¼öÁ¤ ename:'½Å±æµ¿', jobÀº SUPERMAN, hiredate´Â ÃÖ±Ù¿¡ ÀÔ»çÀÏ+1
+ìˆ™ì œ
+emp03 ë³µì‚¬í…Œì´ë¸” ìƒì„±
+1. ì…ë ¥ empnoì˜ ê°€ì¥ ì‘ì€ìˆ˜ë³´ë‹¤ -1, mgr:clarkì˜ mgrì…ë ¥, sal:í‰ê· ì—°ë´‰,
+	comm:ì „ì²´ commì˜ í•©ê³„
+2. ìˆ˜ì • ename:'ì‹ ê¸¸ë™', jobì€ SUPERMAN, hiredateëŠ” ìµœê·¼ì— ì…ì‚¬ì¼+1
 */
 create table emp05
 as select * from emp;
@@ -16,26 +16,26 @@ select max(hiredate)+1 from emp05;
 select * from emp;
 insert into emp01(empno, mgr, sal, comm) values( 7368, 7839, 2073, 2200);
 update emp01
-set ename='½Å±æµ¿',
+set ename='ì‹ ê¸¸ë™',
 	job='SUPERMAN',
 	hiredate=to_date('01/13/1983', 'MM/DD/YYYY')
 where empno=7368; 
 
 /*
-°úÁ¦ login ÇÏ´Â È­¸éÀ» ¸¸µé°í id¿Í password¸¦ Ã¼Å©ÇÏ°í, ´ÙÀ½ È­¸é¿¡¼­
-	id@@@´Ô È¯¿µÇÕ´Ï´Ù. ³²Àº point´Â @@@ÀÔ´Ï´Ù. ¶ó´Â ³»¿ëÀÌ ³ªÅ¸³­´Ù°í ÇÑ´Ù.
-	ÀÌ¿¡ ÇÊ¿ä·Î ÇÏ´Â Å×ÀÌºí°ú Å×ÀÌºí ±¸Á¶¸¦ ¸¸µå¼¼¿ä..
+ê³¼ì œ login í•˜ëŠ” í™”ë©´ì„ ë§Œë“¤ê³  idì™€ passwordë¥¼ ì²´í¬í•˜ê³ , ë‹¤ìŒ í™”ë©´ì—ì„œ
+	id@@@ë‹˜ í™˜ì˜í•©ë‹ˆë‹¤. ë‚¨ì€ pointëŠ” @@@ì…ë‹ˆë‹¤. ë¼ëŠ” ë‚´ìš©ì´ ë‚˜íƒ€ë‚œë‹¤ê³  í•œë‹¤.
+	ì´ì— í•„ìš”ë¡œ í•˜ëŠ” í…Œì´ë¸”ê³¼ í…Œì´ë¸” êµ¬ì¡°ë¥¼ ë§Œë“œì„¸ìš”..
 */
 create table login01(id number(4), password varchar2(20), 
 					username varchar2(20), point number(10));
 					
 /*
-¼÷Á¦
-ÂüÁ¶Å° °ü°è¿¡ ÀÖ´Â Å×ÀÌºí ±¸¼ºÇÏ±â
-¸ŞÀÎÅ×ÀÌºí student_main(id,pass,name) : ¾ÆÀÌµğ, ÆĞ½º¿öµå, ÀÌ¸§
-¼­ºêÅ×ÀÌºí student_point(id,subject, point):¾ÆÀÌµğ °ú¸ñ Á¡¼ö
-student_main°ú student_point id·Î foreign key °ü°è¸¦ ¼³Á¤ÇÏ°í,
-student_main¿¡ µ¥ÀÌÅÍ°¡ ÀÖ¾î¾ß¸¸ student_point¸¦ ÀÔ·ÂÇÒ ¼ö ÀÖ°Ô²û Ã³¸®
+ìˆ™ì œ
+ì°¸ì¡°í‚¤ ê´€ê³„ì— ìˆëŠ” í…Œì´ë¸” êµ¬ì„±í•˜ê¸°
+ë©”ì¸í…Œì´ë¸” student_main(id,pass,name) : ì•„ì´ë””, íŒ¨ìŠ¤ì›Œë“œ, ì´ë¦„
+ì„œë¸Œí…Œì´ë¸” student_point(id,subject, point):ì•„ì´ë”” ê³¼ëª© ì ìˆ˜
+student_mainê³¼ student_point idë¡œ foreign key ê´€ê³„ë¥¼ ì„¤ì •í•˜ê³ ,
+student_mainì— ë°ì´í„°ê°€ ìˆì–´ì•¼ë§Œ student_pointë¥¼ ì…ë ¥í•  ìˆ˜ ìˆê²Œë” ì²˜ë¦¬
 */
 
 create table student_main

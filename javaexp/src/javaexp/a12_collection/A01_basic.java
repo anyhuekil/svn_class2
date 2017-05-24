@@ -2,7 +2,7 @@ package javaexp.a12_collection;
 
 import java.util.ArrayList;
 class Person{
-	String name="±âº»°ª";
+	String name="ê¸°ë³¸ê°’";
 }
 class Woman{
 	private String name;
@@ -17,33 +17,33 @@ public class A01_basic {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-/* Á¦³Ê¸¯À» »ç¿ëÇÒÁö ¾Ê¾ÒÀ» ¶§.
+/* ì œë„ˆë¦­ì„ ì‚¬ìš©í• ì§€ ì•Šì•˜ì„ ë•Œ.
  * */		
 		ArrayList list = new ArrayList();
-		list.add("È«±æµ¿");  // ´Ù¾çÇÑ °´Ã¼µéÀ» ÇÒ´ç Object
+		list.add("í™ê¸¸ë™");  // ë‹¤ì–‘í•œ ê°ì²´ë“¤ì„ í• ë‹¹ Object
 		list.add(new Person());
 		System.out.println(list.get(0));
-		// ÇØ´ç °´Ã¼ÀÇ ¸â¹ö¸¦ »ç¿ëÇÏÁö ¸øÇÔ.
-		//  ==> »ó¼ÓÇÑ »óÀ§ °´Ã¼ÀÌ±â ¶§¹®¿¡.
+		// í•´ë‹¹ ê°ì²´ì˜ ë©¤ë²„ë¥¼ ì‚¬ìš©í•˜ì§€ ëª»í•¨.
+		//  ==> ìƒì†í•œ ìƒìœ„ ê°ì²´ì´ê¸° ë•Œë¬¸ì—.
 //		System.out.println(list.get(1).name);
-//		»ç¿ëÇÒ·Á¸é type castingÀÌ ÇÊ¿äÇÏ´Ù.
+//		ì‚¬ìš©í• ë ¤ë©´ type castingì´ í•„ìš”í•˜ë‹¤.
 		Person p = (Person)(list.get(1));
 		System.out.println(p.name);
-//  µ¿ÀÏÇÑ °´Ã¼typeÀ¸·Î ArrayList¸¦ »ç¿ëÇÒ ÇÊ¿ä°¡ ÀÖ´Ù.
-//	ÀÌ ¶§, ¼±¾ğÇÏ´Â °ÍÀÌ Á¦³Ê¸¯ÀÌ´Ù.
-//		1) String Á¦³Ê¸¯ ¼±¾ğ
+//  ë™ì¼í•œ ê°ì²´typeìœ¼ë¡œ ArrayListë¥¼ ì‚¬ìš©í•  í•„ìš”ê°€ ìˆë‹¤.
+//	ì´ ë•Œ, ì„ ì–¸í•˜ëŠ” ê²ƒì´ ì œë„ˆë¦­ì´ë‹¤.
+//		1) String ì œë„ˆë¦­ ì„ ì–¸
 		ArrayList<String> fruits = new ArrayList<String>();
-		fruits.add("»ç°ú");
-		fruits.add("¹Ù³ª³ª");
-//		fruits.add(new Person()); ´Ù¸¥ °´Ã¼typeÀº ÇÒ´çÇÏÁö ¸ø ÇÑ´Ù.
-//		2) Woman Á¦³Ê¸¯ ¼±¾ğ
+		fruits.add("ì‚¬ê³¼");
+		fruits.add("ë°”ë‚˜ë‚˜");
+//		fruits.add(new Person()); ë‹¤ë¥¸ ê°ì²´typeì€ í• ë‹¹í•˜ì§€ ëª» í•œë‹¤.
+//		2) Woman ì œë„ˆë¦­ ì„ ì–¸
 		ArrayList<Woman> ladies = new ArrayList<Woman>();
-//		ladies.add("»ç°ú"); ´Ù¸¥  °´Ã¼type ÇÒ´çX
-		ladies.add(new Woman("ÁÙ¸®¾Æ·Îº¿"));
-		ladies.add(new Woman("·¹ÀÌµğ°¡°¡"));
-		ladies.add(new Woman("±è°¡À»"));
-		// Á¦³Ê¸¯À» ¼±¾ğÇß±â ¶§¹®¿¡, type casting ¾øÀÌµµ,
-		// ÇØ´ç ¸â¹ö¸¦ »ç¿ëÇÒ ¼ö ÀÖ´Ù.
+//		ladies.add("ì‚¬ê³¼"); ë‹¤ë¥¸  ê°ì²´type í• ë‹¹X
+		ladies.add(new Woman("ì¤„ë¦¬ì•„ë¡œë´‡"));
+		ladies.add(new Woman("ë ˆì´ë””ê°€ê°€"));
+		ladies.add(new Woman("ê¹€ê°€ì„"));
+		// ì œë„ˆë¦­ì„ ì„ ì–¸í–ˆê¸° ë•Œë¬¸ì—, type casting ì—†ì´ë„,
+		// í•´ë‹¹ ë©¤ë²„ë¥¼ ì‚¬ìš©í•  ìˆ˜ ìˆë‹¤.
 		System.out.println(ladies.get(0).getName());
 		System.out.println(ladies.get(1).getName());
 		System.out.println(ladies.get(2).getName());

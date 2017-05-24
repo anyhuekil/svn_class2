@@ -4,17 +4,17 @@ public class A05_Argument {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		System.out.println("ÀÔ·ÂµÈ°ª 1:"+args[0]);
-		System.out.println("ÀÔ·ÂµÈ°ª 2:"+args[1]);
-		System.out.println("ÀÔ·ÂµÈ°ª 3:"+args[2]);
-//		¿¬»êÃ³¸®¸¦ À§ÇØ¼­ º¯°æÃ³¸®..
-//		Integer.parseInt("Á¤¼öÇü¹®ÀÚ¿­)  »ç°ú           5        ¹Ù³ª³ª       2
+		System.out.println("ì…ë ¥ëœê°’ 1:"+args[0]);
+		System.out.println("ì…ë ¥ëœê°’ 2:"+args[1]);
+		System.out.println("ì…ë ¥ëœê°’ 3:"+args[2]);
+//		ì—°ì‚°ì²˜ë¦¬ë¥¼ ìœ„í•´ì„œ ë³€ê²½ì²˜ë¦¬..
+//		Integer.parseInt("ì •ìˆ˜í˜•ë¬¸ìì—´)  ì‚¬ê³¼           5        ë°”ë‚˜ë‚˜       2
 		//                             args[0] args[1] args[2] args[3]
 		String fruit1 = args[0];
 		String fruit2 = args[2];
 		int fruit1Cnt = Integer.parseInt(args[1]);
 		int fruit2Cnt = Integer.parseInt(args[3]);
-		System.out.println("°úÀÏ ±¸¸Å³»¿ª!!!");
+		System.out.println("ê³¼ì¼ êµ¬ë§¤ë‚´ì—­!!!");
 		System.out.println(fruit1+"\t"+fruit1Cnt+"\t"+(fruit1Cnt*3000));
 		System.out.println(fruit2+"\t"+fruit2Cnt+"\t"+(fruit2Cnt*4000));
 	

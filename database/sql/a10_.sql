@@ -1,12 +1,12 @@
 
 select * FROM emp 
 
--- ÄÃ·³ ÁöÁ¤ ¹× º¯°æ
+-- ì»¬ëŸ¼ ì§€ì • ë° ë³€ê²½
 /*
-	insert into Å×ÀÌºí¸í(ÄÃ·³1, ÄÃ·³2, ÄÃ·³3)
-					select ÄÃ·³1, ÄÃ·³1+ÄÃ·³2, ÇÔ¼ö(ÄÃ·³3)
-					from Å×ÀÌºí¸í
-					where Á¶°Ç..
+	insert into í…Œì´ë¸”ëª…(ì»¬ëŸ¼1, ì»¬ëŸ¼2, ì»¬ëŸ¼3)
+					select ì»¬ëŸ¼1, ì»¬ëŸ¼1+ì»¬ëŸ¼2, í•¨ìˆ˜(ì»¬ëŸ¼3)
+					from í…Œì´ë¸”ëª…
+					where ì¡°ê±´..
 insert into emp_structor(empno)
 		select empno from emp;
 
@@ -15,12 +15,12 @@ INSERT INTO emp_structor(empno, sal, ename)
 	 
 */
 
-/* È®ÀÎ¿¹Á¦.
-dept_sub ÀÌ¶ó´Â Å×ÀÌºíÀ» deptÅ×ÀÌºíÀ» ÀÌ¿ëÇÏ¿© ¸¸µéµÇ, Ãß°¡ÄÃ·³,
-	kdname(ÇÑ±ÛÀÌ¸§), membercnt(µî·ÏµÈÀÎ¿ø)
-1) ±¸Á¶¸¸ ÀÖ´Â °ø¹éÅ×ÀÌºí »ý¼º.
-2) deptÅ×ÀÌºíÀ» ÀÌ¿ëÇØ¼­ ±âÁ¸µ¥ÀÌÅÍ¿Í Ãß°¡µÈ µ¥ÀÌÅÍ¸¦ ÀÔ·ÂÇÏ¼¼¿ä.
- - Ã³À½ : ÇÑ±ÛÀÌ¸§-¾øÀ½, membercnt = 0;
+/* í™•ì¸ì˜ˆì œ.
+dept_sub ì´ë¼ëŠ” í…Œì´ë¸”ì„ deptí…Œì´ë¸”ì„ ì´ìš©í•˜ì—¬ ë§Œë“¤ë˜, ì¶”ê°€ì»¬ëŸ¼,
+	kdname(í•œê¸€ì´ë¦„), membercnt(ë“±ë¡ëœì¸ì›)
+1) êµ¬ì¡°ë§Œ ìžˆëŠ” ê³µë°±í…Œì´ë¸” ìƒì„±.
+2) deptí…Œì´ë¸”ì„ ì´ìš©í•´ì„œ ê¸°ì¡´ë°ì´í„°ì™€ ì¶”ê°€ëœ ë°ì´í„°ë¥¼ ìž…ë ¥í•˜ì„¸ìš”.
+ - ì²˜ìŒ : í•œê¸€ì´ë¦„-ì—†ìŒ, membercnt = 0;
 
 
 */

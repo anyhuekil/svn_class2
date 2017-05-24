@@ -13,14 +13,14 @@ public class A03_QueBankDao {
 	private PreparedStatement pstmt;
 	private ResultSet rs;
 	
-	// °Ë»ö¸Ş¼­µå(PreparedStatement)
+	// ê²€ìƒ‰ë©”ì„œë“œ(PreparedStatement)
 	public ArrayList<Quebank> search(Quebank sch){
 		ArrayList<Quebank> list = new ArrayList<Quebank>();
-//		¿¬°áÃ³¸®.
+//		ì—°ê²°ì²˜ë¦¬.
 		try {
 			con= A00_DB.conn();
-			//  ¹®ÀÚ¿­ ?¿Í  ¿¬°á ?±¸ºĞÇÏ±â À§ÇÏ¿©
-			//  '%'|| '¹®ÀÚ¿­' ||'%'
+			//  ë¬¸ìì—´ ?ì™€  ì—°ê²° ?êµ¬ë¶„í•˜ê¸° ìœ„í•˜ì—¬
+			//  '%'|| 'ë¬¸ìì—´' ||'%'
 			String sql="SELECT * FROM quebank \n"
 					+ " WHERE que LIKE '%'|| ? ||'%' \n"
 					+ " AND que_type LIKE '%'|| ? ||'%' \n";

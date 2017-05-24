@@ -11,8 +11,8 @@ class Member{
 		// TODO Auto-generated constructor stub
 	}
 	public void showInfo(){
-		System.out.print("ÀÌ¸§Àº "+name+"ÀÌ¸ç, ");
-		System.out.println("±Ş¿©´Â "+sal+"¸¸¿ø  ÀÔ´Ï´Ù! ");
+		System.out.print("ì´ë¦„ì€ "+name+"ì´ë©°, ");
+		System.out.println("ê¸‰ì—¬ëŠ” "+sal+"ë§Œì›  ì…ë‹ˆë‹¤! ");
 	}
 }
 class Deputy extends Member{
@@ -21,12 +21,12 @@ class Deputy extends Member{
 		super(name, sal);
 		this.depart = depart;
 	}
-	// ¸Ş¼­µå ÀçÁ¤ÀÇ(overriding)
+	// ë©”ì„œë“œ ì¬ì •ì˜(overriding)
 	public void showInfo(){
-		// »óÀ§¿¡ ¸Ş¼­µå ³»¿ëÀ» È°¿ë..
+		// ìƒìœ„ì— ë©”ì„œë“œ ë‚´ìš©ì„ í™œìš©..
 		super.showInfo();
-		// »óÀ§ÀÇ ¸Ş¼­µå¿¡¼­ Ãß°¡ ³»¿ëÀ» Ã³¸®..
-		System.out.println("ºÎ¼­´Â "+depart+" ÀÔ´Ï´Ù!!");
+		// ìƒìœ„ì˜ ë©”ì„œë“œì—ì„œ ì¶”ê°€ ë‚´ìš©ì„ ì²˜ë¦¬..
+		System.out.println("ë¶€ì„œëŠ” "+depart+" ì…ë‹ˆë‹¤!!");
 	}
 }
 
@@ -34,8 +34,8 @@ public class A03_Overriding {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		Member mem = new Member("±èÁö¿µ", 3000);
-		Deputy dep01 = new Deputy("½Å¿µÈñ",4000,"IT»ç¾÷ºÎ");
+		Member mem = new Member("ê¹€ì§€ì˜", 3000);
+		Deputy dep01 = new Deputy("ì‹ ì˜í¬",4000,"ITì‚¬ì—…ë¶€");
 		mem.showInfo();
 		dep01.showInfo();
 	}

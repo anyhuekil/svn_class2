@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+/*
+
+*/
+td{text-align:center;}
+td.prob{width:50%;}
+/**/
+</style>
+<script src="http://code.jquery.com/jquery-1.10.2.js">
+</script>
+<script type="text/javascript">
+$(document).ready(function(){
+	init();
+	timming();
+});
+var mathCal=[];
+function init(){
+
+	var pro;
+	var ranIdx;
+	var cal=["+","-","*","/"];	
+	var calVal;
+	
+	for(var idx=0;idx<10;idx++){
+		pro={};
+		pro.num01=parseInt(Math.random()*10);
+		pro.num02=parseInt(Math.random()*10);
+		ranIdx=parseInt( Math.random()*4);
+		calVal=[pro.num01+pro.num02,pro.num01-pro.num02,
+				pro.num01*pro.num02,pro.num01/pro.num02];		
+		pro.corResult=calVal[ranIdx];
+		mathCal.push(pro);
+		$(".prob").eq(idx).html( pro.num01+" "+cal[ranIdx]+" "+pro.num02);	
+	}
+}
+function timming(){
+	var cnt=10;
+	var inter=setInterval(function(){
+		$("h3").html(cnt--);
+
+	},1000);
+	setTimeout(function(){
+		clearInterval(inter);
+		var corCnt=0;
+		$.each(mathCal,function(index, item){
+			if( item.corResult==$(".inputData").eq(index).val()){
+				corCnt+=10;
+			}
+		});
+		$("h3").html("최종점수:"+corCnt);
+	},12000);
+	
+}
+
+</script>
+</head>
+<body><center>
+<h2>수학 game!!</h2>
+<h3></h3>
+<table align="center" width='300' border>
+	<tr><td>1</td><td class="prob"></td><td><input size="3" class="inputData"/></td></tr>
+	<tr><td>2</td><td class="prob"></td><td><input size="3" class="inputData"/></td></tr>
+	<tr><td>3</td><td class="prob"></td><td><input size="3" class="inputData"/></td></tr>
+	<tr><td>4</td><td class="prob"></td><td><input size="3" class="inputData"/></td></tr>
+	<tr><td>5</td><td class="prob"></td><td><input size="3" class="inputData"/></td></tr>
+	<tr><td>6</td><td class="prob"></td><td><input size="3" class="inputData"/></td></tr>
+	<tr><td>7</td><td class="prob"></td><td><input size="3" class="inputData"/></td></tr>
+	<tr><td>8</td><td class="prob"></td><td><input size="3" class="inputData"/></td></tr>
+	<tr><td>9</td><td class="prob"></td><td><input size="3" class="inputData"/></td></tr>
+	<tr><td>10</td><td class="prob"></td><td><input size="3" class="inputData"/></td></tr>
+</table>
+
+	
+
+</body>
+</html>

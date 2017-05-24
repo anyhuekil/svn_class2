@@ -5,9 +5,9 @@ public class Angel {
 		WoodCutter w = new WoodCutter();
 		// public
 		System.out.println(w.weddingAnn);
-		// default(°°Àº ÆĞÅ°Áö)
+		// default(ê°™ì€ íŒ¨í‚¤ì§€)
 		System.out.println(w.savingMoney);
-		// protected °¡´É..
+		// protected ê°€ëŠ¥..
 		System.out.println(w.cacheInheri);
 		// private(X)
 //		System.out.println(w.privSect);

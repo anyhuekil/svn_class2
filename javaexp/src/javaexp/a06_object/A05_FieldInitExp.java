@@ -2,14 +2,14 @@ package javaexp.a06_object;
 
 
 class BaseBallTeam{
-	String teamName="ÆÀÀÌ¸§ ¾øÀ½";
+	String teamName="íŒ€ì´ë¦„ ì—†ìŒ";
 	int vic;
 	int eq;
 	int def;
 	double vicRatio;
 	BaseBallTeam(){
-		System.out.println(teamName+" ÆÀ,  "+vic+"½Â, "+eq+
-				"¹«, "+def+"ÆĞ, ½Â·ü "+vicRatio);
+		System.out.println(teamName+" íŒ€,  "+vic+"ìŠ¹, "+eq+
+				"ë¬´, "+def+"íŒ¨, ìŠ¹ë¥  "+vicRatio);
 	}
 	BaseBallTeam(String n){}
 	BaseBallTeam(String teamName, int vic, int eq, int def){
@@ -23,12 +23,12 @@ class BaseBallTeam{
 }
 class Person{
 	Person(){}
-	Person(int age){}  // ÀÔ·Â°ªÀÇ °¹¼ö°¡ ´Ù¸£¸é ¼±¾ğÀÌ °¡´ÉÇÏ´Ù.
+	Person(int age){}  // ì…ë ¥ê°’ì˜ ê°¯ìˆ˜ê°€ ë‹¤ë¥´ë©´ ì„ ì–¸ì´ ê°€ëŠ¥í•˜ë‹¤.
 	Person(int height, int age){}
-	Person(String name){} // ÀÔ·Â°ªÀÇ °¹¼ö°¡ °°´õ¶óµµ typeÀÌ ´Ù¸£¸é ¼±¾ğÀÌ °¡´É
-//	Person(int age, int height){} typeÀÌ °°±â ¶§¹®¿¡.
+	Person(String name){} // ì…ë ¥ê°’ì˜ ê°¯ìˆ˜ê°€ ê°™ë”ë¼ë„ typeì´ ë‹¤ë¥´ë©´ ì„ ì–¸ì´ ê°€ëŠ¥
+//	Person(int age, int height){} typeì´ ê°™ê¸° ë•Œë¬¸ì—.
 	Person(String name, int age){}
-	Person( int age, String name){} // ÀÔ·Â°ªÀÇ typeÀÇ ¼ø¼­°¡ ´Ù¸£¸é ¼±¾ğ°¡´É
+	Person( int age, String name){} // ì…ë ¥ê°’ì˜ typeì˜ ìˆœì„œê°€ ë‹¤ë¥´ë©´ ì„ ì–¸ê°€ëŠ¥
 	
 }
 public class A05_FieldInitExp {
@@ -37,8 +37,8 @@ public class A05_FieldInitExp {
 		// TODO Auto-generated method stub
 		BaseBallTeam t1 = new BaseBallTeam();
 		BaseBallTeam t2 = new BaseBallTeam("KIA",11,0,3);
-		System.out.println(t2.teamName+" ÆÀ,  "+t2.vic+"½Â, "+t2.eq+
-				"¹«, "+t2.def+"ÆĞ, ½Â·ü "+t2.vicRatio);
+		System.out.println(t2.teamName+" íŒ€,  "+t2.vic+"ìŠ¹, "+t2.eq+
+				"ë¬´, "+t2.def+"íŒ¨, ìŠ¹ë¥  "+t2.vicRatio);
 	}
 
 }

@@ -16,7 +16,7 @@ public class DAO_PlayerInfo {
 	
 	public void regPlayer(PlayerInfo ins){
 		String sql = "INSERT INTO PLAYER_INFO VALUES(?,?,?,?,?,0,0,0,0,10000,0,0,0)";
-		// pid, pass, pname, email, tel, mchoice, totbet, totbenefit, totlose, curmoney, first, second, third
+		// pid, pass, pname, email, tel, mChoice, totBet, totBenefit, totLose, curMoney, first, second, third
 		try {
 			con = AA_Con.conn();
 			con.setAutoCommit(false);
@@ -28,6 +28,7 @@ public class DAO_PlayerInfo {
 			pstmt.setString(5, ins.getTel());
 			pstmt.executeUpdate();
 			con.commit();
+			System.out.println(sql);
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -59,7 +60,7 @@ public class DAO_PlayerInfo {
 			}
 		}
 	}
-	// pid, pname, pass, email, tel, mchoice totbet, totbenefit, totlose, curmoney, first, second, third
+	// pid, pname, pass, email, tel, mChoice totBet, totBenefit, totLose, curMoney, first, second, third
 	public void updatePlayer(PlayerInfo upt){
 		
 		String sql = "UPDATE PLAYER_INFO SET\n"
@@ -77,6 +78,7 @@ public class DAO_PlayerInfo {
 			pstmt.setString(4, upt.getTel());
 			pstmt.executeUpdate();
 			con.commit();
+			System.out.println(sql);
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -111,11 +113,13 @@ public class DAO_PlayerInfo {
 	
 	public ArrayList<PlayerInfo> searchPlayer(PlayerInfo sch){
 		ArrayList<PlayerInfo> plist = new ArrayList<PlayerInfo>();
-		String sql = "SELECT * FROM PLAYER_INFO \n"
+		String sql = "SELECT * FROM ( \n"
+				+ "SELECT ROWNUM NO, A.* FROM ( \n"
+				+ "SELECT * FROM PLAYER_INFO A ORDER BY CURMONEY DESC) A) WHERE PID LIKE '%'||?||'%'";
+		
+		/*String sql = "SELECT * FROM PLAYER_INFO \n"
 				+ "WHERE PID LIKE '%'||?||'%' \n"
-/*				+ "AND PNAME LIKE '%'||?||'%' \n"
-				+ "AND CURMONEY = ? \n"*/
-				+ "ORDER BY CURMONEY DESC";
+				+ "ORDER BY curMoney DESC";*/
 		PlayerInfo pi = null;
 		
 		try {
@@ -126,22 +130,23 @@ public class DAO_PlayerInfo {
 			
 			while(rs.next()){
 				pi = new PlayerInfo();
+				pi.setRank(rs.getInt("no"));
 				pi.setPid(rs.getString("pid"));
 				pi.setPass(rs.getString("pass"));
 				pi.setPname(rs.getString("pname"));
 				pi.setEmail(rs.getString("email"));
 				pi.setTel(rs.getString("tel"));
-				pi.setMchoice(rs.getInt("mchoice"));
-				pi.setTotbet(rs.getDouble("totbet"));
-				pi.setTotbenefit(rs.getDouble("totbenefit"));
-				pi.setTotlose(rs.getDouble("totlose"));
-				pi.setCurmoney(rs.getDouble("curmoney"));
+				pi.setmChoice(rs.getInt("mChoice"));
+				pi.settotBet(rs.getDouble("totBet"));
+				pi.settotBenefit(rs.getDouble("totBenefit"));
+				pi.settotLose(rs.getDouble("totLose"));
+				pi.setcurMoney(rs.getDouble("curMoney"));
 				pi.setFirst(rs.getInt("first"));
 				pi.setSecond(rs.getInt("second"));
 				pi.setThird(rs.getInt("third"));
 				plist.add(pi);
 			}
-			
+			System.out.println(sql);
 			
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
@@ -181,7 +186,6 @@ public class DAO_PlayerInfo {
 	
 	public void delPlayer(PlayerInfo del){
 		String sql = "DELETE FROM PLAYER_INFO WHERE PID = ?";
-		
 		try {
 			con = AA_Con.conn();
 			con.setAutoCommit(false);
@@ -189,6 +193,7 @@ public class DAO_PlayerInfo {
 			pstmt.setString(1, del.getPid());
 			pstmt.executeUpdate();
 			con.commit();
+			System.out.println(sql);
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -237,16 +242,16 @@ public class DAO_PlayerInfo {
 				pi.setPname(rs.getString("pname"));
 				pi.setEmail(rs.getString("email"));
 				pi.setTel(rs.getString("tel"));
-				pi.setMchoice(rs.getInt("mchoice"));
-				pi.setTotbet(rs.getDouble("totbet"));
-				pi.setTotbenefit(rs.getDouble("totbenefit"));
-				pi.setTotlose(rs.getDouble("totlose"));
-				pi.setCurmoney(rs.getDouble("curmoney"));
+				pi.setmChoice(rs.getInt("mChoice"));
+				pi.settotBet(rs.getDouble("totBet"));
+				pi.settotBenefit(rs.getDouble("totBenefit"));
+				pi.settotLose(rs.getDouble("totLose"));
+				pi.setcurMoney(rs.getDouble("curMoney"));
 				pi.setFirst(rs.getInt("first"));
 				pi.setSecond(rs.getInt("second"));
 				pi.setThird(rs.getInt("third"));
 			}
-			
+			System.out.println(sql);
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -267,6 +272,38 @@ public class DAO_PlayerInfo {
 		return pi;
 	}
 	
+	public boolean checkDuplicatedId(String id){
+		String sql = "SELECT * FROM PLAYER_INFO WHERE PID = ? ";
+		try {
+			con = AA_Con.conn();
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, id);
+			rs = pstmt.executeQuery();
+			System.out.println(sql);			
+			if(rs.next()){
+				System.out.println("중복된 id입니다.");
+				return true;
+			}
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally{
+			try {
+				if(rs != null) rs.close();
+				if(pstmt != null) pstmt.close();
+				if(con != null) con.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		
+		return false;
+	}
+	
 	/*public static void main(String[] args) {
 		
 		DAO_PlayerInfo dao = new DAO_PlayerInfo();
@@ -279,11 +316,11 @@ public class DAO_PlayerInfo {
 			System.out.print(c.getPname()+"\t");
 			System.out.print(c.getEmail()+"\t");
 			System.out.print(c.getTel()+"\t");
-			System.out.print(c.getMchoice()+"\t");
-			System.out.print(c.getTotbet()+"\t");
-			System.out.print(c.getTotbenefit()+"\t");
-			System.out.print(c.getTotlose()+"\t");
-			System.out.print(c.getCurmoney()+"\t");
+			System.out.print(c.getmChoice()+"\t");
+			System.out.print(c.gettotBet()+"\t");
+			System.out.print(c.gettotBenefit()+"\t");
+			System.out.print(c.gettotLose()+"\t");
+			System.out.print(c.getcurMoney()+"\t");
 			System.out.print(c.getFirst()+"\t");
 			System.out.print(c.getSecond()+"\t");
 			System.out.println(c.getThird());
@@ -294,11 +331,11 @@ public class DAO_PlayerInfo {
 				pi.setPname(rs.getString("pname"));
 //				pi.setEmail(rs.getString("email"));
 //				pi.setTel(rs.getString("tel"));
-				pi.setMchoice(rs.getInt("mchoice"));
-				pi.setTotbet(rs.getDouble("totbet"));
-				pi.setTotbenefit(rs.getDouble("totbenefit"));
-				pi.setTotlose(rs.getDouble("totlose"));
-				pi.setCurmoney(rs.getDouble("curmoney"));
+				pi.setmChoice(rs.getInt("mChoice"));
+				pi.settotBet(rs.getDouble("totBet"));
+				pi.settotBenefit(rs.getDouble("totBenefit"));
+				pi.settotLose(rs.getDouble("totLose"));
+				pi.setcurMoney(rs.getDouble("curMoney"));
 				pi.setFirst(rs.getInt("first"));
 				pi.setSecond(rs.getInt("second"));
 				pi.setThird(rs.getInt("third"));

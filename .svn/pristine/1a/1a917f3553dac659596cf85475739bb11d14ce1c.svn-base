@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+/*
+
+*/
+td{font-size:100pt;text-align:center;width:33%;}
+/**/
+</style>
+<script src="http://code.jquery.com/jquery-1.10.2.js">
+</script>
+<script type="text/javascript">
+var ranIdx=0;
+$(document).ready(function(){
+	var tds=document.querySelectorAll("td");
+	ranIdx=parseInt(Math.random()*3);
+	for(var idx=0;idx<tds.length;idx++){
+		tds[ idx ].onclick=result;
+	}
+});
+function result(){
+	if(this.id==ranIdx){
+		alert("호떡 여기에");
+		this.innerHTML="";
+		var img=document.createElement("img");
+		img.setAttribute("src","img04.PNG");
+		img.setAttribute("width","100%");
+		this.appendChild(img);	
+	}else{
+		alert("호떡 없습니다!");
+	}
+}
+
+</script>
+</head>
+<body>
+<h1 align="center">병만이가 호떡을 숨긴 곳은</h1>
+<table width="600" height="200" border>
+	<tr><td id="1">1</td><td  id="2">2</td><td  id="3">3</td></tr>
+</table>
+
+</body>
+</html>

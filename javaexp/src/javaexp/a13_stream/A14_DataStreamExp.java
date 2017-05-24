@@ -24,13 +24,13 @@ public class A14_DataStreamExp {
 			String fileName="C:/a01_prog/eclipse/workspace_server/javaexp/src/javaexp/a13_stream/prodData.dat";
 			fos= new FileOutputStream(fileName);
 			dos= new DataOutputStream(fos);
-			dos.writeUTF("»ç°ú");
+			dos.writeUTF("ì‚¬ê³¼");
 			dos.writeInt(3000);
 			dos.writeInt(2);
-			dos.writeUTF("¹Ù³ª³ª");
+			dos.writeUTF("ë°”ë‚˜ë‚˜");
 			dos.writeInt(4000);
 			dos.writeInt(3);
-			dos.writeUTF("µş±â");
+			dos.writeUTF("ë”¸ê¸°");
 			dos.writeInt(12000);
 			dos.writeInt(3);			
 			fis=new FileInputStream(fileName);
@@ -49,7 +49,7 @@ public class A14_DataStreamExp {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}catch(Exception e){
-			System.out.println("¿¹¿Ü ¹ß»ı");
+			System.out.println("ì˜ˆì™¸ ë°œìƒ");
 		}finally{
 
 			try {

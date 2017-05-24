@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	.item{color:orange;background-color:yellow;}
+	.select{color:blue;}
+/*
+
+*/
+
+/**/
+</style>
+<script src="http://code.jquery.com/jquery-1.10.2.js">
+</script>
+<script type="text/javascript">
+$(document).ready(function(){
+
+});
+function removeCls(){
+	$("h1").removeClass("select");// h1의 class속성 중 select 클래스 삭제
+}
+</script>
+</head>
+<!-- 	.item{color:orange;background-color:yellow;}
+	.select{color:blue;} -->
+<body>
+	<!--  클래스 속성을 변경하는 event 처리 -->
+	<input type="button" value="클래스 속성제거!!" 
+		onclick="javascript:removeCls();"/>
+	<h1 class="item">클래스 속성 연습</h1>
+	<h1 class="item">클래스 속성 연습</h1>
+	<!-- class 속성을 이중 적용,  클래스[ ]클래스 -->
+	<h1 class="item select">클래스 속성 연습(선택)</h1>
+	<h1 class="item">클래스 속성 연습</h1>
+	<h1 class="item">클래스 속성 연습</h1>
+</body>
+</html>

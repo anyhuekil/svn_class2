@@ -7,9 +7,9 @@ public class Uncle {
 		WoodCutter w = new WoodCutter();
 		// public
 		System.out.println(w.weddingAnn);
-		// ### protected  »ó¼Ó°ü°è°¡ ¾Æ´Ï¸é Á¢±Ù ¾È µÊ
+		// ### protected  ìƒì†ê´€ê³„ê°€ ì•„ë‹ˆë©´ ì ‘ê·¼ ì•ˆ ë¨
 //		System.out.println(w.cacheInheri);		
-		// default(°°Àº ÆĞÅ°Áö)
+		// default(ê°™ì€ íŒ¨í‚¤ì§€)
 //		System.out.println(w.savingMoney);
 		// private(X)
 //		System.out.println(w.privSect);

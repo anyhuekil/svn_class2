@@ -1,42 +1,42 @@
 /*
 subquery?
-ÇÏ³ªÀÇ selcet¹®ÀåÀÇ Àý ¾È¿¡ Æ÷ÇÔµÈ ¶Ç ÇÏ³ªÀÇ select ¹®ÀåÀ» ¸»ÇÑ´Ù.
-¼­¹öÄõ¸®¸¦ Æ÷ÇÔÇÏ°í ÀÖ´Â Äõ¸®¹®À» ¸ÞÀÎÄõ¸®(main query),
-Æ÷ÇÔµÈ ¶Ç ÇÏ³ªÀÇÄõ¸®¸¦ ¼­ºê Äõ¸®(subquery)¶ó°í ÇÑ´Ù.
-ex) »ç¿øÅ×ÀÌºí¿¡¼­ ¿¬ºÀÀÌ ÃÖ°í·Î ¸¹Àº »ç¶÷ÀÇ ÀÌ¸§°ú ¿¬ºÀÀ» list ÇÏ¼¼¿ä..
+í•˜ë‚˜ì˜ selcetë¬¸ìž¥ì˜ ì ˆ ì•ˆì— í¬í•¨ëœ ë˜ í•˜ë‚˜ì˜ select ë¬¸ìž¥ì„ ë§í•œë‹¤.
+ì„œë²„ì¿¼ë¦¬ë¥¼ í¬í•¨í•˜ê³  ìžˆëŠ” ì¿¼ë¦¬ë¬¸ì„ ë©”ì¸ì¿¼ë¦¬(main query),
+í¬í•¨ëœ ë˜ í•˜ë‚˜ì˜ì¿¼ë¦¬ë¥¼ ì„œë¸Œ ì¿¼ë¦¬(subquery)ë¼ê³  í•œë‹¤.
+ex) ì‚¬ì›í…Œì´ë¸”ì—ì„œ ì—°ë´‰ì´ ìµœê³ ë¡œ ë§Žì€ ì‚¬ëžŒì˜ ì´ë¦„ê³¼ ì—°ë´‰ì„ list í•˜ì„¸ìš”..
 
 SELECT ENAME, SAL --> MAIN QUERY
 FROM EMP
 WHERE SLA = (SELECT MAX(SAL) FROM ENP) --> SUBQUERY
-ÀÛ¼º½Ã ÁÖÀÇÁ¡
-1. ¼­¹öÄõ¸®´Â ºñ±³ ¿¬»êÀÚ(=,>,<...)ÀÇ ¿À¸¥ÂÊ¿¡ ±â¼úÇØ¾ß ÇÏ°í °ýÈ£·Î
-µÑ·¯½Î ÁÖ´Â °ÍÀÌ ÀÏ¹ÝÀûÀÌ´Ù.
-2. ¼­¹öÄõ¸®´Â ¸ÞÀÎ Äõ¸®°¡ ½ÇÇàµÇ±â ÀÌÀü¿¡ ½ÇÇàµÈ´Ù.
+ìž‘ì„±ì‹œ ì£¼ì˜ì 
+1. ì„œë²„ì¿¼ë¦¬ëŠ” ë¹„êµ ì—°ì‚°ìž(=,>,<...)ì˜ ì˜¤ë¥¸ìª½ì— ê¸°ìˆ í•´ì•¼ í•˜ê³  ê´„í˜¸ë¡œ
+ë‘˜ëŸ¬ì‹¸ ì£¼ëŠ” ê²ƒì´ ì¼ë°˜ì ì´ë‹¤.
+2. ì„œë²„ì¿¼ë¦¬ëŠ” ë©”ì¸ ì¿¼ë¦¬ê°€ ì‹¤í–‰ë˜ê¸° ì´ì „ì— ì‹¤í–‰ëœë‹¤.
 
-¼­¹öÄõ¸®ÀÇ À¯Çü
-1. Á¶°ÇÀÇ °ªÀ¸·Î Ã³¸®µÇ´Â °æ¿ì.
+ì„œë²„ì¿¼ë¦¬ì˜ ìœ í˜•
+1. ì¡°ê±´ì˜ ê°’ìœ¼ë¡œ ì²˜ë¦¬ë˜ëŠ” ê²½ìš°.
 	SELECT *
-	FROM Å×ÀÌºí
-	WHERE ÄÃ·³¸í = (SELECT ÄÃ·³ FROM Å×ÀÌºí WHERE Á¶°Ç);
-	## ´ÜÀÏ°ª Á¶°Ç: =,>,< (ºñ±³¿¬»êÀÚ È°¿ë)
-	´ÙÁß°ª Á¶°Ç : IN, EXIST, ANY, ALL
+	FROM í…Œì´ë¸”
+	WHERE ì»¬ëŸ¼ëª… = (SELECT ì»¬ëŸ¼ FROM í…Œì´ë¸” WHERE ì¡°ê±´);
+	## ë‹¨ì¼ê°’ ì¡°ê±´: =,>,< (ë¹„êµì—°ì‚°ìž í™œìš©)
+	ë‹¤ì¤‘ê°’ ì¡°ê±´ : IN, EXIST, ANY, ALL
 
-2. Å×ÀÌºí·Î ÀÚÃ¼·Î SUBQUERY Ã³¸®ÇÏ´Â °æ¿ì..
-	SELECT * ÄÃ·³¸í1+ÄÃ·³¸í2, ....
-	FROM (SELECT ÄÃ·³¸í1, ÄÃ·³¸í2, ÇÔ¼ö(ÄÃ·³¸í3)
-			FROM Å×ÀÌºí¸í
-			WHER Á¶°Ç )
-	WHERE Á¶°Ç;
+2. í…Œì´ë¸”ë¡œ ìžì²´ë¡œ SUBQUERY ì²˜ë¦¬í•˜ëŠ” ê²½ìš°..
+	SELECT * ì»¬ëŸ¼ëª…1+ì»¬ëŸ¼ëª…2, ....
+	FROM (SELECT ì»¬ëŸ¼ëª…1, ì»¬ëŸ¼ëª…2, í•¨ìˆ˜(ì»¬ëŸ¼ëª…3)
+			FROM í…Œì´ë¸”ëª…
+			WHER ì¡°ê±´ )
+	WHERE ì¡°ê±´;
 	
-3. SELECT (SELECT ÄÃ·³1 FROM Å×ÀÌºí¸í WHERE Á¶°Ç=¸ÞÀÎÁ¶°Ç1),
-	ÄÃ·³2, ÄÃ·³3
-	FROM Å×ÀÌºí
-	WHERE Á¶°Ç...
+3. SELECT (SELECT ì»¬ëŸ¼1 FROM í…Œì´ë¸”ëª… WHERE ì¡°ê±´=ë©”ì¸ì¡°ê±´1),
+	ì»¬ëŸ¼2, ì»¬ëŸ¼3
+	FROM í…Œì´ë¸”
+	WHERE ì¡°ê±´...
 	
 	
 */
--- 1. Á¶°Ç°ªÀ¸·Î SUBQUERY°¡ »ç¿ëµÇ´Â °æ¿ì.
---	EX) Æò±Õ¿¬ºÀº¸´Ù ¸¹Àº »ç¶÷µéÀÇ ÀÌ¸§°ú ¿¬ºÀÀ» Ãâ·ÂÇÏ¼¼¿ä.
+-- 1. ì¡°ê±´ê°’ìœ¼ë¡œ SUBQUERYê°€ ì‚¬ìš©ë˜ëŠ” ê²½ìš°.
+--	EX) í‰ê· ì—°ë´‰ë³´ë‹¤ ë§Žì€ ì‚¬ëžŒë“¤ì˜ ì´ë¦„ê³¼ ì—°ë´‰ì„ ì¶œë ¥í•˜ì„¸ìš”.
 SELECT ENAME, SAL
 FROM EMP
 WHERE SAL>(SELECT AVG(SAL) FROM EMP);
@@ -45,7 +45,7 @@ SELECT * FROM EMP;
 
 SELECT MAX(COMM)
 FROM EMP;
--- EX) º¸³Ê½º°¡ ÀÖ´Â »ç¶÷µéÀÇ Áß, Æò±Õ º¸³Ê½ºº¸´Ù ³ôÀº Ãâ·ÂÇÏ¼¼¿ä..
+-- EX) ë³´ë„ˆìŠ¤ê°€ ìžˆëŠ” ì‚¬ëžŒë“¤ì˜ ì¤‘, í‰ê·  ë³´ë„ˆìŠ¤ë³´ë‹¤ ë†’ì€ ì¶œë ¥í•˜ì„¸ìš”..
 SELECT AVG(COMM)
 FROM EMP
 WHERE COMM IS NOT NULL;

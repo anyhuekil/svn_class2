@@ -6,17 +6,17 @@ public class A09_Scanner {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-//		Scanner Å¬·¡½º´Â »ı¼ºÀÚ¿¡ System.inÅëÇØ¼­ ÀÔ·Â Ã³¸®ÇÑ´Ù.
+//		Scanner í´ë˜ìŠ¤ëŠ” ìƒì„±ìì— System.iní†µí•´ì„œ ì…ë ¥ ì²˜ë¦¬í•œë‹¤.
 		Scanner scan = new Scanner(System.in);
-		System.out.print("ÀÌ¸§À» ÀÔ·ÂÇÏ¼¼¿ä:");
+		System.out.print("ì´ë¦„ì„ ì…ë ¥í•˜ì„¸ìš”:");
 		String name=scan.nextLine();
-		System.out.println("ÀÔ·ÂÇÑ ÀÌ¸§:"+name);
-		System.out.print("Á¡¼ö¸¦ ÀÔ·ÂÇÏ¼¼¿ä:");
+		System.out.println("ì…ë ¥í•œ ì´ë¦„:"+name);
+		System.out.print("ì ìˆ˜ë¥¼ ì…ë ¥í•˜ì„¸ìš”:");
 		int point = scan.nextInt();
-		System.out.println("È¹µæÇÑ Á¡¼ö:"+point);
-		System.out.print("Å°¸¦ ÀÔ·ÂÇÏ¼¼¿ä:");
+		System.out.println("íšë“í•œ ì ìˆ˜:"+point);
+		System.out.print("í‚¤ë¥¼ ì…ë ¥í•˜ì„¸ìš”:");
 		double height= scan.nextDouble();
-		System.out.println("ÀÔ·ÂÇÑ Å°:"+height);
+		System.out.println("ì…ë ¥í•œ í‚¤:"+height);
 		
 	}
 

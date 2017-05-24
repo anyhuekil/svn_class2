@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+/*
+
+*/
+
+/**/
+</style>
+<script src="http://code.jquery.com/jquery-1.10.2.js">
+</script>
+<script type="text/javascript">
+$(document).ready(function(){
+/*
+ * List형태 json Data 만들기.. 
+ */
+ var bplayer1={rank:1, name:"피어밴드", defpt:0.36};
+ var bplayer2={rank:2, name:"장현식", defpt:0.53};
+ // 배열객체에 index나, push를 활용하여 등록..
+ var pitList=[];
+ pitList[0]=bplayer1;
+ pitList.push( bplayer2 );
+ var show="<tr><th>순위</th><th>이름</th><th>방어율</th></tr>";
+ $.each(pitList, function(index, player){
+	 show+="<tr><th>"+player.rank+"</th><th>"+player.name
+	 		+"</th><th>"+player.defpt+"</th></tr>"
+ });
+ var pitList2=[{rank:3, name:"양현종", defpt:0.87},
+	 		   {rank:4, name:"헥터",   defpt:1.17} ];
+ $.each(pitList2, function(index, player){
+	 show+="<tr><th>"+player.rank+"</th><th>"+player.name
+	 		+"</th><th>"+player.defpt+"</th></tr>"
+ }); 
+ $("table").html(show);
+});
+</script>
+</head>
+<body>
+<table align="center" border></table>
+
+</body>
+</html>

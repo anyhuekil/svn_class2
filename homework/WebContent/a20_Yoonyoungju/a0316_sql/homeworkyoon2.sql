@@ -1,9 +1,9 @@
 
-/* ¼÷Á¦
-emp03 º¹»çÅ×ÀÌºí »ı¼º
-1. ÀÔ·Â  empnoÀÇ °¡Àå ÀÛÀº¼öº¸´Ù -1, mgr:clearkÀÇ mgrÀÔ·Â, sal:Æò±Õ¿¬ºÀ, 
-   comm:ÀüÃ¼commÀÇ ÇÕ°è
-2. ¼öÁ¤ ename:'½Å±æµ¿', jobÀº SUPERMAN, hirdate´Â ÃÖ±Ù¿¡ ÀÔ»çÀÏ+1
+/* ìˆ™ì œ
+emp03 ë³µì‚¬í…Œì´ë¸” ìƒì„±
+1. ì…ë ¥  empnoì˜ ê°€ì¥ ì‘ì€ìˆ˜ë³´ë‹¤ -1, mgr:clearkì˜ mgrì…ë ¥, sal:í‰ê· ì—°ë´‰, 
+   comm:ì „ì²´commì˜ í•©ê³„
+2. ìˆ˜ì • ename:'ì‹ ê¸¸ë™', jobì€ SUPERMAN, hirdateëŠ” ìµœê·¼ì— ì…ì‚¬ì¼+1
 */
 
 create table emp03 as select * from emp;
@@ -12,26 +12,26 @@ select * from emp03 where ename ='CLARK';
 select max(hiredate)+1 from emp03;
 insert into emp03 (empno,sal,comm,mgr) values (7368,2073.21,2200,7839);
 
-update emp03 set ename ='½Å±æµ¿',job='SUPERMAN',hiredate ='1983/01/13'
+update emp03 set ename ='ì‹ ê¸¸ë™',job='SUPERMAN',hiredate ='1983/01/13'
 where  empno =7368;
 
 commit;
 
 /*
-°úÁ¦ loginÀÎ ÇÏ´Â È­¸éÀ» ¸¸µé°í id¿Í passwordÀ» Ã¼Å©ÇÏ°í, ´ÙÀ½ È­¸é¿¡¼­
-	id@@@ ´Ô È¯¿µÇÕ´Ï´Ù. ³²Àº point´Â @@@ ÀÔ´Ï´Ù. ¶ó´Â ³»¿ëÀÌ ³ªÅ¸³­´Ù°í ÇÑ´Ù.
-	ÀÌ¿¡ ÇÊ¿ä·Î ÇÏ´Â Å×ÀÌºí°ú Å×ÀÌºí ±¸Á¶¸¦ ¸¸µå¼¼¿ä..
+ê³¼ì œ loginì¸ í•˜ëŠ” í™”ë©´ì„ ë§Œë“¤ê³  idì™€ passwordì„ ì²´í¬í•˜ê³ , ë‹¤ìŒ í™”ë©´ì—ì„œ
+	id@@@ ë‹˜ í™˜ì˜í•©ë‹ˆë‹¤. ë‚¨ì€ pointëŠ” @@@ ì…ë‹ˆë‹¤. ë¼ëŠ” ë‚´ìš©ì´ ë‚˜íƒ€ë‚œë‹¤ê³  í•œë‹¤.
+	ì´ì— í•„ìš”ë¡œ í•˜ëŠ” í…Œì´ë¸”ê³¼ í…Œì´ë¸” êµ¬ì¡°ë¥¼ ë§Œë“œì„¸ìš”..
 */
 
 create table login_t (id varchar2(20) not null,password vharchar(8)not null,
 point number(7));
 
-/* ¼÷Á¦
-ÂüÁ¶Å° °ü°è¿¡ ÀÖ´Â Å×ÀÌºí ±¸¼ºÇÏ±â 
-¸ŞÀÎÅ×ÀÌºí  student_main(id, pass, name) :¾ÆÀÌµğ, ÆĞ½º¿öµå, ÀÌ¸§
-¼­ºêÅ×ÀÌºí  student_point(id, subject, point); ¾ÆÀÌµğ, °ú¸ñ, Á¡¼ö
-  student_main °ú student_point  id·Î  foreign key °ü°è¸¦ ¼³Á¤ÇÏ°í,
-  student_main¿¡ µ¥ÀÌÅÍ°¡ ÀÖ¾î¾ß¸¸ student_point¸¦ ÀÔ·ÂÇÒ ¼ö ÀÖ°Ô²û Ã³¸®
+/* ìˆ™ì œ
+ì°¸ì¡°í‚¤ ê´€ê³„ì— ìˆëŠ” í…Œì´ë¸” êµ¬ì„±í•˜ê¸° 
+ë©”ì¸í…Œì´ë¸”  student_main(id, pass, name) :ì•„ì´ë””, íŒ¨ìŠ¤ì›Œë“œ, ì´ë¦„
+ì„œë¸Œí…Œì´ë¸”  student_point(id, subject, point); ì•„ì´ë””, ê³¼ëª©, ì ìˆ˜
+  student_main ê³¼ student_point  idë¡œ  foreign key ê´€ê³„ë¥¼ ì„¤ì •í•˜ê³ ,
+  student_mainì— ë°ì´í„°ê°€ ìˆì–´ì•¼ë§Œ student_pointë¥¼ ì…ë ¥í•  ìˆ˜ ìˆê²Œë” ì²˜ë¦¬
 */
 select * from emp;
 select * from dept;
@@ -51,9 +51,9 @@ CREATE TABLE student_point
 );
 
 insert into student_point values('STU_01','SC',12);
--- ¸ÕÀúÀÔ·Â½Ã parent key not found ¿¡·¯¹® ¶ä
-insert into student_main values('STU_01','7777','½Å±æµ¿');
---main Å×ÀÌºí ºÎÅÍ ÀÔ·Â½Ã pointÅ×ÀÌºíµµ ÀÔ·ÂÀÌ °¡´É 
+-- ë¨¼ì €ì…ë ¥ì‹œ parent key not found ì—ëŸ¬ë¬¸ ëœ¸
+insert into student_main values('STU_01','7777','ì‹ ê¸¸ë™');
+--main í…Œì´ë¸” ë¶€í„° ì…ë ¥ì‹œ pointí…Œì´ë¸”ë„ ì…ë ¥ì´ ê°€ëŠ¥ 
 select * from student_point;
 select * from student_main;
 commit;

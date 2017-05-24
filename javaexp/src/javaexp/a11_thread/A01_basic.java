@@ -1,19 +1,19 @@
 package javaexp.a11_thread;
 /*
-¾²·¹µå ÇÁ·Î±×·¥Àº ÇÏ³ªÀÇ ÇÁ·Î¼¼½º¿¡¼­ ¿©·¯ ¸ÖÆ¼ÅÂ½ºÅ·ÇÒ ¼ö
-ÀÖ´Â ¾²·¹µå¸¦ ¸¸µé¾î¼­ È¿°úÀûÀÌ°í ºü¸£°Ô Ã³¸®ÇÒ ¼ö ÀÖ°Ô
-µµ¿Í ÁØ´Ù.
-ÀºÇà¿¡ °¡¼­ ÇÑ»ç¶÷ÀÌ ÀýÂ÷°¡ ³¡³ª±â ±îÁö, ´Ù¸¥ »ç¶÷ÀÌ ÀýÂ÷ ÁøÇàÇÏÁö
-¸øÇÑ´Ù¸é ºñÈ¿À²ÀûÀÌ°í ½Ã°£µµ ¸¹ÀÌ ÇãºñÇÏ°Ô µÈ´Ù.
-thread¶ó´Â ´ÜÀ§ ÀýÂ÷°¡ ÀÖ¾î °¢°¢ÀÇ ´Ü°èº°·Î ¿©·¯ ¾÷¹«´ã´çÀÚ°¡
-Ã³¸®ÇÒ ¼ö ÀÖ´Ù¸é, ¸¹Àº »ç¶÷ÀÌ µ¿½Ã´Ù¹ßÀûÀ¸·Î ¾÷¹«¸¦ Ã³¸®ÇÒ ¼ö ÀÖ°Ô
-µÈ´Ù.
+ì“°ë ˆë“œ í”„ë¡œê·¸ëž¨ì€ í•˜ë‚˜ì˜ í”„ë¡œì„¸ìŠ¤ì—ì„œ ì—¬ëŸ¬ ë©€í‹°íƒœìŠ¤í‚¹í•  ìˆ˜
+ìžˆëŠ” ì“°ë ˆë“œë¥¼ ë§Œë“¤ì–´ì„œ íš¨ê³¼ì ì´ê³  ë¹ ë¥´ê²Œ ì²˜ë¦¬í•  ìˆ˜ ìžˆê²Œ
+ë„ì™€ ì¤€ë‹¤.
+ì€í–‰ì— ê°€ì„œ í•œì‚¬ëžŒì´ ì ˆì°¨ê°€ ëë‚˜ê¸° ê¹Œì§€, ë‹¤ë¥¸ ì‚¬ëžŒì´ ì ˆì°¨ ì§„í–‰í•˜ì§€
+ëª»í•œë‹¤ë©´ ë¹„íš¨ìœ¨ì ì´ê³  ì‹œê°„ë„ ë§Žì´ í—ˆë¹„í•˜ê²Œ ëœë‹¤.
+threadë¼ëŠ” ë‹¨ìœ„ ì ˆì°¨ê°€ ìžˆì–´ ê°ê°ì˜ ë‹¨ê³„ë³„ë¡œ ì—¬ëŸ¬ ì—…ë¬´ë‹´ë‹¹ìžê°€
+ì²˜ë¦¬í•  ìˆ˜ ìžˆë‹¤ë©´, ë§Žì€ ì‚¬ëžŒì´ ë™ì‹œë‹¤ë°œì ìœ¼ë¡œ ì—…ë¬´ë¥¼ ì²˜ë¦¬í•  ìˆ˜ ìžˆê²Œ
+ëœë‹¤.
  * */
 /*
-1.  implements·Î Thread Ã³¸®..
+1.  implementsë¡œ Thread ì²˜ë¦¬..
  * */
 class Person01{}
-// implementsÇÑ ³»¿ëÀº Ãß°¡ »ó¼ÓÀÌ °¡´É
+// implementsí•œ ë‚´ìš©ì€ ì¶”ê°€ ìƒì†ì´ ê°€ëŠ¥
 class Account extends Person01 implements Runnable{
 	private String name;	
 	public Account(String name) {
@@ -23,19 +23,19 @@ class Account extends Person01 implements Runnable{
 	public void run() {
 		// TODO Auto-generated method stub
 		for(int workProc=1;workProc<=10;workProc++){
-			System.out.println(name+"´ÔÀÌ "+workProc+"¹øÂ° ÀýÂ÷¸¦ Ã³¸®ÇÕ´Ï´Ù!!");
+			System.out.println(name+"ë‹˜ì´ "+workProc+"ë²ˆì§¸ ì ˆì°¨ë¥¼ ì²˜ë¦¬í•©ë‹ˆë‹¤!!");
 		}
 	}	
 }
 /*
- 2. extends Thread¸¦ ¾²´Â °æ¿ì
- 1) Å¬·¡½º°¡  Thread¿¡ »ó¼ÓµÇ¾ú±â¿¡..
- 2) Å¬·¡½º¿Í °´Ã¼¸¦ ¹Ù·Î È°¿ëÇÒ ¼ö ÀÖ´Ù.
+ 2. extends Threadë¥¼ ì“°ëŠ” ê²½ìš°
+ 1) í´ëž˜ìŠ¤ê°€  Threadì— ìƒì†ë˜ì—ˆê¸°ì—..
+ 2) í´ëž˜ìŠ¤ì™€ ê°ì²´ë¥¼ ë°”ë¡œ í™œìš©í•  ìˆ˜ ìžˆë‹¤.
  * */
-// extends Person ·Î ÀÚ¹Ù¿¡¼­´Â ´ÜÀÏ »ó¼Ó¸¸ °¡´ÉÇÏ±â¿¡ Ãß°¡
-// »ó¼ÓÀÌ ºÒ°¡´ÉÇÏ´Ù.
-// Ãß°¡»ó¼ÓÀÌ ÇÊ¿äÇÑ °æ¿ì¿¡´Â Runnable interface¸¦ implements
-// ÇØ¾ßÇÑ´Ù.
+// extends Person ë¡œ ìžë°”ì—ì„œëŠ” ë‹¨ì¼ ìƒì†ë§Œ ê°€ëŠ¥í•˜ê¸°ì— ì¶”ê°€
+// ìƒì†ì´ ë¶ˆê°€ëŠ¥í•˜ë‹¤.
+// ì¶”ê°€ìƒì†ì´ í•„ìš”í•œ ê²½ìš°ì—ëŠ” Runnable interfaceë¥¼ implements
+// í•´ì•¼í•œë‹¤.
 class Traveler extends Thread{
 	private String name;
 	public Traveler(String name) {
@@ -43,9 +43,9 @@ class Traveler extends Thread{
 	}
 	@Override
 	public void run() {
-		String []locs={"¼­¿ï","´ëÀü","´ë±¸","ºÎ»ê","³²ÇØ¾È","±¤ÁÖ","ÀüÁÖ"};
+		String []locs={"ì„œìš¸","ëŒ€ì „","ëŒ€êµ¬","ë¶€ì‚°","ë‚¨í•´ì•ˆ","ê´‘ì£¼","ì „ì£¼"};
 		for(int idx=0;idx<locs.length;idx++){
-			System.out.println(name+"´ÔÀÌ "+locs[idx]+"·Î ¿©ÇàÀ» °©´Ï´Ù!!");
+			System.out.println(name+"ë‹˜ì´ "+locs[idx]+"ë¡œ ì—¬í–‰ì„ ê°‘ë‹ˆë‹¤!!");
 		}
 	}
 	
@@ -54,20 +54,20 @@ public class A01_basic {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		// 1. RunnableÀ» implementsÇÑ Thread Ã³¸® ´Ü°è
-		//    1) °´Ã¼ »ý¼º
-		//    2) ThreadÀÇ »ý¼ºÀÚ·Î ÇØ´ç °´Ã¼Àü´Þ
-		Account acc01 = new Account("È«±æµ¿");
+		// 1. Runnableì„ implementsí•œ Thread ì²˜ë¦¬ ë‹¨ê³„
+		//    1) ê°ì²´ ìƒì„±
+		//    2) Threadì˜ ìƒì„±ìžë¡œ í•´ë‹¹ ê°ì²´ì „ë‹¬
+		Account acc01 = new Account("í™ê¸¸ë™");
 		Thread t1 = new Thread(acc01);
-		//    3) start()·Î run()¸¦ È£Ãâ
+		//    3) start()ë¡œ run()ë¥¼ í˜¸ì¶œ
 		t1.start();
-		Thread t2 = new Thread(new Account("½Å±æµ¿") );
+		Thread t2 = new Thread(new Account("ì‹ ê¸¸ë™") );
 		t2.start();		
-		new Thread(new Account("¸¶±æµ¿") ).start();
-		// Thead »ó¼ÓÀº ¹Ù·Î È°¿ë °¡´É..
-		Traveler t01= new Traveler("ÀÌÁ¤³²");
-		Traveler t02= new Traveler("¿ÀÇÏ³ª");
-		Traveler t03= new Traveler("¹æ¹Ì¼÷");
+		new Thread(new Account("ë§ˆê¸¸ë™") ).start();
+		// Thead ìƒì†ì€ ë°”ë¡œ í™œìš© ê°€ëŠ¥..
+		Traveler t01= new Traveler("ì´ì •ë‚¨");
+		Traveler t02= new Traveler("ì˜¤í•˜ë‚˜");
+		Traveler t03= new Traveler("ë°©ë¯¸ìˆ™");
 		t01.start();
 		t02.start();
 		t03.start();

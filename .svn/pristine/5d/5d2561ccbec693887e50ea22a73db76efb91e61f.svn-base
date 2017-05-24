@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+/*
+
+*/
+
+/**/
+</style>
+<script src="http://code.jquery.com/jquery-1.10.2.js">
+</script>
+<script type="text/javascript">
+$(document).ready(function(){
+	var personList=[{name:"홍길동",age:27},
+		{name:"김길동",age:31},{name:"신길동",age:35},
+		{name:"마길동",age:21} ]; // json
+	// $.each( 배열객체,   function(index, item){ 처리할 내용 }  );
+	$.each( personList, function(index, item){
+		// 첫번째..
+		if( index == 0 ){
+			alert("첫째:"+index+ ":"+ item.name + ":"+item.age );
+		}
+		// 마지막에..
+		if( index == ( personList.length-1) ){
+			alert("마지막에:"+index+ ":"+ item.name + ":"+item.age );
+		}
+		$("tr").eq(index).html("<td>"+item.name+"</td><td>"+item.age+"</td>");
+	});	
+});
+</script>
+</head>
+<body>
+<table align="center" border>
+	<tr><td></td><td></td></tr>
+	<tr><td></td><td></td></tr>
+	<tr><td></td><td></td></tr>
+	<tr><td></td><td></td></tr>
+</table>
+</body>
+</html>

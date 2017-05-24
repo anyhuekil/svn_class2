@@ -1,7 +1,7 @@
-/* ¼÷Á¦
-emp03 º¹»çÅ×ÀÌºí »ı¼º
-1. ÀÔ·Â empnoÀÇ °¡Àå ÀÛÀº¼öº¸´Ù -1, mgr:clarkÀÇ mgrÀÔ·Â, sal: Æò±Õ¿¬ºÀ, comm: ÀüÃ¼commÀÇ ÇÕ°è
-2. ¼öÁ¤ ename: '½Å±æµ¿', jobÀº SUPERMAN, hiredate´Â ÃÖ±Ù¿¡ ÀÔ»çÀÏ +1
+/* ìˆ™ì œ
+emp03 ë³µì‚¬í…Œì´ë¸” ìƒì„±
+1. ì…ë ¥ empnoì˜ ê°€ì¥ ì‘ì€ìˆ˜ë³´ë‹¤ -1, mgr:clarkì˜ mgrì…ë ¥, sal: í‰ê· ì—°ë´‰, comm: ì „ì²´commì˜ í•©ê³„
+2. ìˆ˜ì • ename: 'ì‹ ê¸¸ë™', jobì€ SUPERMAN, hiredateëŠ” ìµœê·¼ì— ì…ì‚¬ì¼ +1
 */	 
 
 select mgr from emp
@@ -21,10 +21,10 @@ drop table emp03;
 select * from emp03;	
 insert into emp03 values(7368, 7839, 2073.21, 2200);
 
-/* °úÁ¦
-login ÇÏ´Â È­¸éÀ» ¸¸µé°í id¿Í password¸¦ Ã¼Å©ÇÏ°í, ´ÙÀ½ È­¸é¿¡¼­ id@@@´Ô È¯¿µÇÕ´Ï´Ù.
-´ÔÀÇ point´Â @@@ÀÔ´Ï´Ù. ¶ó´Â ³»¿ëÀÌ ³ªÅ¸³­´Ù°í ÇÑ´Ù.
-ÀÌ¿¡ ÇÊ¿ä·Î ÇÏ´Â Å×ÀÌºí°ú Å×ÀÌºí ±¸Á¶¸¦ ¸¸µå¼¼¿ä.
+/* ê³¼ì œ
+login í•˜ëŠ” í™”ë©´ì„ ë§Œë“¤ê³  idì™€ passwordë¥¼ ì²´í¬í•˜ê³ , ë‹¤ìŒ í™”ë©´ì—ì„œ id@@@ë‹˜ í™˜ì˜í•©ë‹ˆë‹¤.
+ë‹˜ì˜ pointëŠ” @@@ì…ë‹ˆë‹¤. ë¼ëŠ” ë‚´ìš©ì´ ë‚˜íƒ€ë‚œë‹¤ê³  í•œë‹¤.
+ì´ì— í•„ìš”ë¡œ í•˜ëŠ” í…Œì´ë¸”ê³¼ í…Œì´ë¸” êµ¬ì¡°ë¥¼ ë§Œë“œì„¸ìš”.
 */
 
 create table login(
@@ -38,13 +38,13 @@ insert into login values('himan','22222',100);
 insert into login values('bye','2232',200);
 insert into login values('hihi','23332',103);
 
-/* ¼÷Á¦
-ÂüÁ¶Å° °ü°è¿¡ ÀÖ´Â Å×ÀÌºí ±¸¼ºÇÏ±â 
-¸ŞÀÎÅ×ÀÌºí student_main(id, pass, name) : ¾ÆÀÌµğ, ÆĞ½º¿öµå, ÀÌ¸§
-¼­ºêÅ×ÀÌºí student_point(id, subject); ¾ÆÀÌµğ, °ú¸ñ, Á¡¼ö
+/* ìˆ™ì œ
+ì°¸ì¡°í‚¤ ê´€ê³„ì— ìˆëŠ” í…Œì´ë¸” êµ¬ì„±í•˜ê¸° 
+ë©”ì¸í…Œì´ë¸” student_main(id, pass, name) : ì•„ì´ë””, íŒ¨ìŠ¤ì›Œë“œ, ì´ë¦„
+ì„œë¸Œí…Œì´ë¸” student_point(id, subject); ì•„ì´ë””, ê³¼ëª©, ì ìˆ˜
 
-student_main°ú student_point id·Î foreign key °ü°è¸¦ ¼³Á¤ÇÏ°í,
-student_main¿¡ µ¥ÀÌÅÍ°¡ ÀÖ¾î¾ß¸¸ student_point¸¦ ÀÔ·ÂÇÒ ¼ö ÀÖ°Ô²û Ã³¸®
+student_mainê³¼ student_point idë¡œ foreign key ê´€ê³„ë¥¼ ì„¤ì •í•˜ê³ ,
+student_mainì— ë°ì´í„°ê°€ ìˆì–´ì•¼ë§Œ student_pointë¥¼ ì…ë ¥í•  ìˆ˜ ìˆê²Œë” ì²˜ë¦¬
 */
 drop table student_main3;
 drop table student_point3;
@@ -65,7 +65,7 @@ CREATE TABLE student_point3
 select * from student_main3;
 select * from student_point3;
 
-insert into student_main3 values('himan', '1234', 'È«±æµ¿');
-insert into student_main3 values('himan1', '1234', '½Å±æµ¿');
-insert into student_point3 values('himan1', '¼öÇĞ');
+insert into student_main3 values('himan', '1234', 'í™ê¸¸ë™');
+insert into student_main3 values('himan1', '1234', 'ì‹ ê¸¸ë™');
+insert into student_point3 values('himan1', 'ìˆ˜í•™');
 

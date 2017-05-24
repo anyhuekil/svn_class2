@@ -4,25 +4,25 @@ public class A02_dataType {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-//	Á¤¼öÇü data type
+//	ì •ìˆ˜í˜• data type
 //		byte(1byte) -128 ~ 127
-		byte age= 25; // byteµ¥ÀÌÅÍ·Î 25¸¦ ÇÒ´ç.
-//		age = 129; byteµ¥ÀÌÅÍ ¹üÀ§¸¦ ³Ñ¾î¼­´Â ÇÒ´ç ºÒ°¡.
+		byte age= 25; // byteë°ì´í„°ë¡œ 25ë¥¼ í• ë‹¹.
+//		age = 129; byteë°ì´í„° ë²”ìœ„ë¥¼ ë„˜ì–´ì„œëŠ” í• ë‹¹ ë¶ˆê°€.
 //		short, [int], long, char
-		char codeVal=66; //char 2byte·Î µ¥ÀÌÅÍ ÇÒ´ç..0~65535
-		System.out.println("³ªÀÌ´Â "+age);
-		System.out.println("ÄÚµå°ª"+codeVal);
-		codeVal='ÇÑ'; // char´Â ''·Î ÇÑ ÀÚ¸¸ ÇÒ´ç
+		char codeVal=66; //char 2byteë¡œ ë°ì´í„° í• ë‹¹..0~65535
+		System.out.println("ë‚˜ì´ëŠ” "+age);
+		System.out.println("ì½”ë“œê°’"+codeVal);
+		codeVal='í•œ'; // charëŠ” ''ë¡œ í•œ ìë§Œ í• ë‹¹
 		System.out.println((int)codeVal);
-// ½Ç¼öÇü date type
-//		float(4byte)  : ºÎÈ£È­ºñÆ®(1bit) + Áö¼ö(8bits) + °¡¼ö(23bits) =32bits 
-//		[double(8byte)] : ºÎÈ£(1bit) + Áö¼ö(11bits) + °¡¼ö(52bits) = 64bits
-		float degree = 25.2F;// float º¯¼ö = µ¥ÀÌÅÍF;
-		double height= 175.2; // ½Ç¼öÇüÀÇ default°ªÀÌ±â¿¡ ÇÒ´ç °¡´É
-		System.out.println("¿Âµµ´Â "+degree+"µµ");
-		System.out.println("Å°´Â "+height+"cm");
-//	³í¸®Çü date type
-//		boolean 1byte(8bits) Ç¥Çö.. true/false
+// ì‹¤ìˆ˜í˜• date type
+//		float(4byte)  : ë¶€í˜¸í™”ë¹„íŠ¸(1bit) + ì§€ìˆ˜(8bits) + ê°€ìˆ˜(23bits) =32bits 
+//		[double(8byte)] : ë¶€í˜¸(1bit) + ì§€ìˆ˜(11bits) + ê°€ìˆ˜(52bits) = 64bits
+		float degree = 25.2F;// float ë³€ìˆ˜ = ë°ì´í„°F;
+		double height= 175.2; // ì‹¤ìˆ˜í˜•ì˜ defaultê°’ì´ê¸°ì— í• ë‹¹ ê°€ëŠ¥
+		System.out.println("ì˜¨ë„ëŠ” "+degree+"ë„");
+		System.out.println("í‚¤ëŠ” "+height+"cm");
+//	ë…¼ë¦¬í˜• date type
+//		boolean 1byte(8bits) í‘œí˜„.. true/false
 		boolean isGo = true;
 		if( isGo ){
 			System.out.println(" go!! go!!!");

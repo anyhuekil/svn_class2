@@ -1,25 +1,25 @@
 /***
-	¼÷Á¦ : ¿¬ºÀ´ÜÀ§º°·Î ÀÎ¿ø¼ö¸¦ Ã¼Å©ÇÏ¼¼¿ä.
-	~1000¹Ì¸¸
-	~2000¹Ì¸¸
-	~3000¹Ì¸¸
-	~4000¹Ì¸¸
-	~5000¹Ì¸¸
-	~5000¹Ì¸¸
+	ìˆ™ì œ : ì—°ë´‰ë‹¨ìœ„ë³„ë¡œ ì¸ì›ìˆ˜ë¥¼ ì²´í¬í•˜ì„¸ìš”.
+	~1000ë¯¸ë§Œ
+	~2000ë¯¸ë§Œ
+	~3000ë¯¸ë§Œ
+	~4000ë¯¸ë§Œ
+	~5000ë¯¸ë§Œ
+	~5000ë¯¸ë§Œ
 ***/
-SELECT ((FLOOR(SAL/1000))+1)*1000||'¹Ì¸¸' ¿¬ºÀ´ÜÀ§, COUNT(*)||'¸í' ÀÎ¿ø 
+SELECT ((FLOOR(SAL/1000))+1)*1000||'ë¯¸ë§Œ' ì—°ë´‰ë‹¨ìœ„, COUNT(*)||'ëª…' ì¸ì› 
 	FROM EMP 
 	GROUP BY FLOOR(SAL/1000) 
 	ORDER BY FLOOR(SAL/1000);
 
 
--- È®ÀÎ¿¹Á¦) º¸³Ê½º°¡ ÀÖ´Â »ç¿øÀÇ ÀÌ¸§°ú ºÎ¼­¸íÀ» Ãâ·ÂÇÏ¼¼¿ä
+-- í™•ì¸ì˜ˆì œ) ë³´ë„ˆìŠ¤ê°€ ìžˆëŠ” ì‚¬ì›ì˜ ì´ë¦„ê³¼ ë¶€ì„œëª…ì„ ì¶œë ¥í•˜ì„¸ìš”
 SELECT ENAME, DNAME FROM EMP E, DEPT D 
 	WHERE E.DEPTNO=D.DEPTNO AND COMM IS NOT NULL;
 
 /***
-	°úÁ¦ : ºÎ¼­À§Ä¡º° »ç¿øÀÇ ¼ö¸¦ ¾Æ·¡ Çü½ÄÀ¸·Î Ãâ·Â
-		(Çü½Ä) ºÎ¼­À§Ä¡, »ç¿ø¼ö
+	ê³¼ì œ : ë¶€ì„œìœ„ì¹˜ë³„ ì‚¬ì›ì˜ ìˆ˜ë¥¼ ì•„ëž˜ í˜•ì‹ìœ¼ë¡œ ì¶œë ¥
+		(í˜•ì‹) ë¶€ì„œìœ„ì¹˜, ì‚¬ì›ìˆ˜
 ***/
 SELECT LOC, COUNT(*) FROM EMP E, DEPT D
 	WHERE E.DEPTNO=D.DEPTNO
@@ -27,29 +27,29 @@ SELECT LOC, COUNT(*) FROM EMP E, DEPT D
 
 
 /***
-	¼÷Á¦ : student10 ¾ÆÀÌµð, ÀÌ¸§
-		 studentPoint ¾ÆÀÌµð, °ú¸ñ, Á¡¼ö
-		 GradeCheck ÃÖÀúÁ¡¼ölopoint, ÃÖ°íÁ¡¼öhipoint, ÇÐÁ¡µî±Þ(A~F)
-	   1) ¾ÆÀÌµð¸¦ Á¶ÀÎÇØ¼­ "ÀÌ¸§ °ú¸ñ Á¡¼ö" Ãâ·Â
-	   2) Á¡¼ö¸¦ Á¶ÀÎÇØ¼­ "°ú¸ñ Á¡¼ö ÇÐÁ¡"Ãâ·Â
-	   3) "ÀÌ¸§ °ú¸ñ ÇÐÁ¡µî±Þ" Ãâ·Â
+	ìˆ™ì œ : student10 ì•„ì´ë””, ì´ë¦„
+		 studentPoint ì•„ì´ë””, ê³¼ëª©, ì ìˆ˜
+		 GradeCheck ìµœì €ì ìˆ˜lopoint, ìµœê³ ì ìˆ˜hipoint, í•™ì ë“±ê¸‰(A~F)
+	   1) ì•„ì´ë””ë¥¼ ì¡°ì¸í•´ì„œ "ì´ë¦„ ê³¼ëª© ì ìˆ˜" ì¶œë ¥
+	   2) ì ìˆ˜ë¥¼ ì¡°ì¸í•´ì„œ "ê³¼ëª© ì ìˆ˜ í•™ì "ì¶œë ¥
+	   3) "ì´ë¦„ ê³¼ëª© í•™ì ë“±ê¸‰" ì¶œë ¥
 ***/
 CREATE TABLE STUDENT10 (
 	ID VARCHAR2(20) PRIMARY KEY,
 	NAME VARCHAR2(30)
 );
-INSERT INTO STUDENT10 VALUES ('a01','È«±æµ¿');
-INSERT INTO STUDENT10 VALUES ('a02','¸¶±æµ¿');
+INSERT INTO STUDENT10 VALUES ('a01','í™ê¸¸ë™');
+INSERT INTO STUDENT10 VALUES ('a02','ë§ˆê¸¸ë™');
 select * from student10;
 CREATE TABLE STUDENTPOINT (
 	ID VARCHAR2(20) REFERENCES STUDENT10(ID),
 	SUBJECT VARCHAR2(30),
 	POINT NUMBER(3)
 );
-INSERT INTO STUDENTPOINT VALUES ('a01','±¹¾î', 85);
-INSERT INTO STUDENTPOINT VALUES ('a01','¼öÇÐ', 100);
-INSERT INTO STUDENTPOINT VALUES ('a02','±¹¾î', 75);
-INSERT INTO STUDENTPOINT VALUES ('a02','¼öÇÐ', 89);
+INSERT INTO STUDENTPOINT VALUES ('a01','êµ­ì–´', 85);
+INSERT INTO STUDENTPOINT VALUES ('a01','ìˆ˜í•™', 100);
+INSERT INTO STUDENTPOINT VALUES ('a02','êµ­ì–´', 75);
+INSERT INTO STUDENTPOINT VALUES ('a02','ìˆ˜í•™', 89);
 SELECT * FROM STUDENTPOINT;
 CREATE TABLE GRADECHECK (
 	LOPOINT NUMBER(3),
@@ -63,21 +63,21 @@ INSERT INTO GRADECHECK VALUES (80,89,'B');
 INSERT INTO GRADECHECK VALUES (90,100,'A');
 SELECT * FROM GRADECHECK;
 COMMIT;
--- 1) ¾ÆÀÌµð¸¦ Á¶ÀÎÇØ¼­ "ÀÌ¸§ °ú¸ñ Á¡¼ö" Ãâ·Â
+-- 1) ì•„ì´ë””ë¥¼ ì¡°ì¸í•´ì„œ "ì´ë¦„ ê³¼ëª© ì ìˆ˜" ì¶œë ¥
 SELECT NAME, SUBJECT, POINT FROM STUDENT10 S, STUDENTPOINT P
 	WHERE S.ID=P.ID;
--- 2) Á¡¼ö¸¦ Á¶ÀÎÇØ¼­ "°ú¸ñ Á¡¼ö ÇÐÁ¡"Ãâ·Â
+-- 2) ì ìˆ˜ë¥¼ ì¡°ì¸í•´ì„œ "ê³¼ëª© ì ìˆ˜ í•™ì "ì¶œë ¥
 SELECT SUBJECT, POINT, HAKJUM FROM STUDENTPOINT P,  GRADECHECK G 
 	WHERE POINT BETWEEN LOPOINT AND HIPOINT;
--- 3) "ÀÌ¸§ °ú¸ñ ÇÐÁ¡µî±Þ" Ãâ·Â
+-- 3) "ì´ë¦„ ê³¼ëª© í•™ì ë“±ê¸‰" ì¶œë ¥
 SELECT NAME, SUBJECT, HAKJUM FROM STUDENT10 S, STUDENTPOINT P,  GRADECHECK G 
 	WHERE S.ID=P.ID AND POINT BETWEEN LOPOINT AND HIPOINT;
 
 
 /***
-	¼÷Á¦)OUTER JOIN, GROUPÀ» È°¿ëÇÏ¿© ºÎ¼­¸íº° ÀÎ¿øÀ» È®ÀÎÇÒ·Á°í ÇÑ´Ù. ¾Æ·¡ÀÇ Çü½ÄÀ¸·Î Ãâ·ÂÇÏµÇ 
-	     ÀÎ¿øÀÌ ¾ø´Â °÷Àº 0À¸·Î Ç¥½Ã
-		 ºÎ¼­¸í  ÀÎ¿ø
+	ìˆ™ì œ)OUTER JOIN, GROUPì„ í™œìš©í•˜ì—¬ ë¶€ì„œëª…ë³„ ì¸ì›ì„ í™•ì¸í• ë ¤ê³  í•œë‹¤. ì•„ëž˜ì˜ í˜•ì‹ìœ¼ë¡œ ì¶œë ¥í•˜ë˜ 
+	     ì¸ì›ì´ ì—†ëŠ” ê³³ì€ 0ìœ¼ë¡œ í‘œì‹œ
+		 ë¶€ì„œëª…  ì¸ì›
 ***/
 SELECT DNAME, COUNT(ENAME) FROM EMP E, DEPT D 
 	WHERE E.DEPTNO(+)=D.DEPTNO
@@ -85,6 +85,6 @@ SELECT DNAME, COUNT(ENAME) FROM EMP E, DEPT D
 
 
 
--- È®ÀÎ¿¹Á¦ ) º¸³Ê½º°¡ ÀÖ´Â »ç¿øÀÇ ÀÌ¸§°ú ºÎ¼­¸íÀ» Ãâ·ÂÇÏ¼¼¿ä!!
+-- í™•ì¸ì˜ˆì œ ) ë³´ë„ˆìŠ¤ê°€ ìžˆëŠ” ì‚¬ì›ì˜ ì´ë¦„ê³¼ ë¶€ì„œëª…ì„ ì¶œë ¥í•˜ì„¸ìš”!!
 SELECT ENAME, DNAME FROM EMP E, DEPT D
 	WHERE E.DEPTNO=D.DEPTNO AND COMM IS NOT NULL;

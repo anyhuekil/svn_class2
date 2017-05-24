@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+/*
+
+*/
+
+/**/
+</style>
+<script src="http://code.jquery.com/jquery-1.10.2.js">
+</script>
+<script type="text/javascript">
+$(document).ready(function(){
+
+});
+var win01 = window.open("","","width=200,height=200");
+win01.moveTo(0,0); // 왼쪽, 최상위
+// 1초 마다 위치 왼쪽 10, 아래로 10씩 이동..
+setInterval(function(){
+	win01.moveBy(10,10);
+}, 1000);
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

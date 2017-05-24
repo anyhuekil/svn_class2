@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+/*
+
+*/
+
+/**/
+</style>
+<script src="http://code.jquery.com/jquery-1.10.2.js">
+</script>
+<script type="text/javascript">
+$(document).ready(function(){
+/*
+ selector : 
+ 1) tag명은 그대로 tag명으로 인식.
+ 2) id값은 #id명으로 인식..
+ 3) class명은 .class명으로 인식..
+ */
+	//h1의 배경색상을 selector 형식으로 변경..
+	//querySelector는 첫번째 하나만 해당 내용으로 처리...
+	document.querySelector("h1").style.backgroundColor="pink";
+ 	// document.querySelectorAll : 대상객체의 배열...
+ 	var salList = document.querySelectorAll(".sal");
+ 	for(var idx=0;idx<salList.length;idx++){
+ 		/// 객체.style : 객체의 css속성 지정할 수 있다..
+ 		//  text-align : -은 바로 다음 대문자로 전환해야지 script에서 인식가능
+ 		salList[ idx ].style.textAlign="right";
+ 	}
+ 	/* 확인예제
+ 	타이틀은 배경색상을 파랑색, 글자색상을 노랑.. ex) 사원번호, 사원명...
+ 	사원번호, 사원명 데이터  중앙정렬 처리..
+ 	*/
+    
+    var titleObj=document.querySelector("tr");
+ 	// background-color:blue
+    titleObj.style.backgroundColor="blue";
+    titleObj.style.color="yellow";
+    
+	// 
+ 	var centerList = document.querySelectorAll(".alCenter");
+ 	for(var idx=0;idx<centerList.length;idx++){
+ 		centerList[ idx ].style.textAlign="center";
+ 	}
+	
+});
+</script>
+</head>
+<body>
+<center>
+	<h1>사원 리스트1</h1>
+<table border width="600">
+	<tr>
+		<th>사원번호</th><th>사원명</th>
+		<th>급여</th><th>부서명</th>
+	</tr>
+	<tr><td class="alCenter">7001</td><td class="alCenter">홍길동</td><td class="sal">3,000</td><td>총무</td></tr>
+	<tr><td class="alCenter">7002</td><td class="alCenter">신길동</td><td class="sal">4,000</td><td>it사업부</td></tr>
+	<tr><td class="alCenter">7003</td><td class="alCenter">이휘성</td><td class="sal">5,000</td><td>인사</td></tr>
+	<tr><td class="alCenter">7004</td><td class="alCenter">조영하</td><td class="sal">7,000</td><td>기획조정</td></tr>
+
+</table>	
+
+
+</body>
+</html>

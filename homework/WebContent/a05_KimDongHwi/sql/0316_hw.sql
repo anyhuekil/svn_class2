@@ -1,115 +1,115 @@
 /*
-¼÷Á¦1
-6°³¿ùÀÇ ÀÎÅÏ±â°£¿¡´Â ±Ş¿©ÀÇ 70%¸¸ Áö±ŞÇÏ±â·Î Çß´Ù.
-»ç¿øÀÇ ÀÎÅÏ±â°£¸¸·á½ÃÁ¡À» Ãâ·ÂÇÏ°í, 6°³¿ù°£ÀÇ ±Ş¿©ÀÇ ÃÑÇÕ °è»êÇÏ¼¼¿ä.
-¿ù±Ş¿© - sal/13
-ÀÎÅÏ±â°£ - ¿ù±Ş¿©ÀÇ 70%
-ÀÎÅÏ±â°£ ¿ù±Ş¿© ÃÑ¾× - ÀÎÅÏ6°³¿ù°£ÀÇ ±Ş¿© ÃÑ¾×
-»ç¿ø¹øÈ£ / »ç¿ø¸í / ÀÔ»çÀÏ / ÀÎÅÏ±â°£¸¸·á½ÃÁ¡ / ÀÎÅÏ±â°£¿ù±Ş(sal/13*0.7)
+ìˆ™ì œ1
+6ê°œì›”ì˜ ì¸í„´ê¸°ê°„ì—ëŠ” ê¸‰ì—¬ì˜ 70%ë§Œ ì§€ê¸‰í•˜ê¸°ë¡œ í–ˆë‹¤.
+ì‚¬ì›ì˜ ì¸í„´ê¸°ê°„ë§Œë£Œì‹œì ì„ ì¶œë ¥í•˜ê³ , 6ê°œì›”ê°„ì˜ ê¸‰ì—¬ì˜ ì´í•© ê³„ì‚°í•˜ì„¸ìš”.
+ì›”ê¸‰ì—¬ - sal/13
+ì¸í„´ê¸°ê°„ - ì›”ê¸‰ì—¬ì˜ 70%
+ì¸í„´ê¸°ê°„ ì›”ê¸‰ì—¬ ì´ì•¡ - ì¸í„´6ê°œì›”ê°„ì˜ ê¸‰ì—¬ ì´ì•¡
+ì‚¬ì›ë²ˆí˜¸ / ì‚¬ì›ëª… / ì…ì‚¬ì¼ / ì¸í„´ê¸°ê°„ë§Œë£Œì‹œì  / ì¸í„´ê¸°ê°„ì›”ê¸‰(sal/13*0.7)
 */
 select * from emp;
 
-select empno "»ç¿ø¹øÈ£" , ename "»ç¿ø¸í" , 
-		to_char(hiredate, 'yyyy-mm-dd') "ÀÔ»çÀÏ",
-		to_char(add_months(hiredate,6), 'yyyy-mm-dd') "ÀÎÅÏ¸¸·á½Ã°£",
-		trunc((sal/13)*0.7,0) "ÀÎÅÏ ±Ş¿©",
-		trunc(((sal/13)*0.7)*6,0) "ÀÎÅÏ±â°£ ÃÑ±Ş¿©"
+select empno "ì‚¬ì›ë²ˆí˜¸" , ename "ì‚¬ì›ëª…" , 
+		to_char(hiredate, 'yyyy-mm-dd') "ì…ì‚¬ì¼",
+		to_char(add_months(hiredate,6), 'yyyy-mm-dd') "ì¸í„´ë§Œë£Œì‹œê°„",
+		trunc((sal/13)*0.7,0) "ì¸í„´ ê¸‰ì—¬",
+		trunc(((sal/13)*0.7)*6,0) "ì¸í„´ê¸°ê°„ ì´ê¸‰ì—¬"
 from emp;
 
 
--- ¼÷Á¦2
--- ±Ş¿© °è»ê 3´Ü°è ±Ş¿©ÀÏÀ» ³ª´©¾î¼­ Ãâ·ÂÇÏ¼¼¿ä
--- 1´Ü°è ´ç¿ù 20ÀÏ
--- 2´Ü°è ´ç¿ø ¸¶Áö¸·³¯
--- 3´Ü°è ´ÙÀ½´Ş 10ÀÏ
--- »ç¿øÀÔ»çÀÏ Ã¹¿ù±Ş1 Ã¹¿ù±Ş2 Ã¹¿ù±Ş3
+-- ìˆ™ì œ2
+-- ê¸‰ì—¬ ê³„ì‚° 3ë‹¨ê³„ ê¸‰ì—¬ì¼ì„ ë‚˜ëˆ„ì–´ì„œ ì¶œë ¥í•˜ì„¸ìš”
+-- 1ë‹¨ê³„ ë‹¹ì›” 20ì¼
+-- 2ë‹¨ê³„ ë‹¹ì› ë§ˆì§€ë§‰ë‚ 
+-- 3ë‹¨ê³„ ë‹¤ìŒë‹¬ 10ì¼
+-- ì‚¬ì›ì…ì‚¬ì¼ ì²«ì›”ê¸‰1 ì²«ì›”ê¸‰2 ì²«ì›”ê¸‰3
 
-select ename, to_char(hiredate, 'yyyy-mm-dd') "ÀÔ»çÀÏ",
-	to_char(last_day(add_months(hiredate,-1))+20, 'yyyy-mm-dd') "´ç¿ù20ÀÏ",
-	to_char(last_day(hiredate), 'yyyy-mm-dd') "´ç¿ù¸¶Áö¸·³¯",
-	to_char(last_day(hiredate)+10, 'yyyy-mm-dd') "´ÙÀ½´Ş10ÀÏ"
+select ename, to_char(hiredate, 'yyyy-mm-dd') "ì…ì‚¬ì¼",
+	to_char(last_day(add_months(hiredate,-1))+20, 'yyyy-mm-dd') "ë‹¹ì›”20ì¼",
+	to_char(last_day(hiredate), 'yyyy-mm-dd') "ë‹¹ì›”ë§ˆì§€ë§‰ë‚ ",
+	to_char(last_day(hiredate)+10, 'yyyy-mm-dd') "ë‹¤ìŒë‹¬10ì¼"
 from emp;
 
 /* 
-¼÷Á¦3
-	±Ù¹«°³¿ù¼ö¿¡ µû¸¥ Â÷µî º¸³Ê½º Áö±Ş 
+ìˆ™ì œ3
+	ê·¼ë¬´ê°œì›”ìˆ˜ì— ë”°ë¥¸ ì°¨ë“± ë³´ë„ˆìŠ¤ ì§€ê¸‰ 
 	1/3 = 30%, 1/3=20%, 1/3=10%
-	»ç¿ø , ÀÔ»çÀÏ, ÇöÀç³¯Â¥(@@/@@/@@ AM @@½Ã @@ºĞ @@ÃÊ), ±Ù¹«°³¿ù¼ö, º¸³Ê½º
+	ì‚¬ì› , ì…ì‚¬ì¼, í˜„ì¬ë‚ ì§œ(@@/@@/@@ AM @@ì‹œ @@ë¶„ @@ì´ˆ), ê·¼ë¬´ê°œì›”ìˆ˜, ë³´ë„ˆìŠ¤
 */
-select ename "»ç¿ø", to_char(hiredate) "ÀÔ»çÀÏ", 
-		to_char(sysdate,'yy/mm/dd am hh"½Ã" mi"ºĞ" ss"ÃÊ"') "ÇöÀç³¯Â¥",
-		trunc(months_between(sysdate, hiredate)) "±Ù¹«°³¿ù¼ö",
-		trunc(months_between(sysdate, hiredate))-400  "°è»ê"
+select ename "ì‚¬ì›", to_char(hiredate) "ì…ì‚¬ì¼", 
+		to_char(sysdate,'yy/mm/dd am hh"ì‹œ" mi"ë¶„" ss"ì´ˆ"') "í˜„ì¬ë‚ ì§œ",
+		trunc(months_between(sysdate, hiredate)) "ê·¼ë¬´ê°œì›”ìˆ˜",
+		trunc(months_between(sysdate, hiredate))-400  "ê³„ì‚°"
 		
-		--º¸³Ê½º °è»ê½Ä ÇÊ¿ä max/min
+		--ë³´ë„ˆìŠ¤ ê³„ì‚°ì‹ í•„ìš” max/min
 		
 		from emp;
 		
 		
-select max(trunc(months_between(sysdate, hiredate))) from emp; --434 ÃÖ´ë
-select min(trunc(months_between(sysdate, hiredate))) from emp; --410 ÃÖ¼Ò
-select avg(trunc(months_between(sysdate, hiredate))) from emp; --425 Æò±Õ
-select count(trunc(months_between(sysdate, hiredate))) from emp; --14°³ µ¥ÀÌÅÍ
+select max(trunc(months_between(sysdate, hiredate))) from emp; --434 ìµœëŒ€
+select min(trunc(months_between(sysdate, hiredate))) from emp; --410 ìµœì†Œ
+select avg(trunc(months_between(sysdate, hiredate))) from emp; --425 í‰ê· 
+select count(trunc(months_between(sysdate, hiredate))) from emp; --14ê°œ ë°ì´í„°
 
 
 /*
-¼÷Á¦4
-Á¶È¸°ªÀÌ '1981³â, 01¿ù 01ÀÏ'ºÎÅÍ '1982³â12¿ù12ÀÏ' »çÀÌÀÇ µ¥ÀÌÅÍ Áß ºÎ¼­°¡ 30ÀÎ µ¥ÀÌÅÍ¸¦ Á¶È¸ÇÏ¿© 
-»ç¿ø¸í(10ÀÚ¸® ¾Õ ###±âÈ£Ã³¸®)
-Á÷Ã¥(10ÀÚ¸®-³ª¸ÓÁö µÚ - Ã³¸®)
-ÀÔ»çÀÏ(@@³â @@¿ù @@ÀÏ @¿äÀÏ 24½Ã)
-¿¬ºÀ (###1,600.0)Ç¥½Ã
+ìˆ™ì œ4
+ì¡°íšŒê°’ì´ '1981ë…„, 01ì›” 01ì¼'ë¶€í„° '1982ë…„12ì›”12ì¼' ì‚¬ì´ì˜ ë°ì´í„° ì¤‘ ë¶€ì„œê°€ 30ì¸ ë°ì´í„°ë¥¼ ì¡°íšŒí•˜ì—¬ 
+ì‚¬ì›ëª…(10ìë¦¬ ì• ###ê¸°í˜¸ì²˜ë¦¬)
+ì§ì±…(10ìë¦¬-ë‚˜ë¨¸ì§€ ë’¤ - ì²˜ë¦¬)
+ì…ì‚¬ì¼(@@ë…„ @@ì›” @@ì¼ @ìš”ì¼ 24ì‹œ)
+ì—°ë´‰ (###1,600.0)í‘œì‹œ
 */
 
-select  deptno "»ç¿ø¹øÈ£",
-		lpad(ename, 10, '#') "»ç¿ø¸í",
-		rpad(job,10,'-') "Á÷Ã¥",
-		to_char(hiredate, 'yy"³â"mm"¿ù"dd"ÀÏ"day hh24"½Ã"') "ÀÔ»çÀÏ",
-		lpad(to_char(sal, '999,999.9'),13,'#') "¿¬ºÀ"
+select  deptno "ì‚¬ì›ë²ˆí˜¸",
+		lpad(ename, 10, '#') "ì‚¬ì›ëª…",
+		rpad(job,10,'-') "ì§ì±…",
+		to_char(hiredate, 'yy"ë…„"mm"ì›”"dd"ì¼"day hh24"ì‹œ"') "ì…ì‚¬ì¼",
+		lpad(to_char(sal, '999,999.9'),13,'#') "ì—°ë´‰"
 from emp
 where deptno ='30'and emp.HIREDATE between '1981/01/01' and '1982/12/12'; 
 
 /*
-¼÷Á¦ 5
-ÀÌ¸§ °ü¸®ÀÚ¹øÈ£ º¸³Ê½º ==> 
-µ¥ÀÌÅÍ°¡ ¾øÀ» ¶§
-°ü¸®ÀÚ ¹øÈ£ 'ÃÖ°í·¹º§', º¸³Ê½º´Â '0'Ç¥½Ã
+ìˆ™ì œ 5
+ì´ë¦„ ê´€ë¦¬ìë²ˆí˜¸ ë³´ë„ˆìŠ¤ ==> 
+ë°ì´í„°ê°€ ì—†ì„ ë•Œ
+ê´€ë¦¬ì ë²ˆí˜¸ 'ìµœê³ ë ˆë²¨', ë³´ë„ˆìŠ¤ëŠ” '0'í‘œì‹œ
  */
  
-select ename "ÀÌ¸§", nvl(comm,0) "º¸³Ê½º", 
-	nvl(to_char(nvl(mgr,'')),'ÃÖ°í·¹º§') "°ü¸®ÀÚ¹øÈ£"
+select ename "ì´ë¦„", nvl(comm,0) "ë³´ë„ˆìŠ¤", 
+	nvl(to_char(nvl(mgr,'')),'ìµœê³ ë ˆë²¨') "ê´€ë¦¬ìë²ˆí˜¸"
  from emp; 
  
  
-select ename "ÀÌ¸§", nvl(comm,0) "º¸³Ê½º", 
-	case when 0 = nvl(mgr,0) then 'ÃÖ°í·¹º§'
+select ename "ì´ë¦„", nvl(comm,0) "ë³´ë„ˆìŠ¤", 
+	case when 0 = nvl(mgr,0) then 'ìµœê³ ë ˆë²¨'
 		else to_char(mgr,'9999')
-			 end "°ü¸®ÀÚ¹øÈ£"
+			 end "ê´€ë¦¬ìë²ˆí˜¸"
  from emp; 
  
 
 /* 
- ¼÷Á¦ 6
- ¿¬ºÀ¿¡ µû¸¥ µî±ŞÃ¼°è¸¦ ³ª´­·Á°í ÇÑ´Ù.
-decode¸¦ È°¿ëÇØ¼­,
-    1000 ¹Ì¸¸        Fµî±Ş    ¼º°ú±Ş 3%
-    1000 ~ 2000¹Ì¸¸    Eµî±Ş    ¼º°ú±Ş 5%
-    2000 ~ 3000¹Ì¸¸    Dµî±Ş    ¼º°ú±Ş 7%
-    3000 ~ 4000¹Ì¸¸    Cµî±Ş    ¼º°ú±Ş 4%
-    4000 ~ 5000¹Ì¸¸    Bµî±Ş    ¼º°ú±Ş 3%
-    5000 ~ 6000¹Ì¸¸    Aµî±Ş    ¼º°ú±Ş 2%
-ÀÌ¸§ ºÎ¼­ ¿¬ºÀ ¿¬ºÀµî±Ş ¼º°ú±Ş ÃÑ¾×(¿¬ºÀ+¼º°ú±Ş)
+ ìˆ™ì œ 6
+ ì—°ë´‰ì— ë”°ë¥¸ ë“±ê¸‰ì²´ê³„ë¥¼ ë‚˜ëˆŒë ¤ê³  í•œë‹¤.
+decodeë¥¼ í™œìš©í•´ì„œ,
+    1000 ë¯¸ë§Œ        Fë“±ê¸‰    ì„±ê³¼ê¸‰ 3%
+    1000 ~ 2000ë¯¸ë§Œ    Eë“±ê¸‰    ì„±ê³¼ê¸‰ 5%
+    2000 ~ 3000ë¯¸ë§Œ    Dë“±ê¸‰    ì„±ê³¼ê¸‰ 7%
+    3000 ~ 4000ë¯¸ë§Œ    Cë“±ê¸‰    ì„±ê³¼ê¸‰ 4%
+    4000 ~ 5000ë¯¸ë§Œ    Bë“±ê¸‰    ì„±ê³¼ê¸‰ 3%
+    5000 ~ 6000ë¯¸ë§Œ    Aë“±ê¸‰    ì„±ê³¼ê¸‰ 2%
+ì´ë¦„ ë¶€ì„œ ì—°ë´‰ ì—°ë´‰ë“±ê¸‰ ì„±ê³¼ê¸‰ ì´ì•¡(ì—°ë´‰+ì„±ê³¼ê¸‰)
 */
 
-select ename "ÀÌ¸§" , deptno "ºÎ¼­" , sal "¿¬ºÀ",
+select ename "ì´ë¦„" , deptno "ë¶€ì„œ" , sal "ì—°ë´‰",
 	
-case when trunc(sal, -3)=0 then 'Fµî±Ş'
-	 when trunc(sal, -3)=1000 then 'Eµî±Ş'
-	 when trunc(sal, -3)=2000 then 'Dµî±Ş'
-	 when trunc(sal, -3)=3000 then 'Cµî±Ş'
-	 when trunc(sal, -3)=4000 then 'Bµî±Ş'
-else 'Aµî±Ş'
-	end "µî±Ş",
+case when trunc(sal, -3)=0 then 'Fë“±ê¸‰'
+	 when trunc(sal, -3)=1000 then 'Eë“±ê¸‰'
+	 when trunc(sal, -3)=2000 then 'Dë“±ê¸‰'
+	 when trunc(sal, -3)=3000 then 'Cë“±ê¸‰'
+	 when trunc(sal, -3)=4000 then 'Bë“±ê¸‰'
+else 'Aë“±ê¸‰'
+	end "ë“±ê¸‰",
 
 case when trunc(sal, -3)=0 then '3%'
 	 when trunc(sal, -3)=1000 then '5%'
@@ -117,7 +117,7 @@ case when trunc(sal, -3)=0 then '3%'
 	 when trunc(sal, -3)=3000 then '4%'
 	 when trunc(sal, -3)=4000 then '3%'
 else '2%'
-	end "¼º°ú±Ş(%)",
+	end "ì„±ê³¼ê¸‰(%)",
 
 case when trunc(sal, -3)=0 then sal*0.03
 	 when trunc(sal, -3)=1000 then sal*0.05
@@ -125,7 +125,7 @@ case when trunc(sal, -3)=0 then sal*0.03
 	 when trunc(sal, -3)=3000 then sal*0.04
 	 when trunc(sal, -3)=4000 then sal*0.03
 else sal*0.02
-	end "¼º°ú±İ¾×",	
+	end "ì„±ê³¼ê¸ˆì•¡",	
 
 case when trunc(sal, -3)=0 then sal*1.03
 	 when trunc(sal, -3)=1000 then sal*1.05
@@ -133,33 +133,33 @@ case when trunc(sal, -3)=0 then sal*1.03
 	 when trunc(sal, -3)=3000 then sal*1.04
 	 when trunc(sal, -3)=4000 then sal*1.03
 else sal*1.02
-	end "ÃÑ¾×"	
+	end "ì´ì•¡"	
 		from emp;	 
 
 /*
-¼÷Á¦7
-ÀÔ»ç ºĞ±â ±âÁØ Ç¥½Ã(1/4, 2/4, 3/4, 4/4) ÀÔ»ç ºĞ±â¸¦ Ç¥½Ã
-»ç¿ø¹øÈ£, ÀÌ¸§, ÀÔ»ç(³â/¿ù), ÀÔ»çºĞ±â
+ìˆ™ì œ7
+ì…ì‚¬ ë¶„ê¸° ê¸°ì¤€ í‘œì‹œ(1/4, 2/4, 3/4, 4/4) ì…ì‚¬ ë¶„ê¸°ë¥¼ í‘œì‹œ
+ì‚¬ì›ë²ˆí˜¸, ì´ë¦„, ì…ì‚¬(ë…„/ì›”), ì…ì‚¬ë¶„ê¸°
  */
 
 select * from emp;
-select empno "»ç¿ø¹øÈ£", ename "ÀÌ¸§", to_char(hiredate, 'yy"³â/"mm"¿ù"') "ÀÔ»çÀÏ",
+select empno "ì‚¬ì›ë²ˆí˜¸", ename "ì´ë¦„", to_char(hiredate, 'yy"ë…„/"mm"ì›”"') "ì…ì‚¬ì¼",
 
 
- case when to_char(hiredate, 'mm') = 01 then '1ºĞ±â'
- 	 when to_char(hiredate, 'mm') = 02 then '1ºĞ±â'
- 	 when to_char(hiredate, 'mm') = 03 then '1ºĞ±â'
+ case when to_char(hiredate, 'mm') = 01 then '1ë¶„ê¸°'
+ 	 when to_char(hiredate, 'mm') = 02 then '1ë¶„ê¸°'
+ 	 when to_char(hiredate, 'mm') = 03 then '1ë¶„ê¸°'
 
- 	 when to_char(hiredate, 'mm') = 04 then '2ºĞ±â'
- 	 when to_char(hiredate, 'mm') = 05 then '2ºĞ±â'
- 	 when to_char(hiredate, 'mm') = 06 then '2ºĞ±â'
+ 	 when to_char(hiredate, 'mm') = 04 then '2ë¶„ê¸°'
+ 	 when to_char(hiredate, 'mm') = 05 then '2ë¶„ê¸°'
+ 	 when to_char(hiredate, 'mm') = 06 then '2ë¶„ê¸°'
 
- 	 when to_char(hiredate, 'mm') = 07 then '3ºĞ±â'
- 	 when to_char(hiredate, 'mm') = 08 then '3ºĞ±â'
- 	 when to_char(hiredate, 'mm') = 09 then '3ºĞ±â'
+ 	 when to_char(hiredate, 'mm') = 07 then '3ë¶„ê¸°'
+ 	 when to_char(hiredate, 'mm') = 08 then '3ë¶„ê¸°'
+ 	 when to_char(hiredate, 'mm') = 09 then '3ë¶„ê¸°'
 
- else '4ºĞ±â'
-	end "ºĞ±â"
+ else '4ë¶„ê¸°'
+	end "ë¶„ê¸°"
 	from emp;
 	
 

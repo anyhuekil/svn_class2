@@ -7,21 +7,21 @@ public class A01_Stream {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		/* Å°º¸µå ÀÔ·Â */
-//		ÀÔ·ÂÀÇ ÃÖ»óÀ§ Stream : InputStream
+		/* í‚¤ë³´ë“œ ì…ë ¥ */
+//		ì…ë ¥ì˜ ìµœìƒìœ„ Stream : InputStream
 		InputStream is=null;
-//		Å°º¸µå ÀÔ·Â : System.in.read() ·Î Ã³¸®..
-//		System.in ==> InputStreamÀÇ ½ÇÁ¦°´Ã¼
+//		í‚¤ë³´ë“œ ì…ë ¥ : System.in.read() ë¡œ ì²˜ë¦¬..
+//		System.in ==> InputStreamì˜ ì‹¤ì œê°ì²´
 		is =System.in;
 		
-//		read()¶ó´Â ¸Ş¼­µå¸¦ ÅëÇØ ¹®ÀÚ ÇÑÀÚ¸¦ ÀÔ·Â ¹ŞÀ» ¼ö ÀÖ´Ù.
-//		±âº»ÀûÀ¸·Î intÀ¸·Î charÀ¸·Î ÀüÈ¯ castingÇÏ¸é ¹®ÀÚ¸¦ ¹ŞÀ» ¼ö ÀÖ´Ù.
-//		io(input/output)ÀÌ ¹ß»ıÇÏ¸é ¿¹¿ÜÃ³¸®(Exception)À» ÇØÁØ´Ù.
-		System.out.print("¹®ÀÚ¸¦ ÀÔ·ÂÇÏ¼¼¿ä:");
+//		read()ë¼ëŠ” ë©”ì„œë“œë¥¼ í†µí•´ ë¬¸ì í•œìë¥¼ ì…ë ¥ ë°›ì„ ìˆ˜ ìˆë‹¤.
+//		ê¸°ë³¸ì ìœ¼ë¡œ intìœ¼ë¡œ charìœ¼ë¡œ ì „í™˜ castingí•˜ë©´ ë¬¸ìë¥¼ ë°›ì„ ìˆ˜ ìˆë‹¤.
+//		io(input/output)ì´ ë°œìƒí•˜ë©´ ì˜ˆì™¸ì²˜ë¦¬(Exception)ì„ í•´ì¤€ë‹¤.
+		System.out.print("ë¬¸ìë¥¼ ì…ë ¥í•˜ì„¸ìš”:");
 		try {
 			int n = is.read();
-			// ¹ŞÀº ³»¿ëÀ» Ãâ·ÂÇÑ´Ù.
-			System.out.println(n+",¹®ÀÚ·Î º¯È¯:"+(char)n);
+			// ë°›ì€ ë‚´ìš©ì„ ì¶œë ¥í•œë‹¤.
+			System.out.println(n+",ë¬¸ìë¡œ ë³€í™˜:"+(char)n);
 			
 		} catch (IOException e) {
 			// TODO Auto-generated catch block

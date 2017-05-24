@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+/*
+
+*/
+
+/**/
+</style>
+<script src="http://code.jquery.com/jquery-1.10.2.js">
+</script>
+<script type="text/javascript">
+$(document).ready(function(){
+	var img = document.createElement("img");
+	img.setAttribute("src"," img01.png"); 
+	// 속성에 이미지 지정
+	img.setAttribute("width",500);
+	img.setAttribute("height",350);
+	document.body.appendChild(img);
+});
+</script>
+</head>
+<body>
+
+</body>
+</html>

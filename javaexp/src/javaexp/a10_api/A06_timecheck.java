@@ -5,13 +5,13 @@ public class A06_timecheck {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		long start = System.currentTimeMillis();
-		System.out.println("½ÃÀÛ ½Ã°£:"+start);
+		System.out.println("ì‹œìž‘ ì‹œê°„:"+start);
 		for(int cnt=1;cnt<100000;cnt++){
-			System.out.println("Ä«¿îÆ®:"+cnt);
+			System.out.println("ì¹´ìš´íŠ¸:"+cnt);
 		}
 		long end = System.currentTimeMillis();
-		System.out.println("Á¾·á ½Ã°£:"+end);
-		System.out.println("½Ã°£Â÷:"+(end-start));
+		System.out.println("ì¢…ë£Œ ì‹œê°„:"+end);
+		System.out.println("ì‹œê°„ì°¨:"+(end-start));
 			
 	}
 

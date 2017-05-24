@@ -1,22 +1,22 @@
 package javaexp.a06_object;
-/* Å¬·¡½º ¼±¾ð ±ÔÄ¢ 
- 1. A01_Object.java·Î public class A01_ObjectÀ¸·Î
- ÀÏ¹ÝÀûÀ¸·Î ÆÄÀÏ¸í°ú pulbicÀ¸·Î ¼±¾ðÇÑ Å¬·¡½º¸íÀº
- µ¿ÀÏÇÏ°Ô ÇÑ´Ù.
- 2. public class Å¬·¡½º¸íÀº ÇÏ³ªÀÇ ÆÄÀÏ¿¡ 
-    ÇÏ³ª¸¸ ¼±¾ðÇÒ ¼ö ÀÖ´Ù.   
+/* í´ëž˜ìŠ¤ ì„ ì–¸ ê·œì¹™ 
+ 1. A01_Object.javaë¡œ public class A01_Objectìœ¼ë¡œ
+ ì¼ë°˜ì ìœ¼ë¡œ íŒŒì¼ëª…ê³¼ pulbicìœ¼ë¡œ ì„ ì–¸í•œ í´ëž˜ìŠ¤ëª…ì€
+ ë™ì¼í•˜ê²Œ í•œë‹¤.
+ 2. public class í´ëž˜ìŠ¤ëª…ì€ í•˜ë‚˜ì˜ íŒŒì¼ì— 
+    í•˜ë‚˜ë§Œ ì„ ì–¸í•  ìˆ˜ ìžˆë‹¤.   
 */
-//public class Person{} ¿¡·¯¹ß»ý
-// publicÀÌ ¾Æ´Ñ ¿©·¯ Å¬·¡½º´Â ¼±¾ðÇÒ ¼ö ÀÖ´Ù.
+//public class Person{} ì—ëŸ¬ë°œìƒ
+// publicì´ ì•„ë‹Œ ì—¬ëŸ¬ í´ëž˜ìŠ¤ëŠ” ì„ ì–¸í•  ìˆ˜ ìžˆë‹¤.
 class Person_99{}
 class Product_99{}
 public class A01_Object {
 /*
-3. main()¸Þ¼­µå°¡ ¾øÀ¸¸é Å¬·¡½º´Â ½ÇÇàÇÒ ¼ö ¾ø´Ù.
-   - compile¸¸ °¡´É..
-   main()¸Þ¼­µå°¡ ÀÖ´Â Å¬·¡½º¿¡¼­ main()ºÎºÐÀº ¿ÜºÎ
-   Å¬·¡½º°¡ ¼±¾ðµÈ °Íµµ Á¢±ÙÁ¦¾îÀÚ°¡ Çã¿ëÇÏ´Â ¹üÀ§ ¾È¿¡¼­
-   ¼öÇàÀÌ °¡´ÉÇÏ´Ù.
-4. class¸íÀº ÀÏ¹ÝÀûÀ¸·Î Ã¹ÀÚ¸¦ ´ë¹®ÀÚ·Î ½ÃÀÛÇÑ´Ù.   
+3. main()ë©”ì„œë“œê°€ ì—†ìœ¼ë©´ í´ëž˜ìŠ¤ëŠ” ì‹¤í–‰í•  ìˆ˜ ì—†ë‹¤.
+   - compileë§Œ ê°€ëŠ¥..
+   main()ë©”ì„œë“œê°€ ìžˆëŠ” í´ëž˜ìŠ¤ì—ì„œ main()ë¶€ë¶„ì€ ì™¸ë¶€
+   í´ëž˜ìŠ¤ê°€ ì„ ì–¸ëœ ê²ƒë„ ì ‘ê·¼ì œì–´ìžê°€ í—ˆìš©í•˜ëŠ” ë²”ìœ„ ì•ˆì—ì„œ
+   ìˆ˜í–‰ì´ ê°€ëŠ¥í•˜ë‹¤.
+4. classëª…ì€ ì¼ë°˜ì ìœ¼ë¡œ ì²«ìžë¥¼ ëŒ€ë¬¸ìžë¡œ ì‹œìž‘í•œë‹¤.   
 */
 }

@@ -1,30 +1,30 @@
 package javaexp.a08_objectdup;
 
-// ÀÎ½ºÅÏ½º ¸â¹ö Å¬·¡½º : ¿ÜºÎ °´Ã¼°¡ »ı¼º, ³»ºÎ Å¬·¡½º »ç¿ë°¡´É
+// ì¸ìŠ¤í„´ìŠ¤ ë©¤ë²„ í´ë˜ìŠ¤ : ì™¸ë¶€ ê°ì²´ê°€ ìƒì„±, ë‚´ë¶€ í´ë˜ìŠ¤ ì‚¬ìš©ê°€ëŠ¥
 class InstOuter{	
-	/*ÀÎ½ºÅÏ½º ¸â¹ö Å¬·¡½º
+	/*ì¸ìŠ¤í„´ìŠ¤ ë©¤ë²„ í´ë˜ìŠ¤
 	 InstOuter.InstInnerMember
 	 * */
 	class InstInnerMember{
-		String name="È«±æµ¿"; // ÀÎ½ºÅÏ½º ÇÊµå
-//		static int number; static »ç¿ë ºÒ°¡.
-		void callName(){ // ÀÎ½ºÅÏ½º ¸Ş¼Òµå
-			System.out.println(name+"ÀÌ È£Ãâ µË´Ï´Ù!!");
+		String name="í™ê¸¸ë™"; // ì¸ìŠ¤í„´ìŠ¤ í•„ë“œ
+//		static int number; static ì‚¬ìš© ë¶ˆê°€.
+		void callName(){ // ì¸ìŠ¤í„´ìŠ¤ ë©”ì†Œë“œ
+			System.out.println(name+"ì´ í˜¸ì¶œ ë©ë‹ˆë‹¤!!");
 		}
 		
 	}
 }
-// Á¤Àû ¸â¹ö Å¬·¡½º
-// ³»ºÎ¿¡ static ¸â¹ö Å¬·¡½º·Î ¼±¾ğµÈ °ÍÀ» ¸»ÇÑ´Ù.
+// ì •ì  ë©¤ë²„ í´ë˜ìŠ¤
+// ë‚´ë¶€ì— static ë©¤ë²„ í´ë˜ìŠ¤ë¡œ ì„ ì–¸ëœ ê²ƒì„ ë§í•œë‹¤.
 class OuterClass{
-	/*Á¤Àû(static) ¸â¹ö Å¬·¡½º
+	/*ì •ì (static) ë©¤ë²„ í´ë˜ìŠ¤
 	 * OuterClass.StaticMemberClass
 	 * */
 	static class StaticMemberClass{
-		String name="Á¤Àû(static) ¸â¹ö Å¬·¡½º";
-		static int number; // static ¸â¹ö »ç¿ë °¡´É
+		String name="ì •ì (static) ë©¤ë²„ í´ë˜ìŠ¤";
+		static int number; // static ë©¤ë²„ ì‚¬ìš© ê°€ëŠ¥
 		void callName(){
-			System.out.println(name+"ÀÌ È£Ãâ µË´Ï´Ù!!");
+			System.out.println(name+"ì´ í˜¸ì¶œ ë©ë‹ˆë‹¤!!");
 		}
 	}
 }
@@ -32,18 +32,18 @@ public class A01_dupClass {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		// ¿ÜºÎ Å¬·¡½º¿¡¼­ ÀÎ½ºÅÏ½º ¸â¹ö Å¬·¡½º ³»ºÎ Å¬·¡½º¸¦ È£ÃâÇÒ·Á¸é,
-		// ¸ÕÀú ¿ÜºÎ °´Ã¼ »ı¼º..
+		// ì™¸ë¶€ í´ë˜ìŠ¤ì—ì„œ ì¸ìŠ¤í„´ìŠ¤ ë©¤ë²„ í´ë˜ìŠ¤ ë‚´ë¶€ í´ë˜ìŠ¤ë¥¼ í˜¸ì¶œí• ë ¤ë©´,
+		// ë¨¼ì € ì™¸ë¶€ ê°ì²´ ìƒì„±..
 		InstOuter outer = new InstOuter();
-		// ³»ºÎ °´Ã¼  ==> 
-		// ¿ÜºÎÅ¬·¡½º¸í.³»ºÎÅ¬·¡½º¸í  ÂüÁ¶º¯¼ö = ¿ÜºÎ°´Ã¼ÂüÁ¶.new ³»ºÎÅ¬·¡½º¸í();
+		// ë‚´ë¶€ ê°ì²´  ==> 
+		// ì™¸ë¶€í´ë˜ìŠ¤ëª….ë‚´ë¶€í´ë˜ìŠ¤ëª…  ì°¸ì¡°ë³€ìˆ˜ = ì™¸ë¶€ê°ì²´ì°¸ì¡°.new ë‚´ë¶€í´ë˜ìŠ¤ëª…();
 		InstOuter.InstInnerMember inner = outer.new InstInnerMember();
-		System.out.println("³»ºÎ Å¬·¡½º ÇÊµå(ÀÌ¸§):"+inner.name);
+		System.out.println("ë‚´ë¶€ í´ë˜ìŠ¤ í•„ë“œ(ì´ë¦„):"+inner.name);
 		inner.callName();
-		// Á¤Àû ¸â¹ö Å¬·¡½º´Â 
-		// ¿ÜºÎÅ¬·¡½º¸í.³»ºÎÅ¬·¡½º¸í ÂüÁ¶º¯¼ö = new ¿ÜºÎÅ¬·¡½º¸í.³»ºÎÅ¬·¡½º¸í();
+		// ì •ì  ë©¤ë²„ í´ë˜ìŠ¤ëŠ” 
+		// ì™¸ë¶€í´ë˜ìŠ¤ëª….ë‚´ë¶€í´ë˜ìŠ¤ëª… ì°¸ì¡°ë³€ìˆ˜ = new ì™¸ë¶€í´ë˜ìŠ¤ëª….ë‚´ë¶€í´ë˜ìŠ¤ëª…();
 		OuterClass.StaticMemberClass stinner = new OuterClass.StaticMemberClass();
-		System.out.println("Á¤Àû ¸â¹ö Å¬·¡½º¸¦ ÅëÇÑ °´Ã¼ »ı¼º ÇÊµå:"+stinner.name);
+		System.out.println("ì •ì  ë©¤ë²„ í´ë˜ìŠ¤ë¥¼ í†µí•œ ê°ì²´ ìƒì„± í•„ë“œ:"+stinner.name);
 		stinner.callName();
 		
 	}

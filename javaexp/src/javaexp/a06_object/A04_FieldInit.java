@@ -4,32 +4,32 @@ class Computer{
 	int price;
 	String memory="8G";
 	
-	// »ı¼ºÀÚ¸¦ ÅëÇØ ÃÊ±â°ª ¼³Á¤
-	// »ı¼ºÀÚ¸í(dataType Áö¿ªº¯¼ö¸í1, dataType Áö¿ªº¯¼ö¸í2)
+	// ìƒì„±ìë¥¼ í†µí•´ ì´ˆê¸°ê°’ ì„¤ì •
+	// ìƒì„±ìëª…(dataType ì§€ì—­ë³€ìˆ˜ëª…1, dataType ì§€ì—­ë³€ìˆ˜ëª…2)
 	Computer(String comp, int price, String memory){
-		// field¿Í Áö¿ªº¯¼ö µ¿ÀÏÇÑ ÀÌ¸§À» ±¸ºĞÇÏ±â À§ÇØ 
-		// this. : (ÇöÀç  classÀÇ).field
-		this.comp=comp; // »ı¼ºÀÚ¸¦ ÅëÇØ¼­ ÀÔ·Â¹ŞÀº µ¥ÀÌÅÍ¸¦ field°ªÀ» »ç¿ë
+		// fieldì™€ ì§€ì—­ë³€ìˆ˜ ë™ì¼í•œ ì´ë¦„ì„ êµ¬ë¶„í•˜ê¸° ìœ„í•´ 
+		// this. : (í˜„ì¬  classì˜).field
+		this.comp=comp; // ìƒì„±ìë¥¼ í†µí•´ì„œ ì…ë ¥ë°›ì€ ë°ì´í„°ë¥¼ fieldê°’ì„ ì‚¬ìš©
 		this.price=price;
 		this.memory=memory;
 		
 	}
-	// »ı¼ºÀÚ°¡ »ç¿ëÀÚ Á¤ÀÇ·Î ±¸ÇöµÇ¸é, ±âÁ¸ default»ı¼ºÀÚ´Â  
-	// ¾ø¾îÁö±â¿¡, default »ı¼ºÀÚµµ È°¿ëÇÏ·Á¸é ¼±¾ğÇÏ¿©¾ß ÇÑ´Ù.
+	// ìƒì„±ìê°€ ì‚¬ìš©ì ì •ì˜ë¡œ êµ¬í˜„ë˜ë©´, ê¸°ì¡´ defaultìƒì„±ìëŠ”  
+	// ì—†ì–´ì§€ê¸°ì—, default ìƒì„±ìë„ í™œìš©í•˜ë ¤ë©´ ì„ ì–¸í•˜ì—¬ì•¼ í•œë‹¤.
 	Computer(){}
 }
 public class A04_FieldInit {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Computer p1 = new Computer();
-		System.out.println("°´Ã¼ÀÇ field ÃÊ±â°ª");
+		System.out.println("ê°ì²´ì˜ field ì´ˆê¸°ê°’");
 		System.out.println(p1.comp);
 		System.out.println(p1.price);
-		System.out.println("ÃÊ±â¿¡ ÇÒ´çµÈ °ªÀÌ ÀÖÀ» ¶§(±ÇÀåÇÏÁö ¾ÊÀ½)");
+		System.out.println("ì´ˆê¸°ì— í• ë‹¹ëœ ê°’ì´ ìˆì„ ë•Œ(ê¶Œì¥í•˜ì§€ ì•ŠìŒ)");
 		System.out.println(p1.memory);
 		// Computer(String comp, int price, String memory)
-		// »ı¼ºÀÚ¸¦ ÅëÇØ¼­ ÃÊ±â°ª ÇÒ´ç
-		Computer p2 = new Computer("»ï¼ºÀüÀÚ",1500000,"16GB");
+		// ìƒì„±ìë¥¼ í†µí•´ì„œ ì´ˆê¸°ê°’ í• ë‹¹
+		Computer p2 = new Computer("ì‚¼ì„±ì „ì",1500000,"16GB");
 		System.out.println("p2:"+p2.comp);
 		System.out.println("p2:"+p2.price);
 		System.out.println("p2:"+p2.memory);

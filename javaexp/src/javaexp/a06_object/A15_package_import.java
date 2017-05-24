@@ -1,7 +1,7 @@
 package javaexp.a06_object;
-// ±âº»¿¹Á¦
-// javaexp.a06_object.com.util package Âü°íÇÏ¼¼¿ä~~
-// È®ÀÎ¿¹Á¦
+// ê¸°ë³¸ì˜ˆì œ
+// javaexp.a06_object.com.util package ì°¸ê³ í•˜ì„¸ìš”~~
+// í™•ì¸ì˜ˆì œ
 // 
 
 public class A15_package_import {

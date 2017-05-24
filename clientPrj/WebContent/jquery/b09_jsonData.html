@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+/*
+
+*/
+
+/**/
+</style>
+<script src="http://code.jquery.com/jquery-1.10.2.js">
+</script>
+<script type="text/javascript">
+$(document).ready(function(){
+	// 단일 객체 만들기..(json으로 선언 및 속성할당)
+	var person={};
+	 person.name="홍길동";
+	 person.age=25;
+	 $("td").eq(0).html(person.name);
+	 $("td").eq(1).html(person.age);
+	/* product  객체을 선언하고, 속성값: 물건명, 가격을 선언
+		화면에 출력(table)처리..*/
+	var product={pname:"사과",  price:1500};
+	$("td").eq(2).html(product.pname);
+	$("td").eq(3).html(product.price);
+	/* 문자열  json 데이터 선언과 $.parseJSON을 통한 변경 및
+		객체화된 내용 처리..
+	*/
+	var sendJsonText="{\"title\":\"늑대와 춤을\", \"cnt\":\"5\"}";
+	var jsonObj=$.parseJSON(sendJsonText);
+	$("h1").html(jsonObj.title+" "+jsonObj.cnt+"명과 함께 관람");
+		
+	 
+});
+</script>
+</head>
+<body>
+	<table align="center" width="400" border>
+		<tr><td></td><td></td></tr>
+		<tr><td></td><td></td></tr>
+	</table>
+	<h1></h1>
+	
+</body>
+</html>

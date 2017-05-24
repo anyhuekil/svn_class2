@@ -5,6 +5,6 @@ create table member(
 	point number,
 	auth varchar2(20)
 );
-insert into member values('himan','7777','ÇÏÀÌ¸Ç',10,'admin');
-insert into member values('superman','8888','½´ÆÛ¸Ç',20,'user');
-insert into member values('legend','9999','È«±æµ¿',50,'guest');
+insert into member values('himan','7777','í•˜ì´ë§¨',10,'admin');
+insert into member values('superman','8888','ìŠˆí¼ë§¨',20,'user');
+insert into member values('legend','9999','í™ê¸¸ë™',50,'guest');

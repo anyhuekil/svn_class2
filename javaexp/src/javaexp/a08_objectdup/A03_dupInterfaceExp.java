@@ -23,13 +23,13 @@ class Draw{
 class CircleListener implements Draw.OnTouchListener{
 	@Override
 	public void onTouch() {
-		System.out.println("µ¿±×¶ó¹Ì¸¦ ±×¸®´Ù!!");
+		System.out.println("ë™ê·¸ë¼ë¯¸ë¥¼ ê·¸ë¦¬ë‹¤!!");
 	}
 }
 class TriangleListener implements Draw.OnTouchListener{
 	@Override
 	public void onTouch() {
-		System.out.println("¼¼¸ğ¸¦ ±×¸®´Ù!!");
+		System.out.println("ì„¸ëª¨ë¥¼ ê·¸ë¦¬ë‹¤!!");
 	}
 }
 

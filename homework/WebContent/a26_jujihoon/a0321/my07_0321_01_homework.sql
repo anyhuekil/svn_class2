@@ -1,29 +1,29 @@
 /*
-¼÷Á¦
-¿¬ºÀ ´ÜÀ§º°·Î ÀÎ¿ø¼ö¸¦ Ã¼Å©ÇÏ¼¼¿ä
-¹üÀ§		»ç¿ø¼ö(ÃÖ°íÄ¡,ÃÖÀúÄ¡,Æò±ÕÄ¡)
-1000¹Ì¸¸	@@
-~2000¹Ì¸¸	@@@
-~3000¹Ì¸¸	@@
-~4000¹Ì¸¸	
-~5000¹Ì¸¸	
-~6000¹Ì¸¸	
+ìˆ™ì œ
+ì—°ë´‰ ë‹¨ìœ„ë³„ë¡œ ì¸ì›ìˆ˜ë¥¼ ì²´í¬í•˜ì„¸ìš”
+ë²”ìœ„		ì‚¬ì›ìˆ˜(ìµœê³ ì¹˜,ìµœì €ì¹˜,í‰ê· ì¹˜)
+1000ë¯¸ë§Œ	@@
+~2000ë¯¸ë§Œ	@@@
+~3000ë¯¸ë§Œ	@@
+~4000ë¯¸ë§Œ	
+~5000ë¯¸ë§Œ	
+~6000ë¯¸ë§Œ	
 */
 SELECT TRUNC(SAL/1000), COUNT(SAL), MAX(SAL), MIN(SAL), AVG(SAL) 
 FROM EMP 
 GROUP BY TRUNC(SAL/1000);
 
 /*
-¼÷Á¦
-STUDENT10			¾ÆÀÌµð(ID),			ÀÌ¸§(NAME)	
-STUDENTPOINT	¾ÆÀÌµð(ID),			°ú¸ñ(SUBJECT),		Á¡¼ö(POINT)
-GRADECHECK		ÃÖÀúÁ¡¼ö(LOPOINT),	ÃÖ°íÁ¡¼ö(HIPOINT),	ÇÐÁ¡µî±Þ(A~F)
-1) ¾ÆÀÌµð¸¦ Á¶ÀÎÇØ¼­(EQUAL JOIN)
-	ÀÌ¸§ °ú¸ñ Á¡¼ö Ãâ·Â
-2) Á¡¼ö¸¦ Á¶ÀÎÇØ¼­(NOT EQUAL JOIN)
-	°ú¸ñ Á¡¼ö ÇÐÁ¡µî±Þ
-3) STUDENT10 STUDENTPOINT GRADECHECK Á¶ÀÎÀ» ÇÏ¿©
-	ÀÌ¸§ °ú¸ñ ÇÐÁ¡µî±Þ
+ìˆ™ì œ
+STUDENT10			ì•„ì´ë””(ID),			ì´ë¦„(NAME)	
+STUDENTPOINT	ì•„ì´ë””(ID),			ê³¼ëª©(SUBJECT),		ì ìˆ˜(POINT)
+GRADECHECK		ìµœì €ì ìˆ˜(LOPOINT),	ìµœê³ ì ìˆ˜(HIPOINT),	í•™ì ë“±ê¸‰(A~F)
+1) ì•„ì´ë””ë¥¼ ì¡°ì¸í•´ì„œ(EQUAL JOIN)
+	ì´ë¦„ ê³¼ëª© ì ìˆ˜ ì¶œë ¥
+2) ì ìˆ˜ë¥¼ ì¡°ì¸í•´ì„œ(NOT EQUAL JOIN)
+	ê³¼ëª© ì ìˆ˜ í•™ì ë“±ê¸‰
+3) STUDENT10 STUDENTPOINT GRADECHECK ì¡°ì¸ì„ í•˜ì—¬
+	ì´ë¦„ ê³¼ëª© í•™ì ë“±ê¸‰
 */
 CREATE TABLE GRADECHECK
 (
@@ -52,11 +52,11 @@ FROM STUDENT_MAIN M, STUDENT_POINT P, GRADECHECK G
 WHERE M.ID = P.ID AND P.POINT BETWEEN G.LOPOINT AND G.HIPOINT;
 
 /*
-¼÷Á¦) OUTER JOIN, GROUP BY¸¦ È°¿ëÇÏ¿© 
-		ºÎ¼­¸íº° ÀÎ¿øÀ» È®ÀÎÇÒ·Á°í ÇÑ´Ù.
-		¾Æ·¡ÀÇ Çü½ÄÀ¸·Î Ãâ·ÂÇÏ¼¼¿ä.
-		ÀÎ¿øÀÌ ¾ø´Â °÷Àº 0À¸·Î Ç¥½Ã
-		ºÎ¼­¸í	ÀÎ¿ø	
+ìˆ™ì œ) OUTER JOIN, GROUP BYë¥¼ í™œìš©í•˜ì—¬ 
+		ë¶€ì„œëª…ë³„ ì¸ì›ì„ í™•ì¸í• ë ¤ê³  í•œë‹¤.
+		ì•„ëž˜ì˜ í˜•ì‹ìœ¼ë¡œ ì¶œë ¥í•˜ì„¸ìš”.
+		ì¸ì›ì´ ì—†ëŠ” ê³³ì€ 0ìœ¼ë¡œ í‘œì‹œ
+		ë¶€ì„œëª…	ì¸ì›	
 */
 SELECT D.DNAME, COUNT(E.EMPNO)
 FROM EMP E, DEPT D

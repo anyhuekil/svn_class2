@@ -13,6 +13,7 @@
 	
 	ArrayList<PlayerInfo> plist = new DAO_PlayerInfo().searchPlayer(pi);
 	request.setAttribute("plist", plist);
+	
 %>
 
 
@@ -20,7 +21,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>경마 전적 검색</title>
 <!-- Bootstrap Core CSS -->
 
 <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -44,8 +45,29 @@ background-color: rgba(0,0,10,0.3);
 <script src="<%=path%>/com/jquery-1.10.2.js"></script>
 <script type="text/javascript">
 	$(document).ready(function() {
+		$("#search").click(function(){
+			$("form").submit();
+		})
+		/* $("#idList").click(function(){
+			$("#searchList").html($(this).html());
+		})
+		$("#horseList").click(function(){
+			$("#searchList").html($(this).html());
+		})
+		$("#trainerList").click(function(){
+			$("#searchList").html($(this).html());
+		})
+		$("#ownerList").click(function(){
+			$("#searchList").html($(this).html());
+		}) */
+		$(".dropdown-menu li a").click(function(){
+		    
+		    $("#searchList").text($(this).text());
+		     $("#searchList").val($(this).text());
+		  });
 
-	})
+		});
+
 </script>
 <body>
 	<div class="container-fluid">
@@ -71,33 +93,35 @@ background-color: rgba(0,0,10,0.3);
 				<div
 					class="col-md-4 col-md-offset-4 col-sm-4 col-sm-offset-4 col-xs-4 col-xs-offset-4 form-group">
 					<div class="input-group">
-						<div class="input-group-btn">
+						
+						<!-- <div class="input-group-btn" >
 							<button type="button" class="btn btn-default dropdown-toggle"
-								data-toggle="dropdown" aria-haspopup="true"
+								data-toggle="dropdown" aria-haspopup="true" id="searchList"
 								aria-expanded="false">
-								검색 list<span class="caret"></span>
+								 검색 list <span class="caret"></span>
 							</button>
 							<ul class="dropdown-menu">
-								<li><a href="#">ID</a></li>
-								<li><a href="#">경주마</a></li>
-								 <li role="separator" class="divider"></li> 
-								<li><a href="#">조교사</a></li>
-								<li><a href="#">마주</a></li>
+								<li role="separator" class="divider"></li>
+								<li id="idList" ><a href="#">ID</a></li>
+								<li id="horseList" ><a href="#">경주마</a></li>
+								<li role="separator" class="divider"></li>
+								<li id="trainerList" ><a href="#">조교사</a></li>
+								<li id="ownerList" ><a href="#">마주</a></li>
+								<li role="separator" class="divider"></li>
 							</ul>
-						</div>
+						</div> -->
 						<!-- /btn-group -->
 						<input type="text" name="pid" class="form-control"
 							placeholder="플레이어 ID 또는 경주마 이름"> <span
 							class="input-group-btn">
-							<button class="btn btn-default" type="button">Search!</button>
+							<button id="search" class="btn btn-default" type="button">Search!</button>
 						</span>
 					</div>
 				</div>
 				<!-- /input-group -->
 				<div class="row col-sm-offset-5 col-sm-3">
 					<br> <br>
-					<button type="submit" class="btn btn-primary btn-lg ">내 전적
-						확인하기</button>
+					<button type="submit" class="btn btn-primary btn-lg ">내 전적 확인하기</button>
 				</div>
 				<!-- /.col-lg-6 -->
 			</form>
@@ -107,7 +131,8 @@ background-color: rgba(0,0,10,0.3);
 		<div class="row col-sm-offset-2 col-sm-8">
 			<div class="panel panel-default">
 				<!-- Default panel contents -->
-				<div class="panel-heading">Panel heading</div>
+				<div class="panel-heading" style="font-weight:bold;font-family:HY견고딕"
+				align="center"><h4>금액에 따른 Player 순위 정보</h4></div>
 				<!-- Table -->
 				<table class="table">
 					<tr>
@@ -119,8 +144,8 @@ background-color: rgba(0,0,10,0.3);
 					</tr>
 					<c:forEach var="player" items="${plist}" varStatus="sts">
 						<tr>
-							<td>${sts.count }</td><td>${player.pid }</td>
-							<td>${player.pname }</td><td>${player.curmoney }</td>
+							<td>${player.rank }</td><td>${player.pid }</td>
+							<td>${player.pname }</td><td>${player.curMoney }</td>
 							<td>${player.email }</td>
 						</tr>
 					</c:forEach>

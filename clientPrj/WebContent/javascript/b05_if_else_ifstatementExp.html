@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus짰">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+  <script type="text/javascript">
+  <!--
+  /*
+    ?뺤씤?덉젣..
+    ??닿났?먯뿉 媛??..
+    ?섏씠瑜??낅젰?섏꽭??.prompt
+    ==> ?덉쇅?????泥섎━.. ?낅젰踰붿쐞?? null, 怨듬갚泥섎━.
+        ==> ?좏슚???낅젰???꾨떃?덈떎.
+    0~4誘몃쭔 : 臾대즺
+    4?댁긽 8誘몃쭔 : 50%?좎씤,  50% ==> ?좎씤湲덉븸:?먭툑 * 0.5 
+                                    珥앷툑?? ?먭툑 - ?좎씤湲덉븸
+    8?댁긽 18誘몃쭔 : 30%?좎씤,  30% ==> ?먭툑 * 0.3
+    18?댁긽 65誘몃쭔 : ?좎씤 ?놁쓬.
+    65?댁긽 : 臾대즺
+    ?낆옣猷?50000??
+    ?낆옣猷뚭? ?좎씤?⑥씤 @@@% ?곸슜?섏뼱 @@@@???낅땲??
+*/
+    var pay = 50000;
+    var discount=0.0;
+    var introPlayPark="??닿났?먯뿉 媛??..\n?섏씠瑜??낅젰?섏꽭??";
+    var inputStrAge = prompt(introPlayPark,"0");
+    
+    var msg="";
+    if( inputStrAge==null || isNaN( inputStrAge) ){
+        msg="?좏슚???낅젰???꾨떃?덈떎.";
+    }else{
+        // parseInt() : 臾몄옄瑜??뺤닔, ?ㅼ닔瑜??뺤닔
+        var inputAge=parseInt( inputStrAge );
+        if( inputAge < 0 ){
+             msg="?좏슚???낅젰???꾨떃?덈떎.";
+        }else if( inputAge < 4 || inputAge >= 65 ){
+            discount=1.0;
+        }else if( inputAge < 8  ){
+            discount=0.5;
+        }else if( inputAge < 18  ){
+            discount=0.3;
+        }else{
+            discount=0.0;
+        }
+        // ?뺤닔 * ?ㅼ닔 ==> ?ㅼ닔 ==parseInt?듯빐??==> ?뺤닔濡??덉궘泥섎━
+        var tot=parseInt(pay-(pay*discount));
+        msg+="?낆옣猷?"+pay+"??;
+        msg="?낆옣猷뚭? ?좎씤?⑥씤 "+parseInt(discount*100)+"% ?곸슜?섏뼱 "+tot+"???낅땲??;
+    }
+    alert( msg );
+  //-->
+  </script>
+ </head>
+ <body>
+  
+ </body>
+</html>

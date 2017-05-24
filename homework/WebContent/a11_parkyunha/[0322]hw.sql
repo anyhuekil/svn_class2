@@ -1,14 +1,14 @@
 /*
-¼÷Á¦1
-1. ÀÔ»çÀÏ ºĞ±âº°·Î °¡Àå ³ôÀº ¿¬ºÀÀ» ¹Ş´Â »ç¶÷À» Ãâ·ÂÇÏ¼¼¿ä.
-2. ¿¬ºÀÀÌ 3000ÀÌ»óÀÎ »ç¶÷Áß¿¡, µî±Ş(Å×ÀÌºíÈ°¿ëµµ °¡´É)À» ³ª´©¾î¼­
-	ÇØ´ç µî±Şº° ÃÖ°í ¿¬ºÀÀ» ¹Ş´Â »ç¶÷À» ÀÌ¸§, µî±Ş, ¿¬ºÀÀ» Ãâ·ÂÇÏ¼¼¿ä.
+ìˆ™ì œ1
+1. ì…ì‚¬ì¼ ë¶„ê¸°ë³„ë¡œ ê°€ì¥ ë†’ì€ ì—°ë´‰ì„ ë°›ëŠ” ì‚¬ëŒì„ ì¶œë ¥í•˜ì„¸ìš”.
+2. ì—°ë´‰ì´ 3000ì´ìƒì¸ ì‚¬ëŒì¤‘ì—, ë“±ê¸‰(í…Œì´ë¸”í™œìš©ë„ ê°€ëŠ¥)ì„ ë‚˜ëˆ„ì–´ì„œ
+	í•´ë‹¹ ë“±ê¸‰ë³„ ìµœê³  ì—°ë´‰ì„ ë°›ëŠ” ì‚¬ëŒì„ ì´ë¦„, ë“±ê¸‰, ì—°ë´‰ì„ ì¶œë ¥í•˜ì„¸ìš”.
 */
--- 1¹ø
+-- 1ë²ˆ
 select 
-	ename 	ÀÌ¸§, 
-	sal		¿¬ºÀ, 
-	floor(to_number(to_char(hiredate, 'MM'))/4+1) ºĞ±â
+	ename 	ì´ë¦„, 
+	sal		ì—°ë´‰, 
+	floor(to_number(to_char(hiredate, 'MM'))/4+1) ë¶„ê¸°
 from 
 	emp
 where 
@@ -26,18 +26,18 @@ where
 			floor(to_number(to_char(hiredate, 'MM'))/4+1)
 		)
 order by 
-	ºĞ±â;
+	ë¶„ê¸°;
 
 
 select
-	floor(to_number(to_char(hiredate, 'MM'))/4+1) ºĞ±â,
+	floor(to_number(to_char(hiredate, 'MM'))/4+1) ë¶„ê¸°,
 	max(sal)
 from 
 	emp
 group by
 	floor(to_number(to_char(hiredate, 'MM'))/4+1);
 
--- 2¹ø
+-- 2ë²ˆ
 select 
 	e.ename, 
 	g.GRADE, 
@@ -70,8 +70,8 @@ where e.sal between g.LOSAL and g.HISAL
 group by g.grade;
 
 /*
-¼÷Á¦2
-ºÎ¼­¹øÈ£°¡ 30ÀÎ »ç¶÷ Áß¿¡, °¡Àå ³ªÁß¿¡ ÀÔ»çÇÑ »ç¶÷º¸´Ù ¿¬ºÀÀÌ ¸¹À¸¸é Ãâ·ÂÇÏ¼¼¿ä.
+ìˆ™ì œ2
+ë¶€ì„œë²ˆí˜¸ê°€ 30ì¸ ì‚¬ëŒ ì¤‘ì—, ê°€ì¥ ë‚˜ì¤‘ì— ì…ì‚¬í•œ ì‚¬ëŒë³´ë‹¤ ì—°ë´‰ì´ ë§ìœ¼ë©´ ì¶œë ¥í•˜ì„¸ìš”.
 */
 select 
 	ename, 
@@ -100,11 +100,11 @@ select ename, hiredate
 from emp
 where (ename,hiredate) >= ALL(select ename, hiredate from emp); 
 /*
-¼÷Á¦3
-Á÷±ŞÀÌ 'SALESMAN'ÀÎ »ç¿øÀÌ ¹Ş´Â ±Ş¿©µéÀÇ ÃÖ¼Ò ±Ş¿©º¸´Ù ¸¹ÀÌ ¹Ş´Â »ç¿øµéÀÇ ÀÌ¸§°ú ±Ş¿©¸¦
-Ãâ·ÂÇÏµÇ ºÎ¼­¹øÈ£ 20¹øÀÎ »ç¿øÀº Á¦¿ÜÇÑ´Ù. 
-1) (ANY¿¬»êÀÚ ÀÌ¿ë)
-2) min() ÇÔ¼ö »ç¿ë
+ìˆ™ì œ3
+ì§ê¸‰ì´ 'SALESMAN'ì¸ ì‚¬ì›ì´ ë°›ëŠ” ê¸‰ì—¬ë“¤ì˜ ìµœì†Œ ê¸‰ì—¬ë³´ë‹¤ ë§ì´ ë°›ëŠ” ì‚¬ì›ë“¤ì˜ ì´ë¦„ê³¼ ê¸‰ì—¬ë¥¼
+ì¶œë ¥í•˜ë˜ ë¶€ì„œë²ˆí˜¸ 20ë²ˆì¸ ì‚¬ì›ì€ ì œì™¸í•œë‹¤. 
+1) (ANYì—°ì‚°ì ì´ìš©)
+2) min() í•¨ìˆ˜ ì‚¬ìš©
 
 */
 select 
@@ -117,18 +117,18 @@ where
 -- 2) sal >= ( select min(sal) from emp where job='SALESMAN');
 
 /*
-¼÷Á¦ 4
-´ÙÀ½°ú °°Àº ÇüÅÂÀÇ ÅÂÀÌºíÀ» ±¸¼ºÇÏ¼¼¿ä.
-ÀÌ¸§(name)	¹øÈ£(no)		ÀÔ»çÀÏ(credate)-¹®ÀÚ¿­ 	¿ÃÇØ±âÁØ ±Ù¹«¿¬¼ö(workyears)	
-						@@@@³â @@¿ù @@ÀÏ		@@@@
-new_emp ·Î »ı¼º
+ìˆ™ì œ 4
+ë‹¤ìŒê³¼ ê°™ì€ í˜•íƒœì˜ íƒœì´ë¸”ì„ êµ¬ì„±í•˜ì„¸ìš”.
+ì´ë¦„(name)	ë²ˆí˜¸(no)		ì…ì‚¬ì¼(credate)-ë¬¸ìì—´ 	ì˜¬í•´ê¸°ì¤€ ê·¼ë¬´ì—°ìˆ˜(workyears)	
+						@@@@ë…„ @@ì›” @@ì¼		@@@@
+new_emp ë¡œ ìƒì„±
 */
 create table new_emp
 as
 select
 	ename	name,
 	empno	no,
-	to_char(hiredate, 'YYYY"³â" MM"¿ù" DD"ÀÏ"')		credate,
+	to_char(hiredate, 'YYYY"ë…„" MM"ì›”" DD"ì¼"')		credate,
 	floor(months_between(sysdate, hiredate)/12)+1	workyears
 from 
 	emp;

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style type="text/css">
+		.item{color:blue;background-color:yellow;}
+    </style>
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    <script>
+        $(document).ready(function () {
+        	// h1에 정의된 클래스를 등록..
+           $('#cho').addClass('item');
+        });
+    </script>
+</head>
+<body>
+    <h1>오후시간</h1>
+    <h1 id="cho">오후시간</h1>
+    <h1>오후시간</h1>
+</body>
+</html>

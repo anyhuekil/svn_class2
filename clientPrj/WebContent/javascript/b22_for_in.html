@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus짰">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+  <script type="text/javascript">
+  <!--
+ /*
+    for in 援щЦ
+        for臾몄뿉 parameter(留ㅺ컻)媛믪쓣 in?대씪???댁슜?쇰줈 媛꾨떒?섍쾶
+        諛곗뿴 ?곗씠?곕? index媛믪쑝濡?泥섎━?섎뒗 援щЦ..
+    for( ?⑥쐞 index in 諛곗뿴 ){
+        諛곗뿴[ index]
+    }
+ */  
+    var list=["?ш낵","諛붾굹??,"?멸린"];
+   // for(var idx in list ){
+   //     alert( idx + "-" + list[ idx ] );
+   // }
+/*
+   ?뺤씤?덉젣..
+   援щℓ??臾쇨굔 媛믪쓣 3媛??낅젰諛쏆븘??
+   for in 援щЦ???댁슜?섏뿬 ?꾩껜 ?⑹궛??異쒕젰?섏꽭??.
+*/
+    var prodPrice=[];
+    for(var cnt=1;cnt<=3;cnt++){
+       prodPrice[cnt-1]=parseInt( prompt(cnt+"踰덉㎏ 臾쇨굔媛?,"0")); 
+    }
+    //alert( prodPrice );
+    var tot=0;
+    for(var priceIdx in prodPrice ){
+        tot += prodPrice[ priceIdx ];
+    }
+    alert("珥앺빀?곌툑??" + tot );
+/*
+   ?묒슜?덉젣
+    醫뗭븘?섎뒗 ?몃Ъ 3紐낆쓣 ?낅젰?섏뿬,
+    for in 援щЦ?쇰줈 ?꾨옒? 媛숈? ?뺤떇?쇰줈 異쒕젰?섏꽭??! alert
+        醫뗭븘?섎뒗 ?몃Ъ Rank3
+        1. @@@
+        2. @@@
+        3. @@@
+*/
+
+
+
+
+  //-->
+  </script>
+ </head>
+ <body>
+  
+ </body>
+</html>

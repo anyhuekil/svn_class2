@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+/*
+
+*/
+
+/**/
+</style>
+<script src="http://code.jquery.com/jquery-1.10.2.js">
+</script>
+<script type="text/javascript">
+$(document).ready(function(){
+	$("h2").click(function(){
+		alert("좋아요 클릭!!");
+		$(this).append("♡");
+		// 이벤트 제거
+		$(this).off();
+	});
+	// 한번만 이벤트처리..: one
+	// $(객체).one("이벤트명", 처리할 함수);
+	$("h1").one("click",function(){
+		$(this).html( "★"+$(this).html()+"★");
+		
+	});
+	
+	
+});
+</script>
+</head>
+<body>
+<h1>one event</h1>
+<h1>one event</h1>
+<h1>one event</h1>
+<h1>one event</h1>
+<h1>one event</h1>
+<h1>one event</h1>
+<h2>트럼프, 낮은 지지율에 "가짜 뉴스 ..."</h2>
+<h2>박 전대통령, 방어권 보장 이유로 연기</h2>
+<h2>대선프레임 경쟁 정권교체론이냐? 안보 위기론</h2>
+<h2>대선프레임 경쟁 정권교체론이냐? 안보 위기론</h2>
+<h2>대선프레임 경쟁 정권교체론이냐? 안보 위기론</h2>
+<h2>트럼프, 낮은 지지율에 "가짜 뉴스 ..."</h2>
+<h2>트럼프, 낮은 지지율에 "가짜 뉴스 ..."</h2>
+</body>
+</html>

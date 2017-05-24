@@ -5,21 +5,21 @@ public class A02_basic {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		try{
-			// ¿¹¿Ü°¡ ¹ß»ı °¡¸Á¼º ÀÖ´Â ÄÚµå.
-			System.out.println("¾È³çÇÏ¼¼¿ä!!1");
-			System.out.println("¾È³çÇÏ¼¼¿ä!!2");
-			String name="È«±æµ¿"; // µ¥ÀÌÅÍ ÀÔ·ÂÀÌ ºÒÈ®½Ç ÇÒ ¶§..
-			System.out.println(name.toString()); // throw ¿¹¿Ü °´Ã¼
+			// ì˜ˆì™¸ê°€ ë°œìƒ ê°€ë§ì„± ìˆëŠ” ì½”ë“œ.
+			System.out.println("ì•ˆë…•í•˜ì„¸ìš”!!1");
+			System.out.println("ì•ˆë…•í•˜ì„¸ìš”!!2");
+			String name="í™ê¸¸ë™"; // ë°ì´í„° ì…ë ¥ì´ ë¶ˆí™•ì‹¤ í•  ë•Œ..
+			System.out.println(name.toString()); // throw ì˜ˆì™¸ ê°ì²´
 			                                    // NullPointerException()
-			System.out.println("¾È³çÇÏ¼¼¿ä!!3");
-			System.out.println("¾È³çÇÏ¼¼¿ä!!4");
-			System.out.println("¾È³çÇÏ¼¼¿ä!!5");
+			System.out.println("ì•ˆë…•í•˜ì„¸ìš”!!3");
+			System.out.println("ì•ˆë…•í•˜ì„¸ìš”!!4");
+			System.out.println("ì•ˆë…•í•˜ì„¸ìš”!!5");
 		}catch(NullPointerException e){
-			// ¿¹¿Ü°¡ ¹ß»ıÇßÀ» ¶§, Ã³¸®ÇÒ ÄÚµå.
-			// NullPointerExceptionÅ¬·¡½º ÀÌ»óÀÇ »óÀ§Å¬·¡½º ¼±¾ğ..
-			System.out.println("¿¹¿Ü°¡ ¹ß»ı Çß³×¿ä~~ ÀÌ·¸°Ô Ã³¸®ÇÏ°Ú½À´Ï´Ù!!");
+			// ì˜ˆì™¸ê°€ ë°œìƒí–ˆì„ ë•Œ, ì²˜ë¦¬í•  ì½”ë“œ.
+			// NullPointerExceptioní´ë˜ìŠ¤ ì´ìƒì˜ ìƒìœ„í´ë˜ìŠ¤ ì„ ì–¸..
+			System.out.println("ì˜ˆì™¸ê°€ ë°œìƒ í–ˆë„¤ìš”~~ ì´ë ‡ê²Œ ì²˜ë¦¬í•˜ê² ìŠµë‹ˆë‹¤!!");
 		}
-		System.out.println("ÇÁ·Î±×·¥ ¼öÇà Á¾·á!!");
+		System.out.println("í”„ë¡œê·¸ë¨ ìˆ˜í–‰ ì¢…ë£Œ!!");
 		
 	}
 

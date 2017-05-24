@@ -1,12 +1,12 @@
 package javaexp.a11_thread;
 
 /*
-¾²·¹µåÀÇ »óÅÂ¸¦ Ãâ·ÂÇÏ´Â Å¬·¡½º
+ì“°ë ˆë“œì˜ ìƒíƒœë¥¼ ì¶œë ¥í•˜ëŠ” í´ë˜ìŠ¤
  * */
 class StatePrintThread extends Thread{
 	private Thread targetThread;
 
-	// »ı¼ºÀÚ¸¦ ÅëÇØ¼­ ÇÊµåÇÒ´ç : Thread »óÅÂ°ª È®ÀÎ
+	// ìƒì„±ìë¥¼ í†µí•´ì„œ í•„ë“œí• ë‹¹ : Thread ìƒíƒœê°’ í™•ì¸
 	public StatePrintThread(Thread targetThread) {
 		this.targetThread = targetThread;
 	}
@@ -14,24 +14,24 @@ class StatePrintThread extends Thread{
 	public void run() {
 		// NEW ==> RUNNABLE ==> TIMED_WAITING 
 		//   ==> RUNNABLE ==> TERMINATED
-		// Ã³¸® ÇÁ·Î¼¼½º¸¦ ¹«ÇÑ loop
+		// ì²˜ë¦¬ í”„ë¡œì„¸ìŠ¤ë¥¼ ë¬´í•œ loop
 		while(true){
-			// »óÅÂ°ªÀ» ¹Ş¾Æ¼­ ÇÒ´ç  ¹× Ãâ·Â
+			// ìƒíƒœê°’ì„ ë°›ì•„ì„œ í• ë‹¹  ë° ì¶œë ¥
 			Thread.State state= targetThread.getState();
-			System.out.println("Å¸°Ù ¾²·¹µå »óÅÂ:"+state);
-			// ¸¸ÀÏ Thread°¡ »ı¼º¸¸ ÇßÀ» ¶§..
+			System.out.println("íƒ€ê²Ÿ ì“°ë ˆë“œ ìƒíƒœ:"+state);
+			// ë§Œì¼ Threadê°€ ìƒì„±ë§Œ í–ˆì„ ë•Œ..
 			if(state == Thread.State.NEW){
-				// start()¸¦ ÅëÇØ¼­ runnable·Î ÁøÀÔ.
+				// start()ë¥¼ í†µí•´ì„œ runnableë¡œ ì§„ì….
 				targetThread.start();
 			}
-			// life cycleÀÌ ³¡³ª°Ô µÇ¸é break Ã³¸®..
+			// life cycleì´ ëë‚˜ê²Œ ë˜ë©´ break ì²˜ë¦¬..
 			if(state == Thread.State.TERMINATED){
-				// ¹İº¹¹® Á¾·áÃ³¸®..
+				// ë°˜ë³µë¬¸ ì¢…ë£Œì²˜ë¦¬..
 				break;
 			}
-			// ÀÏ½Ã Á¤Áö »óÅÂ Ã³¸®..0.5
+			// ì¼ì‹œ ì •ì§€ ìƒíƒœ ì²˜ë¦¬..0.5
 			try {
-				// Thread.State.TIMED_WAITING À¯¹ß
+				// Thread.State.TIMED_WAITING ìœ ë°œ
 				Thread.sleep(500);
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
@@ -43,17 +43,17 @@ class StatePrintThread extends Thread{
 }
 class TargetThead extends Thread{
 	public void run() {
-		// loop¹®À» ÅëÇØ¼­ ÀÓÀÇ·Î ÇÁ·Î±×·¥ ½ÇÇà..
+		// loopë¬¸ì„ í†µí•´ì„œ ì„ì˜ë¡œ í”„ë¡œê·¸ë¨ ì‹¤í–‰..
 		for(long cnt=0;cnt<1000000000;cnt++){}
-		// thread ÁßÁö »óÅÂ¸¦ ¹ß»ı..
-		// 1.5ÃÊ ÁßÁö, Thread.sleep() ¿¹¿ÜÃ³¸®¹İµå½Ã
+		// thread ì¤‘ì§€ ìƒíƒœë¥¼ ë°œìƒ..
+		// 1.5ì´ˆ ì¤‘ì§€, Thread.sleep() ì˜ˆì™¸ì²˜ë¦¬ë°˜ë“œì‹œ
 		try {
 			Thread.sleep(1500);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		// ´Ù½Ã ½ÇÇàÇÏ´Â ³»¿ë
+		// ë‹¤ì‹œ ì‹¤í–‰í•˜ëŠ” ë‚´ìš©
 		for(long cnt=0;cnt<1000000000;cnt++){}		
 	}
 	
@@ -65,9 +65,9 @@ public class A04_state {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		// ÇöÀç  NEW
+		// í˜„ì¬  NEW
 		StatePrintThread  thread01 = new StatePrintThread(new TargetThead());
-		// RUNNABLE »óÅÂ
+		// RUNNABLE ìƒíƒœ
 		thread01.start();
 	}
 

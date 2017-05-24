@@ -4,34 +4,34 @@ public class A03_restore_change {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-/* Áõ°¨ ¿¬»êÀÚ : µ¥ÀÌÅÍ¸¦ 1¾¿ Áõ°¡ ¶Ç´Â °¨¼Ò½ÃÅ°´Â ¿¬»êÀÚ¸¦ ¸»ÇÑ´Ù.
- *    º¯¼ö++, º¯¼ö--, ++º¯¼ö, --º¯¼ö
- *    ÁÖ·Î, ¹Ýº¹¹®¿¡¼­ µ¥ÀÌÅÍ Áõ°¨ÀÌ ÇÊ¿äÇÒ ¶§, ¸¹ÀÌ È°¿ëµÈ´Ù.
+/* ì¦ê° ì—°ì‚°ìž : ë°ì´í„°ë¥¼ 1ì”© ì¦ê°€ ë˜ëŠ” ê°ì†Œì‹œí‚¤ëŠ” ì—°ì‚°ìžë¥¼ ë§í•œë‹¤.
+ *    ë³€ìˆ˜++, ë³€ìˆ˜--, ++ë³€ìˆ˜, --ë³€ìˆ˜
+ *    ì£¼ë¡œ, ë°˜ë³µë¬¸ì—ì„œ ë°ì´í„° ì¦ê°ì´ í•„ìš”í•  ë•Œ, ë§Žì´ í™œìš©ëœë‹¤.
  * */
 		int no=1;
-		System.out.println("¹øÈ£(Áõ°¡)!!!"+(no++));
-		System.out.println("¹øÈ£(Áõ°¡)!!!"+(no++));
-		System.out.println("¹øÈ£(Áõ°¡)!!!"+(no++));
-		System.out.println("¹øÈ£(°¨¼Ò)!!!"+(--no));
-		System.out.println("¹øÈ£(°¨¼Ò)!!!"+(--no));
-		System.out.println("¹øÈ£(°¨¼Ò)!!!"+(--no));
-/* ´ëÀÔ¿¬»êÀÚ : º¯¼ö¿¡ »õ·Î¿î °ªÀ» ÀúÀåÇÏ´Â °æ¿ì¿¡ »ç¿ëµÇ´Â ¿¬»êÀÚ!*/
+		System.out.println("ë²ˆí˜¸(ì¦ê°€)!!!"+(no++));
+		System.out.println("ë²ˆí˜¸(ì¦ê°€)!!!"+(no++));
+		System.out.println("ë²ˆí˜¸(ì¦ê°€)!!!"+(no++));
+		System.out.println("ë²ˆí˜¸(ê°ì†Œ)!!!"+(--no));
+		System.out.println("ë²ˆí˜¸(ê°ì†Œ)!!!"+(--no));
+		System.out.println("ë²ˆí˜¸(ê°ì†Œ)!!!"+(--no));
+/* ëŒ€ìž…ì—°ì‚°ìž : ë³€ìˆ˜ì— ìƒˆë¡œìš´ ê°’ì„ ì €ìž¥í•˜ëŠ” ê²½ìš°ì— ì‚¬ìš©ë˜ëŠ” ì—°ì‚°ìž!*/
 		int initSaveMoney= 1000;
-//		 Àç±ÍÀû ´ëÀÔ¿¬»ê : ÇØ´ç º¯¼ö¿¡ µ¡ºÙ¿© µ¥ÀÌÅÍ¸¦ ÇÒ´çÇÏ´Â °ÍÀ» ¸»ÇÑ´Ù.
-//		º¯¼ö +=µ¡ºÙ¿©ÇÒ´çÇÒ µ¥ÀÌÅÍ, º¯¼ö-=µ¥ÀÌÅÍ..
-		System.out.println(" ÀúÃà!!!! (¸Å¿ù 10¸¸¿ø)");
-		int monthCnt=1; // ÃÊ±â ´ëÀÔ¿¬»ê Ã³¸®..
-		System.out.println( (monthCnt++)+"¹øÂ° ´Þ!!ÃÑ ÀúÃà±Ý¾×:"+
-				(initSaveMoney+=100000)+"¿ø");
-		System.out.println( (monthCnt++)+"¹øÂ° ´Þ!!ÃÑ ÀúÃà±Ý¾×:"+
-				(initSaveMoney+=100000)+"¿ø");
-		System.out.println( (monthCnt++)+"¹øÂ° ´Þ!!ÃÑ ÀúÃà±Ý¾×:"+
-				(initSaveMoney+=100000)+"¿ø");
-/* 3Ç× ¿¬»êÀÚ : ÁÖ·Î 3°³ÀÇ ¿¬»êÀÚ¸¦ ÅëÇØ¼­ Ãâ·ÂÀ» ¹Ù·Î ÇÒ ¶§, È°¿ëµÈ´Ù..
- *   Á¶°Ç½Ä ? trueÃ³¸®°ª:false Ã³¸®°ª
+//		 ìž¬ê·€ì  ëŒ€ìž…ì—°ì‚° : í•´ë‹¹ ë³€ìˆ˜ì— ë§ë¶™ì—¬ ë°ì´í„°ë¥¼ í• ë‹¹í•˜ëŠ” ê²ƒì„ ë§í•œë‹¤.
+//		ë³€ìˆ˜ +=ë§ë¶™ì—¬í• ë‹¹í•  ë°ì´í„°, ë³€ìˆ˜-=ë°ì´í„°..
+		System.out.println(" ì €ì¶•!!!! (ë§¤ì›” 10ë§Œì›)");
+		int monthCnt=1; // ì´ˆê¸° ëŒ€ìž…ì—°ì‚° ì²˜ë¦¬..
+		System.out.println( (monthCnt++)+"ë²ˆì§¸ ë‹¬!!ì´ ì €ì¶•ê¸ˆì•¡:"+
+				(initSaveMoney+=100000)+"ì›");
+		System.out.println( (monthCnt++)+"ë²ˆì§¸ ë‹¬!!ì´ ì €ì¶•ê¸ˆì•¡:"+
+				(initSaveMoney+=100000)+"ì›");
+		System.out.println( (monthCnt++)+"ë²ˆì§¸ ë‹¬!!ì´ ì €ì¶•ê¸ˆì•¡:"+
+				(initSaveMoney+=100000)+"ì›");
+/* 3í•­ ì—°ì‚°ìž : ì£¼ë¡œ 3ê°œì˜ ì—°ì‚°ìžë¥¼ í†µí•´ì„œ ì¶œë ¥ì„ ë°”ë¡œ í•  ë•Œ, í™œìš©ëœë‹¤..
+ *   ì¡°ê±´ì‹ ? trueì²˜ë¦¬ê°’:false ì²˜ë¦¬ê°’
  * */		
 		int age=62;
-		System.out.println("°æ·Î¿ì´ë ¿©ºÎ :"+( (age>=65) ? "°æ·Î¿ì´ë":"ÀÏ¹Ý") );
+		System.out.println("ê²½ë¡œìš°ëŒ€ ì—¬ë¶€ :"+( (age>=65) ? "ê²½ë¡œìš°ëŒ€":"ì¼ë°˜") );
 		
 		
 		

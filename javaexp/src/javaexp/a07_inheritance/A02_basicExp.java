@@ -2,37 +2,37 @@ package javaexp.a07_inheritance;
 class Vehecle{
 	String kind;
 	int maxVel;
-	// »ı¼ºÀÚ µ¥ÀÌÅÍ ÀÔ·Â..
+	// ìƒì„±ì ë°ì´í„° ì…ë ¥..
 	Vehecle(String kind, int maxVel){
 		this.kind=kind;
 		this.maxVel=maxVel;
 	}
 	Vehecle(){
-		this("Å»°Í(±âº»°ª)", 100);
+		this("íƒˆê²ƒ(ê¸°ë³¸ê°’)", 100);
 	}
-	// ¸Ş¼­µå.
+	// ë©”ì„œë“œ.
 	void setData(String kind, int maxVel){
 		this.kind=kind;
 		this.maxVel=maxVel;
 	}
 	void showInfo(){
 		System.out.println(kind+
-				"ÀÌ¸ç, ÃÖ°í ¼Óµµ°¡ "+maxVel+"(km/h)ÀÔ´Ï´Ù");		
+				"ì´ë©°, ìµœê³  ì†ë„ê°€ "+maxVel+"(km/h)ì…ë‹ˆë‹¤");		
 	}
 }
 class Car extends Vehecle{
 	int personCnt;
-	// super : »ó¼Ó°ü°èÀÇ »óÀ§Å¬·¡½ºÀÇ ¸â¹ö(»ı¼ºÀÚ, ÇÊµå, ¸Ş¼­µå)¸¦ ÁöÄª
-	// 1) »ı¼ºÀÚ : super( )
-	// 2) ÇÊµå, ¸Ş¼­µå : super.XXXX
+	// super : ìƒì†ê´€ê³„ì˜ ìƒìœ„í´ë˜ìŠ¤ì˜ ë©¤ë²„(ìƒì„±ì, í•„ë“œ, ë©”ì„œë“œ)ë¥¼ ì§€ì¹­
+	// 1) ìƒì„±ì : super( )
+	// 2) í•„ë“œ, ë©”ì„œë“œ : super.XXXX
 	Car(String kind, int maxVel, int personCnt){
-		// »óÀ§Å¬·¡½ºÀÇ »ı¼ºÀÚ¸¦ È£Ãâ..
+		// ìƒìœ„í´ë˜ìŠ¤ì˜ ìƒì„±ìë¥¼ í˜¸ì¶œ..
 		super(kind, maxVel);
 		this.personCnt=personCnt;
 	}
 	void driverCar(){
 		showInfo();
-		System.out.println("Å¸´Â »ç¶÷Àº "+personCnt+"¸í ÀÔ´Ï´Ù.");
+		System.out.println("íƒ€ëŠ” ì‚¬ëŒì€ "+personCnt+"ëª… ì…ë‹ˆë‹¤.");
 	}
 }
 
@@ -40,7 +40,7 @@ public class A02_basicExp {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		Car c = new Car("¾Æ¿ìµğ", 270, 2);
+		Car c = new Car("ì•„ìš°ë””", 270, 2);
 		c.driverCar();
 	}
 

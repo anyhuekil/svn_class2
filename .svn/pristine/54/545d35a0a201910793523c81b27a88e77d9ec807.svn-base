@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+/*
+
+*/
+
+/**/
+</style>
+<script src="http://code.jquery.com/jquery-1.10.2.js">
+</script>
+<script type="text/javascript">
+$(document).ready(function(){
+
+});
+function init(){	
+	$("input:focus").val("");
+}
+function result(){
+
+	var num01Val=parseInt($("input[name='num01']").val());
+	var num02Val=parseInt($("input[name='num02']").val());
+	// 입력..
+	var sumVal=parseInt($("input[name='sum']").val());
+	// 정답..
+	var corSum=num01Val+num02Val;
+	if(sumVal==corSum){
+		alert("정답");
+	}else{
+		alert("오답");
+	}
+	
+}
+</script>
+</head>
+<body><center>
+	<input type="text" name="num01" value="5"/> +
+	<input type="text" name="num02" value="7"/> =
+	<input type="text" name="sum" value="입력하세요" onclick="init();"/> <br>
+	<input type="button" value="결과" onclick="result();"/>
+	
+
+</body>
+</html>

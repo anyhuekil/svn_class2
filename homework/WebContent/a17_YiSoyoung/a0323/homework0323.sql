@@ -1,11 +1,11 @@
--- È®ÀÎ¿¹Á¦(10:41ºÐ ½ÇÇà)  family¸¦ °èÃþ±¸Á¶·Î Ãâ·Â
--- Ãâ·ÂÇü½Ä : level role(°èÃþ±¸Á¶ °ø¹éÃ³¸®), ÀÌ¸§
-SELECT LEVEL, LPAD('¦¦', LEVEL*5)||ROLE01 "¿ªÇÒ", NAME 
+-- í™•ì¸ì˜ˆì œ(10:41ë¶„ ì‹¤í–‰)  familyë¥¼ ê³„ì¸µêµ¬ì¡°ë¡œ ì¶œë ¥
+-- ì¶œë ¥í˜•ì‹ : level role(ê³„ì¸µêµ¬ì¡° ê³µë°±ì²˜ë¦¬), ì´ë¦„
+SELECT LEVEL, LPAD('â””', LEVEL*5)||ROLE01 "ì—­í• ", NAME 
 FROM FAMILY START  WITH PARENTNUMID=0 CONNECT BY PRIOR NUMID=PARENTNUMID;
 
 
--- È®ÀÎ¿¹Á¦(12:51ºÐ ½ÇÇà) EMPÅ×ÀÌºíÀÇ º¹»çº» EMP11 »ý¼ºÇÏ°í,
---         JOB(Á÷Ã¥)ÀÌ PRESIDENT¿¡ ÀÖ´Â SAL°ú DEPTNO¸¦ JOBÀÌ CLERK¿¡ ÀÖ´Â µ¥ÀÌÅÍ·Î UPDATEÇÏ¼¼¿ä
+-- í™•ì¸ì˜ˆì œ(12:51ë¶„ ì‹¤í–‰) EMPí…Œì´ë¸”ì˜ ë³µì‚¬ë³¸ EMP11 ìƒì„±í•˜ê³ ,
+--         JOB(ì§ì±…)ì´ PRESIDENTì— ìžˆëŠ” SALê³¼ DEPTNOë¥¼ JOBì´ CLERKì— ìžˆëŠ” ë°ì´í„°ë¡œ UPDATEí•˜ì„¸ìš”
 CREATE TABLE EMP11 AS SELECT * FROM EMP;
 UPDATE EMP11 
 	SET (SAL, DEPTNO) = (SELECT SAL, DEPTNO FROM EMP11 WHERE JOB='PRESIDENT')
@@ -13,15 +13,15 @@ UPDATE EMP11
 
 
 /***
-È®ÀÎ¿¹Á¦(15:30ºÐ ½ÇÇà) : empÀÇ º¹»çÅ×ÀÌºí emp03À» »ý¼ºÇÏ°í 
-emp¿¡¼­ ºÎ¼­¹øÈ£(deptno)°¡ 30ÀÎ µ¥ÀÌÅÍ¸¦ emp04·Î º¹»çÅ×ÀÌºí ¸¸µé±â
-	emp04ÀÇ hiredate¸¦ ¿À´Ã³¯(SYSDATE)·Î UPDATEÃ³¸®..
-	emp04¿¡ 7370 '¿ø´õ°É' 'superman' 7839 sysdate 6000 400 40µ¥ÀÌÅÍ ÀÔ·Â
+í™•ì¸ì˜ˆì œ(15:30ë¶„ ì‹¤í–‰) : empì˜ ë³µì‚¬í…Œì´ë¸” emp03ì„ ìƒì„±í•˜ê³  
+empì—ì„œ ë¶€ì„œë²ˆí˜¸(deptno)ê°€ 30ì¸ ë°ì´í„°ë¥¼ emp04ë¡œ ë³µì‚¬í…Œì´ë¸” ë§Œë“¤ê¸°
+	emp04ì˜ hiredateë¥¼ ì˜¤ëŠ˜ë‚ (SYSDATE)ë¡œ UPDATEì²˜ë¦¬..
+	emp04ì— 7370 'ì›ë”ê±¸' 'superman' 7839 sysdate 6000 400 40ë°ì´í„° ìž…ë ¥
 ***/
 CREATE TABLE EMP03 AS SELECT * FROM EMP;
 CREATE TABLE EMP04 AS SELECT * FROM EMP WHERE DEPTNO=30;
 UPDATE EMP04 SET HIREDATE=SYSDATE;
-INSERT INTO EMP04 VALUES (7370, '¿ø´õ°É','SUPERMAN', 7839, SYSDATE, 6000,400,40);
+INSERT INTO EMP04 VALUES (7370, 'ì›ë”ê±¸','SUPERMAN', 7839, SYSDATE, 6000,400,40);
 MERGE INTO EMP03
 	USING EMP04
 	ON (EMP03.EMPNO = EMP04.EMPNO)

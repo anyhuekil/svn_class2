@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+/*
+
+*/
+
+/**/
+</style>
+<script src="http://code.jquery.com/jquery-1.10.2.js">
+</script>
+<script type="text/javascript">
+$(document).ready(function(){
+
+});
+function Friend(name){
+	this.name=name; // 이 객체의 전역변수 name할당.
+	// 메서드가 되느냐? 전역변수가 되는냐는 할당된 변수에
+	// 에 따라 바뀜
+	// 입력할 데이터가 있으면 function(입력데이터 정의)
+	this.introFriend =  function(fname){   // 입력값
+		console.log("나의 이름은 "+this.name);  // 공통출력, 프로세스..
+		console.log("내 친구를 소개합니다!! 친구이름은"+fname);
+		return "리턴도 되네!!^^";  // return값..(정의하지 않아도 됨..)
+	}	
+}
+// 객체 생성..
+var friend01 = new Friend("홍길동"); // 전역변수this.name에 "홍길동"이라는 데이터
+// 할당됨..
+var retMsg =friend01.introFriend("김친구.."); //메서드로 정의된 입력값에 합당한 데이터를 전달
+//  fname="김친구"처리가 되고..
+// 현재 return되는 데이터를 정의하고 있기 때문에.. 
+console.log("리턴되는 값:"+retMsg);
+
+
+
+
+
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

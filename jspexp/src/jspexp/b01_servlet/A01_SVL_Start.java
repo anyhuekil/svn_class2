@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class A01_SVL_Start
  * http://localhost:6080/jspexp/a01_start
- * ¼­ºí¸´ °´Ã¼ È£Ãâ.
+ * ì„œë¸”ë¦¿ ê°ì²´ í˜¸ì¶œ.
  */
 @WebServlet(name = "a01_start", urlPatterns = { "/a01_start" })
 public class A01_SVL_Start extends HttpServlet {
@@ -33,12 +33,12 @@ public class A01_SVL_Start extends HttpServlet {
 							HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		
-		// È­¸é..
+		// í™”ë©´..
 		response.setContentType("text/html; charset=utf-8");
-		// Ãâ·Â ³»¿ë.StreamÀ¸·Î ºê¶ó¿ìÀú¿¡ Àü´Ş..
+		// ì¶œë ¥ ë‚´ìš©.Streamìœ¼ë¡œ ë¸Œë¼ìš°ì €ì— ì „ë‹¬..
 		// http://localhost:6080/jspexp/a01_start
 		PrintWriter out = response.getWriter();
-		out.print("<html><body><h1>¾È³çÇÏ¼¼¿ä! µåµğ¾î!!</h1></body></html>");
+		out.print("<html><body><h1>ì•ˆë…•í•˜ì„¸ìš”! ë“œë””ì–´!!</h1></body></html>");
 		
 		
 	}

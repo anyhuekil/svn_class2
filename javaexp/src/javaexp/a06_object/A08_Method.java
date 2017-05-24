@@ -4,7 +4,7 @@ class Calculator{
 	int num01;
 	int num02;
 	int sum;
-	char cal;// ¿¬»êÀÚ
+	char cal;// ì—°ì‚°ì
 	
 	int plus(int num01, int num02){
 		this.num01=num01;
@@ -13,7 +13,7 @@ class Calculator{
 		sum =num01+num02;
 		return sum;
 	}	
-	// returntype  ¸Ş¼­µå¸í(ÀÔ·Â°ª1, ÀÔ·Â°ª2)
+	// returntype  ë©”ì„œë“œëª…(ì…ë ¥ê°’1, ì…ë ¥ê°’2)
 	int minus(int num01, int num02){
 		this.num01=num01;
 		this.num02=num02;		
@@ -35,7 +35,7 @@ class Calculator{
 		sum=num01/num02;
 		return sum;
 	}
-	// Ãâ·ÂÃ³¸® ¸Ş¼­µå ±¸Çö
+	// ì¶œë ¥ì²˜ë¦¬ ë©”ì„œë“œ êµ¬í˜„
 	void print(){
 		System.out.println(num01+ " "+cal+" "+num02+" = "+sum);
 	}
@@ -51,7 +51,7 @@ public class A08_Method {
 		c1.print();
 		tot+=c1.minus(7,2);
 		c1.print();
-		System.out.println("ÃÑ °è»ê°ª:"+tot);
+		System.out.println("ì´ ê³„ì‚°ê°’:"+tot);
 	}
 
 }

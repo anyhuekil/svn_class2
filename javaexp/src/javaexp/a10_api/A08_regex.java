@@ -6,9 +6,9 @@ public class A08_regex {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		// ÀüÈ­¹øÈ£ Á¤±Ô½Ä pattern Á¤ÀÇ
+		// ì „í™”ë²ˆí˜¸ ì •ê·œì‹ pattern ì •ì˜
 		//  (01|010)-\d{3,4}-\d{4}
-		//  ÀÚ¹Ù¿¡¼­ \Ã³¸®ÇÒ·Á¸é.. \ ==> Æ¯¼ö¹®ÀÚÃ³¸®
+		//  ìë°”ì—ì„œ \ì²˜ë¦¬í• ë ¤ë©´.. \ ==> íŠ¹ìˆ˜ë¬¸ìì²˜ë¦¬
 		String regExp ="(01|010|070)-\\d{3,4}-\\d{4}";
 		String data1 = "010-123-4578";
 		String data2 = "070-123-4578";
@@ -16,9 +16,9 @@ public class A08_regex {
 		boolean ch01 = Pattern.matches(regExp, data1);
 		boolean ch02 = Pattern.matches(regExp, data2);
 		boolean ch03 = Pattern.matches(regExp, data3);
-		System.out.println("data1ÀÇ Á¤±ÔÇ¥Çö½Ä ¼º°ø¿©ºÎ:"+ch01);
-		System.out.println("data2ÀÇ Á¤±ÔÇ¥Çö½Ä ¼º°ø¿©ºÎ:"+ch02);
-		System.out.println("data3ÀÇ Á¤±ÔÇ¥Çö½Ä ¼º°ø¿©ºÎ:"+ch03);
+		System.out.println("data1ì˜ ì •ê·œí‘œí˜„ì‹ ì„±ê³µì—¬ë¶€:"+ch01);
+		System.out.println("data2ì˜ ì •ê·œí‘œí˜„ì‹ ì„±ê³µì—¬ë¶€:"+ch02);
+		System.out.println("data3ì˜ ì •ê·œí‘œí˜„ì‹ ì„±ê³µì—¬ë¶€:"+ch03);
 	}
 
 }

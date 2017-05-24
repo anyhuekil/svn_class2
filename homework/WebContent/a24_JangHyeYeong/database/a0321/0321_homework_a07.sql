@@ -1,17 +1,17 @@
 
-/*****1¹ø¹®Á¦*****/
-select trunc(sal,-3)+1000||'¸¸¿ø ¹Ì¸¸' "¿¬ºÀ", count(*) "»ç¿ø¼ö", max(sal) "ÃÖ°íÄ¡", min(sal) "ÃÖÀúÄ¡", avg(sal) "Æò±ÕÄ¡"
+/*****1ë²ˆë¬¸ì œ*****/
+select trunc(sal,-3)+1000||'ë§Œì› ë¯¸ë§Œ' "ì—°ë´‰", count(*) "ì‚¬ì›ìˆ˜", max(sal) "ìµœê³ ì¹˜", min(sal) "ìµœì €ì¹˜", avg(sal) "í‰ê· ì¹˜"
 from emp group by trunc(sal,-3)+1000 ;
 
-/*****2¹ø¹®Á¦*****/
-select loc "ºÎ¼­À§Ä¡", count(*) "»ç¿ø¼ö" from emp e,dept d where e.deptno=d.deptno
+/*****2ë²ˆë¬¸ì œ*****/
+select loc "ë¶€ì„œìœ„ì¹˜", count(*) "ì‚¬ì›ìˆ˜" from emp e,dept d where e.deptno=d.deptno
 group by loc; 
 
 select * from dept;
 
-/*****3¹ø¹®Á¦*****/
+/*****3ë²ˆë¬¸ì œ*****/
 
-/**Å×ÀÌºí »ı¼º**/
+/**í…Œì´ë¸” ìƒì„±**/
 create table student10(
 	id varchar2(20) primary key,
 	name varchar2(15) not null
@@ -26,64 +26,64 @@ create table gradeCheck(
 	lopoint number(4), hipoint number(4), grade char(1) check (grade in('A','B','C','D','F'))
 );
 
-/*µ¥ÀÌÅÍ ÀÔ·Â*/
-insert into student10 values ('test','È«±æµ¿');
-insert into studentPoint values ('test','¼öÇĞ','50');
+/*ë°ì´í„° ì…ë ¥*/
+insert into student10 values ('test','í™ê¸¸ë™');
+insert into studentPoint values ('test','ìˆ˜í•™','50');
 insert into gradeCheck values ('50','0','100','D');
 
-/*Å×ÀÌºí È®ÀÎ*/
+/*í…Œì´ë¸” í™•ì¸*/
 select * from student10 ;
 select * from studentPoint ;
 select * from gradeCheck ;
 
-/*1) ¾ÆÀÌµğ¸¦ Á¶ÀÎÇØ¼­(equal join) 
-ÀÌ¸§ °ú¸ñ Á¡¼ö Ãâ·Â*/
-select name "ÀÌ¸§", subject "°ú¸ñ", p.point "Á¡¼ö" from student10 s, studentPoint p
+/*1) ì•„ì´ë””ë¥¼ ì¡°ì¸í•´ì„œ(equal join) 
+ì´ë¦„ ê³¼ëª© ì ìˆ˜ ì¶œë ¥*/
+select name "ì´ë¦„", subject "ê³¼ëª©", p.point "ì ìˆ˜" from student10 s, studentPoint p
 where s.id=p.id;
 
-/*2) Á¡¼ö¸¦ Á¶ÀÎÇØ¼­(not equal join)
-	°ú¸ñ Á¡¼ö ÇĞÁ¡µî±Ş***/
-select subject "°ú¸ñ", p.point "Á¡¼ö", grade "ÇĞÁ¡µî±Ş" from studentPoint p, gradeCheck g
+/*2) ì ìˆ˜ë¥¼ ì¡°ì¸í•´ì„œ(not equal join)
+	ê³¼ëª© ì ìˆ˜ í•™ì ë“±ê¸‰***/
+select subject "ê³¼ëª©", p.point "ì ìˆ˜", grade "í•™ì ë“±ê¸‰" from studentPoint p, gradeCheck g
 where p.point = g.point;
 
-/*3) student10 studentPoint gradeCheck Á¶ÀÎÀ» ÇÏ¿©
-	ÀÌ¸§ °ú¸ñ ÇĞÁ¡µî±Ş***/
-select name "ÀÌ¸§", subject "°ú¸ñ", grade "ÇĞÁ¡µî±Ş" from student10 s, studentPoint p, gradeCheck g
+/*3) student10 studentPoint gradeCheck ì¡°ì¸ì„ í•˜ì—¬
+	ì´ë¦„ ê³¼ëª© í•™ì ë“±ê¸‰***/
+select name "ì´ë¦„", subject "ê³¼ëª©", grade "í•™ì ë“±ê¸‰" from student10 s, studentPoint p, gradeCheck g
 where s.id=p.id and p.point=g.point;
 
-/***4¹ø¹®Á¦***/
-select dname "ºÎ¼­¸í", count(ename) "ÀÎ¿ø" from emp e, dept d
+/***4ë²ˆë¬¸ì œ***/
+select dname "ë¶€ì„œëª…", count(ename) "ì¸ì›" from emp e, dept d
 where e.deptno(+)=d.deptno group by dname ;
 
 select * from emp;
 select * from dept;
 /*
-***1¹ø ¹®Á¦
-¿¬ºÀ´ÜÀ§º°·Î ÀÎ¿ø¼ö¸¦ Ã¼Å©ÇÏ¼¼¿ä
-1000¹Ì¸¸		»ç¿ø¼ö(ÃÖ°íÄ¡, ÃÖÀúÄ¡, Æò±ÕÄ¡)
-~2000¹Ì¸¸
-~3000¹Ì¸¸
-~4000¹Ì¸¸
-~5000¹Ì¸¸
-~6000¹Ì¸¸
+***1ë²ˆ ë¬¸ì œ
+ì—°ë´‰ë‹¨ìœ„ë³„ë¡œ ì¸ì›ìˆ˜ë¥¼ ì²´í¬í•˜ì„¸ìš”
+1000ë¯¸ë§Œ		ì‚¬ì›ìˆ˜(ìµœê³ ì¹˜, ìµœì €ì¹˜, í‰ê· ì¹˜)
+~2000ë¯¸ë§Œ
+~3000ë¯¸ë§Œ
+~4000ë¯¸ë§Œ
+~5000ë¯¸ë§Œ
+~6000ë¯¸ë§Œ
 
-***2¹ø¹®Á¦
-ºÎ¼­À§Ä¡º° »ç¿øÀÇ ¼ö¸¦ ¾Æ·¡ Çü½ÄÀ¸·Î Ãâ·ÂÇÏ¼¼¿ä
-	ºÎ¼­À§Ä¡ 	»ç¿ø¼ö.
+***2ë²ˆë¬¸ì œ
+ë¶€ì„œìœ„ì¹˜ë³„ ì‚¬ì›ì˜ ìˆ˜ë¥¼ ì•„ë˜ í˜•ì‹ìœ¼ë¡œ ì¶œë ¥í•˜ì„¸ìš”
+	ë¶€ì„œìœ„ì¹˜ 	ì‚¬ì›ìˆ˜.
 
-***3¹ø¹®Á¦
-student10 ¾ÆÀÌµğ, ÀÌ¸§
-studentPoint ¾ÆÀÌµğ, °ú¸ñ, Á¡¼ö
-gradeCheck ÃÖÀúÁ¡¼ö lopoint, ÃÖ°íÁ¡¼ö hipoint, ÇĞÁ¡µî±Ş(A~F)
-1) ¾ÆÀÌµğ¸¦ Á¶ÀÎÇØ¼­(equal join) ÀÌ¸§ °ú¸ñ Á¡¼ö Ãâ·Â
-2) Á¡¼ö¸¦ Á¶ÀÎÇØ¼­(not equal join)
-	°ú¸ñ Á¡¼ö ÇĞÁ¡µî±Ş
-3) student10 studentPoint gradeCheck Á¶ÀÎÀ» ÇÏ¿©
-	ÀÌ¸§ °ú¸ñ ÇĞÁ¡µî±Ş
+***3ë²ˆë¬¸ì œ
+student10 ì•„ì´ë””, ì´ë¦„
+studentPoint ì•„ì´ë””, ê³¼ëª©, ì ìˆ˜
+gradeCheck ìµœì €ì ìˆ˜ lopoint, ìµœê³ ì ìˆ˜ hipoint, í•™ì ë“±ê¸‰(A~F)
+1) ì•„ì´ë””ë¥¼ ì¡°ì¸í•´ì„œ(equal join) ì´ë¦„ ê³¼ëª© ì ìˆ˜ ì¶œë ¥
+2) ì ìˆ˜ë¥¼ ì¡°ì¸í•´ì„œ(not equal join)
+	ê³¼ëª© ì ìˆ˜ í•™ì ë“±ê¸‰
+3) student10 studentPoint gradeCheck ì¡°ì¸ì„ í•˜ì—¬
+	ì´ë¦„ ê³¼ëª© í•™ì ë“±ê¸‰
 	
-***4¹ø¹®Á¦	
-outer join, groupÀ» È°¿ëÇÏ¿©
-	ºÎ¼­¸íº° ÀÎ¿øÀ» È®ÀÎÇÏ·Á°íÇÑ´Ù.
-	¾Æ·¡ÀÇ Çü½ÄÀ¸·Î Ãâ·ÂÇÏ¼¼¿ä. ÀÎ¿øÀÌ ¾ø´Â °÷Àº 0À¸·Î Ç¥½Ã
-	ºÎ¼­¸í ÀÎ¿ø
+***4ë²ˆë¬¸ì œ	
+outer join, groupì„ í™œìš©í•˜ì—¬
+	ë¶€ì„œëª…ë³„ ì¸ì›ì„ í™•ì¸í•˜ë ¤ê³ í•œë‹¤.
+	ì•„ë˜ì˜ í˜•ì‹ìœ¼ë¡œ ì¶œë ¥í•˜ì„¸ìš”. ì¸ì›ì´ ì—†ëŠ” ê³³ì€ 0ìœ¼ë¡œ í‘œì‹œ
+	ë¶€ì„œëª… ì¸ì›
 */

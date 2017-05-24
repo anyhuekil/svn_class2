@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+/*
+
+*/
+
+/**/
+</style>
+<script src="http://code.jquery.com/jquery-1.10.2.js">
+</script>
+<script type="text/javascript">
+$(document).ready(function(){
+	// 데이터 입력처리..
+	var flist=["오렌지","사과","바나나","딸기","수박"];
+	var show= "<tr align='center'><td>판매품목</td></tr>";
+	for(var idx=0;idx<flist.length;idx++){
+		show+="<tr align='center'><td>"+flist[idx]+"</td></tr>";
+	}
+	$("table").html(show);
+	
+	// title 처리 부분..
+	$("tr").filter(function(index){
+		return index==0;
+	}).css({background:"blue",color:"white"});	
+	
+	// index!=0 : 첫번째 것은 제외하고..
+	$("tr").filter(function(index){
+		return index!=0&&index%2==0;
+	}).css({background:"lightblue",color:"red"});
+	// index%3==0  3개 단위로 html("-판매완료");	
+	$("tr").filter(function(index){
+		return index!=0&&index%3==0;
+	}).css({color:"lightblue"}).html("-판매완료");	
+
+	
+});
+</script>
+</head>
+<body>
+<table width="500" align="center" border>
+
+</table>
+</body>
+</html>

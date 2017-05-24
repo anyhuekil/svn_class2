@@ -6,8 +6,8 @@ public class A06_while {
 
 	public static void main(String[] args) throws IOException  {
 		// TODO Auto-generated method stub
-		// System.in : java¿¡¼­ Áö¿øÇÏ´Â Ç¥ÁØ ÀÔ·Â Stream
-		// ÀÔ·Â°ü·ÃµÈ ³»¿ëÀº ¹İµå½Ã ¿¹¿Ü Ã³¸®¸¦ ÇØ ÁÖ¾î¾ß ÇÑ´Ù. 
+		// System.in : javaì—ì„œ ì§€ì›í•˜ëŠ” í‘œì¤€ ì…ë ¥ Stream
+		// ì…ë ¥ê´€ë ¨ëœ ë‚´ìš©ì€ ë°˜ë“œì‹œ ì˜ˆì™¸ ì²˜ë¦¬ë¥¼ í•´ ì£¼ì–´ì•¼ í•œë‹¤. 
 		// throws IOException  		
 		// 0 : 48~~~, A : 65 ~~, a:97, <- 37, 38, 39, 40
 		int keyCode;
@@ -15,8 +15,8 @@ public class A06_while {
 			keyCode=System.in.read();
 			System.out.println(keyCode);
 			if(keyCode==81){
-				System.out.println("Áß´Ü!!");
-				// break : ¹İº¹¹®¿¡¼­ ÇÁ·Î¼¼½º¸¦ Áß´ÜÃ³¸®..
+				System.out.println("ì¤‘ë‹¨!!");
+				// break : ë°˜ë³µë¬¸ì—ì„œ í”„ë¡œì„¸ìŠ¤ë¥¼ ì¤‘ë‹¨ì²˜ë¦¬..
 				break;
 			}
 		}

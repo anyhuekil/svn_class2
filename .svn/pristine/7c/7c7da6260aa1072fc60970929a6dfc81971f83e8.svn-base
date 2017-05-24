@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+/*
+
+*/
+
+/**/
+</style>
+<script src="http://code.jquery.com/jquery-1.10.2.js">
+</script>
+<script type="text/javascript">
+$(document).ready(function(){
+//	alert('시작');
+// 전체 body까지 인식한 후, 처리..
+// 이 화면을 호출한 (opener) 창의 name01로 id값을 설정한 객체의 value을 가져오세요..
+	var name01Val = opener.document.getElementById("name01").value;
+	document.getElementById("showName").innerHTML="넘겨온 데이터:"+name01Val;
+	
+});
+function sendData(part){
+	alert(part+"부서를 main페이지에 전달!!");
+	opener.document.getElementById("part01").value=part;
+	// 현재 창을 닫아주는 처리..
+	this.close();
+}
+</script>
+</head>
+<body>
+<h1 align="center">@@@ 인사정보 System!!!</h1>
+<h2 id="showName"></h2>
+<h3 align="center" onclick="javascript:sendData('인사')">인사</h3>
+<h3 align="center" onclick="javascript:sendData('총무')">총무</h3>
+<h3 align="center" onclick="javascript:sendData('전략기획')">전략기획</h3>
+<h3 align="center" onclick="javascript:sendData('IT사업부')">IT사업부</h3>
+</body>
+</html>

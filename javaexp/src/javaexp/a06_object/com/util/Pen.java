@@ -1,6 +1,6 @@
 package javaexp.a06_object.com.util;
 
 public class Pen {
-	// °°Àº package¿¡¼­ °´Ã¼È£ÃâÀÌ ÀÚÀ¯·Ó´Ù.
+	// ê°™ì€ packageì—ì„œ ê°ì²´í˜¸ì¶œì´ ììœ ë¡­ë‹¤.
 	Note n = new Note();
 }

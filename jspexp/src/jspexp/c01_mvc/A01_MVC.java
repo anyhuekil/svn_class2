@@ -29,13 +29,13 @@ public class A01_MVC extends HttpServlet {
 	 */
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-//		1. ¿äÃ» ³»¿ë ´ëÇÑ Ã³¸®..
+//		1. ìš”ì²­ ë‚´ìš© ëŒ€í•œ ì²˜ë¦¬..
 		
-//		2. model´Ü Ã³¸®(view´Ü¿¡ ÇÙ½É)
-		String name="È«±æµ¿";
-		request.setAttribute("name", name); // view´Ü ¿¬°áÃ³¸®.. name
+//		2. modelë‹¨ ì²˜ë¦¬(viewë‹¨ì— í•µì‹¬)
+		String name="í™ê¸¸ë™";
+		request.setAttribute("name", name); // viewë‹¨ ì—°ê²°ì²˜ë¦¬.. name
 		
-//		3. view´Ü Ã³¸®(jspÈ£Ãâ):request, responseµµ Àü´Ş.
+//		3. viewë‹¨ ì²˜ë¦¬(jspí˜¸ì¶œ):request, responseë„ ì „ë‹¬.
 		String jspPage="/c01_mvc/a01_mvc.jsp";
 		RequestDispatcher rd = request.getRequestDispatcher(jspPage);
 		rd.forward(request, response);

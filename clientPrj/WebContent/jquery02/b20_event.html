@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+/*
+
+*/
+
+/**/
+</style>
+<script src="http://code.jquery.com/jquery-1.10.2.js">
+</script>
+<script type="text/javascript">
+$(document).ready(function(){
+	// select : 해당내용의 값을 변경했을 때..
+	$("select").on("change",function(){
+		alert($(this).val());
+		$("h2").html("선택된 값은 "+$(this).val()+"입니다");
+	});
+});
+</script>
+</head>
+<body>
+	선택하세요:
+	<select>
+		<option>서울/경기</option>
+		<option>강원도</option>
+		<option>충청도</option>
+		<option>전라도</option>
+		<option>경상도</option>
+		<option>제주도</option>
+	</select><br>
+	<h2></h2>
+</body>
+</html>

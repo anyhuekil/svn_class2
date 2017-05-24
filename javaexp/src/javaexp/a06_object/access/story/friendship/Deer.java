@@ -3,10 +3,10 @@ package javaexp.a06_object.access.story.friendship;
 public class Deer {
 	void askWhereClothe(){
 		WoodCutter w = new WoodCutter();
-		//cacheClothe´Â Á¢±ÙÁ¦¾îÀÚ°¡ private ÀÌ±â¿¡
-		// °°Àº packageÀÌ´õ¶óµµ Á¢±ÙÀÌ ºÒ°¡´ÉÇÏ´Ù.!!
+		//cacheClotheëŠ” ì ‘ê·¼ì œì–´ìê°€ private ì´ê¸°ì—
+		// ê°™ì€ packageì´ë”ë¼ë„ ì ‘ê·¼ì´ ë¶ˆê°€ëŠ¥í•˜ë‹¤.!!
 //		System.out.println(w.cacheClothe);
-		// public ¼±¾ğÇÑ ÇÊµåÁ¢±Ù°¡´É.(°°Àº ÆĞÅ°Áö´Â ´ç¿¬)
+		// public ì„ ì–¸í•œ í•„ë“œì ‘ê·¼ê°€ëŠ¥.(ê°™ì€ íŒ¨í‚¤ì§€ëŠ” ë‹¹ì—°)
 		System.out.println(w.weddingAnnounce);
 	}
 }

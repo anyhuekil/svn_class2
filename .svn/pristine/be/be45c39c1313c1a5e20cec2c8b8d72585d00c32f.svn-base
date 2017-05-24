@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+/*
+
+*/
+
+/**/
+</style>
+<script src="http://code.jquery.com/jquery-1.10.2.js">
+</script>
+<script type="text/javascript">
+var inter01; // 전역변수를 설정해야지 다른 함수에 처리가 가능...
+$(document).ready(function(){
+	var tab01=document.getElementById("tab01");
+	// 초기 이미지가 로딩..
+	var imgs=["img01.png","img02.png","img03.png"];
+	var idx=0;
+	tab01.style.backgroundImage="url('../../img/"+imgs[idx]+"')";
+	
+	// setInterval(반복함수, 반복할시간(1/1000))
+	// inter01 전역변수에 반복함수 할당..
+	inter01=setInterval(function(){
+		document.getElementsByTagName("h1")[0].innerHTML=(idx+1)+"초";
+		// cnt%3 = 1, 2, 0, 1,2,0
+		tab01.style.backgroundImage="url('../../img/"+imgs[idx%3]+"')";
+		idx++;		
+	},1000);
+});
+function stopInter(){
+	// 중지 처리변수에.. 
+	alert("중지!!");
+	clearInterval(inter01);
+}
+</script>
+</head>
+<body><!-- h1 클릭시,  반복함수 중지처리.. -->
+<h1 align="center" onclick="javascript:stopInter();">0초</h1>
+<table id="tab01" width="300" 
+	height="300" align="center" border></table>
+</body>
+</html>

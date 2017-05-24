@@ -1,44 +1,44 @@
 /*
-LPAD/RPAD ÇÔ¼ö
-Æ¯Á¤ ¹®ÀÚ¿­¿¡ ÇØ´çÇÏ´Â ¹®ÀÚ¿­·Î Ã¤¿ì´Â Ã³¸®¸¦ ÇÏ´Â °ÍÀ» ¸»ÇÑ´Ù.
-LPAD : ¿ÞÂÊ¿¡ ¹®ÀÚ·Î Ã¤¿ì¼¼¿ä
-	LPAD(µ¥ÀÌÅÍ, ¹®ÀÚÅ©±â¼ö, '¹Ýº¹ÇÒ ¹®ÀÚ¿­')
+LPAD/RPAD í•¨ìˆ˜
+íŠ¹ì • ë¬¸ìžì—´ì— í•´ë‹¹í•˜ëŠ” ë¬¸ìžì—´ë¡œ ì±„ìš°ëŠ” ì²˜ë¦¬ë¥¼ í•˜ëŠ” ê²ƒì„ ë§í•œë‹¤.
+LPAD : ì™¼ìª½ì— ë¬¸ìžë¡œ ì±„ìš°ì„¸ìš”
+	LPAD(ë°ì´í„°, ë¬¸ìží¬ê¸°ìˆ˜, 'ë°˜ë³µí•  ë¬¸ìžì—´')
 
 */
--- # himan ÀÌ¶ó´Â ¹®ÀÚ¿­ ¿ÞÂÊ¿¡ '#'·Î 20Å©±â¸¸Å­ Ã¤¿ö¼­ Ãâ·Â..
--- ÀüÃ¼Å©±â¸¦ ¸¸µé°í, ÇØ´ç Å©±â°¡ µÇÁö ¾ÊÀ¸¸é ¹®ÀÚ·Î Ã¤¿ò../
--- ½Ç¹« migration varchar : °¡º¯¹®ÀÚÇü, char: °íÁ¤¹®ÀÚÇü
--- °¡º¯¹®ÀÚÇüÀÇ µ¥ÀÌÅÍ¸¦ °íÁ¤¹®ÀÚÇüÀ¸·Î ÀüÈ¯ÇÏ¿© ÀÌµ¿½ÃÅ³¶§ È°¿ë
+-- # himan ì´ë¼ëŠ” ë¬¸ìžì—´ ì™¼ìª½ì— '#'ë¡œ 20í¬ê¸°ë§Œí¼ ì±„ì›Œì„œ ì¶œë ¥..
+-- ì „ì²´í¬ê¸°ë¥¼ ë§Œë“¤ê³ , í•´ë‹¹ í¬ê¸°ê°€ ë˜ì§€ ì•Šìœ¼ë©´ ë¬¸ìžë¡œ ì±„ì›€../
+-- ì‹¤ë¬´ migration varchar : ê°€ë³€ë¬¸ìží˜•, char: ê³ ì •ë¬¸ìží˜•
+-- ê°€ë³€ë¬¸ìží˜•ì˜ ë°ì´í„°ë¥¼ ê³ ì •ë¬¸ìží˜•ìœ¼ë¡œ ì „í™˜í•˜ì—¬ ì´ë™ì‹œí‚¬ë•Œ í™œìš©
 select lpad('himan', 7, '#') from dual;
 /*
-RPAD : ¿À´ÃÂÊ¿¡ ÇØ´ç Å©±â°¡ µÉ ¶§±îÁö Æ¯Á¤¹®ÀÚ·Î Ã¤¿ò..
-ex) good job¿¡¼­ ¹®ÀÚ°¡ 20°³°¡ µÉ ¶§±îÁö @·Î ¿À¸¥ÂÊ¿¡ Ã¤¿ò.
+RPAD : ì˜¤ëŠ˜ìª½ì— í•´ë‹¹ í¬ê¸°ê°€ ë  ë•Œê¹Œì§€ íŠ¹ì •ë¬¸ìžë¡œ ì±„ì›€..
+ex) good jobì—ì„œ ë¬¸ìžê°€ 20ê°œê°€ ë  ë•Œê¹Œì§€ @ë¡œ ì˜¤ë¥¸ìª½ì— ì±„ì›€.
 */
 SELECT rpad('good job', 20, '@') FROM  dual;
 SELECT * FROM emp;
--- È®ÀÎ¿¹Á¦ enmae°ú jobÀ» Å©±â¿Í ÀúÀåµÈ ¹®ÀÚ¿­¸¸Å­ ¿À¸¥ÂÊ°ú ¿ÞÂÊ¿¡ ÇØ´ç ¹®ÀÚ¿­À» ¾Æ·¡ Çü½ÄÀ¸·Î
--- ³ÖÀ¸¼¼¿ä..
--- 1. ENAME°ú JOB¿¡¼­ µ¥ÀÌÅÍ Å©±â¸¦ È®ÀÎÇÑ´Ù.
--- 2. µ¥ÀÌÅÍ Áß¿¡ °¡Àå Å« µ¥ÀÌÅÍÀÇ Å©±â¸¦ È®ÀÎÇØ¼­,
--- 3. ENAME¿¡´Â ¿À¸¥ÂÊ¿¡¼­ @, JOB¿¡´Â ¿ÞÂÊ¿¡ ^¸¦ Ãß°¡ÇØ¼­ ³ªÅ¸³ª°Ô ÇÑ´Ù.
--- 4. ´ÙÀ½°ú °°Àº ¼ø¼­·Î Ãâ·Â
---    »ç¿ø¹øÈ£ ÀÌ¸§(@) Á÷Ã¥(^) ÀÔ»çÀÏ
+-- í™•ì¸ì˜ˆì œ enmaeê³¼ jobì„ í¬ê¸°ì™€ ì €ìž¥ëœ ë¬¸ìžì—´ë§Œí¼ ì˜¤ë¥¸ìª½ê³¼ ì™¼ìª½ì— í•´ë‹¹ ë¬¸ìžì—´ì„ ì•„ëž˜ í˜•ì‹ìœ¼ë¡œ
+-- ë„£ìœ¼ì„¸ìš”..
+-- 1. ENAMEê³¼ JOBì—ì„œ ë°ì´í„° í¬ê¸°ë¥¼ í™•ì¸í•œë‹¤.
+-- 2. ë°ì´í„° ì¤‘ì— ê°€ìž¥ í° ë°ì´í„°ì˜ í¬ê¸°ë¥¼ í™•ì¸í•´ì„œ,
+-- 3. ENAMEì—ëŠ” ì˜¤ë¥¸ìª½ì—ì„œ @, JOBì—ëŠ” ì™¼ìª½ì— ^ë¥¼ ì¶”ê°€í•´ì„œ ë‚˜íƒ€ë‚˜ê²Œ í•œë‹¤.
+-- 4. ë‹¤ìŒê³¼ ê°™ì€ ìˆœì„œë¡œ ì¶œë ¥
+--    ì‚¬ì›ë²ˆí˜¸ ì´ë¦„(@) ì§ì±…(^) ìž…ì‚¬ì¼
 
 SELECT MAX(LENGTH(ENAME)), MAX(LENGTH(JOB)) FROM EMP;
 SELECT RPAD(ENAME,6,'@') ENAME, LPAD(JOB,9,'^') JOB, HIREDATE FROM EMP;
 SELECT * FROM EMP;
 /*
 LTRIM(), RTRIM()
-°ø¹éÀÇ ¹®ÀÚ¸¦ »èÁ¦ÇÏ´Â ÇÔ¼ö.
-LTRIM : ¿ÞÂÊ¿¡ °ø¹é¹®ÀÚ¸¦ »èÁ¦ÇÏ´Â Ã³¸®
-RTRIM : ¿À¸¥ÂÊ¿¡ °ø¹é¹®ÀÚ¸¦ »èÁ¦ÇÏ´Â Ã³¸®
-ex [°ø¹é]This is your best day!! ¿ÞÂÊ¿¡ °ø¹é¹®ÀÚ¸¦ Á¦°Å Ã³¸®..!!
+ê³µë°±ì˜ ë¬¸ìžë¥¼ ì‚­ì œí•˜ëŠ” í•¨ìˆ˜.
+LTRIM : ì™¼ìª½ì— ê³µë°±ë¬¸ìžë¥¼ ì‚­ì œí•˜ëŠ” ì²˜ë¦¬
+RTRIM : ì˜¤ë¥¸ìª½ì— ê³µë°±ë¬¸ìžë¥¼ ì‚­ì œí•˜ëŠ” ì²˜ë¦¬
+ex [ê³µë°±]This is your best day!! ì™¼ìª½ì— ê³µë°±ë¬¸ìžë¥¼ ì œê±° ì²˜ë¦¬..!!
 */
 SELECT ltrim('	this is your best day!!!') showData,
 	length('	this is your best day!!!') beforeLen,
 	length(ltrim('	this is your best day!!!')) afterLen
 FROM dual;
--- ¿À¸¥ÂÊ¿¡ °ø¹é¹®ÀÚ¿­À» Á¦°ÅÇÏ´Â Ã³¸®
+-- ì˜¤ë¥¸ìª½ì— ê³µë°±ë¬¸ìžì—´ì„ ì œê±°í•˜ëŠ” ì²˜ë¦¬
 SELECT rtrim('What we dwell on is who we become!	') showData,
 	   length('What we dwell on is who we become!	') beforeLen,
 	   length(rtrim('What we dwell on is who we become!	')) afterLen
@@ -46,21 +46,21 @@ FROM dual;
 SELECT * FROM emp;
 /*
 TRIM
-	¿À¸¥ÂÊ, ¿ÞÂÊ¿¡ ÀÖ´Â °ø¹éÀ» ºñ·ÔÇØ¼­ Æ¯Á¤ ¹®ÀÚ¿­À» »èÁ¦ Ã³¸®ÇÏ´Â ÇÔ¼ö.
-	TRIM('»èÁ¦ÇÒ¹®ÀÚ¿­' FROM µ¥ÀÌÅÍ)
-	ex) 'aaaaaaGood morning!!aaaaaaaa'¿¡¼­ ¿À¸¥ÂÊ°ú ¿ÞÂÊ¿¡ a¹®ÀÚ¿­À» »èÁ¦Ã³¸®
+	ì˜¤ë¥¸ìª½, ì™¼ìª½ì— ìžˆëŠ” ê³µë°±ì„ ë¹„ë¡¯í•´ì„œ íŠ¹ì • ë¬¸ìžì—´ì„ ì‚­ì œ ì²˜ë¦¬í•˜ëŠ” í•¨ìˆ˜.
+	TRIM('ì‚­ì œí• ë¬¸ìžì—´' FROM ë°ì´í„°)
+	ex) 'aaaaaaGood morning!!aaaaaaaa'ì—ì„œ ì˜¤ë¥¸ìª½ê³¼ ì™¼ìª½ì— aë¬¸ìžì—´ì„ ì‚­ì œì²˜ë¦¬
 */
 SELECT trim('a' FROM 'aaaaaaGood morning!!aaaaaaaa') showdata from dual;
 SELECT * FROM emp;
--- È®ÀÎ¿¹Á¦ job¿¡ 'MAM'ÀÌ³ª 'ER' 'ST'°¡ ÀÖÀ¸¸é »èÁ¦µÈ ³»¿ëÀ¸·Î ´ÙÀ½°ú °°ÀÌ Ãâ·ÂÇÏ¼¼¿ä.
--- ÀÌ¸§ Á÷Ã¥
+-- í™•ì¸ì˜ˆì œ jobì— 'MAM'ì´ë‚˜ 'ER' 'ST'ê°€ ìžˆìœ¼ë©´ ì‚­ì œëœ ë‚´ìš©ìœ¼ë¡œ ë‹¤ìŒê³¼ ê°™ì´ ì¶œë ¥í•˜ì„¸ìš”.
+-- ì´ë¦„ ì§ì±…
 
 select * from emp;
-select ename ÀÌ¸§, job Á÷Ã¥,trim('n' from trim('r' from trim('t' from job))) Á÷Ã¥ from emp ;
+select ename ì´ë¦„, job ì§ì±…,trim('n' from trim('r' from trim('t' from job))) ì§ì±… from emp ;
 
 /*
-³¯Â¥ ÇÔ¼ö..
-sysdate : ¿À¶óÅ¬ ³»ÀåµÈ ÇöÀç ³¯Â¥¿Í ½Ã°£À» Ãâ·ÂÇÏ´Â °´Ã¼..
+ë‚ ì§œ í•¨ìˆ˜..
+sysdate : ì˜¤ë¼í´ ë‚´ìž¥ëœ í˜„ìž¬ ë‚ ì§œì™€ ì‹œê°„ì„ ì¶œë ¥í•˜ëŠ” ê°ì²´..
 */
 SELECT sysdate FROM dual;
 SELECT sysdate+1 FROM dual;
@@ -68,41 +68,41 @@ SELECT sysdate-1 FROM dual;
 SELECT sysdate today, sysdate-1 yesterday, sysdate+1 tomorrow from dual;
 SELECT ename, hiredate, sysdate, sysdate - hiredate FROM emp;
 /*
-months_between : µÎ°³ÀÇ ³¯Â¥ µ¥ÀÌÅÍ »çÀÌÀÇ °³¿ì·¯ ¼ö¸¦ ±¸ÇÏ´Â ³»¿ë..
-	months_between(ºñ±³³¯Â¥µ¥ÀÌÅÍ1, ºñ±³³¯Â¥µ¥ÀÌÅÍ2)
-ex) °¢ Á÷¿øµéÀÇ ±Ù¹«ÇÑ °³¿ù ¼ö¸¦ ±¸ÇÏ¼¼¿ä..
+months_between : ë‘ê°œì˜ ë‚ ì§œ ë°ì´í„° ì‚¬ì´ì˜ ê°œìš°ëŸ¬ ìˆ˜ë¥¼ êµ¬í•˜ëŠ” ë‚´ìš©..
+	months_between(ë¹„êµë‚ ì§œë°ì´í„°1, ë¹„êµë‚ ì§œë°ì´í„°2)
+ex) ê° ì§ì›ë“¤ì˜ ê·¼ë¬´í•œ ê°œì›” ìˆ˜ë¥¼ êµ¬í•˜ì„¸ìš”..
 */
 SELECT ename, hiredate, trunc(months_between(sysdate, hiredate)) woringMonth FROM emp;
 SELECT * FROM emp;
 /*
-add_months : ¹Ì·¡½ÃÁ¡À» ³ªÅ¸³»´Â ÇÔ¼ö·Î °³¿ù ¼ö¸¦ ´õÇØ¼­ ÇØ´ç³¯Â¥°¡ ³ªÅ¸³ª°Ô ÇÑ´Ù.
-	add_months(±âÁØµ¥ÀÌÅÍ, ÀÌÈÄ°³¿ù¼ö)
-ex) ÀÔ»ç ³¯Â¥¿¡¼­ 6°³¿ùÀ» Ãß°¡ÇÑ ³¯Â¥¸¦ Ãâ·ÂÇÏ¼¼¿ä.
+add_months : ë¯¸ëž˜ì‹œì ì„ ë‚˜íƒ€ë‚´ëŠ” í•¨ìˆ˜ë¡œ ê°œì›” ìˆ˜ë¥¼ ë”í•´ì„œ í•´ë‹¹ë‚ ì§œê°€ ë‚˜íƒ€ë‚˜ê²Œ í•œë‹¤.
+	add_months(ê¸°ì¤€ë°ì´í„°, ì´í›„ê°œì›”ìˆ˜)
+ex) ìž…ì‚¬ ë‚ ì§œì—ì„œ 6ê°œì›”ì„ ì¶”ê°€í•œ ë‚ ì§œë¥¼ ì¶œë ¥í•˜ì„¸ìš”.
 */
 SELECT ename, hiredate, add_months(hiredate,6) after6Months FROM emp;
 SELECT * FROM emp;
 /*
-¼÷Á¦1)
-6°³¿ùÀÇ ÀÎÅÏ±â°£¿¡´Â ±Þ¿©ÀÇ 70%¸¸ Áö±ÞÇÏ±â·Î Çß´Ù.
-»ç¿øÀÇ ÀÎÅÏ±â°£¸¸·á½ÃÁ¡À» Ãâ·ÂÇÏ°í, 6°³¿ù°£ÀÇ ±Þ¿©ÀÇ ÃÑÇÕÀ» °è»êÇÏ¼¼¿ä..
-¿ù±Þ¿© - sal/13
-ÀÎÅÏ±â°£ - ¿ù±Þ¿©ÀÇ 70%
-ÀÎÅÏ±â°£¿ù±Þ¿©ÃÑ¾× - ÀÎÅÏ±â°£6°³¿ù°£ ±Þ¿© ÃÑ¾×À» 10´ÜÀ§ Àý»èÇØ¼­ Ãâ·Â
-»ç¿ø¹øÈ£ »ç¿ø¸í ÀÔ»çÀÏ ÀÎÅÏ±â°£¸¸·á½ÃÁ¡ ÀÎÅÏ±â°£¿ù±Þ¿©(10´ÜÀ§Àý»è)
+ìˆ™ì œ1)
+6ê°œì›”ì˜ ì¸í„´ê¸°ê°„ì—ëŠ” ê¸‰ì—¬ì˜ 70%ë§Œ ì§€ê¸‰í•˜ê¸°ë¡œ í–ˆë‹¤.
+ì‚¬ì›ì˜ ì¸í„´ê¸°ê°„ë§Œë£Œì‹œì ì„ ì¶œë ¥í•˜ê³ , 6ê°œì›”ê°„ì˜ ê¸‰ì—¬ì˜ ì´í•©ì„ ê³„ì‚°í•˜ì„¸ìš”..
+ì›”ê¸‰ì—¬ - sal/13
+ì¸í„´ê¸°ê°„ - ì›”ê¸‰ì—¬ì˜ 70%
+ì¸í„´ê¸°ê°„ì›”ê¸‰ì—¬ì´ì•¡ - ì¸í„´ê¸°ê°„6ê°œì›”ê°„ ê¸‰ì—¬ ì´ì•¡ì„ 10ë‹¨ìœ„ ì ˆì‚­í•´ì„œ ì¶œë ¥
+ì‚¬ì›ë²ˆí˜¸ ì‚¬ì›ëª… ìž…ì‚¬ì¼ ì¸í„´ê¸°ê°„ë§Œë£Œì‹œì  ì¸í„´ê¸°ê°„ì›”ê¸‰ì—¬(10ë‹¨ìœ„ì ˆì‚­)
 */
 /*
-next_day : ÁÖ°£´ÜÀ§·Î °¡Àå °¡±î¿î ³¯Â¥¸¦ »êÃâÇÒ ¶§, È°¿ë..
-	next_day(³¯Â¥µ¥ÀÌÅÍ, '¿äÀÏ') : ÇØ´ç ¿äÀÏ¿¡ °¡Àå °¡±î¿î ³¯Â¥ Ãâ·Â..
+next_day : ì£¼ê°„ë‹¨ìœ„ë¡œ ê°€ìž¥ ê°€ê¹Œìš´ ë‚ ì§œë¥¼ ì‚°ì¶œí•  ë•Œ, í™œìš©..
+	next_day(ë‚ ì§œë°ì´í„°, 'ìš”ì¼') : í•´ë‹¹ ìš”ì¼ì— ê°€ìž¥ ê°€ê¹Œìš´ ë‚ ì§œ ì¶œë ¥..
 */
-SELECT sysdate, next_day(sysdate, '¼ö¿äÀÏ') FROM dual;
+SELECT sysdate, next_day(sysdate, 'ìˆ˜ìš”ì¼') FROM dual;
 /*
-È®ÀÎ¿¹Á¦) »ç¿øµéÀÇ ÀÔ»çÈÄ, Ã¹¹øÂ° Åä¿äÀÏÀ» Ãâ·ÂÇÏ¼¼¿ä..
+í™•ì¸ì˜ˆì œ) ì‚¬ì›ë“¤ì˜ ìž…ì‚¬í›„, ì²«ë²ˆì§¸ í† ìš”ì¼ì„ ì¶œë ¥í•˜ì„¸ìš”..
 */
-SELECT ename, hiredate, next_day(hiredate, 'Åä¿äÀÏ') firstHoliday FROM emp;
+SELECT ename, hiredate, next_day(hiredate, 'í† ìš”ì¼') firstHoliday FROM emp;
 
 SELECT * FROM emp;
 /*
-last_day ÇÔ¼ö
-	ÇØ´ç ´ÞÀÇ ¸¶Áö¸· ³¯Â¥¸¦ ¹ÝÈ¯Ã³¸®.
+last_day í•¨ìˆ˜
+	í•´ë‹¹ ë‹¬ì˜ ë§ˆì§€ë§‰ ë‚ ì§œë¥¼ ë°˜í™˜ì²˜ë¦¬.
 */
-SELECT last_day(sysdate) thisLastDate, last_day(sysdate)+1 nestFirsDate FROM dual; -- ´ÙÀ½´Þ Ã¹³¯
+SELECT last_day(sysdate) thisLastDate, last_day(sysdate)+1 nestFirsDate FROM dual; -- ë‹¤ìŒë‹¬ ì²«ë‚ 

@@ -1,28 +1,28 @@
 /*
- ¿¬½À¿¹Á¦
- 1. EMPÁß¿¡ ¿¬ºÀÀÌ 2000¹Ì¸¸ÀÌ µÇ´Â »ç¿ø Á¤º¸ Áß¿¡ »ç¿ø¹øÈ£¿Í ¿¬ºÀÀ» Ãâ·ÂÇÏ¶ó.
- 2. ¿¬ºÀ°ú º¸³Ê½ºÀÇ ÇÕ»ê ±Ý¾×ÀÌ 1500¹Ì¸¸ÀÎ »ç¶÷ÀÇ ÀÌ¸§, ¿¬ºÀ, º¸³Ê½º, ÇÕ»ê¾×À» Ãâ·ÂÇÏ¶ó.
- 3. mgrÀÌ NULLÀÎ »ç¶÷ÀÇ job°ú ÀÌ¸§, ¿¬ºÀÀ» Ãâ·ÂÇÏ¼¼¿ä.
- 4. jobÀÌ CLERKÀÎ »ç¶÷ Áß deptno°¡ 30ÀÎ »ç¶÷ÀÇ ÀÌ¸§, Á÷Ã¥, ºÎ¼­¹øÈ£¸¦ ÀÔ·ÂÇÏ¼¼¿ä.
- 5. ¿¬ºÀÀÌ 2000¿¡¼­ 3000»çÀÌ¿¡ ÀÖ´Â »ç¶÷ÀÇ ºÎ¼­¹øÈ£, ÀÌ¸§, ¿¬ºÀÀ» Ãâ·ÂÇÏ¼¼¿ä.
+ ì—°ìŠµì˜ˆì œ
+ 1. EMPì¤‘ì— ì—°ë´‰ì´ 2000ë¯¸ë§Œì´ ë˜ëŠ” ì‚¬ì› ì •ë³´ ì¤‘ì— ì‚¬ì›ë²ˆí˜¸ì™€ ì—°ë´‰ì„ ì¶œë ¥í•˜ë¼.
+ 2. ì—°ë´‰ê³¼ ë³´ë„ˆìŠ¤ì˜ í•©ì‚° ê¸ˆì•¡ì´ 1500ë¯¸ë§Œì¸ ì‚¬ëžŒì˜ ì´ë¦„, ì—°ë´‰, ë³´ë„ˆìŠ¤, í•©ì‚°ì•¡ì„ ì¶œë ¥í•˜ë¼.
+ 3. mgrì´ NULLì¸ ì‚¬ëžŒì˜ jobê³¼ ì´ë¦„, ì—°ë´‰ì„ ì¶œë ¥í•˜ì„¸ìš”.
+ 4. jobì´ CLERKì¸ ì‚¬ëžŒ ì¤‘ deptnoê°€ 30ì¸ ì‚¬ëžŒì˜ ì´ë¦„, ì§ì±…, ë¶€ì„œë²ˆí˜¸ë¥¼ ìž…ë ¥í•˜ì„¸ìš”.
+ 5. ì—°ë´‰ì´ 2000ì—ì„œ 3000ì‚¬ì´ì— ìžˆëŠ” ì‚¬ëžŒì˜ ë¶€ì„œë²ˆí˜¸, ì´ë¦„, ì—°ë´‰ì„ ì¶œë ¥í•˜ì„¸ìš”.
 */	
 
--- 1. EMPÁß¿¡ ¿¬ºÀÀÌ 2000¹Ì¸¸ÀÌ µÇ´Â »ç¿ø Á¤º¸ Áß¿¡ »ç¿ø¹øÈ£¿Í ¿¬ºÀÀ» Ãâ·ÂÇÏ¶ó.
+-- 1. EMPì¤‘ì— ì—°ë´‰ì´ 2000ë¯¸ë§Œì´ ë˜ëŠ” ì‚¬ì› ì •ë³´ ì¤‘ì— ì‚¬ì›ë²ˆí˜¸ì™€ ì—°ë´‰ì„ ì¶œë ¥í•˜ë¼.
 	select * from emp;
-	select empno "»ç¿ø¹øÈ£", sal "¿¬ºÀ" from emp where sal<2000;
+	select empno "ì‚¬ì›ë²ˆí˜¸", sal "ì—°ë´‰" from emp where sal<2000;
 
--- 2. ¿¬ºÀ°ú º¸³Ê½ºÀÇ ÇÕ»ê ±Ý¾×ÀÌ 1500¹Ì¸¸ÀÎ »ç¶÷ÀÇ ÀÌ¸§, ¿¬ºÀ, º¸³Ê½º, ÇÕ»ê¾×À» Ãâ·ÂÇÏ¶ó.	
+-- 2. ì—°ë´‰ê³¼ ë³´ë„ˆìŠ¤ì˜ í•©ì‚° ê¸ˆì•¡ì´ 1500ë¯¸ë§Œì¸ ì‚¬ëžŒì˜ ì´ë¦„, ì—°ë´‰, ë³´ë„ˆìŠ¤, í•©ì‚°ì•¡ì„ ì¶œë ¥í•˜ë¼.	
 	select * from emp;
-	select ename "ÀÌ¸§", sal "¿¬ºÀ", nvl(comm,0) "º¸³Ê½º", (sal+nvl(comm,0)) "ÇÕ»ê¾×" from emp where (sal+nvl(comm,0))<1500;
+	select ename "ì´ë¦„", sal "ì—°ë´‰", nvl(comm,0) "ë³´ë„ˆìŠ¤", (sal+nvl(comm,0)) "í•©ì‚°ì•¡" from emp where (sal+nvl(comm,0))<1500;
 
--- 3. mgrÀÌ NULLÀÎ »ç¶÷ÀÇ job°ú ÀÌ¸§, ¿¬ºÀÀ» Ãâ·ÂÇÏ¼¼¿ä.
+-- 3. mgrì´ NULLì¸ ì‚¬ëžŒì˜ jobê³¼ ì´ë¦„, ì—°ë´‰ì„ ì¶œë ¥í•˜ì„¸ìš”.
 	select * from emp;
-	select job "Á÷Ã¥", ename	"ÀÌ¸§", sal "¿¬ºÀ" from emp where mgr is null;
+	select job "ì§ì±…", ename	"ì´ë¦„", sal "ì—°ë´‰" from emp where mgr is null;
 
--- 4. jobÀÌ CLERKÀÎ »ç¶÷ Áß deptno°¡ 30ÀÎ »ç¶÷ÀÇ ÀÌ¸§, Á÷Ã¥, ºÎ¼­¹øÈ£¸¦ ÀÔ·ÂÇÏ¼¼¿ä.	
+-- 4. jobì´ CLERKì¸ ì‚¬ëžŒ ì¤‘ deptnoê°€ 30ì¸ ì‚¬ëžŒì˜ ì´ë¦„, ì§ì±…, ë¶€ì„œë²ˆí˜¸ë¥¼ ìž…ë ¥í•˜ì„¸ìš”.	
 	select * from emp;
-	select ename "ÀÌ¸§", job "Á÷Ã¥", deptno "ºÎ¼­¹øÈ£" from emp where job='CLERK' and deptno=30;
+	select ename "ì´ë¦„", job "ì§ì±…", deptno "ë¶€ì„œë²ˆí˜¸" from emp where job='CLERK' and deptno=30;
 
--- 5. ¿¬ºÀÀÌ 2000¿¡¼­ 3000»çÀÌ¿¡ ÀÖ´Â »ç¶÷ÀÇ ºÎ¼­¹øÈ£, ÀÌ¸§, ¿¬ºÀÀ» Ãâ·ÂÇÏ¼¼¿ä.
+-- 5. ì—°ë´‰ì´ 2000ì—ì„œ 3000ì‚¬ì´ì— ìžˆëŠ” ì‚¬ëžŒì˜ ë¶€ì„œë²ˆí˜¸, ì´ë¦„, ì—°ë´‰ì„ ì¶œë ¥í•˜ì„¸ìš”.
 	select * from emp;
-	select deptno "ºÎ¼­¹øÈ£", ename "ÀÌ¸§", sal "¿¬ºÀ" from emp where sal>=2000 and sal<=3000;
+	select deptno "ë¶€ì„œë²ˆí˜¸", ename "ì´ë¦„", sal "ì—°ë´‰" from emp where sal>=2000 and sal<=3000;

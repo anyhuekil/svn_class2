@@ -7,9 +7,9 @@ class Mart{
 	int tot;
 	Mart(){}
 	Mart(String name){
-		System.out.println("~~"+name+"¸¶Æ®¿¡ ¿À½Å °ÍÀ» È¯¿µÇÕ´Ï´Ù!! ");
-		System.out.println("### ±¸¸Å¹°Ç° ÇöÈ² ###");
-		System.out.println("¹°°Ç¸í\t°¡°İ\t°¹¼ö\t°è");		
+		System.out.println("~~"+name+"ë§ˆíŠ¸ì— ì˜¤ì‹  ê²ƒì„ í™˜ì˜í•©ë‹ˆë‹¤!! ");
+		System.out.println("### êµ¬ë§¤ë¬¼í’ˆ í˜„í™© ###");
+		System.out.println("ë¬¼ê±´ëª…\tê°€ê²©\tê°¯ìˆ˜\tê³„");		
 	}
 	int cart(String prodName, int price, int cnt){
 		this.prodName=prodName;
@@ -31,16 +31,16 @@ public class A09_MethodExp {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 //		Mart m = new Mart();
-//		System.out.println("### ±¸¸Å¹°Ç° ÇöÈ² ###");
-//		System.out.println("¹°°Ç¸í\t°¡°İ\t°¹¼ö\t°è");
-		Mart m = new Mart("Çàº¹");		
-		int sum=m.cart("»ç°ú", 3000, 2);
+//		System.out.println("### êµ¬ë§¤ë¬¼í’ˆ í˜„í™© ###");
+//		System.out.println("ë¬¼ê±´ëª…\tê°€ê²©\tê°¯ìˆ˜\tê³„");
+		Mart m = new Mart("í–‰ë³µ");		
+		int sum=m.cart("ì‚¬ê³¼", 3000, 2);
 		m.calcu();
-		sum+=m.cart("¹Ù³ª³ª", 4000, 3);
+		sum+=m.cart("ë°”ë‚˜ë‚˜", 4000, 3);
 		m.calcu();
-		sum+=m.cart("µş±â", 12000, 2);
+		sum+=m.cart("ë”¸ê¸°", 12000, 2);
 		m.calcu();
-		System.out.println("ÃÑ°è :"+sum+"¿ø");
+		System.out.println("ì´ê³„ :"+sum+"ì›");
 	}
 
 }

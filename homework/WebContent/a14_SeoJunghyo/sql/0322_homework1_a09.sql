@@ -1,42 +1,42 @@
--- °úÁ¦1. (homework 1)
+-- ê³¼ì œ1. (homework 1)
 
 	
--- 1). ÀÔ»çÀÏ ºĞ±âº°·Î °¡Àå ³ôÀº ¿¬ºÀÀ» ¹Ş´Â »ç¶÷À» Ãâ·ÂÇÏ¼¼¿ä.
+-- 1). ì…ì‚¬ì¼ ë¶„ê¸°ë³„ë¡œ ê°€ì¥ ë†’ì€ ì—°ë´‰ì„ ë°›ëŠ” ì‚¬ëŒì„ ì¶œë ¥í•˜ì„¸ìš”.
 	select max(sal) from emp group by floor(to_char(hiredate,'MM')/4+0.25)+1;
-	select ename ÀÌ¸§, floor(to_char(hiredate,'MM')/4+0.25)+1||'ºĞ±â' ºĞ±â, hiredate ÀÔ»çÀÏ from emp;
+	select ename ì´ë¦„, floor(to_char(hiredate,'MM')/4+0.25)+1||'ë¶„ê¸°' ë¶„ê¸°, hiredate ì…ì‚¬ì¼ from emp;
 	
-	select ename ÀÌ¸§, floor(to_char(hiredate,'MM')/4+0.25)+1||'ºĞ±â' ºĞ±â, hiredate ÀÔ»çÀÏ, sal ¿¬ºÀ from emp
+	select ename ì´ë¦„, floor(to_char(hiredate,'MM')/4+0.25)+1||'ë¶„ê¸°' ë¶„ê¸°, hiredate ì…ì‚¬ì¼, sal ì—°ë´‰ from emp
 	where (sal) in ( select max(sal) from emp group by floor(to_char(hiredate,'MM')/4+0.25)+1 )
 	order by floor(to_char(hiredate,'MM')/4+0.25)+1;
 
--- 2). ¿¬ºÀÀÌ 3000ÀÌ»óÀÎ »ç¶÷ Áß¿¡ µî±Ş(Å×ÀÌºí È°¿ëµµ °¡´É)À» ³ª´©¾î¼­ ÇØ´ç µî±Şº° ÃÖ°í ¿¬ºÀÀ» ¹Ş´Â »ç¶÷À» ÀÌ¸§, µî±Ş ¿¬ºÀÀ» Ãâ·ÂÇÏ¼¼¿ä.
+-- 2). ì—°ë´‰ì´ 3000ì´ìƒì¸ ì‚¬ëŒ ì¤‘ì— ë“±ê¸‰(í…Œì´ë¸” í™œìš©ë„ ê°€ëŠ¥)ì„ ë‚˜ëˆ„ì–´ì„œ í•´ë‹¹ ë“±ê¸‰ë³„ ìµœê³  ì—°ë´‰ì„ ë°›ëŠ” ì‚¬ëŒì„ ì´ë¦„, ë“±ê¸‰ ì—°ë´‰ì„ ì¶œë ¥í•˜ì„¸ìš”.
 	select * from emp, salgrade;
-	select e.ename ÀÌ¸§, s.grade µî±Ş, e.sal ¿¬ºÀ from emp e, salgrade s
+	select e.ename ì´ë¦„, s.grade ë“±ê¸‰, e.sal ì—°ë´‰ from emp e, salgrade s
 		where 
 		(e.sal, s.grade) in( select max(e.sal), s.grade from emp e, salgrade s where (e.sal between s.losal and s.hisal) group by s.grade)
 		and e.sal>=3000 ;
 
 
 
--- °úÁ¦2.(homework2)
--- 1). ºÎ¼­¹øÈ£°¡ 30ÀÎ »ç¶÷Áß¿¡ °¡Àå ³ªÁß¿¡ ÀÔ»çÇÑ »ç¶÷º¸´Ù ¿¬ºÀÀÌ ¸¹À¸¸é Ãâ·ÂÇÏ¼¼¿ä
+-- ê³¼ì œ2.(homework2)
+-- 1). ë¶€ì„œë²ˆí˜¸ê°€ 30ì¸ ì‚¬ëŒì¤‘ì— ê°€ì¥ ë‚˜ì¤‘ì— ì…ì‚¬í•œ ì‚¬ëŒë³´ë‹¤ ì—°ë´‰ì´ ë§ìœ¼ë©´ ì¶œë ¥í•˜ì„¸ìš”
 		select sal from emp where deptno=30 and hiredate=(select max(hiredate) from emp where deptno=30);
 		select max(sal), max(hiredate) from emp where deptno=30 group by hiredate;
--- ºÎ¼­¹øÈ£°¡ 30ÀÎ »ç¶÷Áß¿¡¼­ °¡Àå ³ªÁß¿¡ ÀÔ»çÇÑ »ç¶÷º¸´Ù ¿¬ºÀÀÌ ¸¹À¸¸é Ãâ·Â
+-- ë¶€ì„œë²ˆí˜¸ê°€ 30ì¸ ì‚¬ëŒì¤‘ì—ì„œ ê°€ì¥ ë‚˜ì¤‘ì— ì…ì‚¬í•œ ì‚¬ëŒë³´ë‹¤ ì—°ë´‰ì´ ë§ìœ¼ë©´ ì¶œë ¥
 		select * from emp where sal > all(select sal from emp where deptno=30 and hiredate=(select max(hiredate) from emp where deptno=30));
--- °¡Àå ³ªÁß¿¡ ÀÔ»çÇÑ »ç¶÷º¸´Ù ¿¬ºÀÀÌ ¸¹Àº »ç¶÷µé Áß ºÎ¼­¹øÈ£°¡ 30ÀÎ »ç¶÷µéÀ» Ãâ·Â	
+-- ê°€ì¥ ë‚˜ì¤‘ì— ì…ì‚¬í•œ ì‚¬ëŒë³´ë‹¤ ì—°ë´‰ì´ ë§ì€ ì‚¬ëŒë“¤ ì¤‘ ë¶€ì„œë²ˆí˜¸ê°€ 30ì¸ ì‚¬ëŒë“¤ì„ ì¶œë ¥	
 		select * from emp where deptno=30 and sal > all(select sal from emp where hiredate=(select max(hiredate) from emp));
 
 
--- 2). Á÷Ã¥ÀÌ SALESMANÀÎ »ç¿øÀÌ ¹Ş´Â ±Ş¿©µéÀÇ ÃÖ¼Ò ±Ş¿©º¸´Ù ¸¹ÀÌ ¹Ş´Â »ç¿øµéÀÇ ÀÌ¸§°ú ±Ş¿©¸¦ Ãâ·ÂÇÏµÇ ºÎ¼­¹øÈ£ 20¹øÀÎ »ç¿øÀº Á¦¿ÜÇÑ´Ù (ANY ¿¬»êÀÚ ÀÌ¿ë)
+-- 2). ì§ì±…ì´ SALESMANì¸ ì‚¬ì›ì´ ë°›ëŠ” ê¸‰ì—¬ë“¤ì˜ ìµœì†Œ ê¸‰ì—¬ë³´ë‹¤ ë§ì´ ë°›ëŠ” ì‚¬ì›ë“¤ì˜ ì´ë¦„ê³¼ ê¸‰ì—¬ë¥¼ ì¶œë ¥í•˜ë˜ ë¶€ì„œë²ˆí˜¸ 20ë²ˆì¸ ì‚¬ì›ì€ ì œì™¸í•œë‹¤ (ANY ì—°ì‚°ì ì´ìš©)
 	select ename, sal from emp where deptno!=20 and sal	> any(select min(sal) from emp where job='SALESMAN');
 
 
-/* °úÁ¦3. (homework 3)
- ´ÙÀ½°ú °°Àº ÇüÅÂÀÇ Å×ÀÌºí NEW_EMPÀ» ±¸¼ºÇÏ¼¼¿ä.
- ÀÌ¸§(name), ¹øÈ£(no), ÀÔ»çÀÏ(credate)-¹®ÀÚ¿­(@@@@³â @@@¿ù @@@ÀÏ) ¿ÃÇØ±âÁØ±Ù¹«¿¬¼ö(workyears)
+/* ê³¼ì œ3. (homework 3)
+ ë‹¤ìŒê³¼ ê°™ì€ í˜•íƒœì˜ í…Œì´ë¸” NEW_EMPì„ êµ¬ì„±í•˜ì„¸ìš”.
+ ì´ë¦„(name), ë²ˆí˜¸(no), ì…ì‚¬ì¼(credate)-ë¬¸ìì—´(@@@@ë…„ @@@ì›” @@@ì¼) ì˜¬í•´ê¸°ì¤€ê·¼ë¬´ì—°ìˆ˜(workyears)
 */
 	create table new_emp
-		as select ename name, empno no, to_char(hiredate, 'YYYY"³â" MM"¿ù" DD"ÀÏ"') credate, to_number(to_char(sysdate, 'YYYY'))-to_number(to_char(hiredate,'YYYY')) workyears from emp; 
+		as select ename name, empno no, to_char(hiredate, 'YYYY"ë…„" MM"ì›”" DD"ì¼"') credate, to_number(to_char(sysdate, 'YYYY'))-to_number(to_char(hiredate,'YYYY')) workyears from emp; 
 	select * from new_emp;	 
 	

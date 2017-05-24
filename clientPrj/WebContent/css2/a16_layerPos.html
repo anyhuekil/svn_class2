@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+/*
+위치 속성
+절대 좌표 : 요소의 x, y좌표를 통해서 화면에 해당 위치에 나타냄..
+상대 좌표 : 요소를 입력한 순서를 통해 상대적으로 위치를 나타냄
+
+1. position :절대 위치냐 상대 위치냐에 대한 속성을 지정처리..
+	1) relative : default값..
+	2) absolute : 절대위치설정..
+ex)  크기가 넓이:100px, 높이:100px 인 div 3개를 
+    배경색상을 red, green, blue로 설정 나타내세요..
+2. top:y좌표, left:x좌표
+    position이 절대위치로 설정되어 있는 때, 왼쪽 상단을 꼭지점으로
+    기준 위치를 설정..
+    .클래스명{position:absolute;top:100px;left:200px;}
+3. z-index
+	위치가 겹쳐졌을 때, 우선적으로 화면에 나타내는 것을 말한다.
+	값이 많을 수로 나타나는 것이 더 먼저 보인다..
+	        
+*/
+	div{width:100px;height:100px;position:absolute;}
+	.bgColorR{background-color:red;top:10px;left:10px;z-index:50;}
+	.bgColorG{background-color:green;top:20px;left:20px;z-index:40;}
+	.bgColorB{background-color:blue;top:30px;left:30px;z-index:30;}
+/**/
+	td{width:33%;height:33%;text-align:center;background-color:yellow;}
+</style>
+<script type="text/javascript">
+	var topPos=10;
+	function goUp(){ 
+		var bgColorRDiv=document.getElementsByClassName("bgColorR")[0];
+		topPos-=50;
+		bgColorRDiv.style.top=topPos+"px";		
+	}
+	function goDown(){ 
+		var bgColorRDiv=document.getElementsByClassName("bgColorR")[0];
+		topPos+=50;
+		bgColorRDiv.style.top=topPos+"px";		
+	}	
+	function goLeft(){ 
+		var bgColorRDiv=document.getElementsByClassName("bgColorR")[0];
+		leftPos-=50;
+		bgColorRDiv.style.left=leftPos+"px";		
+	}
+	
+	var leftPos=10;
+	function goRight(){ //alert("오른쪽으로");
+	/*
+		document.getElenentsByClassName("") : class이름으로 해당 객체를
+		식별한다..
+	*/
+		var bgColorRDiv=document.getElementsByClassName("bgColorR")[0];
+		//alert(bgColorRDiv.innerHTML);
+		// 오른쪽을 50px씩 이동..
+		leftPos+=50;
+		bgColorRDiv.style.left=leftPos+"px";
+		
+	}
+</script>
+</head>
+<body>
+	<table align="center" width="200pt" height="200pt" border>
+		<tr><td></td><td onclick="goUp()">위로</td><td></td></tr>
+		<tr><td onclick="goLeft()">왼쪽</td><td></td>
+			<td onclick="goRight()">오른쪽</td></tr>
+		<tr><td></td><td  onclick="goDown()">아래로</td><td></td></tr>
+	</table>
+
+	<div class="bgColorR">빨강색Div</div>
+	<div class="bgColorG">초록색Div</div>
+	<div class="bgColorB">파랑색Div</div>
+
+</body>
+</html>

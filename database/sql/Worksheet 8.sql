@@ -1,68 +1,68 @@
 select * from emp;
 select * from dept;
--- º¯°æÇÕ´Ï´Ù..
+-- ë³€ê²½í•©ë‹ˆë‹¤..
 
--- select : Æ¯Á¤Å×ÀÌºíÀÇ ÄÃ·³¸íÀ» ¼±ÅÃÇÏ´Â ¸í·É¾î.
--- 1) * ÀüÃ¼ ÄÃ·³À» »ý¼ºµÈ ¼ø¼­·Î list ÇÒ¶§.
--- 2) ÄÃ·³¸í : ÇØ´ç µ¥ÀÌÅÍ¸¦ º¸±â À§ÇÑ ¸í·É¾î..
--- 3) from Å×ÀÌºí¸í : Å×ÀÌºíÀ» listÇÏ±â À§ÇÏ¿©..
-SELECT * FROM emp; --empÅ×ÀÌºíÀÇ ÀüÃ¼ ÄÃ·³ ³»¿ëÀ» listÇÏ¼¼¿ä..
-SELECT empno, job from emp; --empÅ×ÀÌºíÀÇ ÄÃ·³ Áß¿¡ empno¿Í job ¼øÀ¸·Î list
-SELECT deptno, ename, sal from emp; -- ºÎ¼­¸í, ÀÌ¸§, ±Þ¿©
+-- select : íŠ¹ì •í…Œì´ë¸”ì˜ ì»¬ëŸ¼ëª…ì„ ì„ íƒí•˜ëŠ” ëª…ë ¹ì–´.
+-- 1) * ì „ì²´ ì»¬ëŸ¼ì„ ìƒì„±ëœ ìˆœì„œë¡œ list í• ë•Œ.
+-- 2) ì»¬ëŸ¼ëª… : í•´ë‹¹ ë°ì´í„°ë¥¼ ë³´ê¸° ìœ„í•œ ëª…ë ¹ì–´..
+-- 3) from í…Œì´ë¸”ëª… : í…Œì´ë¸”ì„ listí•˜ê¸° ìœ„í•˜ì—¬..
+SELECT * FROM emp; --empí…Œì´ë¸”ì˜ ì „ì²´ ì»¬ëŸ¼ ë‚´ìš©ì„ listí•˜ì„¸ìš”..
+SELECT empno, job from emp; --empí…Œì´ë¸”ì˜ ì»¬ëŸ¼ ì¤‘ì— empnoì™€ job ìˆœìœ¼ë¡œ list
+SELECT deptno, ename, sal from emp; -- ë¶€ì„œëª…, ì´ë¦„, ê¸‰ì—¬
 
--- ½ÇÁ¦ ÇÁ·Î±×·¥°ú ·Îµù ºÎºÐÀº ÄÃ·³¸íÀÌ Áß¿äÇÔ.
--- empno:»ç¿ø¹øÈ£, ename:»ç¿ø job:Á÷Ã¥, mgr:°ü¸®ÀÚÀÇ»ç¹ø,
--- hiredate:ÀÔ»çÀÏ, sal:¿¬ºÀ, comm:º¸³Ê½º, deptno:ºÎ¼­¹øÈ£.
---¹®Á¦ »ç¿øÀÌ¸§°ú Á÷Ã¥, ºÎ¼­¹øÈ£ ¼øÀ¸·Î µ¥ÀÌÅÍ¸¦ list ÇÏ¼¼¿ä..
+-- ì‹¤ì œ í”„ë¡œê·¸ëž¨ê³¼ ë¡œë”© ë¶€ë¶„ì€ ì»¬ëŸ¼ëª…ì´ ì¤‘ìš”í•¨.
+-- empno:ì‚¬ì›ë²ˆí˜¸, ename:ì‚¬ì› job:ì§ì±…, mgr:ê´€ë¦¬ìžì˜ì‚¬ë²ˆ,
+-- hiredate:ìž…ì‚¬ì¼, sal:ì—°ë´‰, comm:ë³´ë„ˆìŠ¤, deptno:ë¶€ì„œë²ˆí˜¸.
+--ë¬¸ì œ ì‚¬ì›ì´ë¦„ê³¼ ì§ì±…, ë¶€ì„œë²ˆí˜¸ ìˆœìœ¼ë¡œ ë°ì´í„°ë¥¼ list í•˜ì„¸ìš”..
 SELECT * FROM emp;
 SELECT ename, job, deptno from emp;
---»ê¼ú ¿¬»êÀÚ..
--- µ¥ÀÌÅÍº£ÀÌ½ºÀÇ ÄÃ·³´ÜÀ§·Î ¿¬»êÀ» Ã³¸®ÇÒ ¼ö ÀÖ´Ù..±âº»ÀûÀÎ +,-,*,/
--- %(¾øÀ½)-ÇÔ¼ö¸¦ È°¿ëÇØ¾ßÇÔ.
+--ì‚°ìˆ  ì—°ì‚°ìž..
+-- ë°ì´í„°ë² ì´ìŠ¤ì˜ ì»¬ëŸ¼ë‹¨ìœ„ë¡œ ì—°ì‚°ì„ ì²˜ë¦¬í•  ìˆ˜ ìžˆë‹¤..ê¸°ë³¸ì ì¸ +,-,*,/
+-- %(ì—†ìŒ)-í•¨ìˆ˜ë¥¼ í™œìš©í•´ì•¼í•¨.
 select * FROM EMP;
---ÇöÀç ¿¬ºÀ¿¡ +100À» ´õÇÑ °ªÀ» Ãâ·ÂÇÏ¼¼¿ä. (ÀÌ¸§, ±Þ¿©)
+--í˜„ìž¬ ì—°ë´‰ì— +100ì„ ë”í•œ ê°’ì„ ì¶œë ¥í•˜ì„¸ìš”. (ì´ë¦„, ê¸‰ì—¬)
 select ename, sal+100, sal-10, sal*10, sal/10 from emp;
--- ÄÃ·³°£ÀÇ ¿¬»êÃ³¸® : ÄÃ·³¸í1+ÄÃ·³¸í2
+-- ì»¬ëŸ¼ê°„ì˜ ì—°ì‚°ì²˜ë¦¬ : ì»¬ëŸ¼ëª…1+ì»¬ëŸ¼ëª…2
 select * from emp;
--- ex) ºÎ¼­¹øÈ£¿Í ¿¬ºÀÀ» ÇÕ»êÇÑ ³»¿ëÀ» Ãâ·ÂÇÏ¼¼¿ä..
+-- ex) ë¶€ì„œë²ˆí˜¸ì™€ ì—°ë´‰ì„ í•©ì‚°í•œ ë‚´ìš©ì„ ì¶œë ¥í•˜ì„¸ìš”..
 select ename, sal, deptno, sal+ deptno from emp;
---¹®Á¦1) ¿¬ºÀ¿¡ ¿ÃÇØ ÀüÁ÷¿øÀ» ´ë»óÀ¸·Î 10%¿Ã¶ú´Ù.
--- »ç¿ø¸í, ±âÁ¸¿¬ºÀ, ÀÎ»óºÐ, ÀÎ»óµÈ¿¬ºÀÃÑÇÕÀ» Ãâ·ÂÇÏ¼¼¿ä
+--ë¬¸ì œ1) ì—°ë´‰ì— ì˜¬í•´ ì „ì§ì›ì„ ëŒ€ìƒìœ¼ë¡œ 10%ì˜¬ëžë‹¤.
+-- ì‚¬ì›ëª…, ê¸°ì¡´ì—°ë´‰, ì¸ìƒë¶„, ì¸ìƒëœì—°ë´‰ì´í•©ì„ ì¶œë ¥í•˜ì„¸ìš”
 select ename, sal, sal*0.1, sal*1.1 from emp;
--- ename=»ç¿ø¸í, sal=¿¬ºÀ
+-- ename=ì‚¬ì›ëª…, sal=ì—°ë´‰
 
 select * from emp;
--- ¹®Á¦2) ºÎ¼­º°·Î ¿¬ºÀÀÎ»óºÐÀ» ´Ù¸£°Ô Ã¥Á¤.
--- ºÎ¼­¹øÈ£ 10==> 10%, 20 ==> 20%, 30 == 30%·Î ÀÎ»ó
--- ÀÌ¸§, ºÎ¼­¸í, ¿¬ºÀ, ÀÎ»óµÈ¿¬ºÀ
--- ename, deptno, sal, ÀÎ»óµÈ¿¬ºÀ
+-- ë¬¸ì œ2) ë¶€ì„œë³„ë¡œ ì—°ë´‰ì¸ìƒë¶„ì„ ë‹¤ë¥´ê²Œ ì±…ì •.
+-- ë¶€ì„œë²ˆí˜¸ 10==> 10%, 20 ==> 20%, 30 == 30%ë¡œ ì¸ìƒ
+-- ì´ë¦„, ë¶€ì„œëª…, ì—°ë´‰, ì¸ìƒëœì—°ë´‰
+-- ename, deptno, sal, ì¸ìƒëœì—°ë´‰
 select ename, deptno, sal, (sal*(deptno*0.01)), sal+(sal*(deptno*0.01)) from emp;
--- ¹®ÀÚ¿­À» Ç¥Çö
--- database ¹®ÀÚ¿­ ¿¬°áÃ³¸®´Â '||'¸¦ È°¿ëÇÑ´Ù.
-select '»ç¿øÀÇ ÀÌ¸§Àº'||ename ||'ÀÌ°í,ºÎ¼­¹øÈ£´Â '||deptno||' ÀÔ´Ï´Ù..' from emp;
+-- ë¬¸ìžì—´ì„ í‘œí˜„
+-- database ë¬¸ìžì—´ ì—°ê²°ì²˜ë¦¬ëŠ” '||'ë¥¼ í™œìš©í•œë‹¤.
+select 'ì‚¬ì›ì˜ ì´ë¦„ì€'||ename ||'ì´ê³ ,ë¶€ì„œë²ˆí˜¸ëŠ” '||deptno||' ìž…ë‹ˆë‹¤..' from emp;
 select * FROM emp;
--- È®ÀÎ ¿¹Á¦) »ç¿ø¹øÈ£°¡ @@@ ÀÎ @@@(ÀÌ¸§)´Â ¿ÃÇØ ¿¬ºÀÀÎ @@@ ¸¸¿ø ÀÔ´Ï´Ù!! --Ãâ·Â listÃ³¸®
-SELECT '»ç¿ø¹øÈ£°¡ '|| empno ||' ÀÎ , '|| ename ||' ´Â ¿ÃÇØ ¿¬ºÀÀÌ '||sal || '¸¸¿ø ÀÔ´Ï´Ù!! ' from emp;
+-- í™•ì¸ ì˜ˆì œ) ì‚¬ì›ë²ˆí˜¸ê°€ @@@ ì¸ @@@(ì´ë¦„)ëŠ” ì˜¬í•´ ì—°ë´‰ì¸ @@@ ë§Œì› ìž…ë‹ˆë‹¤!! --ì¶œë ¥ listì²˜ë¦¬
+SELECT 'ì‚¬ì›ë²ˆí˜¸ê°€ '|| empno ||' ì¸ , '|| ename ||' ëŠ” ì˜¬í•´ ì—°ë´‰ì´ '||sal || 'ë§Œì› ìž…ë‹ˆë‹¤!! ' from emp;
 
--- ¾Æ·¡ÀÇ Çü½ÄÀ¸·Î µ¥ÀÌÅÍ¸¦ ³ªÅ¸³»¼¼¿ä
--- 1) enameÀº ÇöÀç ¿¬ºÀÀÎ @@@¸¸¿ø ÀÎµ¥, ÃÖ±Ùµ¥ 5% ÀÎ»óµÈ ±Ý¾×ÀÌ¸ç, ÀÛ³â ¿¬ºÀÀº @@@¸¸¿øÀÔ´Ï´Ù.
--- 2) enameÀÇ ÀÔ»çÀÏÀº hiredate ÀÔ´Ï´Ù.
--- 3) Á÷Ã¥ÀÎ @@@ÀÎ @@@´Â ºÎ¼­¹øÈ£°¡ @@@ ÀÔ´Ï´Ù.
----4) @@@´ÔÀº ÇöÀç ¿¬º¡°ú º¸³Ê½º(comm)ÀÇ ÇÕ»ê¾×Àº @@@ ÀÔ´Ï´Ù.
+-- ì•„ëž˜ì˜ í˜•ì‹ìœ¼ë¡œ ë°ì´í„°ë¥¼ ë‚˜íƒ€ë‚´ì„¸ìš”
+-- 1) enameì€ í˜„ìž¬ ì—°ë´‰ì¸ @@@ë§Œì› ì¸ë°, ìµœê·¼ë° 5% ì¸ìƒëœ ê¸ˆì•¡ì´ë©°, ìž‘ë…„ ì—°ë´‰ì€ @@@ë§Œì›ìž…ë‹ˆë‹¤.
+-- 2) enameì˜ ìž…ì‚¬ì¼ì€ hiredate ìž…ë‹ˆë‹¤.
+-- 3) ì§ì±…ì¸ @@@ì¸ @@@ëŠ” ë¶€ì„œë²ˆí˜¸ê°€ @@@ ìž…ë‹ˆë‹¤.
+---4) @@@ë‹˜ì€ í˜„ìž¬ ì—°ë²™ê³¼ ë³´ë„ˆìŠ¤(comm)ì˜ í•©ì‚°ì•¡ì€ @@@ ìž…ë‹ˆë‹¤.
 SELECT * FROM emp;
 SELECT  ename from emp;
 
 --nv1()
---nv1 : µ¥ÀÌÅÍ º£ÀÌ½º¿¡´Â µ¥ÀÌÅÍ°¡ ¾ø´Â °ªÀ» null °ªÀÌ¶ó°í ÇÑ´Ù. °ø¹é('')µµ ¾Æ´Ï¸é 0¾Æ´Ñ
--- ¸»±×´ë·Î µ¥ÀÌÅÍ°¡ ÀÔ·ÂµÇ¾î ÀÖ´Â ¾Ê´Â °ÍÀ» ¸»ÇÑ´Ù.
--- ÇÁ·Î±×·¥¿¡¼­ ¾²ÀÌ´Â ÃÊ±â°ª°ú ±¸ºÐÇØ¼­ ¾Ë°í ÀÖ¾î¾ß ÇÑ´Ù.
--- ÁÖÀÇ:È­¸é°ú ¿¬µ¿µÉ ¶§´Â null°¡ Ç¥½ÃµÇ¾î°Å³ª, nullpointerExceptionÀÌ¶ó´Â ¿¡·¯°¡ ¹ß»ýÇÑ´Ù.
--- ¶ÇÇÑ µ¥ÀÌÅÍ ÄÃ·³°£ÀÇ ¿¬»êµµ Á¤»óÀûÀ¸·Î µÇÁö ¾Ê´Â´Ù..
+--nv1 : ë°ì´í„° ë² ì´ìŠ¤ì—ëŠ” ë°ì´í„°ê°€ ì—†ëŠ” ê°’ì„ null ê°’ì´ë¼ê³  í•œë‹¤. ê³µë°±('')ë„ ì•„ë‹ˆë©´ 0ì•„ë‹Œ
+-- ë§ê·¸ëŒ€ë¡œ ë°ì´í„°ê°€ ìž…ë ¥ë˜ì–´ ìžˆëŠ” ì•ŠëŠ” ê²ƒì„ ë§í•œë‹¤.
+-- í”„ë¡œê·¸ëž¨ì—ì„œ ì“°ì´ëŠ” ì´ˆê¸°ê°’ê³¼ êµ¬ë¶„í•´ì„œ ì•Œê³  ìžˆì–´ì•¼ í•œë‹¤.
+-- ì£¼ì˜:í™”ë©´ê³¼ ì—°ë™ë  ë•ŒëŠ” nullê°€ í‘œì‹œë˜ì–´ê±°ë‚˜, nullpointerExceptionì´ë¼ëŠ” ì—ëŸ¬ê°€ ë°œìƒí•œë‹¤.
+-- ë˜í•œ ë°ì´í„° ì»¬ëŸ¼ê°„ì˜ ì—°ì‚°ë„ ì •ìƒì ìœ¼ë¡œ ë˜ì§€ ì•ŠëŠ”ë‹¤..
 
 select sal, sal+1, sal+0, sal+null from emp;
---±×·¡¼­ µ¥ÀÌÅÍº£ÀÌ½º¿¡¼­´Â null¿¡ ´ëÇÑ ¿¬»êÀÇ Á¤»óÀûÀÎ Ã³¸®¸¦ À§ÇØ ÇÔ¼ö¸¦ ¸¸µé¾î¼­ È°¿ëÇÑ´Ù.
--- ny1À» È°¿ëÇÏ¸é null°ªÀÏ ¶§, ÃÊ±â°ª¿¡ ´ëÇÑ Á¤ÀÇ¸¦ ÇØ¼­ Á¤»ó Ã³¸®°¡ °¡´ÉÇÏ°Ô ÇÑ´Ù.
--- ny1(ÄÃ·³¸í, µ¥ÀÌÅÍ°¡ nullÀÏ ¶§ Ã³¸®ÇÒ µ¥ÀÌÅÍ)
+--ê·¸ëž˜ì„œ ë°ì´í„°ë² ì´ìŠ¤ì—ì„œëŠ” nullì— ëŒ€í•œ ì—°ì‚°ì˜ ì •ìƒì ì¸ ì²˜ë¦¬ë¥¼ ìœ„í•´ í•¨ìˆ˜ë¥¼ ë§Œë“¤ì–´ì„œ í™œìš©í•œë‹¤.
+-- ny1ì„ í™œìš©í•˜ë©´ nullê°’ì¼ ë•Œ, ì´ˆê¸°ê°’ì— ëŒ€í•œ ì •ì˜ë¥¼ í•´ì„œ ì •ìƒ ì²˜ë¦¬ê°€ ê°€ëŠ¥í•˜ê²Œ í•œë‹¤.
+-- ny1(ì»¬ëŸ¼ëª…, ë°ì´í„°ê°€ nullì¼ ë•Œ ì²˜ë¦¬í•  ë°ì´í„°)
 SELECT * FROM emp;
 SELECT comm, comm+10, nvl(comm,0), nvl(comm,0)+10 FROM emp;
 

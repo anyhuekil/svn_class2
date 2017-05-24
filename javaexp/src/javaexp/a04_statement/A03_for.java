@@ -4,47 +4,47 @@ public class A03_for {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		// forÀ» È°¿ëÇÑ ¿¹Á¦..
-		// 15 ~ 50 Ãâ·Â..
+		// forì„ í™œìš©í•œ ì˜ˆì œ..
+		// 15 ~ 50 ì¶œë ¥..
 		for(int cnt=15;cnt<=50;cnt++){
-			System.out.println("¹øÈ£:"+cnt);
+			System.out.println("ë²ˆí˜¸:"+cnt);
 		}
-		// 5°³ ´ÜÀ§·Î tab  ¹× ÁÙ¹Ù²Ş Ã³¸®..	
+		// 5ê°œ ë‹¨ìœ„ë¡œ tab  ë° ì¤„ë°”ê¿ˆ ì²˜ë¦¬..	
 		for(int cnt=15;cnt<=50;cnt++){
-			// print() ÁÙ¹Ù²Ş ¾øÀ½.. \t : ÅÇ, \n : ÁÙ¹Ù²ŞÃ³¸®..
+			// print() ì¤„ë°”ê¿ˆ ì—†ìŒ.. \t : íƒ­, \n : ì¤„ë°”ê¿ˆì²˜ë¦¬..
 			System.out.print(cnt);
 			if(cnt%5==0){
-				// println() : ÁÙ¹Ù²Ş
+				// println() : ì¤„ë°”ê¿ˆ
 				System.out.println();
 			}else{
 				System.out.print("\t");
 			}
 		}	
-		// for¹®À» ÅëÇÑ µ¥ÀÌÅÍ ¿¬»ê Ã³¸®..
-		// 1~100±îÁö µ¥ÀÌÅÍ¸¦ ÇÕ»êÇÏ¼¼¿ä!!
-		// ÇÕ»êÇÒ º¯¼ö ¼±¾ğ
-		int sum=0;  // ´©ÀûÃ³¸®ÇÒ º¯¼ö+=Ãß°¡ÇÒ µ¥ÀÌÅÍ;
+		// forë¬¸ì„ í†µí•œ ë°ì´í„° ì—°ì‚° ì²˜ë¦¬..
+		// 1~100ê¹Œì§€ ë°ì´í„°ë¥¼ í•©ì‚°í•˜ì„¸ìš”!!
+		// í•©ì‚°í•  ë³€ìˆ˜ ì„ ì–¸
+		int sum=0;  // ëˆ„ì ì²˜ë¦¬í•  ë³€ìˆ˜+=ì¶”ê°€í•  ë°ì´í„°;
 		for(int cnt=1;cnt<=100;cnt++){
 			System.out.print(cnt);
 			if(cnt!=100){
 				System.out.print(" + ");
 			}
-			sum+=cnt; // µ¥ÀÌÅÍ ´©ÀûÃ³¸®..
+			sum+=cnt; // ë°ì´í„° ëˆ„ì ì²˜ë¦¬..
 		}
 		System.out.println(" = "+ sum);
-		String[] foods={"»ç°ú","Â¥Àå¸é","µÈÀåÂî°³"};
-		// ¹è¿­¸í[index¹øÈ£]  idx=0;ºÎÅÍ½ÃÀÛ
-		// ¹è¿­¸í.length : ¹è¿­ÀÇ Å©±â =  index¸¶Áö¸·¹øÈ£ +1
+		String[] foods={"ì‚¬ê³¼","ì§œì¥ë©´","ëœì¥ì°Œê°œ"};
+		// ë°°ì—´ëª…[indexë²ˆí˜¸]  idx=0;ë¶€í„°ì‹œì‘
+		// ë°°ì—´ëª….length : ë°°ì—´ì˜ í¬ê¸° =  indexë§ˆì§€ë§‰ë²ˆí˜¸ +1
 		// number(1~ ) = index +1
 		for(int idx=0;idx<foods.length;idx++){
 			System.out.println((idx+1)+")"+ foods[idx]);
 		}
-		//  for(´ÜÀ§º¯¼ö/°´Ã¼ : ¹è¿­°´Ã¼ ){
-		//      ÇØ´ç ¹è¿­°´Ã¼°¡ ÀÖÀ» ¶§±îÁö  ´ÜÀ§ º¯¼ö³ª °´Ã¼ ÇÒ´ç
+		//  for(ë‹¨ìœ„ë³€ìˆ˜/ê°ì²´ : ë°°ì—´ê°ì²´ ){
+		//      í•´ë‹¹ ë°°ì—´ê°ì²´ê°€ ìˆì„ ë•Œê¹Œì§€  ë‹¨ìœ„ ë³€ìˆ˜ë‚˜ ê°ì²´ í• ë‹¹
 		for(String food : foods){
-			System.out.println("¹è¿­ for2 µ¥ÀÌÅÍ:"+food);
+			System.out.println("ë°°ì—´ for2 ë°ì´í„°:"+food);
 		}
-/*	È®
+/*	í™•
  
  */		
 		

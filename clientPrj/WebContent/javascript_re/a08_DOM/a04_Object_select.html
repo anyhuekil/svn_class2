@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+/*
+
+*/
+
+/**/
+</style>
+<script src="http://code.jquery.com/jquery-1.10.2.js">
+</script>
+<script type="text/javascript">
+$(document).ready(function(){
+
+});
+function login(){
+	// <input name="name속성" 으로 접근해서 활용.
+	var idVal=document.getElementsByName("id")[0].value;
+	var passVal=document.getElementsByName("pass")[0].value;
+	//alert(idVal+":"+passVal);
+	if(idVal=="himan"&&passVal=="7777"){
+		alert("로그인 성공");
+	}else{
+		alert("인증된 계정이 아닙니다.");
+	}
+}
+</script>
+</head>
+<body><center>
+	ID : <input type="text" name="id"/><br>
+	PASS : <input type="password" name="pass"/><br>
+	<input type="button" value="로그인"
+		onclick="javascript:login();"/>
+
+
+
+</body>
+</html>

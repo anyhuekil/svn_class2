@@ -26,7 +26,7 @@ public class A04_MemeberDao {
 			rs = pstmt.executeQuery();
 			if(rs.next()){
 				mem = new Member();
-				// rs.getXXXX(¼ø¼­¹øÈ£)
+				// rs.getXXXX(ìˆœì„œë²ˆí˜¸)
 				mem.setMemid(rs.getString(1));
 				mem.setPass(rs.getString(2));
 				mem.setName(rs.getString(3));
@@ -78,7 +78,7 @@ public class A04_MemeberDao {
 			Member mem=null;
 			while(rs.next()){
 				mem = new Member();
-				// rs.getXXXX(¼ø¼­¹øÈ£)
+				// rs.getXXXX(ìˆœì„œë²ˆí˜¸)
 				mem.setMemid(rs.getString(1));
 				mem.setPass(rs.getString(2));
 				mem.setName(rs.getString(3));
@@ -126,7 +126,7 @@ public class A04_MemeberDao {
 		sch.setMemid("himan");
 		sch.setPass("7777");
 		System.out.println(dao.getMember(sch).getName());
-		System.out.println("µ¥ÀÌÅÍ°Ç¼ö:"+dao.getMemberList().size());
+		System.out.println("ë°ì´í„°ê±´ìˆ˜:"+dao.getMemberList().size());
 	}
 
 }

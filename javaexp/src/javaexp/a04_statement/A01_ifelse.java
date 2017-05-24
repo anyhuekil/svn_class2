@@ -4,20 +4,20 @@ public class A01_ifelse {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		// Á¶°Ç¹®¿¡ ´ëÇÑ Ã³¸®..
+		// ì¡°ê±´ë¬¸ì— ëŒ€í•œ ì²˜ë¦¬..
 		// 0, 1, 2
-		// °¡À§ ¹ÙÀ§ º¸  Ãâ·Â µÇ´Â ³»¿ë..
+		// ê°€ìœ„ ë°”ìœ„ ë³´  ì¶œë ¥ ë˜ëŠ” ë‚´ìš©..
 		// (int) casting!!
-		// Math.random()*3 ½Ç¼ö..
-		int gameIdx = (int)(Math.random()*3);  // ¹üÀ§°¡ 0~2±îÁö¸¸..
-		// ÇØ´ç Á¶°Ç
+		// Math.random()*3 ì‹¤ìˆ˜..
+		int gameIdx = (int)(Math.random()*3);  // ë²”ìœ„ê°€ 0~2ê¹Œì§€ë§Œ..
+		// í•´ë‹¹ ì¡°ê±´
 		if( gameIdx==0 ){
-			System.out.println("°¡À§");
-		// À§ÀÇ Á¶°ÇÀ» Á¦¿ÜÇÏ°í 1 ÀÏ¶§..	
+			System.out.println("ê°€ìœ„");
+		// ìœ„ì˜ ì¡°ê±´ì„ ì œì™¸í•˜ê³  1 ì¼ë•Œ..	
 		}else if(gameIdx==1){
-			System.out.println("¹ÙÀ§");
+			System.out.println("ë°”ìœ„");
 		}else{
-			System.out.println("º¸");
+			System.out.println("ë³´");
 		}
 	}
 

@@ -1,21 +1,21 @@
 /*
-	°úÁ¦ 1. emp03 º¹»ç table »ı¼º
-	1. ÀÔ·Â empnoÀÇ °¡Àå ÀÛÀº¼öº¸´Ù -1, mgr : clearkÀÇ mgrÀÔ·Â, sal : Æò±Õ sal, comm = ÀüÃ¼ commÀÇ ÇÕ°è
-	2. ¼öÁ¤ ename : '½Å±æµ¿', job : 'SUPERMAN', hiredate : ÃÖ±Ù ÀÔ»çÀÏ +1
+	ê³¼ì œ 1. emp03 ë³µì‚¬ table ìƒì„±
+	1. ì…ë ¥ empnoì˜ ê°€ì¥ ì‘ì€ìˆ˜ë³´ë‹¤ -1, mgr : clearkì˜ mgrì…ë ¥, sal : í‰ê·  sal, comm = ì „ì²´ commì˜ í•©ê³„
+	2. ìˆ˜ì • ename : 'ì‹ ê¸¸ë™', job : 'SUPERMAN', hiredate : ìµœê·¼ ì…ì‚¬ì¼ +1
 	
-	°úÁ¦ 2.
-	log in È­¸éÀ» ¸¸µé°í id, pw Ã¼Å©. ´ÙÀ½È­¸é¿¡¼­ id @@@´Ô È¯¿µÇÕ´Ï´Ù. ³²Àº point´Â @@@ ÀÔ´Ï´Ù. ¶ó´Â ³»¿ëÀÌ ³ªÅ¸³­´Ù°í ÇÑ´Ù.
-	ÀÌ¶§ ÇÊ¿äÈ£ ÇÏ´Â table°ú table ±¸Á¶¸¦ ¸¸µé¾î¶ó
+	ê³¼ì œ 2.
+	log in í™”ë©´ì„ ë§Œë“¤ê³  id, pw ì²´í¬. ë‹¤ìŒí™”ë©´ì—ì„œ id @@@ë‹˜ í™˜ì˜í•©ë‹ˆë‹¤. ë‚¨ì€ pointëŠ” @@@ ì…ë‹ˆë‹¤. ë¼ëŠ” ë‚´ìš©ì´ ë‚˜íƒ€ë‚œë‹¤ê³  í•œë‹¤.
+	ì´ë•Œ í•„ìš”í˜¸ í•˜ëŠ” tableê³¼ table êµ¬ì¡°ë¥¼ ë§Œë“¤ì–´ë¼
 	
-	°úÁ¦ 3.
-	ÂüÁ¶key °ü°è¿¡ ÀÖ´Â table ±¸¼ºÇÏ±â
+	ê³¼ì œ 3.
+	ì°¸ì¡°key ê´€ê³„ì— ìˆëŠ” table êµ¬ì„±í•˜ê¸°
 	main table	student_main(id, pw, name)
 	sub table	student_point(id, subject, point)
-		student_main°ú student_point id·Î foreign key °ü°è¸¦ ¼³Á¤ÇÏ°í, student_main¿¡ data°¡ ÀÖ¾î¾ß¸¸
-		student_point¸¦ ÀÔ·ÂÇÒ ¼ö ÀÖ°Ô²û Ã³¸®
+		student_mainê³¼ student_point idë¡œ foreign key ê´€ê³„ë¥¼ ì„¤ì •í•˜ê³ , student_mainì— dataê°€ ìˆì–´ì•¼ë§Œ
+		student_pointë¥¼ ì…ë ¥í•  ìˆ˜ ìˆê²Œë” ì²˜ë¦¬
 */
 
--- °úÁ¦ 1.
+-- ê³¼ì œ 1.
 create table emp03 as select * from emp;
 select sum(nvl(comm,0)) from emp03;
 select avg(sal) from emp03;
@@ -23,12 +23,12 @@ select min(empno)-1 from emp03;
 insert into emp03(empno,mgr,sal,comm) values(7368,7777,2073.21,2200);
 select * from emp03;
 select max(hiredate) from emp;
-update emp03 set ename='½Å±æµ¿',
+update emp03 set ename='ì‹ ê¸¸ë™',
 				 job=upper('superman'),
 				 hiredate=to_date('1983/01/12','YYYY/MM/DD')+1
 				 where empno=7368;
 
--- °úÁ¦ 2.
+-- ê³¼ì œ 2.
 create table idPwPointCk
 (
 	id varchar2(15) primary key,
@@ -36,7 +36,7 @@ create table idPwPointCk
 	point number(5)
 );
 
--- °úÁ¦ 3.
+-- ê³¼ì œ 3.
 create table stdnt_main
 (
 	stdntId varchar(20) primary key,

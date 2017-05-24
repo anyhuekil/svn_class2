@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+/*
+
+*/
+
+/**/
+</style>
+<script src="http://code.jquery.com/jquery-1.10.2.js">
+</script>
+<script type="text/javascript">
+$(document).ready(function(){
+
+});
+function Book(name, price){
+	this.name=name;
+	this.price=price;
+	this.show=function(){
+		console.log(this.name+"\t"+this.price);
+	};
+}
+var books=[];
+books.push( new Book("쉬운 자바",23000) );
+books.push( new Book("자바스크립트", 25000 ));
+for( idx in books){
+	books[idx].show();
+}
+</script>
+</head>
+<body>
+
+</body>
+</html>

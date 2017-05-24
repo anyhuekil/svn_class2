@@ -1,32 +1,32 @@
 /*
-NOT NULL Á¦¾àÁ¶°Ç
-ÇØ´ç ÄÃ·³ÀÇ °ªÀÌ ¹İµå½Ã ÀÔ·ÂµÇ¾î¾ßÁö, Ã³¸®µÇ°Ô²û ¼³Á¤.
- EX) a01_not_nullExp Å×ÀÌºí¿¡ 
- 	empno, ename¿¡ not null¼³Á¤ÇÑ Å×ÀÌºí
-	a02_nullExp Å×ÀÌºí¿¡
-	 empno, ename¿¡ not nullÀ» ¼³Á¤ÇÏÁö ¾Ê´Â Å×ÀÌºí
+NOT NULL ì œì•½ì¡°ê±´
+í•´ë‹¹ ì»¬ëŸ¼ì˜ ê°’ì´ ë°˜ë“œì‹œ ì…ë ¥ë˜ì–´ì•¼ì§€, ì²˜ë¦¬ë˜ê²Œë” ì„¤ì •.
+ EX) a01_not_nullExp í…Œì´ë¸”ì— 
+ 	empno, enameì— not nullì„¤ì •í•œ í…Œì´ë¸”
+	a02_nullExp í…Œì´ë¸”ì—
+	 empno, enameì— not nullì„ ì„¤ì •í•˜ì§€ ì•ŠëŠ” í…Œì´ë¸”
 */
 create table a01_not_nullExp(
-	empno number not null, --Á¦¾àÁ¶°ÇÀ» not null ¼³Á¤
-	ename varchar2(20)not null,--Á¦¾àÁ¶°ÇÀ» not null ¼³Á¤
+	empno number not null, --ì œì•½ì¡°ê±´ì„ not null ì„¤ì •
+	ename varchar2(20)not null,--ì œì•½ì¡°ê±´ì„ not null ì„¤ì •
 	job varchar2(20)
 );
 
 create table a02_nullExp(
-	empno number, --Á¦¾àÁ¶°ÇÀ» not null ¼³Á¤
-	ename varchar2(20), --Á¦¾àÁ¶°ÇÀ» not null ¼³Á¤
+	empno number, --ì œì•½ì¡°ê±´ì„ not null ì„¤ì •
+	ename varchar2(20), --ì œì•½ì¡°ê±´ì„ not null ì„¤ì •
 	job varchar2(20)
 );
 
 select * from a02_nullExp;
 select * from a01_not_nullExp;
 rollback;
---1) µ¥ÀÌÅÍ¸¦ ÀÔ·Â½Ã, ¹¬½ÃÀûnull°ª ÀÔ·Â
-insert into a01_not_nullExp(job) values('ÇÁ·Î±×·¡¸Ó1'); --Á¦¾àÁ¶°Ç¿¡·¯¹ß»ı
-insert into a01_not_nullExp(empno,ename,job) values(7000,'È«±æµ¿','ÇÁ·Î±×·¡¸Ó1'); 
-insert into a02_nullExp(job) values('ÇÁ·Î±×·¡¸Ó1');
---¹İµå½Ã empno, enameÀ» ÀÔ·ÂÇÏ¿©¾ß ÇÑ´Ù. 
---2) µ¥ÀÌÅÍ ÀÔ·Â½Ã, ¸í½ÃÀû null°ª ÀÔ·Â 
+--1) ë°ì´í„°ë¥¼ ì…ë ¥ì‹œ, ë¬µì‹œì nullê°’ ì…ë ¥
+insert into a01_not_nullExp(job) values('í”„ë¡œê·¸ë˜ë¨¸1'); --ì œì•½ì¡°ê±´ì—ëŸ¬ë°œìƒ
+insert into a01_not_nullExp(empno,ename,job) values(7000,'í™ê¸¸ë™','í”„ë¡œê·¸ë˜ë¨¸1'); 
+insert into a02_nullExp(job) values('í”„ë¡œê·¸ë˜ë¨¸1');
+--ë°˜ë“œì‹œ empno, enameì„ ì…ë ¥í•˜ì—¬ì•¼ í•œë‹¤. 
+--2) ë°ì´í„° ì…ë ¥ì‹œ, ëª…ì‹œì  nullê°’ ì…ë ¥ 
 
 
 

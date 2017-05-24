@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+/*
+
+*/
+
+/**/
+</style>
+<script src="http://code.jquery.com/jquery-1.10.2.js">
+</script>
+<script type="text/javascript">
+$(document).ready(function(){
+
+	// 짝수 list 처리
+	$("tr:even").css("background","#cccccc");
+	// 홀수 list 처리..
+	$("tr:odd").css("background","#99cc33");
+	// jquery와 css에 초기 처리 구분 기준..
+	// jquery이용하면 DB와 연결해서 특정 조건이나 데이터와 함께 
+	// css내용을 처리할 수 있다..(보안, 권한) 따라서 css를 처리할 때
+	// 는 jquery 모듈을 이용한다.
+	// css 이용할 때는 DB와 상관없이 초기 화면로딩 위주로 처리할 때..
+	// 초기 title부분 변경..
+	// 한번에 두가지 이상 속성 setting 할려면.
+	// {속성1: 속성값1, 속성2:속성값2}
+	$("tr:first").css({"color":"yellow","background":"blue"});
+	// 마지막 속성 last
+	$("tr:last").css({"color":"navy","text-align":"right"});
+	
+});
+</script>
+</head>
+<body>
+<h2 align="center">HOT ISSUE!!</h2>
+<table align="center" border>
+	<tr><th>분야</th><th>내용</th></tr>
+	<tr><td>정치</td><td>수척해진 이재용"삼성전자 부회장..</td></tr>
+	<tr><td>경제</td><td>대법 "1mm 깨알 고지한 홈플러스</td></tr>
+	<tr><td>사회</td><td>"악귀 씌어" 친딸 살해한 어머니....</td></tr>
+	<tr><td>생활/문화</td><td>현대차 세타2 엔진 결함</td></tr>
+	<tr><td>IT/과학</td><td>갤럭시 S8, 2017년 판매량</td></tr>
+	<tr><td colspan="2">연합 뉴우스~~</td></tr>
+</table>
+
+</body>
+</html>

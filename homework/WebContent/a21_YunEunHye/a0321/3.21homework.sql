@@ -1,23 +1,23 @@
 /*
-¼÷Á¦ 
-¿¬ºÀ´ÜÀ§º°·Î ÀÎ¿ø ¼ö¸¦ Ã¼Å©ÇÏ¼¼¿ä.
-1000¹Ì¸¸ 		»ç¿ø¼ö(ÃÖ°íÄ¡, ÃÖÀúÄ¡, Æò±ÕÄ¡)
-~2000¹Ì¸¸
-~3000¹Ì¸¸
-~4000¹Ì¸¸
-~5000¹Ì¸¸
-~6000¹Ì¸¸
+ìˆ™ì œ 
+ì—°ë´‰ë‹¨ìœ„ë³„ë¡œ ì¸ì› ìˆ˜ë¥¼ ì²´í¬í•˜ì„¸ìš”.
+1000ë¯¸ë§Œ 		ì‚¬ì›ìˆ˜(ìµœê³ ì¹˜, ìµœì €ì¹˜, í‰ê· ì¹˜)
+~2000ë¯¸ë§Œ
+~3000ë¯¸ë§Œ
+~4000ë¯¸ë§Œ
+~5000ë¯¸ë§Œ
+~6000ë¯¸ë§Œ
 */
-select (floor(sal/1000)+1)*1000 "¿¬ºÀ´ÜÀ§º°" , count(*) "»ç¿ø¼ö", max(sal)"ÃÖ°íÄ¡",
- min(sal) "ÃÖÀúÄ¡", avg(sal) "Æò±ÕÄ¡" from emp
+select (floor(sal/1000)+1)*1000 "ì—°ë´‰ë‹¨ìœ„ë³„" , count(*) "ì‚¬ì›ìˆ˜", max(sal)"ìµœê³ ì¹˜",
+ min(sal) "ìµœì €ì¹˜", avg(sal) "í‰ê· ì¹˜" from emp
 group by (floor(sal/1000)+1)*1000
 order by (floor(sal/1000)+1)*1000;
 
 select * from emp;
 /*
-°úÁ¦ 
-	ºÎ¼­À§Ä¡º° »ç¿øÀÇ ¼ö¸¦ ¾Æ·¡ Çü½ÄÀ¸·Î Ãâ·ÂÇÏ¼¼¿ä. 
-	ºÎ¼­À§Ä¡ »ç¿ø¼ö
+ê³¼ì œ 
+	ë¶€ì„œìœ„ì¹˜ë³„ ì‚¬ì›ì˜ ìˆ˜ë¥¼ ì•„ë˜ í˜•ì‹ìœ¼ë¡œ ì¶œë ¥í•˜ì„¸ìš”. 
+	ë¶€ì„œìœ„ì¹˜ ì‚¬ì›ìˆ˜
 */
 select * from dept;
 select * from emp;
@@ -27,17 +27,17 @@ where a.deptno=b.deptno
 group by loc;
 
 create table student10(sid varchar2(10), sname varchar2(10)); 
-insert into student10(sid, sname) values('AAA','±è±è±è');
-insert into student10(sid, sname) values('BBB','ÀÌÀÌÀÌ');
-insert into student10(sid, sname) values('CCC','¹Ú¹Ú¹Ú');
-insert into student10(sid, sname) values('DDD','Á¤Á¤Á¤');
+insert into student10(sid, sname) values('AAA','ê¹€ê¹€ê¹€');
+insert into student10(sid, sname) values('BBB','ì´ì´ì´');
+insert into student10(sid, sname) values('CCC','ë°•ë°•ë°•');
+insert into student10(sid, sname) values('DDD','ì •ì •ì •');
 create table studentPoint(sid varchar2(10), subject varchar2(10),
 							score number(3));
  
-insert into studentPoint values('AAA','¼öÇĞ','70');
-insert into studentPoint values('BBB','°úÇĞ','80');
-insert into studentPoint values('CCC','¿µ¾î','88');
-insert into studentPoint values('DDD','À½¾Ç','95');
+insert into studentPoint values('AAA','ìˆ˜í•™','70');
+insert into studentPoint values('BBB','ê³¼í•™','80');
+insert into studentPoint values('CCC','ì˜ì–´','88');
+insert into studentPoint values('DDD','ìŒì•…','95');
 
 create table gradeCheck(loPoint number(3), hiPoint number(3),
  grade varchar2(1) check(grade in('A','B','C','D','F')) );
@@ -53,17 +53,17 @@ select * from student10;
 select * from studentPoint;
 --grade varchar2(1) check(grade in('A','B','C','D','F')) );
 /*
-¼÷Á¦
-student10 ¾ÆÀÌµğ, ÀÌ¸§
-studentPoint ¾ÆÀÌµğ, °ú¸ñ, Á¡¼ö 
-gradeCheck ÃÖÀúÁ¡¼ö lopoint, ÃÖ°íÁ¡¼ö hipoint, ÇĞÁ¡µî±Ş(A~F)
-1) ¾ÆÀÌµğ¸¦ Á¶ÀÎÇØ¼­(EQUAL JOIN)
-	ÀÌ¸§	°ú¸ñ	Á¡¼ö Ãâ·Â
-2) Á¡¼ö¸¦ Á¶ÀÎÇØ¼­ (not equal join)
-	°ú¸ñ		Á¡¼ö	 	ÇĞÁ¡µî±Ş
+ìˆ™ì œ
+student10 ì•„ì´ë””, ì´ë¦„
+studentPoint ì•„ì´ë””, ê³¼ëª©, ì ìˆ˜ 
+gradeCheck ìµœì €ì ìˆ˜ lopoint, ìµœê³ ì ìˆ˜ hipoint, í•™ì ë“±ê¸‰(A~F)
+1) ì•„ì´ë””ë¥¼ ì¡°ì¸í•´ì„œ(EQUAL JOIN)
+	ì´ë¦„	ê³¼ëª©	ì ìˆ˜ ì¶œë ¥
+2) ì ìˆ˜ë¥¼ ì¡°ì¸í•´ì„œ (not equal join)
+	ê³¼ëª©		ì ìˆ˜	 	í•™ì ë“±ê¸‰
 
-3) student10 studentPoint gradeCheck Á¶ÀÎÀ» ÇÏ¿©..
-ÀÌ¸§ °ú¸ñ ÇĞÁ¡µî±Ş
+3) student10 studentPoint gradeCheck ì¡°ì¸ì„ í•˜ì—¬..
+ì´ë¦„ ê³¼ëª© í•™ì ë“±ê¸‰
 */
 select * from student10 a,studentPoint b
 where a.sid=b.sid;
@@ -76,10 +76,10 @@ select s.sname, t.subject, g.grade from studentPoint t,
 where t.score between g.lopoint and g.hipoint
 and s.sid=t.sid;
 /*
-¼÷Á¦) outer join, groupÀ» È°¿ëÇÏ¿© 
-	ºÎ¼­¸íº° ÀÎ¿øÀ» È®ÀÎÇÏ·Á°í ÇÑ´Ù.
-	¾Æ·¡ÀÇ Çü½ÄÀ¸·Î Ãâ·ÂÇÏ¼¼¿ä. ÀÎ¿øÀÌ ¾ø´Â °÷Àº 0À¸·Î Ç¥½Ã.
-	ºÎ¼­¸í	ÀÎ¿ø		
+ìˆ™ì œ) outer join, groupì„ í™œìš©í•˜ì—¬ 
+	ë¶€ì„œëª…ë³„ ì¸ì›ì„ í™•ì¸í•˜ë ¤ê³  í•œë‹¤.
+	ì•„ë˜ì˜ í˜•ì‹ìœ¼ë¡œ ì¶œë ¥í•˜ì„¸ìš”. ì¸ì›ì´ ì—†ëŠ” ê³³ì€ 0ìœ¼ë¡œ í‘œì‹œ.
+	ë¶€ì„œëª…	ì¸ì›		
 */
 select * from dept;
 select dname, count(ename)from dept d,emp e

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+/*
+
+*/
+
+/**/
+</style>
+<script src="http://code.jquery.com/jquery-1.10.2.js">
+</script>
+<script type="text/javascript">
+$(document).ready(function(){
+	// 객체의 속성 가져오기!!  $(객체).attr("속성명") ==> 속성값
+	var file=$("img").attr("src");
+	//alert(file);
+	$("h1").html(file);
+});
+function chImg(obj){
+	// javascript 객체 ==> jquery   $(자바스크립트객체)
+	$(obj).css("background","pink");
+	$(obj).html("Changing image!!");
+	// $("객체").attr("속성","변경할 속성값");
+	$("img").attr("src","/clientPrj/img/img02.png");
+}
+</script>
+</head>
+<body>
+	<h1 onclick="jascript:chImg(this);"></h1>
+	<img src="/clientPrj/img/img01.png" width="300" height="300"/>
+</body>
+</html>

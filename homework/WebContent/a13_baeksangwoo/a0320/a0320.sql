@@ -1,7 +1,7 @@
-/* ¼÷Á¦
-emp03 º¹»çÅ×ÀÌºí »ı¼º
-1. ÀÔ·Â empnoÀÇ °¡Àå ÀÛÀº¼öº¸´Ù -1, mgr:clarkÀÇ mgr ÀÔ·Â, sal:Æò±Õ¿¬ºÀ, comm:ÀüÃ¼ commÀÇ ÇÕ°è
-2. ¼öÁ¤ enmae:'½Å±æµ¿', jobÀº superman, hiredate´Â ÃÖ±Ù ÀÔ»çÀÏ + 1
+/* ìˆ™ì œ
+emp03 ë³µì‚¬í…Œì´ë¸” ìƒì„±
+1. ì…ë ¥ empnoì˜ ê°€ì¥ ì‘ì€ìˆ˜ë³´ë‹¤ -1, mgr:clarkì˜ mgr ì…ë ¥, sal:í‰ê· ì—°ë´‰, comm:ì „ì²´ commì˜ í•©ê³„
+2. ìˆ˜ì • enmae:'ì‹ ê¸¸ë™', jobì€ superman, hiredateëŠ” ìµœê·¼ ì…ì‚¬ì¼ + 1
 */
 select * from emp;
 create table emp01 as select * from emp;
@@ -12,23 +12,23 @@ select sum(nvl(comm,0)) from emp01;
 insert into emp01 (empno,mgr,sal,comm) 
 	values(999, 7839, 2279.17, 2200);
 select * from emp01;
-update emp01 set ename='½Å±æµ¿', job='superman', 
+update emp01 set ename='ì‹ ê¸¸ë™', job='superman', 
 	hiredate=to_date('1983/12/02','YYYY/MM/DD') where empno = 999;
 select * from emp01;
 
 /*
-°úÁ¦ : Log inÀÎ ÇÏ´Â È­¸éÀ» ¸¸µé°í ID¿Í PASSWORDÀ» Ã¼Å©ÇÏ°í, ´ÙÀ½ È­¸é¿¡¼­ id@@@ ´Ô È¯¿µÇÕ´Ï´Ù.
-³²Àº point´Â @@@ÀÔ´Ï´Ù. ¶ó´Â ³»¿ëÀÌ ³ªÅ¸³­´Ù°í ÇÑ´Ù. ÀÌ¿¡ ÇÊ¿ä·Î ÇÏ´Â Å×ÀÌºí°ú Å×ÀÌºí ±¸Á¶¸¦ ¸¸µå¼¼¿ä
+ê³¼ì œ : Log inì¸ í•˜ëŠ” í™”ë©´ì„ ë§Œë“¤ê³  IDì™€ PASSWORDì„ ì²´í¬í•˜ê³ , ë‹¤ìŒ í™”ë©´ì—ì„œ id@@@ ë‹˜ í™˜ì˜í•©ë‹ˆë‹¤.
+ë‚¨ì€ pointëŠ” @@@ì…ë‹ˆë‹¤. ë¼ëŠ” ë‚´ìš©ì´ ë‚˜íƒ€ë‚œë‹¤ê³  í•œë‹¤. ì´ì— í•„ìš”ë¡œ í•˜ëŠ” í…Œì´ë¸”ê³¼ í…Œì´ë¸” êµ¬ì¡°ë¥¼ ë§Œë“œì„¸ìš”
 */
 create table longin (id varchar2(10), password varchar2(10),
 point number(5));
 select * from longin;
 
-/* ¼÷Á¦
-¸ŞÀÎÅ×ÀÌºí student_main(id, pass, name); : ¾ÆÀÌµğ , ÆĞ½º¿öµå, ÀÌ¸§
-subÅ×ÀÌºí student_point(id, subject, point); ¾ÆÀÌµğ, °ú¸ñ, Á¡¼ö 
-student_main°ú student_point id·Î foreign key °ü°è¸¦ ¼³Á¤ÇÏ°í,
-student_main¿¡ µ¥ÀÌÅÍ°¡ ÀÖ¾î¾ß¸¸ student_point¸¦ ÀÔ·ÂÇÒ ¼ö ÀÖ°Ô Ã³¸®ÇÏÀÚ.
+/* ìˆ™ì œ
+ë©”ì¸í…Œì´ë¸” student_main(id, pass, name); : ì•„ì´ë”” , íŒ¨ìŠ¤ì›Œë“œ, ì´ë¦„
+subí…Œì´ë¸” student_point(id, subject, point); ì•„ì´ë””, ê³¼ëª©, ì ìˆ˜ 
+student_mainê³¼ student_point idë¡œ foreign key ê´€ê³„ë¥¼ ì„¤ì •í•˜ê³ ,
+student_mainì— ë°ì´í„°ê°€ ìˆì–´ì•¼ë§Œ student_pointë¥¼ ì…ë ¥í•  ìˆ˜ ìˆê²Œ ì²˜ë¦¬í•˜ì.
 */
 create table student_main(
 	id varchar2(10) primary key,

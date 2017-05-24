@@ -5,20 +5,20 @@ public class A01_basic {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 /*
-»ê¼ú¿¬»êÀÚ Ã³¸®..
+ì‚°ìˆ ì—°ì‚°ì ì²˜ë¦¬..
  * */
 		int num01=25;
 		int num02=75;
 		System.out.println(num01 + " + " + num02 + " = " +(num01+num02));
 		System.out.println(num01 + " - " + num02 + " = " +(num01-num02));
 		System.out.println(num01 + " * " + num02 + " = " +(num01*num02));
-		// Á¤¼ö/Á¤¼ö ==> Á¤¼ö°ªÀ¸·Î 
-		// Á¤¼ö/½Ç¼ö ==> ¿¬»êÇÏ´Â µ¥ÀÌÅÍ °ª Áß ÇÏ³ª°¡ ½Ç¼ö°ªÀÌ¾î¾ß ½Ç¼ö Ã³¸®°¡ µÊ.
-		//              (½Ç¼öÇü)·Î µ¥ÀÌÅÍ¸¦ castÇÏ¿© Çüº¯È¯À¸·Î Ã³¸®°¡ °¡´ÉÇÏ´Ù
+		// ì •ìˆ˜/ì •ìˆ˜ ==> ì •ìˆ˜ê°’ìœ¼ë¡œ 
+		// ì •ìˆ˜/ì‹¤ìˆ˜ ==> ì—°ì‚°í•˜ëŠ” ë°ì´í„° ê°’ ì¤‘ í•˜ë‚˜ê°€ ì‹¤ìˆ˜ê°’ì´ì–´ì•¼ ì‹¤ìˆ˜ ì²˜ë¦¬ê°€ ë¨.
+		//              (ì‹¤ìˆ˜í˜•)ë¡œ ë°ì´í„°ë¥¼ castí•˜ì—¬ í˜•ë³€í™˜ìœ¼ë¡œ ì²˜ë¦¬ê°€ ê°€ëŠ¥í•˜ë‹¤
 		System.out.println(num01 + " / " + num02 + " = " +(num01/num02));
-		System.out.println("½Ç¼öÃ³¸®"+num01 + " / " + num02 + " = "
+		System.out.println("ì‹¤ìˆ˜ì²˜ë¦¬"+num01 + " / " + num02 + " = "
 							+(num01/(double)num02));
-		System.out.println("½Ç¼öÃ³¸®"+num01 + " / " + num02 + " = " 
+		System.out.println("ì‹¤ìˆ˜ì²˜ë¦¬"+num01 + " / " + num02 + " = " 
 							+((double)num01/num02));
 		System.out.println(num01 + " % " + num02 + " = " +(num01%num02));
 		

@@ -4,26 +4,26 @@ public class A01_Exceptions {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		// µ¥ÀÌÅÍ°¡ ÀÔ·ÂµÇÁö ¾Ê¾ÒÀ» ¶§, »óÅÂ.
+		// ë°ì´í„°ê°€ ìž…ë ¥ë˜ì§€ ì•Šì•˜ì„ ë•Œ, ìƒíƒœ.
 		String data=null;
-		// null »óÈ²¿¡¼­  (.)¸¦ È°¿ëÇØ¼­ ÇØ´ç ¸â¹ö¸¦ È£Ãâ½Ã
-		// ¹ß»ý.
+		// null ìƒí™©ì—ì„œ  (.)ë¥¼ í™œìš©í•´ì„œ í•´ë‹¹ ë©¤ë²„ë¥¼ í˜¸ì¶œì‹œ
+		// ë°œìƒ.
 		//System.out.println(data.length());
-		// ¿¹¿Ü°¡ ¹ß»ý½Ã, jvm¿¡¼­ Áö¿øÇÏ´Â ¿¹·¯ ³»¿ëÀ» È®ÀÎ ÈÄ,
-		// ±× ¿¡·¯¸¦ Á¤¸®ÇØ¼­ ¿¹¿Ü Ã³¸®ÇÏ¸é µÈ´Ù.
+		// ì˜ˆì™¸ê°€ ë°œìƒì‹œ, jvmì—ì„œ ì§€ì›í•˜ëŠ” ì˜ˆëŸ¬ ë‚´ìš©ì„ í™•ì¸ í›„,
+		// ê·¸ ì—ëŸ¬ë¥¼ ì •ë¦¬í•´ì„œ ì˜ˆì™¸ ì²˜ë¦¬í•˜ë©´ ëœë‹¤.
 		// NullPointerException
-		// ¹è¿­¿¡ µ¥ÀÌÅÍ°ª ¾ø´Âµ¥, index¹üÀ§¸¦ ³Ñ¾î¼­ È£ÃâµÇ¾úÀ» ¶§,
-		// ¹ß»ýÇÏ´Â ¿¹¿Ü ArrayIndexOutOfBoundsException
+		// ë°°ì—´ì— ë°ì´í„°ê°’ ì—†ëŠ”ë°, indexë²”ìœ„ë¥¼ ë„˜ì–´ì„œ í˜¸ì¶œë˜ì—ˆì„ ë•Œ,
+		// ë°œìƒí•˜ëŠ” ì˜ˆì™¸ ArrayIndexOutOfBoundsException
 		//String data2 = args[0];
 		//String data3 = args[1];
-		//System.out.println("ÀÔ·Â°ª1¹øÂ°:"+data2);
-		//System.out.println("ÀÔ·Â°ª2¹øÂ°:"+data3);
+		//System.out.println("ìž…ë ¥ê°’1ë²ˆì§¸:"+data2);
+		//System.out.println("ìž…ë ¥ê°’2ë²ˆì§¸:"+data3);
 		/* NumberFormatException
-		 * Integer.parseInt("Á¤¼öÇü¹®ÀÚ¿­") ==> Á¤¼öº¯È¯
-		 * Double.parseDouble("½Ç¼öÇü¹®ÀÚ¿­") ==> ½Ç¼öº¯È¯
-		 * Á¤¼öÇü¹®ÀÚ¿­ÀÌ³ª ½Ç¼öÇü¹®ÀÚ¿­ÀÌ ¾Æ´Ñ °æ¿ì, ¿¹¸¦ µé¾î
-		 * "1", "2", "3.4"ÀÌ ¾Æ´Ï°í, "a1", "3.4b"À¸·Î µÈ ³»¿ëÀº
-		 * ¿¡·¯°¡ ¹ß»ýÇÑ´Ù. ÀÌ¶§ ¹ß»ýÇÏ´Â ¿¡·¯°¡ NumberFormatException
+		 * Integer.parseInt("ì •ìˆ˜í˜•ë¬¸ìžì—´") ==> ì •ìˆ˜ë³€í™˜
+		 * Double.parseDouble("ì‹¤ìˆ˜í˜•ë¬¸ìžì—´") ==> ì‹¤ìˆ˜ë³€í™˜
+		 * ì •ìˆ˜í˜•ë¬¸ìžì—´ì´ë‚˜ ì‹¤ìˆ˜í˜•ë¬¸ìžì—´ì´ ì•„ë‹Œ ê²½ìš°, ì˜ˆë¥¼ ë“¤ì–´
+		 * "1", "2", "3.4"ì´ ì•„ë‹ˆê³ , "a1", "3.4b"ìœ¼ë¡œ ëœ ë‚´ìš©ì€
+		 * ì—ëŸ¬ê°€ ë°œìƒí•œë‹¤. ì´ë•Œ ë°œìƒí•˜ëŠ” ì—ëŸ¬ê°€ NumberFormatException
 		 * */
 		String data4 = "100";
 		String data5 = "a100";

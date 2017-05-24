@@ -8,26 +8,26 @@ public class A07_Writer {
 		// TODO Auto-generated method stub
 		String fold="C:/a01_prog/eclipse/workspace_server/javaexp/src/javaexp/a13_stream/";
 		String fname=fold+"test03.txt";
-		// Writer¸¦ ÅëÇØ¼­ File¿¡ ¾²´Â Ã³¸®..--> FileWriter
+		// Writerë¥¼ í†µí•´ì„œ Fileì— ì“°ëŠ” ì²˜ë¦¬..--> FileWriter
 		Writer writer=null;
 		try {
-			// new FileWriter(fname) ¼ø°£ IO ¹ß»ıÀ¸·Î ¿¹¿ÜÃ³¸® ÇÊ¼ö
+			// new FileWriter(fname) ìˆœê°„ IO ë°œìƒìœ¼ë¡œ ì˜ˆì™¸ì²˜ë¦¬ í•„ìˆ˜
 			writer = new FileWriter(fname);
-			char[] data = "ÀÌ¸¶¸®".toCharArray();
+			char[] data = "ì´ë§ˆë¦¬".toCharArray();
 			for(char ch:data){
 				writer.write(ch);
 			}
-			writer.write("\nÇÏÀÌ¸Ç~~~");
+			writer.write("\ní•˜ì´ë§¨~~~");
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}finally{
 			try {
-				// Writer : ¹®ÀÚ¿­ Ãâ·Â ½ºÆ®¸²Àº ³»ºÎ¿¡ ÀÛÀº
-				// ¹öÆÛ°¡ ÀÖ¾î¼­ µ¥ÀÌÅÍ°¡ Ãâ·ÂµÇ±â Àü¿¡ ¹öÆÛ¿¡ ½×¿´
-				// ´Ù°¡ ¼ø¼­´ë·Î Ãâ·ÂÇÑ´Ù.
-				// ÀÚ¿øÇØÁ¦½Ã, ¹öÆÛ¿¡ ÀÜ·ùÇÏ°í ÀÖ´Â µ¥ÀÌÅÍ¸¦ ¸ğµÎ
-				// Ãâ·Â ½ÃÅ°°í ÀÚ¿øÇØÁ¦ ÇÏ´Â °ÍÀÌ ÀÏ¹İÀûÀÌ´Ù.
+				// Writer : ë¬¸ìì—´ ì¶œë ¥ ìŠ¤íŠ¸ë¦¼ì€ ë‚´ë¶€ì— ì‘ì€
+				// ë²„í¼ê°€ ìˆì–´ì„œ ë°ì´í„°ê°€ ì¶œë ¥ë˜ê¸° ì „ì— ë²„í¼ì— ìŒ“ì˜€
+				// ë‹¤ê°€ ìˆœì„œëŒ€ë¡œ ì¶œë ¥í•œë‹¤.
+				// ìì›í•´ì œì‹œ, ë²„í¼ì— ì”ë¥˜í•˜ê³  ìˆëŠ” ë°ì´í„°ë¥¼ ëª¨ë‘
+				// ì¶œë ¥ ì‹œí‚¤ê³  ìì›í•´ì œ í•˜ëŠ” ê²ƒì´ ì¼ë°˜ì ì´ë‹¤.
 				writer.flush();
 				writer.close();
 			} catch (IOException e) {

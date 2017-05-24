@@ -7,44 +7,44 @@ public class A14_Net_Server {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-/* ServerÇÁ·Î±×·¥..demon
+/* Serverí”„ë¡œê·¸ë¨..demon
  * 
  * 
- *    client°¡ Á¢¼ÓÇÏ¸é Æ¯Á¤ ¹®ÀÚ Àü´Ş.
+ *    clientê°€ ì ‘ì†í•˜ë©´ íŠ¹ì • ë¬¸ì ì „ë‹¬.
  *    
- * ClientÇÁ·Î±×·¥  
- * 	  Server¿¡ Á¢¼ÓÇØ¼­ µ¥ÀÌÅÍ Àü´Ş ¹ŞÀ½..
+ * Clientí”„ë¡œê·¸ë¨  
+ * 	  Serverì— ì ‘ì†í•´ì„œ ë°ì´í„° ì „ë‹¬ ë°›ìŒ..
  * */
-		// Åë½ÅÀ» À§ÇØ¼­ ServerSocket »ı¼º..
+		// í†µì‹ ì„ ìœ„í•´ì„œ ServerSocket ìƒì„±..
 		ServerSocket s =null;
-		//  °´Ã¼ ServerSocket(port¹øÈ£)
+		//  ê°ì²´ ServerSocket(portë²ˆí˜¸)
 		try {
 			s = new ServerSocket(5433);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		// ¿ÜºÎ¿¡¼­ Æ¯Á¤ÇÑ ³»¿ëÀÌ µé¾î¿ÔÀ» ¶§, accept()
-		// ¼­¹öÀº ¹«ÇÑÀ¸·Î demonÀ¸·Î loading.. ==> client..
+		// ì™¸ë¶€ì—ì„œ íŠ¹ì •í•œ ë‚´ìš©ì´ ë“¤ì–´ì™”ì„ ë•Œ, accept()
+		// ì„œë²„ì€ ë¬´í•œìœ¼ë¡œ demonìœ¼ë¡œ loading.. ==> client..
 		while(true){
 			
 			try {
 				Socket s1 = s.accept();
-				// client°¡ µé¾î¿À¸é, ±× client¿¡°Ô ¹®ÀÚ¿­À» ³Ñ°ÜÁÖ´Â Ã³¸®.
-				// OutputStream() : Ãâ·ÂÃ³¸®ÇÏ´Â Stream
+				// clientê°€ ë“¤ì–´ì˜¤ë©´, ê·¸ clientì—ê²Œ ë¬¸ìì—´ì„ ë„˜ê²¨ì£¼ëŠ” ì²˜ë¦¬.
+				// OutputStream() : ì¶œë ¥ì²˜ë¦¬í•˜ëŠ” Stream
 				OutputStream s1out=s1.getOutputStream();
-				// ObjectOutputStream : ¹®ÀÚ¿­À» ³Ñ°ÜÁÖ´Â Ã³¸®¸¦ À§ÇÑ °´Ã¼..
+				// ObjectOutputStream : ë¬¸ìì—´ì„ ë„˜ê²¨ì£¼ëŠ” ì²˜ë¦¬ë¥¼ ìœ„í•œ ê°ì²´..
 				ObjectOutputStream dos = new ObjectOutputStream(s1out);
-				// writeObject¸¦ ÅëÇØ¼­ Á¢¼ÓÇÑ Å¬¶óÀÌ¾ğÆ®¿¡¼­ ¹®ÀÚ¿­À» ³Ñ°ÜÁÜ..
-				dos.writeObject("¾î¼­ ¿À¼¼¿ä!! Áñ°Å¿î SERVERÀÔ´Ï´Ù!!");
+				// writeObjectë¥¼ í†µí•´ì„œ ì ‘ì†í•œ í´ë¼ì´ì–¸íŠ¸ì—ì„œ ë¬¸ìì—´ì„ ë„˜ê²¨ì¤Œ..
+				dos.writeObject("ì–´ì„œ ì˜¤ì„¸ìš”!! ì¦ê±°ìš´ SERVERì…ë‹ˆë‹¤!!");
 				dos.close();
 				s1.close();
 				
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
-			} // Æ¯Á¤ÇÑ network¿¡¼­ ¹®ÀÚ³ª Æ¯Á¤ ³»¿ëÀ» º¸³»°íÀÚ
-			// ÇÒ ¶§, Socket °´Ã¼¸¦ È°¿ë..
+			} // íŠ¹ì •í•œ networkì—ì„œ ë¬¸ìë‚˜ íŠ¹ì • ë‚´ìš©ì„ ë³´ë‚´ê³ ì
+			// í•  ë•Œ, Socket ê°ì²´ë¥¼ í™œìš©..
 			
 			
 		}

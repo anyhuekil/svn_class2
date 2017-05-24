@@ -1,12 +1,12 @@
 package javaexp.a07_inheritance.access.woodhome;
 
 public class WoodCutter {
-	private String privSect="°³ÀÎºñ¹Ğ(¼±³àÀÇ ¿Ê)";
-	String savingMoney="°¡Á·µé ÇöÀç ÀÚ±İ";
+	private String privSect="ê°œì¸ë¹„ë°€(ì„ ë…€ì˜ ì˜·)";
+	String savingMoney="ê°€ì¡±ë“¤ í˜„ì¬ ìê¸ˆ";
 	
-	protected String cacheInheri="»ó¼ÓÀç»êÀº @@@¿¡";
+	protected String cacheInheri="ìƒì†ì¬ì‚°ì€ @@@ì—";
 	
-	public String weddingAnn ="¸·³»µş °áÈ¥ÀÏ!!";
+	public String weddingAnn ="ë§‰ë‚´ë”¸ ê²°í˜¼ì¼!!";
 	
 	
 }

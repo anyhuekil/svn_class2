@@ -1,10 +1,10 @@
 package javaexp.a13_stream;
-/* 1´Ü°è : ¾Æ·¡ÀÇ µ¥ÀÌÅÍ¸¦ prodData.dat¿¡ ÀúÀåÇÏ°í È£Ãâ
-		¹°°Ç¸í	°¡°İ		°¹¼ö
-		»ç°ú		3000	2
-		¹Ù³ª³ª	4000	2
-		¹è		6000	3
- * 2´Ü°è : Scanner Å¬·¡½º¸¦ È°¿ëÇÏ¿© À§¿Í °°Àº µ¥ÀÌÅÍ¸¦ ÀÔ·ÂÇÏ¿© µ¥ÀÌÅÍ ÆÄÀÏ¿¡ ÀúÀå, ÀúÀåµÈ ÆÄÀÏÀÇ µ¥ÀÌÅÍ¸¦ ºÒ·¯ ¸®½ºÆ®ÇÏ´Â Ã³¸®.
+/* 1ë‹¨ê³„ : ì•„ë˜ì˜ ë°ì´í„°ë¥¼ prodData.datì— ì €ì¥í•˜ê³  í˜¸ì¶œ
+		ë¬¼ê±´ëª…	ê°€ê²©		ê°¯ìˆ˜
+		ì‚¬ê³¼		3000	2
+		ë°”ë‚˜ë‚˜	4000	2
+		ë°°		6000	3
+ * 2ë‹¨ê³„ : Scanner í´ë˜ìŠ¤ë¥¼ í™œìš©í•˜ì—¬ ìœ„ì™€ ê°™ì€ ë°ì´í„°ë¥¼ ì…ë ¥í•˜ì—¬ ë°ì´í„° íŒŒì¼ì— ì €ì¥, ì €ì¥ëœ íŒŒì¼ì˜ ë°ì´í„°ë¥¼ ë¶ˆëŸ¬ ë¦¬ìŠ¤íŠ¸í•˜ëŠ” ì²˜ë¦¬.
  * */
 import java.io.*;
 import java.util.Scanner;
@@ -20,19 +20,19 @@ public class A14_homework0518 {
 			fos = new FileOutputStream(dataFile, false);
 			dos = new DataOutputStream(fos);
 			for(int i=0 ; i<3 ; i++){
-				System.out.print("¹°°Ç¸í : ");
+				System.out.print("ë¬¼ê±´ëª… : ");
 				dos.writeUTF(scanner.next());
-				System.out.print("°¡°İ : ");
+				System.out.print("ê°€ê²© : ");
 				dos.writeInt(scanner.nextInt());
-				System.out.print("°¹¼ö : ");
+				System.out.print("ê°¯ìˆ˜ : ");
 				dos.writeInt(scanner.nextInt());
 			}
-			System.out.println("ÀÌ»ó ÆÄÀÏ ÀÔ·Â ³¡. ¾Æ·¡´Â ÀÔ·ÂµÈ ÆÄÀÏÀ» Ãâ·ÂÇÑ´Ù");
+			System.out.println("ì´ìƒ íŒŒì¼ ì…ë ¥ ë. ì•„ë˜ëŠ” ì…ë ¥ëœ íŒŒì¼ì„ ì¶œë ¥í•œë‹¤");
 			fis = new FileInputStream(dataFile);
 			dis = new DataInputStream(fis);
 			String pName; int price; int ps;
-			System.out.println("¹°°Ç¸í\t°¡°İ\t°¹¼ö");
-			System.out.println("¡á¡á¡á¡á¡á¡á¡á¡á¡á¡á¡á¡á¡á¡á¡á¡á¡á¡á¡á¡á¡á¡á¡á¡á¡á¡á¡á¡á");
+			System.out.println("ë¬¼ê±´ëª…\tê°€ê²©\tê°¯ìˆ˜");
+			System.out.println("â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– ");
 			for(int i=0 ; i<3 ; i++){
 				pName = dis.readUTF();
 				price = dis.readInt();

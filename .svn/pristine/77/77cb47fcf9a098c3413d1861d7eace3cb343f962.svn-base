@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+/*
+
+*/
+td{font-size:20pt;text-align:center;}
+/**/
+</style>
+<script src="http://code.jquery.com/jquery-1.10.2.js">
+</script>
+<script type="text/javascript">
+// 이벤트 코드값 확인..
+// 현재화면 즉, document객체. this 키보드를 클릭했을 때,
+// 고유 코드같을 alert으로 출력..
+		/*주요 key code 
+	enter : 13, 
+	좌 : 37 , 우:39, 상: 38   하: 40*/
+var curIdx=0; // 해당 index에 대한 지정..
+$(document).ready(function(){
+	//curIdx=abs(curIdx)
+	// td에 대한 객체를 가져오는 부분..
+	// td는 총 9개  index번호를  0 ~ 8
+	
+	var tds = document.querySelectorAll("td");
+	// 초기에 첫번째 td에 대한 배경색을 노랑으로 처리..
+	// 첫번째 td  curIdx가 0으로 입력.. : tds[ 0 ]
+	tds[curIdx].style.backgroundColor="yellow";
+	// 초기 화면이 아니면, 이벤트가 진행된 화면이지 여부에 따라 배경색상 전체에
+	// 대한 흰색처리 구분..
+	var init=true;
+	// key를 눌렀을 때...
+	this.onkeyup=function(){
+		// 초기화면을 제외한 나머지 이벤트(keyup)에서는
+		// 이전에 배경색상으로 처리된 내용을 초기화 시킴..
+		if(!init){
+			for(var idx=0;idx<tds.length;idx++){
+				tds[idx].style.backgroundColor="";
+			}
+		}
+		// 오른쪽 화살표를 눌렀을 때, 값 39..
+		if(event.keyCode==39){
+			// 해당하는 td의 index번호에 배경색상으로 노랑으로
+			tds[++curIdx].style.backgroundColor="yellow";
+			
+		}	
+		// 왼쪽 화살표을 눌렀을 때, 감소처리..
+		if(event.keyCode==37){
+			tds[--curIdx].style.backgroundColor="yellow";
+		}	
+		// 첫번 화면이 지나가면 초기화면이 아니라는 표시로.
+		// init을 false로 지정처리..
+		init=false;
+	};
+
+
+	
+});
+</script>
+</head>
+<body>
+	<table align="center" width="300pt" height="300pt" border>
+		<tr><td>1</td><td>2</td><td>3</td></tr>
+		<tr><td>4</td><td>5</td><td>6</td></tr>
+		<tr><td>7</td><td>8</td><td>9</td></tr>
+	</table>
+	
+</body>
+</html>

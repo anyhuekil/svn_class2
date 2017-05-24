@@ -1,34 +1,34 @@
 /*
-	°úÁ¦ 1.
-		1) ÀÔ»çÀÏ ºĞ±âº° °¡Àå ³ôÀº ¿¬ºÀÀ» ¹Ş´Â »ç¶÷ Ãâ·Â
-		2) ¿¬ºÀÀÌ 3000 ÀÌÇÏÀÎ »ç¶÷ Áß µî±ŞÀ» ³ª´©¾î ÇØ´ç µî±Şº° ÃÖ°í ¿¬ºÀÀ» ¹Ş´Â »ç¶÷ÀÇ ÀÌ¸§ µî±Ş ¿¬ºÀ
+	ê³¼ì œ 1.
+		1) ì…ì‚¬ì¼ ë¶„ê¸°ë³„ ê°€ì¥ ë†’ì€ ì—°ë´‰ì„ ë°›ëŠ” ì‚¬ëŒ ì¶œë ¥
+		2) ì—°ë´‰ì´ 3000 ì´í•˜ì¸ ì‚¬ëŒ ì¤‘ ë“±ê¸‰ì„ ë‚˜ëˆ„ì–´ í•´ë‹¹ ë“±ê¸‰ë³„ ìµœê³  ì—°ë´‰ì„ ë°›ëŠ” ì‚¬ëŒì˜ ì´ë¦„ ë“±ê¸‰ ì—°ë´‰
 		
-	°úÁ¦ 2.
-		1) ºÎ¼­¹øÈ£°¡ 30ÀÎ »ç¶÷ Áß, °¡Àå ³ªÁß¿¡ ÀÔ»çÇÑ »ç¶÷º¸´Ù ¿¬ºÀÀÌ ¸¹À¸¸é Ãâ·Â
-		2) Á÷±ŞÀÌ salesmanÀÎ »ç¿øÀÌ ¹Ş´Â ±Ş¿©µéÀÇ ÃÖ¼Ò±Ş¿©º¸´Ù ¸¹ÀÌ ¹Ş´Â 20ºÎ¼­ »ç¿øµéÀÇ ÀÌ¸§°ú ±Ş¿©¸¦ Ãâ·Â
+	ê³¼ì œ 2.
+		1) ë¶€ì„œë²ˆí˜¸ê°€ 30ì¸ ì‚¬ëŒ ì¤‘, ê°€ì¥ ë‚˜ì¤‘ì— ì…ì‚¬í•œ ì‚¬ëŒë³´ë‹¤ ì—°ë´‰ì´ ë§ìœ¼ë©´ ì¶œë ¥
+		2) ì§ê¸‰ì´ salesmanì¸ ì‚¬ì›ì´ ë°›ëŠ” ê¸‰ì—¬ë“¤ì˜ ìµœì†Œê¸‰ì—¬ë³´ë‹¤ ë§ì´ ë°›ëŠ” 20ë¶€ì„œ ì‚¬ì›ë“¤ì˜ ì´ë¦„ê³¼ ê¸‰ì—¬ë¥¼ ì¶œë ¥
 	
-	°úÁ¦ 3.
-	name no credate-¹®ÀÚ¿­
+	ê³¼ì œ 3.
+	name no credate-ë¬¸ìì—´
 */
--- °úÁ¦ 1.1
-select ename, sal, floor(substr(hiredate,4,2)/4)+1 "ºĞ±â" from emp
+-- ê³¼ì œ 1.1
+select ename, sal, floor(substr(hiredate,4,2)/4)+1 "ë¶„ê¸°" from emp
 	where sal in ( select max(sal) from emp group by floor(substr(hiredate,4,2)/4)+1);
--- °úÁ¦ 1.2
+-- ê³¼ì œ 1.2
 select ename, grade, sal from emp e, salgrade g where e.sal between g.LOSAL and g.HISAL
 and sal>=3000
 and sal in (select max(sal) from emp e, salgrade g where e.sal BETWEEN g.LOSAL and g.HISAL group by g.grade);
--- ¾ê´Â ÀÌ·¡¾ßÇÏ³ª
+-- ì–˜ëŠ” ì´ë˜ì•¼í•˜ë‚˜
 
--- °úÁ¦ 2.1
+-- ê³¼ì œ 2.1
 select * from emp where deptno = 30 and sal>(select sal from emp where hiredate=(select max(hiredate) from emp));
--- ¾êµµ ÀÌ·¸°Ô µÎ¹ø ¾²´Â°Ç°¡
--- °úÁ¦ 2.2
+-- ì–˜ë„ ì´ë ‡ê²Œ ë‘ë²ˆ ì“°ëŠ”ê±´ê°€
+-- ê³¼ì œ 2.2
 select ename, sal from emp where deptno=20 and sal>all(select sal from emp where job='SALESMAN');
 
--- °úÁ¦ 3.
+-- ê³¼ì œ 3.
 create table new_emp as
 	select ename name,
 		empno no,
-		to_char(hiredate,'YYYY"³â "MON DD"ÀÏ"') credate,
-		floor(months_between(sysdate,hiredate)/12)+1 "±Ù¹«¿¬¼ö" from emp;
+		to_char(hiredate,'YYYY"ë…„ "MON DD"ì¼"') credate,
+		floor(months_between(sysdate,hiredate)/12)+1 "ê·¼ë¬´ì—°ìˆ˜" from emp;
 select * from new_emp;

@@ -6,14 +6,14 @@ public class A04_multiCatch {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		// ArrayIndexOutOfBoundsException
-		// NumberFormatException µÎ°¡Áö ¿¹¿Ü°¡
-		// ÇÔ²² ¹ß»ı´Â ¿¹¿Ü Ã³¸®..
+		// NumberFormatException ë‘ê°€ì§€ ì˜ˆì™¸ê°€
+		// í•¨ê»˜ ë°œìƒëŠ” ì˜ˆì™¸ ì²˜ë¦¬..
 /*
  try{
- }catch(ÃÖÇÏÀ§ ¿¹¿ÜÅ¬·¡½º){
- }catch(°°Àº ·¹º§ÀÌ¸é ¿¹¿ÜÅ¬·¡½º ){
- }catch(»óÀ§·¹º§ÀÇ ¿¹¿ÜÅ¬·¡½º){
- }catch(ÃÖ»óÀ§ ·¹º§ ¿¹¿Ü Å¬·¡½º){}
+ }catch(ìµœí•˜ìœ„ ì˜ˆì™¸í´ë˜ìŠ¤){
+ }catch(ê°™ì€ ë ˆë²¨ì´ë©´ ì˜ˆì™¸í´ë˜ìŠ¤ ){
+ }catch(ìƒìœ„ë ˆë²¨ì˜ ì˜ˆì™¸í´ë˜ìŠ¤){
+ }catch(ìµœìƒìœ„ ë ˆë²¨ ì˜ˆì™¸ í´ë˜ìŠ¤){}
  * */		
 		
 		try{
@@ -21,22 +21,22 @@ public class A04_multiCatch {
 			System.out.println(data01.toString());
 			int num01 = Integer.parseInt(data01);
 		}catch(ArrayIndexOutOfBoundsException aie){
-			// .getMessage() : ¿¡·¯ °ü·Ã ¸Ş½ÃÁö..
-			System.out.println("¸Ş½ÃÁö:"+aie.getMessage());
-			// .printStackTrace() : ¿¡·¯ °æ·Î ÃßÀû
+			// .getMessage() : ì—ëŸ¬ ê´€ë ¨ ë©”ì‹œì§€..
+			System.out.println("ë©”ì‹œì§€:"+aie.getMessage());
+			// .printStackTrace() : ì—ëŸ¬ ê²½ë¡œ ì¶”ì 
 			System.out.println("++++++++++++");		
 			aie.printStackTrace();
 			System.out.println("++++++++++++");
 			
-			System.out.println("args¿¡ ÇØ´ç index¿¡ °ªÀÌ ÀÔ·ÂµÇÁö ¾Ê¾Ò½À´Ï´Ù!!");
+			System.out.println("argsì— í•´ë‹¹ indexì— ê°’ì´ ì…ë ¥ë˜ì§€ ì•Šì•˜ìŠµë‹ˆë‹¤!!");
 		}catch(NumberFormatException nfe){
-			System.out.println("Á¤¼öÇü¹®ÀÚ¿­À» ÀÔ·ÂÇÏ¿©¾ß ÇÕ´Ï´Ù!!");
-		// XXXXExceptionÀÇ »óÀ§ Exception Å¬·¡½º
+			System.out.println("ì •ìˆ˜í˜•ë¬¸ìì—´ì„ ì…ë ¥í•˜ì—¬ì•¼ í•©ë‹ˆë‹¤!!");
+		// XXXXExceptionì˜ ìƒìœ„ Exception í´ë˜ìŠ¤
 		}catch(Exception e){
-			System.out.println("±âÅ¸ ¿¹¿Ü ¹ß»ı!!");
+			System.out.println("ê¸°íƒ€ ì˜ˆì™¸ ë°œìƒ!!");
 		}finally{
-			System.out.println("¿¹¿Ü ÀÖµç, Á¤»óÀûÀÎ ÇÁ·Î¼¼½º ÁøÇà Çßµç");
-			System.out.println("Ã³¸®ÇÒ ÇÁ·Î¼¼¼­´Â ´Ù finally·Î ¿À¶ó!!");
+			System.out.println("ì˜ˆì™¸ ìˆë“ , ì •ìƒì ì¸ í”„ë¡œì„¸ìŠ¤ ì§„í–‰ í–ˆë“ ");
+			System.out.println("ì²˜ë¦¬í•  í”„ë¡œì„¸ì„œëŠ” ë‹¤ finallyë¡œ ì˜¤ë¼!!");
 		}
 		
 	}

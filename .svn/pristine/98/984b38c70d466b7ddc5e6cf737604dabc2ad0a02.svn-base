@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+/*
+
+*/
+
+/**/
+</style>
+<script src="http://code.jquery.com/jquery-1.10.2.js">
+</script>
+<script type="text/javascript">
+$(document).ready(function(){
+	$("#canvas01").on("click",function(event){
+		// 이벤객체 가져 와서 속성 확인하기..
+		//alert(event.pageX+":"+event.pageY);
+		$('input[name=xpos]').val(event.pageX);
+		$('input[name=ypos]').val(event.pageY);
+		var pos = $(this).offset();
+		// canvas의 외쪽, 상단의 꼭지점 표시..
+		$('input[name=xpos2]').val(pos.left);
+		$('input[name=ypos2]').val(pos.top)	;	
+		$("#imgDiv").css("left",event.pageX+"px");
+		$("#imgDiv").css("top",event.pageY+"px");
+	});
+});
+</script>
+</head>
+<body>
+<div id="imgDiv" style="position:absolute;left:100px;top:100px;">
+<img src="../img/img01.png" width="50" height="50"/></div>
+x:<input type="text" name="xpos">
+y:<input type="text" name="ypos"><br>
+x:<input type="text" name="xpos2">
+y:<input type="text" name="ypos2"><br>
+<canvas id="canvas01" width="600" height="400"
+	style="border:1px solid blue;"
+></canvas>
+</body>
+</html>

@@ -6,25 +6,25 @@ abstract class Robot{
 	}
 	public abstract void attack();
 	public void call(){
-		System.out.println(name+"ÀÌ È£ÃâµÇ´Ù!!");
+		System.out.println(name+"ì´ í˜¸ì¶œë˜ë‹¤!!");
 	}
 }
 class Mz extends Robot{
 	Mz() {
-		super("¸¶Â¡°ÅZ");
+		super("ë§ˆì§•ê±°Z");
 	}
 	@Override
 	public void attack() {
-		System.out.println(name+"ÀÌ ·ÎÄÏÁÖ¸ÔÀ¸·Î °ø°İÀ» ÇÏ´Ù!!");
+		System.out.println(name+"ì´ ë¡œì¼“ì£¼ë¨¹ìœ¼ë¡œ ê³µê²©ì„ í•˜ë‹¤!!");
 	}
 }
 class Gundan extends Robot{
 	Gundan() {
-		super("°Ç´ã");
+		super("ê±´ë‹´");
 	}
 	@Override
 	public void attack() {
-		System.out.println(name+"ÀÌ º¯½Å°ø°İÀ¸·Î °ø°İÀ» ÇÏ´Ù!!");
+		System.out.println(name+"ì´ ë³€ì‹ ê³µê²©ìœ¼ë¡œ ê³µê²©ì„ í•˜ë‹¤!!");
 	}
 }
 

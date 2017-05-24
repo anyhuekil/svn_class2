@@ -1,9 +1,9 @@
 /*
-¼÷Á¦1
-emp03 º¹»çÅ×ÀÌºí »ı¼º
-1. ÀÔ·Â empnoÀÇ °¡Àå ÀÛÀº¼öº¸´Ù -1, mgr: clarkÀÇ mgrÀÔ·Â,
-	sal:Æò±Õ¿¬ºÀ, comm:ÀüÃ¼ commÀÇ ÇÕ°è
-2. ¼öÁ¤ ename:'½Å±æµ¿', jobÀº SUPERMAN, hiredate´Â ÃÖ±Ù¿¡ ÀÔ»çÀÏ+1
+ìˆ™ì œ1
+emp03 ë³µì‚¬í…Œì´ë¸” ìƒì„±
+1. ì…ë ¥ empnoì˜ ê°€ì¥ ì‘ì€ìˆ˜ë³´ë‹¤ -1, mgr: clarkì˜ mgrì…ë ¥,
+	sal:í‰ê· ì—°ë´‰, comm:ì „ì²´ commì˜ í•©ê³„
+2. ìˆ˜ì • ename:'ì‹ ê¸¸ë™', jobì€ SUPERMAN, hiredateëŠ” ìµœê·¼ì— ì…ì‚¬ì¼+1
 */
 create table emp03
 as select * from emp;
@@ -16,7 +16,7 @@ select min(empno) from emp03;
 select max(hiredate) from emp03;
 select mgr from emp03 where ename='CLARK';
 
--- Á¤´ä : subquery version 1
+-- ì •ë‹µ : subquery version 1
 insert into emp03(empno, mgr, sal, comm)
 	values(
 		(select min(empno) from emp03)-1,
@@ -24,14 +24,14 @@ insert into emp03(empno, mgr, sal, comm)
 		(select avg(sal) from emp03),
 		(select sum(comm) from emp03)
 		);	
--- Á¤´ä : subquery version 2
--- ±Ã±İÇÑÁ¡. 7777 ·Î ÇÏµå ÄÚµùµÇ¾î ÀÖ´Â ºÎºĞ¿¡ Äõ¸®¸¦ ³¯¸®¸é ¿¡·¯°¡ ¶ß´Âµ¥ ¿Ö ±×·±°ÍÀÎÁö?
+-- ì •ë‹µ : subquery version 2
+-- ê¶ê¸ˆí•œì . 7777 ë¡œ í•˜ë“œ ì½”ë”©ë˜ì–´ ìˆëŠ” ë¶€ë¶„ì— ì¿¼ë¦¬ë¥¼ ë‚ ë¦¬ë©´ ì—ëŸ¬ê°€ ëœ¨ëŠ”ë° ì™œ ê·¸ëŸ°ê²ƒì¸ì§€?
 insert into emp03(empno, mgr, sal, comm)
 	select min(empno), 7777, avg(sal), sum(comm) from emp03;
 select min(empno), avg(sal), sum(comm), (select mgr from emp03 where ename='SCOTT') from emp03;
--- Å×½ºÆ® ÄÚµå --
+-- í…ŒìŠ¤íŠ¸ ì½”ë“œ --
 update emp03
-	set ename='½Å±æµ¿',
+	set ename='ì‹ ê¸¸ë™',
 		job='SUPERMAN',
 		hiredate=(select max(hiredate) from emp03)+1
 	where empno=7368;
@@ -42,22 +42,22 @@ insert into emp03(empno)
 	values( (select min(empno) from emp03) );
 	
 /*
-¼÷Á¦2
-login ÇÑ´Â È­¸éÀº ¸»µé°í id¿Í password¸¦ Ã¼Å©ÇÏ°í, ´ÙÀ½ È­¸é¿¡¼­
-id@@@ ´Ô È¯¿µÇÕ´Ï´Ù. ³²Àº point´Â @@@ ÀÔ´Ï´Ù. ¶ó´Â ³»¿ëÀÌ ³ªÅ¸³­´Ù°í ÇÑ´Ù.
-ÀÌ¿¡ ÇÊ¿ä·Î ÇÏ´Â Å×ÀÌºí°ú µ¥ÀÌºí ±¸Á¶¸¦ ¸¸µå¼¼¿ä.
+ìˆ™ì œ2
+login í•œëŠ” í™”ë©´ì€ ë§ë“¤ê³  idì™€ passwordë¥¼ ì²´í¬í•˜ê³ , ë‹¤ìŒ í™”ë©´ì—ì„œ
+id@@@ ë‹˜ í™˜ì˜í•©ë‹ˆë‹¤. ë‚¨ì€ pointëŠ” @@@ ì…ë‹ˆë‹¤. ë¼ëŠ” ë‚´ìš©ì´ ë‚˜íƒ€ë‚œë‹¤ê³  í•œë‹¤.
+ì´ì— í•„ìš”ë¡œ í•˜ëŠ” í…Œì´ë¸”ê³¼ ë°ì´ë¸” êµ¬ì¡°ë¥¼ ë§Œë“œì„¸ìš”.
 */
 create table CUSTOMER(id VARCHAR2(10), pass VARCHAR2(10), myPoint NUMBER(9));
 	
 
 /*
-¼÷Á¦3
-ÂüÁ¶Å° °ü°è¿¡ ÀÖ´Â Å×ÀÌºí ±¸¼ºÇÏ±â
-¸ŞÀÎÅ×ÀÌºí student_main
-	¸ŞÀÎÅ×ÀÌºí student_main(id, pass, name) : ¾ÆÀÌµğ, ÆĞ½º¿öµå, ÀÌ¸§
-	¼­ºêÅ×ÀÌºí student_point(id, subject, point) : ¾ÆÀÌµğ, °ú¸ñ, Á¡¼ö
-	student_main°ú student_point id·Î foreign key °ü°è¸¦ ¼­Á¤ÇÏ°í,
-	student_main¿¡ µ¥ÀÌÅÍ°¡ ÀÖ¾î¾ß¸¸ student_point¸¦ ÀÔ·ÂÇÒ ¼ö ÀÖ°Ô²û Ã³¸®. 
+ìˆ™ì œ3
+ì°¸ì¡°í‚¤ ê´€ê³„ì— ìˆëŠ” í…Œì´ë¸” êµ¬ì„±í•˜ê¸°
+ë©”ì¸í…Œì´ë¸” student_main
+	ë©”ì¸í…Œì´ë¸” student_main(id, pass, name) : ì•„ì´ë””, íŒ¨ìŠ¤ì›Œë“œ, ì´ë¦„
+	ì„œë¸Œí…Œì´ë¸” student_point(id, subject, point) : ì•„ì´ë””, ê³¼ëª©, ì ìˆ˜
+	student_mainê³¼ student_point idë¡œ foreign key ê´€ê³„ë¥¼ ì„œì •í•˜ê³ ,
+	student_mainì— ë°ì´í„°ê°€ ìˆì–´ì•¼ë§Œ student_pointë¥¼ ì…ë ¥í•  ìˆ˜ ìˆê²Œë” ì²˜ë¦¬. 
 */
 
 create table student(

@@ -1,10 +1,10 @@
 /*
-°úÁ¦ // ¿Ï·á
-1. ÀÔ»çÀÏ ºĞ±âº°·Î °¡Àå ³ôÀº ¿¬ºÀÀ» ¹Ş´Â »ç¶÷ Ãâ·Â
-2. ¿¬ºÀÀÌ 3000ÀÌ»óÀÎ »ç¶÷ Áß¿¡, µî±Ş(Å×ÀÌºíÈ°¿ëµµ °¡´É)À» ³ª´©¾î¼­
-	ÇØ´ç µî±Şº° ÃÖ°í ¿¬ºÀÀ» ¹Ş´Â »ç¶÷ÀÇ ÀÌ¸§, µî±Ş, ¿¬ºÀÀ» Ãâ·Â
+ê³¼ì œ // ì™„ë£Œ
+1. ì…ì‚¬ì¼ ë¶„ê¸°ë³„ë¡œ ê°€ì¥ ë†’ì€ ì—°ë´‰ì„ ë°›ëŠ” ì‚¬ëŒ ì¶œë ¥
+2. ì—°ë´‰ì´ 3000ì´ìƒì¸ ì‚¬ëŒ ì¤‘ì—, ë“±ê¸‰(í…Œì´ë¸”í™œìš©ë„ ê°€ëŠ¥)ì„ ë‚˜ëˆ„ì–´ì„œ
+	í•´ë‹¹ ë“±ê¸‰ë³„ ìµœê³  ì—°ë´‰ì„ ë°›ëŠ” ì‚¬ëŒì˜ ì´ë¦„, ë“±ê¸‰, ì—°ë´‰ì„ ì¶œë ¥
 */
-select sal, ename,floor(to_number(to_char(hiredate,'MM'))/4)+1 ºĞ±â
+select sal, ename,floor(to_number(to_char(hiredate,'MM'))/4)+1 ë¶„ê¸°
 from emp
 where (floor(to_number(to_char(hiredate,'MM'))/4)+1,sal) in (select floor(to_number(to_char(hiredate,'MM'))/4)+1,max(sal)
 			from emp
@@ -29,10 +29,10 @@ where a.sal between b.losal and b.hisal;
 
 
 /*
-°úÁ¦ // ¿Ï·á
-1. ºÎ¼­¹øÈ£°¡ 30ÀÎ »ç¶÷Áß, °¡Àå ³ªÁß¿¡ ÀÔ»çÇÑ »ç¶÷º¸´Ù ¿¬ºÀÀÌ ¸¹Àº »ç¶÷ Ãâ·Â
-2. Á÷±ŞÀÌ 'SALESMAN'ÀÎ »ç¿øµéÀÌ ¹Ş´Â ±Ş¿©ÀÇ ÃÖ¼Ò ±Ş¿©º¸´Ù ¸¹ÀÌ ¹Ş´Â »ç¿øµéÀÇ ÀÌ¸§°ú ±Ş¿©¸¦ Ãâ·ÂÇÏµÇ
-ºÎ¼­¹øÈ£°¡ 20¹øÀÎ »ç¿øÀº Á¦¿ÜÇÑ´Ù(any¿¬»êÀÚÀÌ¿ë)
+ê³¼ì œ // ì™„ë£Œ
+1. ë¶€ì„œë²ˆí˜¸ê°€ 30ì¸ ì‚¬ëŒì¤‘, ê°€ì¥ ë‚˜ì¤‘ì— ì…ì‚¬í•œ ì‚¬ëŒë³´ë‹¤ ì—°ë´‰ì´ ë§ì€ ì‚¬ëŒ ì¶œë ¥
+2. ì§ê¸‰ì´ 'SALESMAN'ì¸ ì‚¬ì›ë“¤ì´ ë°›ëŠ” ê¸‰ì—¬ì˜ ìµœì†Œ ê¸‰ì—¬ë³´ë‹¤ ë§ì´ ë°›ëŠ” ì‚¬ì›ë“¤ì˜ ì´ë¦„ê³¼ ê¸‰ì—¬ë¥¼ ì¶œë ¥í•˜ë˜
+ë¶€ì„œë²ˆí˜¸ê°€ 20ë²ˆì¸ ì‚¬ì›ì€ ì œì™¸í•œë‹¤(anyì—°ì‚°ìì´ìš©)
 */
 
 select *
@@ -53,17 +53,17 @@ where sal >= any(select sal from emp where job='SALESMAN');
 
 
 /*
-°úÁ¦ // ¿Ï·á
-´ÙÀ½°ú °°Àº ÇüÅÂÀÇ Å×ÀÌºíÀ» ±¸¼ºÇÏ¼¼¿ä
-ÀÌ¸§(name) ¹øÈ£(no) ÀÔ»çÀÏ(create)-¹®ÀÚ¿­ ¿ÃÇØ±âÁØ±Ù¹«¿¬¼ö
-                      @@@@³â@@¿ù@@ÀÏ        @@@@
-new_emp·Î ±¸¼º
+ê³¼ì œ // ì™„ë£Œ
+ë‹¤ìŒê³¼ ê°™ì€ í˜•íƒœì˜ í…Œì´ë¸”ì„ êµ¬ì„±í•˜ì„¸ìš”
+ì´ë¦„(name) ë²ˆí˜¸(no) ì…ì‚¬ì¼(create)-ë¬¸ìì—´ ì˜¬í•´ê¸°ì¤€ê·¼ë¬´ì—°ìˆ˜
+                      @@@@ë…„@@ì›”@@ì¼        @@@@
+new_empë¡œ êµ¬ì„±
 */
 
 select * from new_emp;
 drop table new_emp;
 select 2017-(to_number(to_char(hiredate,'YYYY'),'999999')) from emp;
-select to_char(hiredate,'YYYY"³â"MM"¿ù"DD"ÀÏ"') from emp;
+select to_char(hiredate,'YYYY"ë…„"MM"ì›”"DD"ì¼"') from emp;
 
 
 create table new_emp
@@ -72,7 +72,7 @@ from emp
 where 1=3;
 
 insert into new_emp
-			select ename, empno, to_char(hiredate,'YYYY"³â"MM"¿ù"DD"ÀÏ"') create01, 2017-to_number(to_char(hiredate,'YYYY'),'99999') year01
+			select ename, empno, to_char(hiredate,'YYYY"ë…„"MM"ì›”"DD"ì¼"') create01, 2017-to_number(to_char(hiredate,'YYYY'),'99999') year01
 			from emp;
 
 

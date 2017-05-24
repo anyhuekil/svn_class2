@@ -11,69 +11,69 @@ NOCACHE
 LOGGING;
 
 /*
-Á¦¾à Á¶°Ç Ãß°¡ÇÏ±â
-ALTER TABLE Å×ÀÌºí¸í
-ADD CONSTRAINT Å×ÀÌºí¸í_ÄÃ·³¸í_Á¦¾àÁ¶°Ç´ÜÃà Á¦¾àÁ¶°ÇÀ¯Çü(ÄÃ·³¸í);
-EX) Á¦¾àÁ¶°Ç NOT NULL(x), UNIQUE(o)
+ì œì•½ ì¡°ê±´ ì¶”ê°€í•˜ê¸°
+ALTER TABLE í…Œì´ë¸”ëª…
+ADD CONSTRAINT í…Œì´ë¸”ëª…_ì»¬ëŸ¼ëª…_ì œì•½ì¡°ê±´ë‹¨ì¶• ì œì•½ì¡°ê±´ìœ í˜•(ì»¬ëŸ¼ëª…);
+EX) ì œì•½ì¡°ê±´ NOT NULL(x), UNIQUE(o)
 */
-/* Á¦¾àÁ¶°Ç Ãß°¡, »èÁ¦, ¼öÁ¤ ¿¬½À.
-1. address Å×ÀÌºí¿¡ hostÄÃ·³¿¡ UNIQUE Á¦¾àÁ¶°ÇÀ» Ãß°¡..
-2. µ¥ÀÌÅÎ µñ¼Ç¾î¸®¿¡¼­ È®ÀÎ.
-3. hostÄÃ·³ÀÇ Á¦¾àÁ¶°ÇÀ» »èÁ¦.
-4. address Å×ÀÌºí¿¡ hostÄÃ·³¿¡ NOT NULL Á¦¾àÁ¶°ÇÀ¸·Î º¯°æ.
-5. µ¥ÀÌÅÍ µñ¼Ç¾î¸®¿¡¼­ È®ÀÎ
+/* ì œì•½ì¡°ê±´ ì¶”ê°€, ì‚­ì œ, ìˆ˜ì • ì—°ìŠµ.
+1. address í…Œì´ë¸”ì— hostì»¬ëŸ¼ì— UNIQUE ì œì•½ì¡°ê±´ì„ ì¶”ê°€..
+2. ë°ì´í„± ë”•ì…˜ì–´ë¦¬ì—ì„œ í™•ì¸.
+3. hostì»¬ëŸ¼ì˜ ì œì•½ì¡°ê±´ì„ ì‚­ì œ.
+4. address í…Œì´ë¸”ì— hostì»¬ëŸ¼ì— NOT NULL ì œì•½ì¡°ê±´ìœ¼ë¡œ ë³€ê²½.
+5. ë°ì´í„° ë”•ì…˜ì–´ë¦¬ì—ì„œ í™•ì¸
 */
--- 1. Ãß°¡
+-- 1. ì¶”ê°€
 ALTER TABLE address
 add constraint address_host_uq unique(host);
--- 2. È®ÀÎ
+-- 2. í™•ì¸
 SELECT * FROM user_constraints
 where table_name='ADDRESS';
--- 3. »èÁ¦..
+-- 3. ì‚­ì œ..
 /*
-ALTER TABLE Å×ÀÌºí¸í
-DROP CONSTRAINT µî·ÏµÈÁ¦¾àÁ¶°Ç¸í
+ALTER TABLE í…Œì´ë¸”ëª…
+DROP CONSTRAINT ë“±ë¡ëœì œì•½ì¡°ê±´ëª…
 */
 ALTER TABLE address
 drop constraint address_host_uq;
---address Å×ÀÌºí¿¡¼­ Á¦¾àÁ¶°Ç address_host_uq »èÁ¦
--- 4. ¼öÁ¤(modify)
--- Á¦¾àÀÇ À¯Çü¿¡ µû¶ó add¿Í modify¸¦ ¾²´Â °æ¿ì°¡ ÀÖ´Ù..
--- not nullÀÇ °æ¿ì¿¡´Â add·Î Á¦¾àÁ¶°ÇÀ» µî·ÏÇÒ ¼ö ¾ø´Ù.
--- ÀÌ °æ¿ì¿¡´Â modify¸¦ È°¿ëÇÏ¿©¾ß ÇÑ´Ù.
-/* Çü½Ä
-	ALTER TABLE Å×ÀÌºí¸í
-	MODIFY ÄÃ·³¸í CONSTRAINT Á¦¾àÁ¶°Ç¸í Á¦¾àÁ¶°ÇÀ¯Çü(EX-NOT NULL)
+--address í…Œì´ë¸”ì—ì„œ ì œì•½ì¡°ê±´ address_host_uq ì‚­ì œ
+-- 4. ìˆ˜ì •(modify)
+-- ì œì•½ì˜ ìœ í˜•ì— ë”°ë¼ addì™€ modifyë¥¼ ì“°ëŠ” ê²½ìš°ê°€ ìžˆë‹¤..
+-- not nullì˜ ê²½ìš°ì—ëŠ” addë¡œ ì œì•½ì¡°ê±´ì„ ë“±ë¡í•  ìˆ˜ ì—†ë‹¤.
+-- ì´ ê²½ìš°ì—ëŠ” modifyë¥¼ í™œìš©í•˜ì—¬ì•¼ í•œë‹¤.
+/* í˜•ì‹
+	ALTER TABLE í…Œì´ë¸”ëª…
+	MODIFY ì»¬ëŸ¼ëª… CONSTRAINT ì œì•½ì¡°ê±´ëª… ì œì•½ì¡°ê±´ìœ í˜•(EX-NOT NULL)
 */
 	ALTER TABLE address
 	MODIFY host constraint address_host_nn NOT NULL;
--- host¶ó´Â ÄÃ·³¿¡ Á¦¾àÁ¶°ÇÀ» address_host_nnÀ» ÇÏ°í, ÀÌ´Â not null
--- Á¦¾àÁ¶°ÇÀ¸·Î º¯°æ Ã³¸®ÇÑ´Ù.
+-- hostë¼ëŠ” ì»¬ëŸ¼ì— ì œì•½ì¡°ê±´ì„ address_host_nnì„ í•˜ê³ , ì´ëŠ” not null
+-- ì œì•½ì¡°ê±´ìœ¼ë¡œ ë³€ê²½ ì²˜ë¦¬í•œë‹¤.
 	
 	SELECT * FROM user_constraints
 	where table_name='address';
 /*
-	1. EMPÅ×ÀÌºíÀÇ º¹»ç Å×ÀÌºí EMP07À» ¸¸µé°í,
-	2. ENAMEÄÃ·³¿¡ UNIQUE Á¦¾àÁ¶°ÇÀ» ¼³Á¤ÇÑ ÈÄ,
-	3. À§ Á¦¾àÁ¶°ÇÀ» »èÁ¦ÇÏ°í,
-	4. ENAMEÄÃ·³ÀÇ Á¦¾àÁ¶°ÇÀ» NOT NULL·Î º¯°æÇÏ¼¼¿ä..
+	1. EMPí…Œì´ë¸”ì˜ ë³µì‚¬ í…Œì´ë¸” EMP07ì„ ë§Œë“¤ê³ ,
+	2. ENAMEì»¬ëŸ¼ì— UNIQUE ì œì•½ì¡°ê±´ì„ ì„¤ì •í•œ í›„,
+	3. ìœ„ ì œì•½ì¡°ê±´ì„ ì‚­ì œí•˜ê³ ,
+	4. ENAMEì»¬ëŸ¼ì˜ ì œì•½ì¡°ê±´ì„ NOT NULLë¡œ ë³€ê²½í•˜ì„¸ìš”..
 
 */
 
 
 /*
-°è¾àÁ¶°Ç È°¼º ¹× ºñÈ°¼ºÈ­ Ã³¸®..
-°è¾àÁ¶°ÇÀ» ÀÏ½ÃÀûÀ¸·Î ºñÈ°¼ºÈ­ ÇÔÀ¸·Î µ¥ÀÌÅÍ¸¦ testÇÏ°Å³ª,
-Æ¯Á¤ÇÑ ±â°£¿¡ °è¾àÁ¶°ÇÀÌ ¸ÂÁö ¾Ê´Â ³»¿ëÀ» ÀÔ·ÂÇÏ´Â ÇÏ°Ô Ã³¸®ÇÏ´Â
-°ÍÀ» ¸»ÇÑ´Ù.
-Çü½Ä
-alter table Å×ÀÌºí¸í
-enable/disable CONSTRAINT °è¾àÁ¶°Ç¸í;
-EX) Å×ÀÌºí EMP07¿¡ emp07_ename_nnÀ» ºñÈ°¼ºÈ­ Ã³¸®ÇÑ´Ù.
+ê³„ì•½ì¡°ê±´ í™œì„± ë° ë¹„í™œì„±í™” ì²˜ë¦¬..
+ê³„ì•½ì¡°ê±´ì„ ì¼ì‹œì ìœ¼ë¡œ ë¹„í™œì„±í™” í•¨ìœ¼ë¡œ ë°ì´í„°ë¥¼ testí•˜ê±°ë‚˜,
+íŠ¹ì •í•œ ê¸°ê°„ì— ê³„ì•½ì¡°ê±´ì´ ë§žì§€ ì•ŠëŠ” ë‚´ìš©ì„ ìž…ë ¥í•˜ëŠ” í•˜ê²Œ ì²˜ë¦¬í•˜ëŠ”
+ê²ƒì„ ë§í•œë‹¤.
+í˜•ì‹
+alter table í…Œì´ë¸”ëª…
+enable/disable CONSTRAINT ê³„ì•½ì¡°ê±´ëª…;
+EX) í…Œì´ë¸” EMP07ì— emp07_ename_nnì„ ë¹„í™œì„±í™” ì²˜ë¦¬í•œë‹¤.
 ALTER TABLE EMP07
 DISABLE CONSTRAINT emp07_enmae_nn;
 SELECT * FROM USER_CONSTRAINTS
-WHERE TABLE_NAME='EMP07'; -- statusÄÃ·³ ºÎºÐ È®ÀÎ..
+WHERE TABLE_NAME='EMP07'; -- statusì»¬ëŸ¼ ë¶€ë¶„ í™•ì¸..
 ALTER TABLE EMP07
-ENABLE CONSTRAINT emp07_ename_nn; --ÇØ´ç °è¾àÁ¶°Ç È°¼ºÈ­ Ã³¸®..
+ENABLE CONSTRAINT emp07_ename_nn; --í•´ë‹¹ ê³„ì•½ì¡°ê±´ í™œì„±í™” ì²˜ë¦¬..
 */

@@ -2,7 +2,7 @@ package javaexp.a09_exception;
 class ShoppingException extends Exception{
 
 	public ShoppingException() {
-	    super("±âº» ¼îÇÎ¿¹¿Ü °´Ã¼ È£Ãâ");
+	    super("ê¸°ë³¸ ì‡¼í•‘ì˜ˆì™¸ ê°ì²´ í˜¸ì¶œ");
 	}
 
 	public ShoppingException(String message) {
@@ -11,28 +11,28 @@ class ShoppingException extends Exception{
 
 	@Override
 	public String getMessage() {
-		// ¸Ş¼¼Áö + »ı¼ºÀÚ¸¦ ÅëÇØ¼­ ¹Ş¾Ò´ø ³»¿ë 
-		return "µåµğ¾î, ¾ÈÅ¸±î¿î Çö½ÇÀÌ±º¿ë!! "+super.getMessage();
+		// ë©”ì„¸ì§€ + ìƒì„±ìë¥¼ í†µí•´ì„œ ë°›ì•˜ë˜ ë‚´ìš© 
+		return "ë“œë””ì–´, ì•ˆíƒ€ê¹Œìš´ í˜„ì‹¤ì´êµ°ìš©!! "+super.getMessage();
 	}	
 }
 class Market{
 	private String martName;
 	private int curMoney;
 	public Market(String ... names ){
-		martName=names.length==0?"Çàº¹¸¶Æ®":names[0];
+		martName=names.length==0?"í–‰ë³µë§ˆíŠ¸":names[0];
 	}
 	public void goShopping(int money){
 		curMoney=money;
-		System.out.println(martName+"¿¡¼­ Áñ°Å¿î ¼îÇÎÀ» À§ÇØ "
-				+curMoney+"¿øÀ» °¡Áö°í~~");
+		System.out.println(martName+"ì—ì„œ ì¦ê±°ìš´ ì‡¼í•‘ì„ ìœ„í•´ "
+				+curMoney+"ì›ì„ ê°€ì§€ê³ ~~");
 	}
 	public void buyProduct(int spmoney) throws ShoppingException{
 		if(curMoney<spmoney){
-			throw new ShoppingException("Çö±İ º¸À¯ ºÎÁ·:"
-					+(spmoney-curMoney)+"¿ø ÇÊ¿ä" );
+			throw new ShoppingException("í˜„ê¸ˆ ë³´ìœ  ë¶€ì¡±:"
+					+(spmoney-curMoney)+"ì› í•„ìš”" );
 		}
 		curMoney-=spmoney;
-		System.out.println(spmoney+"¿ø ÁöÃâ, ÇöÀÜ¾×"+curMoney);
+		System.out.println(spmoney+"ì› ì§€ì¶œ, í˜„ì”ì•¡"+curMoney);
 	}
 	
 }
@@ -47,7 +47,7 @@ public class A07_userDefExceptionExp {
 			m1.buyProduct(30000);
 			m1.buyProduct(20000);
 			m1.buyProduct(50000);
-			Market m2 = new Market("»çÄ¡¸¶Æ®");
+			Market m2 = new Market("ì‚¬ì¹˜ë§ˆíŠ¸");
 			m2.goShopping(1000000);			
 			m2.buyProduct(300000);
 			m2.buyProduct(200000);

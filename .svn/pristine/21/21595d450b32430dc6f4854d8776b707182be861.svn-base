@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+/*
+
+*/
+
+/**/
+</style>
+<script src="http://code.jquery.com/jquery-1.10.2.js">
+</script>
+<script type="text/javascript">
+$(document).ready(function(){
+	 setTimeout(function(){
+		 //  해당객체를 지정
+		 var showObj=document.getElementsByTagName("h1")[0];
+		 // 배경 색상을 지정
+		 showObj.style.backgroundColor="pink";
+		 // 해당 부분에 출력처리..
+		 showObj.innerHTML="시험 종료!!!";	 		 
+	 },10000); //시간이 10000 ==> 10초...
+	
+});
+</script>
+</head>
+<body> 
+<h1 align="center">시험시작</h1>
+
+</body>
+</html>

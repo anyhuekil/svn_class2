@@ -8,17 +8,17 @@ public class A02_StreamByte {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		InputStream is=null;
-		// ÀÔ·Â¹ŞÀ» µ¥ÀÌÅÍ¸¦ byte[]·Î ¼±¾ğ.
+		// ì…ë ¥ë°›ì„ ë°ì´í„°ë¥¼ byte[]ë¡œ ì„ ì–¸.
 		byte[] barry = new byte[5];
-		System.out.println("µ¥ÀÌÅÍ¸¦ ÀÔ·ÂÇÏ¼¼¿ä!!:");
+		System.out.println("ë°ì´í„°ë¥¼ ì…ë ¥í•˜ì„¸ìš”!!:");
 		is = System.in;
 		try {
-// ÀÔ·Â¹ŞÀº µ¥ÀÌÅÍ °Ç¼ö return
+// ì…ë ¥ë°›ì€ ë°ì´í„° ê±´ìˆ˜ return
 			int cnt = is.read( barry );
-			System.out.println("ÀÔ·Â¹ŞÀ» µ¥ÀÌÅÍ Å©±â:"+cnt);
-			System.out.println("ÀÔ·Â ¹ŞÀº µ¥ÀÌÅÍ..");
+			System.out.println("ì…ë ¥ë°›ì„ ë°ì´í„° í¬ê¸°:"+cnt);
+			System.out.println("ì…ë ¥ ë°›ì€ ë°ì´í„°..");
 			for(byte indata:barry){
-				System.out.println("ÀÔ·Â¹ŞÀº°ª:"+(char)indata);
+				System.out.println("ì…ë ¥ë°›ì€ê°’:"+(char)indata);
 			}
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
@@ -29,7 +29,7 @@ public class A02_StreamByte {
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
-			}// ÀÚ¿ø ÇØÁ¦
+			}// ìì› í•´ì œ
 		}
 		
 	}

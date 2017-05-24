@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+/*
+
+*/
+	td{text-align:center;}
+/**/
+</style>
+<script src="http://code.jquery.com/jquery-1.10.2.js">
+</script>
+<script type="text/javascript">
+$(document).ready(function(){
+
+});
+function send(day){
+	// 1~9까지는 0을 붙이는 처리..
+	if(day.length==1) day="0"+day;
+	opener.document.getElementById("date01").value="2017-04-"+day;
+	this.close();
+}
+</script>
+</head>
+<body>
+<table align="center" border>
+	<caption>4월</caption>
+	<tr><th>일</th>
+		<th>월</th>
+		<th>화</th>
+		<th>수</th>
+		<th>목</th>
+		<th>금</th>
+		<th>토</th></tr>
+	<tr>
+		<td onclick="javascript:send( this.innerHTML )"></td>
+		<td onclick="javascript:send( this.innerHTML )"></td>
+		<td onclick="javascript:send( this.innerHTML )"></td>
+		<td onclick="javascript:send( this.innerHTML )"></td>
+		<td onclick="javascript:send( this.innerHTML )"></td>
+		<td onclick="javascript:send( this.innerHTML )"></td>
+		<td onclick="javascript:send( this.innerHTML )">1</td>
+	</tr>
+	<tr>
+		<td onclick="javascript:send( this.innerHTML )">2</td>
+		<td onclick="javascript:send( this.innerHTML )">3</td>
+		<td onclick="javascript:send( this.innerHTML )">4</td>
+		<td onclick="javascript:send( this.innerHTML )">5</td>
+		<td onclick="javascript:send( this.innerHTML )">6</td>
+		<td onclick="javascript:send( this.innerHTML )">7</td>
+		<td onclick="javascript:send( this.innerHTML )">8</td>
+	</tr>
+	<tr>
+		<td onclick="javascript:send( this.innerHTML )">9</td>
+		<td onclick="javascript:send( this.innerHTML )">10</td>
+		<td onclick="javascript:send( this.innerHTML )">11</td>
+		<td onclick="javascript:send( this.innerHTML )">12</td>
+		<td onclick="javascript:send( this.innerHTML )">13</td>
+		<td onclick="javascript:send( this.innerHTML )">14</td>
+		<td onclick="javascript:send( this.innerHTML )">15</td>
+	</tr>
+	<tr>
+		<td onclick="javascript:send( this.innerHTML )">16</td>
+		<td onclick="javascript:send( this.innerHTML )">17</td>
+		<td onclick="javascript:send( this.innerHTML )">18</td>
+		<td onclick="javascript:send( this.innerHTML )">19</td>
+		<td onclick="javascript:send( this.innerHTML )">20</td>
+		<td onclick="javascript:send( this.innerHTML )">21</td>
+		<td onclick="javascript:send( this.innerHTML )">22</td>
+	</tr>
+	<tr>
+		<td onclick="javascript:send( this.innerHTML )">23</td>
+		<td onclick="javascript:send( this.innerHTML )">24</td>
+		<td onclick="javascript:send( this.innerHTML )">25</td>
+		<td onclick="javascript:send( this.innerHTML )">26</td>
+		<td onclick="javascript:send( this.innerHTML )">27</td>
+		<td onclick="javascript:send( this.innerHTML )">28</td>
+		<td onclick="javascript:send( this.innerHTML )">29</td>
+	</tr>
+	<tr>
+		<td onclick="javascript:send( this.innerHTML )">30</td>
+		<td onclick="javascript:send( this.innerHTML )"></td>
+		<td onclick="javascript:send( this.innerHTML )"></td>
+		<td onclick="javascript:send( this.innerHTML )"></td>
+		<td onclick="javascript:send( this.innerHTML )"></td>
+		<td onclick="javascript:send( this.innerHTML )"></td>
+		<td onclick="javascript:send( this.innerHTML )"></td>
+	</tr>	
+</table>
+</body>
+</html>

@@ -6,29 +6,29 @@ public class A04_enum {
 		// TODO Auto-generated method stub
 		Week week01 = Week.MONDAY;
 		Week today = Week.MONDAY;
-		System.out.println("enumµ¥ÀÌÅÍ µ¿ÀÏ½Ã:"+(week01==today));
+		System.out.println("enumë°ì´í„° ë™ì¼ì‹œ:"+(week01==today));
 		System.out.println(week01.valueOf("MONDAY"));
 		System.out.println(Week.MONDAY);
 		for(Week w:week01.values()){
 			System.out.println(w);
 		}
-/*   ¿­°ÅÇü °´Ã¼ÀÇ ¸Ş¼Òµåµé..
- * 	  name(): ÇØ´ç ¹®ÀÚ¿­ °¡Á®¿Â´Ù.
+/*   ì—´ê±°í˜• ê°ì²´ì˜ ë©”ì†Œë“œë“¤..
+ * 	  name(): í•´ë‹¹ ë¬¸ìì—´ ê°€ì ¸ì˜¨ë‹¤.
  * */		
 		String name=today.name();
-		System.out.println("name() È£Ãâ:"+name);
-//		ordinal() : index°ª °¡Á®¿Â´Ù.
+		System.out.println("name() í˜¸ì¶œ:"+name);
+//		ordinal() : indexê°’ ê°€ì ¸ì˜¨ë‹¤.
 		today=Week.SUNDAY;
 		int ordinalIdx = today.ordinal();
-/* public enum Week¿¡ ¼±¾ğ ¼ø¼­´ë·Î(0~6)
+/* public enum Weekì— ì„ ì–¸ ìˆœì„œëŒ€ë¡œ(0~6)
  * */		
-		System.out.println("ordinal() È£Ãâ:"+ordinalIdx);
-//		valueOf("¹®ÀÚ¿­·Î ÁöÁ¤ÇÑ °ª")
+		System.out.println("ordinal() í˜¸ì¶œ:"+ordinalIdx);
+//		valueOf("ë¬¸ìì—´ë¡œ ì§€ì •í•œ ê°’")
 		Week weekDay=Week.valueOf("SATURDAY");
 		System.out.println("valueOf:"+weekDay.name());
-//		values() : ¿­°Å Å¸ÀÓÀÇ ¸ğµç µ¥ÀÌÅÍ¸¦  ¹è¿­°´Ã¼·Î °¡Á®¿Å
+//		values() : ì—´ê±° íƒ€ì„ì˜ ëª¨ë“  ë°ì´í„°ë¥¼  ë°°ì—´ê°ì²´ë¡œ ê°€ì ¸ì˜®
 		Week[] days = Week.values();
-		System.out.println("ÀüÃ¼ week list °¡Á®¿Å");
+		System.out.println("ì „ì²´ week list ê°€ì ¸ì˜®");
 		for(Week day:days){
 			System.out.println(day);
 		}

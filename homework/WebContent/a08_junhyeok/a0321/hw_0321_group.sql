@@ -1,40 +1,40 @@
 /*
-¼÷Á¦
-¿¬ºÀ ´ÜÀ§º°·Î ÀÎ¿ø¼ö¸¦ Ã¼Å©ÇÏ¼¼¿ä
-¹üÀ§			»ç¿ø¼ö(ÃÖ°íÄ¡, ÃÖÀúÄ¡, Æò±ÕÄ¡)
-1000 ¹Ì¸¸		@@
-~2000 ¹Ì¸¸	@@@
-~3000 ¹Ì¸¸	@@
-~4000 ¹Ì¸¸
-~5000 ¹Ì¸¸
-~6000 ¹Ì¸¸
+ìˆ™ì œ
+ì—°ë´‰ ë‹¨ìœ„ë³„ë¡œ ì¸ì›ìˆ˜ë¥¼ ì²´í¬í•˜ì„¸ìš”
+ë²”ìœ„			ì‚¬ì›ìˆ˜(ìµœê³ ì¹˜, ìµœì €ì¹˜, í‰ê· ì¹˜)
+1000 ë¯¸ë§Œ		@@
+~2000 ë¯¸ë§Œ	@@@
+~3000 ë¯¸ë§Œ	@@
+~4000 ë¯¸ë§Œ
+~5000 ë¯¸ë§Œ
+~6000 ë¯¸ë§Œ
 */
-SELECT TRUNC(SAL,-3)||' ¹Ì¸¸', COUNT(*) FROM EMP 
+SELECT TRUNC(SAL,-3)||' ë¯¸ë§Œ', COUNT(*) FROM EMP 
 GROUP BY TRUNC(SAL,-3);
 
 /*
-°úÁ¦
-	ºÎ¼­ À§Ä¡º° »ç¿øÀÇ ¼ö¸¦ ¾Æ·¡ Çü½ÄÀ¸·Î Ãâ·ÂÇÏ¼¼¿ä
-	ºÎ¼­À§Ä¡	»ç¿ø ¼ö..
+ê³¼ì œ
+	ë¶€ì„œ ìœ„ì¹˜ë³„ ì‚¬ì›ì˜ ìˆ˜ë¥¼ ì•„ëž˜ í˜•ì‹ìœ¼ë¡œ ì¶œë ¥í•˜ì„¸ìš”
+	ë¶€ì„œìœ„ì¹˜	ì‚¬ì› ìˆ˜..
 		
 */
-SELECT LOC "ºÎ¼­À§Ä¡", COUNT(*) "»ç¿ø¼ö"
+SELECT LOC "ë¶€ì„œìœ„ì¹˜", COUNT(*) "ì‚¬ì›ìˆ˜"
 FROM EMP, DEPT
 WHERE EMP.DEPTNO=DEPT.DEPTNO
 GROUP BY LOC;
 
 
 /*
-¼÷Á¦
-student10 		¾ÆÀÌµð, ÀÌ¸§
-studentPoint	¾ÆÀÌµð, °ú¸ñ, Á¡¼ö
-gradeCheck		ÃÖÀúÁ¡¼ölopoint,	ÃÖ°íÁ¡¼öhipoint, ÇÐÁ¡µî±Þ(A~F)
-1) ¾ÆÀÌµð¸¦ Á¶ÀÎÇØ¼­(equal join)
-	ÀÌ¸§	°ú¸ñ	Á¡¼ö Ãâ·Â
-2) Á¡¼ö¸¦ Á¶ÀÎÇØ¼­(not equal join)
-	°ú¸ñ Á¡¼ö ÇÐÁ¡µî±Þ
-3) 	student10 studentPoint gradeCheck Á¶ÀÎÀ» ÇÏ¿©..
-	ÀÌ¸§ °ú¸ñ ÇÐÁ¡µî±Þ
+ìˆ™ì œ
+student10 		ì•„ì´ë””, ì´ë¦„
+studentPoint	ì•„ì´ë””, ê³¼ëª©, ì ìˆ˜
+gradeCheck		ìµœì €ì ìˆ˜lopoint,	ìµœê³ ì ìˆ˜hipoint, í•™ì ë“±ê¸‰(A~F)
+1) ì•„ì´ë””ë¥¼ ì¡°ì¸í•´ì„œ(equal join)
+	ì´ë¦„	ê³¼ëª©	ì ìˆ˜ ì¶œë ¥
+2) ì ìˆ˜ë¥¼ ì¡°ì¸í•´ì„œ(not equal join)
+	ê³¼ëª© ì ìˆ˜ í•™ì ë“±ê¸‰
+3) 	student10 studentPoint gradeCheck ì¡°ì¸ì„ í•˜ì—¬..
+	ì´ë¦„ ê³¼ëª© í•™ì ë“±ê¸‰
 */
 create table gradeCheck(
 			lopoint number(3),
@@ -51,10 +51,10 @@ insert into gradeCheck values(91,100,'A');
 
 
 /*
-¼÷Á¦) outer join, groupÀ» È°¿ëÇÏ¿©
-	ºÎ¼­¸íº° ÀÎ¿øÀ» È®ÀÎÇÏ·Á°í ÇÑ´Ù.
-	¾Æ·¡ÀÇ Çü½ÄÀ¸·Î Ãâ·ÂÇÏ¼¼¿ä ÀÎ¿øÀÌ ¾ø´Â °÷Àº 0À¸·Î Ç¥½Ã.
-	ºÎ¼­¸í	ÀÎ¿ø
+ìˆ™ì œ) outer join, groupì„ í™œìš©í•˜ì—¬
+	ë¶€ì„œëª…ë³„ ì¸ì›ì„ í™•ì¸í•˜ë ¤ê³  í•œë‹¤.
+	ì•„ëž˜ì˜ í˜•ì‹ìœ¼ë¡œ ì¶œë ¥í•˜ì„¸ìš” ì¸ì›ì´ ì—†ëŠ” ê³³ì€ 0ìœ¼ë¡œ í‘œì‹œ.
+	ë¶€ì„œëª…	ì¸ì›
 */
 select d.deptno, count(e.deptno)
 from emp e, dept d

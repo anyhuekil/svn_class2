@@ -1,5 +1,5 @@
 package javaexp.a10_api;
-// º¹Á¦ÇÒ ¼ö ÀÖ´Â ÀÎÅÍÆäÀÌ½º Ãß°¡.
+// ë³µì œí•  ìˆ˜ ìˆëŠ” ì¸í„°í˜ì´ìŠ¤ ì¶”ê°€.
 class Friend implements Cloneable{
 	private String name;
 	public Friend(String name) {
@@ -15,7 +15,7 @@ class Friend implements Cloneable{
 		Friend cloned=null;	
 		try {
 			cloned=(Friend)clone();
-		// º¹Á¦ÇÒ ¶§´Â, ÇÊ¼ö ¿¹¿Ü Ã³¸® ÇÊ¿ä	
+		// ë³µì œí•  ë•ŒëŠ”, í•„ìˆ˜ ì˜ˆì™¸ ì²˜ë¦¬ í•„ìš”	
 		} catch (CloneNotSupportedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -27,18 +27,18 @@ public class A03_clone {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		Friend f1 = new Friend("¹Ú¸¶¸®");
-		System.out.println("f1ÀÇ ÀÌ¸§:"+f1.getName());	
+		Friend f1 = new Friend("ë°•ë§ˆë¦¬");
+		System.out.println("f1ì˜ ì´ë¦„:"+f1.getName());	
 		Friend f2 = f1;
-		f2.setName("±è½Å¿µ");
-		System.out.println("f2ÀÇ ÀÌ¸§:"+f2.getName());
-		System.out.println("f1ÀÇ ÀÌ¸§:"+f1.getName());
+		f2.setName("ê¹€ì‹ ì˜");
+		System.out.println("f2ì˜ ì´ë¦„:"+f2.getName());
+		System.out.println("f1ì˜ ì´ë¦„:"+f1.getName());
 		Friend f3 = f1.getFriend(); 
-		System.out.println("f3ÀÇ ÃÊ±âÀÌ¸§:"+f3.getName());
-		// º¹Á¦µÈ »õ·Î¿î Friend°´Ã¼ »ı¼º
-		f3.setName("¿À¿µ½É");
-		System.out.println("f3ÀÇ ÀÌ¸§:"+f3.getName());
-		System.out.println("f1ÀÇ ÀÌ¸§:"+f1.getName());
+		System.out.println("f3ì˜ ì´ˆê¸°ì´ë¦„:"+f3.getName());
+		// ë³µì œëœ ìƒˆë¡œìš´ Friendê°ì²´ ìƒì„±
+		f3.setName("ì˜¤ì˜ì‹¬");
+		System.out.println("f3ì˜ ì´ë¦„:"+f3.getName());
+		System.out.println("f1ì˜ ì´ë¦„:"+f1.getName());
 	}
 
 }

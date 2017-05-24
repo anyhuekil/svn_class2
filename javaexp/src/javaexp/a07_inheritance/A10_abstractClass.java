@@ -1,42 +1,42 @@
 package javaexp.a07_inheritance;
 
 abstract class Animal01{
-	// °øÅë ¸Ş¼­µå..
+	// ê³µí†µ ë©”ì„œë“œ..
 	public void eat(){
-		System.out.println("¸ÀÀÖ°Ô ¸Ô´Ù!!");
+		System.out.println("ë§›ìˆê²Œ ë¨¹ë‹¤!!");
 	}
-	// ÇÏÀ§Å¬·¡½º¿¡¼­ ÀçÁ¤ÀÇÇÒ ¸Ş¼­µå..
-	// Ãß»ó¸Ş¼­µå´Â ¾Õ¿¡ abstract modifier°¡ ºÙ°í,
-	// ¸Ş¼­µåÀÇ {}<body> ºÎºĞÀÌ ¾ø´Ù..
-	// Å¬·¡½º ¸Ş¼­µå °¡¿îµ¥ Ãß»ó¸Ş¼­µå°¡ ÇÏ³ª¶óµµ ÀÖÀ¸¸é,
-	// Ãß»ó Å¬·¡½º°¡ µÈ´Ù. Ãß»óÅ¬·¡½º´Â abstract¸¦ ºÙ¿© ÁØ´Ù.
+	// í•˜ìœ„í´ë˜ìŠ¤ì—ì„œ ì¬ì •ì˜í•  ë©”ì„œë“œ..
+	// ì¶”ìƒë©”ì„œë“œëŠ” ì•ì— abstract modifierê°€ ë¶™ê³ ,
+	// ë©”ì„œë“œì˜ {}<body> ë¶€ë¶„ì´ ì—†ë‹¤..
+	// í´ë˜ìŠ¤ ë©”ì„œë“œ ê°€ìš´ë° ì¶”ìƒë©”ì„œë“œê°€ í•˜ë‚˜ë¼ë„ ìˆìœ¼ë©´,
+	// ì¶”ìƒ í´ë˜ìŠ¤ê°€ ëœë‹¤. ì¶”ìƒí´ë˜ìŠ¤ëŠ” abstractë¥¼ ë¶™ì—¬ ì¤€ë‹¤.
 	public abstract void move();
 	
 }
 
 class Bird extends Animal01{
-	// Ãß»óÅ¬·¡½º¸¦ »ó¼Ó¹ŞÀº ÇÏÀ§ Å¬·¡½º´Â
-	// ¹İµå½Ã Ãß»ó¸Ş¼­µå¸¦ ÀçÁ¤ÀÇ ÇÏ¿©¾ß ÇÑ´Ù.
-	// ±â´É ¸Ş¼­¸íÀÇ ÅëÀÏÀ» À¯ÁöÇÒ ¼ö ÀÖ´Ù.
+	// ì¶”ìƒí´ë˜ìŠ¤ë¥¼ ìƒì†ë°›ì€ í•˜ìœ„ í´ë˜ìŠ¤ëŠ”
+	// ë°˜ë“œì‹œ ì¶”ìƒë©”ì„œë“œë¥¼ ì¬ì •ì˜ í•˜ì—¬ì•¼ í•œë‹¤.
+	// ê¸°ëŠ¥ ë©”ì„œëª…ì˜ í†µì¼ì„ ìœ ì§€í•  ìˆ˜ ìˆë‹¤.
 	@Override
 	public void move() {
 		// TODO Auto-generated method stub
 		System.out.println("Flying!!! Sky~~");
 	}	
 }
-// Insect (°ïÃæÅ¬·¡½º)
+// Insect (ê³¤ì¶©í´ë˜ìŠ¤)
 class Insect extends Animal01{
 	@Override
 	public void move() {
 		// TODO Auto-generated method stub
-		System.out.println("±â¾î ´Ù´Ï´Ù!!");
+		System.out.println("ê¸°ì–´ ë‹¤ë‹ˆë‹¤!!");
 	}	
 }
 class Fish extends Animal01{
 	@Override
 	public void move() {
 		// TODO Auto-generated method stub
-		System.out.println("¹°¿¡¼­ swimming!!!");
+		System.out.println("ë¬¼ì—ì„œ swimming!!!");
 	}	
 }
 

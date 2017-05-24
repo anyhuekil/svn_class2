@@ -1,33 +1,33 @@
 package javaexp.a07_inheritance;
 
 /*
-»ó¼Ó°ü°èÀÇ Å¬·¡½º ¼±¾ğÇÏ±â..
+ìƒì†ê´€ê³„ì˜ í´ë˜ìŠ¤ ì„ ì–¸í•˜ê¸°..
  * */
 class Father{
-	// ÇÊµå
+	// í•„ë“œ
 	String name;
 	int age;
-	// »ı¼ºÀÚ.
-	// ¸Ş¼­µå
+	// ìƒì„±ì.
+	// ë©”ì„œë“œ
 	void setInfo(String name, int age){
 		this.name = name;
 		this.age = age;
 	}
 	void showInfo(){
-		System.out.print("ÀÌ¸§Àº "+name+"ÀÌ°í, ");
-		System.out.println("³ªÀÌ´Â "+age+"ÀÔ´Ï´Ù!! ");
+		System.out.print("ì´ë¦„ì€ "+name+"ì´ê³ , ");
+		System.out.println("ë‚˜ì´ëŠ” "+age+"ì…ë‹ˆë‹¤!! ");
 	}
 }
 class Son extends Father{
-	String loc;  // Ãß°¡ ÇÊµå ¼±¾ğ
+	String loc;  // ì¶”ê°€ í•„ë“œ ì„ ì–¸
 	void setInfo2(String name, int age, String loc ){
-		this.name=name;  // »ó¼Ó°ü°è·Î ÇÊµå»ç¿ë °¡´É
-		this.age = age;  // »ó¼Ó°ü°è·Î ÇÊµå»ç¿ë °¡´É
+		this.name=name;  // ìƒì†ê´€ê³„ë¡œ í•„ë“œì‚¬ìš© ê°€ëŠ¥
+		this.age = age;  // ìƒì†ê´€ê³„ë¡œ í•„ë“œì‚¬ìš© ê°€ëŠ¥
 		this.loc=loc;
 	}
 	void showInfo2(){
-		showInfo();// ÇöÀç °¡Áö°í ÀÖ´Â ¸Ş¼­µå ±¸Çö.(»ó¼Ó)
-		System.out.println("»ç´Â °÷Àº "+loc+"ÀÔ´Ï´Ù!!!");
+		showInfo();// í˜„ì¬ ê°€ì§€ê³  ìˆëŠ” ë©”ì„œë“œ êµ¬í˜„.(ìƒì†)
+		System.out.println("ì‚¬ëŠ” ê³³ì€ "+loc+"ì…ë‹ˆë‹¤!!!");
 	}
 	
 }
@@ -37,10 +37,10 @@ public class A01_basic {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Son s1 = new Son();
-		s1.setInfo("¾Æµé", 25);		
+		s1.setInfo("ì•„ë“¤", 25);		
 		s1.showInfo();
 		Son s2 = new Son();
-		s2.setInfo2("µÑÂ°¾Æµé", 27, "¼­¿ï °­³²");
+		s2.setInfo2("ë‘˜ì§¸ì•„ë“¤", 27, "ì„œìš¸ ê°•ë‚¨");
 		s2.showInfo2();
 	}
 

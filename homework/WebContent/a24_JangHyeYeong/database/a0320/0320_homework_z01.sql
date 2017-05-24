@@ -1,23 +1,23 @@
 
-/**1¹ø °úÁ¦**/
-create table emp03 as select * from emp; --emp03 º¹»çÅ×ÀÌºí »ı¼º
+/**1ë²ˆ ê³¼ì œ**/
+create table emp03 as select * from emp; --emp03 ë³µì‚¬í…Œì´ë¸” ìƒì„±
 
 select min(empno)-1, avg(sal), sum(comm) from emp03; 
--- empnoÀÇ °¡Àå ÀÛÀº¼ö -1 = 7368, salÀÇ Æò±Õ¿¬ºÀ = 2073.21, commÇÕ°è=2200
+-- empnoì˜ ê°€ì¥ ì‘ì€ìˆ˜ -1 = 7368, salì˜ í‰ê· ì—°ë´‰ = 2073.21, commí•©ê³„=2200
 
 select mgr from emp03 where ename='CLARK';
--- clarkÀÇ mgr = 7839
+-- clarkì˜ mgr = 7839
 
-select max(hiredate)+1 from emp03; -- ÃÖ±Ù ÀÔ»çÀÏ + 1 = 1983/01/13
+select max(hiredate)+1 from emp03; -- ìµœê·¼ ì…ì‚¬ì¼ + 1 = 1983/01/13
 
 insert into emp03(empno, mgr, sal, comm) values(7368,7839,2073.21,2200);
-update emp03 set ename='½Å±æµ¿', job='SUPERMAN', hiredate='1983/01/13'
+update emp03 set ename='ì‹ ê¸¸ë™', job='SUPERMAN', hiredate='1983/01/13'
 where empno=7368;
 commit;
 
 select * from emp03;
 
-/**2¹ø °úÁ¦**/
+/**2ë²ˆ ê³¼ì œ**/
 create table loginData(id varchar2(10) not null, password varchar2(20) not null,
 userpoint number(10));
 
@@ -26,7 +26,7 @@ commit;
 select * from loginData;
 
 
-/**3¹ø °úÁ¦**/
+/**3ë²ˆ ê³¼ì œ**/
 
 create table student_main(
 id varchar2(15) primary key,
@@ -44,17 +44,17 @@ point number(5)
 
 );
 insert into student_point values ('sdf','asd',1000);
-insert into student_main values ('sdf','asd','È«±æµ¿');
+insert into student_main values ('sdf','asd','í™ê¸¸ë™');
 
 
-/***1¹ø°úÁ¦*** 
-emp03 º¹»çÅ×ÀÌºí »ı¼º
-1. ÀÔ·Â empnoÀÇ °¡Àå ÀÛÀº¼öº¸´Ù -1, mgr:clarkÀÇ mgrÀÔ·Â, sal:Æò±Õ¿¬ºÀ, comm:ÀüÃ¼ commÀÇ ÇÕ°è
-2. ¼öÁ¤ ename:'½Å±æµ¿', jobÀº SUPERMAN, hiredate´Â ÃÖ±Ù¿¡ ÀÔ»çÀÏ+1
+/***1ë²ˆê³¼ì œ*** 
+emp03 ë³µì‚¬í…Œì´ë¸” ìƒì„±
+1. ì…ë ¥ empnoì˜ ê°€ì¥ ì‘ì€ìˆ˜ë³´ë‹¤ -1, mgr:clarkì˜ mgrì…ë ¥, sal:í‰ê· ì—°ë´‰, comm:ì „ì²´ commì˜ í•©ê³„
+2. ìˆ˜ì • ename:'ì‹ ê¸¸ë™', jobì€ SUPERMAN, hiredateëŠ” ìµœê·¼ì— ì…ì‚¬ì¼+1
 
-***2¹ø°úÁ¦*** 
-°úÁ¦ loginÇÏ´Â È­¸éÀ» ¸¸µé°í id¿Í password¸¦ Ã¼Å©ÇÏ°í, ´ÙÀ½ È­¸é¿¡¼­
-id @@@ ´Ô È¯¿µÇÕ´Ï´Ù. ³²Àº point´Â @@@ÀÔ´Ï´Ù. ¶ó´Â ³»¿ëÀÌ ³ªÅ¸³­´Ù°í ÇÑ´Ù.
-ÀÌ¿¡ ÇÊ¿ä·Î ÇÏ´Â Å×ÀÌºí°ú Å×ÀÌºí ±¸Á¶¸¦ ¸¸µå¼¼¿ä
+***2ë²ˆê³¼ì œ*** 
+ê³¼ì œ loginí•˜ëŠ” í™”ë©´ì„ ë§Œë“¤ê³  idì™€ passwordë¥¼ ì²´í¬í•˜ê³ , ë‹¤ìŒ í™”ë©´ì—ì„œ
+id @@@ ë‹˜ í™˜ì˜í•©ë‹ˆë‹¤. ë‚¨ì€ pointëŠ” @@@ì…ë‹ˆë‹¤. ë¼ëŠ” ë‚´ìš©ì´ ë‚˜íƒ€ë‚œë‹¤ê³  í•œë‹¤.
+ì´ì— í•„ìš”ë¡œ í•˜ëŠ” í…Œì´ë¸”ê³¼ í…Œì´ë¸” êµ¬ì¡°ë¥¼ ë§Œë“œì„¸ìš”
 
 */

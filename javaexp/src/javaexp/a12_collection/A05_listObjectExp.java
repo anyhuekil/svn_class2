@@ -39,9 +39,9 @@ public class A05_listObjectExp {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		ArrayList<Dept> dlist=new ArrayList<Dept>();
-		dlist.add(new Dept(10,"È¸°è","´º¿å"));
-		dlist.add(new Dept(20,"°¨»ç","´Ş¶ó½º"));
-		dlist.add(new Dept(30,"¿µ¾÷","½ÃÄ«°í"));
+		dlist.add(new Dept(10,"íšŒê³„","ë‰´ìš•"));
+		dlist.add(new Dept(20,"ê°ì‚¬","ë‹¬ë¼ìŠ¤"));
+		dlist.add(new Dept(30,"ì˜ì—…","ì‹œì¹´ê³ "));
 		for(Dept d:dlist){
 			System.out.print(d.getDeptno()+"\t");
 			System.out.print(d.getDname()+"\t");

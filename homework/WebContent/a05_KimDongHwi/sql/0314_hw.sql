@@ -1,6 +1,6 @@
-select '1¹ø. ' ||ename|| 'Àº ÇöÀç ¿¬ºÀÀÎ' ||sal*1.1|| '¸¸¿ø ÀÎµ¥, ÃÖ±Ù¿¡ 10% ÀÎ»óµÈ ±Ý¾×ÀÌ¸ç, ÀÛ³â ¿¬ºÀÀº ' ||sal|| '¸¸¿ø ÀÌ¾ú½À´Ï´Ù' from emp;
-select '2¹ø. ' ||ename|| 'ÀÇ ÀÔ»çÀÏÀº ' ||hiredate|| 'ÀÔ´Ï´Ù.' from emp;
-select '3¹ø. Á÷Ã¥ÀÌ ' ||job|| 'ÀÎ ' ||ename|| 'Àº ºÎ¼­¹øÈ£°¡ ' ||deptno|| 'ÀÔ´Ï´Ù.' from emp;
-select '4¹ø. ' ||ename|| '´ÔÀº ÇöÀç ¿¬ºÀ°ú º¸³Ê½º¸¦ ÇÕ»ê ±Ý¾×Àº ' 
-		||(nvl(comm,0)+sal)|| 'ÀÔ´Ï´Ù.' from emp; 
+select '1ë²ˆ. ' ||ename|| 'ì€ í˜„ìž¬ ì—°ë´‰ì¸' ||sal*1.1|| 'ë§Œì› ì¸ë°, ìµœê·¼ì— 10% ì¸ìƒëœ ê¸ˆì•¡ì´ë©°, ìž‘ë…„ ì—°ë´‰ì€ ' ||sal|| 'ë§Œì› ì´ì—ˆìŠµë‹ˆë‹¤' from emp;
+select '2ë²ˆ. ' ||ename|| 'ì˜ ìž…ì‚¬ì¼ì€ ' ||hiredate|| 'ìž…ë‹ˆë‹¤.' from emp;
+select '3ë²ˆ. ì§ì±…ì´ ' ||job|| 'ì¸ ' ||ename|| 'ì€ ë¶€ì„œë²ˆí˜¸ê°€ ' ||deptno|| 'ìž…ë‹ˆë‹¤.' from emp;
+select '4ë²ˆ. ' ||ename|| 'ë‹˜ì€ í˜„ìž¬ ì—°ë´‰ê³¼ ë³´ë„ˆìŠ¤ë¥¼ í•©ì‚° ê¸ˆì•¡ì€ ' 
+		||(nvl(comm,0)+sal)|| 'ìž…ë‹ˆë‹¤.' from emp; 
 		

@@ -4,23 +4,23 @@ public class A06_argumentExp {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		/* È®ÀÎ¿¹Á¦ »õ·Î¿î ÆÄÀÏ A06_argumentExp.java
+		/* í™•ì¸ì˜ˆì œ ìƒˆë¡œìš´ íŒŒì¼ A06_argumentExp.java
 		 *    Favorite Movie
-		 *    args ==>  ¿µÈ­¸í1 »ó¿µ¿¬
-		 *    µµ ¿µÈ­¸í2 »ó¿µ¿¬µµ 
-		 *    ³»°¡ ÁÁ¾ÆÇÏ´Â ¿µÈ­
-		 *    ¿µÈ­¸í  »ó¿µ   Áö±İÀ¸·ÎºÎÅÍ
-		 *    ¿µÈ­¸í  @@@  2017-@@@
-		 *    ¿µÈ­¸í  @@@  2017-@@@
+		 *    args ==>  ì˜í™”ëª…1 ìƒì˜ì—°
+		 *    ë„ ì˜í™”ëª…2 ìƒì˜ì—°ë„ 
+		 *    ë‚´ê°€ ì¢‹ì•„í•˜ëŠ” ì˜í™”
+		 *    ì˜í™”ëª…  ìƒì˜   ì§€ê¸ˆìœ¼ë¡œë¶€í„°
+		 *    ì˜í™”ëª…  @@@  2017-@@@
+		 *    ì˜í™”ëª…  @@@  2017-@@@
 		 * */	
-		System.out.println("³»°¡ ÁÁ¾ÆÇÏ´Â ¿µÈ­");
-		System.out.println("¿µÈ­¸í\t\t»ó¿µ\tÁö±İÀ¸·ÎºÎÅÍ");
-		// ¹è¿­ °´Ã¼ length/´ÜÀ§°¹¼ö  ==> ±×·ìº°µ¥ÀÌÅÍ °Ç¼ö
+		System.out.println("ë‚´ê°€ ì¢‹ì•„í•˜ëŠ” ì˜í™”");
+		System.out.println("ì˜í™”ëª…\t\tìƒì˜\tì§€ê¸ˆìœ¼ë¡œë¶€í„°");
+		// ë°°ì—´ ê°ì²´ length/ë‹¨ìœ„ê°¯ìˆ˜  ==> ê·¸ë£¹ë³„ë°ì´í„° ê±´ìˆ˜
 		int year=0;
 		for(int idx=0;idx<args.length/2;idx++){
 			year=Integer.parseInt(args[ (idx*2)+1 ]);
 			System.out.println(args[idx*2]+"\t"+year
-								+"\t"+(2017-year)+"³â Àü");
+								+"\t"+(2017-year)+"ë…„ ì „");
 		}
 		
 		

@@ -20,7 +20,7 @@ public class A02_SVL_xml extends HttpServlet {
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html; charset=utf-8");
 		PrintWriter out = response.getWriter();
-		out.print("<html><body><h1>¾È³çÇÏ¼¼¿äweb.xml</h1></body></html>");
+		out.print("<html><body><h1>ì•ˆë…•í•˜ì„¸ìš”web.xml</h1></body></html>");
 				
 	}
 

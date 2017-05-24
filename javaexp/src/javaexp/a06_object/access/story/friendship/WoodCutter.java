@@ -2,18 +2,18 @@ package javaexp.a06_object.access.story.friendship;
 
 public class WoodCutter {
 	// public WoodCutter(){}
-	// default »ı¼ºÀÚ´Â ¼±¾ğµÇÁö ¾ÊÀ¸¸é, ¸Ş¸ğ¸®¿¡
-	// ÀÚµ¿À¸·Î ¼±¾îµÇ¾î ÀÖ´Ù.
-	String cacheDeer="½£¼Ó´ıºÒ¹Ø";
-	//  private´Â ³»ºÎÅ¬·¡½º¿Ü ¾î¶² ¿ÜºÎ Å¬·¡½ºµµ
-	// Á¢±ÙÀÌ ºÒ°¡´ÉÇÏ°Ô Ã³¸®.
-	private String cacheClothe="µŞµ¿»ê ¹ÙÀ§¹Ø";
+	// default ìƒì„±ìëŠ” ì„ ì–¸ë˜ì§€ ì•Šìœ¼ë©´, ë©”ëª¨ë¦¬ì—
+	// ìë™ìœ¼ë¡œ ì„ ì–´ë˜ì–´ ìˆë‹¤.
+	String cacheDeer="ìˆ²ì†ë¤ë¶ˆë°‘";
+	//  privateëŠ” ë‚´ë¶€í´ë˜ìŠ¤ì™¸ ì–´ë–¤ ì™¸ë¶€ í´ë˜ìŠ¤ë„
+	// ì ‘ê·¼ì´ ë¶ˆê°€ëŠ¥í•˜ê²Œ ì²˜ë¦¬.
+	private String cacheClothe="ë’·ë™ì‚° ë°”ìœ„ë°‘";
 	void searchClothe(){
-		// ³»ºÎ ÇÊµåÀÌ±â¿¡ Á¢±ÙÀÌ °¡´ÉÇÔ..
-		System.out.println("¿ÊÀÌ ÀÖ´Â °÷Àº"+cacheClothe);
+		// ë‚´ë¶€ í•„ë“œì´ê¸°ì— ì ‘ê·¼ì´ ê°€ëŠ¥í•¨..
+		System.out.println("ì˜·ì´ ìˆëŠ” ê³³ì€"+cacheClothe);
 	}
-//	Á¢±Ù Á¦¾îÀÚ publicÀ¸·Î ¼±¾ğµÈ °ÍÀº ÆĞÅ°Áö°¡ ´Ù¸£´õ¶óµµ
-//	¸ğµç °´Ã¼¿¡¼­ Á¢±Ù °¡´É.
-	public String weddingAnnounce="³ëÃÑ°¢ µåµğ¾î Àå°¡ °¡´Ù!!";
+//	ì ‘ê·¼ ì œì–´ì publicìœ¼ë¡œ ì„ ì–¸ëœ ê²ƒì€ íŒ¨í‚¤ì§€ê°€ ë‹¤ë¥´ë”ë¼ë„
+//	ëª¨ë“  ê°ì²´ì—ì„œ ì ‘ê·¼ ê°€ëŠ¥.
+	public String weddingAnnounce="ë…¸ì´ê° ë“œë””ì–´ ì¥ê°€ ê°€ë‹¤!!";
 	
 }

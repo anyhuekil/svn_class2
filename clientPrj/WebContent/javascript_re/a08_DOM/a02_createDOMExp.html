@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+/*
+
+*/
+
+/**/
+</style>
+<script src="http://code.jquery.com/jquery-1.10.2.js">
+</script>
+<script type="text/javascript">
+$(document).ready(function(){
+	var h1Obj = document.createElement("h1");
+	var title01 = document.createTextNode("반갑습니다!! 오늘도 마무리를 위해!!");
+	h1Obj.appendChild( title01 );
+	document.body.appendChild( h1Obj );
+	var text01=document.createTextNode("DOM");
+	var text02=document.createTextNode("구조");
+	var text03=document.createTextNode("마스터");
+	var text04=document.createTextNode("^^");
+	var td01 = document.createElement("td");
+	var td02 = document.createElement("td");
+	var td03 = document.createElement("td");
+	var td04 = document.createElement("td");
+	td01.appendChild(text01);
+	td02.appendChild(text02);
+	td03.appendChild(text03);
+	td04.appendChild(text04);
+	var tr01 = document.createElement("tr");
+	var tr02 = document.createElement("tr");
+	tr01.appendChild(td01);
+	tr01.appendChild(td02);
+	tr02.appendChild(td03);
+	tr02.appendChild(td04);
+	var tab01 = document.createElement("table");
+	tab01.appendChild(tr01);	
+	tab01.appendChild(tr02);		
+	document.body.appendChild( tab01 );
+	
+	
+	
+	
+	
+});
+</script>
+</head>
+<body>
+
+</body>
+</html>

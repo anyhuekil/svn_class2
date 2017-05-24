@@ -1,100 +1,100 @@
 /*
-¼÷Á¦1)
-6°³¿ùÀÇ ÀÎÅÏ±â°£¿¡´Â ±Þ¿©ÀÇ 70%¸¸ Áö±ÞÇÏ±â·Î Çß´Ù.
-»ç¿øÀÇ ÀÎÅÏ±â°£¸¸·á½ÃÁ¡À» Ãâ·ÂÇÏ°í, 6°³¿ù°£ÀÇ ±Þ¿©ÀÇ ÃÑÇÕÀ» °è»êÇÏ¼¼¿ä.
-¿ù±Þ¿©  -  sal/13
-ÀÎÅÏ±â°£ - ¿ù±Þ¿©ÀÇ 70%
-ÀÎÅÏ±â°£¿ù±Þ¿©ÃÑ¾× - ÀÎÅÏ±â°£6°³¿ù ±Þ¿© ÃÑ¾×À» 10´ÜÀ§ Àý»èÇØ¼­ Ãâ·Â
-»ç¿ø¹øÈ£  »ç¿ø¸í ÀÔ»çÀÏ ÀÎÅÏ±â°£¸¸·á½ÃÁ¡  ÀÎÅÏ±â°£¿ù±Þ¿©
+ìˆ™ì œ1)
+6ê°œì›”ì˜ ì¸í„´ê¸°ê°„ì—ëŠ” ê¸‰ì—¬ì˜ 70%ë§Œ ì§€ê¸‰í•˜ê¸°ë¡œ í–ˆë‹¤.
+ì‚¬ì›ì˜ ì¸í„´ê¸°ê°„ë§Œë£Œì‹œì ì„ ì¶œë ¥í•˜ê³ , 6ê°œì›”ê°„ì˜ ê¸‰ì—¬ì˜ ì´í•©ì„ ê³„ì‚°í•˜ì„¸ìš”.
+ì›”ê¸‰ì—¬  -  sal/13
+ì¸í„´ê¸°ê°„ - ì›”ê¸‰ì—¬ì˜ 70%
+ì¸í„´ê¸°ê°„ì›”ê¸‰ì—¬ì´ì•¡ - ì¸í„´ê¸°ê°„6ê°œì›” ê¸‰ì—¬ ì´ì•¡ì„ 10ë‹¨ìœ„ ì ˆì‚­í•´ì„œ ì¶œë ¥
+ì‚¬ì›ë²ˆí˜¸  ì‚¬ì›ëª… ìž…ì‚¬ì¼ ì¸í„´ê¸°ê°„ë§Œë£Œì‹œì   ì¸í„´ê¸°ê°„ì›”ê¸‰ì—¬
 
 */
 select empno, ename, hiredate, add_months(hiredate, 6), trunc(sal/13*0.7*6) from emp;
 
 
 /*
-¼÷Á¦2)
-±Þ¿© °è»ê 3´Ü°è ±Þ¿©ÀÏÀ» ³ª´©¾î¼­ Ãâ·ÂÇÏ¼¼¿ä
-1´Ü°è3 ´ç¿ù 20ÀÏ
-2´Ü²¾ ´ç¿ù ¸¶Áö¸·³¯
-3´Ü°è ´ÙÀ½´Þ 10ÀÏ
-»ç¿ø ÀÔ»çÀÏ Ã¹¿ù±Þ1 Ã¹¿ù±Þ2 Ã¹¿ù±Þ3
+ìˆ™ì œ2)
+ê¸‰ì—¬ ê³„ì‚° 3ë‹¨ê³„ ê¸‰ì—¬ì¼ì„ ë‚˜ëˆ„ì–´ì„œ ì¶œë ¥í•˜ì„¸ìš”
+1ë‹¨ê³„3 ë‹¹ì›” 20ì¼
+2ë‹¨ê¼ ë‹¹ì›” ë§ˆì§€ë§‰ë‚ 
+3ë‹¨ê³„ ë‹¤ìŒë‹¬ 10ì¼
+ì‚¬ì› ìž…ì‚¬ì¼ ì²«ì›”ê¸‰1 ì²«ì›”ê¸‰2 ì²«ì›”ê¸‰3
 */
 select ename , hiredate ,last_day(add_months(hiredate,-1))+20 ,last_day(hiredate),last_day(hiredate)+10 from emp;
 
 
 /*
-¼÷Á¦3)
-	±Ù¹«°³¿ù¼ö¿¡ µû¸¥ Â÷µî º¸³Ê½º Áö±Þ
-	°¡Àå ¿À·¡µÈ °³¿ù~°¡Àå ÃÖ±Ù ÀÔ»çÇÑ °³¿ù¼ö
-	1/3=30% 1/3=20% 1/3=10% (¿¬ºÀ±âÁØ)
-	»ç¿ø,ÀÔ»çÀÏ, ÇöÀç³¯Â¥ (@@/@@/@@ AM @@½Ã @@ºÐ @@ÃÊ), ±Ù¹«°³¿ù¼ö, º¸³Ê½º
+ìˆ™ì œ3)
+	ê·¼ë¬´ê°œì›”ìˆ˜ì— ë”°ë¥¸ ì°¨ë“± ë³´ë„ˆìŠ¤ ì§€ê¸‰
+	ê°€ìž¥ ì˜¤ëž˜ëœ ê°œì›”~ê°€ìž¥ ìµœê·¼ ìž…ì‚¬í•œ ê°œì›”ìˆ˜
+	1/3=30% 1/3=20% 1/3=10% (ì—°ë´‰ê¸°ì¤€)
+	ì‚¬ì›,ìž…ì‚¬ì¼, í˜„ìž¬ë‚ ì§œ (@@/@@/@@ AM @@ì‹œ @@ë¶„ @@ì´ˆ), ê·¼ë¬´ê°œì›”ìˆ˜, ë³´ë„ˆìŠ¤
 */
-select ename, hiredate ,to_char(sysdate, 'YYYY/MM/DD AM HH24"½Ã"MI"ºÐ"SS"ÃÊ"') , floor(months_between(sysdate,hiredate)), nvl(comm,0) from emp;
+select ename, hiredate ,to_char(sysdate, 'YYYY/MM/DD AM HH24"ì‹œ"MI"ë¶„"SS"ì´ˆ"') , floor(months_between(sysdate,hiredate)), nvl(comm,0) from emp;
 
 /*
-¼÷Á¦4) 
-Á¶È¸°ªÀÌ '1981³â01¿ù01ÀÏ'ºÎÅÍ '1982³â12¿ù12ÀÏ' »çÀÌÀÇ µ¥ÀÌÅÍ Áß,
-	ºÎ¼­°¡ 30ÀÎ µ¥ÀÌÅÍ¸¦ Á¶È¸ÇÏ¿©,
-listÇü½Ä	
-	»ç¿ø¸í(10ÀÚ¸®-¾Õ¿¡ #±âÈ£Ã³¸®)
-	Á÷Ã¥(10ÀÚ¸®-³ª¸ÓÁöµÚ¿¡ '-'Ã³¸®)
-	ÀÔ»çÀÏ(@@³â @@¿ù @@ÀÏ @¿äÀÏ 24½Ã @@ºÐ @@ÃÊ)
-	¿¬ºÀ(####1,600.0Ç¥½Ã)·Î ³ªÅ¸³ª¼¼¿ä
+ìˆ™ì œ4) 
+ì¡°íšŒê°’ì´ '1981ë…„01ì›”01ì¼'ë¶€í„° '1982ë…„12ì›”12ì¼' ì‚¬ì´ì˜ ë°ì´í„° ì¤‘,
+	ë¶€ì„œê°€ 30ì¸ ë°ì´í„°ë¥¼ ì¡°íšŒí•˜ì—¬,
+listí˜•ì‹	
+	ì‚¬ì›ëª…(10ìžë¦¬-ì•žì— #ê¸°í˜¸ì²˜ë¦¬)
+	ì§ì±…(10ìžë¦¬-ë‚˜ë¨¸ì§€ë’¤ì— '-'ì²˜ë¦¬)
+	ìž…ì‚¬ì¼(@@ë…„ @@ì›” @@ì¼ @ìš”ì¼ 24ì‹œ @@ë¶„ @@ì´ˆ)
+	ì—°ë´‰(####1,600.0í‘œì‹œ)ë¡œ ë‚˜íƒ€ë‚˜ì„¸ìš”
 */
-select lpad(ename, 10, '#') »ç¿ø¸í, rpad(job,10,'-') Á÷Ã¥ ,to_char(hiredate, 'YYYY/MM/DD AM HH24"½Ã"MI"ºÐ"SS"ÃÊ"') ÀÔ»çÀÏ , 
-	   lpad(to_char(sal,'9,999.9'),12,'#') ¿¬ºÀ from emp
+select lpad(ename, 10, '#') ì‚¬ì›ëª…, rpad(job,10,'-') ì§ì±… ,to_char(hiredate, 'YYYY/MM/DD AM HH24"ì‹œ"MI"ë¶„"SS"ì´ˆ"') ìž…ì‚¬ì¼ , 
+	   lpad(to_char(sal,'9,999.9'),12,'#') ì—°ë´‰ from emp
 where deptno =30 and
 	  (to_date('1981/01/01','yyyy/mm/dd')<= hiredate and hiredate <= to_date('1982/12/12','yyyy/mm/dd'));
 
 /*
- ¼÷Á¦5)
-ÀÌ¸§ °ü¸®ÀÚ¹øÈ£ º¸³Ê½º ==> µ¥ÀÌÅÍ°¡ ¾øÀ» ¶§´Â °ü¸®ÀÚ¹øÈ£°æ¿ì 'ÃÖ°í·¹º§' º¸³Ê½º´Â '0'Ç¥½Ã
+ ìˆ™ì œ5)
+ì´ë¦„ ê´€ë¦¬ìžë²ˆí˜¸ ë³´ë„ˆìŠ¤ ==> ë°ì´í„°ê°€ ì—†ì„ ë•ŒëŠ” ê´€ë¦¬ìžë²ˆí˜¸ê²½ìš° 'ìµœê³ ë ˆë²¨' ë³´ë„ˆìŠ¤ëŠ” '0'í‘œì‹œ
 */
 
-select ename, nvl(to_char(mgr),'ÃÖ°í·¹º§'), nvl(comm,0) from emp;
+select ename, nvl(to_char(mgr),'ìµœê³ ë ˆë²¨'), nvl(comm,0) from emp;
 
 /*
-¼÷Á¦6)
-¿¬ºÀ¿¡ µû¸¥ µî±ÞÃ¼°è¸¦ ³ª´­·Á°í ÇÑ´Ù.
-decode¸¦ È°¿ëÇØ¼­ 
-	1000            ¹Ì¸¸ Fµî±Þ  ¼º°ú±Þ 3%
-	1000~2000 ¹Ì¸¸ Eµî±Þ  ¼º°ú±Þ 5%
-	2000~3000 ¹Ì¸¸ Dµî±Þ  ¼º°ú±Þ 7%
-	3000~4000 ¹Ì¸¸ Cµî±Þ  ¼º°ú±Þ 4%
-	4000~5000 ¹Ì¸¸ Bµî±Þ  ¼º°ú±Þ 3%
-	5000~6000 ¹Ì¸¸ Aµî±Þ  ¼º°ú±Þ 2%
-ÀÌ¸§ ºÎ¼­ ¿¬ºÀ ¿¬ºÀµî±Þ  ¼º°ú±Þ ÃÑ¾×(¿¬ºÀ+¼º°ú±Þ) 
+ìˆ™ì œ6)
+ì—°ë´‰ì— ë”°ë¥¸ ë“±ê¸‰ì²´ê³„ë¥¼ ë‚˜ëˆŒë ¤ê³  í•œë‹¤.
+decodeë¥¼ í™œìš©í•´ì„œ 
+	1000            ë¯¸ë§Œ Fë“±ê¸‰  ì„±ê³¼ê¸‰ 3%
+	1000~2000 ë¯¸ë§Œ Eë“±ê¸‰  ì„±ê³¼ê¸‰ 5%
+	2000~3000 ë¯¸ë§Œ Dë“±ê¸‰  ì„±ê³¼ê¸‰ 7%
+	3000~4000 ë¯¸ë§Œ Cë“±ê¸‰  ì„±ê³¼ê¸‰ 4%
+	4000~5000 ë¯¸ë§Œ Bë“±ê¸‰  ì„±ê³¼ê¸‰ 3%
+	5000~6000 ë¯¸ë§Œ Aë“±ê¸‰  ì„±ê³¼ê¸‰ 2%
+ì´ë¦„ ë¶€ì„œ ì—°ë´‰ ì—°ë´‰ë“±ê¸‰  ì„±ê³¼ê¸‰ ì´ì•¡(ì—°ë´‰+ì„±ê³¼ê¸‰) 
 */
-select ename, deptno ,sal ,decode(trunc(sal/1000,0), 0,'Fµî±Þ',
-									   1,'Eµî±Þ',
-									   2,'Dµî±Þ',
-									   3,'Cµî±Þ',
-									   4,'Bµî±Þ',
-									   5,'Aµî±Þ',
-									   '¿ìÁÖÀúÆí') ¿¬ºÀµî±Þ, 
+select ename, deptno ,sal ,decode(trunc(sal/1000,0), 0,'Fë“±ê¸‰',
+									   1,'Eë“±ê¸‰',
+									   2,'Dë“±ê¸‰',
+									   3,'Cë“±ê¸‰',
+									   4,'Bë“±ê¸‰',
+									   5,'Aë“±ê¸‰',
+									   'ìš°ì£¼ì €íŽ¸') ì—°ë´‰ë“±ê¸‰, 
 							decode(trunc(sal/1000,0), 0,'3',
 									   1,'5',
 									   2,'7',
 									   3,'4',
 									   4,'3',
 									   5,'2',
-									   '¿ìÁÖÀúÆí') ¼º°ú±Þ ,
+									   'ìš°ì£¼ì €íŽ¸') ì„±ê³¼ê¸‰ ,
 						    sal+(sal*decode(trunc(sal/1000,0), 0,'0.03',
 									   1,'0.05',
 									   2,'0.07',
 									   3,'0.04',
 									   4,'0.03',
 									   5,'0.02',
-									   '¿ìÁÖÀúÆí')) ÃÑ¾×
+									   'ìš°ì£¼ì €íŽ¸')) ì´ì•¡
 									   
 from emp;	
 
 
 /*
-¼÷Á¦7)
-ÀÔ»ç ºÐ±â ±âÁØ Ç¥½Ã(1/4,2/4,3/4,4/4)ÀÔ»ç ºÐ±â¸¦ Ç¥±â
-»ç¿ø¹øÈ£,ÀÌ¸§,ÀÔ»ç(³â/¿ù),ÀÔ»çºÐ±â
+ìˆ™ì œ7)
+ìž…ì‚¬ ë¶„ê¸° ê¸°ì¤€ í‘œì‹œ(1/4,2/4,3/4,4/4)ìž…ì‚¬ ë¶„ê¸°ë¥¼ í‘œê¸°
+ì‚¬ì›ë²ˆí˜¸,ì´ë¦„,ìž…ì‚¬(ë…„/ì›”),ìž…ì‚¬ë¶„ê¸°
 */
-select empno, ename, to_char(hiredate,'yy/mm') ÀÔ»ç, trunc(to_char(hiredate,'mm')/4,0)+1||'/4' ÀÔ»çºÐ±â
+select empno, ename, to_char(hiredate,'yy/mm') ìž…ì‚¬, trunc(to_char(hiredate,'mm')/4,0)+1||'/4' ìž…ì‚¬ë¶„ê¸°
 
  from emp;

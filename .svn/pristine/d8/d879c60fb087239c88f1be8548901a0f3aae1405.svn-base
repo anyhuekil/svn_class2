@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+/*
+
+*/
+div{float:left;border:1px solid red;background:pink;border-radius:30px;}
+/**/
+</style>
+<script src="http://code.jquery.com/jquery-1.10.2.js">
+</script>
+<script type="text/javascript">
+var xml="";
+xml += "<friends>";
+xml += "    <friend>";
+xml += "        <name>연희경</name><age>29</age><loc>서울 강남</loc>";
+xml += "    </friend>";
+xml += "    <friend>";
+xml += "        <name>윤영희</name><age>32</age><loc>서울 잠실</loc>";
+xml += "    </friend>";
+xml += "    <friend>";
+xml += "        <name>이희우</name><age>25</age><loc>인천 계양</loc>";
+xml += "    </friend>";
+xml += "</friends>";
+// {\"name\":\"연희경\",\"age\":\"29\"}
+var json="[{\"name\":\"연희경\",\"age\":\"29\",\"loc\":\"서울 강남\"},";
+json += "  {\"name\":\"윤영희\",\"age\":\"32\",\"loc\":\"서울 잠실\"} ]";
+
+$(document).ready(function(){
+	// XML문자데이터 ==> 객체데이터 변환 $.parseXML("문자열")
+	// JSON문자데이터 ==> 객체데이터 변화 $.parseJSON("문자열")
+	var xmlObj = $.parseXML(xml);
+	// $("객체").find("해당계층구조이름")
+	//alert("friend객체의 갯수:"+$(xmlObj).find("friend").length);
+	$(xmlObj).find("friend").each( function( index ){
+		 // $(this) : friend의 단위 객체.. 
+		 // text() 해당 내용 안에 있는 문자열..<name>문자열</name> ==> text()
+		 var show="";
+		 show+="<div>";
+		 show+="<h1>"+ $(this).find("name").text()+"</h1>";
+		 show+="<p>"+$(this).find("age").text()+","
+		 		+$(this).find("loc").text()+"</p>";
+		 show+="</div>";
+		 document.body.innerHTML+=show;
+	});
+	var jsonObj = $.parseJSON(json);
+	$(jsonObj).each(function(index,item){
+		 var show="";
+		 show+="<div style='background:lightblue;'>";
+		 // json객체의 단위 객체 내용..
+		 show+="<h1>"+ item.name+"</h1>";
+		 show+="<p>"+item.age+","
+		 		+item.loc+"</p>";
+		 show+="</div>";
+		 document.body.innerHTML+=show;
+	});
+	
+	
+});
+</script>
+</head>
+<body>
+
+</body>
+</html>

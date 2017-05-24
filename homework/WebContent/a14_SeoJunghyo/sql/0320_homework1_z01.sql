@@ -1,7 +1,7 @@
-/* °úÁ¦1. (homework 1)
- EMP03 º¹»çÅ×ÀÌºí »ı¼º
- 1. ÀÔ·Â EMPNOÀÇ °¡Àå ÀÛÀº¼öº¸´Ù -1, MGR : CLERKÀÇ MGRÀÔ·Â, SAL : Æò±Õ¿¬ºÀ, COMM : ÀüÃ¼ COMMÀÇ ÇÕ°Ô
- 2. ¼öÁ¤ ENAME : '½Å±æµ¿', JOBÀº SUPERMAN, HIREDATE´Â ÃÖ±Ù¿¡ ÀÔ»çÀÏ+1
+/* ê³¼ì œ1. (homework 1)
+ EMP03 ë³µì‚¬í…Œì´ë¸” ìƒì„±
+ 1. ì…ë ¥ EMPNOì˜ ê°€ì¥ ì‘ì€ìˆ˜ë³´ë‹¤ -1, MGR : CLERKì˜ MGRì…ë ¥, SAL : í‰ê· ì—°ë´‰, COMM : ì „ì²´ COMMì˜ í•©ê²Œ
+ 2. ìˆ˜ì • ENAME : 'ì‹ ê¸¸ë™', JOBì€ SUPERMAN, HIREDATEëŠ” ìµœê·¼ì— ì…ì‚¬ì¼+1
 */ 
 
 	create table emp03 as select * from emp;
@@ -9,13 +9,13 @@
 	select min(empno), avg(sal), sum(comm),max(hiredate)+1 from emp;
 	insert into emp03(empno, mgr, sal, comm) values(7368,7902,2073.21,2200);
 	select * from emp03;
-	update emp03 set ename='½Å±æµ¿', job='SUPERMAN', hiredate=to_date('1983/01/12')+1, comm=2200 where empno=7368;
+	update emp03 set ename='ì‹ ê¸¸ë™', job='SUPERMAN', hiredate=to_date('1983/01/12')+1, comm=2200 where empno=7368;
 	select * from emp03;
 
 /*
- °úÁ¦2. (homework 2)
- loginÀÎ ÇÏ´Â È­¸éÀ» ¸¸µé°í id¿Í password¸¦ Ã¼Å©ÇÏ°í, ´ÙÀ½È­¸é¿¡¼­ 'id@@@´Ô È¯¿µÇÕ´Ï´Ù. ³²Àº point´Â @@@ÀÔ´Ï´Ù.' ¶ó´Â ³»¿ëÀÌ ³ªÅ¸³­´Ù°í ÇÑ´Ù.
- ÀÌ¿¡ ÇÊ¿ä·Î ÇÏ´Â Å×ÀÌºí°ú Å×ÀÌºí ±¸Á¶¸¦ ¸¸µå¼¼¿ä.
+ ê³¼ì œ2. (homework 2)
+ loginì¸ í•˜ëŠ” í™”ë©´ì„ ë§Œë“¤ê³  idì™€ passwordë¥¼ ì²´í¬í•˜ê³ , ë‹¤ìŒí™”ë©´ì—ì„œ 'id@@@ë‹˜ í™˜ì˜í•©ë‹ˆë‹¤. ë‚¨ì€ pointëŠ” @@@ì…ë‹ˆë‹¤.' ë¼ëŠ” ë‚´ìš©ì´ ë‚˜íƒ€ë‚œë‹¤ê³  í•œë‹¤.
+ ì´ì— í•„ìš”ë¡œ í•˜ëŠ” í…Œì´ë¸”ê³¼ í…Œì´ë¸” êµ¬ì¡°ë¥¼ ë§Œë“œì„¸ìš”.
 */	
 	create table login( id VARCHAR2(20), password VARCHAR2(20), point number(10) );
 	select * from login;

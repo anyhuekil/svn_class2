@@ -1,34 +1,34 @@
-/* °úÁ¦ 
-	 ºÎ¼­À§Ä¡º° »ç¿øÀÇ ¼ö¸¦ ¾Æ·¡ Çü½ÄÀ¸·Î Ãâ·ÂÇÏ¼¼¿ä 
-	 ºÎ¼­À§Ä¡ »ç¿ø ¼ö...
+/* ê³¼ì œ 
+	 ë¶€ì„œìœ„ì¹˜ë³„ ì‚¬ì›ì˜ ìˆ˜ë¥¼ ì•„ë˜ í˜•ì‹ìœ¼ë¡œ ì¶œë ¥í•˜ì„¸ìš” 
+	 ë¶€ì„œìœ„ì¹˜ ì‚¬ì› ìˆ˜...
 	 
 */
  select loc ,count(ename) from emp, dept  
   group by loc ;
   
-  /* ¼÷Á¦ 
-student10 ¾ÆÀÌµğ , ÀÌ¸§ 
+  /* ìˆ™ì œ 
+student10 ì•„ì´ë”” , ì´ë¦„ 
 create table student10( id varchar2(10) premary key, ename char(6))
 
-studentPoint ¾ÆÀÌµğ ,°ú¸ñ, Á¡¼ö 
+studentPoint ì•„ì´ë”” ,ê³¼ëª©, ì ìˆ˜ 
 create table studentPoint( id varchar2(10) premary key,subject varchar(10),point number(10))
 
-gradeCheck ÃÖÀúÁ¡¼ölopoing, ÃÖ°íÁ¡¼öhipoint, ÇĞÁ¡µî±Ş(A~F)
+gradeCheck ìµœì €ì ìˆ˜lopoing, ìµœê³ ì ìˆ˜hipoint, í•™ì ë“±ê¸‰(A~F)
 
 create table gradeCheck ( lopoing number(10), hipoint (10), grade char (3))
 
-1) ¾ÆÀÌµğ¸¦ Á¶ÀÎÇØ¼­ (equal join)
-	ÀÌ¸§ °ú¸ñ Á¡¼ö Ãâ·Â
+1) ì•„ì´ë””ë¥¼ ì¡°ì¸í•´ì„œ (equal join)
+	ì´ë¦„ ê³¼ëª© ì ìˆ˜ ì¶œë ¥
 	select ename, subject , point from student10 ,studentPoint
 	where student10.id = studentPoint.id;
 	
-2) Á¡¼ö¸¦ Á¶ÀÎÇØ¼­(not equal join)
-	°ú¸ñ Á¡¼ö ÇĞÁ¡µî±Ş
+2) ì ìˆ˜ë¥¼ ì¡°ì¸í•´ì„œ(not equal join)
+	ê³¼ëª© ì ìˆ˜ í•™ì ë“±ê¸‰
 select 	a.subject, a.point, b.grade from studentPoint a ,gradeCheck b 
 where a.point between b.lopoing and b.hipoint
 
-3) student10 studentPoint gradeCheck Á¶ÀÎÀ» ÇÏ¿© 
-ÀÌ¸§, °ú¸ñ , ÇĞÁ¡µî±Ş
+3) student10 studentPoint gradeCheck ì¡°ì¸ì„ í•˜ì—¬ 
+ì´ë¦„, ê³¼ëª© , í•™ì ë“±ê¸‰
 
 select 	a.ename, b.subject, c.grade from student10 a,studentPoint b ,gradeCheck c
 where b.point between c.lopoing and c.hipoint
@@ -38,29 +38,29 @@ where b.point between c.lopoing and c.hipoint
 
 
 
---student10 ¾ÆÀÌµğ , ÀÌ¸§ 
+--student10 ì•„ì´ë”” , ì´ë¦„ 
 create table student10( id varchar2(20) primary key not null , ename varchar2(20) not null);
 
-insert into student10 ( id,ename) values ('aaa','È«±æ');
-insert into student10 ( id,ename)values ('bbb','½Å±æ');
-insert into student10  ( id,ename)values ('ccc','¹é±æ');
-insert into student10  ( id,ename)values ('ddd','È«±æµ¿');
-insert into student10  ( id,ename)values ('eee','¹é±æµ¿');
+insert into student10 ( id,ename) values ('aaa','í™ê¸¸');
+insert into student10 ( id,ename)values ('bbb','ì‹ ê¸¸');
+insert into student10  ( id,ename)values ('ccc','ë°±ê¸¸');
+insert into student10  ( id,ename)values ('ddd','í™ê¸¸ë™');
+insert into student10  ( id,ename)values ('eee','ë°±ê¸¸ë™');
 alter table student10 modify ( ename varchar2(20));
 select * from student10;
---studentPoint ¾ÆÀÌµğ ,°ú¸ñ, Á¡¼ö 
+--studentPoint ì•„ì´ë”” ,ê³¼ëª©, ì ìˆ˜ 
 create table studentPoint( id varchar2(10) primary key not null REFERENCES student10(id),
 subject varchar(10),point number(10));
 
-insert into studentPoint (id, subject,point) values('aaa','°úÇĞ','90');
-insert into studentPoint (id, subject,point) values('bbb','°úÇĞ','90');
-insert into studentPoint (id, subject,point) values('ccc','°úÇĞ','90');
-insert into studentPoint (id, subject,point) values('ddd','°úÇĞ','90');
-insert into studentPoint (id, subject,point) values('eee','°úÇĞ','90');
+insert into studentPoint (id, subject,point) values('aaa','ê³¼í•™','90');
+insert into studentPoint (id, subject,point) values('bbb','ê³¼í•™','90');
+insert into studentPoint (id, subject,point) values('ccc','ê³¼í•™','90');
+insert into studentPoint (id, subject,point) values('ddd','ê³¼í•™','90');
+insert into studentPoint (id, subject,point) values('eee','ê³¼í•™','90');
 select * from studentPoint;
 
 update  studentPoint  set point ='0' where id ='eee';
---gradeCheck ÃÖÀúÁ¡¼ölopoing, ÃÖ°íÁ¡¼öhipoint, ÇĞÁ¡µî±Ş(A~F)
+--gradeCheck ìµœì €ì ìˆ˜lopoing, ìµœê³ ì ìˆ˜hipoint, í•™ì ë“±ê¸‰(A~F)
 --0,5,6,7,8,9
 create table gradeCheck ( lopoing number(10), hipoint number(10),
  grade varchar2(3) check(grade in('A','B','C','D','E','F')));
@@ -73,18 +73,18 @@ insert into gradeCheck (lopoing, hipoint,grade) values(60,69,'D');
 insert into gradeCheck (lopoing, hipoint,grade) values(50,59,'E');
 insert into gradeCheck (lopoing, hipoint,grade) values(0,49,'F');
 
---1) ¾ÆÀÌµğ¸¦ Á¶ÀÎÇØ¼­ (equal join)
---	ÀÌ¸§ °ú¸ñ Á¡¼ö Ãâ·Â
+--1) ì•„ì´ë””ë¥¼ ì¡°ì¸í•´ì„œ (equal join)
+--	ì´ë¦„ ê³¼ëª© ì ìˆ˜ ì¶œë ¥
 	select ename, subject , point from student10 ,studentPoint
 	where student10.id = studentPoint.id;
 	
---2) Á¡¼ö¸¦ Á¶ÀÎÇØ¼­(not equal join)
---	°ú¸ñ Á¡¼ö ÇĞÁ¡µî±Ş
+--2) ì ìˆ˜ë¥¼ ì¡°ì¸í•´ì„œ(not equal join)
+--	ê³¼ëª© ì ìˆ˜ í•™ì ë“±ê¸‰
 select 	a.subject, a.point, b.grade from studentPoint a ,gradeCheck b 
 where a.point between b.lopoing and b.hipoint;
 
---3) student10 studentPoint gradeCheck Á¶ÀÎÀ» ÇÏ¿© 
---ÀÌ¸§, °ú¸ñ , ÇĞÁ¡µî±Ş
+--3) student10 studentPoint gradeCheck ì¡°ì¸ì„ í•˜ì—¬ 
+--ì´ë¦„, ê³¼ëª© , í•™ì ë“±ê¸‰
 
 select 	a.ename, b.subject, c.grade from student10 a,studentPoint b ,gradeCheck c
 where b.point between c.lopoing and c.hipoint
@@ -93,10 +93,10 @@ where b.point between c.lopoing and c.hipoint
  
  
  /*
-¼÷Á¦) outer join, group  À» È°¿ëÇÏ¿©  
-	ºÎ¼­¸íº°  ÀÎ¿øÀ» È®ÀÎÇÒ·Á°í ÇÑ´Ù.
-	¾Æ·¡ÀÇ Çü½ÄÀ¸·Î Ãâ·ÂÇÏ¼¼¿ä ÀÎ¿øÀÌ ¾ø´Â °÷Àº 0À¸·Î Ç¥½Ã
-	ºÎ¼­¸í ÀÎ¿ø
+ìˆ™ì œ) outer join, group  ì„ í™œìš©í•˜ì—¬  
+	ë¶€ì„œëª…ë³„  ì¸ì›ì„ í™•ì¸í• ë ¤ê³  í•œë‹¤.
+	ì•„ë˜ì˜ í˜•ì‹ìœ¼ë¡œ ì¶œë ¥í•˜ì„¸ìš” ì¸ì›ì´ ì—†ëŠ” ê³³ì€ 0ìœ¼ë¡œ í‘œì‹œ
+	ë¶€ì„œëª… ì¸ì›
 */
 select b.deptno, b.dname , count(a.ename) from emp a , dept b
 where a.deptno(+) = b.deptno group by b.dname,b.deptno;

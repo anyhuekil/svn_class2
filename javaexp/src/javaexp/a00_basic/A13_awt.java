@@ -3,7 +3,7 @@ package javaexp.a00_basic;
 import java.awt.*;
 
 class ShowJava{
-	// ÀÚ¹Ù¿¡¼­ È­¸éÃ³¸®..
+	// ìë°”ì—ì„œ í™”ë©´ì²˜ë¦¬..
 	Frame frame;
 	Button btnWest;
 	Button btnEast;
@@ -12,15 +12,15 @@ class ShowJava{
 	Button btnCenter;
 	
 	ShowJava(){
-		frame = new Frame("ÀÚ¹Ùµµ È­¸éÀ»!!");
-		btnWest = new Button("¼­ÂÊ¹öÆ°");
-		btnEast = new Button("µ¿ÂÊ¹öÆ°");
-		btnNorth = new Button("ºÏÂÊ¹öÆ°");
-		btnSouth = new Button("³²ÂÊ¹öÆ°");
-		btnCenter = new Button("Áß¾Ó¹öÆ°");
+		frame = new Frame("ìë°”ë„ í™”ë©´ì„!!");
+		btnWest = new Button("ì„œìª½ë²„íŠ¼");
+		btnEast = new Button("ë™ìª½ë²„íŠ¼");
+		btnNorth = new Button("ë¶ìª½ë²„íŠ¼");
+		btnSouth = new Button("ë‚¨ìª½ë²„íŠ¼");
+		btnCenter = new Button("ì¤‘ì•™ë²„íŠ¼");
 	}
 	void launchFrame(){
-		// frame¿¡ ¼­ÂÊ¿¡..
+		// frameì— ì„œìª½ì—..
 		frame.add(btnWest,"West");
 		frame.add(btnEast,"East");
 		frame.add(btnNorth,"North");

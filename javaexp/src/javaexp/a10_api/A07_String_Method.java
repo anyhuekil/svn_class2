@@ -9,60 +9,60 @@ public class A07_String_Method {
 		// TODO Auto-generated method stub
 		String greet="himan! good day1!";
 		System.out.println("charAt(index):"+greet.charAt(3));
-		// greet.getBytes(): ¹®ÀÚ¿­À» ´ÜÀ§ byte[]·Î º¯È¯
+		// greet.getBytes(): ë¬¸ìì—´ì„ ë‹¨ìœ„ byte[]ë¡œ ë³€í™˜
 		for(byte bt:greet.getBytes()){
 			System.out.println(bt+":"+(char)bt);
 		}
 		try {
 			for(byte bt:greet.getBytes("MS949")){
-				// ÇÑ±ÛÀº 2byteÀÌ»ó..±úÁü..
+				// í•œê¸€ì€ 2byteì´ìƒ..ê¹¨ì§..
 				System.out.println(bt+":"+(char)bt);
 			}
 		} catch (UnsupportedEncodingException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}	
-		// .indexOf("Ã£´Â ¹®ÀÚ¿­")
-		System.out.println("indexOf(Áñ°Å¿î):"+greet.indexOf("Áñ°Å¿î"));
-		// .length() :¹®ÀÚ¿­ÀÇ ±æÀÌ
+		// .indexOf("ì°¾ëŠ” ë¬¸ìì—´")
+		System.out.println("indexOf(ì¦ê±°ìš´):"+greet.indexOf("ì¦ê±°ìš´"));
+		// .length() :ë¬¸ìì—´ì˜ ê¸¸ì´
 		System.out.println("length():"+greet.length());
-		// .replace : json ==> º¯°æ½Ã, \,  +, ' '
-		System.out.println("replace():"+greet.replace("Áñ°Å¿î", "Çàº¹ÇÑ"));
-		// .substring() ==> Æ¯Á¤¹®ÀÚ¿­ ÃßÃâ..
+		// .replace : json ==> ë³€ê²½ì‹œ, \,  +, ' '
+		System.out.println("replace():"+greet.replace("ì¦ê±°ìš´", "í–‰ë³µí•œ"));
+		// .substring() ==> íŠ¹ì •ë¬¸ìì—´ ì¶”ì¶œ..
 		System.out.println("substring():"+greet.substring(3, 5));
 
-		// split("±¸ºĞÀÚ") ¹®ÀÚ¿­À» ÇØ´ç±¸ºĞÀÚ·Î ±¸ºĞÇØ¼­ ¹è¿­À» list ³ªÅ¸³¾¶§..
-		String data="È«±æµ¿&±è±æµ¿&½Å±æµ¿&¸¶±æµ¿";
+		// split("êµ¬ë¶„ì") ë¬¸ìì—´ì„ í•´ë‹¹êµ¬ë¶„ìë¡œ êµ¬ë¶„í•´ì„œ ë°°ì—´ì„ list ë‚˜íƒ€ë‚¼ë•Œ..
+		String data="í™ê¸¸ë™&ê¹€ê¸¸ë™&ì‹ ê¸¸ë™&ë§ˆê¸¸ë™";
 		String names[]=data.split("&");
 		for(String name:names){
 			System.out.println(name);
 		}
-		// StringTokenizer(¹®ÀÚ¿­,±¸ºĞÀÚ)
-		StringTokenizer st = new StringTokenizer("»ç°ú/¹Ù³ª³ª/µş±â","/");
-		// countTokens() :±¸ºĞÀÚ¸¦ ÅëÇØ¼­ ³ªÅ¸³­ µ¥ÀÌÅÍ °Ç¼ö
+		// StringTokenizer(ë¬¸ìì—´,êµ¬ë¶„ì)
+		StringTokenizer st = new StringTokenizer("ì‚¬ê³¼/ë°”ë‚˜ë‚˜/ë”¸ê¸°","/");
+		// countTokens() :êµ¬ë¶„ìë¥¼ í†µí•´ì„œ ë‚˜íƒ€ë‚œ ë°ì´í„° ê±´ìˆ˜
 		int totCnt =st.countTokens(); 
-			// nextToken()¿¡ ÀÇÇØ countTokens()º¯°æ
-		// nextToken() : ±¸ºĞÀÚ¸¦ ÅëÇØ ³ªÅ¸³­ °¢ µ¥ÀÌÅÍ
+			// nextToken()ì— ì˜í•´ countTokens()ë³€ê²½
+		// nextToken() : êµ¬ë¶„ìë¥¼ í†µí•´ ë‚˜íƒ€ë‚œ ê° ë°ì´í„°
 		String data01="";
 		for(int cnt=1;cnt<=totCnt;cnt++){
 			data01=st.nextToken();
 			System.out.println(cnt+". "+data01);
 		}
-//		StringBuffer, StringBuilder Å¬·¡½º
-	//		ÀÚ¹Ù¿¡¼­ ÀúÀåÇÏ´Â StringÀº ³»ºÎÀûÀ¸·Î ¹®ÀÚ¿­À» ¼öÁ¤ÇÒ ¾ø´Ù.
-	//		String data="»ç°ú";
-	//		data+=",¹Ù³ª³ª";  ¸Ş¸ğ¸® »õ·Î¿î °´Ã¼ »ı¼º.....
-	//		String¹®ÀÚ¿­À» loop¾Æ´Ï, +·Î ¾²¸é ¸Ş¸ğ¸®¿¡ ¹®Á¦°¡ ¹ß»ı..
-	//		È¿°úÀûÀ¸·Î µ¿Àû ¹®ÀÚ¿­À» Ã³¸®ÇÒ È°¿ëµÈ´Ù.
-//		¾²·¹µå¿¡ µ¿±âÈ­ Àû¿ë ¿©ºÎ¿¡ µû¶ó StringBufferÈ°¿ë
-//		StringBuilder ´ÜÀÏ ½º·¹µå È¯°æ¿¡¸¸ »ç¿ëµÇµµ·Ï ¼³°è
-//		append("Ãß°¡¹®ÀÚ¿­");
-//		toString() : ÇöÀç Ãß°¡µÈ ¹®ÀÚ¿­À» Ã³¸®..
+//		StringBuffer, StringBuilder í´ë˜ìŠ¤
+	//		ìë°”ì—ì„œ ì €ì¥í•˜ëŠ” Stringì€ ë‚´ë¶€ì ìœ¼ë¡œ ë¬¸ìì—´ì„ ìˆ˜ì •í•  ì—†ë‹¤.
+	//		String data="ì‚¬ê³¼";
+	//		data+=",ë°”ë‚˜ë‚˜";  ë©”ëª¨ë¦¬ ìƒˆë¡œìš´ ê°ì²´ ìƒì„±.....
+	//		Stringë¬¸ìì—´ì„ loopì•„ë‹ˆ, +ë¡œ ì“°ë©´ ë©”ëª¨ë¦¬ì— ë¬¸ì œê°€ ë°œìƒ..
+	//		íš¨ê³¼ì ìœ¼ë¡œ ë™ì  ë¬¸ìì—´ì„ ì²˜ë¦¬í•  í™œìš©ëœë‹¤.
+//		ì“°ë ˆë“œì— ë™ê¸°í™” ì ìš© ì—¬ë¶€ì— ë”°ë¼ StringBufferí™œìš©
+//		StringBuilder ë‹¨ì¼ ìŠ¤ë ˆë“œ í™˜ê²½ì—ë§Œ ì‚¬ìš©ë˜ë„ë¡ ì„¤ê³„
+//		append("ì¶”ê°€ë¬¸ìì—´");
+//		toString() : í˜„ì¬ ì¶”ê°€ëœ ë¬¸ìì—´ì„ ì²˜ë¦¬..
 		StringBuffer sbf = new StringBuffer();
 		for(int cnt=0;cnt<10;cnt++){
-			sbf.append("¿¬ÈŞÀü³¯~~");
+			sbf.append("ì—°íœ´ì „ë‚ ~~");
 		}
-		System.out.println("ÇöÀç ¹®ÀÚ¿­:"+sbf.toString());
+		System.out.println("í˜„ì¬ ë¬¸ìì—´:"+sbf.toString());
 		
 		
 		

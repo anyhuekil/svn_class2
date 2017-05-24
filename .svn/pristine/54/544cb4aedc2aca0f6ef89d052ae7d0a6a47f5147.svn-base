@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+/*
+
+*/
+
+/**/
+</style>
+<script src="http://code.jquery.com/jquery-1.10.2.js">
+</script>
+<script type="text/javascript">
+$(document).ready(function(){
+	$("button").click(function(){
+		// class로 접근 방법  .클래스명
+		$(".page").toggle("show");
+		// toggle(속도) : 보였다가 보이지 않는 처리,
+	}); // 버튼 클릭했을 때,처리할 함수.
+});
+</script>
+</head>
+<body><center>
+	<button>토클링 처리..</button>
+	<div class="page">
+		<h1>즐거운 점심시간 되었는지요?</h1>
+		<p>이제 잠과의 싸움이 1시간 정도 시작 되었습니다.wake up!!</p>
+	</div>
+
+</body>
+</html>

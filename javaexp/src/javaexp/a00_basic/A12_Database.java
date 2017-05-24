@@ -1,33 +1,33 @@
 package javaexp.a00_basic;
 
-import java.sql.*; // java.sql package ÇÏÀ§¿¡ ÀÖ´Â ³»¿ëÀº ¸ğµÎ ¾²°Ú½À´Ï´Ù.
+import java.sql.*; // java.sql package í•˜ìœ„ì— ìˆëŠ” ë‚´ìš©ì€ ëª¨ë‘ ì“°ê² ìŠµë‹ˆë‹¤.
 
 public class A12_Database {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-/*	DB¿Í javaÀÇ ¸¸³²¿¡ ÇÊ¿äÇÑ ¿ä¼Òµé..
- * 1) ¿¬°áÇÏ´Â ´Ù¸®!!  
- * 		- ¸Ş¸ğ¸® (driver) jdbc
- *      - Class.forName("µå¶óÀÌ¹ö")
- * 2) ´ë»ó DB server°´Ã¼ ¿¬°á
- * 		- ip, port, sid, °èÁ¤, ºñ¹Ğ¹øÈ£.
- *      - Connection °´Ã¼..
+/*	DBì™€ javaì˜ ë§Œë‚¨ì— í•„ìš”í•œ ìš”ì†Œë“¤..
+ * 1) ì—°ê²°í•˜ëŠ” ë‹¤ë¦¬!!  
+ * 		- ë©”ëª¨ë¦¬ (driver) jdbc
+ *      - Class.forName("ë“œë¼ì´ë²„")
+ * 2) ëŒ€ìƒ DB serverê°ì²´ ì—°ê²°
+ * 		- ip, port, sid, ê³„ì •, ë¹„ë°€ë²ˆí˜¸.
+ *      - Connection ê°ì²´..
  *      - DriverManager.getConnection("ip","id","password")
- * 3) sqlÀ» ½ÇÇà..server¿¡ Àü´Ş..
- * 		- ¿¬°á°´Ã¼.createStatement()
- *      - StatementÀÇ executeQuery("select * from emp");
- * 4) select ÀÏ °æ¿ì, °á°ú°ªÀ» ¹Ş¾Æ¾ß..
- *      - ResultSet À¸·Î StatementÀÇ executeQuery("select * from emp");
- *      - ¹ŞÀº..
+ * 3) sqlì„ ì‹¤í–‰..serverì— ì „ë‹¬..
+ * 		- ì—°ê²°ê°ì²´.createStatement()
+ *      - Statementì˜ executeQuery("select * from emp");
+ * 4) select ì¼ ê²½ìš°, ê²°ê³¼ê°’ì„ ë°›ì•„ì•¼..
+ *      - ResultSet ìœ¼ë¡œ Statementì˜ executeQuery("select * from emp");
+ *      - ë°›ì€..
  *      - while(rs.next())  
- *      		rs.getString("ÄÃ·³¸í") 
+ *      		rs.getString("ì»¬ëŸ¼ëª…") 
  * */
-		// ¿¬°á..
+		// ì—°ê²°..
 		Connection con=null;
-		// ´ëÈ­..
+		// ëŒ€í™”..
 		Statement stmt=null;
-		// ´ëÈ­·Î ³ª´« °á°ú°ª..select * from emp
+		// ëŒ€í™”ë¡œ ë‚˜ëˆˆ ê²°ê³¼ê°’..select * from emp
 		ResultSet rs = null;
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
@@ -37,14 +37,14 @@ public class A12_Database {
 			// id : scott 
 			// pass : tiger
 			// jdbc:oracle:thin:@localhost:1521:xe
-			//  driver Á¾·ù @ ip:port:sid
+			//  driver ì¢…ë¥˜ @ ip:port:sid
 			String url ="jdbc:oracle:thin:@localhost:1521:xe";
 //			String url ="jdbc:oracle:thin:@localhost:1521:orcl";
 			con = DriverManager.getConnection(url, "scott", "tiger");
 			stmt = con.createStatement();
 			String sql = "SELECT * FROM EMP ";
 			rs = stmt.executeQuery(sql);
-			// µ¥ÀÌÅÍ°¡ ÀÖÀ» ¶§±îÁö,,,
+			// ë°ì´í„°ê°€ ìˆì„ ë•Œê¹Œì§€,,,
 			while( rs.next()){
 				System.out.println(rs.getInt("empno")+"\t"
 								+rs.getString("ename"));
@@ -67,7 +67,7 @@ public class A12_Database {
 			}
 
 		}
-		System.out.println("¿¬°á¼º°ø!!!");
+		System.out.println("ì—°ê²°ì„±ê³µ!!!");
 	}
 
 }

@@ -9,25 +9,25 @@ public class A07_mapCol {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-//		Map ÄÃ·º¼Ç »ı¼º <key, value>
-//		ÀÏ¹İÀûÀ» key, value´Â ´ÙÀ½°ú °°Àº typeÀ¸·Î ¼³Á¤ÇÑ´Ù.
-//		key : ¹®ÀÚ¿­
-//		value : °´Ã¼
+//		Map ì»¬ë ‰ì…˜ ìƒì„± <key, value>
+//		ì¼ë°˜ì ì„ key, valueëŠ” ë‹¤ìŒê³¼ ê°™ì€ typeìœ¼ë¡œ ì„¤ì •í•œë‹¤.
+//		key : ë¬¸ìì—´
+//		value : ê°ì²´
 		HashMap<String, Integer> map = new HashMap<String, Integer>();
-//		map.put( key, value) °´Ã¼ ÀúÀå
-		String name="È«±æµ¿";
+//		map.put( key, value) ê°ì²´ ì €ì¥
+		String name="í™ê¸¸ë™";
 		Integer num=70;
-		map.put("È«±æµ¿", 70);
-		map.put("½Å±æµ¿", 80);
-		map.put("È«±æµ¿", 90); // µ¿ÀÏÇÑ key°ªÀº ¸¶Áö¸· valueÀÌ ÇÒ´çµÈ´Ù.
-		map.put("¸¶¿µ¼ö", 100);
-		System.out.println("ÇöÀç map  entryÀÇ °¹¼ö:"+map.size());
-//		Æ¯Á¤ÇÑ key·Î °ª°¡Á®¿À±â.. get(key)
-		System.out.println("È«±æµ¿keyÀÇ °ª °¡Á®¿À±â:"+map.get("È«±æµ¿"));
-//		ÀüÃ¼ µ¥ÀÌÅÍ °¡Á®¿À±â..
-//		1. keyÀ» ÅëÇØ¼­ Ã³¸®ÇÏ±â.. keyset() : ÀüÃ¼ key°ªÀ» SetÇüÅÂ·Î °¡Á®¿À±â
+		map.put("í™ê¸¸ë™", 70);
+		map.put("ì‹ ê¸¸ë™", 80);
+		map.put("í™ê¸¸ë™", 90); // ë™ì¼í•œ keyê°’ì€ ë§ˆì§€ë§‰ valueì´ í• ë‹¹ëœë‹¤.
+		map.put("ë§ˆì˜ìˆ˜", 100);
+		System.out.println("í˜„ì¬ map  entryì˜ ê°¯ìˆ˜:"+map.size());
+//		íŠ¹ì •í•œ keyë¡œ ê°’ê°€ì ¸ì˜¤ê¸°.. get(key)
+		System.out.println("í™ê¸¸ë™keyì˜ ê°’ ê°€ì ¸ì˜¤ê¸°:"+map.get("í™ê¸¸ë™"));
+//		ì „ì²´ ë°ì´í„° ê°€ì ¸ì˜¤ê¸°..
+//		1. keyì„ í†µí•´ì„œ ì²˜ë¦¬í•˜ê¸°.. keyset() : ì „ì²´ keyê°’ì„ Setí˜•íƒœë¡œ ê°€ì ¸ì˜¤ê¸°
 		Set<String> keyset = map.keySet();
-//		SetÀº iterator¸¦ ÅëÇØ¼­ µ¥ÀÌÅÍ¸¦ °¡Á®¿Â´Ù.
+//		Setì€ iteratorë¥¼ í†µí•´ì„œ ë°ì´í„°ë¥¼ ê°€ì ¸ì˜¨ë‹¤.
 		Iterator<String> iter = keyset.iterator();
 		String key="";
 		Integer value=0;
@@ -36,30 +36,30 @@ public class A07_mapCol {
 			value=map.get(key);
 			System.out.println(key+":"+value);
 		}
-//		remove(key) °´Ã¼ »èÁ¦
-		map.remove("È«±æµ¿");
-		System.out.println("ÇöÀç map  entryÀÇ °¹¼ö:"+map.size());
-//		2. Map.EntryÀ» ÅëÇØ key,value¸¦ µ¿½Ã¿¡ °¡Á®¿Í¼­ Ã³¸®..
-//		entrySet() : SetÇüÅÂÀÇ Map.Entry °¡Á®¿Å.
+//		remove(key) ê°ì²´ ì‚­ì œ
+		map.remove("í™ê¸¸ë™");
+		System.out.println("í˜„ì¬ map  entryì˜ ê°¯ìˆ˜:"+map.size());
+//		2. Map.Entryì„ í†µí•´ key,valueë¥¼ ë™ì‹œì— ê°€ì ¸ì™€ì„œ ì²˜ë¦¬..
+//		entrySet() : Setí˜•íƒœì˜ Map.Entry ê°€ì ¸ì˜®.
 		Set< Map.Entry<String, Integer>  > entrySet=map.entrySet();
-//		SetÇüÅÂÀÌ±â¿¡ iteratorÅëÇØ¼­ µ¥ÀÌÅÍ Ã³¸®°¡ °¡´É
+//		Setí˜•íƒœì´ê¸°ì— iteratorí†µí•´ì„œ ë°ì´í„° ì²˜ë¦¬ê°€ ê°€ëŠ¥
 		Iterator< Map.Entry<String, Integer> > entryIter=entrySet.iterator();
 		
-		// hasNext() ¹İº¹Ã³¸®.. next()  °ª°¡Á®¿À±â..
-		// getKey() :  key°¡Á®¿À±â.. getValue() : value °¡Á®¿À±â
+		// hasNext() ë°˜ë³µì²˜ë¦¬.. next()  ê°’ê°€ì ¸ì˜¤ê¸°..
+		// getKey() :  keyê°€ì ¸ì˜¤ê¸°.. getValue() : value ê°€ì ¸ì˜¤ê¸°
 		Map.Entry<String, Integer> entry=null;
 		String inkey="";
 		Integer invalue=0;
 		System.out.println("==== Map.Entry ====");
 		while(entryIter.hasNext()){
-			entry=entryIter.next(); // ´ÜÀ§°´Ã¼¸¦ °¡Á®¿Å
-			inkey=entry.getKey();// key ÇÒ´ç
-			invalue=entry.getValue();//value ÇÒ´ç
+			entry=entryIter.next(); // ë‹¨ìœ„ê°ì²´ë¥¼ ê°€ì ¸ì˜®
+			inkey=entry.getKey();// key í• ë‹¹
+			invalue=entry.getValue();//value í• ë‹¹
 			System.out.println(inkey+":"+invalue);		
 		}
-		// clear() Æ÷ÇÔµÈ map °´Ã¼ »èÁ¦ Ã³¸®
+		// clear() í¬í•¨ëœ map ê°ì²´ ì‚­ì œ ì²˜ë¦¬
 		map.clear();
-		System.out.println("»èÁ¦ ÈÄ, ÇöÀç map  entryÀÇ °¹¼ö:"+map.size());
+		System.out.println("ì‚­ì œ í›„, í˜„ì¬ map  entryì˜ ê°¯ìˆ˜:"+map.size());
 	}
 
 }

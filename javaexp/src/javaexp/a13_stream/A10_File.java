@@ -7,17 +7,17 @@ public class A10_File {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-//		File°´Ã¼ »ı¼º
-//		1) ÆÄÀÏ»ı¼º:»ı¼ºÀÚ¿¡ °æ·Î¸í°ú ÆÄÀÏ¸í ÀÔ·Â
+//		Fileê°ì²´ ìƒì„±
+//		1) íŒŒì¼ìƒì„±:ìƒì„±ìì— ê²½ë¡œëª…ê³¼ íŒŒì¼ëª… ì…ë ¥
 		String dir="C:/a01_prog/eclipse/workspace_server/javaexp/src/javaexp/a13_stream/test/";
 		String fileName="a03_file.txt";
 		
 		File file01 = new File(dir+fileName);
-//		ÆÄÀÏÀÌ Á¸ÀçÇÏ´ÂÁö ¿©ºÎ check : .exists()
-		System.out.println("ÆÄÀÏ Á¸Àç¿©ºÎ:"+file01.exists());
+//		íŒŒì¼ì´ ì¡´ì¬í•˜ëŠ”ì§€ ì—¬ë¶€ check : .exists()
+		System.out.println("íŒŒì¼ ì¡´ì¬ì—¬ë¶€:"+file01.exists());
 		if(!file01.exists()){
-			// ÆÄÀÏ »ı¼º ¸Ş¼­µå : .createNewFile()
-			// »õ·Î¿î ÆÄÀÏ »ı¼º(IO) ¿¹¿ÜÃ³¸®
+			// íŒŒì¼ ìƒì„± ë©”ì„œë“œ : .createNewFile()
+			// ìƒˆë¡œìš´ íŒŒì¼ ìƒì„±(IO) ì˜ˆì™¸ì²˜ë¦¬
 			try {
 				file01.createNewFile();
 			} catch (IOException e) {
@@ -25,32 +25,32 @@ public class A10_File {
 				e.printStackTrace();
 			}
 		}
-//		2) µğ·ºÅä¸®»ı¼º:»ı¼ºÀÚ¿¡ °æ·Î¸í ÀÔ·Â
+//		2) ë””ë ‰í† ë¦¬ìƒì„±:ìƒì„±ìì— ê²½ë¡œëª… ì…ë ¥
 		File dir01 = new File(dir);
-//		list() : µğ·ºÅä¸®ÀÎ °æ¿ì¿¡ Æ÷ÇÔµÈ ÆÄÀÏÀÇ ÀÌ¸§À»
-//		¹®ÀÚ¿­ ¹è¿­·Î °¡Á®¿Å.
+//		list() : ë””ë ‰í† ë¦¬ì¸ ê²½ìš°ì— í¬í•¨ëœ íŒŒì¼ì˜ ì´ë¦„ì„
+//		ë¬¸ìì—´ ë°°ì—´ë¡œ ê°€ì ¸ì˜®.
 		String []list = dir01.list();
-		System.out.println("ÆÄÀÏ ¸®½ºÆ®!!");
+		System.out.println("íŒŒì¼ ë¦¬ìŠ¤íŠ¸!!");
 		for(String fname:list){
-			// Æ÷ÇÔµÈ ÆÄÀÏÀÇ ÀÌ¸§
+			// í¬í•¨ëœ íŒŒì¼ì˜ ì´ë¦„
 			System.out.println(fname);
 		}
 		String dir2="C:/a01_prog/eclipse/workspace_server/javaexp/src/javaexp/a13_stream/";
 		File dir02 = new File(dir2);
-//		listFiles() : µğ·ºÅä¸® ³» ÆÄÀÏ °´Ã¼..
+//		listFiles() : ë””ë ‰í† ë¦¬ ë‚´ íŒŒì¼ ê°ì²´..
 		File[] files = dir02.listFiles();
-		System.out.println("ÀÌ¸§\tÅ©±â\tÅ¸ÀÔ");
+		System.out.println("ì´ë¦„\tí¬ê¸°\tíƒ€ì…");
 		for(File file:files){
-			// getName() : ÆÄÀÏ ÀÌ¸§
+			// getName() : íŒŒì¼ ì´ë¦„
 			System.out.print(file.getName()+"\t");
-			// length() : ÆÄÀÏÀÇ Å©±â
+			// length() : íŒŒì¼ì˜ í¬ê¸°
 			System.out.print(file.length()+"\t");
-			// ÆÄÀÏÀÇ ÇüÅÂ(dir/file)
-			// isDirectory() : µğ·ºÅä¸® ¿©ºÎ
+			// íŒŒì¼ì˜ í˜•íƒœ(dir/file)
+			// isDirectory() : ë””ë ‰í† ë¦¬ ì—¬ë¶€
 			if(file.isDirectory()){
-				System.out.print("µğ·ºÅä¸®\n");
+				System.out.print("ë””ë ‰í† ë¦¬\n");
 			}else{
-				System.out.print("ÆÄÀÏ\n");
+				System.out.print("íŒŒì¼\n");
 			}
 		}
 		

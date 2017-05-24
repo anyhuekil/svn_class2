@@ -1,19 +1,19 @@
 package javaexp.a00_basic;
 
-//¾²·¹µå Ã³¸®
-// class Å¬·¡½º extends Thread{}
+//ì“°ë ˆë“œ ì²˜ë¦¬
+// class í´ë˜ìŠ¤ extends Thread{}
 class Come extends Thread{
-	// ¾²·¹µå Ã³¸®ÇÏ´Â run()À» ÀçÁ¤ÀÇ!!
+	// ì“°ë ˆë“œ ì²˜ë¦¬í•˜ëŠ” run()ì„ ì¬ì •ì˜!!
 	public void run(){
 		for(int cnt=0;cnt<1000;cnt++){
-			System.out.println("ÀÌ¸® ¿À½Ã¿À!!!");
+			System.out.println("ì´ë¦¬ ì˜¤ì‹œì˜¤!!!");
 		}
 	}
 }
 class Go extends Thread{
 	public void run(){
 		for(int cnt=0;cnt<1000;cnt++){
-			System.out.println("Àú¸®  °¡½Ã¿À! ´çÀå ³ª°¡½Ã¿À!!!!");
+			System.out.println("ì €ë¦¬  ê°€ì‹œì˜¤! ë‹¹ì¥ ë‚˜ê°€ì‹œì˜¤!!!!");
 		}
 	}
 }
@@ -24,7 +24,7 @@ class Bank extends Thread{
 	}
 	public void run(){
 		for(int cnt=1;cnt<1000;cnt++){
-			System.out.println(account+"´Ô "+cnt+"¹ø ÀıÂ÷¸¦ ÁøÇàÇÕ´Ï´Ù!!");
+			System.out.println(account+"ë‹˜ "+cnt+"ë²ˆ ì ˆì°¨ë¥¼ ì§„í–‰í•©ë‹ˆë‹¤!!");
 		}
 	}
 }
@@ -34,27 +34,27 @@ public class A11_Thread {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		Bank b1 = new Bank("È«±æµ¿");
-		Bank b2 = new Bank("±è±æµ¿");
-		Bank b3 = new Bank("½Å±æµ¿");
+		Bank b1 = new Bank("í™ê¸¸ë™");
+		Bank b2 = new Bank("ê¹€ê¸¸ë™");
+		Bank b3 = new Bank("ì‹ ê¸¸ë™");
 		b1.start();
 		b2.start();
 		b3.start();
 		/*
 		Go g = new Go();
 		Come c = new Come();
-		// Thread °´Ã¼ÀÇ run´Â start()·Î È£ÃâµÈ´Ù.
+		// Thread ê°ì²´ì˜ runëŠ” start()ë¡œ í˜¸ì¶œëœë‹¤.
 		g.start();
 		c.start();
 		*/
 /*
-ÇÏ³ªÀÇ ÇÁ·Î¼¼½º³»¿¡¼­ ¿©·¯ ÇÁ·Î±×·¥À» È¿°úÀûÀ¸·Î Ã³¸®ÇÒ ¶§°¡,
-ÇÁ·Î±×·¥¿¡¼­´Â ¸¹ÀÌ ¹ß»ıÇÑ´Ù.
-ÀÌ°ÍÀ» Thread¶ó°í ÇÏ´Âµ¥, º¸Åë Server vs ClientÇÁ·Î±×·¥ÀÌ³ª,
-µ¿½ÃÀûÀ¸·Î ¸¹Àº ³»¿ëÀ» Ã³¸®ÇØ¾ß ÇÏ´Â ÇÁ·Î±×·¥, ³×Æ®¿öÅ©ÇÁ·Î±×·¥¿¡¼­
-È°¿ëµÇ°í ÀÖ´Ù.
-¼øÂ÷È®º¸°¡ Á¤È®ÇÏ°Ô µÇÁö´Â ¾ÊÀ¸³ª, time slicing ¹æ½ÄÀ¸·Î ºü¸£°í
-È¿°úÀûÀ¸·Î Ã³¸®ÇÒ ¶§ ÇÊ¿äÇÑ ÇÁ·Î±×·¥ÀÌ´Ù.
+í•˜ë‚˜ì˜ í”„ë¡œì„¸ìŠ¤ë‚´ì—ì„œ ì—¬ëŸ¬ í”„ë¡œê·¸ë¨ì„ íš¨ê³¼ì ìœ¼ë¡œ ì²˜ë¦¬í•  ë•Œê°€,
+í”„ë¡œê·¸ë¨ì—ì„œëŠ” ë§ì´ ë°œìƒí•œë‹¤.
+ì´ê²ƒì„ Threadë¼ê³  í•˜ëŠ”ë°, ë³´í†µ Server vs Clientí”„ë¡œê·¸ë¨ì´ë‚˜,
+ë™ì‹œì ìœ¼ë¡œ ë§ì€ ë‚´ìš©ì„ ì²˜ë¦¬í•´ì•¼ í•˜ëŠ” í”„ë¡œê·¸ë¨, ë„¤íŠ¸ì›Œí¬í”„ë¡œê·¸ë¨ì—ì„œ
+í™œìš©ë˜ê³  ìˆë‹¤.
+ìˆœì°¨í™•ë³´ê°€ ì •í™•í•˜ê²Œ ë˜ì§€ëŠ” ì•Šìœ¼ë‚˜, time slicing ë°©ì‹ìœ¼ë¡œ ë¹ ë¥´ê³ 
+íš¨ê³¼ì ìœ¼ë¡œ ì²˜ë¦¬í•  ë•Œ í•„ìš”í•œ í”„ë¡œê·¸ë¨ì´ë‹¤.
  * */
 	}
 

@@ -1,15 +1,15 @@
 package javaexp.a07_inheritance;
 class Parent{
 	void getInfo(){
-		System.out.println("ºÎ¸ğ Å¬·¡½º[°øÅë¸Ş¼­µå]");
+		System.out.println("ë¶€ëª¨ í´ë˜ìŠ¤[ê³µí†µë©”ì„œë“œ]");
 	}
 }
 class Child extends Parent{
 	void getInfo(){
-		System.out.println("ºÎ¸ğ Å¬·¡½º [¸Ş¼­µå ÀçÁ¤ÀÇ]");
+		System.out.println("ë¶€ëª¨ í´ë˜ìŠ¤ [ë©”ì„œë“œ ì¬ì •ì˜]");
 	}
 	void childInfo(){
-		System.out.println("ÀÚ½Ä Å¬·¡½º[Ãß°¡¸Ş¼­µå]");
+		System.out.println("ìì‹ í´ë˜ìŠ¤[ì¶”ê°€ë©”ì„œë“œ]");
 	}
 }
 class Child2{
@@ -19,20 +19,20 @@ public class A09_TypeCasting {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		Parent p1 = new Child();  // ´ÙÇü¼º Ã³¸®..
-		p1.getInfo();// »óÀ§¿¡ ÀÖ´Â ¸Ş¼­µå ÀçÁ¤ÀÇ´Â ÇÏÀ§¿¡¼­ ÀçÁ¤ÀÇ µÈ ³»¿ëÀ¸·Î
-		             //È°¿ëÀÌ °¡´É
-//		p1.childInfo(); // ´ÙÇü¼ºÀº ÇÏÀ§¿¡¼­ Ãß°¡µÇ´Â ¸Ş¼­µå´Â
-//		                          Ã³¸®ÇÏÁö ¸ø ÇÑ´Ù.
-		Child c1 = (Child)p1; // ÇÏÀ§¿¡ Ãß°¡µÇ´Â ¸â¹ö¸¦ Ã³¸®ÇÏ°í ÇÒ ¶§,
+		Parent p1 = new Child();  // ë‹¤í˜•ì„± ì²˜ë¦¬..
+		p1.getInfo();// ìƒìœ„ì— ìˆëŠ” ë©”ì„œë“œ ì¬ì •ì˜ëŠ” í•˜ìœ„ì—ì„œ ì¬ì •ì˜ ëœ ë‚´ìš©ìœ¼ë¡œ
+		             //í™œìš©ì´ ê°€ëŠ¥
+//		p1.childInfo(); // ë‹¤í˜•ì„±ì€ í•˜ìœ„ì—ì„œ ì¶”ê°€ë˜ëŠ” ë©”ì„œë“œëŠ”
+//		                          ì²˜ë¦¬í•˜ì§€ ëª» í•œë‹¤.
+		Child c1 = (Child)p1; // í•˜ìœ„ì— ì¶”ê°€ë˜ëŠ” ë©¤ë²„ë¥¼ ì²˜ë¦¬í•˜ê³  í•  ë•Œ,
 		c1.childInfo();    
-		// 1. ÂüÁ¶°ü°è ÀÖ´Â °´Ã¼ ¿©ºÎ
+		// 1. ì°¸ì¡°ê´€ê³„ ìˆëŠ” ê°ì²´ ì—¬ë¶€
 		Parent p2 = new Parent();
 		Child2 c2 = new Child2();
-		System.out.println("p2´Â ParentÀÇ °´Ã¼º¯¼öÀÎÁö?"+(p2 instanceof Parent));
-		// 2. »ó¼Ó°ü°è¿¡ ÀÖ´Â »óÀ§ /ÇÏÀ§ °´Ã¼¸¦ È®ÀÎÇÏ´Â ¹æ¹ı
-		// Parent p1 = new Child()¿Í °°ÀÌ ´ÙÇü¼ºÀÌ ÀÏ¾î³ª¸é p1Àº ChildÀÇ ÂüÁ¶ÇÑ´Ù.
-		System.out.println("p1Àº ChildÀÇ °´Ã¼º¯¼öÀÎÁö?"+(p1 instanceof Child));
+		System.out.println("p2ëŠ” Parentì˜ ê°ì²´ë³€ìˆ˜ì¸ì§€?"+(p2 instanceof Parent));
+		// 2. ìƒì†ê´€ê³„ì— ìˆëŠ” ìƒìœ„ /í•˜ìœ„ ê°ì²´ë¥¼ í™•ì¸í•˜ëŠ” ë°©ë²•
+		// Parent p1 = new Child()ì™€ ê°™ì´ ë‹¤í˜•ì„±ì´ ì¼ì–´ë‚˜ë©´ p1ì€ Childì˜ ì°¸ì¡°í•œë‹¤.
+		System.out.println("p1ì€ Childì˜ ê°ì²´ë³€ìˆ˜ì¸ì§€?"+(p1 instanceof Child));
 		// c2
 	}
 

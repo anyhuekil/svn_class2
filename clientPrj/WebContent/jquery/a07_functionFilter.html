@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+/*
+
+*/
+
+/**/
+</style>
+<script src="http://code.jquery.com/jquery-1.10.2.js">
+</script>
+<script type="text/javascript">
+$(document).ready(function(){
+	var dte = new Date();
+	// dte.getDate() : 오늘 날짜를 return
+	// dte.getDay() : 0,1,2,3,4,5,6  일요일[0]
+	// dte.getDate()-dte.getDay() : 이번주 첫 일요일..
+	// dte.setDate( dte.getDate()-dte.getDay() )
+	//
+	$("td:nth-child(3n)").html("오사원");
+	$("td:nth-child(3n+1)").html("김대리");
+	$("td:nth-child(3n+2)").html("오과장");	
+	var today = dte.getDate();
+	dte.setDate( dte.getDate()-dte.getDay() );
+	var date = dte.getDate();
+	$("td").attr("align","center");
+	for(var idx=0;idx<7;idx++){
+		if(today==date){
+			$("td").eq(idx).attr("bgcolor","yellow");
+		}
+		var data01=$("td").eq(idx).html();
+		$("td").eq(idx).html((date++)+"<br><br><br>"+data01);
+	}
+
+
+	
+});
+</script>
+</head>
+<body>
+	<h1 align="center">This very Week!!!</h1>
+	<table align="center" width="500" height="200" border>
+		<tr height="30%"><th>일</th><th>월</th><th>화</th><th>수</th>
+			<th>목</th><th>금</th><th>토</th></tr>
+		<tr><td></td><td></td><td></td><td></td>
+		    <td></td><td></td><td></td></tr>		
+	</table>
+
+</body>
+</html>

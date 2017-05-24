@@ -1,17 +1,17 @@
 package javaexp.a06_object;
 
-// PersonÀÌ °°Àº package¾È¿¡ ¼±¾ğµÇ¾î ÀÖ±â¿¡.
+// Personì´ ê°™ì€ packageì•ˆì— ì„ ì–¸ë˜ì–´ ìˆê¸°ì—.
 class Person77{
 	int money;
-	// static¸â¹ö´Â static type ÇÊµå¸í; ¼±¾ğ
+	// staticë©¤ë²„ëŠ” static type í•„ë“œëª…; ì„ ì–¸
 	static int comm_money;
 	String name;
 	Person77(String name){
 		this.name=name;
 	}
 	void currentMoney(){
-		System.out.println(name+"´ÔÀÇ ÀÚ»ê:"+money);
-		System.out.println("°ø¿ë ÀÚ»ê:"+comm_money);
+		System.out.println(name+"ë‹˜ì˜ ìì‚°:"+money);
+		System.out.println("ê³µìš© ìì‚°:"+comm_money);
 	}
 	
 }
@@ -20,14 +20,14 @@ public class A11_StaticMember {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		Person77 p1 = new Person77("È«±æµ¿");
-		Person77 p2 = new Person77("½Å±æµ¿");
-		Person77 p3 = new Person77("±è±æµ¿");
+		Person77 p1 = new Person77("í™ê¸¸ë™");
+		Person77 p2 = new Person77("ì‹ ê¸¸ë™");
+		Person77 p3 = new Person77("ê¹€ê¸¸ë™");
 		p1.money+=1000;
 		p1.money+=1000;
-		// comm_money´Â staticÀÌ±â¿¡ ÂüÁ¶º¯¼ö·Î
-		// ¾²ÀÌ´Â °ÍÀÌ ÀÇ¹Ì°¡ ¾ø±â¿¡
-		// Å¬·¡¸í.static¸â¹ö·Î È°¿ëÀÌ µÈ´Ù.
+		// comm_moneyëŠ” staticì´ê¸°ì— ì°¸ì¡°ë³€ìˆ˜ë¡œ
+		// ì“°ì´ëŠ” ê²ƒì´ ì˜ë¯¸ê°€ ì—†ê¸°ì—
+		// í´ë˜ëª….staticë©¤ë²„ë¡œ í™œìš©ì´ ëœë‹¤.
 		Person77.comm_money+=1000; 
 		p1.comm_money+=1000;		
 		p2.money+=1000;
@@ -38,8 +38,8 @@ public class A11_StaticMember {
 		p3.money+=1000;
 		p3.comm_money+=1000;
 		p3.comm_money+=1000;
-		// static º¯¼ö´Â °´Ã¼ »ı¼º»ó°ü¾øÀÌ µ¶¸³ÀûÀ¸·Î
-		// È°¿ëµÇ´Â Á¤Àû ¸â¹öÀÌ´Ù.
+		// static ë³€ìˆ˜ëŠ” ê°ì²´ ìƒì„±ìƒê´€ì—†ì´ ë…ë¦½ì ìœ¼ë¡œ
+		// í™œìš©ë˜ëŠ” ì •ì  ë©¤ë²„ì´ë‹¤.
 		p1.currentMoney();
 		p2.currentMoney();
 		p3.currentMoney();

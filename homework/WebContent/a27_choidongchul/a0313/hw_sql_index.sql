@@ -1,36 +1,36 @@
 /*
-	¼÷Á¦1.
-	¿¬ºÀ´ÜÀ§º°·Î ÀÎ¿ø¼ö¸¦ Ã¼Å©ÇÏ¼¼¿ä
+	ìˆ™ì œ1.
+	ì—°ë´‰ë‹¨ìœ„ë³„ë¡œ ì¸ì›ìˆ˜ë¥¼ ì²´í¬í•˜ì„¸ìš”
 	
-	¹üÀ§			»ç¿ø¼ö(ÃÖ°íÄ¡,ÃÖÀúÄ¡,Æò±ÕÄ¡)
-	1000¹Ì¸¸		@@
-	2000¹Ì¸¸		@@		
-	3000¹Ì¸¸		@@
-	4000¹Ì¸¸		@@
-	5000¹Ì¸¸		@@
-	6000¹Ì¸¸		@@
+	ë²”ìœ„			ì‚¬ì›ìˆ˜(ìµœê³ ì¹˜,ìµœì €ì¹˜,í‰ê· ì¹˜)
+	1000ë¯¸ë§Œ		@@
+	2000ë¯¸ë§Œ		@@		
+	3000ë¯¸ë§Œ		@@
+	4000ë¯¸ë§Œ		@@
+	5000ë¯¸ë§Œ		@@
+	6000ë¯¸ë§Œ		@@
 */
-	select ((floor(sal/1000)+1)*1000)||'¹Ì¸¸' "¹üÀ§", count(*) "»ç¿ø¼ö", max(sal) "(ÃÖ°íÄ¡", min(sal) "ÃÖÀúÄ¡", avg(sal) "Æò±ÕÄ¡)" from emp group by ((floor(sal/1000)+1)*1000);
+	select ((floor(sal/1000)+1)*1000)||'ë¯¸ë§Œ' "ë²”ìœ„", count(*) "ì‚¬ì›ìˆ˜", max(sal) "(ìµœê³ ì¹˜", min(sal) "ìµœì €ì¹˜", avg(sal) "í‰ê· ì¹˜)" from emp group by ((floor(sal/1000)+1)*1000);
 	
 /*
-	¼÷Á¦2. ºÎ¼­À§Ä¡º° »ç¿øÀÇ ¼ö¸¦ ¾Æ·¡ Çü½ÄÀ¸·Î Ãâ·ÂÇÏ¼¼¿ä
-	ºÎ¼­À§Ä¡ »ç¿ø¼ö
+	ìˆ™ì œ2. ë¶€ì„œìœ„ì¹˜ë³„ ì‚¬ì›ì˜ ìˆ˜ë¥¼ ì•„ë˜ í˜•ì‹ìœ¼ë¡œ ì¶œë ¥í•˜ì„¸ìš”
+	ë¶€ì„œìœ„ì¹˜ ì‚¬ì›ìˆ˜
 */
-	select d.loc "ºÎ¼­À§Ä¡", count(*) "»ç¿ø¼ö" from emp e, dept d where e.deptno=d.DEPTNO group by d.loc;
+	select d.loc "ë¶€ì„œìœ„ì¹˜", count(*) "ì‚¬ì›ìˆ˜" from emp e, dept d where e.deptno=d.DEPTNO group by d.loc;
 
 	/*
-	¼÷Á¦3.
+	ìˆ™ì œ3.
 	(table)
-	student10 ¾ÆÀÌµğ, ÀÌ¸§
-	studentPoint ¾ÆÀÌµğ, °ú¸ñ, Á¡¼ö
-	gradeCheck ÃÖÀúÁ¡¼ölopoint, ÃÖ°íÁ¡¼ö hipoint, ÇĞÁ¡µî±Ş(A~F)
+	student10 ì•„ì´ë””, ì´ë¦„
+	studentPoint ì•„ì´ë””, ê³¼ëª©, ì ìˆ˜
+	gradeCheck ìµœì €ì ìˆ˜lopoint, ìµœê³ ì ìˆ˜ hipoint, í•™ì ë“±ê¸‰(A~F)
 	(output)
-	1) ¾ÆÀÌµğ¸¦ Á¶ÀÎÇØ¼­ (equal join)
-		ÀÌ¸§ °ú¸ñ Á¡¼ö Ãâ·Â
-	2) Á¡¼ö¸¦ Á¶ÀÎÇØ¼­(not equal join)
-		°ú¸ñ Á¡¼ö ÇĞÁ¡µî±Ş
-	3) student10 studentPoint gradeCheck Á¶ÀÎÀ» ÇÏ¿©
-		ÀÌ¸§ °ú¸ñ ÇĞÁ¡µî±Ş
+	1) ì•„ì´ë””ë¥¼ ì¡°ì¸í•´ì„œ (equal join)
+		ì´ë¦„ ê³¼ëª© ì ìˆ˜ ì¶œë ¥
+	2) ì ìˆ˜ë¥¼ ì¡°ì¸í•´ì„œ(not equal join)
+		ê³¼ëª© ì ìˆ˜ í•™ì ë“±ê¸‰
+	3) student10 studentPoint gradeCheck ì¡°ì¸ì„ í•˜ì—¬
+		ì´ë¦„ ê³¼ëª© í•™ì ë“±ê¸‰
 	*/
 	create table student10(
 		id VARCHAR2(10),
@@ -58,12 +58,12 @@
 	insert into gradecheck values(60,69,'D');
 	insert into gradecheck values(0,59,'F');
 	/*
-	1) ¾ÆÀÌµğ¸¦ Á¶ÀÎÇØ¼­ (equal join)
-		ÀÌ¸§ °ú¸ñ Á¡¼ö Ãâ·Â
-	2) Á¡¼ö¸¦ Á¶ÀÎÇØ¼­(not equal join)
-		°ú¸ñ Á¡¼ö ÇĞÁ¡µî±Ş
-	3) student10 studentPoint gradeCheck Á¶ÀÎÀ» ÇÏ¿©
-		ÀÌ¸§ °ú¸ñ Á¡¼ö ÇĞÁ¡µî±Ş
+	1) ì•„ì´ë””ë¥¼ ì¡°ì¸í•´ì„œ (equal join)
+		ì´ë¦„ ê³¼ëª© ì ìˆ˜ ì¶œë ¥
+	2) ì ìˆ˜ë¥¼ ì¡°ì¸í•´ì„œ(not equal join)
+		ê³¼ëª© ì ìˆ˜ í•™ì ë“±ê¸‰
+	3) student10 studentPoint gradeCheck ì¡°ì¸ì„ í•˜ì—¬
+		ì´ë¦„ ê³¼ëª© ì ìˆ˜ í•™ì ë“±ê¸‰
 	*/
 	select a.NAME, b.SUBJECT, b.score from student10 a, studentpoint b where a.id=b.id;
 	select b.SUBJECT, b.SCORE, c.GRADE from studentpoint b, gradecheck c where b.SCORE between c.LOPOINT and c.HIPOINT;
@@ -71,10 +71,10 @@
 	from student10 a, studentpoint b, gradecheck c where a.id=b.id and b.SCORE between c.LOPOINT and c.HIPOINT;
 
 /*
-		¼÷Á¦4.
-		outer join, groupÀ» È°¿ëÇÏ¿©
-		ºÎ¼­¸íº° ÀÎ¿øÀ» È®ÀÎÇÒ·Á°í ÇÑ´Ù
-		¾Æ·¡ÀÇ Çü½ÄÀ¸·Î Ãâ·ÂÇÏ¼¼¿ä ÀÎ¿øÀÌ ¾ø´Â °÷Àº 0À¸·Î Ç¥½Ã
-		ºÎ¼­¸í ÀÎ¿ø
+		ìˆ™ì œ4.
+		outer join, groupì„ í™œìš©í•˜ì—¬
+		ë¶€ì„œëª…ë³„ ì¸ì›ì„ í™•ì¸í• ë ¤ê³  í•œë‹¤
+		ì•„ë˜ì˜ í˜•ì‹ìœ¼ë¡œ ì¶œë ¥í•˜ì„¸ìš” ì¸ì›ì´ ì—†ëŠ” ê³³ì€ 0ìœ¼ë¡œ í‘œì‹œ
+		ë¶€ì„œëª… ì¸ì›
 */
-	select d.dname "ºÎ¼­¸í", count(e.ENAME) "ÀÎ¿ø" from emp e, dept d where d.DEPTNO=e.DEPTNO(+) group by d.dname;
+	select d.dname "ë¶€ì„œëª…", count(e.ENAME) "ì¸ì›" from emp e, dept d where d.DEPTNO=e.DEPTNO(+) group by d.dname;

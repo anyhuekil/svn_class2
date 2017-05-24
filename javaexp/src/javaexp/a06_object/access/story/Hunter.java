@@ -4,14 +4,14 @@ import javaexp.a06_object.access.story.friendship.WoodCutter;
 
 public class Hunter {
 	void askWhereDeer(){
-		WoodCutter w; // public ¼±¾ğ°¡´É
-		w= new WoodCutter(); // »ı¼ºÀÚ Á¢±Ùµµ °¡´É.
+		WoodCutter w; // public ì„ ì–¸ê°€ëŠ¥
+		w= new WoodCutter(); // ìƒì„±ì ì ‘ê·¼ë„ ê°€ëŠ¥.
 //		System.out.println(w.cacheDeer);
-		// cacheDeerÀÇ ÇÊµåÀÇ Á¢±Ù¹üÀ§°¡ default ÀÌ±â¿¡.
-		//cacheClotheÀÇ ÇÊµåÀÇ Á¢±Ù¹üÀ§°¡ privateÀÌ±â¿¡
+		// cacheDeerì˜ í•„ë“œì˜ ì ‘ê·¼ë²”ìœ„ê°€ default ì´ê¸°ì—.
+		//cacheClotheì˜ í•„ë“œì˜ ì ‘ê·¼ë²”ìœ„ê°€ privateì´ê¸°ì—
 //		System.out.println(w.cacheClothe);
-		// publicÀº ¹üÀ§°¡ °¡Àå ³ĞÀº °ÍÀ¸·Î ¿ÜºÎ ÆĞÅ°ÁöÀÇ
-		// Å¬·¡½ºµµ import¸¸ ÇÏ¸é »ç¿ë °¡´ÉÇÏ´Ù.
+		// publicì€ ë²”ìœ„ê°€ ê°€ì¥ ë„“ì€ ê²ƒìœ¼ë¡œ ì™¸ë¶€ íŒ¨í‚¤ì§€ì˜
+		// í´ë˜ìŠ¤ë„ importë§Œ í•˜ë©´ ì‚¬ìš© ê°€ëŠ¥í•˜ë‹¤.
 		System.out.println(w.weddingAnnounce);
 	}
 }

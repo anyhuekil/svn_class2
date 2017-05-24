@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus짰">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+  <script type="text/javascript">
+  <!--
+/*
+    for臾몄뿉??諛곗뿴???쒖슜
+    諛곗뿴??湲몄씠瑜??섑??대뒗 諛곗뿴.length??for臾몄쓽 ?쒓퀎移섎?
+    ?ㅼ젙?댁＜湲곗뿉 for臾몄쓣 諛곗뿴 ?곗씠?곕? ?④낵?곸쑝濡?泥섎━?댁???
+    for(var idx=0;idx<諛곗뿴.length;idx++)
+    var idx=0; // index??珥덇린移섎? ?ㅼ젙..
+    idx<諛곗뿴.length // index??諛곗뿴???ш린-1 ?닿린??(<)湲고샇瑜?
+    ?댁슜?댁꽌 ?쒓퀎移섎? ?ㅼ젙?????덈떎..
+ */   
+//   prompt李쎌쓣 ?듯빐???먯떖?앹궗 硫붾돱3媛쒕? ?낅젰諛쏄퀬,
+//    ?대? 諛곗뿴???좊떦???꾩뿉 異쒕젰?섎룄濡??섏꽭??.
+//    1. ?붾㈃ 泥섎━ ?댁슜?뺤씤..
+//        alert?댁슜?댁꽌 ?먯떖?앹궗??硫붾돱3媛吏瑜??낅젰?섏꽭??!
+//        prompt 1踰덉㎏ 硫붾돱?낅젰,
+//        prompt 2踰덉㎏ 硫붾돱?낅젰,
+//        prompt 3踰덉㎏ 硫붾돱?낅젰,
+        alert("?먯떖?앹궗 ??硫붾돱 3媛吏瑜?n ?낅젰?섏꽭??!");
+//    2. 諛곗뿴 ?곗씠???낅젰
+//        var lunchMenu=[];
+//        for臾몄쓣 ?듯빐???낅젰泥섎━..
+        var lunchMenu=[];
+        for(var idx=0; idx < 3 ; idx++ ){
+            // 1踰덉㎏ 硫붾돱?낅젰
+            lunchMenu[ idx ] = prompt( (idx+1)+"踰덉㎏ 硫붾돱 ?낅젰?섏꽭??","吏쒖옣硫?);
+        }
+//    3. 諛곗뿴 ?곗씠??異쒕젰..
+//        alert?듯빐???좏깮??硫붾돱3媛쒕뒗  
+//            @@@@, @@@, @@@ ?낅땲??
+        var show="\t ?좏깮???먯떖 Big3 硫붾돱\n";
+        for( var idx=0;idx<lunchMenu.length;idx++){
+            show +=(idx+1) +")"+lunchMenu[ idx ]+"\n";
+        }
+        alert( show );
+
+  //-->
+  </script>
+ </head>
+ <body>
+  
+ </body>
+</html>

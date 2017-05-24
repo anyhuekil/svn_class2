@@ -7,22 +7,22 @@ public class A06_SetCol {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-// SetÀº Áßº¹À» Çã¿ëÇÏÁö ¾Ê°í, ¼ø¼­È®º¸ÇÏÁö ¸ø ÇÑ´Ù.
-//		HashSetÀº SetÀÎÅÍÆäÀÌ½ºÀÇ ´ëÇ¥ÀûÀÎ ½ÇÁ¦ Å¬·¡½º
+// Setì€ ì¤‘ë³µì„ í—ˆìš©í•˜ì§€ ì•Šê³ , ìˆœì„œí™•ë³´í•˜ì§€ ëª» í•œë‹¤.
+//		HashSetì€ Setì¸í„°í˜ì´ìŠ¤ì˜ ëŒ€í‘œì ì¸ ì‹¤ì œ í´ë˜ìŠ¤
 		HashSet<String> set = new HashSet<String>();
-		// add ÅëÇØ¼­ setÁÖ¸Ó´Ï¿¡ µ¿Àü, ÁöÆó »ğÀÔ.
-		set.add("100¿ø");
-		set.add("100¿ø");
-		set.add("500¿ø");
-		set.add("500¿ø");
-		set.add("1000¿ø");
-		System.out.println("ÃÑ ÁÖ¸Ó´Ï¿¡ ÀÖ´Â °´Ã¼ ¼ö:"+set.size());
-//		SetÀº Iterator¸¦ ÅëÇØ¼­ °¡Á®¿Ã ¼ö ÀÖ´Ù.
-//		iterator() ¸Ş¼­µå È°¿ë..
+		// add í†µí•´ì„œ setì£¼ë¨¸ë‹ˆì— ë™ì „, ì§€í ì‚½ì….
+		set.add("100ì›");
+		set.add("100ì›");
+		set.add("500ì›");
+		set.add("500ì›");
+		set.add("1000ì›");
+		System.out.println("ì´ ì£¼ë¨¸ë‹ˆì— ìˆëŠ” ê°ì²´ ìˆ˜:"+set.size());
+//		Setì€ Iteratorë¥¼ í†µí•´ì„œ ê°€ì ¸ì˜¬ ìˆ˜ ìˆë‹¤.
+//		iterator() ë©”ì„œë“œ í™œìš©..
 		Iterator<String> iter=set.iterator();
 		String elem="";
-		while(iter.hasNext()){ // °´Ã¼ ¼ö¸¸Å­ loop
-			elem=iter.next(); //  ´ÜÀ§ °´Ã¼¸¦ °¡Á®¿Å
+		while(iter.hasNext()){ // ê°ì²´ ìˆ˜ë§Œí¼ loop
+			elem=iter.next(); //  ë‹¨ìœ„ ê°ì²´ë¥¼ ê°€ì ¸ì˜®
 			System.out.println(elem);
 		}
 

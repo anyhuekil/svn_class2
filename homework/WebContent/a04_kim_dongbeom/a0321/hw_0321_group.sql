@@ -1,18 +1,18 @@
 /*
-	°úÁ¦ 1.
-	¿¬ºÀ´ÜÀ§º°·Î ÀÎ¿ø¼ö¸¦ check
-	1000 ¹Ì¸¸		»ç¿ø¼ö(ÃÖ°íÄ¡ ÃÖÀúÄ¡ Æò±ÕÄ¡)
-	~ 2000 ¹Ì¸¸		»ç¿ø¼ö(ÃÖ°íÄ¡ ÃÖÀúÄ¡ Æò±ÕÄ¡)
-	~ 3000 ¹Ì¸¸		»ç¿ø¼ö(ÃÖ°íÄ¡ ÃÖÀúÄ¡ Æò±ÕÄ¡)
-	~ 4000 ¹Ì¸¸		»ç¿ø¼ö(ÃÖ°íÄ¡ ÃÖÀúÄ¡ Æò±ÕÄ¡)
-	~ 5000 ¹Ì¸¸		»ç¿ø¼ö(ÃÖ°íÄ¡ ÃÖÀúÄ¡ Æò±ÕÄ¡)
-	5000 ~			»ç¿ø¼ö(ÃÖ°íÄ¡ ÃÖÀúÄ¡ Æò±ÕÄ¡)
+	ê³¼ì œ 1.
+	ì—°ë´‰ë‹¨ìœ„ë³„ë¡œ ì¸ì›ìˆ˜ë¥¼ check
+	1000 ë¯¸ë§Œ		ì‚¬ì›ìˆ˜(ìµœê³ ì¹˜ ìµœì €ì¹˜ í‰ê· ì¹˜)
+	~ 2000 ë¯¸ë§Œ		ì‚¬ì›ìˆ˜(ìµœê³ ì¹˜ ìµœì €ì¹˜ í‰ê· ì¹˜)
+	~ 3000 ë¯¸ë§Œ		ì‚¬ì›ìˆ˜(ìµœê³ ì¹˜ ìµœì €ì¹˜ í‰ê· ì¹˜)
+	~ 4000 ë¯¸ë§Œ		ì‚¬ì›ìˆ˜(ìµœê³ ì¹˜ ìµœì €ì¹˜ í‰ê· ì¹˜)
+	~ 5000 ë¯¸ë§Œ		ì‚¬ì›ìˆ˜(ìµœê³ ì¹˜ ìµœì €ì¹˜ í‰ê· ì¹˜)
+	5000 ~			ì‚¬ì›ìˆ˜(ìµœê³ ì¹˜ ìµœì €ì¹˜ í‰ê· ì¹˜)
 	
-	°úÁ¦ 2.
-	ºÎ¼­À§Ä¡º° »ç¿ø ¼ö Ãâ·Â
-	ºÎ¼­À§Ä¡, »ç¿ø¼ö
+	ê³¼ì œ 2.
+	ë¶€ì„œìœ„ì¹˜ë³„ ì‚¬ì› ìˆ˜ ì¶œë ¥
+	ë¶€ì„œìœ„ì¹˜, ì‚¬ì›ìˆ˜
 	
-	°úÁ¦ 3.
+	ê³¼ì œ 3.
 	student10 / id name
 	studentPoint10 / id subject point
 	gradeCheck10 / lopoint hipoint grade
@@ -20,19 +20,19 @@
 	2) point join(non equal join) => subject point grade
 	3) 3 table join => name subject grade
 	
-	°úÁ¦ 4.
-	outer join, groupÀ» È°¿ëÇØ¼­
-	ºÎ¼­¸íº° ÀÎ¿øÀ» È®ÀÎ. ÀÎ¿øÀÌ ¾ø´Â °÷Àº 0Ç¥½Ã
-	ºÎ¼­¸í ÀÎ¿ø¼ö
+	ê³¼ì œ 4.
+	outer join, groupì„ í™œìš©í•´ì„œ
+	ë¶€ì„œëª…ë³„ ì¸ì›ì„ í™•ì¸. ì¸ì›ì´ ì—†ëŠ” ê³³ì€ 0í‘œì‹œ
+	ë¶€ì„œëª… ì¸ì›ìˆ˜
 */
 
--- °úÁ¦ 1.
+-- ê³¼ì œ 1.
 select floor(sal/1000)*1000, count(sal), max(sal), min(sal), avg(sal) from emp group by floor(sal/1000)*1000;
 
--- °úÁ¦ 2.
+-- ê³¼ì œ 2.
 select loc, count(loc) from emp a, dept b where a.deptno=b.DEPTNO group by loc;
 
--- °úÁ¦ 3.
+-- ê³¼ì œ 3.
 create table gradeCheck
 (
 	grade char(1),
@@ -65,7 +65,7 @@ insert into stdnt_point values('stdntG','ENG',100);
 insert into stdnt_point values('stdntH','KOR',78);
 insert into stdnt_point values('stdntI','KOR',89);
 alter table stdnt_point modify(point number(5));
-select * from stdnt_point;								-- ¿©±â±îÁö data ÀÔ·Â!
+select * from stdnt_point;								-- ì—¬ê¸°ê¹Œì§€ data ì…ë ¥!
 -- 3-1
 select m.sname, p.subject from stdnt_main m, stdnt_point p;
 -- 3-2
@@ -74,5 +74,5 @@ select p.subject, p.point, g.grade from stdnt_point p, gradeCheck g where p.poin
 select m.sname, p.SUBJECT, g.grade from stdnt_main m, stdnt_point p, gradeCheck g
 where m.STDNTID = p.STDNTID and p.POINT BETWEEN g.LOPOINT and g.HIPOINT ORDER BY m.SNAME;
 
--- °úÁ¦ 4.
+-- ê³¼ì œ 4.
 select d.dname, count(e.ename) from dept d, emp e where e.DEPTNO(+)=d.DEPTNO group by d.dname;

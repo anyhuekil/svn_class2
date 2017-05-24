@@ -4,14 +4,14 @@ import java.io.Console;
 // javaexp.a13_stream.A08_Console
 public class A08_Console {
 /*
-½ÇÇà ¹æ¹ý
-bin:pathÁöÁ¤, classpth ÁöÁ¤
-c:\temp Æúµå »ý¼º ¹× A08_Console.java copy
-A08_Console.java¿¡ ÆÐÅ°Áö ¼±¾ð(package javaexp.a13_stream;)»èÁ¦
-cmdÃ¢ ·Îµù
-cd .. :»óÀ§ °æ·Î ÀÌµ¿
-cd temp : ÇØ´ç °æ·Î ÀÌµ¿
-c:\temp·Î ÀÌµ¿
+ì‹¤í–‰ ë°©ë²•
+bin:pathì§€ì •, classpth ì§€ì •
+c:\temp í´ë“œ ìƒì„± ë° A08_Console.java copy
+A08_Console.javaì— íŒ¨í‚¤ì§€ ì„ ì–¸(package javaexp.a13_stream;)ì‚­ì œ
+cmdì°½ ë¡œë”©
+cd .. :ìƒìœ„ ê²½ë¡œ ì´ë™
+cd temp : í•´ë‹¹ ê²½ë¡œ ì´ë™
+c:\tempë¡œ ì´ë™
 javac A08_Console.java
 java A08_Console
 
@@ -21,20 +21,20 @@ java A08_Console
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-//		System.console()À» ÅëÇÑ ÄÜ¼Ö°´Ã¼ »ý¼º
+//		System.console()ì„ í†µí•œ ì½˜ì†”ê°ì²´ ìƒì„±
 		Console console = System.console();
-//		¾ÆÀÌµð ÀÔ·Â..
-		System.out.print("¾ÆÀÌµð! ÀÔ·Â:");
-//		enterÅ° ÀÔ·Â Àü¿¡ ¶óÀÎ´ÜÀ§ ¹®ÀÚ¿­ ÀÔ·Â : .readLine()
+//		ì•„ì´ë”” ìž…ë ¥..
+		System.out.print("ì•„ì´ë””! ìž…ë ¥:");
+//		enterí‚¤ ìž…ë ¥ ì „ì— ë¼ì¸ë‹¨ìœ„ ë¬¸ìžì—´ ìž…ë ¥ : .readLine()
 		String id = console.readLine();
-//		ÆÐ½º¿öµå ÀÔ·Â
-		System.out.print("ÆÐ½º¿öµå ÀÔ·Â:");
-//		¶óÀÎ´ÜÀ§ ÆÐ½º¿öµåÇü ¹®ÀÚ¿­ ÀÔ·Â : .readPassword()
-//		returnÇüÀÌ char[]
+//		íŒ¨ìŠ¤ì›Œë“œ ìž…ë ¥
+		System.out.print("íŒ¨ìŠ¤ì›Œë“œ ìž…ë ¥:");
+//		ë¼ì¸ë‹¨ìœ„ íŒ¨ìŠ¤ì›Œë“œí˜• ë¬¸ìžì—´ ìž…ë ¥ : .readPassword()
+//		returní˜•ì´ char[]
 		char[] passChar = console.readPassword();
 //		char[] ==> String  new String(char[])
 		String password = new String(passChar);
-		System.out.println("ÀÔ·ÂÇÑ id¿Í password");
+		System.out.println("ìž…ë ¥í•œ idì™€ password");
 		System.out.println("ID:"+id);
 		System.out.println("PASSWORD:"+password);
 		

@@ -7,9 +7,9 @@ class ShoppingMall{
 	String prodName03;
 	int price01;
 	ShoppingMall(String name){
-		System.out.println("¿Â¶óÀÎ ¼îÇÎ¸ô "+name+"¿¡ ¿À½Å °ÍÀ» È¯¿µÇÕ´Ï´Ù!!");
+		System.out.println("ì˜¨ë¼ì¸ ì‡¼í•‘ëª° "+name+"ì— ì˜¤ì‹  ê²ƒì„ í™˜ì˜í•©ë‹ˆë‹¤!!");
 	}
-	// ¸Å°³ º¯¼ö °¹¼ö°¡ ´Ù¸¥ °Íµµ ¼±¾ð°¡´É.
+	// ë§¤ê°œ ë³€ìˆ˜ ê°¯ìˆ˜ê°€ ë‹¤ë¥¸ ê²ƒë„ ì„ ì–¸ê°€ëŠ¥.
 	void buyProduct(String prodName01){
 		this.prodName01 = prodName01;
 	}
@@ -17,12 +17,12 @@ class ShoppingMall{
 		this.prodName01 = prodName01;
 		this.prodName02 = prodName02;
 	}	
-	// ¸Å°³º¯¼öÀÇ typeÀÌ ´Ù¸£¸é µ¿ÀÏÇÑ ÀÌ¸§ÀÇ ¸Þ¼­µå ¼±¾ð°¡´É.
+	// ë§¤ê°œë³€ìˆ˜ì˜ typeì´ ë‹¤ë¥´ë©´ ë™ì¼í•œ ì´ë¦„ì˜ ë©”ì„œë“œ ì„ ì–¸ê°€ëŠ¥.
 	void buyProduct(int price01){
 		this.price01=price01;
 	}
-	// ¸Å°³º¯¼öÀÇ type°ú ¼ýÀÚ°¡ µ¿ÀÏÇÏ´õ¶óµµ, ´Ù¸¥ typeÀÇ ¸Å°³º¯¼öÀÇ
-	// ¼ø¼­°¡ ´Ù¸£¸é ¼±¾ð°¡´É.
+	// ë§¤ê°œë³€ìˆ˜ì˜ typeê³¼ ìˆ«ìžê°€ ë™ì¼í•˜ë”ë¼ë„, ë‹¤ë¥¸ typeì˜ ë§¤ê°œë³€ìˆ˜ì˜
+	// ìˆœì„œê°€ ë‹¤ë¥´ë©´ ì„ ì–¸ê°€ëŠ¥.
 	void buyProduct(String prodName01, int price01){
 		this.prodName01=prodName01;
 		this.price01 = price01;

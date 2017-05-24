@@ -1,8 +1,8 @@
 /*
-¼÷Á¦ 
-emp03º¹»çÅ×ÀÌºí »ı¼º.
-1. empnoÀÇ °¡Àå ÀÛÀº¼öº¸´Ù -1. mgr: clearkÀÇ mgr(4ÀÚ¸®¼ıÀÚÇü½Ä)ÀÔ·Â, sal: Æò±Õ¿¬ºÀ, comm: ÀüÃ¼ ÇÕ°è.
-2. ¼öÁ¤ ename: '½Å±æµ¿', job = superman, hiredate´Â ÃÖ±ÙÀÔ»çÀÏ+1.
+ìˆ™ì œ 
+emp03ë³µì‚¬í…Œì´ë¸” ìƒì„±.
+1. empnoì˜ ê°€ì¥ ì‘ì€ìˆ˜ë³´ë‹¤ -1. mgr: clearkì˜ mgr(4ìë¦¬ìˆ«ìí˜•ì‹)ì…ë ¥, sal: í‰ê· ì—°ë´‰, comm: ì „ì²´ í•©ê³„.
+2. ìˆ˜ì • ename: 'ì‹ ê¸¸ë™', job = superman, hiredateëŠ” ìµœê·¼ì…ì‚¬ì¼+1.
 
 */
 
@@ -12,16 +12,16 @@ emp03º¹»çÅ×ÀÌºí »ı¼º.
 	select avg(sal) from emp03; -- 2073.21
 	select sum(comm) from emp03; -- 2200
 	
-	insert into emp03(ename, empno, mgr, sal, comm ) values ('½Å±æµ¿', '7368', '3824', '2073.21', '2200' );
-	update emp03 set ename = '½Å±æµ¿', job = 'superman', hiredate= to_date('1983/01/12') +1;
+	insert into emp03(ename, empno, mgr, sal, comm ) values ('ì‹ ê¸¸ë™', '7368', '3824', '2073.21', '2200' );
+	update emp03 set ename = 'ì‹ ê¸¸ë™', job = 'superman', hiredate= to_date('1983/01/12') +1;
 	select * from emp03;
 
 
 
 /*
-	¼÷Á¦: login ÀÎÇÏ´Â È­¸éÀ» ¸¸µé°í id¿Í password¸¦ Ã¼Å©ÇÏ°í, 
-		´ÙÀ½È­¸é¿¡¼­ id@@@´Ô È¯¿µÇÕ´Ï´Ù. ³²Àº point´Â @@@ÀÔ´Ï´Ù. ¶ó´Â ³»¿ëÀÌ ³ªÅ¸³­´Ù°í ÇÑ´Ù.
-		ÀÌ¿¡ÇÊ¿äÇÑ Å×ÀÌºí°ú Å×ÀÌºí±¸Á¶¸¦ ¸¸µé¾î¶ó.
+	ìˆ™ì œ: login ì¸í•˜ëŠ” í™”ë©´ì„ ë§Œë“¤ê³  idì™€ passwordë¥¼ ì²´í¬í•˜ê³ , 
+		ë‹¤ìŒí™”ë©´ì—ì„œ id@@@ë‹˜ í™˜ì˜í•©ë‹ˆë‹¤. ë‚¨ì€ pointëŠ” @@@ì…ë‹ˆë‹¤. ë¼ëŠ” ë‚´ìš©ì´ ë‚˜íƒ€ë‚œë‹¤ê³  í•œë‹¤.
+		ì´ì—í•„ìš”í•œ í…Œì´ë¸”ê³¼ í…Œì´ë¸”êµ¬ì¡°ë¥¼ ë§Œë“¤ì–´ë¼.
 */
 	create table membershipSecurity( 
 		memberNumber number(7,0) primary key, 
@@ -36,12 +36,12 @@ emp03º¹»çÅ×ÀÌºí »ı¼º.
 	);
 
 /*
-¼÷Á¦: 
-	ÂüÁ¶Å° °ü°è¿¡ ÀÖ´Â Å×ÀÌºí ±¸¼ºÇÏ±â
-¸ŞÀÎÅ×ÀÌºí student_main(id, pass, name) : ¾ÆÀÌµğ , ÆĞ½º¿öµå, ÀÌ¸§
-¼­ºêÅ×ÀÌºí student_point(id, subject, point); ¾ÆÀÌµğ, °ú¸ñ, Á¡¼ö.
- student_main°ú student_point id·Î foreignkey °ü°è¸¦ ¼³Á¤ÇÏ°í 
- student_maiun¿¡ µ¥ÀÌÅÍ°¡ ÀÖ¾î¾ß¸¸ student_pointÀÔ·ÂÇÒ¼ö ÀÖ°Ô²û Ã³¸®. 
+ìˆ™ì œ: 
+	ì°¸ì¡°í‚¤ ê´€ê³„ì— ìˆëŠ” í…Œì´ë¸” êµ¬ì„±í•˜ê¸°
+ë©”ì¸í…Œì´ë¸” student_main(id, pass, name) : ì•„ì´ë”” , íŒ¨ìŠ¤ì›Œë“œ, ì´ë¦„
+ì„œë¸Œí…Œì´ë¸” student_point(id, subject, point); ì•„ì´ë””, ê³¼ëª©, ì ìˆ˜.
+ student_mainê³¼ student_point idë¡œ foreignkey ê´€ê³„ë¥¼ ì„¤ì •í•˜ê³  
+ student_maiunì— ë°ì´í„°ê°€ ìˆì–´ì•¼ë§Œ student_pointì…ë ¥í• ìˆ˜ ìˆê²Œë” ì²˜ë¦¬. 
 
 */
 create table student_main(

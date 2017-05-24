@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+/*
+
+*/
+
+/**/
+</style>
+<script src="http://code.jquery.com/jquery-1.10.2.js">
+</script>
+<script type="text/javascript">
+$(document).ready(function(){
+
+});
+var isMale = confirm("남자입니까?");
+// isMale에는 true/false값이 할당 되어 있구나!!
+//alert(isMale);
+if( isMale ){
+	// true일 때,
+	alert(" gentleman 이리로 오십시요!! ");
+}else{
+	// false일 때..
+	alert(" pretty lady 이 쪽입니다!");
+}
+
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,15 +1,15 @@
-/* ¡Ú  ¡Ú  ¡Ú  ¡Ú  ¡Ú  ¡Ú  ¡Ú
-È®ÀÎ¿¹Á¦(11:00½ÇÇà) : STUDENT ¶ó´Â ÇÐ»ý Å×ÀÌºí¿¡ ÄÃ·³À¸·Î ÇÐ¹ø, ÀÌ¸§, ÇÐ°ú¸¦ ¼³Á¤ÇÑ ÈÄ¿¡,
-		Á¦¾àÁ¶°ÇÀ¸·Î ÇÐ¹ø¿¡ UNIQUE¸¦ ¼³Á¤ÇØ¼­ »ý¼ºÇÏ¼¼¿ä.
-		µ¥ÀÌÅÍ ÀÔ·ÂÀ¸·Î ÇØ´ç ³»¿ëÀÌ Ã³¸®µÇ´ÂÁö È®ÀÎ
-		µ¥ÀÌÅÍ µñ¼Ç³Ê¸®¸¦ ÅëÇØ¼­ Á¦¾àÁ¶°ÇÀÌ µî·ÏµÇ¾î ÀÖ´ÂÁö È®ÀÎ
-¡Ú  ¡Ú  ¡Ú  ¡Ú  ¡Ú  ¡Ú  ¡Ú  */
+/* â˜…  â˜…  â˜…  â˜…  â˜…  â˜…  â˜…
+í™•ì¸ì˜ˆì œ(11:00ì‹¤í–‰) : STUDENT ë¼ëŠ” í•™ìƒ í…Œì´ë¸”ì— ì»¬ëŸ¼ìœ¼ë¡œ í•™ë²ˆ, ì´ë¦„, í•™ê³¼ë¥¼ ì„¤ì •í•œ í›„ì—,
+		ì œì•½ì¡°ê±´ìœ¼ë¡œ í•™ë²ˆì— UNIQUEë¥¼ ì„¤ì •í•´ì„œ ìƒì„±í•˜ì„¸ìš”.
+		ë°ì´í„° ìž…ë ¥ìœ¼ë¡œ í•´ë‹¹ ë‚´ìš©ì´ ì²˜ë¦¬ë˜ëŠ”ì§€ í™•ì¸
+		ë°ì´í„° ë”•ì…˜ë„ˆë¦¬ë¥¼ í†µí•´ì„œ ì œì•½ì¡°ê±´ì´ ë“±ë¡ë˜ì–´ ìžˆëŠ”ì§€ í™•ì¸
+â˜…  â˜…  â˜…  â˜…  â˜…  â˜…  â˜…  */
 CREATE TABLE STUDENT (
 	HAKBUN VARCHAR2(10) UNIQUE,
 	NAME VARCHAR2(30) NOT NULL,
 	MAJOR VARCHAR2(30)
 );
-INSERT INTO STUDENT VALUES ('20121212','È«È«È«','ÄÄ°ø');
-INSERT INTO STUDENT VALUES ('20121212','È«È«È«','ÄÄ°ø');
+INSERT INTO STUDENT VALUES ('20121212','í™í™í™','ì»´ê³µ');
+INSERT INTO STUDENT VALUES ('20121212','í™í™í™','ì»´ê³µ');
 SELECT CONSTRAINT_NAME, CONSTRAINT_TYPE, TABLE_NAME
 	FROM USER_CONSTRAINTS WHERE TABLE_NAME='STUDENT';

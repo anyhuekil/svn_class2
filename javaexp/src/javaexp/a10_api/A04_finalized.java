@@ -9,7 +9,7 @@ class Counter{
 	protected void finalize() throws Throwable {
 		// TODO Auto-generated method stub
 		super.finalize();
-		System.out.println(cnt+"¹ø °´Ã¼°¡ ¼Ò¸êÀÚ finalized()°¡ È£ÃâµÊ!");
+		System.out.println(cnt+"ë²ˆ ê°ì²´ê°€ ì†Œë©¸ì finalized()ê°€ í˜¸ì¶œë¨!");
 	}
 	
 }
@@ -19,12 +19,12 @@ public class A04_finalized {
 		// TODO Auto-generated method stub
 		Counter count=null;
 		for(int cnt=1;cnt<=100;cnt++){
-			// »ı¼º
+			// ìƒì„±
 			count = new Counter(cnt);
-			// ¾²·¹±â·Î ¸¸µê
+			// ì“°ë ˆê¸°ë¡œ ë§Œë“¦
 			count = null;
-			// ¾²·¹±â ¼öÁı±â¸¦ ½ÇÇà ¿äÃ»..
-			// °´Ã¼ÀÇ finalize()°¡ È£ÃâµÊ..
+			// ì“°ë ˆê¸° ìˆ˜ì§‘ê¸°ë¥¼ ì‹¤í–‰ ìš”ì²­..
+			// ê°ì²´ì˜ finalize()ê°€ í˜¸ì¶œë¨..
 			System.gc();
 		}
 	}

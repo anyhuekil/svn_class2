@@ -4,33 +4,33 @@ public class A02_switch {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		// switch( º¯¼ö ) : Á¤¼ö, char, ¹®ÀÚ¿­
-		int score = (int)(Math.random()*101);// 0~100 ·£´ı¼ö ¹ß»ı..
-		char ptGrade; // µî±Ş..
-		switch( score/10){ // Á¤¼ö/Á¤¼ö ==> Á¤¼ö, Á¤¼ö/½Ç¼ö ==> ½Ç¼ö, 
-							//  ½Ç¼ö/Á¤¼ö ==> ½Ç¼ö
-			case 10:  // break°¡ ¾øÀ¸¸é ´ÙÀ½ flow·Î Èê·¯°£´Ù.
-				      //  ptGrade = 'A'°¡ Ã³¸® µÊ.
+		// switch( ë³€ìˆ˜ ) : ì •ìˆ˜, char, ë¬¸ìì—´
+		int score = (int)(Math.random()*101);// 0~100 ëœë¤ìˆ˜ ë°œìƒ..
+		char ptGrade; // ë“±ê¸‰..
+		switch( score/10){ // ì •ìˆ˜/ì •ìˆ˜ ==> ì •ìˆ˜, ì •ìˆ˜/ì‹¤ìˆ˜ ==> ì‹¤ìˆ˜, 
+							//  ì‹¤ìˆ˜/ì •ìˆ˜ ==> ì‹¤ìˆ˜
+			case 10:  // breakê°€ ì—†ìœ¼ë©´ ë‹¤ìŒ flowë¡œ í˜ëŸ¬ê°„ë‹¤.
+				      //  ptGrade = 'A'ê°€ ì²˜ë¦¬ ë¨.
 			case 9: ptGrade = 'A'; break;
 			case 8: ptGrade = 'B'; break;
 			case 7: ptGrade = 'C'; break;
 			case 6: ptGrade = 'D'; break;
 			default : ptGrade = 'F';
 		}
-		System.out.println("Á¡¼ö´Â "+ score+", ÇĞÁ¡µî±ŞÀº "+ptGrade);
-		/* ¹®ÀÚ¿­ Ã³¸® switch*/
+		System.out.println("ì ìˆ˜ëŠ” "+ score+", í•™ì ë“±ê¸‰ì€ "+ptGrade);
+		/* ë¬¸ìì—´ ì²˜ë¦¬ switch*/
 //		String [] compos=new String[]{"","",""}; 
-		String [] compos = {"»ç¿ø","´ë¸®","°úÀå","Â÷Àå","ºÎÀå"};
-		// ¹è¿­ÀÇ °æ¿ì¸¸ Ã³¸® µÇ°Ô..
+		String [] compos = {"ì‚¬ì›","ëŒ€ë¦¬","ê³¼ì¥","ì°¨ì¥","ë¶€ì¥"};
+		// ë°°ì—´ì˜ ê²½ìš°ë§Œ ì²˜ë¦¬ ë˜ê²Œ..
 		int ranPosIdx = (int)(Math.random()*compos.length);
 		String chPos = compos[ ranPosIdx ];
-		System.out.println("¼±ÅÃµÈ Á÷À§:"+chPos);
+		System.out.println("ì„ íƒëœ ì§ìœ„:"+chPos);
 		switch(chPos){
-			case "»ç¿ø": System.out.println("200~300"); break;
-			case "´ë¸®": System.out.println("240~350"); break;
-			case "°úÀå": System.out.println("300~650"); break;
-			case "Â÷Àå": System.out.println("400~700"); break;
-			case "ºÎÀå": System.out.println("450~"); break;
+			case "ì‚¬ì›": System.out.println("200~300"); break;
+			case "ëŒ€ë¦¬": System.out.println("240~350"); break;
+			case "ê³¼ì¥": System.out.println("300~650"); break;
+			case "ì°¨ì¥": System.out.println("400~700"); break;
+			case "ë¶€ì¥": System.out.println("450~"); break;
 		}
 		
 		

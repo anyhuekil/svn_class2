@@ -1,33 +1,33 @@
 /*
 3/21 
-°úÁ¦01
-¿¬ºÀ ´ÜÀ§º°·Î ÀÎ¿ø¼ö¸¦ Ã¼Å©ÇÏ¼¼¿ä
-¹üÀ§			»ç¿ø¼ö(ÃÖ°íÄ¡, ÃÖÀúÄ¡, Æò±ÕÄ¡)
-1000¹Ì¸¸		@@
-~2000¹Ì¸¸	@@
-~3000¹Ì¸¸	@@
-~4000¹Ì¸¸	@@@
-~5000¹Ì¸¸
-~6000¹Ì¸¸
+ê³¼ì œ01
+ì—°ë´‰ ë‹¨ìœ„ë³„ë¡œ ì¸ì›ìˆ˜ë¥¼ ì²´í¬í•˜ì„¸ìš”
+ë²”ìœ„			ì‚¬ì›ìˆ˜(ìµœê³ ì¹˜, ìµœì €ì¹˜, í‰ê· ì¹˜)
+1000ë¯¸ë§Œ		@@
+~2000ë¯¸ë§Œ	@@
+~3000ë¯¸ë§Œ	@@
+~4000ë¯¸ë§Œ	@@@
+~5000ë¯¸ë§Œ
+~6000ë¯¸ë§Œ
 */
 
-SELECT DISTINCT(TRUNC(SAL,-3)) ¹üÀ§ , 
-		COUNT(TRUNC(SAL,-3)) »ç¿ø¼ö,  
+SELECT DISTINCT(TRUNC(SAL,-3)) ë²”ìœ„ , 
+		COUNT(TRUNC(SAL,-3)) ì‚¬ì›ìˆ˜,  
 		MAX(SAL), MIN(SAL), AVG(SAL) 
 FROM EMP 
 GROUP BY TRUNC(SAL,-3); 
 
 /*
-°úÁ¦02
-student ¾ÆÀÌµğ, ÀÌ¸§
-studentPoint ¾ÆÀÌµğ, °ú¸ñ,Á¡¼ö
-gradeCheck ÃÖÀú Á¡¼ö lopoint, ÃÖ°íÁ¡¼ö hipoint, ÇĞÁ¡µî±Ş(A~F)
-1) ¾ÆÀÌµğ Á¶ÀÎ (equal join)
-	ÀÌ¸§/°ú¸ñ/Á¡¼ö Ãâ·Â
-2) Á¡¼ö¸¦ Á¶ÀÎÇØ¼­ (not equal join) 
-	°ú¸ñ/Á¡¼ö/ÇĞÁ¡µî±Ş Ãâ·Â
+ê³¼ì œ02
+student ì•„ì´ë””, ì´ë¦„
+studentPoint ì•„ì´ë””, ê³¼ëª©,ì ìˆ˜
+gradeCheck ìµœì € ì ìˆ˜ lopoint, ìµœê³ ì ìˆ˜ hipoint, í•™ì ë“±ê¸‰(A~F)
+1) ì•„ì´ë”” ì¡°ì¸ (equal join)
+	ì´ë¦„/ê³¼ëª©/ì ìˆ˜ ì¶œë ¥
+2) ì ìˆ˜ë¥¼ ì¡°ì¸í•´ì„œ (not equal join) 
+	ê³¼ëª©/ì ìˆ˜/í•™ì ë“±ê¸‰ ì¶œë ¥
 3) student10 studentPoint gradeCheck 
-     	Á¶ÀÎÀ» ÇÏ¿© ÀÌ¸§/°ú¸ñ/ÇĞÁ¡µî±Ş 
+     	ì¡°ì¸ì„ í•˜ì—¬ ì´ë¦„/ê³¼ëª©/í•™ì ë“±ê¸‰ 
 */
 select * from student_main;
 select * from student_point;
@@ -35,26 +35,26 @@ select * from student_point;
 ALTER TABLE student_point ADD(GRADE VARCHAR(2));
 
 
-insert into student_point values('KDH','º£Æ®³²¾î','90','A');
-insert into student_point values('KWM','¿¬¾ÖÁ¡¼ö','90','A');
-insert into student_point values('KMK','¿µ¾î','100','A');
-insert into student_point values('JGH','¼öÇĞ','70','B');
+insert into student_point values('KDH','ë² íŠ¸ë‚¨ì–´','90','A');
+insert into student_point values('KWM','ì—°ì• ì ìˆ˜','90','A');
+insert into student_point values('KMK','ì˜ì–´','100','A');
+insert into student_point values('JGH','ìˆ˜í•™','70','B');
 
 TRUNCATE TABLE student_point;
 
 
 
---1¹ø
-select NAME ÀÌ¸§, SUBJECT °ú¸ñ, POINT Á¡¼ö
+--1ë²ˆ
+select NAME ì´ë¦„, SUBJECT ê³¼ëª©, POINT ì ìˆ˜
 from student_main,student_point
 where student_main.id= student_point.id;
 
---2¹ø 
-SELECT M.NAME ÀÌ¸§, P.SUBJECT °ú¸ñ, P.POINT Á¡¼ö, P.GRADE µî±Ş
+--2ë²ˆ 
+SELECT M.NAME ì´ë¦„, P.SUBJECT ê³¼ëª©, P.POINT ì ìˆ˜, P.GRADE ë“±ê¸‰
 FROM student_point P, student_MAIN M
 WHERE P.ID = M.ID; 
 
---3¹ø student_MAIN student_Point gradeCheck    	Á¶ÀÎÀ» ÇÏ¿© ÀÌ¸§/°ú¸ñ/ÇĞÁ¡µî±Ş 
+--3ë²ˆ student_MAIN student_Point gradeCheck    	ì¡°ì¸ì„ í•˜ì—¬ ì´ë¦„/ê³¼ëª©/í•™ì ë“±ê¸‰ 
 CREATE TABLE GRADECHECK(ID VARCHAR(5),TOTGRADE VARCHAR2(2));
 insert into GRADECHECK values('KDH','D');
 insert into GRADECHECK values('KWM','C');
@@ -62,23 +62,23 @@ insert into GRADECHECK values('KMK','B');
 insert into GRADECHECK values('JGH','A');
 SELECT * FROM GRADECHECK;
 
-SELECT  M.NAME ÀÌ¸§, P.SUBJECT °ú¸ñ, G.TOTGRADE ÇĞÁ¡
+SELECT  M.NAME ì´ë¦„, P.SUBJECT ê³¼ëª©, G.TOTGRADE í•™ì 
 FROM STUDENT_MAIN M, STUDENT_POINT P, GRADECHECK G 
 WHERE M.ID = P.ID AND G.ID=P.ID;
 
 
 /*
-°úÁ¦03
-outer joinÀ» È°¿ëÇÏ¿© groupÀ» È°¿ëÇÏ¿©
-ºÎ¼­¸íº° ÀÎ¿øÀ» È®ÀÎÇÏ·Á°í ÇÑ´Ù.
-¾Æ·¡ÀÇ Çü½ÄÀ¸·Î Ãâ·ÂÇÏ¼¼¿ä ÀÎ¿øÀÌ ¾ø´Â °÷Àº 0À¸·Î Ç¥½Ã
-ºÎ¼­¸í ÀÎ¿ø  
+ê³¼ì œ03
+outer joinì„ í™œìš©í•˜ì—¬ groupì„ í™œìš©í•˜ì—¬
+ë¶€ì„œëª…ë³„ ì¸ì›ì„ í™•ì¸í•˜ë ¤ê³  í•œë‹¤.
+ì•„ë˜ì˜ í˜•ì‹ìœ¼ë¡œ ì¶œë ¥í•˜ì„¸ìš” ì¸ì›ì´ ì—†ëŠ” ê³³ì€ 0ìœ¼ë¡œ í‘œì‹œ
+ë¶€ì„œëª… ì¸ì›  
 */
 
 SELECT * FROM DEPT;
 SELECT * FROM EMP;
 
-SELECT D.DNAME ºÎ¼­¸í, COUNT(E.DEPTNO) ÀÎ¿ø
+SELECT D.DNAME ë¶€ì„œëª…, COUNT(E.DEPTNO) ì¸ì›
 FROM EMP E, DEPT D
 WHERE E.DEPTNO(+) = D.DEPTNO
 GROUP BY DNAME;

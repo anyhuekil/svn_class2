@@ -1,7 +1,7 @@
-/*** ¼÷Á¦
-	EMP03 º¹»çÅ×ÀÌºí »ý¼º
-	1. ÀÔ·Â : EMPNOÀÇ °¡Àå ÀÛÀº ¼öº¸´Ù -1, MGR:CLARKÀÇ MGRÀÔ·Â, SAL Æò±Õ¿¬ºÀ, COMM:ÀüÃ¼ COMMÀÇ ÇÕ°è
-	2. ¼öÁ¤ : ENAME : '½Å±æµ¿', JOBÀº 'SUPERMAN', HIREDATE´Â ÃÖ±Ù¿¡ ÀÔ»çÀÏ+1
+/*** ìˆ™ì œ
+	EMP03 ë³µì‚¬í…Œì´ë¸” ìƒì„±
+	1. ìž…ë ¥ : EMPNOì˜ ê°€ìž¥ ìž‘ì€ ìˆ˜ë³´ë‹¤ -1, MGR:CLARKì˜ MGRìž…ë ¥, SAL í‰ê· ì—°ë´‰, COMM:ì „ì²´ COMMì˜ í•©ê³„
+	2. ìˆ˜ì • : ENAME : 'ì‹ ê¸¸ë™', JOBì€ 'SUPERMAN', HIREDATEëŠ” ìµœê·¼ì— ìž…ì‚¬ì¼+1
 ***/
 CREATE TABLE EMP03 AS SELECT * FROM EMP; 
 INSERT INTO EMP03 (EMPNO, MGR, SAL, COMM) 
@@ -10,16 +10,16 @@ INSERT INTO EMP03 (EMPNO, MGR, SAL, COMM)
 	(SELECT AVG(SAL) FROM EMP), 
 	(SELECT AVG(NVL(COMM,0)) FROM EMP03));
 UPDATE EMP03 
-	SET ENAME='½Å±æµ¿', 
+	SET ENAME='ì‹ ê¸¸ë™', 
 		JOB = 'SUPERMAN', 
 		HIREDATE=(SELECT MAX(HIREDATE)+1 FROM EMP) 
 	WHERE EMPNO=7368;
 SELECT * FROM EMP03 WHERE EMPNO=7368;
 
-/* °úÁ¦ :
-	loginÇÏ´Â È­¸éÀ» ¸¸µé°í id¿Í password¸¦ Ã¼Å©ÇÏ°í, ´ÙÀ½ È­¸é¿¡¼­
-	"id @@@´Ô È¯¿µÇÕ´Ï´Ù. ³²Àº point´Â @@@ ÀÔ´Ï´Ù"¶ó´Â ³»¿ëÀÌ ³ªÅ¸³­´Ù°í ÇÑ´Ù.
-	ÀÌ¿¡ ÇÊ¿ä·Î ÇÏ´Â Å×ÀÌºí°ú Å×ÀÌºí ±¸Á¶¸¦ ¸¸µå¼¼¿ä
+/* ê³¼ì œ :
+	loginí•˜ëŠ” í™”ë©´ì„ ë§Œë“¤ê³  idì™€ passwordë¥¼ ì²´í¬í•˜ê³ , ë‹¤ìŒ í™”ë©´ì—ì„œ
+	"id @@@ë‹˜ í™˜ì˜í•©ë‹ˆë‹¤. ë‚¨ì€ pointëŠ” @@@ ìž…ë‹ˆë‹¤"ë¼ëŠ” ë‚´ìš©ì´ ë‚˜íƒ€ë‚œë‹¤ê³  í•œë‹¤.
+	ì´ì— í•„ìš”ë¡œ í•˜ëŠ” í…Œì´ë¸”ê³¼ í…Œì´ë¸” êµ¬ì¡°ë¥¼ ë§Œë“œì„¸ìš”
 */
 CREATE TABLE MEMBER (
 	ID VARCHAR2(20) PRIMARY KEY,
@@ -29,9 +29,9 @@ CREATE TABLE MEMBER (
 SELECT * FROM MEMBER;
 
 /***
-3½Ã45ºÐ ¼÷Á¦ : ÂüÁ¶Å° °ü°è¿¡ ÀÖ´Â Å×ÀÌºí ±¸¼ºÇÏ±â
-	¸ÞÀÎÅ×ÀÌºí STUDENT_MAIN(ID,PASS,NAME); ¾ÆÀÌµð, ÆÐ½º¿öµå, ÀÌ¸§
-	¼­ºêÅ×ÀÌºí STUDENT_POINT(ID, SUBJECT, POINT); ¾ÆÀÌµð, °ú¸ñ, Á¡¼ö
+3ì‹œ45ë¶„ ìˆ™ì œ : ì°¸ì¡°í‚¤ ê´€ê³„ì— ìžˆëŠ” í…Œì´ë¸” êµ¬ì„±í•˜ê¸°
+	ë©”ì¸í…Œì´ë¸” STUDENT_MAIN(ID,PASS,NAME); ì•„ì´ë””, íŒ¨ìŠ¤ì›Œë“œ, ì´ë¦„
+	ì„œë¸Œí…Œì´ë¸” STUDENT_POINT(ID, SUBJECT, POINT); ì•„ì´ë””, ê³¼ëª©, ì ìˆ˜
 ***/
 CREATE TABLE STUDENT_MAIN(
 	ID VARCHAR2(20) PRIMARY KEY,

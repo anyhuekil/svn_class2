@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+/*
+
+*/
+
+/**/
+</style>
+<script src="http://code.jquery.com/jquery-1.10.2.js">
+</script>
+<script type="text/javascript">
+$(document).ready(function(){
+	// h1에 짝수 index 순번에 배경색상을 파랑색, 글자색상을 노랑.
+	$("h1:even").css( { backgroundColor:"blue"  ,
+						color:"yellow"} );
+	// h1의 객체 중, 홀수 index 순번을 filter 즉, 검색해서
+	// 글자 색상은 orange, 배경색상은 green 으로 처리한다.
+	// $("객체").filter(selector)
+	$("h1").filter(":odd").css({ 
+		backgroundColor:"green"  ,color:"orange"});
+	// $("객체").filter(function(index) { 함수처리로 선택!!})
+	// index는 객체h1에 대한 순차별 index 값을 의미
+	// <h1> 0
+	// <h1> 1
+	// <h2> 2....
+	// return index%3==0은 3개 단위의 데이터만 가져옮
+	$("h1").filter( function( index ){ 	
+		return index%3==0;
+	}).css(
+		   {backgroundColor:"navy"  ,color:"red"}
+		).html("^^  하이!!");
+	
+	
+});
+</script>
+</head>
+<body>
+<h1>나른한 오후 3시!!! jquery로 잠을 깨우자!!</h1>
+<h1>나른한 오후 3시!!! jquery로 잠을 깨우자!!</h1>
+<h1>나른한 오후 3시!!! jquery로 잠을 깨우자!!</h1>
+<h1>나른한 오후 3시!!! jquery로 잠을 깨우자!!</h1>
+<h1>나른한 오후 3시!!! jquery로 잠을 깨우자!!</h1>
+<h1>나른한 오후 3시!!! jquery로 잠을 깨우자!!</h1>
+<h1>나른한 오후 3시!!! jquery로 잠을 깨우자!!</h1>
+<h1>나른한 오후 3시!!! jquery로 잠을 깨우자!!</h1>
+</body>
+</html>

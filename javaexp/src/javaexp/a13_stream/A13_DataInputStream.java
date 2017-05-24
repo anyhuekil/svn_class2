@@ -9,15 +9,15 @@ public class A13_DataInputStream {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-// ÆÄÀÏ¿¡ ÀÖ´Â µ¥ÀÌÅÍ °¡Á®¿À±â..
+// íŒŒì¼ì— ìˆëŠ” ë°ì´í„° ê°€ì ¸ì˜¤ê¸°..
 //		1. FileInputStream : 
-//		     ÆÄÀÏ¿¡ ÀÖ´Â ³»¿ë °¡Á®¿À´Â ±âº» Stream
+//		     íŒŒì¼ì— ìˆëŠ” ë‚´ìš© ê°€ì ¸ì˜¤ëŠ” ê¸°ë³¸ Stream
 //		2. DataInputStream 
-//		    µ¥ÀÌÅÍ ³»¿ë °¡Á®¿À´Â º¸Á¶ Stream
+//		    ë°ì´í„° ë‚´ìš© ê°€ì ¸ì˜¤ëŠ” ë³´ì¡° Stream
 		String dtfile="C:/a01_prog/eclipse/workspace_server"
 				+ "/javaexp/src/javaexp/a13_stream/dataFile.dat";
-		// ¼±¾ğ try{ °´Ã¼ÇÒ´ç } : finally{}¿¡¼­ ÀÚ¿øÇØÁ¦¸¦ ÇØ¾ßÇÏ±â
-		// ¶§¹®¿¡.
+		// ì„ ì–¸ try{ ê°ì²´í• ë‹¹ } : finally{}ì—ì„œ ìì›í•´ì œë¥¼ í•´ì•¼í•˜ê¸°
+		// ë•Œë¬¸ì—.
 		FileInputStream fis = null;
 		DataInputStream dis = null;
 		try {
@@ -41,7 +41,7 @@ public class A13_DataInputStream {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}catch(Exception e){
-			System.out.println("±âÅ¸ ¿¹¿Ü¹ß»ı..");
+			System.out.println("ê¸°íƒ€ ì˜ˆì™¸ë°œìƒ..");
 		}finally{
 			try {
 				fis.close();

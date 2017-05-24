@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+/*
+
+*/
+
+/**/
+</style>
+<script src="http://code.jquery.com/jquery-1.10.2.js">
+</script>
+<script type="text/javascript">
+$(document).ready(function(){
+	// ## 문서객체 탐색 종료
+	// h1의 배경색 orange는 공통, index번호가 짝수인것만 글자를 빨강 처리
+	// 현재 검색된 even에서 안에서 홀수 index번호인 것만 글자 색상을 파랑..
+	// ==> 초기에 해당 객체를 지정하기 위해. end()
+	$("h1").css("background","orange").filter(":even").css("color",
+				"red").end().filter(":odd").css("color","blue");
+});
+</script>
+</head>
+<body>
+	<h1>오렌지</h1>
+	<h1>딸기</h1>
+	<h1>수박</h1>
+	<h1>오렌지</h1>
+	<h1>딸기</h1>
+	<h1>수박</h1>	
+</body>
+</html>

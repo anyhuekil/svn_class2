@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+/*
+
+*/
+
+/**/
+</style>
+<script src="http://code.jquery.com/jquery-1.10.2.js">
+</script>
+<script type="text/javascript">
+$(document).ready(function(){
+
+});
+function searchCal(){
+	window.open("a06_calendar.html","",
+			      "width=300,height=400")
+}
+</script>
+</head>
+<body><center>
+<h3>날짜 확인</h3>
+날짜:<input id="date01"/>
+<input type="button" value="캘린더" 
+    onclick="javascript:searchCal();"/>
+
+</body>
+</html>
