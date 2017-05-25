@@ -8,7 +8,7 @@ var gameOver = false; // is the game finished?
 var winner; // winner number
 var iflag = true; // is the game finished? - 2
 var mStatus = 0; // mini horse statue
-var endDistance = 1000; // end condition of game (distance)
+var endDistance = 10; // end condition of game (distance)
 var elapsedTime = 0;
 var frame=50;
 
@@ -441,6 +441,7 @@ function collisionDetection() { // finish game
                 }
                 resMsg[index] = rank[index].number;
                 gameOver = true; // almost finish
+                $("#gameState").val("gameOver");
             }
         }
     if (gameOver && iflag) { // almost finish
@@ -545,7 +546,7 @@ function drawElapasedTime() { // rest of distance
         }
     }
     if (endDistance - elapsedTime >= 0)
-        ctx.fillText("Rest of Distance : " + parseInt((1000 - elapsedTime)) + " M", timeBoard.x, timeBoard.y, timeBoard.maxW);
+        ctx.fillText("Rest of Distance : " + parseInt((endDistance - elapsedTime)) + " M", timeBoard.x, timeBoard.y, timeBoard.maxW);
     else ctx.fillText("Winner : NO. " + winner + " horse", timeBoard.x, timeBoard.y, timeBoard.maxW); // winner number
     ctx.closePath();
 }

@@ -33,6 +33,7 @@ public class A01_EmpDB {
 	}
 	// emp í…Œì´ë¸”ì— select * from empí†µí•´ì„œ ê°€ì ¸ì˜¤ëŠ” ë°ì´í„°ë¥¼
 	// ArrayList<Emp>ë¡œ ê°€ì ¸ì˜®
+	// new A01_EmpDB().empList()
 	public ArrayList<Emp> empList(){
 		ArrayList<Emp> list = new ArrayList<Emp>();
 //		1. ì—°ê²°
@@ -161,6 +162,7 @@ public class A01_EmpDB {
 		return list;
 	}
 	// ê²€ìƒ‰ ë©”ì„œë“œ
+	// 
 	public ArrayList<Emp> searchPre(Emp sch){
 		ArrayList<Emp> list = new ArrayList<Emp>();
 		try {
@@ -217,7 +219,68 @@ public class A01_EmpDB {
 		}
 		return list;
 	}
+<<<<<<< .mine
 	// 1ê°œê²€ìƒ‰ ë©”ì„œë“œ
+||||||| .r193
+	// 1°³°Ë»ö ¸Ş¼­µå
+=======
+	// 1°³ °Ë»ö ¸Ş¼­µå   A01_EmpDB.getEmp(Emp sch)
+	public Emp getEmp(Emp sch){
+		Emp emp=null; 
+		try {
+			setConn();
+
+			String sql="SELECT * \n"
+					+ "FROM EMP  \n" 
+					+ "WHERE empno =? \n"
+					+ "AND ename =? \n";
+			
+			pstmt=con.prepareStatement(sql);
+			pstmt.setInt(1, sch.getEmpno());
+			pstmt.setString(2, sch.getEname());
+			
+			rs = pstmt.executeQuery();
+			// ´ÜÀ§ °´Ã¼ ¼±¾ğ
+			if( rs.next() ){
+				emp = new Emp();
+				emp.setEmpno(rs.getInt("empno"));
+				emp.setEname(rs.getString("ename"));
+				emp.setJob(rs.getString("job"));
+				emp.setMgr(rs.getInt("mgr"));
+				emp.setHiredate(rs.getDate("hiredate"));
+				emp.setSal(rs.getDouble("sal"));
+				emp.setComm(rs.getDouble("comm"));
+				emp.setDeptno(rs.getInt("deptno"));
+			}
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			// ¼öÁ¤,»èÁ¦, µî·Ï  rollback()
+			e.printStackTrace();
+		}finally{
+			// ÀÚ¿ø ÇØÁ¦
+			try {
+				if(rs!=null){
+					// ResultSet°¡ ÇöÀç ¸Ş¸ğ¸®¿¡ ÇÒ´ç µÇ¾î ÀÖ´Ù¸é.
+					rs.close();
+				}
+				if(pstmt!=null){
+					pstmt.close();
+				}	
+				if(con!=null){
+					con.close();
+				}				
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		return emp;
+	}	
+	// 1°³°Ë»ö ¸Ş¼­µå
+>>>>>>> .r256
 	public Emp oneEmp(int empno){
 		Emp emp=null; 
 		try {

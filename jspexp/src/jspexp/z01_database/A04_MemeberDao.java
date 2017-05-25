@@ -12,6 +12,7 @@ public class A04_MemeberDao {
 	private Connection con;
 	private PreparedStatement pstmt;
 	private ResultSet rs;
+	// A04_MemeberDao getMember(Member sch)
 	public Member getMember(Member sch){
 		Member mem = null;
 		

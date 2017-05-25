@@ -61,21 +61,43 @@ public class DAO_PlayerInfo {
 		}
 	}
 	// pid, pname, pass, email, tel, mChoice totBet, totBenefit, totLose, curMoney, first, second, third
-	public void updatePlayer(PlayerInfo upt){
+	public void updatePlayer(PlayerInfo upt, int proc){
+		/*
+		 * --- proc----
+		 * 1: È¸¿ø Á¤º¸ ¼öÁ¤
+		 * 2: °ÔÀÓ Á¾·á ÈÄ Á¤º¸ °»½Å
+		 * 
+		*/
+		String sql="";
 		
-		String sql = "UPDATE PLAYER_INFO SET\n"
-				+ "PASS = ? \n"
-				+ "PNAME = ? \n"
-				+ "EMAIL = ? \n"
-				+ "TEL = ? \n";
 		try {
 			con = AA_Con.conn();
 			con.setAutoCommit(false);
-			pstmt = con.prepareStatement(sql);
-			pstmt.setString(1, upt.getPass());
-			pstmt.setString(2, upt.getPname());
-			pstmt.setString(3, upt.getEmail());
-			pstmt.setString(4, upt.getTel());
+			System.out.println(upt.getPname());
+			System.out.println(upt.getPid());
+			
+			if(proc==1){
+				sql = "UPDATE PLAYER_INFO\n"
+						+ "SET PASS =?, \n"
+						+ "PNAME =?, \n"
+						+ "EMAIL =?, \n"
+						+ "TEL =? \n"
+						+ "WHERE PID =?";
+				pstmt = con.prepareStatement(sql);
+				pstmt.setString(1, upt.getPass());
+				pstmt.setString(2, upt.getPname());
+				pstmt.setString(3, upt.getEmail());
+				pstmt.setString(4, upt.getTel());
+				pstmt.setString(5, upt.getPid());
+				}
+				else if(proc==2){
+					sql = "UPDATE PLAYER_INFO\n"
+							+"SET CURMONEY=? \n"
+							+ "WHERE PID =?";
+					pstmt = con.prepareStatement(sql);
+					pstmt.setDouble(1, upt.getCurMoney());
+					pstmt.setString(2, upt.getPid());
+				}
 			pstmt.executeUpdate();
 			con.commit();
 			System.out.println(sql);
@@ -268,12 +290,12 @@ public class DAO_PlayerInfo {
 				e.printStackTrace();
 			}
 		}
-		
 		return pi;
 	}
 	
-	public boolean checkDuplicatedId(String id){
+	public PlayerInfo checkDuplicatedId(String id){
 		String sql = "SELECT * FROM PLAYER_INFO WHERE PID = ? ";
+		PlayerInfo vo=null;
 		try {
 			con = AA_Con.conn();
 			pstmt = con.prepareStatement(sql);
@@ -281,8 +303,27 @@ public class DAO_PlayerInfo {
 			rs = pstmt.executeQuery();
 			System.out.println(sql);			
 			if(rs.next()){
+<<<<<<< .mine
 				System.out.println("ì¤‘ë³µëœ idìž…ë‹ˆë‹¤.");
-				return true;
+||||||| .r268
+				System.out.println("Áßº¹µÈ idÀÔ´Ï´Ù.");
+=======
+				vo=new PlayerInfo();
+				System.out.println("Áßº¹µÈ idÀÔ´Ï´Ù.");
+>>>>>>> .r278
+				vo.setPid(rs.getString("pid"));
+				vo.setPass(rs.getString("pass"));
+				vo.setPname(rs.getString("pname"));
+				vo.setEmail(rs.getString("email"));
+				vo.setTel(rs.getString("tel"));
+				vo.setmChoice(rs.getInt("mChoice"));
+				vo.settotBet(rs.getDouble("totBet"));
+				vo.settotBenefit(rs.getDouble("totBenefit"));
+				vo.settotLose(rs.getDouble("totLose"));
+				vo.setcurMoney(rs.getDouble("curMoney"));
+				vo.setFirst(rs.getInt("first"));
+				vo.setSecond(rs.getInt("second"));
+				vo.setThird(rs.getInt("third"));
 			}
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
@@ -300,16 +341,21 @@ public class DAO_PlayerInfo {
 				e.printStackTrace();
 			}
 		}
-		
-		return false;
+		return vo;
 	}
 	
-	/*public static void main(String[] args) {
+	public static void main(String[] args) {
 		
 		DAO_PlayerInfo dao = new DAO_PlayerInfo();
 		PlayerInfo pp = new PlayerInfo();
-		pp.setPid("");
-		System.out.println("id\tpass\tname\temail\ttel\tmcho\tbet\tbenefit\tlose\tmoney\tfirst\tsecond\tthird");
+		pp.setPid("kjho1e3");
+		pp.setPname("ÇìÇì");
+		pp.setEmail("gg");
+		pp.setPass("3333");
+		pp.setTel("99999");
+		dao.updatePlayer(pp,1);
+		
+		/*System.out.println("id\tpass\tname\temail\ttel\tmcho\tbet\tbenefit\tlose\tmoney\tfirst\tsecond\tthird");
 		for(PlayerInfo c:dao.searchPlayer(pp)){
 			System.out.print(c.getPid()+"\t");
 			System.out.print(c.getPass()+"\t");
@@ -320,24 +366,10 @@ public class DAO_PlayerInfo {
 			System.out.print(c.gettotBet()+"\t");
 			System.out.print(c.gettotBenefit()+"\t");
 			System.out.print(c.gettotLose()+"\t");
-			System.out.print(c.getcurMoney()+"\t");
+			System.out.print(c.getCurMoney()+"\t");
 			System.out.print(c.getFirst()+"\t");
 			System.out.print(c.getSecond()+"\t");
 			System.out.println(c.getThird());
-		}
-						pi = new PlayerInfo();
-				pi.setPid(rs.getString("pid"));
-//				pi.setPass(rs.getString("P"));
-				pi.setPname(rs.getString("pname"));
-//				pi.setEmail(rs.getString("email"));
-//				pi.setTel(rs.getString("tel"));
-				pi.setmChoice(rs.getInt("mChoice"));
-				pi.settotBet(rs.getDouble("totBet"));
-				pi.settotBenefit(rs.getDouble("totBenefit"));
-				pi.settotLose(rs.getDouble("totLose"));
-				pi.setcurMoney(rs.getDouble("curMoney"));
-				pi.setFirst(rs.getInt("first"));
-				pi.setSecond(rs.getInt("second"));
-				pi.setThird(rs.getInt("third"));
-	}*/
+		}*/
+	}
 }

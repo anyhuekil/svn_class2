@@ -1,11 +1,16 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-	pageEncoding="EUC-KR"%>
+<%@page import="dao.DAO_PlayerInfo"%>
+<%@page import="vo.PlayerInfo"%>
+<%@ page language="java" contentType="text/html; charset=utf-8"
+	pageEncoding="utf-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
-<fmt:requestEncoding value="EUC-KR" />
+<fmt:requestEncoding value="utf-8" />
 <c:set var="path" value="${pageContext.request.contextPath}" />
-	
-	
+
+<%
+	DAO_PlayerInfo daoP = new DAO_PlayerInfo();
+%>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -56,12 +61,14 @@
 }
 </style>
 </head>
+<%
+	boolean logonState = session.getAttribute("user") != null ? true : false;
+	session.setAttribute("logonState", logonState);
+	int rank = 5;
+	int money = 5000;
+%>
 <body scroll="no" style="overflow: hidden">
-	<%
-		String pid = request.getParameter("id");
-		int rank = 5;
-		int money = 5000;
-	%>
+
 	<!-- login Modal -->
 	<div class="modal fade" id="loginModal" tabindex="-1" role="dialog"
 		aria-labelledby="myModalLabel">
@@ -76,17 +83,18 @@
 				</div>
 				<div class="modal-body">
 					<form method="post" action="login.jsp">
-					<input type="hidden" name="proc" value="login"/>
+						<input type="hidden" name="proc" value="login" />
 						<div class="form-group row">
 							<div class="col-md-offset-2 col-md-8">
 								<label for="inputId">ID</label> <input type="text"
-									class="form-control" id="inputId" name="inputId" placeholder="ID">
+									class="form-control" id="inputId" name="inputId"
+									placeholder="ID">
 							</div>
 						</div>
 						<div class="form-group row">
 							<div class="col-md-offset-2 col-md-8">
-								<label for="inputPass">Password</label> <input
-									type="password" class="form-control" id="inputPass" name="inputPass"
+								<label for="inputPass">Password</label> <input type="password"
+									class="form-control" id="inputPass" name="inputPass"
 									placeholder="Password">
 							</div>
 						</div>
@@ -95,7 +103,8 @@
 					</form>
 				</div>
 				<div class="modal-footer">
-					<button type="button" class="btn btn-primary" onclick="$('#regModal').modal('show')">Register</button>
+					<button type="button" class="btn btn-primary"
+						onclick="$('#regModal').modal('show')">Register</button>
 					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 				</div>
 			</div>
@@ -116,7 +125,7 @@
 				</div>
 				<div class="modal-body">
 					<form action="login.jsp">
-					<input type="hidden" name="proc" value="register"/>
+						<input type="hidden" name="proc" value="register" />
 						<div class="row">
 							<div class="col-md-offset-2 col-md-5">
 								<label for="idReg">ID</label>
@@ -126,41 +135,85 @@
 									<input type="text" class="form-control" id="idReg" name="idReg"
 										placeholder="ID">
 								</div>
+<<<<<<< .mine
 								<button class="btn btn-default col-md-2" type="button">ì¤‘ë³µ
 									í™•ì¸</button>
+||||||| .r193
+								<button class="btn btn-default col-md-2" type="button">Áßº¹
+									È®ÀÎ</button>
+=======
+								<button class="btn btn-default col-md-2" type="button"
+									onclick="">ì¤‘ë³µ í™•ì¸</button>
+>>>>>>> .r256
 							</div>
-
 						</div>
 						<div class="row">
 							<div class="form-group col-md-offset-2 col-md-7">
-								<label for="passReg">Password</label> <input
-									type="password" class="form-control" id="passReg" name="passReg"
+								<label for="passReg">Password</label> <input type="password"
+									class="form-control" id="passReg" name="passReg"
 									placeholder="Password">
 							</div>
 						</div>
 						<div class="row">
 							<div class="form-group col-md-offset-2 col-md-7">
+<<<<<<< .mine
 								<label for="comfirmPassReg">Password í™•ì¸</label> <input
 									type="password" class="form-control" id="comfirmPassReg" name="comfirmPassReg"
 									placeholder="Password í™•ì¸">
+||||||| .r193
+								<label for="comfirmPassReg">Password È®ÀÎ</label> <input
+									type="password" class="form-control" id="comfirmPassReg" name="comfirmPassReg"
+									placeholder="Password È®ÀÎ">
+=======
+								<label for="comfirmPassReg">Password í™•ì¸</label> <input
+									type="password" class="form-control" id="confirmPassReg"
+									name="confirmPassReg" placeholder="Password í™•ì¸">
+>>>>>>> .r256
 							</div>
 						</div>
 						<div class="row">
 							<div class="form-group col-md-offset-2 col-md-7">
+<<<<<<< .mine
 								<label for="nameReg">ì´ë¦„</label> <input type="text"
 									class="form-control" id="nameReg" name="nameReg" placeholder="ì´ë¦„">
+||||||| .r193
+								<label for="nameReg">ÀÌ¸§</label> <input type="text"
+									class="form-control" id="nameReg" name="nameReg" placeholder="ÀÌ¸§">
+=======
+								<label for="nameReg">ì´ë¦„</label> <input type="text"
+									class="form-control" id="nameReg" name="nameReg"
+									placeholder="ì´ë¦„">
+>>>>>>> .r256
 							</div>
 						</div>
 						<div class="row">
 							<div class="form-group col-md-offset-2 col-md-7">
+<<<<<<< .mine
 								<label for="emailReg">ì£¼ì†Œ</label> <input type="text"
 									class="form-control" id="emailReg" name="emailReg" placeholder="ì£¼ì†Œ">
+||||||| .r193
+								<label for="emailReg">ÁÖ¼Ò</label> <input type="text"
+									class="form-control" id="emailReg" name="emailReg" placeholder="ÁÖ¼Ò">
+=======
+								<label for="emailReg">e-mail</label> <input type="email"
+									class="form-control" id="emailReg" name="emailReg"
+									placeholder="ì£¼ì†Œ">
+>>>>>>> .r256
 							</div>
 						</div>
 						<div class="row">
 							<div class="form-group col-md-offset-2 col-md-7">
+<<<<<<< .mine
 								<label for="telReg">ì—°ë½ì²˜</label> <input type="text"
 									class="form-control" id="telReg" name="telReg" placeholder="ì—°ë½ì²˜">
+||||||| .r193
+								<label for="telReg">¿¬¶ôÃ³</label> <input type="text"
+									class="form-control" id="telReg" name="telReg" placeholder="¿¬¶ôÃ³">
+=======
+								<label for="telReg">ì—°ë½ì²˜</label> <input type="text"
+									class="form-control" id="telReg" name="telReg"
+									placeholder="ì—°ë½ì²˜">
+>>>>>>> .r256
 							</div>
 						</div>
 						<button type="submit" class="btn btn-primary col-md-offset-5">Register</button>
@@ -186,37 +239,79 @@
 					<h4 class="modal-title" id="myModalLabel">Modify user info</h4>
 				</div>
 				<div class="modal-body">
-					<form>
-					<input type="hidden" name="proc" value="modify"/>
+					<form action="login.jsp">
+						<input type="hidden" name="proc" value="modify" />
 						<div class="form-group col-md-offset-2 col-md-7">
 							<label for="inputIdMod">ID</label> <input type="text"
-								class="form-control" id="inputIdMod" placeholder="ID"
-								disabled="disabled">
+								class="form-control" id="idMod" name="idMod"
+								value="${user.pid }" disabled="disabled">
 						</div>
 						<!-- /.col-lg-6 -->
 						<div class="form-group col-md-offset-2 col-md-7">
-							<label for="inputPasswordMod">Password</label> <input
-								type="password" class="form-control" id="inputPasswordMod"
+							<label for="prevPassMod">ì´ì „ Password</label> <input
+								type="password" class="form-control" id="prevPassMod"
+								name="prevPassMod" placeholder="ì´ì „ Password">
+						</div>
+						<div class="form-group col-md-offset-2 col-md-7">
+							<label for="passMod">ìƒˆë¡œìš´ Password</label> <input type="password"
+								class="form-control" id="passMod" name="passMod"
 								placeholder="Password">
 						</div>
 						<div class="form-group col-md-offset-2 col-md-7">
+<<<<<<< .mine
 							<label for="inputConfirmPassMod">Password í™•ì¸</label> <input
 								type="password" class="form-control" id="inputConfirmPassMod"
 								placeholder="Password í™•ì¸">
+||||||| .r193
+							<label for="inputConfirmPassMod">Password È®ÀÎ</label> <input
+								type="password" class="form-control" id="inputConfirmPassMod"
+								placeholder="Password È®ÀÎ">
+=======
+							<label for="confirmPassMod">Password í™•ì¸</label> <input
+								type="password" class="form-control" id="confirmPassMod"
+								name="confirmPassMod" placeholder="Password í™•ì¸">
+>>>>>>> .r256
 						</div>
 						<div class="form-group col-md-offset-2 col-md-7">
+<<<<<<< .mine
 							<label for="inputNameMod">ì´ë¦„</label> <input type="text"
 								class="form-control" id="inputNameMod" placeholder="ì´ë¦„">
+||||||| .r193
+							<label for="inputNameMod">ÀÌ¸§</label> <input type="text"
+								class="form-control" id="inputNameMod" placeholder="ÀÌ¸§">
+=======
+							<label for="nameMod">ì´ë¦„</label> <input type="text"
+								class="form-control" id="nameMod" name="nameMod"
+								placeholder="ì´ë¦„">
+>>>>>>> .r256
 						</div>
 						<div class="form-group col-md-offset-2 col-md-7">
+<<<<<<< .mine
 							<label for="inputAddrMod">ì£¼ì†Œ</label> <input type="text"
 								class="form-control" id="inputAddrMod" placeholder="ì£¼ì†Œ">
+||||||| .r193
+							<label for="inputAddrMod">ÁÖ¼Ò</label> <input type="text"
+								class="form-control" id="inputAddrMod" placeholder="ÁÖ¼Ò">
+=======
+							<label for="emailMod">e-mail</label> <input type="text"
+								class="form-control" id="emailMod" name="emailMod"
+								placeholder="ì£¼ì†Œ">
+>>>>>>> .r256
 						</div>
 						<div class="form-group col-md-offset-2 col-md-7">
+<<<<<<< .mine
 							<label for="inputTelMod">ì—°ë½ì²˜</label> <input type="text"
 								class="form-control" id="inputTelMod" placeholder="ì—°ë½ì²˜">
+||||||| .r193
+							<label for="inputTelMod">¿¬¶ôÃ³</label> <input type="text"
+								class="form-control" id="inputTelMod" placeholder="¿¬¶ôÃ³">
+=======
+							<label for="telMod">ì—°ë½ì²˜</label> <input type="text"
+								class="form-control" id="telMod" name="telMod" placeholder="ì—°ë½ì²˜">
+>>>>>>> .r256
 						</div>
-						<button type="submit" class="btn btn-primary col-md-offset-5">Register</button>
+						<button type="submit" class="btn btn-primary col-md-offset-5">íšŒì›ì •ë³´
+							ìˆ˜ì •</button>
 					</form>
 				</div>
 				<div class="modal-footer">
@@ -236,6 +331,7 @@
 			class="fa fa-times"></i></a>
 		<!-- TODO: ë¡œê·¸ì¸ ì‹œ idì¶œë ¥, ë¡œê·¸ì•„ì›ƒ ì‹œ 'ë¡œê·¸ì¸ í•´ì£¼ì„¸ìš”' ë©”ì„¸ì§€ ì¶œë ¥  -->
 		<li class="sidebar-brand"><a href="#top" onclick=$("#menu-close").click();>Wellcome,
+<<<<<<< .mine
 				${user.pid }</a></li>
 		<!-- ë¡œê·¸ì•„ì›ƒ ìƒíƒœì¼ ì‹œ hidden -->
 		<li><a onclick=$(location).attr("href","login.jsp?proc=logout");>ë¡œê·¸ì•„ì›ƒ</a>
@@ -246,17 +342,53 @@
 		<li><a onclick=$("#regModal").modal("show");>íšŒì›ê°€ì…</a></li>
 		<!-- TODO: ë¡œê·¸ì•„ì›ƒì´ ë˜ì–´ ìˆì„ì‹œ hidden  -->
 		<li><a onclick=$("#modifyModal").modal("show");>íšŒì›ì •ë³´ ìˆ˜ì •</a></li>
+||||||| .r193
+				${user.pid }</a></li>
+		<!-- ·Î±×¾Æ¿ô »óÅÂÀÏ ½Ã hidden -->
+		<li><a onclick=$(location).attr("href","login.jsp?proc=logout");>·Î±×¾Æ¿ô</a>
+		</li>
+		<!-- TODO: ·Î±×ÀÎÀÌ µÇ¾î ÀÖÀ»½Ã hidden  -->
+		<li><a onclick=$("#loginModal").modal("show");>·Î±×ÀÎ</a></li>
+		<!-- TODO: ·Î±×ÀÎÀÌ µÇ¾î ÀÖÀ»½Ã hidden  -->
+		<li><a onclick=$("#regModal").modal("show");>È¸¿ø°¡ÀÔ</a></li>
+		<!-- TODO: ·Î±×¾Æ¿ôÀÌ µÇ¾î ÀÖÀ»½Ã hidden  -->
+		<li><a onclick=$("#modifyModal").modal("show");>È¸¿øÁ¤º¸ ¼öÁ¤</a></li>
+=======
+				${user.pid eq null ? "guset" : user.pid } </a></li>
+		<!-- ë¡œê·¸ì•„ì›ƒ ìƒíƒœì¼ ì‹œ hidden -->
+		<li style="display: <c:if test="${!logonState }">none</c:if>"><a
+			href="login.jsp?proc=logout">ë¡œê·¸ì•„ì›ƒ</a></li>
+		<!-- TODO: ë¡œê·¸ì¸ì´ ë˜ì–´ ìˆì„ì‹œ hidden  -->
+		<li style="display: <c:if test="${logonState }">none</c:if>"><a
+			onclick=$("#loginModal").modal("show");>ë¡œê·¸ì¸</a></li>
+		<!-- TODO: ë¡œê·¸ì•„ì›ƒì´ ë˜ì–´ ìˆì„ì‹œ hidden  -->
+		<li style="display: <c:if test="${!logonState }">none</c:if>"><a
+			onclick=$("#modifyModal").modal("show");>íšŒì›ì •ë³´ ìˆ˜ì •</a></li>
+		<!-- TODO: ë¡œê·¸ì¸ì´ ë˜ì–´ ìˆì„ì‹œ hidden  -->
+		<li style="display: <c:if test="${logonState }">none</c:if>"><a
+			onclick=$("#regModal").modal("show");>íšŒì›ê°€ì…</a></li>
+>>>>>>> .r256
 		<li><br> <br></li>
 		<li><a href="#top" onclick=$("#menu-close").click();>Home</a></li>
 		<li><a href="#search" onclick=$("#menu-close").click();>ì „ì  ê²€ìƒ‰</a>
 		</li>
+<<<<<<< .mine
 		<!-- ë¡œê·¸ì•„ì›ƒ ìƒíƒœì¼ ì‹œ ë¨¼ì € ë¡œê·¸ì¸ ì°½ì„ ë„ìš´ë‹¤. -->
 		<li><a href="#game03" onclick=$("#menu-close").click();>ê²½ë§ˆ ì‹œì‘</a></li>
+||||||| .r193
+		<!-- ·Î±×¾Æ¿ô »óÅÂÀÏ ½Ã ¸ÕÀú ·Î±×ÀÎ Ã¢À» ¶ç¿î´Ù. -->
+		<li><a href="#game03" onclick=$("#menu-close").click();>°æ¸¶ ½ÃÀÛ</a></li>
+=======
+		<!-- ë¡œê·¸ì•„ì›ƒ ìƒíƒœì¼ ì‹œ ë¨¼ì € ë¡œê·¸ì¸ ì°½ì„ ë„ìš´ë‹¤. -->
+		<li style="display: <c:if test="${!logonState }">none</c:if>"><a
+			href="#game03" onclick=$("#menu-close").click();>ê²½ë§ˆ ì‹œì‘</a></li>
+>>>>>>> .r256
 	</ul>
 	</nav>
 
 	<section id="top" class="guestheader">
 	<div class="text-vertical-center">
+<<<<<<< .mine
 		<h1>
 			Wellcome,
 			${user.pid}</h1>
@@ -268,14 +400,39 @@
 			${user.curMoney}</h3>
 		<br> <a href="#search" class="btn btn-primary btn-lg">ë‚´ ì „ì 
 			í™•ì¸í•˜ê¸°</a> <br>
+||||||| .r193
+		<h1>
+			Wellcome,
+			${user.pid}</h1>
+		<h3>
+			ÇöÀç ¼øÀ§:
+			??</h3>
+		<h3>
+			ÇöÀç ¼ÒÁö±İ:
+			${user.curMoney}</h3>
+		<br> <a href="#search" class="btn btn-primary btn-lg">³» ÀüÀû
+			È®ÀÎÇÏ±â</a> <br>
+=======
+		<h1>Wellcome, ${user.pid eq null ? "guset" : user.pid }</h1>
+		<label> <c:if test="${logonState }">
+				<h3>í˜„ì¬ ìˆœìœ„: ??</h3>
+				<h3>í˜„ì¬ ì†Œì§€ê¸ˆ: ${user.curMoney}</h3><br>
+				<a href="#search" class="btn btn-primary btn-lg">ë‚´ ì „ì 
+			í™•ì¸í•˜ê¸°</a> 
+			</c:if>
+			<c:if test="${!logonState }"><h2>ë¡œê·¸ì¸ì„ í•´ì£¼ì„¸ìš”.</h2></c:if>
+		</label>
+>>>>>>> .r256
 	</div>
 	</section>
 	<section id="search"> <iframe width="100%" height="1400px"
 		frameborder="0" scrolling="no" src="search.jsp"></iframe> </section>
 	<!-- Game3 -->
-	<section id="game03" class="game03"> <iframe id="my_iframe02"
-		width="100%" height="100%" frameborder="0" scrolling="no"
-		marginheight="0" marginwidth="0" src="game_manager.html"></iframe> </section>
+	<section id="game03" class="game03"
+		style="display: <c:if test="${!logonState }">none</c:if>"> <iframe
+		id="my_iframe02" width="100%" height="100%" frameborder="0"
+		scrolling="no" marginheight="0" marginwidth="0" src="horseRace.jsp"></iframe>
+	</section>
 </body>
 <!-- jQuery -->
 <script src="js/jquery.js"></script>
@@ -310,6 +467,7 @@
             }
         });
     });
+ 
 	</script>
 
 </html>

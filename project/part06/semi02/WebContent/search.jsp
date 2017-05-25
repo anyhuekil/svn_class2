@@ -7,16 +7,10 @@
 	request.setCharacterEncoding("UTF-8");
 	String path = request.getContextPath();
 	
-	String pid = request.getParameter("pid")!=null?request.getParameter("pid"):"";
-	PlayerInfo pi = new PlayerInfo();
-	pi.setPid(pid);
-	
-	ArrayList<PlayerInfo> plist = new DAO_PlayerInfo().searchPlayer(pi);
-	request.setAttribute("plist", plist);
-	
+	String jspPage ="playerRank.jsp";
 %>
 
-
+<c:set var="jspPage" value="playerRank.jsp" />
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -30,45 +24,46 @@
 <link href="css/stylish-portfolio.css" rel="stylesheet">
 
 <!-- Custom Fonts -->
-<link href="font-awesome/css/font-awesome.min.css" rel="stylesheet"
-	type="text/css">
+<link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 <link
 	href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic"
 	rel="stylesheet" type="text/css">
 <link rel="stylesheet" href="css/jquery-ui.css">
 <style type="text/css">
 body{
-background-color: rgba(0,0,10,0.3);
+background-color: rgb(150,150,150);
 }
 </style>
 </head>
 <script src="<%=path%>/com/jquery-1.10.2.js"></script>
 <script type="text/javascript">
 	$(document).ready(function() {
-		$("#search").click(function(){
-			$("form").submit();
+		
+		$("#prBtn").click(function(){
+			$("iframe").attr("src","playerRank.jsp");
 		})
-		/* $("#idList").click(function(){
-			$("#searchList").html($(this).html());
+		$("#hrBtn").click(function(){
+			$("iframe").attr("src","playerRank.jsp");
 		})
-		$("#horseList").click(function(){
-			$("#searchList").html($(this).html());
+		$("#hlBtn").click(function(){
+			$("iframe").attr("src","horseList.jsp");
 		})
-		$("#trainerList").click(function(){
-			$("#searchList").html($(this).html());
+		$("#prBtn").click(function(){
+			$("iframe").attr("src","playerRank.jsp");
 		})
-		$("#ownerList").click(function(){
-			$("#searchList").html($(this).html());
-		}) */
+	    
 		$(".dropdown-menu li a").click(function(){
-		    
-		    $("#searchList").text($(this).text());
-		     $("#searchList").val($(this).text());
-		  });
-
+			$("#searchList").text($(this).text());
 		});
-
+	});
+	function autoResize(i)
+	{
+	    var iframeHeight = (i).contentWindow.document.body.scrollHeight;
+	    (i).height=iframeHeight+20;
+	}
+	
 </script>
+<c:set var="jspPage" value="" />
 <body>
 	<div class="container-fluid">
 		<div class="page-header">
@@ -77,82 +72,26 @@ background-color: rgba(0,0,10,0.3);
 					PentAcorn<small style="font-size: 0.5em"> 전적 검색</small>
 				</h1>
 				<br>
+				<form method="post">
 				<ul
 					class="nav nav-pills col-sm-offset-2 col-md-offset-2 col-xs-offset-4  col-md-6 col-sm-6 col-xs-4">
-					<li role="presentation" class="active"><a href="#">home</a></li>
-					<li role="presentation"><a href="#">플레이어 순위</a></li>
-					<li role="presentation"><a href="#">경주마 순위</a></li>
-					<li role="presentation"><a href="#">경주마 list</a></li>
+					<li class="active"><a href="#">home</a></li>
+					<li id="prBtn">
+						<a href="#">플레이어 순위</a>
+					</li>
+					<li id="hrBtn">
+						<a href="#">경주마 순위</a>
+					</li>
+					<li id="hlBtn">
+						<a href="#">경주마 list</a>
+					</li>
 				</ul>
+				</form>
 			</div>
 		</div>
-
-		<div class="row">
-			<br>
-			<form method="post">
-				<div
-					class="col-md-4 col-md-offset-4 col-sm-4 col-sm-offset-4 col-xs-4 col-xs-offset-4 form-group">
-					<div class="input-group">
-						
-						<!-- <div class="input-group-btn" >
-							<button type="button" class="btn btn-default dropdown-toggle"
-								data-toggle="dropdown" aria-haspopup="true" id="searchList"
-								aria-expanded="false">
-								 검색 list <span class="caret"></span>
-							</button>
-							<ul class="dropdown-menu">
-								<li role="separator" class="divider"></li>
-								<li id="idList" ><a href="#">ID</a></li>
-								<li id="horseList" ><a href="#">경주마</a></li>
-								<li role="separator" class="divider"></li>
-								<li id="trainerList" ><a href="#">조교사</a></li>
-								<li id="ownerList" ><a href="#">마주</a></li>
-								<li role="separator" class="divider"></li>
-							</ul>
-						</div> -->
-						<!-- /btn-group -->
-						<input type="text" name="pid" class="form-control"
-							placeholder="플레이어 ID 또는 경주마 이름"> <span
-							class="input-group-btn">
-							<button id="search" class="btn btn-default" type="button">Search!</button>
-						</span>
-					</div>
-				</div>
-				<!-- /input-group -->
-				<div class="row col-sm-offset-5 col-sm-3">
-					<br> <br>
-					<button type="submit" class="btn btn-primary btn-lg ">내 전적 확인하기</button>
-				</div>
-				<!-- /.col-lg-6 -->
-			</form>
-		</div>
-		<!-- /.row -->
-		<br> <br>
-		<div class="row col-sm-offset-2 col-sm-8">
-			<div class="panel panel-default">
-				<!-- Default panel contents -->
-				<div class="panel-heading" style="font-weight:bold;font-family:HY견고딕"
-				align="center"><h4>금액에 따른 Player 순위 정보</h4></div>
-				<!-- Table -->
-				<table class="table">
-					<tr>
-						<th>순위</th>
-						<th>ID</th>
-						<th>이름</th>
-						<th>금액</th>
-						<th>email</th>
-					</tr>
-					<c:forEach var="player" items="${plist}" varStatus="sts">
-						<tr>
-							<td>${player.rank }</td><td>${player.pid }</td>
-							<td>${player.pname }</td><td>${player.curMoney }</td>
-							<td>${player.email }</td>
-						</tr>
-					</c:forEach>
-				</table>
-			</div>
-		</div>
-	</div>
+		
+		<iframe src="" frameborder="0" width="100%" onload="autoResize(this)"
+			marginwidth="0" marginheight="0" scrolling="no" ></iframe>
 
 </body>
 <script src="http://code.jquery.com/jquery-1.10.2.js?ver=1 "></script>
