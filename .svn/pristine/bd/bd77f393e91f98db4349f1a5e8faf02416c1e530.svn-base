@@ -1,0 +1,89 @@
+html, body {
+	height: 100%;
+}
+
+body {
+	box-sizing: border-box;
+}
+
+*, *:after, *:before {
+	box-sizing: inherit;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+.whyContain {
+	padding: 0;
+}
+
+.whyContain:after, .whyContain:before {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+/* * {
+	border: 1px dotted red;
+} */
+#allCover {
+	display: block;
+	position: relative;
+	margin: 0 auto;
+	width: 1600px;
+	height: 100%;
+	background-color: skyblue;
+}
+
+header {
+	display: block;
+	position: relative;
+	width: 100%;
+	height: 120px;
+	border-bottom: 5px solid black;
+}
+
+nav {
+	display: inline-block;
+	position: relative;
+	float: left;
+	width: 300px;
+	height: calc(100% - 120px);
+	border-right: 5px solid black;
+}
+
+section {
+	display: inline-block;
+	position: relative;
+	float: left;
+	width: calc(100% - 300px);
+	height: calc(100% - 220px);
+}
+
+footer {
+	display: inline-block;
+	position: relative;
+	float: left;
+	width: calc(100% - 300px);
+	height: 100px;
+	border-top: 5px solid black;
+}
+
+#titleLoc {
+	display: inline-block;
+	float: left;
+	width: calc(100% - 300px);
+	height: 100%;
+	background: blue;
+}
+
+#loginLoc {
+	display: inline-block;
+	float: left;
+	padding-left: 30px;
+	width: 300px;
+	height: 100%;
+	background: red;
+}

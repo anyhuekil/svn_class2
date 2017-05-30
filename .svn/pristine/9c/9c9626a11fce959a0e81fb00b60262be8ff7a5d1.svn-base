@@ -1,0 +1,109 @@
+* {
+	margin: auto;
+	padding: 0;
+	font-family: "Comic Sans MS";
+}
+
+
+h1 {
+	text-align: center;
+	font-size: 50px;
+	color: blue;
+}
+
+h2 {
+	margin-left: 30px;
+	line-height: 50px;
+	color: blue;
+}
+
+
+h3 {
+	margin-left: 30px;
+	line-height: 50px;
+}
+
+h4 {
+	line-height: 30px;
+	margin-left: 50px;
+}
+
+p {
+	margin-left: 70px;
+	line-height: 40px;
+}
+
+div {
+	display: inline-block;
+}
+
+#main_container {
+	display: block;
+	width: 1200px;
+	height: 100vh;
+	border: 3px solid black;
+}
+
+#hello {
+	margin: 2%;
+	width: 90%;
+	height: 5%;
+	float: left;
+}
+
+#item_picture {
+	margin: 2%;
+	width: 45%;
+	height: 40%;
+	float: left;
+	background-image:url("../img/apple.png"); 
+	background-repeat:no-repeat;
+	background-size: contain;
+	background-position: center;
+}
+
+#item_info {
+	margin: 2%;
+	width: 45%;
+	height: 40%;
+	float: left;
+	border: 1px solid black;
+	border-radius: 10px;
+}
+
+#countdown_info {
+	margin: 2%;
+	width: 45%;
+	height: 15%;
+	float: left;
+}
+
+#bidding_info {
+	margin: 2%;
+	width: 45%;
+	height: 15%;
+}
+
+#seller_info {
+	margin: 2%;
+	width: 95%;
+	height: 20%;
+	line-height: 0;
+	margin-left: 30px;
+	border: 1px solid black;
+	border-radius: 10px;
+}
+
+#showTime {
+	text-align: center;
+	font-size: 20px;
+}
+
+#current_bid {
+	text-align: center;
+}
+
+#bid_detail {
+	margin-left: 30px;
+	line-height: 0;
+}

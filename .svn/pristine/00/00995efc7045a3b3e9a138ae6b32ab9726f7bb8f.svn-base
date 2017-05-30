@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>17.04.</title>
+		<style type="text/css">
+		/*
+		*/
+		</style>
+		<script src="http://code.jquery.com/jquery-1.10.2.js">
+		</script>
+		<script type="text/javascript">
+		/*
+		*/
+			$(document).ready(function(){
+				
+			})
+		</script>
+	</head>
+	<body>
+	<h1>Good Day!!</h1>
+	</body>
+</html>
