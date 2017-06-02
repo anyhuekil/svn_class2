@@ -12,8 +12,8 @@ public class ConnectDB {
 		Class.forName("oracle.jdbc.driver.OracleDriver");
 		String conInfo = "jdbc:oracle:thin:@192.168.0.110:1522:orcl";
 //		String conInfo = "jdbc:oracle:thin:@localhost:1521:xe";
-		con = DriverManager.getConnection(conInfo, "whyNot", "whywhy");
-//		con = DriverManager.getConnection(conInfo, "cto", "qqqq");
+//		con = DriverManager.getConnection(conInfo, "whyNot", "whywhy");
+		con = DriverManager.getConnection(conInfo, "cto", "qqqq");
 		System.out.println("정상 접속 성공!!");
 		return con;
 	}

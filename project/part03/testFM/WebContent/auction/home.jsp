@@ -2,6 +2,10 @@
 	pageEncoding="UTF-8" import="java.util.*"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%
+	response.sendRedirect("z02_JSP/signIn.jsp"); 
+%>
+
 <fmt:requestEncoding value="UTF-8" />
 <c:set var="path" value="${pageContext.request.contextPath}" />
 <!doctype html>

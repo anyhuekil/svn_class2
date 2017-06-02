@@ -62,16 +62,16 @@ $(document).ready(function() {
 		<input type="hidden" name="proc" value="singUp" />
 		<table border=1>
 			<tr>
-				<th>eMail</th>
+				<th>e-Mail</th>
 				<th><input name="newEmail"></th>
 				<th><input type="button" id="checkEmail" value="중복확인"></th>
 			</tr>
 			<tr>
-				<th>비밀번호</th>
+				<th>Password</th>
 				<th><input type="password" name="newPwd"></th>
 			</tr>
 			<tr>
-				<th>비밀번호 재입력</th>
+				<th>Again Pass</th>
 				<th><input type="password" name="newPwd2"></th>
 			</tr>
 			<tr>

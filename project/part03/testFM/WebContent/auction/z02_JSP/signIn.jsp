@@ -40,16 +40,16 @@
 </style>
 </head>
 <body>
-	<br/>
+	<div style="margin-top:40vh" >
 	<form method="post" action="signInProc.jsp">
 		<input type="hidden" name="proc" value="login" />
 		<table align="center">
 			<tr>
-				<th>E-Mail</th>
+				<th>e-Mail :</th>
 				<th colspan="2"><input name="email"></th>
 			</tr>
 			<tr>
-				<th>PASS</th>
+				<th>&nbsp;&nbsp;PASS :</th>
 				<th colspan="2"><input type="password" name="pwd"></th>
 			</tr>
 			<tr>
@@ -59,5 +59,6 @@
 			</tr>
 		</table>
 	</form>
+	</div>
 </body>
 </html>

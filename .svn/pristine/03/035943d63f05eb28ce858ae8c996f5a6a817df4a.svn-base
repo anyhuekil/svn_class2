@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  <display-name>springweb</display-name>
+<!-- 
+스프링 설정..
+1. 스프링에서 사용하는 font controller DispatchServlet 선언
+   1) url pattern  마지막에 @@@.do할 때, 스프링을 쓰겠습니다.
+   	  http://localhost:8080/springweb/start.do
+   2) 스프링에서 활용되는 container관련 설정파일을 선언
+      default로 여기에 선언된 servlet-name과 동일한 @@@.xml을
+      WebContent\WEB-INF하위에 선언하면 인식이 된다.
+ -->
+<servlet>
+	<servlet-name>dispather</servlet-name>
+	<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+</servlet> 
+<servlet-mapping>
+	<servlet-name>dispather</servlet-name>
+	<url-pattern>*.do</url-pattern>
+</servlet-mapping>
+<!-- 
+2. 한글을 post방식에 의해 전달 될때, 자동 encoding 해주는 
+스프링에서 지원한는 filter 클래스를 선언..
+CharacterEncodingFilter
+	encoding - utf-8
+ -->   
+<filter>
+	<filter-name>encodingFilter</filter-name>
+	<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+	<init-param>
+		<param-name>encoding</param-name>
+		<param-value>utf-8</param-value>
+	</init-param>
+</filter>
+<filter-mapping>
+	<filter-name>encodingFilter</filter-name>
+	<url-pattern>/*</url-pattern>
+</filter-mapping>
+
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+</web-app>

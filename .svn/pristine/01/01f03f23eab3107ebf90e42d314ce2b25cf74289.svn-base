@@ -1,0 +1,32 @@
+package springweb.z01_dto;
+
+public class Mart {
+	private String mname;
+	private Product product;
+	public Mart() { }
+	public Mart(String mname, Product product) {
+		this.mname = mname;
+		this.product = product;
+	}
+	public String getMname() {
+		return mname;
+	}
+	public void setMname(String mname) {
+		this.mname = mname;
+	}
+	public Product getProduct() {
+		return product;
+	}
+	public void setProduct(Product product) {
+		this.product = product;
+	}
+	public void selling() {
+		/*어서오세요
+		@@@마트입니다.
+		오늘 추천 물건..
+		@@@ , @@@원으로 모십니다*/
+		System.out.println("어서오세요\n"+mname+"마트 입니다");
+		System.out.println("오늘의 추천 물건..");
+		System.out.println(product.getPname()+", "+product.getPrice()+"원으로 모십니다");
+	}
+}

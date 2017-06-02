@@ -1,0 +1,69 @@
+body {
+	background-color: black;
+}
+
+.horseExplain {
+	background-color: rgba(200, 200, 200, 0.5);
+	border-radius: 15px 15px 15px 15px;
+}
+#horseTable{
+	border-spacing: 10px;
+	border-collapse: separate;
+}
+
+
+.status {
+	height: 200px;
+}
+#game {
+	width: 100%;
+	height: auto;
+}
+
+#game-container {
+	position: relative;
+	text-align: center;
+}
+#menus {
+	position: absolute;
+	background-size: cover;
+	top: 50px; width : 100%;
+	background-color: rgba(0, 0, 50, 0.5);
+	color: white;
+	width: 100%;
+}
+.horseExplain{
+	width:30px;
+}
+
+
+.numberImg {
+	display: none;
+}
+#gameResult {
+	display: none;
+	position: absolute;
+	top: 300px;
+	width: 100%;
+	background-color: rgba(0, 0, 50, 0.5);
+	color: white;
+}
+
+.medal {
+	width: 100px;
+	height: 100px;
+}
+
+#finalResult {
+	display: none;
+	background-color: rgba(50, 50, 50, 0.5);
+	color: white;
+	font-size: 30pt; 
+}
+
+#playerStatus {
+	display: none;
+	border: none;
+	color: white;
+	font-size: 42pt;
+}

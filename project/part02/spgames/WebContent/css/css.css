@@ -1,0 +1,566 @@
+body {
+	
+}
+
+h1 {
+	font-size: 100px;
+	padding-top: 50px;
+	letter-spacing: -2px;
+	font-weight: 100;
+	color: #E0F0FF;
+	display: block;
+	margin-left: 35%;
+	margin-top: -10px;
+}
+
+h1.playerName {
+	font-size: 50px;
+}
+h2#yellNum{
+	margin-top:30px;
+}
+.logoImg {
+	float: left;
+	margin: 20px;
+	width: 10%;
+	height: 25%;
+}
+
+.introImg {
+	float: left;
+	z-index: 2;
+}
+
+.personImg {
+	position: relative;
+	width: 80px;
+	height: 80px;
+	top: 40%;
+	padding: 5px;
+}
+
+.personImg.height {
+	top: 20%;
+}
+
+.modal-container, .playerOut {
+	position: fixed;
+	display: block;
+	z-index: 10;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	
+	background-color: rgb(0, 0, 0); /* Fallback color */
+	background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+.playerOut {
+	background-color: rgba(0, 0, 0, 0.8);
+	text-align:center;
+	margin-top:60px;
+}
+
+.modal-wrapper {
+	position: absolute;
+	background-color: #fefefe;
+	margin: auto;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	padding: 0;
+	width: 1000px;
+	height: 300px;
+	background-color: rgba(0, 0, 0, 0.1); /* Black w/ opacity */
+}
+
+.modal-wrapper-playerName {
+	position: absolute;
+	background-color: #fefefe;
+	margin: auto;
+	top: 15%;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	padding: 0;
+	width: 800px;
+	height: 500px;
+	background-color: rgba(0, 0, 0, 0.1); /* Black w/ opacity */
+}
+
+.ui-modal-playerName {
+	position: relative;
+	width: 50%;
+	font-size: 40px;
+	color: white;
+	margin: 10px;
+	background-color: rgba(0, 0, 0, 0.5);
+	border: none;
+	outline: none;
+	text-align: center;
+}
+
+.modal-content-playerName {
+	position: relative;
+	text-align: center;
+	margin: 20px;
+}
+
+.ui-modal-title2 {
+	position: relatvie;
+	width: 100%;
+	height: 20%;
+}
+
+.ui-modal-content {
+	float: left;
+	position: relative;
+	margin: 20px;
+	width: 200px;
+	height: 300px;
+	background-color: #666;
+	box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.9) inset, 4px 4px 10px 0px
+		rgba(1, 1, 1, 0.6) inset;
+	text-align: center;
+}
+
+.ui-modal-content:hover {
+	width: 220px;
+	height: 320px;
+	cursor: pointer;
+}
+
+#playerStyle {
+	color: white;
+	font-size: 40px;
+}
+
+.players-content {
+	position: relative;
+	text-align: center;
+	width: 100%;
+	height: auto;
+	margin-top: 20px;
+}
+
+#main-playerStyle {
+	position: relative;
+	font-size: 20px;
+}
+
+.btn {
+	color: #111;
+	background: #eee;
+	padding: 20px;
+	border-radius: 5px;
+	outline: none;
+	border: none;
+	cursor: pointer;
+	transition: all 0.5s;
+}
+
+.btn.next {
+	font-size: 20px;
+}
+
+.btn.back {
+	font-size: 15px;
+	margin-top: 30px;
+}
+.btn.start{
+	background: grey;
+	font-size:15px;
+	margin-top:10px;
+}
+
+.navbar {
+	margin-bottom: 0;
+	border-radius: 0;
+}
+
+/* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+.row-container {
+	height: 640px;
+}
+/* Set gray background color and 100% height */
+.sidenav {
+	padding-top: 20px;
+	background-color: #f1f1f1;
+	height: 50%;
+}
+
+/* On small screens, set height to 'auto' for sidenav and grid */
+@media screen and (max-width: 767px) {
+	.sidenav {
+		height: auto;
+		padding: 15px;
+	}
+	.row.content {
+		height: auto;
+	}
+}
+
+.carousel-inner{
+    text-align: -webkit-center;
+}
+.carousel-inner>.item>a>img, .carousel-inner>.item>img, .img-responsive,
+	.thumbnail a>img, .thumbnail>img {
+	display: block;
+	max-width: 100%;
+	height: 230px;
+}
+
+
+.ui-playerInfo,.ui-gameSection,.ui-alcoholBar{
+	position:relative;
+	float:left;
+	height: 640px;
+	text-align:center;
+}
+
+.ui-playerInfo {
+	width: 18%;
+}
+
+.ui-gameSection {
+	margin-left: 10px;
+	width: 62%;
+	display: inline-block;
+}
+	.game {
+		position:relative;
+		width:100%;
+	}
+	.game.user {
+		margin-top :50px;
+	}
+	.game.yell.wrapper{
+		position:relative;
+		height:20%;
+		margin-top:30px;
+	}
+		.game.yell.wrapper > .game.yell {
+			position:absolute;
+			height:100%;
+		}
+		.game.yell.real {
+			z-index:1; 
+		}
+		.game.yell.fake {
+			z-index:10;
+		}
+				.ui-yell {
+			position:relative;
+			display:inline-block;
+			visibility:hidden;
+			height:100%;
+			width:15%;
+			margin-left:4%;
+			left:-20px;
+			}	
+				.ui-yell > img{
+				 	background-color:#f1f1f1;
+					width:100%;
+					height:100%;
+				}
+	ui li{
+		list-style-type: none;
+		display: inline;
+		margin:3.5%;
+	}
+		.ui-user {
+			
+		}
+				.ui-user > img {
+					width: 12%;
+					height: 12%;
+				}
+.ui-alcoholBar {
+	float:left;
+	margin-left: 10px;
+	width: 18%;
+	display: inline-block;
+}
+	.alcohol-wrapper {
+		position: relative;
+		width:280px;
+		height: auto;
+		float:left;
+		margin-top:20px;
+		
+	}
+		.ui-playerName{
+			display:block;
+			width:100%;
+			height:20px;
+		}
+		.ui-alcohol{
+			float:left;
+			height:50px;
+			width:0px;
+			margin-top:10px;
+		}
+.playerOut-content{
+	background-color: #fefefe;
+    margin-top:20%;
+    margin-left:20%;
+    border: 1px solid #888;
+    width: 60%;
+    height:10%;
+    text-align:center;
+}
+	h1.lossMsg {
+	letter-spacing: 0;
+	font-weight: 0;
+	color: #E0F0FF;
+	display: block;
+	margin-left: 10%;
+	margin-top: 10%;
+	}
+	
+<!-- GAME TWO -->	
+.btn-block {
+	width: 50%;
+	float:left;
+	margin-left:24%;
+}
+
+.btn-primary.active.focus, .btn-primary.active:focus, .btn-primary.active:hover,
+	.btn-primary:active.focus, .btn-primary:active:focus, .btn-primary:active:hover,
+	.open>.dropdown-toggle.btn-primary.focus, .open>.dropdown-toggle.btn-primary:focus,
+	.open>.dropdown-toggle.btn-primary:hover {
+	background-color: #666666;
+	border-color: #666666;
+}
+
+.range {
+	-webkit-appearance: none;
+	vertical-align: middle;
+	outline: none;
+	border: none;
+	padding: 0;
+	background: none;
+}
+
+.range::-webkit-slider-runnable-track {
+	background-color: #d7dbdd;
+	height: 6px;
+	border-radius: 3px;
+	border: 1px solid transparent;
+}
+
+.range[disabled]::-webkit-slider-runnable-track {
+	border: 1px solid #d7dbdd;
+	background-color: transparent;
+	opacity: 0.4;
+}
+
+.range::-moz-range-track {
+	background-color: #d7dbdd;
+	height: 6px;
+	border-radius: 3px;
+	border: none;
+}
+
+.range::-ms-track {
+	color: transparent;
+	border: none;
+	background: none;
+	height: 6px;
+}
+
+.range::-ms-fill-lower {
+	background-color: #d7dbdd;
+	border-radius: 3px;
+}
+
+.range::-ms-fill-upper {
+	background-color: #d7dbdd;
+	border-radius: 3px;
+}
+
+.range::-ms-tooltip {
+	display: none; /* display and visibility only */
+}
+
+.range::-moz-range-thumb {
+	border-radius: 20px;
+	height: 18px;
+	width: 18px;
+	border: none;
+	background: none;
+	background-color: #606670;
+}
+
+.range:active::-moz-range-thumb {
+	outline: none;
+}
+
+.range::-webkit-slider-thumb {
+	-webkit-appearance: none !important;
+	border-radius: 100%;
+	background-color: #606670;
+	height: 18px;
+	width: 18px;
+	margin-top: -7px;
+}
+
+.range[disabled]::-webkit-slider-thumb {
+	background-color: transparent;
+	border: 1px solid #d7dbdd;
+}
+
+.range:active::-webkit-slider-thumb {
+	outline: none;
+}
+
+.range::-ms-thumb {
+	border-radius: 100%;
+	background-color: #606670;
+	height: 18px;
+	width: 18px;
+	border: none;
+}
+
+.range:active::-ms-thumb {
+	border: none;
+}
+	
+output {
+	border: 1px solid #d7dbdd;
+	color: #333;
+	font-family: 'Lato', sans-serif;
+	font-size: 12px;
+	padding: .4em .6em;
+	border-radius: 3px;
+}
+
+
+/* GAME THREE */
+.wrapper-game3 {
+	width:100%;
+	height:500px;
+	margin-top:8%;
+}
+.blue{
+	background-color:  blue;
+}
+.orange{
+	background-color:  orange;
+}
+.gray{
+	background-color: gray;
+	}
+.green{
+	background-color: green;
+	}
+	
+	
+/*  게임설명 벌주 누적 공간 설정  */
+
+#gameTable{
+	width:40%;
+	float : left;
+}
+
+#scoreTable{
+	width:50%;
+	float : right;
+	margin-right:5%;
+	margin-top:2%;
+}
+#gameExplan{
+	height:100px;
+}
+#drinkNum{
+	height:50px;
+}
+
+/* Login */
+#login-dp {
+	text-align: center;
+	min-width: 250px;
+	padding: 14px 14px 0;
+	overflow: hidden;
+	background-color: rgba(255, 255, 255, .8);
+}
+
+#login-dp .help-block {
+	font-size: 12px
+}
+
+#login-dp .bottom {
+	background-color: rgba(255, 255, 255, .8);
+	border-top: 1px solid #ddd;
+	clear: both;
+	padding: 14px;
+}
+
+#login-dp .social-buttons {
+	margin: 12px 0
+}
+
+#login-dp .social-buttons a {
+	width: 49%;
+}
+
+#login-dp .form-group {
+	margin-bottom: 10px;
+}
+
+.btn-fb {
+	color: #fff;
+	background-color: #3b5998;
+}
+
+.btn-fb:hover {
+	color: #fff;
+	background-color: #496ebc
+}
+
+.btn-tw {
+	color: #fff;
+	background-color: #55acee;
+}
+
+.btn-tw:hover {
+	color: #fff;
+	background-color: #59b5fa;
+}
+
+@media ( max-width :768px) {
+	#login-dp {
+		background-color: inherit;
+		color: #fff;
+	}
+	#login-dp .bottom {
+		background-color: inherit;
+		border-top: 0 none;
+	}
+}
+.ui-reg {
+	position:absolute;
+	background-color:white;
+	width:250px;
+	height:230px;
+	text-align:center;
+	border:1px solid grey;
+	z-index:1005;
+	margin-top:-45%;
+	left:86%;
+	float:left;
+}
+	.ui-inner-reg-detail{
+	text-align:center;
+	font-size:15px;
+	width:180px;
+	height:30px;
+	float:left;
+	margin:15px 15px 15px 30px;
+	padding: 14px 14px 0;
+	}
+		.ui-inner-reg-detail-btn {
+		float:left;
+		margin-left:40%;
+		}

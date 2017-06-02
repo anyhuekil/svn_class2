@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	 xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context-4.0.xsd" >
+	<bean id="p1" class="springweb.z01_dto.Product">
+		<constructor-arg value="사과"/>
+		<constructor-arg value="5000"/>
+	</bean>
+	<bean id="p2" class="springweb.z01_dto.Product">
+		<constructor-arg value="바나나"/>
+		<constructor-arg value="4000"/>
+	</bean>
+	<bean id="p3" class="springweb.z01_dto.Product">
+		<constructor-arg value="키위"/>
+		<constructor-arg value="7000"/>
+	</bean>
+	<bean id="mart" class="springweb.z01_dto.Mart">
+		<constructor-arg value="우리슈퍼"/>
+		<constructor-arg>
+			<list>
+				<ref bean="p1"/>
+				<ref bean="p2"/>
+				<ref bean="p3"/>
+			</list>
+		</constructor-arg>
+		<constructor-arg value="2"/>
+	</bean>
+</beans>

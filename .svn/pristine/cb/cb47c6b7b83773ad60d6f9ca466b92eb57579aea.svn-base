@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.view.TableViewController">
+   <children>
+      <TableView layoutX="15.0" layoutY="161.0" prefHeight="425.0" prefWidth="771.0" />
+      <TextField fx:id="txtSearch" layoutX="539.0" layoutY="79.0" prefHeight="23.0" prefWidth="195.0" />
+      <Button fx:id="btnSearch" layoutX="740.0" layoutY="79.0" mnemonicParsing="false" onAction="#dataSearch" prefHeight="23.0" prefWidth="46.0" text="검색" />
+      <ButtonBar layoutX="520.0" layoutY="110.0" prefHeight="40.0" prefWidth="246.0">
+        <buttons>
+          <Button mnemonicParsing="false" text="New" />
+            <Button mnemonicParsing="false" text="Edit" />
+            <Button mnemonicParsing="false" text="Delete" />
+        </buttons>
+      </ButtonBar>
+      <Label layoutX="15.0" layoutY="40.0" text="Kaggle 부동산 데이터 조회">
+         <font>
+            <Font name="HYGothic-Extra" size="22.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
