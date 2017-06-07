@@ -44,7 +44,7 @@ public class A05_ModelAttrCtrl {
 		
 		prod.setTot(prod.getTot()+(prod.getPrice()*prod.getCnt()));
 		
-		return "a01_basic/a21_buyProduct";
+		return "a01_basic/a21_buyProduct.jsp";
 	}
 //	화면단 호출
 //	http://localhost:6080/springweb/emplist.do
@@ -54,7 +54,7 @@ public class A05_ModelAttrCtrl {
 		if(sch.getEname()!=null){
 			d.addAttribute("list", new A01_EmpDB().searchPre(sch));
 		}
-		return "a01_basic/a22_empList";
+		return "a01_basic/a22_empList.jsp";
 	}
 //	계산기 화면 호출
 //	http://localhost:6080/springweb/calcu.do
@@ -70,7 +70,7 @@ public class A05_ModelAttrCtrl {
 				calc.getNum02()==0?0:calc.getNum01()/calc.getNum02()};
 		calc.setResult(	results[ calc.getCalIdx() ]);
 		
-		return "a01_basic/a23_calcu";
+		return "a01_basic/a23_calcu.jsp";
 	}
 	
 	
