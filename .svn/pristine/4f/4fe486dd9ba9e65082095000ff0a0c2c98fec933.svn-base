@@ -48,4 +48,6 @@
 		parameterType="emp01"
 			#{ename} : emp.getEname()		
 	 -->
+	
+	
 </mapper>

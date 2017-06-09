@@ -17,13 +17,9 @@
 		</script>
 	</head>
 	<body><center>
-		<h2>emp list</h2>
-		<form method="post">
-		이름:<input type="text" name="ename"/><br>
-		<input type="submit" value="검색"/>
-		</form>
-		<c:forEach var="emp" items="${emplist}">
-			<h3>${emp.ename}</h3>
+		<h2>DeptLIST</h2>
+		<c:forEach var="dept" items="${deptlist}">
+			<h3>${dept.dname}</h3>
 		</c:forEach>
 		
 	</body>
