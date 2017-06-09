@@ -38,7 +38,7 @@ public class loginController  {
 	
 	 @FXML
 	 private void btnlogin(ActionEvent event){
-		 // db¿¬µ¿ÀÌÀüÀÌ±â¶§¹®¿¡ test/testÀÔ·Â½Ã ·Î±×ÀÎ¼º°øor ½ÇÆĞ ¿©ºÎ
+		 // dbì—°ë™ì´ì „ì´ê¸°ë•Œë¬¸ì— test/testì…ë ¥ì‹œ ë¡œê·¸ì¸ì„±ê³µor ì‹¤íŒ¨ ì—¬ë¶€
 		 /*
 		 if(txusername.getText().equals("test") && txpassword.getText().equals("test")){
 			 labeltitle.setText("succes");	
@@ -57,7 +57,7 @@ public class loginController  {
 				 labeltitle.setText("fail");
 			 }
 			 */
-		 // DB¿¬µ¿ÈÄ ÁÖ¼® Ç®¿¹Á¤
+		 // DBì—°ë™í›„ ì£¼ì„ í’€ì˜ˆì •
 		 	control = new DbController();
 			try {
 				ResultSet rs = null;
@@ -70,7 +70,7 @@ public class loginController  {
 					mainapp.basic();
 				}
 				else{
-					labeltitle.setText("id³ª pw°¡ Æ²·È½À´Ï´Ù");
+					labeltitle.setText("idë‚˜ pwê°€ í‹€ë ¸ìŠµë‹ˆë‹¤");
 				}
 				control.con.disconnect();
 			} catch (SQLException e) {

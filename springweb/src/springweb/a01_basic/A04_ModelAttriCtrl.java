@@ -14,7 +14,7 @@ public class A04_ModelAttriCtrl {
 	
 	@ModelAttribute("person")
 	public Person getPerson(){
-		return new Person("È«±æµ¿",25);
+		return new Person("í™ê¸¸ë™",25);
 	}
 	
 	
@@ -33,9 +33,9 @@ public class A04_ModelAttriCtrl {
 		System.out.println("num01:"+ex.getNum01());
 		System.out.println("num02:"+ex.getNum02());
 		System.out.println("inputData:"+ex.getInputdata());
-		ex.setResult("¿À´ä");
+		ex.setResult("ì˜¤ë‹µ");
 		if(ex.getInputdata()==(ex.getNum01()*ex.getNum02())){
-			ex.setResult("Á¤´ä");
+			ex.setResult("ì •ë‹µ");
 		}
 		ex.setNum01((int)(Math.random()*9)+1);
 		ex.setNum02((int)(Math.random()*9)+1);		

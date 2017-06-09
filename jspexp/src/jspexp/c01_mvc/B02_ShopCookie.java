@@ -30,17 +30,17 @@ public class B02_ShopCookie extends HttpServlet {
 	 */
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-//		1. ¿äÃ»Ã³¸®
+//		1. ìš”ì²­ì²˜ë¦¬
 		String product = request.getParameter("product");
 		System.out.println("product:"+product);
-		// ÇöÀç °¡Áö°í ÀÖ´Â ÄíÅ° °¹¼ö
+		// í˜„ì¬ ê°€ì§€ê³  ìˆëŠ” ì¿ í‚¤ ê°¯ìˆ˜
 		int cookieCnt=0;
 		if( request.getCookies()!=null ){
 			cookieCnt=request.getCookies().length;
 		}
 		
 		if(product!=null&&!product.equals("")){
-			// ÄíÅ°ÀÇ ÀÌ¸§¿·¿¡ numbering Ã³¸®
+			// ì¿ í‚¤ì˜ ì´ë¦„ì˜†ì— numbering ì²˜ë¦¬
 			Cookie cookie = new Cookie("product"+cookieCnt,product);
 			response.addCookie(cookie);
 		}

@@ -20,10 +20,10 @@ public class A05_ModelAttrCtrl {
 	@ModelAttribute("deptList")
 	public ArrayList<Code> deptList(){
 		ArrayList<Code> list = new ArrayList<Code>();
-		list.add(new Code("10","ÀÎ»ç"));
-		list.add(new Code("20","Àç¹«"));
-		list.add(new Code("30","it»ç¾÷ºÎ"));
-		list.add(new Code("40","ÃÑ¹«"));
+		list.add(new Code("10","ì¸ì‚¬"));
+		list.add(new Code("20","ì¬ë¬´"));
+		list.add(new Code("30","itì‚¬ì—…ë¶€"));
+		list.add(new Code("40","ì´ë¬´"));
 		return list;
 	}
 	@ModelAttribute("calcu")
@@ -37,7 +37,7 @@ public class A05_ModelAttrCtrl {
 	}
 	
 
-//	È­¸é´Ü È£Ãâ..
+//	í™”ë©´ë‹¨ í˜¸ì¶œ..
 //	http://localhost:6080/springweb/buyProduct.do
 	@RequestMapping("/buyProduct.do")
 	public String buyProduct(@ModelAttribute("prodmd")Product prod){
@@ -46,7 +46,7 @@ public class A05_ModelAttrCtrl {
 		
 		return "a01_basic/a21_buyProduct";
 	}
-//	È­¸é´Ü È£Ãâ
+//	í™”ë©´ë‹¨ í˜¸ì¶œ
 //	http://localhost:6080/springweb/emplist.do
 	@RequestMapping("/emplist.do")
 	public String empList(@ModelAttribute("sch") Emp sch, Model d){
@@ -56,7 +56,7 @@ public class A05_ModelAttrCtrl {
 		}
 		return "a01_basic/a22_empList";
 	}
-//	°è»ê±â È­¸é È£Ãâ
+//	ê³„ì‚°ê¸° í™”ë©´ í˜¸ì¶œ
 //	http://localhost:6080/springweb/calcu.do
 	@RequestMapping("/calcu.do")
 	public String calcu(@ModelAttribute("cal") Calculator calc){

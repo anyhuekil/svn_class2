@@ -6,33 +6,33 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class A07_ForRedCtrl {
-	// »çÀÌÆ® È£Ãâ
+	// ì‚¬ì´íŠ¸ í˜¸ì¶œ
 	@RequestMapping("/redirect01.do")
 	public String redirect01(){
 		return "redirect:http://www.naver.com";
 	}
-//	³»ºÎ controller È£Ãâ..
+//	ë‚´ë¶€ controller í˜¸ì¶œ..
 	@RequestMapping("/redirect02.do")
 	public String redirect02(){
 		
 		return "redirect:/start.do";
 	}
-//	³»ºÎ ÀÚ¿ø È£Ãâ jsp page È£Ãâ..
+//	ë‚´ë¶€ ìì› í˜¸ì¶œ jsp page í˜¸ì¶œ..
 	@RequestMapping("/redirect03.do")
 	public String redirect03(){
 		return "redirect:/index";
 	}
-//	³»ºÎ ÀÚ¿ø È£Ãâ 1
+//	ë‚´ë¶€ ìì› í˜¸ì¶œ 1
 //	http://localhost:6080/springweb/redEmp2.do?ename=F
-//	redirect´Â µ¥ÀÌÅÍ°ªÀ¸·Î ¿äÃ»°ªÀ¸·Î ³Ñ±âÁö X	
+//	redirectëŠ” ë°ì´í„°ê°’ìœ¼ë¡œ ìš”ì²­ê°’ìœ¼ë¡œ ë„˜ê¸°ì§€ X	
 
 	@RequestMapping("/redEmp.do")
 	public String redEmp(){
 		return "redirect:/emplist.do";
 	}
-//	³»ºÎ ÀÚ¿ø È£Ãâ 2
+//	ë‚´ë¶€ ìì› í˜¸ì¶œ 2
 //	http://localhost:6080/springweb/forEmp.do?ename=F
-//	¿äÃ»°ªÀÌ ³Ñ°ÜÁö´Â °ÍÀ» È®ÀÎÇÒ ¼ö ÀÖ´Ù.
+//	ìš”ì²­ê°’ì´ ë„˜ê²¨ì§€ëŠ” ê²ƒì„ í™•ì¸í•  ìˆ˜ ìˆë‹¤.
 @RequestMapping("/forEmp.do")
 	public String forEmp(){
 		return "forward:/emplist.do";

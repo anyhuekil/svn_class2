@@ -11,15 +11,15 @@ public class A01_DI_Exp {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		/*xml ·Îµù*/
+		/*xml ë¡œë”©*/
 		Resource rs = new ClassPathResource("springweb/b01_di/diexp01.xml");
-//		BeanFactory : bean°´Ã¼ È£Ãâ.
-//		XmlBeanFactory : xml¿¡ ÀÖ´Â bean È£Ãâ.
+//		BeanFactory : beanê°ì²´ í˜¸ì¶œ.
+//		XmlBeanFactory : xmlì— ìˆëŠ” bean í˜¸ì¶œ.
 		BeanFactory bean = new XmlBeanFactory(rs);
-//		ÇØ´ç bean id°ªÀ¸·Î ·Îµù.. xml id="p"
+//		í•´ë‹¹ bean idê°’ìœ¼ë¡œ ë¡œë”©.. xml id="p"
 		Person p = (Person)bean.getBean("p");
-		System.out.println("ÀÌ¸§:"+p.getName());
-		System.out.println("³ªÀÌ:"+p.getAge());
+		System.out.println("ì´ë¦„:"+p.getName());
+		System.out.println("ë‚˜ì´:"+p.getAge());
 		
 	}
 

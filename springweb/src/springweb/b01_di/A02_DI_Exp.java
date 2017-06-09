@@ -15,9 +15,9 @@ public class A02_DI_Exp {
 		Resource rs = new ClassPathResource("springweb/b01_di/diexp02.xml");
 		BeanFactory bean = new XmlBeanFactory(rs);
 		Weather we = (Weather)bean.getBean("we");
-		System.out.println("³¯Â¥:"+we.getDate());
-		System.out.println("Áö¿ª:"+we.getLocation());
-		System.out.println("Á¤º¸:"+we.getInfo());
+		System.out.println("ë‚ ì§œ:"+we.getDate());
+		System.out.println("ì§€ì—­:"+we.getLocation());
+		System.out.println("ì •ë³´:"+we.getInfo());
 		
 	}
 

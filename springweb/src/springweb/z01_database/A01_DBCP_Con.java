@@ -12,16 +12,16 @@ public class A01_DBCP_Con {
 	// A01_DBCP_Con.getCon()
 	public static Connection  getCon() throws SQLException{
 		
-		// Ä¿³Ø¼Ç Ç®À» ÅëÇØ Ä¿³Ø¼Ç °¡Á®¿À±â.
+		// ì»¤ë„¥ì…˜ í’€ì„ í†µí•´ ì»¤ë„¥ì…˜ ê°€ì ¸ì˜¤ê¸°.
 		Connection con=null;
 		// jndi
 		try {
 			Context initCtx = new InitialContext();
-			// initCtx¿¡¼­ lookup¸Ş¼­µå¸¦ ÀÌ¿ëÇØ¼­ "java:comp/env"¿¡ ÇØ´çÇÏ´Â °´Ã¼ È£Ãâ.
+			// initCtxì—ì„œ lookupë©”ì„œë“œë¥¼ ì´ìš©í•´ì„œ "java:comp/env"ì— í•´ë‹¹í•˜ëŠ” ê°ì²´ í˜¸ì¶œ.
 			Context evnCtx = (Context)initCtx.lookup("java:comp/env");
-		// Ä¿³Ø¼Ç pool
+		// ì»¤ë„¥ì…˜ pool
 			DataSource ds = (DataSource)evnCtx.lookup("jdbc/orcl");
-			// jdbc/orclÀ» ¼³Á¤ÇÑ °ÍÀ»  WAS´Ü¿¡¼­ Ã£¾Æ¼­ connectionÀ» °¡Á®¿Å
+			// jdbc/orclì„ ì„¤ì •í•œ ê²ƒì„  WASë‹¨ì—ì„œ ì°¾ì•„ì„œ connectionì„ ê°€ì ¸ì˜®
 			con=ds.getConnection();
 			
 			

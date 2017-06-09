@@ -1,10 +1,10 @@
 package jspexp.z02_vo;
 // jspexp.z02_vo.Book
 public class Book {
-	private String title;//µµ¼­¸í
-	private String publisher;//ÃâÆÇ»ç
-	private int price;//°¡°İ
-	private String pubDate;//ÃâÆÇÀÏ
+	private String title;//ë„ì„œëª…
+	private String publisher;//ì¶œíŒì‚¬
+	private int price;//ê°€ê²©
+	private String pubDate;//ì¶œíŒì¼
 	public String getTitle() {
 		return title;
 	}

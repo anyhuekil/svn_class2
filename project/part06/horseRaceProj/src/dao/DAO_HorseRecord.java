@@ -262,7 +262,7 @@ public class DAO_HorseRecord {
 		DAO_HorseRecord dao = new DAO_HorseRecord();
 		HorseRecord sch = new HorseRecord();
 		sch.setHnum(36193);
-		sch.setHname("°¡¶÷»ê¼º");
+		sch.setHname("ê°€ëžŒì‚°ì„±");
 		dao.updateHorse(sch, "first");
 		for(HorseRecord vo:dao.searchHor(sch)){
 			System.out.println(vo.getFirst());

@@ -1,6 +1,6 @@
 /*
 
-	Complete - ¼öÁ¤»çÇ× ¾øÀ½
+	Complete - ìˆ˜ì •ì‚¬í•­ ì—†ìŒ
 
 */
 package application.model;
@@ -26,8 +26,8 @@ public class Data {
 	private String Condition2;
 	private String BldgType;
 	private String HouseStyle;
-	private int OverallQual; // ÇÁ·ÎÆÛÆ¼ ¼öÁ¤¿ä¸Á
-	private int OverallCond; // ÇÁ·ÎÆÛÆ¼ ¼öÁ¤¿ä¸Á
+	private int OverallQual; // í”„ë¡œí¼í‹° ìˆ˜ì •ìš”ë§
+	private int OverallCond; // í”„ë¡œí¼í‹° ìˆ˜ì •ìš”ë§
 	private Date YearBuilt;
 	private Date YearRemodAdd;
 	private String RoofStyle;
@@ -89,7 +89,7 @@ public class Data {
 	private Date YrSold;
 	private String SaleType;
 	private String SaleCondition;
-	private int SalePrice; // ÇÁ·ÎÆÛÆ¼ ¼öÁ¤¿ä¸Á
+	private int SalePrice; // í”„ë¡œí¼í‹° ìˆ˜ì •ìš”ë§
 	public int getId() {
 		return id;
 	}
@@ -192,19 +192,19 @@ public class Data {
 	public void setHouseStyle(String houseStyle) {
 		HouseStyle = houseStyle;
 	}
-	// ½ºÆ®¸µ ¼Ó¼º ¼öÁ¤¿ä¸Á
+	// ìŠ¤íŠ¸ë§ ì†ì„± ìˆ˜ì •ìš”ë§
 	public int getOverallQual() {
 		return OverallQual;
 	}
-	// ½ºÆ®¸µ ¼Ó¼º ¼öÁ¤¿ä¸Á
+	// ìŠ¤íŠ¸ë§ ì†ì„± ìˆ˜ì •ìš”ë§
 	public void setOverallQual(int overallQual) {
 		OverallQual= overallQual;
 	}
-	// ½ºÆ®¸µ ¼Ó¼º ¼öÁ¤¿ä¸Á
+	// ìŠ¤íŠ¸ë§ ì†ì„± ìˆ˜ì •ìš”ë§
 	public int getOverallCond() {
 		return OverallCond;
 	}
-	// ½ºÆ®¸µ ¼Ó¼º ¼öÁ¤¿ä¸Á
+	// ìŠ¤íŠ¸ë§ ì†ì„± ìˆ˜ì •ìš”ë§
 	public void setOverallCond(int overallCond) {
 		OverallCond = overallCond;
 	}
@@ -574,7 +574,7 @@ public class Data {
 	public void setSaleCondition(String saleCondition) {
 		SaleCondition = saleCondition;
 	}
-	// ¼öÁ¤¿ä¸Á
+	// ìˆ˜ì •ìš”ë§
 	public int getSalePrice() {
 		return SalePrice;
 	}

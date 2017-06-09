@@ -19,7 +19,7 @@ public class Mart {
 	public void setProduct(Product product) {
 		this.product = product;
 	}
-	
+
 	public ArrayList<Product> getProductList() {
 		return productList;
 	}
@@ -27,16 +27,19 @@ public class Mart {
 		this.productList = productList;
 	}
 	public void selling(){
-		System.out.println("¾î¼­¿À¼¼¿ä!!! "+name+"¸¶Æ® ÀÔ´Ï´Ù.");
+		System.out.println("ì–´ì„œì˜¤ì„¸ìš”!!! "+name+"ë§ˆíŠ¸ ìž…ë‹ˆë‹¤.");
 		if(product!=null){
-			System.out.println("¿À´ÃÀÇ ÃßÃµ ¹°°Ç");
+			System.out.println("ì˜¤ëŠ˜ì˜ ì¶”ì²œ ë¬¼ê±´");
 			System.out.println(product.getPname()+", "+
-					product.getPrice()+"¿øÀ¸·Î ¸ð½Ê´Ï´Ù!!");
+					product.getPrice()+"ì›ìœ¼ë¡œ ëª¨ì‹­ë‹ˆë‹¤!!");
 		}
-		System.out.println("±¸¸Å¹°°Ç!!");
-		for(Product prod:productList){
-			System.out.print(prod.getPname()+"\t");
-			System.out.print(prod.getPrice()+"\n");
+		
+		if(productList!=null&&productList.size()>0){
+			System.out.println("êµ¬ë§¤ë¬¼ê±´!!");	
+			for(Product prod:productList){
+				System.out.print(prod.getPname()+"\t");
+				System.out.print(prod.getPrice()+"\n");
+			}
 		}
 		
 		

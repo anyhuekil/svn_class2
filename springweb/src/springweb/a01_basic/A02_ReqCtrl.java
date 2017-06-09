@@ -6,8 +6,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 // springweb.a01_basic.A02_ReqCtrl
-// 1. annotation ¼±¾ğ
-// 2. Á¶¸³±â(dispatcher-servlet.xml)¿¡ µî·Ï
+// 1. annotation ì„ ì–¸
+// 2. ì¡°ë¦½ê¸°(dispatcher-servlet.xml)ì— ë“±ë¡
 @Controller
 public class A02_ReqCtrl {
 	
@@ -19,26 +19,26 @@ public class A02_ReqCtrl {
 //	?greet1=hi!!&greet2=good!!
 	@RequestMapping("/reqexp01.do")
 	public String requestCall(
-			@RequestParam(value="greet1", defaultValue="ÃÊ±âÀÎ»ç!!")
+			@RequestParam(value="greet1", defaultValue="ì´ˆê¸°ì¸ì‚¬!!")
 								String greet01,
-			@RequestParam(value="greet2", defaultValue="ÃÊ±âÀÎ»ç2")
+			@RequestParam(value="greet2", defaultValue="ì´ˆê¸°ì¸ì‚¬2")
 								String greet02,
 			@RequestParam(value="callNum", defaultValue="-1")
 								int callNum01
 						 ){
-			System.out.println("¿äÃ»°ª1:"+greet01);
-			System.out.println("¿äÃ»°ª2:"+greet02);
-			System.out.println("¿äÃ»°ª3(¼ıÀÚ):"+callNum01);
+			System.out.println("ìš”ì²­ê°’1:"+greet01);
+			System.out.println("ìš”ì²­ê°’2:"+greet02);
+			System.out.println("ìš”ì²­ê°’3(ìˆ«ì):"+callNum01);
 		
-		return "a01_basic/a10_calling";//È­¸é´Ü È£Ãâ..
+		return "a01_basic/a10_calling";//í™”ë©´ë‹¨ í˜¸ì¶œ..
 	}
-	// ¹°°Ç ±¸¸Å ÃÊ±â È­¸é È£Ãâ..
+	// ë¬¼ê±´ êµ¬ë§¤ ì´ˆê¸° í™”ë©´ í˜¸ì¶œ..
 //	http://localhost:6080/springweb/buyForm.do
 	@RequestMapping("/buyForm.do")
 	public String buyForm(){
 		return "a01_basic/a11_buyForm";
 	}
-	// pname=»ç°ú&price=2
+	// pname=ì‚¬ê³¼&price=2
 	@RequestMapping(value="/reqBuy.do")
 	public String requestBuy(
 				@RequestParam(value="pname", defaultValue="")
@@ -49,19 +49,19 @@ public class A02_ReqCtrl {
 				int cnt,
 				Model d
 			){
-		d.addAttribute("showinfo","±¸¸Å¿äÃ» ¹°°ÇÀÌ ¾ø½À´Ï´Ù!!");
-		// ¿äÃ»ÇÑ ¹°°Ç ¸í°ú °¹¼ö°¡ ÀÖÀ» ¶§
+		d.addAttribute("showinfo","êµ¬ë§¤ìš”ì²­ ë¬¼ê±´ì´ ì—†ìŠµë‹ˆë‹¤!!");
+		// ìš”ì²­í•œ ë¬¼ê±´ ëª…ê³¼ ê°¯ìˆ˜ê°€ ìˆì„ ë•Œ
 		if(!prodName.equals("")&&cnt>0){
-			String msg="¿äÃ»ÇÏ½Å ¹°°ÇÀº "+prodName+"ÀÌ°í, "
-					+ "´Ü°¡´Â"+price+"¿ø ÀÌ¸ç,"
-					+ cnt+"°³·Î ÃÑºñ¿ëÀÌ  "+(price*cnt)+"¿ø ÀÔ´Ï´Ù!";
+			String msg="ìš”ì²­í•˜ì‹  ë¬¼ê±´ì€ "+prodName+"ì´ê³ , "
+					+ "ë‹¨ê°€ëŠ”"+price+"ì› ì´ë©°,"
+					+ cnt+"ê°œë¡œ ì´ë¹„ìš©ì´  "+(price*cnt)+"ì› ì…ë‹ˆë‹¤!";
 			d.addAttribute("showinfo",msg);
 		}
 		
 		return "a01_basic/a12_buyList";
 	}
-	// ¿äÃ» ¹æ½Ä Ã³¸®
-	// 1. get¹æ½Ä ÁÖ·Î ÃÊ±â È­¸é ·Îµù½Ã, Ã³¸®..
+	// ìš”ì²­ ë°©ì‹ ì²˜ë¦¬
+	// 1. getë°©ì‹ ì£¼ë¡œ ì´ˆê¸° í™”ë©´ ë¡œë”©ì‹œ, ì²˜ë¦¬..
 //	http://localhost:6080/springweb/calling.do
 	@RequestMapping(value="/calling.do", method=RequestMethod.GET)
 	public String methodExp(){

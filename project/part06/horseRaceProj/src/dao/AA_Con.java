@@ -16,7 +16,7 @@ public class AA_Con {
 	public static Connection conn() throws ClassNotFoundException, SQLException{
 		Class.forName(dirver);
 		con = DriverManager.getConnection(conInfo,did,dpw);
-		System.out.println("沥惑 立加 己傍!!");
+		System.out.println("鞝曥儊 鞝戩啀 靹标车!!");
 		return con;
 	}
 }

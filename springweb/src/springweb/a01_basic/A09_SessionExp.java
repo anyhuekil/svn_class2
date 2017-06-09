@@ -18,14 +18,14 @@ public class A09_SessionExp {
 	@RequestMapping("/mvlogin.do")
 	public String movieLogin(@ModelAttribute("mvpoint") MoviePoint mp){
 		String page="a01_basic/a31_mvlogin";
-		// Æ÷ÀÎÂ÷°¨ ³»¿ëÀ» ¿äÃ»°ªÀ¸·Î ¹Ş¾ÒÀ» ¶§.
+		// í¬ì¸ì°¨ê° ë‚´ìš©ì„ ìš”ì²­ê°’ìœ¼ë¡œ ë°›ì•˜ì„ ë•Œ.
 		if(mp.getPoint()>0){
-			// ±âÁ¸ tot°ª¿¡¼­ point°ªÀ» Â÷°¨Ã³¸®.
+			// ê¸°ì¡´ totê°’ì—ì„œ pointê°’ì„ ì°¨ê°ì²˜ë¦¬.
 			mp.setTot(mp.getTot()-mp.getPoint());
 			page="a01_basic/a32_mvpoint";
-		// 	ÃÊ±â ·Î±×ÀÎ..
-		}else if(mp.getName()!=null&&mp.getName().equals("È«±æµ¿")){
-			// ÃÊ±â ÃÑ Æ÷ÀÎÆ® ÁöÁ¤..
+		// 	ì´ˆê¸° ë¡œê·¸ì¸..
+		}else if(mp.getName()!=null&&mp.getName().equals("í™ê¸¸ë™")){
+			// ì´ˆê¸° ì´ í¬ì¸íŠ¸ ì§€ì •..
 			mp.setTot(10000);
 			page="a01_basic/a32_mvpoint";
 		}

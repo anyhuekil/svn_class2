@@ -11,9 +11,9 @@ public class A06_ModelAndViewCtrl {
 	@RequestMapping("/mav.do")
 	public ModelAndView mavexp(){
 		ModelAndView mav = new ModelAndView();
-		// model¿¡ ´ëÇÑ Ã³¸®..
+		// modelì— ëŒ€í•œ ì²˜ë¦¬..
 		mav.addObject("how", "fine!!");
-		mav.addObject("product", new Product("»ç°ú",3000));
+		mav.addObject("product", new Product("ì‚¬ê³¼",3000));
 		mav.setViewName("a01_basic/a23_mav");
 		return mav;
 	}

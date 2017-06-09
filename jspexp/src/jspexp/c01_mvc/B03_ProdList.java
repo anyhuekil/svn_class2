@@ -37,11 +37,11 @@ public class B03_ProdList extends HttpServlet {
 		
 		Cookie[] cookies= request.getCookies();
 		ArrayList<Code> cookList = new ArrayList<Code>();
-		// º¸³»Áú Code
+		// ë³´ë‚´ì§ˆ Code
 		Code cd=null;
-		// ÇöÀç ÄíÅ°°ªÀÌ ÀÖÀ» ¶§..
-		// Åë°è
-		// 1. »ç°ú, 2. ¹Ù³ª³ª, 3. µş±â
+		// í˜„ì¬ ì¿ í‚¤ê°’ì´ ìˆì„ ë•Œ..
+		// í†µê³„
+		// 1. ì‚¬ê³¼, 2. ë°”ë‚˜ë‚˜, 3. ë”¸ê¸°
 		int appleCnt=0;
 		int bananaCnt=0;
 		int strawCnt=0;
@@ -50,10 +50,10 @@ public class B03_ProdList extends HttpServlet {
 				if(ctrl!=null&&ctrl.equals("del")){
 					c.setMaxAge(0);
 					response.addCookie(c);
-			// productXXX·Î ¸¸µé¾îÁø ÄíÅ°°ª¸¸ °¡Á®¿À±â..
+			// productXXXë¡œ ë§Œë“¤ì–´ì§„ ì¿ í‚¤ê°’ë§Œ ê°€ì ¸ì˜¤ê¸°..
 				}else if(c.getName().length()>=7 &&
 					c.getName().substring(0,7).equals("product")){
-					// ´ÜÀ§°´Ã¼¸¦ ¸¸µé°í ¹è¿­¿¡ ³Ñ±è.
+					// ë‹¨ìœ„ê°ì²´ë¥¼ ë§Œë“¤ê³  ë°°ì—´ì— ë„˜ê¹€.
 					cd = new Code();
 					System.out.println(c.getValue());
 					cd.setName(c.getName());
@@ -65,7 +65,7 @@ public class B03_ProdList extends HttpServlet {
 				}				
 			}			
 		}
-		System.out.println("´ã±â ÄíÅ° °¹¼ö:"+cookList.size());
+		System.out.println("ë‹´ê¸° ì¿ í‚¤ ê°¯ìˆ˜:"+cookList.size());
 		request.setAttribute("cookList", cookList);
 		request.setAttribute("appleCnt", appleCnt);
 		request.setAttribute("bananaCnt", bananaCnt);

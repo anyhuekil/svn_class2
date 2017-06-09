@@ -37,7 +37,7 @@ public class B01_CookieExp extends HttpServlet {
 		// TODO Auto-generated method stub
 		Cookie cookie1 = new Cookie("name1","himan");
 		Cookie cookie2 = new Cookie("name2",
-						URLEncoder.encode("ȫ�浿","utf-8"));
+						URLEncoder.encode("홍길동","utf-8"));
 		response.addCookie(cookie1);
 		response.addCookie(cookie2);
 		

@@ -31,7 +31,7 @@ public class DailySchedule {
 		this.schList = schList;
 	}
 	public void showSchedule(){
-		System.out.println(date+" ÀÏ°ú°èÈ¹");
+		System.out.println(date+" ì¼ê³¼ê³„íš");
 		for(Schedule sch:schList){
 			System.out.println(sch.getTime()+"\t"+sch.getContent());
 		}

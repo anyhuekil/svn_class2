@@ -1,6 +1,6 @@
 /*
 
-Complete - ¼öÁ¤»çÇ×¾øÀ½
+Complete - ìˆ˜ì •ì‚¬í•­ì—†ìŒ
 
 */
 package application.util;

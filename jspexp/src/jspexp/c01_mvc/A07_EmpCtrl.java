@@ -34,18 +34,18 @@ public class A07_EmpCtrl extends HttpServlet {
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		request.setCharacterEncoding("utf-8");
-//		1. ¿äÃ»
+//		1. ìš”ì²­
 		String ename=request.getParameter("ename")!=null?request.getParameter("ename"):"";
 		String empno=(request.getParameter("empno")!=null&&
 				!request.getParameter("empno").equals(""))
 				?request.getParameter("empno"):"0";
 		
-//		2. ¸ğµ¨
-		// ¿äÃ»µ¥ÀÌÅÍ VO ÀÔ·Â
+//		2. ëª¨ë¸
+		// ìš”ì²­ë°ì´í„° VO ì…ë ¥
 		Emp sch= new Emp();
 		sch.setEname(ename);
 		sch.setEmpno(new Integer(empno));
-		// Service´Ü¿¡ ³Ñ°Ü¼­ °¡Á®¿Å
+		// Serviceë‹¨ì— ë„˜ê²¨ì„œ ê°€ì ¸ì˜®
 		Emp emp = service.getEmp(sch);
 		request.setAttribute("emp",emp);
 

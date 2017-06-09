@@ -1,14 +1,14 @@
 /* 
-	<Âü°í»çÇ×>
+	<ì°¸ê³ ì‚¬í•­>
 	
 	EarlGrey SemiProject
-		1) ÇÁ·ÎÁ§Æ® ±¸Á¶ => application, application.view, application.model, application.util
+		1) í”„ë¡œì íŠ¸ êµ¬ì¡° => application, application.view, application.model, application.util
 	
-	CSS Àû¿ëÇÏ±â ¼Ò½º
+	CSS ì ìš©í•˜ê¸° ì†ŒìŠ¤
 	scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 
 
-	<ÀÌ½´»çÇ×> ex) 1. 97ÁÙ - Å¬·¡½º¸¦ Ã£À» ¼ö ¾øÀ½
+	<ì´ìŠˆì‚¬í•­> ex) 1. 97ì¤„ - í´ë˜ìŠ¤ë¥¼ ì°¾ì„ ìˆ˜ ì—†ìŒ
 	1. 
 	2.
 	3.
@@ -51,7 +51,7 @@ public class Main extends Application {
 		
 	}
 	
-	// ·Î±×ÀÎ
+	// ë¡œê·¸ì¸
 	public void fxlogin(){
 		try {
 
@@ -66,14 +66,14 @@ public class Main extends Application {
 		}
 	}
 	
-	// ±âº» È­¸é 
+	// ê¸°ë³¸ í™”ë©´ 
 	public void basic(){
 		try {
 			FXMLLoader loader = new FXMLLoader();
 			loader.setLocation(getClass().getResource("/application/view/Main.fxml"));
-	        mainPage = loader.load(); // ÀÌ½´ 1¹ø
+	        mainPage = loader.load(); // ì´ìŠˆ 1ë²ˆ
 	        secondaryStage = new Stage();
-	        //tableView(); // ¸ŞÀÎ ÆäÀÌÁö¿¡ Å×ÀÌºí ºä ¼ÂÆÃ
+	        //tableView(); // ë©”ì¸ í˜ì´ì§€ì— í…Œì´ë¸” ë·° ì…‹íŒ…
 	        secondaryScene = new Scene(mainPage);
 	        secondaryStage.setScene(secondaryScene);
 	        secondaryStage.setResizable(true);
@@ -86,11 +86,11 @@ public class Main extends Application {
 		}
 	}
 	
-	// Å×ÀÌºí ºä È­¸é
+	// í…Œì´ë¸” ë·° í™”ë©´
 	public void tableView(){
 		FXMLLoader loader = new FXMLLoader();
 		try {
-			loader.setLocation(getClass().getResource("/application/view/tableView.fxml")); // ÀÌ½´ 1¹ø
+			loader.setLocation(getClass().getResource("/application/view/tableView.fxml")); // ì´ìŠˆ 1ë²ˆ
 			tableView = (AnchorPane) loader.load();
 			table = (TableView)tableView.getChildren().get(0);
 	        mainPage.setCenter(tableView);	        
@@ -105,7 +105,7 @@ public class Main extends Application {
 		}
 	}
 	
-	// ÄÃ·³ ¹ÙÀÎµù http://www.java2s.com/Tutorials/Java/JavaFX/0650__JavaFX_TableView.htm
+	// ì»¬ëŸ¼ ë°”ì¸ë”© http://www.java2s.com/Tutorials/Java/JavaFX/0650__JavaFX_TableView.htm
 	public void columnView(ArrayList<Data> dataList){
 		//Scene node = tableView.getScene();
 		TableColumn col01 = new TableColumn("overallqual");
@@ -115,7 +115,7 @@ public class Main extends Application {
 			col01.setCellValueFactory(new PropertyValueFactory<>(String.valueOf(d.getOverallQual())));
 			col02.setCellValueFactory(new PropertyValueFactory<>(String.valueOf(d.getOverallCond())));
 			col03.setCellValueFactory(new PropertyValueFactory<>(String.valueOf(d.getSalePrice())));
-			System.out.println("µ¥ÀÌÅÍ : " + String.valueOf(d.getOverallQual()));
+			System.out.println("ë°ì´í„° : " + String.valueOf(d.getOverallQual()));
 		}
 		table.getColumns().add(col01);
 		table.getColumns().add(col02);

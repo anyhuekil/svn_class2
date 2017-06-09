@@ -7,47 +7,47 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import springweb.z01_dto.Exam;
 import springweb.z01_dto.Member;
 
-// ¸Ş¸ğ¸®¿¡ ·ÎµùÇÏ±â
-// 1. °¢ Å¬·¡½º ¼±¾ğÀ§¿¡ annotationÀ¸·Î  Controller ¼±¾ğ
-// 2. dispather.xml¿¡ xmlµî·Ï ¹æ½ÄÀ¸·Î bean µî·Ï
+// ë©”ëª¨ë¦¬ì— ë¡œë”©í•˜ê¸°
+// 1. ê° í´ë˜ìŠ¤ ì„ ì–¸ìœ„ì— annotationìœ¼ë¡œ  Controller ì„ ì–¸
+// 2. dispather.xmlì— xmlë“±ë¡ ë°©ì‹ìœ¼ë¡œ bean ë“±ë¡
 // springweb.a01_basic.A01_StartCtrl
 @Controller
 public class A01_StartCtrl {
 	// http://localhost:6080/springweb/start.do
-	// È£ÃâµÉ ¸Ş¼­µå.. annotationÀ¸·Î RequestMapping("¸¶Áö¸· È£Ãâ¸í")
+	// í˜¸ì¶œë  ë©”ì„œë“œ.. annotationìœ¼ë¡œ RequestMapping("ë§ˆì§€ë§‰ í˜¸ì¶œëª…")
 	
 	@RequestMapping("/start.do")
 	public String start(){
-//		1. ¿äÃ»°ª..
-//		2. business login Ã³¸® (service¸¦ ÅëÇØ¼­ model)
-//		3. view´Ü È£Ãâ..
-		return "a01_basic/a01_start"; //È­¸é´Ü È£Ãâ..
+//		1. ìš”ì²­ê°’..
+//		2. business login ì²˜ë¦¬ (serviceë¥¼ í†µí•´ì„œ model)
+//		3. viewë‹¨ í˜¸ì¶œ..
+		return "a01_basic/a01_start"; //í™”ë©´ë‹¨ í˜¸ì¶œ..
 	}
 	// http://localhost:6080/springweb/sendForw.do?id=himan&pass=7777
 	@RequestMapping("/sendForw.do")
 	public String sendForw(Member mem, Model d){
-//		1. ¿äÃ»°ª Ã³¸®..
+//		1. ìš”ì²­ê°’ ì²˜ë¦¬..
 		System.out.println(mem.getId()+":"+mem.getPass());
-//		2. ¸ğµ¨µ¥ÀÌÅÍ Ã³¸®
-//		   msg  "id @@@ ÀÌ°í, password @@@ ÀÔ´Ï´Ù!!"
-		d.addAttribute("msg", "id "+mem.getId()+" ÀÌ°í, password "+
-				mem.getPass()+" ÀÔ´Ï´Ù!!");
-		// view´Ü : ${msg}
+//		2. ëª¨ë¸ë°ì´í„° ì²˜ë¦¬
+//		   msg  "id @@@ ì´ê³ , password @@@ ì…ë‹ˆë‹¤!!"
+		d.addAttribute("msg", "id "+mem.getId()+" ì´ê³ , password "+
+				mem.getPass()+" ì…ë‹ˆë‹¤!!");
+		// viewë‹¨ : ${msg}
 		return "a01_basic/a02_send";
 	}
-	// ·Î±×ÀÎ ÃÊ±â È­¸é..http://localhost:6080/springweb/login.do
+	// ë¡œê·¸ì¸ ì´ˆê¸° í™”ë©´..http://localhost:6080/springweb/login.do
 	@RequestMapping("/login.do")
 	public String login(){
 		return "a01_basic/a03_login";
 	}
-	// ·Î±×ÀÎ Ã¼Å© Ã³¸®  http://localhost:6080/springweb/loginck.do
+	// ë¡œê·¸ì¸ ì²´í¬ ì²˜ë¦¬  http://localhost:6080/springweb/loginck.do
 	@RequestMapping("/loginck.do")
 	public String loginck(Member mem, Model d){
 		String page="a03_login";
-		d.addAttribute("msg", mem.getId()+"´Â ÀÎÁõµÈ ¾ÆÀÌµğ°¡ ¾Æ´Õ´Ï´Ù!");
+		d.addAttribute("msg", mem.getId()+"ëŠ” ì¸ì¦ëœ ì•„ì´ë””ê°€ ì•„ë‹™ë‹ˆë‹¤!");
 		if(mem.getId().equals("himan")&&mem.getPass().equals("7777")){
 			page="a04_login_succ";
-			d.addAttribute("msg", mem.getId()+"´Ô ¾î¼­¿À¼¼¿ä!!");
+			d.addAttribute("msg", mem.getId()+"ë‹˜ ì–´ì„œì˜¤ì„¸ìš”!!");
 		}
 		return "a01_basic/"+page;
 	}
@@ -60,11 +60,11 @@ public class A01_StartCtrl {
 		
 		return "a01_basic/a05_exam";
 	}
-	// ·Î±×ÀÎ Ã¼Å© Ã³¸®  http://localhost:6080/springweb/examck.do
+	// ë¡œê·¸ì¸ ì²´í¬ ì²˜ë¦¬  http://localhost:6080/springweb/examck.do
 	@RequestMapping("/examck.do")
 	public String examck(Exam mem, Model d){
 		String page="a05_exam";
-		d.addAttribute("msg", "¿À´äÀÔ´Ï´Ù.");
+		d.addAttribute("msg", "ì˜¤ë‹µì…ë‹ˆë‹¤.");
 		if((mem.getNum01()+mem.getNum02())==mem.getInputdata()){
 			page="a06_pass";
 			d.addAttribute("msg","pass");

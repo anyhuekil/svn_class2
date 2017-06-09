@@ -64,8 +64,8 @@ public class DAO_PlayerInfo {
 	public void updatePlayer(PlayerInfo upt, int proc){
 		/*
 		 * --- proc----
-		 * 1: È¸¿ø Á¤º¸ ¼öÁ¤
-		 * 2: °ÔÀÓ Á¾·á ÈÄ Á¤º¸ °»½Å
+		 * 1: íšŒì› ì •ë³´ ìˆ˜ì •
+		 * 2: ê²Œì„ ì¢…ë£Œ í›„ ì •ë³´ ê°±ì‹ 
 		 * 
 		*/
 		String sql="";
@@ -304,12 +304,12 @@ public class DAO_PlayerInfo {
 			System.out.println(sql);			
 			if(rs.next()){
 <<<<<<< .mine
-				System.out.println("ì¤‘ë³µëœ idì…ë‹ˆë‹¤.");
+				System.out.println("ä»¥ë¬ë‚¬??id?ë‚…ë•²??");
 ||||||| .r268
-				System.out.println("Áßº¹µÈ idÀÔ´Ï´Ù.");
+				System.out.println("ì¤‘ë³µëœ idì…ë‹ˆë‹¤.");
 =======
 				vo=new PlayerInfo();
-				System.out.println("Áßº¹µÈ idÀÔ´Ï´Ù.");
+				System.out.println("ì¤‘ë³µëœ idì…ë‹ˆë‹¤.");
 >>>>>>> .r278
 				vo.setPid(rs.getString("pid"));
 				vo.setPass(rs.getString("pass"));
@@ -349,7 +349,7 @@ public class DAO_PlayerInfo {
 		DAO_PlayerInfo dao = new DAO_PlayerInfo();
 		PlayerInfo pp = new PlayerInfo();
 		pp.setPid("kjho1e3");
-		pp.setPname("ÇìÇì");
+		pp.setPname("í—¤í—¤");
 		pp.setEmail("gg");
 		pp.setPass("3333");
 		pp.setTel("99999");

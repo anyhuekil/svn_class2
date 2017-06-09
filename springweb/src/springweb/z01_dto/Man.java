@@ -8,6 +8,7 @@ public class Man {
 	public Woman getWoman() {
 		return woman;
 	}
+//	autowire ì†ì„±ì— beanì˜ idê°€ womanì´ ìˆì„ ë•Œ í• ë‹¹..
 	public void setWoman(Woman woman) {
 		this.woman = woman;
 	}
@@ -24,12 +25,13 @@ public class Man {
 		this.loc = loc;
 	}
 	public void show(){
-		System.out.println("ÀÌ¸§:"+name);
-		System.out.println("»ç´Â °÷:"+loc);
+		System.out.println("ì´ë¦„:"+name);
+		System.out.println("ì‚¬ëŠ” ê³³:"+loc);
 		if(woman!=null){
-			System.out.println("±×³à´Â !!!!");
-			System.out.println("ÀÌ¸§:"+woman.getName());
-			System.out.println("³ªÀÌ:"+woman.getAge());
+			System.out.println("ê·¸ë…€ëŠ” !!!!");
+			System.out.println("ì´ë¦„:"+woman.getName());
+			System.out.println("ë‚˜ì´:"+woman.getAge());
+			System.out.println("ì‚¬ëŠ”ê³³:"+woman.getLoc());
 		}
 	}
 	

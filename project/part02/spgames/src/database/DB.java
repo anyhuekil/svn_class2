@@ -10,7 +10,7 @@ public class DB {
 		Class.forName("oracle.jdbc.driver.OracleDriver");
 		String conInfo="jdbc:oracle:thin:@localhost:1521:xe";
 		con = DriverManager.getConnection(conInfo, "system", "1111");
-		System.out.println("沥惑 立加 己傍!!");
+		System.out.println("鞝曥儊 鞝戩啀 靹标车!!");
 		return con;
 	}
 }

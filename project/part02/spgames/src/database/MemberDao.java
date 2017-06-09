@@ -60,7 +60,7 @@ public class MemberDao {
 		return list;
 	}
 		
-	// ·Î±×ÀÎ 
+	// ë¡œê·¸ì¸ 
 	public Member getMember(Member sch){
 		Member mem = null;
 		
@@ -111,13 +111,13 @@ public class MemberDao {
 	}
 	
 	public void insertMember(Member mem){
-		// db ¿¬°áÃ³¸®..
+		// db ì—°ê²°ì²˜ë¦¬..
 		try {
 			con = DB.conn();
 			String sql="INSERT INTO DRINK_MEMBER VALUES(?,?,?,?)";
 			/* COMMIT
-			 autocommit ¿É¼ÇÀ» false»ç¿ëÇÏ¿© commitÇÏÁö ÇÏÁö ¾ÊÀ¸¸é 
-			 Æ®·£Àè¼Ç È®Á¤ Ã³¸®µÇÁö ¾Êµµ·Ï ÇÑ´Ù. setAutoCommit(false) 
+			 autocommit ì˜µì…˜ì„ falseì‚¬ìš©í•˜ì—¬ commití•˜ì§€ í•˜ì§€ ì•Šìœ¼ë©´ 
+			 íŠ¸ëœì­ì…˜ í™•ì • ì²˜ë¦¬ë˜ì§€ ì•Šë„ë¡ í•œë‹¤. setAutoCommit(false) 
 			 * */
 			con.setAutoCommit(false);
 			pstmt=con.prepareStatement(sql);	
@@ -126,7 +126,7 @@ public class MemberDao {
 			pstmt.setString(3, mem.getName());
 			pstmt.setString(4, mem.getAuth());
 			pstmt.executeUpdate();
-			// Á¤»óÀûÀ¸·Î Ã³¸® µÇ¾úÀ» ¶§, commit
+			// ì •ìƒì ìœ¼ë¡œ ì²˜ë¦¬ ë˜ì—ˆì„ ë•Œ, commit
 			con.commit();
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
@@ -134,7 +134,7 @@ public class MemberDao {
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-			// µî·Ï½Ã, ¿¹¿Ü ¹ß»ıÀ¸·Î ÀüÃ¼ µ¥ÀÌÅÍ ÀÔ·Â Ãë¼Ò
+			// ë“±ë¡ì‹œ, ì˜ˆì™¸ ë°œìƒìœ¼ë¡œ ì „ì²´ ë°ì´í„° ì…ë ¥ ì·¨ì†Œ
 			try {
 				con.rollback();
 			} catch (SQLException e1) {
