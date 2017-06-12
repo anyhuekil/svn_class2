@@ -7,32 +7,32 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<title>justification</title>
-		<link rel="stylesheet" 
-		href="${path}/a00_com/a00_com.css" >		
 		<style type="text/css">
 		</style>
 		<script src="${path}/com/jquery-1.10.2.js"></script>
 		<script type="text/javascript">
 			$(document).ready(function(){
-				$("tr").dblclick(function(){
-					var deptno=$(this).children().html();
-					$(location).attr("href","${path}/deptDetail_my.do?deptno="+deptno);
-				});				
+				
 			})
 		</script>
 	</head>
 	<body><center>
-		<h2>부서 리스트</h2>
-		<table width="50%" border>
-			<tr>
-				<th>부서번호</th><th>부서명</th><th>부서위치</th>			
-			</tr>
-		<c:forEach var="dept" items="${deptlist}">
-			<tr><td>${dept.deptno}</td>
-				<td>${dept.dname}</td>
-				<td>${dept.loc}</td></tr>
-		</c:forEach>
+		<h2>emp list</h2>
+		<form method="post">
+		이름:<input type="text" name="ename"/><br>
+		<input type="submit" value="검색"/>
+		</form>
+		<table width="70%" border>
+			<tr><th>사번</th><th>이름</th><th>입사일</th><th>급여</th></tr>
+			<c:forEach var="emp" items="${emplist}">			
+				<tr><td align="center">${emp.empno}</td><td>${emp.ename}</td>
+				<td><fmt:formatDate value="${emp.hiredate}"/></td>
+				<td align="right"><fmt:formatNumber value="${emp.sal}"/></td></tr>
+			</c:forEach>		
 		</table>
 
+
+
+		
 	</body>
 </html>

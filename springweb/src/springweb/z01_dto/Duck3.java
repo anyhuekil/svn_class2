@@ -5,7 +5,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 
 public class Duck3 {
 	private String type;
-//	¸ÅÇÎµÇ´Â Å¬·¡½º°¡ ÇÏ³ª¶óµµ ÀÖ°Ô Ã³¸®ÇÏ±â À§ÇØ¼­
+//	ë§¤í•‘ë˜ëŠ” í´ë˜ìŠ¤ê°€ í•˜ë‚˜ë¼ë„ ìˆê²Œ ì²˜ë¦¬í•˜ê¸° ìœ„í•´ì„œ
 	@Autowired(required=false)
 	@Qualifier("flyway02")
 	private Flyway fly;
@@ -21,7 +21,7 @@ public class Duck3 {
 		this.type = type;
 	}
 	public void showFly(){
-		System.out.println(type + "¿À¸®°¡");
+		System.out.println(type + "ì˜¤ë¦¬ê°€");
 		if(fly!=null){
 			fly.fly();
 		}

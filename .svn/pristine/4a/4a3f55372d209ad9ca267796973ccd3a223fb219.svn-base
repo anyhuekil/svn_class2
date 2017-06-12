@@ -27,7 +27,7 @@ public class A01_EmpCtrl {
 	@RequestMapping("/emp_my.do")
 	public String empDetail(@RequestParam(value="empno",
 								defaultValue="0") int empno, Model d){
-		System.out.println("ìƒì„¸í™”ë©´ empno:"+empno);
+		System.out.println("»ó¼¼È­¸é empno:"+empno);
 		d.addAttribute("emp", service.empOne(empno));
 		return "c01_database/a03_empDetail";
 	}

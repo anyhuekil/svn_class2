@@ -14,11 +14,11 @@ public class BookStore {
 		this.bsname = bsname;
 	}
 	public void displayBook(){
-		System.out.println(bsname+" ¼­Á¡¿¡¼­ ");
+		System.out.println(bsname+" ì„œì ì—ì„œ ");
 		if(bk!=null){
-			System.out.println("¿À´Ã Àü½ÃÇÏ´Â µµ¼­´Â ");
+			System.out.println("ì˜¤ëŠ˜ ì „ì‹œí•˜ëŠ” ë„ì„œëŠ” ");
 			System.out.println(bk.getName());
-			System.out.println("°¡°İÀº "+bk.getPrice()+"¿ø");
+			System.out.println("ê°€ê²©ì€ "+bk.getPrice()+"ì›");
 		}
 	}
 	

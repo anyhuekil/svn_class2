@@ -7,32 +7,32 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<title>justification</title>
-		<link rel="stylesheet" 
-		href="${path}/a00_com/a00_com.css" >		
 		<style type="text/css">
+			td{text-align:center;}
 		</style>
 		<script src="${path}/com/jquery-1.10.2.js"></script>
 		<script type="text/javascript">
 			$(document).ready(function(){
-				$("tr").dblclick(function(){
-					var deptno=$(this).children().html();
-					$(location).attr("href","${path}/deptDetail_my.do?deptno="+deptno);
-				});				
+				
 			})
 		</script>
 	</head>
 	<body><center>
-		<h2>부서 리스트</h2>
-		<table width="50%" border>
-			<tr>
-				<th>부서번호</th><th>부서명</th><th>부서위치</th>			
+	<h2>EMP 상세</h2><!-- springweb/emp_my.do?empno=7369 -->
+	<table width="70%" border>
+		<tr><td width="50%">사원번호</td><td>${emp.empno}</td></tr>
+		<tr><td >사원명</td><td>${emp.ename}</td></tr>
+		<tr><td >관리자번호</td><td>${emp.mgr}</td></tr>
+		<tr><td >직책</td><td>${emp.job}</td></tr>
+		<tr><td >입사일</td>
+			<td>
+				<fmt:formatDate type="both" value="${emp.hiredate}"/>
+			</td>
 			</tr>
-		<c:forEach var="dept" items="${deptlist}">
-			<tr><td>${dept.deptno}</td>
-				<td>${dept.dname}</td>
-				<td>${dept.loc}</td></tr>
-		</c:forEach>
-		</table>
-
+		<tr><td >급여</td><td>${emp.sal}</td></tr>
+		<tr><td >보너스</td><td>${emp.comm}</td></tr>
+		<tr><td >부서번호</td><td>${emp.deptno}</td></tr>
+	</table>
 	</body>
+	
 </html>

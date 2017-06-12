@@ -6,12 +6,12 @@ import org.springframework.beans.factory.annotation.Qualifier;
 //
 public class Robot {
 	private String kind;
-	// ÀÌ WeaponÀº Á¶¸³±â¿¡¼­ ÇÒ´çÇÒ ¼ö ÀÖ´Â 
-	// type¿À¸é ÇÒ´çÃ³¸® ÇÏ¼¼¿ä.==> Autowired
-	// È¤½Ã, Á¶¸³±â¿¡ ÇØ´ç °´Ã¼°¡ ¾ø´õ¶óµµ ¿¡·¯¹ß»ı
-	// ÇÏÁö ¾Êµµ·Ï ÇØÁÖ¼¼¿ä ==> required=false
-	// ÇÒ´çÇÒ °´Ã¼°¡ °ãÄ¡¸é ³»°¡ Á¤ÇÑ beanÀÇ id°ªÀ¸·Î
-	// ÇÒ´çÇØ ÁÖ¼¼¿ä ==>Qualifier
+	// ì´ Weaponì€ ì¡°ë¦½ê¸°ì—ì„œ í• ë‹¹í•  ìˆ˜ ìˆëŠ” 
+	// typeì˜¤ë©´ í• ë‹¹ì²˜ë¦¬ í•˜ì„¸ìš”.==> Autowired
+	// í˜¹ì‹œ, ì¡°ë¦½ê¸°ì— í•´ë‹¹ ê°ì²´ê°€ ì—†ë”ë¼ë„ ì—ëŸ¬ë°œìƒ
+	// í•˜ì§€ ì•Šë„ë¡ í•´ì£¼ì„¸ìš” ==> required=false
+	// í• ë‹¹í•  ê°ì²´ê°€ ê²¹ì¹˜ë©´ ë‚´ê°€ ì •í•œ beanì˜ idê°’ìœ¼ë¡œ
+	// í• ë‹¹í•´ ì£¼ì„¸ìš” ==>Qualifier
 	@Autowired(required=false)
 	@Qualifier("laserbim")
 	private Weapon wp;
@@ -22,7 +22,7 @@ public class Robot {
 	}
 	public void showAttack(){
 		if(wp!=null){
-			System.out.println(kind+" ·Îº¿ÀÌ ");
+			System.out.println(kind+" ë¡œë´‡ì´ ");
 			wp.attack();
 		}
 	}

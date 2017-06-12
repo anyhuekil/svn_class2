@@ -6,10 +6,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 public class Duck2 {
 	private String type;
 	public Duck2(){
-		type="Èò»ö";
+		type="í°ìƒ‰";
 	}
-	// ÇØ´ç Á¶¸³±â³»¿¡ LakeFlying¿Í µ¿ÀÏÇÑ typeÀÌ ·ÎµùµÇ¾î ÀÖÀ¸¸é
-	// ÀÚµ¿À¸·Î ÇÒ´çÇÏ¼¼¿ä!!
+	// í•´ë‹¹ ì¡°ë¦½ê¸°ë‚´ì— LakeFlyingì™€ ë™ì¼í•œ typeì´ ë¡œë”©ë˜ì–´ ìˆìœ¼ë©´
+	// ìë™ìœ¼ë¡œ í• ë‹¹í•˜ì„¸ìš”!!
 	@Autowired
 	private LakeFlying fly01; // fly01 = new LakeFlying();
 	public String getType() {
@@ -19,7 +19,7 @@ public class Duck2 {
 		this.type = type;
 	}
 	public void showFly(){
-		System.out.println(type+"¿À¸®°¡ ");
+		System.out.println(type+"ì˜¤ë¦¬ê°€ ");
 		if(fly01!=null){
 			fly01.fly();
 		}

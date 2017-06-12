@@ -36,7 +36,7 @@ public class A02_DeptCtrl {
 	public String deptUpdate(Dept upt){
 		
 		service.updateDept(upt);
-		// list í™”ë©´ë‹¨
+		// list È­¸é´Ü
 		return "redirect:/deptlist_my.do"; 
 	}
 	

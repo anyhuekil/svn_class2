@@ -7,8 +7,6 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<title>justification</title>
-		<link rel="stylesheet" 
-		href="${path}/a00_com/a00_com.css" >			
 		<style type="text/css">
 		</style>
 		<script src="${path}/com/jquery-1.10.2.js"></script>

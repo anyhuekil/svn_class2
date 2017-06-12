@@ -27,18 +27,11 @@ public class A01_EmpCtrl {
 	@RequestMapping("/emp_my.do")
 	public String empDetail(@RequestParam(value="empno",
 								defaultValue="0") int empno, Model d){
-		System.out.println("ÏÉÅÏÑ∏ÌôîÎ©¥ empno:"+empno);
+		System.out.println("ªÛºº»≠∏È empno:"+empno);
 		d.addAttribute("emp", service.empOne(empno));
 		return "c01_database/a03_empDetail";
 	}
 	
-	
-//	empUpdate(Emp upt)
-	@RequestMapping("/emp_upt.do")
-	public String empUpdate(Emp upt){
-		service.empUpdate(upt);
-		return "forward:/emp_my.do";
-	}
 	
 }
 

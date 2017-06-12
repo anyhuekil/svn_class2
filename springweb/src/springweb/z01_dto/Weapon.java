@@ -9,17 +9,17 @@ public interface Weapon {
 }
 // Weapon w1 = new Rocket();
 // Weapon w2 = new Laserbim();  
-// WeaponÀ» implmentsÇÏ¸é ¸ğµç °´Ã¼´Â Weapon¿¡ ÇÒ´çÇÒ ¼ö ÀÖ´Ù.
+// Weaponì„ implmentsí•˜ë©´ ëª¨ë“  ê°ì²´ëŠ” Weaponì— í• ë‹¹í•  ìˆ˜ ìˆë‹¤.
 class Rocket implements Weapon{
 	@Override
 	public void attack() {
-		System.out.println("·ÎÄÏÆ÷ ¹ß»ç!!");
+		System.out.println("ë¡œì¼“í¬ ë°œì‚¬!!");
 	}
 }
 class Laserbim implements Weapon{
 	@Override
 	public void attack() {
-		System.out.println("·¹ÀÌÀú ºö ¹ß»ç!!");
+		System.out.println("ë ˆì´ì € ë¹” ë°œì‚¬!!");
 	}
 	
 }

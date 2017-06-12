@@ -8,20 +8,20 @@ import springweb.z01_dto.Emp;
 
 @Repository
 public interface A01_EmpRep {
-//	xmlì— ìˆëŠ” idê°’ê³¼ ë‹¤ìŒ ê°™ì€ ê·œì¹™ìœ¼ë¡œ mapping
-//	id="íŒ¨í‚¤ì§€ëª….ì¸í„°í˜ì´ìŠ¤ëª….ë©”ì„œë“œëª…
+//	xml¿¡ ÀÖ´Â id°ª°ú ´ÙÀ½ °°Àº ±ÔÄ¢À¸·Î mapping
+//	id="ÆĞÅ°Áö¸í.ÀÎÅÍÆäÀÌ½º¸í.¸Ş¼­µå¸í
 //	id="springweb.c01_database.repository.A01_EmpRep.emplist"
-//	ì „ë‹¬í•˜ëŠ” dataìˆëŠ” VO : Emp sch
+//	Àü´ŞÇÏ´Â dataÀÖ´Â VO : Emp sch
 //	parameterType="springweb.z01_dto.Emp"
-//	ë°ì´í„° ê²°ê³¼ ì²˜ë¦¬ ArrayList<VO>
+//	µ¥ÀÌÅÍ °á°ú Ã³¸® ArrayList<VO>
 //	
 	public ArrayList<Emp> emplist(Emp sch);
-//	return : Emp  ì…ë ¥ : empno(int)
+//	return : Emp  ÀÔ·Â : empno(int)
 //	id : empOne
 //	resultType="emp"
 //	parameterType="int"
 	public Emp empOne(int empno);
-/*  return : void   ì…ë ¥ : Emp
+/*  return : void   ÀÔ·Â : Emp
  * 	id : empUpdate
  *  parameterType: emp 
  * */	

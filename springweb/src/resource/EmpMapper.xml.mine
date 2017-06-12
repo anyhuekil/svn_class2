@@ -20,7 +20,7 @@
 		 
 		  단일 객체를 return할때는? resultType="emp"
 	 -->
-	<resultMap type="emp" id="empMap"/>
+	<resultMap type="emp01" id="empMap"/>
 	
 	<!-- 외부에서 VO객체로 데이터를 넘겨받을 때,
 		DAO단의 parameter: empList(Emp sch) 
@@ -29,7 +29,7 @@
 	 -->
 	<select id="emplist"
 		resultMap="empMap"
-		parameterType="emp">
+		parameterType="emp01">
 		select * from emp
 		where ename like '%'||#{ename} ||'%'
 	</select>
@@ -48,21 +48,4 @@
 		parameterType="emp01"
 			#{ename} : emp.getEname()		
 	 -->
-<<<<<<< .mine
-||||||| .r441
-	
-	
-=======
-	<!-- 
-	//	id : empOne
-//	resultType="emp"
-//	parameterType="int"
-	 -->
-	 <select id="empOne" resultType="emp" parameterType="int">
-		select * 
-		from emp
-		where empno=#{empno}	 
-	 </select>
-	
->>>>>>> .r444
 </mapper>

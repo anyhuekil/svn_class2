@@ -19,8 +19,8 @@ public class Restaurant {
 		this.name = name;
 	}
 	public void eatLunch(){
-		System.out.println("¿À´Ã Á¡½ÉÀº "+name+"¿¡ °¡¼­");
-		System.out.println(menu.getMenu()+"¸¦ "+menu.getPrice()+"¿øÀ¸·Î ¸Ô±â·Î Çß´Ù!!");
+		System.out.println("ì˜¤ëŠ˜ ì ì‹¬ì€ "+name+"ì— ê°€ì„œ");
+		System.out.println(menu.getMenu()+"ë¥¼ "+menu.getPrice()+"ì›ìœ¼ë¡œ ë¨¹ê¸°ë¡œ í–ˆë‹¤!!");
 	}
 
 	

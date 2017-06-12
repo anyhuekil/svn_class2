@@ -48,11 +48,6 @@
 		parameterType="emp01"
 			#{ename} : emp.getEname()		
 	 -->
-<<<<<<< .mine
-||||||| .r441
-	
-	
-=======
 	<!-- 
 	//	id : empOne
 //	resultType="emp"
@@ -64,5 +59,4 @@
 		where empno=#{empno}	 
 	 </select>
 	
->>>>>>> .r444
 </mapper>
