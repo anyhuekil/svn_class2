@@ -58,5 +58,19 @@
 		from emp
 		where empno=#{empno}	 
 	 </select>
+<!-- 
+ * 	id : empUpdate
+ *  parameterType: emp 
+ -->	 
+	<update id="empUpdate" parameterType="emp">
+		update emp
+		 set ename=#{ename},
+		     job=#{job},
+			 mgr=#{mgr},
+			 sal=#{sal},
+			 comm=#{comm},
+			 deptno=#{deptno}
+		where empno=#{empno}		
+	</update>
 	
 </mapper>

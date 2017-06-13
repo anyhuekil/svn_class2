@@ -72,10 +72,6 @@
 			 deptno=#{deptno}
 		where empno=#{empno}		
 	</update>
-<<<<<<< .mine
-||||||| .r456
-	
-=======
 <!-- 검색 처리.. ename과 job이 있을 때에 해당 데이터가 정확히
 	있을 때 검색 처리..
 -->
@@ -94,5 +90,4 @@
 		
 	</select>	
 	
->>>>>>> .r459
 </mapper>

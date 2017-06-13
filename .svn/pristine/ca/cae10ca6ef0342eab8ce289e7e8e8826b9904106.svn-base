@@ -21,7 +21,7 @@ public class A01_EmpCtrl {
 	@RequestMapping("/emplist_my.do")
 	public String empList(@ModelAttribute("emp") Emp sch, Model d){
 //		d.addAttribute("emplist", service.empList(sch));
-		// enameê³¼ jobì´ ìˆì„ ë•Œë§Œ ê²€ìƒ‰..
+		// ename°ú jobÀÌ ÀÖÀ» ¶§¸¸ °Ë»ö..
 		d.addAttribute("emplist", service.empList02(sch));
 		
 		return "c01_database/a01_empList";
@@ -29,7 +29,7 @@ public class A01_EmpCtrl {
 	@RequestMapping("/emp_my.do")
 	public String empDetail(@RequestParam(value="empno",
 								defaultValue="0") int empno, Model d){
-		System.out.println("?ê³¸ê½­?ë¶¾ãˆƒ empno:"+empno);
+		System.out.println("»ó¼¼È­¸é empno:"+empno);
 		d.addAttribute("emp", service.empOne(empno));
 		return "c01_database/a03_empDetail";
 	}

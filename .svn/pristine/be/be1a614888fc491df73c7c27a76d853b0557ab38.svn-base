@@ -27,7 +27,7 @@ public class A01_EmpService {
 	}
 	
 	public Emp empOne(int empno){
-		// ë¹„ì§€ë‹ˆìŠ¤ ë¡œì§ ì²˜ë¦¬..
+		// ºñÁö´Ï½º ·ÎÁ÷ Ã³¸®..
 		return dao.empOne(empno);
 	}	
 	public void empUpdate(Emp upt){

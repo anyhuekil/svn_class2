@@ -10,10 +10,6 @@ import springweb.z01_dto.Dept;
 public interface A02_DeptDao {
 //	springweb.c01_database.repository.A02_DeptDao.deptList
 	public ArrayList<Dept> deptList();
-<<<<<<< .mine
-||||||| .r449
-	
-=======
 	public Dept deptOne(int deptno);	
 /*
 update dept
@@ -25,6 +21,5 @@ id : updateDept
 parameterType : dept
  * */	
 	public void updateDept(Dept upt);
-	
->>>>>>> .r455
+
 }
