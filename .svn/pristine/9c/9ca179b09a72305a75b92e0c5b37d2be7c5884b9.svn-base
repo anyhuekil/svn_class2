@@ -14,39 +14,29 @@
 		<script src="${path}/com/jquery-1.10.2.js"></script>
 		<script type="text/javascript">
 			$(document).ready(function(){
-				var queType="${quebank.queType}";
-				if(queType!=''){
-					$("select[name=queType]").val(queType);
-				}
-				
 				$("#schbtn").click(function(){
 					$("form").submit();
 				});
 				// 등록 버튼 클릭시
 				$("#regbtn").click(function(){
 					// 등록 화면으로 이동!!!
-					$(location).attr("href","${path}/questbank.do?method=insert");
+					$(location).attr("href","${path}/boardList.do?method=insert");
 				});
 			})
 		</script>
 	</head>
 	<body>
 		<center>
-		<h3>문제은행</h3>
+		<h3>게시판</h3>
 		<!-- 조회 항목 -->
 		<form method="post">
 		<table>
-			<tr><td>문제</td><td><input type="text" name="que" 
-									value="${quebank.que}"/></td>
-				<td>정답</td><td><input type="text" name="coransw"
-									value="${quebank.coransw}"/></td></tr>
-			<tr><td>유형</td><td>
-					<select name="queType">
-						<option value="">전체</option>
-						<option >주관식</option>
-						<option >객관식</option>
-					</select></td>
-				<td></td><td>	
+			<tr><td>제목</td><td><input type="text" name="subject" 
+									value="${empsch.subject}"/></td>
+				<td>작성자</td><td><input type="text" name="writer"
+									value="${empsch.writer}"/></td></tr>
+			<tr><td>내용</td><td><input type="text" name="content"
+									value="${empsch.content}"/><td></td><td></td></tr>	
 			<tr><td colspan="4" style="text-align:right;">
 					<input type="button" id="regbtn" value="등록"/>
 					<input type="button" id="schbtn" value="검색"/>
@@ -55,17 +45,18 @@
 		</form>
 		<table>
 		
-			<tr><th width="10%">번호</th><th width="50%">문제</th>
-				<th width="20%">정답</th><th width="20%">유형</th>
+			<tr><th width="5%">번호</th><th width="50%">제목</th>
+				<th width="15%">작성자</th><th width="15%">작성일</th>
+				<th width="15%">조회수</th>
 				</tr>
-			<c:forEach var="quest" items="${quelist}">
-				<tr><td>${quest.no}</td><td>${quest.que}</td>
-				<td>${quest.coransw}</td>
-				<td>${quest.queType}</td>	
+			<c:forEach var="board" items="${list}">
+				<tr><td>${board.no}</td><td>${board.subject}</td>
+				<td>${board.writer}</td><td><fmt:formatDate value="${board.regdate}"/></td>
+				<td>${board.readcount}</td>	
 				</tr>
 			</c:forEach>
-			<c:if test="${quelist.size()==0}">
-			<tr><td colspan="4">검색된 데이터가 없습니다!!</td></tr>
+			<c:if test="${list.size()==0}">
+			<tr><td colspan="4">작성된 글이 없습니다!!</td></tr>
 			</c:if>
 		</table>
 	</body>

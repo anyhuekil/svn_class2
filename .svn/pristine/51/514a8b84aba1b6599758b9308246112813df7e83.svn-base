@@ -13,17 +13,11 @@ import springweb.d01_board.vo.Board_Sch;
 @Controller
 @RequestMapping("/boardList.do")
 public class A01_BoardCtrl {
-<<<<<<< .mine
-	// ê²Œì‹œíŒ list
-||||||| .r473
-	// °Ô½ÃÆÇ list
-=======
 	
 	@Autowired(required=false)
 	private A01_BoardService service;
 	
 	// °Ô½ÃÆÇ list
->>>>>>> .r476
 	// http://localhost:6080/springweb/boardList.do?method=list
 	@RequestMapping(params="method=list")
 	public String start(@ModelAttribute("empsch") Board_Sch sch,

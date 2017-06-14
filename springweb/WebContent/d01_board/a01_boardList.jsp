@@ -17,6 +17,11 @@
 				$("#schbtn").click(function(){
 					$("form").submit();
 				});
+				// 등록 버튼 클릭시
+				$("#regbtn").click(function(){
+					// 등록 화면으로 이동!!!
+					$(location).attr("href","${path}/boardList.do?method=insert");
+				});
 			})
 		</script>
 	</head>
@@ -39,8 +44,20 @@
 		</table>
 		</form>
 		<table>
-			<tr><th>번호</th><th>제목</th><th>작성자</th><th>작성일</th></tr>
+		
+			<tr><th width="5%">번호</th><th width="50%">제목</th>
+				<th width="15%">작성자</th><th width="15%">작성일</th>
+				<th width="15%">조회수</th>
+				</tr>
+			<c:forEach var="board" items="${list}">
+				<tr><td>${board.no}</td><td>${board.subject}</td>
+				<td>${board.writer}</td><td><fmt:formatDate value="${board.regdate}"/></td>
+				<td>${board.readcount}</td>	
+				</tr>
+			</c:forEach>
+			<c:if test="${list.size()==0}">
 			<tr><td colspan="4">작성된 글이 없습니다!!</td></tr>
+			</c:if>
 		</table>
 	</body>
 </html>
