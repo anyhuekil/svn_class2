@@ -14,18 +14,14 @@
 		<script src="${path}/com/jquery-1.10.2.js"></script>
 		<script type="text/javascript">
 			$(document).ready(function(){
-				$("#listBtn").click(function(){
-					$(location).attr("href",
-					"${path}/boardList.do?method=list");
-					
-				});			
+				
 			})
 		</script>
 	</head>
 	<body><center>
 	<h3>게시판 등록</h3>
 	<form method="post" action="${path}/boardList.do?method=insProc">
-		<input type="hidden" name="refno" value="${empty(board.refno)?'0':board.refno}"/>
+		<input type="hidden" name="refno" value="${board.refno}"/>
 		<table>
 			<tr><td width="30%">제목</td><td><input type="text"
 				 name="subject" value="${board.subject}" size="50"/></td></tr>		
@@ -39,9 +35,7 @@
 			 size="50"/></td></tr>		
 			<tr><td >내용</td><td ><textarea name="content" cols="40" rows="10">${board.content}</textarea></td></tr>		
 	
-			<tr><td colspan="2">
-			<input type="button" id="listBtn" value="메인글"/>
-			<input type="submit" value="등록"/></td></tr>			
+			<tr><td colspan="2"><input type="submit" value="등록"/></td></tr>			
 		</table>
 	</form>
 	

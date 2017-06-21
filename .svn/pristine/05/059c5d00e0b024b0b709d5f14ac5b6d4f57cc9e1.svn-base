@@ -6,14 +6,13 @@
 <mapper namespace="springweb.d01_board.repository.A01_BoardDao">
 	<resultMap type="board" id="boardResult"/>
 	<insert id="insertBoard" parameterType="board">
-		insert into board values(board_seq.nextval,#{refno},
+		insert into board values(board_seq.nextval,0,
 			#{subject},#{content}, #{pass}, #{writer},0,sysdate,#{email} )
 	</insert>
-	<!-- ArrayList<Board> listBoard(Board_Sch sch) -->
 	<select id="listBoard" resultMap="boardResult"
 		 parameterType="schboard">
-		select rownum cnt, a.* from board a
-		where 1=1 
+		select * from board
+		where 1=1
 		<if test="subject!=null and subject!=''">
 			and subject like '%'|| #{subject} ||'%'
 		</if>
@@ -22,10 +21,8 @@
 		</if>
 		<if test="content!=null and content!=''">
 			and content like '%'|| #{content} ||'%'
-		</if>		
-		start with refno=0     
-		connect by prior no=refno	
-		order siblings by no desc	
+		</if>				
+		order by no desc
 	</select>
 	<!-- Board getBoard(int no) -->
 	<select id="getBoard" 
@@ -34,11 +31,5 @@
 		select * from board
 		where no=#{no}
 	</select>
-	<update id="uptBoardCnt"
-		parameterType="int">
-		update board
-   			set readcount=readcount+1
-		 where no=#{no}	
-	</update>
 
 </mapper>

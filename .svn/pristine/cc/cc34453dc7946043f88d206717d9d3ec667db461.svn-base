@@ -25,16 +25,11 @@
 				
 				// 상세화면으로 가기 위한 double 클릭 처리.
 				$(".data").dblclick(function(){
-					var no=$(this).attr("id");
+					var no=$(this).children().html();
 					$(location).attr("href",
 				"${path}/boardList.do?method=detail&no="+no);
 					
 				});
-				$("#initbtn").click(function(){
-					$("input[name=subject]").val("");
-					$("input[name=writer]").val("");
-					$("input[name=content]").val("");
-				});				
 				
 				
 			})
@@ -53,23 +48,19 @@
 			<tr><td>내용</td><td><input type="text" name="content"
 									value="${empsch.content}"/><td></td><td></td></tr>	
 			<tr><td colspan="4" style="text-align:right;">
-					<input type="button" id="initbtn" value="검색초기화"/>
 					<input type="button" id="regbtn" value="등록"/>
 					<input type="button" id="schbtn" value="검색"/>
 				</td></tr>	
 		</table>
 		</form>
 		<table>
-			<caption style="text-align:left">
-				총:${list.size()}건
-			</caption>
 		
 			<tr><th width="5%">번호</th><th width="50%">제목</th>
 				<th width="15%">작성자</th><th width="15%">작성일</th>
 				<th width="15%">조회수</th>
 				</tr>
 			<c:forEach var="board" items="${list}">
-				<tr class="data" id="${board.no}"><td>${board.cnt}</td><td style="text-align:left;">${board.subject}</td>
+				<tr class="data"><td>${board.no}</td><td>${board.subject}</td>
 				<td>${board.writer}</td><td><fmt:formatDate value="${board.regdate}"/></td>
 				<td>${board.readcount}</td>	
 				</tr>
