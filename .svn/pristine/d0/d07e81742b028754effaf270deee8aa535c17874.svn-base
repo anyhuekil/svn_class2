@@ -6,9 +6,7 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans
        http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
        http://www.springframework.org/schema/context
-       http://www.springframework.org/schema/context/spring-context-4.0.xsd
-        http://www.springframework.org/schema/util
-       http://www.springframework.org/schema/util/spring-util-4.0.xsd" >
+       http://www.springframework.org/schema/context/spring-context-4.0.xsd" >
  
     <!-- 컨테이너에 filter 조건으로 해당 정의된 클래스들을 자동 객체 등록 처리 
     	context:conponent-scan
@@ -22,25 +20,17 @@
 		<context:include-filter type="annotation" expression="org.springframework.stereotype.Service"/>   
 		<context:include-filter type="annotation" expression="org.springframework.stereotype.Repository"/>   
      </context:component-scan>
-     <context:property-placeholder location="classpath:/resource/properties/info01"/>   
-     
     <!-- DB연결 lib 추가 후..--> 
     <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"
     	destroy-method="close">
     	<!-- driver, connection(url, port, sid, id, pass) -->
-    	<!-- driver : jdbc 
-    	
-    	driver=oracle.jdbc.driver.OracleDriver
-dbserver=jdbc:oracle:thin:@localhost:1521:xe
-name=scott
-pass=tiger
-    	-->
-    	<property name="driverClassName" value="${driver}"/>
+    	<!-- driver : jdbc -->
+    	<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"/>
     	<!-- 접속 DB 서버 정보 port와 sid-->
-    	<property name="url" value="${dbserver}"/>
+    	<property name="url" value="jdbc:oracle:thin:@localhost:1521:xe"/>
     	<!-- 계정 정보 -->
-    	<property name="username" value="${name}"/>
-    	<property name="password" value="${pass}"/>
+    	<property name="username" value="scott"/>
+    	<property name="password" value="tiger"/>
     	
     </bean> 
     <!-- Mybatis연결 -->  
@@ -79,8 +69,8 @@ pass=tiger
      <!-- 파일 업로드 ViewResolver 처리 -->
      <bean id="multipartResolver"
      	class="org.springframework.web.multipart.commons.CommonsMultipartResolver"/>
-
-      
+     
+     
      
          
 </beans>
