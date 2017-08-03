@@ -5,9 +5,8 @@
  */
 
 /* Global Styles */
-
 html, body {
-	min-width:400px;
+	min-width: 400px;
 	height: 100%;
 }
 
@@ -138,6 +137,7 @@ hr.small {
 .toggle {
 	margin: 5px 5px 0 0;
 }
+
 .guestheader {
 	display: table;
 	position: relative;

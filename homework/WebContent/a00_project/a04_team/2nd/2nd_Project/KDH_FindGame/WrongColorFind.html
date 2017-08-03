@@ -5,37 +5,44 @@
 <title>Wrong Color Find!</title>
 <style type="text/css">
 @font-face {
-	font-family : 'nm';
+	font-family: 'nm';
 	src: url('../font/NM_EB.ttf');
 }
-*{
-	font-family:'nm';
+
+* {
+	font-family: 'nm';
 }
-table#myt{ 
-	width:500px;
-	height:500px;
+
+table#myt {
+	width: 500px;
+	height: 500px;
 	background-size: cover;
 }
-td{
+
+td {
 	border-radius: 5px 5px;
 }
-h1{
+
+h1 {
 	text-align: center;
 }
-div#indiv{
+
+div#indiv {
 	display: inline-block;
 }
-div#alldiv{
+
+div#alldiv {
 	margin: auto auto;
 	text-align: center;
 }
-#hint{
-	color:lightgray;
-}
-.colB{
-	background-color: lightblue;
+
+#hint {
+	color: lightgray;
 }
 
+.colB {
+	background-color: lightblue;
+}
 </style>
 <script src="http://code.jquery.com/jquery-1.10.2.js">
 </script>
@@ -181,20 +188,40 @@ div#alldiv{
 </head>
 <body>
 	<h1>Wrong Color Find</h1>
-	<br><br><br>
+	<br>
+	<br>
+	<br>
 	<div id=alldiv>
-		<div id=indiv style="width:600px; height: 600px;">
-			<table align = center id="myt" border>
+		<div id=indiv style="width: 600px; height: 600px;">
+			<table align=center id="myt" border>
 			</table>
 		</div>
-		<div id=indiv style="width:200px; height: 600px;">
-			<table align= center style="border: solid 2px black;">
-				<tr> <th>밝기 차이</th> <th id="levelHtml"></th> </tr>
-				<tr> <th>문제 수</th> <th id="qnum">1</th> </tr>
-				<tr> <th colspan="2"><span id="hint">hint</span></th> </tr>
-				<tr> <th colspan="2"><input type="button" onclick="location.reload()" value="새로고침" style="width: 100%; background-color: white;" /></th> </tr>
-				<tr> <th colspan="2"><input type="button" onclick="btn_hint()" value="힌트" style="width: 100%; background-color: white;" /></th> </tr>
-				<tr> <th colspan="2"><input type="button" onclick="btn_next()" value="다음문제" style="width: 100%; background-color: white;"/></th> </tr>
+		<div id=indiv style="width: 200px; height: 600px;">
+			<table align=center style="border: solid 2px black;">
+				<tr>
+					<th>밝기 차이</th>
+					<th id="levelHtml"></th>
+				</tr>
+				<tr>
+					<th>문제 수</th>
+					<th id="qnum">1</th>
+				</tr>
+				<tr>
+					<th colspan="2"><span id="hint">hint</span></th>
+				</tr>
+				<tr>
+					<th colspan="2"><input type="button"
+						onclick="location.reload()" value="새로고침"
+						style="width: 100%; background-color: white;" /></th>
+				</tr>
+				<tr>
+					<th colspan="2"><input type="button" onclick="btn_hint()"
+						value="힌트" style="width: 100%; background-color: white;" /></th>
+				</tr>
+				<tr>
+					<th colspan="2"><input type="button" onclick="btn_next()"
+						value="다음문제" style="width: 100%; background-color: white;" /></th>
+				</tr>
 			</table>
 		</div>
 	</div>

@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8" import="jspexp.z02_vo.Student, java.util.ArrayList, java.sql.*"%>
+	pageEncoding="UTF-8"
+	import="jspexp.z02_vo.Student, java.util.ArrayList, java.sql.*"%>
 <%	request.setCharacterEncoding("UTF-8"); %>
 <!DOCTYPE html>
 <html>
@@ -7,24 +8,88 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 <style type="text/css">
-table#list { width:700px; margin: 0 auto; background-color: white; }
-table#list th { background-color: #43BDE6; color:white; padding: 10px; text-align: center;}
-table#list td { background-color: #AFE0F0; padding: 10px; text-align: center; }
-table#list caption{padding: 5px 5px 10px; font-size: 2em; font-weight: bold;}
-table#insert { width:500px; margin: 20px auto; background-color: white; }
-table#insert th { background-color: #706207; padding: 10px; text-align: center;}
-table#insert td { background-color: #D9CC77; padding: 10px; text-align: center; }
-table#insert caption{padding: 5px 5px 10px;  color: #706207;}
-table#insert input[type=submit] {padding:10px;}
-table#search { width:500px; margin: 20px auto; background-color: white; }
-table#search th { background-color: #706207; padding: 10px; text-align: center;}
-table#search td { background-color: #D9CC77; padding: 10px; text-align: center; }
-table#search caption{padding: 5px 5px 10px;  color: #706207;}
-table#search input[type=button] {padding:10px;}
+table#list {
+	width: 700px;
+	margin: 0 auto;
+	background-color: white;
+}
+
+table#list th {
+	background-color: #43BDE6;
+	color: white;
+	padding: 10px;
+	text-align: center;
+}
+
+table#list td {
+	background-color: #AFE0F0;
+	padding: 10px;
+	text-align: center;
+}
+
+table#list caption {
+	padding: 5px 5px 10px;
+	font-size: 2em;
+	font-weight: bold;
+}
+
+table#insert {
+	width: 500px;
+	margin: 20px auto;
+	background-color: white;
+}
+
+table#insert th {
+	background-color: #706207;
+	padding: 10px;
+	text-align: center;
+}
+
+table#insert td {
+	background-color: #D9CC77;
+	padding: 10px;
+	text-align: center;
+}
+
+table#insert caption {
+	padding: 5px 5px 10px;
+	color: #706207;
+}
+
+table#insert input[type=submit] {
+	padding: 10px;
+}
+
+table#search {
+	width: 500px;
+	margin: 20px auto;
+	background-color: white;
+}
+
+table#search th {
+	background-color: #706207;
+	padding: 10px;
+	text-align: center;
+}
+
+table#search td {
+	background-color: #D9CC77;
+	padding: 10px;
+	text-align: center;
+}
+
+table#search caption {
+	padding: 5px 5px 10px;
+	color: #706207;
+}
+
+table#search input[type=button] {
+	padding: 10px;
+}
 </style>
 </head>
 <body>
-<%
+	<%
 	String searchName = request.getParameter("searchName");
 	if(searchName==null) searchName="";
 	else searchName = searchName.trim();
@@ -88,45 +153,90 @@ table#search input[type=button] {padding:10px;}
 		}
 	}
 %>
-<form action="">
-	<table id="list">
-		<caption>학생 명단</caption>
-		<tr><td colspan="7">이름 <input type="text" name="searchName" value="<%=searchName%>" size="10"/>
-			<select name="no">
-				<option value="hakno" <%if(no.equals("hakno")){ %> selected="selected" <%} %>>학년</option>
-				<option value="classno" <%if(no.equals("classno")){ %> selected="selected" <%} %>>반</option>
-			</select>
-			<input type="text" name="searchNo" value="<%=searchNo%>" size="2"/>
-			<select name="score">
-				<option value="kor" <%if(score.equals("eng")){ %> selected="selected" <%} %>>국어</option>
-				<option value="eng" <%if(score.equals("eng")){ %> selected="selected" <%} %>>영어</option>
-				<option value="mat" <%if(score.equals("mat")){ %> selected="selected" <%} %>>수학</option>
-			</select>
-			<input type="text" name="scoreNo" value="<%=scoreNo%>" size="2"/>
-			<input type="submit" value="검색">
-		</td></tr>	
-		<tr><th>이름</th><th>학년</th><th>반</th><th>국어</th><th>영어</th><th>수학</th><th>총점</th></tr>
-		<% if(!studentList.isEmpty()){
+	<form action="">
+		<table id="list">
+			<caption>학생 명단</caption>
+			<tr>
+				<td colspan="7">이름 <input type="text" name="searchName"
+					value="<%=searchName%>" size="10" /> <select name="no">
+						<option value="hakno" <%if(no.equals("hakno")){ %>
+							selected="selected" <%} %>>학년</option>
+						<option value="classno" <%if(no.equals("classno")){ %>
+							selected="selected" <%} %>>반</option>
+				</select> <input type="text" name="searchNo" value="<%=searchNo%>" size="2" />
+					<select name="score">
+						<option value="kor" <%if(score.equals("eng")){ %>
+							selected="selected" <%} %>>국어</option>
+						<option value="eng" <%if(score.equals("eng")){ %>
+							selected="selected" <%} %>>영어</option>
+						<option value="mat" <%if(score.equals("mat")){ %>
+							selected="selected" <%} %>>수학</option>
+				</select> <input type="text" name="scoreNo" value="<%=scoreNo%>" size="2" />
+					<input type="submit" value="검색">
+				</td>
+			</tr>
+			<tr>
+				<th>이름</th>
+				<th>학년</th>
+				<th>반</th>
+				<th>국어</th>
+				<th>영어</th>
+				<th>수학</th>
+				<th>총점</th>
+			</tr>
+			<% if(!studentList.isEmpty()){
 			for(Student s : studentList){%>
-			<tr><td><%=s.getName()%></td><td><%=s.getHakno()%></td><td><%=s.getClassno()%></td>
-			<td><%=s.getKor()%></td><td><%=s.getEng()%></td><td><%=s.getMat()%></td><td><%=s.getTot()%></td></tr>		
-		<% 	}
+			<tr>
+				<td><%=s.getName()%></td>
+				<td><%=s.getHakno()%></td>
+				<td><%=s.getClassno()%></td>
+				<td><%=s.getKor()%></td>
+				<td><%=s.getEng()%></td>
+				<td><%=s.getMat()%></td>
+				<td><%=s.getTot()%></td>
+			</tr>
+			<% 	}
 		}else{%>
-			<tr><td colspan="7">데이터가 한개도 없습니다</td></tr>
-		<%}%>
-	</table>
+			<tr>
+				<td colspan="7">데이터가 한개도 없습니다</td>
+			</tr>
+			<%}%>
+		</table>
 	</form>
 	<form action="a02_studentInsertLogic.jsp">
-	<table id="insert">
-		<caption>학생 입력</caption>
-		<tr><th>이름</th><td><input type="text" name="name" size="30" required="required"/></td></tr>
-		<tr><th>학년</th><td><input type="text" name="hakno" size="30"  required="required"/></td></tr>
-		<tr><th>반</th><td><input type="text" name="classno" size="30"  required="required"/></td></tr>
-		<tr><th>국어</th><td><input type="text" name="kor" size="30"  required="required"/></td></tr>	
-		<tr><th>영어</th><td><input type="text" name="eng" size="30"  required="required"/></td></tr>	
-		<tr><th>수학</th><td><input type="text" name="mat" size="30"  required="required"/></td></tr>
-		<tr><td colspan="3"><input type="submit" value="학생추가입력"></td></tr>		
-	</table>
+		<table id="insert">
+			<caption>학생 입력</caption>
+			<tr>
+				<th>이름</th>
+				<td><input type="text" name="name" size="30"
+					required="required" /></td>
+			</tr>
+			<tr>
+				<th>학년</th>
+				<td><input type="text" name="hakno" size="30"
+					required="required" /></td>
+			</tr>
+			<tr>
+				<th>반</th>
+				<td><input type="text" name="classno" size="30"
+					required="required" /></td>
+			</tr>
+			<tr>
+				<th>국어</th>
+				<td><input type="text" name="kor" size="30" required="required" /></td>
+			</tr>
+			<tr>
+				<th>영어</th>
+				<td><input type="text" name="eng" size="30" required="required" /></td>
+			</tr>
+			<tr>
+				<th>수학</th>
+				<td><input type="text" name="mat" size="30" required="required" /></td>
+			</tr>
+			<tr>
+				<td colspan="3"><input type="submit" value="학생추가입력"></td>
+			</tr>
+		</table>
 	</form>
 </body>
 </html>

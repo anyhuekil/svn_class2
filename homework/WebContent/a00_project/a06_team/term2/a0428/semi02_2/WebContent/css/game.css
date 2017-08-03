@@ -1,36 +1,41 @@
-body{
-	margin:0;
-	background:no-repeat center center fixed;
+body {
+	margin: 0;
+	background: no-repeat center center fixed;
 	background-size: cover;
 	background-repeat: no-repeat;
 	-webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-color: black;
-}
-.horseExplain {
-	background-color:rgba(200, 200, 200, 0.5);
-	border-radius: 15px 15px 15px 15px;
-}
-.status{
-	height:200px;
-}
-#game{
-	margin:0 auto;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-color: black;
 }
 
-#game-container{
-	 position: relative;
-    text-align: center;
+.horseExplain {
+	background-color: rgba(200, 200, 200, 0.5);
+	border-radius: 15px 15px 15px 15px;
 }
-#menus{
-	position:absolute;
-	background-size:cover;
-	top:100px;
-	width:100%;
-	background-color:rgba(0, 0, 50, 0.5);
-	color:white;
+
+.status {
+	height: 200px;
 }
+
+#game {
+	margin: 0 auto;
+}
+
+#game-container {
+	position: relative;
+	text-align: center;
+}
+
+#menus {
+	position: absolute;
+	background-size: cover;
+	top: 100px;
+	width: 100%;
+	background-color: rgba(0, 0, 50, 0.5);
+	color: white;
+}
+
 input {
 	font-size: 1em;
 	width: 200px
@@ -39,48 +44,52 @@ input {
 th {
 	font-size: x-large;
 }
-#start-menu{
-	border-radius:10px 10px 10px 10px;
-	cursor:pointer;
-	line-height:50px;
-	font-size:1.5em;
-	margin:auto;	
-	background:gray;
-	border:10px solid #505050;
-	color:black;
-	height:50px;
-	width:200px;
+
+#start-menu {
+	border-radius: 10px 10px 10px 10px;
+	cursor: pointer;
+	line-height: 50px;
+	font-size: 1.5em;
+	margin: auto;
+	background: gray;
+	border: 10px solid #505050;
+	color: black;
+	height: 50px;
+	width: 200px;
 }
 
-.numberImg{
-	display:none;	
+.numberImg {
+	display: none;
 }
 
-#gameResult{
-	display:none;
-	position:absolute;
-	top:300px;
-	width:100%;
-	background-color:rgba(0, 0, 50, 0.5);
-	color:white;
+#gameResult {
+	display: none;
+	position: absolute;
+	top: 300px;
+	width: 100%;
+	background-color: rgba(0, 0, 50, 0.5);
+	color: white;
 }
-.medal{
-	width:100px;
-	height:100px;
+
+.medal {
+	width: 100px;
+	height: 100px;
 }
-#finalResult{
-	display:none;
-	text-align:center;
-	position:absolute;
-	top:250px;
-	width:100%;
-	background-color:rgba(50, 50, 50, 0.5);
-	color:white;
-	font-size:70pt;
+
+#finalResult {
+	display: none;
+	text-align: center;
+	position: absolute;
+	top: 250px;
+	width: 100%;
+	background-color: rgba(50, 50, 50, 0.5);
+	color: white;
+	font-size: 70pt;
 }
-#playerStatus{
-	display:none;
-	border:none;
-	color:white;
-	font-size:42pt;
+
+#playerStatus {
+	display: none;
+	border: none;
+	color: white;
+	font-size: 42pt;
 }

@@ -4,10 +4,24 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <style type="text/css">
-	body { background-color: #FFF0B5; font-size: 12pt; }
-	td {text-align: center; padding: 10px 20px;}
-	caption {font-size: 2em; }
-	input:FOCUS {background-color: #FFFFAA; color:red;}
+body {
+	background-color: #FFF0B5;
+	font-size: 12pt;
+}
+
+td {
+	text-align: center;
+	padding: 10px 20px;
+}
+
+caption {
+	font-size: 2em;
+}
+
+input:FOCUS {
+	background-color: #FFFFAA;
+	color: red;
+}
 </style>
 <script type="text/javascript">
 /*
@@ -42,11 +56,25 @@
 <body>
 	<table>
 		<caption>로그인</caption>
-		<tr><th>ID</th><td><input type="text" id="id"></td></tr>
-		<tr><th>PASS</th><td><input type="password" id="pass"></td></tr>
-		<tr><td colspan="2"><button onclick="javascript:login()">로그인</button></td></tr>
-		<tr><td>status</td><td><input type="text" id="status" value="로그인하세요"></td></tr>
-		<tr><td>주제</td><td><input type="text" id="subject" disabled="disabled"></td></tr>
+		<tr>
+			<th>ID</th>
+			<td><input type="text" id="id"></td>
+		</tr>
+		<tr>
+			<th>PASS</th>
+			<td><input type="password" id="pass"></td>
+		</tr>
+		<tr>
+			<td colspan="2"><button onclick="javascript:login()">로그인</button></td>
+		</tr>
+		<tr>
+			<td>status</td>
+			<td><input type="text" id="status" value="로그인하세요"></td>
+		</tr>
+		<tr>
+			<td>주제</td>
+			<td><input type="text" id="subject" disabled="disabled"></td>
+		</tr>
 	</table>
 </body>
 </html>

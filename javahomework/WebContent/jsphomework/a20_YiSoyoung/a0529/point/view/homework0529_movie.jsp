@@ -1,16 +1,21 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
-<fmt:requestEncoding value="UTF-8"/>
-<c:set var="conPath" value="${pageContext.request.contextPath}"/>
+	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+<fmt:requestEncoding value="UTF-8" />
+<c:set var="conPath" value="${pageContext.request.contextPath}" />
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 <style type="text/css">
-#wrap{width:500px; border: 1px solid #187025; padding:20px; margin: 20px auto;}
+#wrap {
+	width: 500px;
+	border: 1px solid #187025;
+	padding: 20px;
+	margin: 20px auto;
+}
 </style>
 <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
 <script>
@@ -36,11 +41,11 @@
 </script>
 </head>
 <body>
-<div id="wrap">
-	<h1>${member.id }님 현재 포인트가 ${member.point }입니다</h1>
-	<hr>
-	<button>영화1</button>
-	<button>영화2</button>
-</div>
+	<div id="wrap">
+		<h1>${member.id }님현재 포인트가 ${member.point }입니다</h1>
+		<hr>
+		<button>영화1</button>
+		<button>영화2</button>
+	</div>
 </body>
 </html>

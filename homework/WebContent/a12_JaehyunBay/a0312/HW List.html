@@ -71,79 +71,165 @@
 
 
 <style>
+#goHW1, #goHW2, #goHW3, #goHW4 {
+	width: 18%;
+	color: lime;
+	background-color: purple;
+	border-radius: 20px 20px 20px 20px;
+}
 
-	#goHW1,#goHW2,#goHW3,#goHW4{
-		width : 18%;
-		color : lime;
-		background-color: purple; 
-		border-radius: 20px 20px 20px 20px;
-	}
+h5, a {
+	margin: 2px;
+	padding: 2px;
+}
 
-	h5,a{margin : 2px; padding : 2px;}
+.blueMarbleTable {
+	width: 100px;
+	height: 100px; margin = 3px;
+	padding: 3px
+}
 
-	.blueMarbleTable{width: 100px; height: 100px; margin = 3px; padding: 3px}
-	.zone1{background-color : red;}
-	.zone2{background-color : lime;}
-	.zone3{background-color : brown;}
-	.zone4{background-color : darkblue;}
-	.NASAplace{background-image: url('imgFolder/img_blueNASA.jpg'); width : 100px; height: 100px}
-	
+.zone1 {
+	background-color: red;
+}
+
+.zone2 {
+	background-color: lime;
+}
+
+.zone3 {
+	background-color: brown;
+}
+
+.zone4 {
+	background-color: darkblue;
+}
+
+.NASAplace {
+	background-image: url('imgFolder/img_blueNASA.jpg');
+	width: 100px;
+	height: 100px
+}
+
 /* 0308HW */
-	#table01{font-color : black; text-size: 13px; }
-	#title02{ background-color: yellow; text-color: blue; font-weight: bold; text-align: center; }
-	td.obj01{ background-color: pink; }
-	#numb{ background-color : yellow; text-align: right; }
-		
-	#friedPork:hover{ background-color: yellow; color: blue; font-weight : bold; }
-	.jyp:hover{ background-color : purple; color: red; }
-	.zazang:active {background-color : blue; color: red;}
-	.tableHeight{ width : 300px; height : 130px; }	
-	
-	input[value = "60"]{ background-color : red; }
-	input[value = "70"]{ background-color : blue; }
-	input[value = "80"]{ background-color : yellow; }
-	input[value = "90"]{ background-color : green; }
-	
- 	.chkVisited:link{ background-color: yellow ; color: red ; }
-	.chkVisited:visited{ background-color: purple ; color: lime ; }
-	.chkVisited:hover{background-color: pink; color: blue ;}
-	
-/* 0309HW */	
-	
-	.compVelo{ background-color: rgb(50, 100, 150); width : 70%; }
-	#cpList{ float: left; }
-	
-	
+#table01 {
+	font-color: black;
+	text-size: 13px;
+}
+
+#title02 {
+	background-color: yellow;
+	text-color: blue;
+	font-weight: bold;
+	text-align: center;
+}
+
+td.obj01 {
+	background-color: pink;
+}
+
+#numb {
+	background-color: yellow;
+	text-align: right;
+}
+
+#friedPork:hover {
+	background-color: yellow;
+	color: blue;
+	font-weight: bold;
+}
+
+.jyp:hover {
+	background-color: purple;
+	color: red;
+}
+
+.zazang:active {
+	background-color: blue;
+	color: red;
+}
+
+.tableHeight {
+	width: 300px;
+	height: 130px;
+}
+
+input[value="60"] {
+	background-color: red;
+}
+
+input[value="70"] {
+	background-color: blue;
+}
+
+input[value="80"] {
+	background-color: yellow;
+}
+
+input[value="90"] {
+	background-color: green;
+}
+
+.chkVisited:link {
+	background-color: yellow;
+	color: red;
+}
+
+.chkVisited:visited {
+	background-color: purple;
+	color: lime;
+}
+
+.chkVisited:hover {
+	background-color: pink;
+	color: blue;
+}
+
+/* 0309HW */
+.compVelo {
+	background-color: rgb(50, 100, 150);
+	width: 70%;
+}
+
+#cpList {
+	float: left;
+}
+
 /* 0310HW */
-	table.visibleTable{
-		background-image : url('css_img/ddd.jpg'); 
-		visibility : hidden ; 
-		repeat: no-repeat; 
-		}
-	#hidingTextBar{ 
-		backgorund-color: green;
-		color:graytext; 
-		visibility: hidden; 
-		}
-	#hidingTextBar:active{ 
-		backgorund-color: purple; 
-		}
-	
-	</style>
+table.visibleTable {
+	background-image: url('css_img/ddd.jpg');
+	visibility: hidden;
+	repeat: no-repeat;
+}
+
+#hidingTextBar {
+	backgorund-color: green;
+	color: graytext;
+	visibility: hidden;
+}
+
+#hidingTextBar:active {
+	backgorund-color: purple;
+}
+</style>
 
 </head>
 <body>
 
-<!--  앞으로 프로그래밍 숙제 모음... -->
-	<a href = "#goHW1" > 0307HW </a><br>
-	<a href = "#goHW2" > 0308HW </a><br>
-	<a href = "#goHW3" > 0309HW </a><br>
-	<a href = "#goHW4" > 0310HW </a><br>
+	<!--  앞으로 프로그래밍 숙제 모음... -->
+	<a href="#goHW1"> 0307HW </a>
+	<br>
+	<a href="#goHW2"> 0308HW </a>
+	<br>
+	<a href="#goHW3"> 0309HW </a>
+	<br>
+	<a href="#goHW4"> 0310HW </a>
+	<br>
 
 
 
-<h1 id = "goHW1"> 0307HW.</h1>
-<!-- a07 앵커.
+	<h1 id="goHW1">0307HW.</h1>
+	<!-- a07 앵커.
 목차선언.
 해당 목차 클릭시, 해당내용에 서술된곳으로 이동.
 
@@ -158,73 +244,79 @@ def) html이란..
 현재는 html5로 확장된 기능을 처리한다.
  -->
 
-	<p align ="center"></p>
-		<h1 align ="center"><b>응용sw개발자 양성과정</b></h1>
-		<h2><i>배울과목</i></h2>
-		<h3>
-			<a href = "#goHtml5"> 1. Html5</a> <br>
-			<a href = "#goCss3"> 2. css3</a> <br>
-			<a href = "#goJscript"> 3. JavaScript </a><br>
-			<a href = "#goJquery"> 4.Jquery</a><br>
-			<a href = "#goAjax"> 5.AJAX</a><br>
-			<a href = "#goJava"> 6.JAVA</a><br>
-			<a href = "#goJsp"> 7.JSP</a><br>
-			<a href = "#goSpring"> 8.Spring</a><br>
-			<a href = "#goR"> 9.R</a><br>
-			<a href = "#goPython"> 10.Python </a><br>
-			<a href = "#goHadoop">11.Hadoop</a><br>
-		</h3>
-		
-		<ol height = "100%">
-			<li><h5 id ="goHtml5">Html5</h5> 
-				<a href = "https://ko.wikipedia.org/wiki/HTML5">html5출처: 위키</a></li>
-			<li><h5 id ="goCss3">css3</h5> 
-				<a href = "https://ko.wikipedia.org/wiki/%EC%A2%85%EC%86%8D%ED%98%95_%EC%8B%9C%ED%8A%B8#CSS3">css3출처: 위키</a></li>		
-			<li><h5 id ="goJscript">JavaScript </h5> 
-				<a href = "https://en.wikipedia.org/wiki/JavaScript">출처: 위키 Java Script</a></li>	
-			<li><h5 id ="goJquery">Jquery</h5> 
-				<a href = "https://en.wikipedia.org/wiki/JQuery">출처: 위키 Jquery</a></li>	
-			<li><h5 id ="goAjax">AJAX</h5> 
-				<a href = "https://en.wikipedia.org/wiki/Ajax_(programming)">출처: 위키 AJAX</a></li>
-			<li><h5 id ="goJava">JAVA</h5> 
-				<a href = "https://en.wikipedia.org/wiki/Java_(programming_language)">출처: 위키 JAVA</a></li>
-			<li><h5 id ="goJsp">JSP</h5> 
-				<a href = "https://en.wikipedia.org/wiki/JavaServer_Pages">출처: 위키 JSP</a></li>
-			<li><h5 id ="goSpring">Spring</h5> 
-				<a href = "https://en.wikipedia.org/wiki/Spring_Framework">출처: 위키 Spring</a></li>
-			<li><h5 id ="goR">R</h5>
-				<a href = "https://en.wikipedia.org/wiki/R_(programming_language)">출처: 위키 R</a></li>
-			<li><h5 id ="goPython">Python</h5> 
-				<a href = "https://en.wikipedia.org/wiki/Python_(programming_language)">출처: 위키 Python</a></li>
-			<li><h5 id ="goHadoop">Hadoop</h5> 
-				<a href = "https://en.wikipedia.org/wiki/Apache_Hadoop">출처: 위키 Hadoop</a></li>
-		</ol>
-<!-- a09 리스트 숙제 -->
- <h1> 요즘 관심분야</h1>
- <ol>
- 	<li>학습
- 		<ul type ="square">
-	 		<li>프로그램
-	 		<li>영어
-	 		<li>화면설계
- 		</ul>
- 	</li>
- 	<li> 휴식
- 		<ul type ="circle">
- 			<li>영어
-	 		<li>잠
-	 		<li>음악
- 		</ul>
- 	</li>
- 	<li> 취미
- 		<ul></ul>
- 	</li>
- 
- </ol>
- 
- <br>
- 
-<!-- a10 테이블과제1.
+	<p align="center"></p>
+	<h1 align="center">
+		<b>응용sw개발자 양성과정</b>
+	</h1>
+	<h2>
+		<i>배울과목</i>
+	</h2>
+	<h3>
+		<a href="#goHtml5"> 1. Html5</a> <br> <a href="#goCss3"> 2.
+			css3</a> <br> <a href="#goJscript"> 3. JavaScript </a><br> <a
+			href="#goJquery"> 4.Jquery</a><br> <a href="#goAjax"> 5.AJAX</a><br>
+		<a href="#goJava"> 6.JAVA</a><br> <a href="#goJsp"> 7.JSP</a><br>
+		<a href="#goSpring"> 8.Spring</a><br> <a href="#goR"> 9.R</a><br>
+		<a href="#goPython"> 10.Python </a><br> <a href="#goHadoop">11.Hadoop</a><br>
+	</h3>
+
+	<ol height="100%">
+		<li><h5 id="goHtml5">Html5</h5> <a
+			href="https://ko.wikipedia.org/wiki/HTML5">html5출처: 위키</a></li>
+		<li><h5 id="goCss3">css3</h5> <a
+			href="https://ko.wikipedia.org/wiki/%EC%A2%85%EC%86%8D%ED%98%95_%EC%8B%9C%ED%8A%B8#CSS3">css3출처:
+				위키</a></li>
+		<li><h5 id="goJscript">JavaScript</h5> <a
+			href="https://en.wikipedia.org/wiki/JavaScript">출처: 위키 Java
+				Script</a></li>
+		<li><h5 id="goJquery">Jquery</h5> <a
+			href="https://en.wikipedia.org/wiki/JQuery">출처: 위키 Jquery</a></li>
+		<li><h5 id="goAjax">AJAX</h5> <a
+			href="https://en.wikipedia.org/wiki/Ajax_(programming)">출처: 위키
+				AJAX</a></li>
+		<li><h5 id="goJava">JAVA</h5> <a
+			href="https://en.wikipedia.org/wiki/Java_(programming_language)">출처:
+				위키 JAVA</a></li>
+		<li><h5 id="goJsp">JSP</h5> <a
+			href="https://en.wikipedia.org/wiki/JavaServer_Pages">출처: 위키 JSP</a></li>
+		<li><h5 id="goSpring">Spring</h5> <a
+			href="https://en.wikipedia.org/wiki/Spring_Framework">출처: 위키
+				Spring</a></li>
+		<li><h5 id="goR">R</h5> <a
+			href="https://en.wikipedia.org/wiki/R_(programming_language)">출처:
+				위키 R</a></li>
+		<li><h5 id="goPython">Python</h5> <a
+			href="https://en.wikipedia.org/wiki/Python_(programming_language)">출처:
+				위키 Python</a></li>
+		<li><h5 id="goHadoop">Hadoop</h5> <a
+			href="https://en.wikipedia.org/wiki/Apache_Hadoop">출처: 위키 Hadoop</a></li>
+	</ol>
+	<!-- a09 리스트 숙제 -->
+	<h1>요즘 관심분야</h1>
+	<ol>
+		<li>학습
+			<ul type="square">
+				<li>프로그램
+				<li>영어
+				<li>화면설계
+			</ul>
+		</li>
+		<li>휴식
+			<ul type="circle">
+				<li>영어
+				<li>잠
+				<li>음악
+			</ul>
+		</li>
+		<li>취미
+			<ul></ul>
+		</li>
+
+	</ol>
+
+	<br>
+
+	<!-- a10 테이블과제1.
 	2017년 KBO리그구단
 	
 	구단명 연고지역 작년(2016년)성적
@@ -232,92 +324,105 @@ def) html이란..
 	롯데	부산	@@승@@패
 
  -->
- <h1 align = "center">숙제: 테이블// 2017년 KBO리그구단</h1>
- <table align= "center" border = "1">
- 	<tr bgColor = "green">
- 		<th><b>구단명</th><th><b>연고지역</th><th><b>작년(16년)성적</th>
- 	</tr>
- 	<tr>
- 		<td bgColor = "blue" = >KIA</td><td>광주</td><td>12승 3패 4무</td>
- 	</tr>
- 	<tr>
- 		<td bgColor = "red">롯데</td><td>부산</td><td>1승 12패 2무</td>
- 	</tr>
- 	 
- </table>
- <br>
- <br>
- <br>
- <br>
- <br>
- 
- <!-- 테이블 병합과제1. -->
-  <h1 align ="center"><b>테이블 span병합 과제1</b></h1>
- <table align = "center" border>
+	<h1 align="center">숙제: 테이블// 2017년 KBO리그구단</h1>
+	<table align="center" border="1">
+		<tr bgColor="green">
+			<th><b>구단명</th>
+			<th><b>연고지역</th>
+			<th><b>작년(16년)성적</th>
+		</tr>
 		<tr>
- 			<td>과목</td><td colspan = "2">내용</td><td>비고</td>
- 		</tr>
+			<td bgColor="blue"= >KIA</td>
+			<td>광주</td>
+			<td>12승 3패 4무</td>
+		</tr>
 		<tr>
- 			<td rowspan ="2">JAVA</td><td colspan = "2">기본문법</td><td rowspan = "4"></td>
- 		</tr>
+			<td bgColor="red">롯데</td>
+			<td>부산</td>
+			<td>1승 12패 2무</td>
+		</tr>
+
+	</table>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+
+	<!-- 테이블 병합과제1. -->
+	<h1 align="center">
+		<b>테이블 span병합 과제1</b>
+	</h1>
+	<table align="center" border>
 		<tr>
- 			<td colspan = "2">object</td>
- 		</tr>
+			<td>과목</td>
+			<td colspan="2">내용</td>
+			<td>비고</td>
+		</tr>
 		<tr>
- 			<td rowspan ="2">JSP</td><td colspan = "2">session</td>
- 		</tr>
+			<td rowspan="2">JAVA</td>
+			<td colspan="2">기본문법</td>
+			<td rowspan="4"></td>
+		</tr>
 		<tr>
- 			<td colspan = "2">bear</td>
- 		</tr> 		
- </table> <br>
- 
- 
- <!-- 테이블 병합과제2. 브루마블. -->
-<h1 align = "center">브루마블 테이블만들기</h1>
-<table align = "center" border ">
-	<colgroup>
-	<tr>
-		<td class = "blueMarbleTable" >a
-			<img src = 'imgFolder/img_blueDonate.jpg' width =100px height =100px></td>
-		<td class = "blueMarbleTable zone3">b</td>
-		<td class = "blueMarbleTable zone3">c</td>
-		<td class = "blueMarbleTable zone3">d</td>
-		<td class = "blueMarbleTable NASAplace">e</td>
-	</tr>
-	
-	<tr>
-		<td class = "blueMarbleTable zone2">1</td>
-		<td colspan ="3" rowspan ="3">
-		<img src = 	'imgFolder/img_bluemarble.jpg' 
-				width= 100% height= 300px >
-			
-		</td>
-		<td class = "zone4">2</td>
-	</tr>
-	<tr>
-		<td class = "blueMarbleTable zone2">3</td>
-		<td class = "zone4">4</td>
-	</tr>
-	<tr>
-		<td class = "blueMarbleTable zone2">5</td>
-		<td class = "zone4">6</td>
-	</tr>
-	<tr>
-		<td class = "blueMarbleTable">q
-			<img src ='imgFolder/img_blueIsland.jpg' alt = "안나오냐?"
-			width = 100px height = 100px></td>
-		<td class = "zone1">w</td>
-		<td class = "zone1">e</td>
-		<td class = "zone1">r</td>
-		<td>t <img src = 'imgFolder/img_blueMEnterKey.jpg' width = 100px height= 100px></td>
-	</tr>
-</table><br>
- 
+			<td colspan="2">object</td>
+		</tr>
+		<tr>
+			<td rowspan="2">JSP</td>
+			<td colspan="2">session</td>
+		</tr>
+		<tr>
+			<td colspan="2">bear</td>
+		</tr>
+	</table>
+	<br>
 
 
-<h1 id = "goHW2"> 0308HW </h1>
+	<!-- 테이블 병합과제2. 브루마블. -->
+	<h1 align="center">브루마블 테이블만들기</h1>
+	<table align="center"border ">
+		<colgroup>
+		<tr>
+			<td class="blueMarbleTable">a <img
+				src='imgFolder/img_blueDonate.jpg' width=100px height=100px></td>
+			<td class="blueMarbleTable zone3">b</td>
+			<td class="blueMarbleTable zone3">c</td>
+			<td class="blueMarbleTable zone3">d</td>
+			<td class="blueMarbleTable NASAplace">e</td>
+		</tr>
 
-<!-- 
+		<tr>
+			<td class="blueMarbleTable zone2">1</td>
+			<td colspan="3" rowspan="3"><img
+				src='imgFolder/img_bluemarble.jpg' width=100% height=300px></td>
+			<td class="zone4">2</td>
+		</tr>
+		<tr>
+			<td class="blueMarbleTable zone2">3</td>
+			<td class="zone4">4</td>
+		</tr>
+		<tr>
+			<td class="blueMarbleTable zone2">5</td>
+			<td class="zone4">6</td>
+		</tr>
+		<tr>
+			<td class="blueMarbleTable">q <img
+				src='imgFolder/img_blueIsland.jpg' alt="안나오냐?" width=100px
+				height=100px></td>
+			<td class="zone1">w</td>
+			<td class="zone1">e</td>
+			<td class="zone1">r</td>
+			<td>t <img src='imgFolder/img_blueMEnterKey.jpg' width=100px
+				height=100px></td>
+		</tr>
+	</table>
+	<br>
+
+
+
+	<h1 id="goHW2">0308HW</h1>
+
+	<!-- 
 		a15 과제- 회원가입 form 구축. 
 		쇼핑몰이나, 게임사이트 들에서 회원가입란을 확인하고,
 		지금배운 form객체 하위 내용을 table과 함께 정렬을 효과적으로 활용해보자.
@@ -325,54 +430,57 @@ def) html이란..
 
  -->
 
-<form name ="newInform" >
-<table align  = "center" border = "3">
-	
-	<tr width = "400">
-		 <td>아이디입력: </td>
-		 <td colspan = "2"><input type = "text" name = "userId" /> </td>
-	</tr>
-	<tr>
-		<td>패스워드:</td>
-		<td colspan = "2"> <input type = "password" name = "userPass1" /></td>
-	</tr >
-	<tr>
-		 <td>패스워드 재입력: </td>
-		 <td><input type = "password" name = "userPass2" /></td>
-		 <td><input type = "button"  value = "compare" onclick = "javascript: comp();"/></td>
-	</tr>
-	<tr>
-		<td>성함: </td>
-		<td colspan = "2"><input type = "text" name = "userName" /></td>
-	</tr>
-	<tr>
-		<td> ph: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp	<select name = "locNum" />
-			<option value = "locN01"> 010 </option>
-			<option value = "locN02"> 011 </option>
-			<option value = "locN03"> 012 </option>
-			<option value = "locN04"> 016 </option>
-			<option value = "locN05"> 019 </option></td>
-		<td  colspan = "2"><input type = "number" name = "otherN" /></td>
-	</tr>
-	<tr width = "400" >
-		<td>이메일: </td>
-		<td  colspan = "2"><input type= "text" name = "email" /> </td>
-	</tr>
-	<br>
+	<form name="newInform">
+		<table align="center" border="3">
 
-</table>
-<center>
-<br>
-<input type = "reset" value = "다시작성하기">
-<input type = "button" name = "done" value= "완료" onclick = "javascript: getInvolve();"/> 
+			<tr width="400">
+				<td>아이디입력:</td>
+				<td colspan="2"><input type="text" name="userId" /></td>
+			</tr>
+			<tr>
+				<td>패스워드:</td>
+				<td colspan="2"><input type="password" name="userPass1" /></td>
+			</tr>
+			<tr>
+				<td>패스워드 재입력:</td>
+				<td><input type="password" name="userPass2" /></td>
+				<td><input type="button" value="compare"
+					onclick="javascript: comp();" /></td>
+			</tr>
+			<tr>
+				<td>성함:</td>
+				<td colspan="2"><input type="text" name="userName" /></td>
+			</tr>
+			<tr>
+				<td>ph: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <select
+					name="locNum" />
+					<option value="locN01">010</option>
+					<option value="locN02">011</option>
+					<option value="locN03">012</option>
+					<option value="locN04">016</option>
+					<option value="locN05">019</option></td>
+				<td colspan="2"><input type="number" name="otherN" /></td>
+			</tr>
+			<tr width="400">
+				<td>이메일:</td>
+				<td colspan="2"><input type="text" name="email" /></td>
+			</tr>
+			<br>
 
-</center></form>
-<!-- 왜 compare누르면 앞에것들이 사라지는지 생각해보자. 
+		</table>
+		<center>
+			<br> <input type="reset" value="다시작성하기"> <input
+				type="button" name="done" value="완료"
+				onclick="javascript: getInvolve();" />
+
+		</center>
+	</form>
+	<!-- 왜 compare누르면 앞에것들이 사라지는지 생각해보자. 
 엔터는 서밋으로 간주한다. -->
 
 
-<h2 align = "center"> a18_formCalc </h2>
-<!--  과제
+	<h2 align="center">a18_formCalc</h2>
+	<!--  과제
 	영화관에 가서..
 	제목: []
 	관람료: []
@@ -385,44 +493,48 @@ def) html이란..
 	
 a18 formCalc에서 재확인. 거긴 되는데 여기가 안되는건 뭐지.
  -->
-<center>
-<h1 align = "center"></h1>
- <p>
- <form name = "theater">
-	<table border = "3">
-		<tr>
-			<td>제목: </td><td><input type = "text" name= "movieName" /></td>
- 		</tr>
-		<tr>
-			<td>관람료: </td><td><input type = "number" name = "moviePrice" /></td>
- 		</tr>
-		<tr>
-			<td>인원:	</td><td><input type = "number" name = "watcherN" /></td>
- 		</tr>
-		<tr>
-			<td>계산:	</td><td><input type = "number" name = "payment" /></td>
- 		</tr>
-	</table>		 	
-	
 	<center>
-	<table align = center border = "2">
-	 	<tr>
-			<th><input type = "button"  name = "done"  value = "완료. 영수증 출력하기"  
-			onclick ="javascript: movieCalc();" /></th>
-		</tr>
-	 	<tr>
-			<th><textarea name = "receipt" cols = 30 rows =10 ></textarea> </th>	 	
- 	</table>
- 	</center>
- </form>	
- </p>
-</center>
+		<h1 align="center"></h1>
+		<p>
+		<form name="theater">
+			<table border="3">
+				<tr>
+					<td>제목:</td>
+					<td><input type="text" name="movieName" /></td>
+				</tr>
+				<tr>
+					<td>관람료:</td>
+					<td><input type="number" name="moviePrice" /></td>
+				</tr>
+				<tr>
+					<td>인원:</td>
+					<td><input type="number" name="watcherN" /></td>
+				</tr>
+				<tr>
+					<td>계산:</td>
+					<td><input type="number" name="payment" /></td>
+				</tr>
+			</table>
+
+			<center>
+				<table align=center border="2">
+					<tr>
+						<th><input type="button" name="done" value="완료. 영수증 출력하기"
+							onclick="javascript: movieCalc();" /></th>
+					</tr>
+					<tr>
+						<th><textarea name="receipt" cols=30 rows=10></textarea></th>
+				</table>
+			</center>
+		</form>
+		</p>
+	</center>
 
 
 
 
 
-<!--  과제 a01_css적용하셔서..
+	<!--  과제 a01_css적용하셔서..
 	어서오세요!
 	즐거운 쇼핑되시길..!
 
@@ -440,35 +552,56 @@ ch				물건명	가격		갯수
 3.	갯수부분 입력하는 배경색상:노랑; 글자정렬(text-align):오른쪽;
 
  -->
-<center>
-<h2> 과제a01_css</h2>
-	<h4>어서오세요! <br> 즐거운 쇼핑되시길!! <br></h4>
+	<center>
+		<h2>과제a01_css</h2>
+		<h4>
+			어서오세요! <br> 즐거운 쇼핑되시길!! <br>
+		</h4>
 
-	<caption id = "title02">판매물품 현황</caption>
-	<table id = "table01" border ="3" width = 200 height = 200 >
-		<tr id = "title02">
-			<td >Ch</td><td >물건명</td><td>가격</td><td>갯수</td>
-		</tr>
-		<tr id ="obj01">
-			<td>[<input type = "checkbox" />]</td><td class ="obj01">사과</td><td>3000</td><td id = "numb">1</td>
-		</tr>
-		<tr >
-			<td>[<input type = "checkbox" />]</td><td class ="obj01">바나나</td><td>2000</td><td id = "numb">5</td>
-		</tr>
-		<tr>
-			<td>[<input type = "checkbox" />]</td><td class ="obj01">오렌지</td><td>5000</td><td id = "numb">4</td>
-		</tr>
-		<tr>
-			<td>[<input type = "checkbox" />]</td><td class ="obj01">딸기</td><td>7000</td><td id = "numb">2</td>
-		</tr>
-	</table>
-	<br>
-</center>
+		<caption id="title02">판매물품 현황</caption>
+		<table id="table01" border="3" width=200 height=200>
+			<tr id="title02">
+				<td>Ch</td>
+				<td>물건명</td>
+				<td>가격</td>
+				<td>갯수</td>
+			</tr>
+			<tr id="obj01">
+				<td>[<input type="checkbox" />]
+				</td>
+				<td class="obj01">사과</td>
+				<td>3000</td>
+				<td id="numb">1</td>
+			</tr>
+			<tr>
+				<td>[<input type="checkbox" />]
+				</td>
+				<td class="obj01">바나나</td>
+				<td>2000</td>
+				<td id="numb">5</td>
+			</tr>
+			<tr>
+				<td>[<input type="checkbox" />]
+				</td>
+				<td class="obj01">오렌지</td>
+				<td>5000</td>
+				<td id="numb">4</td>
+			</tr>
+			<tr>
+				<td>[<input type="checkbox" />]
+				</td>
+				<td class="obj01">딸기</td>
+				<td>7000</td>
+				<td id="numb">2</td>
+			</tr>
+		</table>
+		<br>
+	</center>
 
 
 
-<h1 id = "goHW3"> 0309HW.</h1>
-<!-- 
+	<h1 id="goHW3">0309HW.</h1>
+	<!-- 
 과제 
 아래와같이 점수를 만들고 해당 속성값을 체크를 해서 나타내세요.
 60 - 배경: 빨강
@@ -483,63 +616,74 @@ ch				물건명	가격		갯수
 	[수학]		[60]
 */
 -->
-<h3 align = center > a10_cssEvent: hover, active. </h3>
-	<p >
-		<table align = center border ="3" title="Best Food!" class = "tableHeight">
-			<caption>Best Food!!!</caption>
-			<tr>
-				<th width = 150 >No</th><th width = 150>이름</th><th width = 150 >가격</th>
-			</tr>
-			<tr class = "zazang">
-				<td>1</td><td>클릭</td><td>3000</td>
-			</tr>
-			<tr>
-				<td>2</td><td>짬뽕</td><td>4000</td>
-			</tr>
-			<tr>
-				<td id = "friedPork">3</td>
-				<td id = "friedPork">탕수육</td>
-				<td id = "friedPork">9000</td>
-			</tr>
-			<tr class = "jyp">
-				<td >4</td><td>양장피</td><td>5000</td>
-			</tr>
-		</table>
-	</p><br>
-	
-<h3 align = center > a10_cssEvent: hover, active. </h3>	
+	<h3 align=center>a10_cssEvent: hover, active.</h3>
+	<p>
+	<table align=center border="3" title="Best Food!" class="tableHeight">
+		<caption>Best Food!!!</caption>
+		<tr>
+			<th width=150>No</th>
+			<th width=150>이름</th>
+			<th width=150>가격</th>
+		</tr>
+		<tr class="zazang">
+			<td>1</td>
+			<td>클릭</td>
+			<td>3000</td>
+		</tr>
+		<tr>
+			<td>2</td>
+			<td>짬뽕</td>
+			<td>4000</td>
+		</tr>
+		<tr>
+			<td id="friedPork">3</td>
+			<td id="friedPork">탕수육</td>
+			<td id="friedPork">9000</td>
+		</tr>
+		<tr class="jyp">
+			<td>4</td>
+			<td>양장피</td>
+			<td>5000</td>
+		</tr>
+	</table>
+	</p>
+	<br>
 
-<table align = "center" border = "3">
-	<tr>
-		<td width = 100 >과목별</td >
-		<td width = 100 >학점</td>	
-	</tr>
-	<tr>
-		<td>과목명</td>
-		<td>점수</td>	
-	</tr>
-	<tr>
-		<td>[국어]</td>
-		<td><input type = "number" value ="90" /></td>	
-	</tr>
-	<tr>
-		<td>[영어]</td>
-		<td><input type = "number" value ="70"/></td>	
-	</tr>
-	<tr>
-		<td>[수학]</td>
-		<td><input type = "number"  value ="60" /></td>	
-	</tr>
-</table>
-<br><br>
+	<h3 align=center>a10_cssEvent: hover, active.</h3>
+
+	<table align="center" border="3">
+		<tr>
+			<td width=100>과목별</td>
+			<td width=100>학점</td>
+		</tr>
+		<tr>
+			<td>과목명</td>
+			<td>점수</td>
+		</tr>
+		<tr>
+			<td>[국어]</td>
+			<td><input type="number" value="90" /></td>
+		</tr>
+		<tr>
+			<td>[영어]</td>
+			<td><input type="number" value="70" /></td>
+		</tr>
+		<tr>
+			<td>[수학]</td>
+			<td><input type="number" value="60" /></td>
+		</tr>
+	</table>
+	<br>
+	<br>
 
 
-<h3> 0309_ 2번문제: "id/pswd확인후 다음단계로 스킵 문제"는 따로 보관중. 
-	<a href = "HW)Css_a12_inputFocus.html" > file 바로보기. </a>
-</h3>
+	<h3>
+		0309_ 2번문제: "id/pswd확인후 다음단계로 스킵 문제"는 따로 보관중. <a
+			href="HW)Css_a12_inputFocus.html"> file 바로보기. </a>
+	</h3>
 
 
-<!-- 
+	<!-- 
 	a19_notselector 확인예제/숙제..
 	homepage에 메뉴구성에서.. 
 	home 인사 총무 자재관리 관리자...
@@ -549,34 +693,34 @@ ch				물건명	가격		갯수
 	메뉴항목은 ㅇradius황용하여 둥근모양의 list가 나오게한다.
 -->
 
-<h3 align = center >a19_notselector</h3>
-	
-		<center>
-		<a class = "chkVisited" href = "http://www.tistory.com/" /> home</a> 
-		<a class = "chkVisited" href = "http://www.daum.net" />인사</a> 
-		<a class = "chkVisited" href = "http://www.simsimhe.com" />총무</a> 
-		<a class = "chkVisited" href = "http://www.w3schools.com" />자재관리</a> 
-		<a class = "chkVisited" href = "http://www.paran.com" />관리자	</a> 
-		</center>
+	<h3 align=center>a19_notselector</h3>
+
+	<center>
+		<a class="chkVisited" href="http://www.tistory.com/" /> home</a> <a
+			class="chkVisited" href="http://www.daum.net" />인사</a> <a
+			class="chkVisited" href="http://www.simsimhe.com" />총무</a> <a
+			class="chkVisited" href="http://www.w3schools.com" />자재관리</a> <a
+			class="chkVisited" href="http://www.paran.com" />관리자 </a>
+	</center>
 
 
 
 
 
-<h1 id = "goHW4"> 0310HW.</h1>
+	<h1 id="goHW4">0310HW.</h1>
 
-<!-- 	a06_기본속성이 block인 tag가 나열된것을 line으로 속성을 바꾸어서 화면에 출력.
+	<!-- 	a06_기본속성이 block인 tag가 나열된것을 line으로 속성을 바꾸어서 화면에 출력.
 		h1, p, li >>> inline으로 변경하고, 배경색상을 나타내서 출력.
 		내가아는 컴퓨터hw지식.
 		시스템에서 속도처리에 중요한 것은 나열...
 		cpu ram hardDisk
  -->
 
-	<h3> a06_ linePro: 기본block속성을 inline속성으로!</h3>
+	<h3>a06_ linePro: 기본block속성을 inline속성으로!</h3>
 	<div class="compVelo">
-		<h1 align = "center">내가아는 컴퓨터hw 지식</h1>
-		<p align = "center">시스템에서 처리속도에서 중요한 것은 나열..
-		<ol type="A"  align = "center">
+		<h1 align="center">내가아는 컴퓨터hw 지식</h1>
+		<p align="center">시스템에서 처리속도에서 중요한 것은 나열..
+		<ol type="A" align="center">
 			<li id="cpList">CPU</li>
 			<li id="cpList">RAM</li>
 			<li id="cpList">hardDisk</li>
@@ -586,58 +730,62 @@ ch				물건명	가격		갯수
 		</ol>
 		</p>
 	</div>
-	<br><br><br>
+	<br>
+	<br>
+	<br>
 
 	<div>
-	<h3> a10_dataControl: 클릭해서 색상넣기! </h3>
-		<input type = "text" align = "center" id = "showColor" value ="긴장되.." />
-		<select  align = "center" name = "rainbow" id = "sevenColor" >
-			<option selected disabled >white</option>
-			<option >red</option>
-			<option >orange</option>
-			<option >yellow</option>
-			<option >green</option>
-			<option >blue</option>
-			<option >darkblue</option>
-			<option >purple</option>
-		</select>
-		<input  align = "center" type = "button" value= "커버링 확인?" onclick = "liveButton();"/>
-	
-	 	<br>
-		<input type = "text"  id = "textInput" value = "아직.." /> <br>
-		
-		<span>빨<input type = "radio" name= "sColor" id = "sevenColor1" value = "red"  
-						onclick = "liveButton2(this)" /> </span>
-		<span>주<input type = "radio" name= "sColor" id = "sevenColor2" value = "orange"   
-						onclick = "liveButton2(this)"/> </span>
-		<span>노<input type = "radio" name= "sColor" id = "sevenColor3" value = "yellow"   
-						onclick = "liveButton2(this)"/> </span>
-		<span>초<input type = "radio" name= "sColor" id = "sevenColor4" value = "green"   
-						onclick = "liveButton2(this)"/> </span>
-		<span>파<input type = "radio" name= "sColor" id = "sevenColor5" value = "blue"    
-						onclick = "liveButton2(this)"/> </span>
-		<span>남<input type = "radio" name= "sColor" id = "sevenColor6" value = "darkblue"   
-						onclick = "liveButton2(this)"/> </span>
-		<span>보<input type = "radio" name= "sColor" id = "sevenColor7" value = "purple"   
-						onclick = "liveButton2(this)" /> </span>
-	
-	</div>	
-	
-	<br><br>
-	<h3> a12_visibility: 옵션으로 보엿다/안보엿다 선택!</h3>
-	<select name = "onePc" id = "onOff"  onclick = "onOff_visible(this);">
-		<option selected disabled> choose here! </option>
-		<option> Visible!</option>
-		<option> Invisible!</option>
+		<h3>a10_dataControl: 클릭해서 색상넣기!</h3>
+		<input type="text" align="center" id="showColor" value="긴장되.." /> <select
+			align="center" name="rainbow" id="sevenColor">
+			<option selected disabled>white</option>
+			<option>red</option>
+			<option>orange</option>
+			<option>yellow</option>
+			<option>green</option>
+			<option>blue</option>
+			<option>darkblue</option>
+			<option>purple</option>
+		</select> <input align="center" type="button" value="커버링 확인?"
+			onclick="liveButton();" /> <br> <input type="text"
+			id="textInput" value="아직.." /> <br> <span>빨<input
+			type="radio" name="sColor" id="sevenColor1" value="red"
+			onclick="liveButton2(this)" />
+		</span> <span>주<input type="radio" name="sColor" id="sevenColor2"
+			value="orange" onclick="liveButton2(this)" />
+		</span> <span>노<input type="radio" name="sColor" id="sevenColor3"
+			value="yellow" onclick="liveButton2(this)" />
+		</span> <span>초<input type="radio" name="sColor" id="sevenColor4"
+			value="green" onclick="liveButton2(this)" />
+		</span> <span>파<input type="radio" name="sColor" id="sevenColor5"
+			value="blue" onclick="liveButton2(this)" />
+		</span> <span>남<input type="radio" name="sColor" id="sevenColor6"
+			value="darkblue" onclick="liveButton2(this)" />
+		</span> <span>보<input type="radio" name="sColor" id="sevenColor7"
+			value="purple" onclick="liveButton2(this)" />
+		</span>
+
+	</div>
+
+	<br>
+	<br>
+	<h3>a12_visibility: 옵션으로 보엿다/안보엿다 선택!</h3>
+	<select name="onePc" id="onOff" onclick="onOff_visible(this);">
+		<option selected disabled>choose here!</option>
+		<option>Visible!</option>
+		<option>Invisible!</option>
 	</select>
-		<input type = "text" id = "hidingTextBar" value ="보이기" onclick ="delText();"/>
-	
-	
-	
-	
-	<br><br><br><br>
-	
-<h1 id = "goHW4"> 0310HW.</h1>
+	<input type="text" id="hidingTextBar" value="보이기" onclick="delText();" />
+
+
+
+
+	<br>
+	<br>
+	<br>
+	<br>
+
+	<h1 id="goHW4">0310HW.</h1>
 
 
 </body>

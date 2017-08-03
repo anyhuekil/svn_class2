@@ -4,97 +4,149 @@
 <meta charset="UTF-8">
 <title>MK'의 첫번째 프로젝트</title>
 <style type="text/css">
-	@import url('https://fonts.googleapis.com/css?family=Indie+Flower');
-	@import url(//fonts.googleapis.com/earlyaccess/jejugothic.css);
-	#containerWhite{width:100%;
-					height:1000px;
-					display:inline-block; 
-					background-image:url('/homework/a00_project/a01_team/bg_image.jpg');
-					background-size:cover;                      
-   					background-repeat: repeat;}
-	#blockWhite{width:1000px;
-				height:760px; 
-				margin:auto;}
+@import url('https://fonts.googleapis.com/css?family=Indie+Flower');
 
-	#homeContainer{display:inline-block;width:100%}
-	#homeButton{width:90px;height:110px;padding-top:49px;
-		padding-left: 9px; border: 1px solid white; cursor: pointer;
-		float: left;background-color:pink;font-family:'Indie Flower',cursive;}
-	#home{width:80%;
-		height:100px;
-		float: left;}
-	#home{display:block;
-		background-color:pink;
-		color:white;
-		text-align:left;
-		font-size:180%;
-		font-family:'Indie Flower',cursive;
-		padding:30px;}
-	#gate{font-family:'Indie Flower',cursive;
-		font-size:75%;}
-	#tag1,#tag2,#tag3,#tag4
-	{width:22%;
-	 height:20px;
-	 float:left;
-	 background-color:black;
-	 color:white;
-	 text-align:center;
-	 font-size:100%;
-	 font-family:sans-serif;
-	 padding:10px;}
-	#tag1:hover{background-color:#FFE5CC;}
-	#tag2:hover{background-color:#FFE5CC;}
-	#tag3:hover{background-color:#FFE5CC;}
-	#tag4:hover{background-color:#FFE5CC;}
-	#myTextarea{background-color:#C0C0C0;}
-	#contactSendBlock{width:90%;
-           			 height: 50px;
-             		 float: left;
-            		 color: orange;
-            		 font-size: 16pt; }
-            		 }
-		
+@import url(//fonts.googleapis.com/earlyaccess/jejugothic.css);
+
+#containerWhite {
+	width: 100%;
+	height: 1000px;
+	display: inline-block;
+	background-image: url('/homework/a00_project/a01_team/bg_image.jpg');
+	background-size: cover;
+	background-repeat: repeat;
+}
+
+#blockWhite {
+	width: 1000px;
+	height: 760px;
+	margin: auto;
+}
+
+#homeContainer {
+	display: inline-block;
+	width: 100%
+}
+
+#homeButton {
+	width: 90px;
+	height: 110px;
+	padding-top: 49px;
+	padding-left: 9px;
+	border: 1px solid white;
+	cursor: pointer;
+	float: left;
+	background-color: pink;
+	font-family: 'Indie Flower', cursive;
+}
+
+#home {
+	width: 80%;
+	height: 100px;
+	float: left;
+}
+
+#home {
+	display: block;
+	background-color: pink;
+	color: white;
+	text-align: left;
+	font-size: 180%;
+	font-family: 'Indie Flower', cursive;
+	padding: 30px;
+}
+
+#gate {
+	font-family: 'Indie Flower', cursive;
+	font-size: 75%;
+}
+
+#tag1, #tag2, #tag3, #tag4 {
+	width: 22%;
+	height: 20px;
+	float: left;
+	background-color: black;
+	color: white;
+	text-align: center;
+	font-size: 100%;
+	font-family: sans-serif;
+	padding: 10px;
+}
+
+#tag1:hover {
+	background-color: #FFE5CC;
+}
+
+#tag2:hover {
+	background-color: #FFE5CC;
+}
+
+#tag3:hover {
+	background-color: #FFE5CC;
+}
+
+#tag4:hover {
+	background-color: #FFE5CC;
+}
+
+#myTextarea {
+	background-color: #C0C0C0;
+}
+
+#contactSendBlock {
+	width: 90%;
+	height: 50px;
+	float: left;
+	color: orange;
+	font-size: 16pt;
+}
+}
 </style>
 </head>
 <body>
-<div id="containerWhite">
-	<div id="blockWhite">
-		<div id="homeContainer">
-			<div id="home">
-				<h>Nothing in life that is great is easy</h><br>
-				<h>Global Citizen, Diversity, Challenge</h><br>
-				<h id="gate">Min Kyung's blog</h>
+	<div id="containerWhite">
+		<div id="blockWhite">
+			<div id="homeContainer">
+				<div id="home">
+					<h>Nothing in life that is great is easy</h>
+					<br>
+					<h>Global Citizen, Diversity, Challenge</h>
+					<br>
+					<h id="gate">Min Kyung's blog</h>
+				</div>
+				<div id="homeButton" onclick="window.location='main.html';">
+					HOME</div>
 			</div>
-			<div id="homeButton" onclick="window.location='main.html';">
-				HOME
+			<div id='imgcontainer'>
+				<div>
+					<img src="/homework/a00_project/a01_team/home01.jpg" width="315"
+						height="300" /> <img
+						src="/homework/a00_project/a01_team/home02.jpg" width="315"
+						height="300" /> <img
+						src="/homework/a00_project/a01_team/home03.jpg" width="315"
+						height="300" />
+				</div>
+				<div id="tag1">
+					<a href="textarea1.html" target="content">St.Petersburg</a>
+				</div>
+				<div id="tag2">
+					<a href="textarea2.html" target="content">Boston</a>
+				</div>
+				<div id="tag3">
+					<a href="textarea3.html" target="content">Seoul</a>
+				</div>
+				<div id="tag4">
+					<a href="textarea4.html" target="content">Doggies</a>
+				</div>
+
 			</div>
-		</div>
-		<div id='imgcontainer'>
-			<div>
-				<img src="/homework/a00_project/a01_team/home01.jpg" width="315" height="300"/>
-				<img src="/homework/a00_project/a01_team/home02.jpg" width="315" height="300"/>
-				<img src="/homework/a00_project/a01_team/home03.jpg" width="315" height="300"/>
-	 		</div>              
-			<div id="tag1">
-				<a href="textarea1.html" target="content">St.Petersburg</a>
+			<div id="content">
+				<iframe name="content" style="width: 950px; height: 500px;"></iframe>
 			</div>
-			<div id="tag2">
-				<a href="textarea2.html" target="content">Boston</a>
-			</div>		
-			<div id="tag3">
-			<a href="textarea3.html" target="content">Seoul</a>
-			</div>		
-			<div id="tag4">
-			<a href="textarea4.html" target="content">Doggies</a>
-			</div>			
-			
+			<div id="contactSendBlock">® 2017 by MINKYUNG KIM. The best
+				homepage ever</div>
 		</div>
-		<div id="content">
-			<iframe name="content" style="width:950px; height:500px;"></iframe>
-		</div>
-		<div id="contactSendBlock" >® 2017 by MINKYUNG KIM. The best homepage ever</div>
 	</div>
-</div>
 
 </body>
 </html>

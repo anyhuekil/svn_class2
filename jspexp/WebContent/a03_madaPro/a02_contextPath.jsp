@@ -1,4 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <% request.setCharacterEncoding("UTF-8");
 String path=request.getContextPath();
 %>
@@ -12,19 +13,20 @@ request.getContextPath()
 %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<title>17.05.</title>
-		<style type="text/css">
-		</style>
-		<script src="<%=path%>/com/jquery-1.10.2.js"></script>
-		<script type="text/javascript">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>17.05.</title>
+<style type="text/css">
+</style>
+<script src="<%=path%>/com/jquery-1.10.2.js"></script>
+<script type="text/javascript">
 			$(document).ready(function(){
 				//alert("jquery 로딩");
 			})
 		</script>
-	</head>
-	<body>
-	<h1>웹 애플리케이션 컨텍스트명:<%=path%></h1>
-	</body>
+</head>
+<body>
+	<h1>
+		웹 애플리케이션 컨텍스트명:<%=path%></h1>
+</body>
 </html>

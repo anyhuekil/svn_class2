@@ -4,47 +4,62 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <style type="text/css">
-	.lgray{background-color: lightgray;}
+.lgray {
+	background-color: lightgray;
+}
 </style>
 </head>
 <body>
- 	<hr>
-	
+	<hr>
+
 	<h1 align="center">회원가입</h1>
 	<form>
 
 		<table align="center" border>
-			<tr align="center"><td class="lgray">아이디</td><td><input type="text" name="id"/></td></tr>
-			<tr align="center"><td class="lgray">비밀번호</td><td><input type="password" name="pw"/></td></tr>
-			
-			<tr align="center"><td class="lgray">성별</td><td>남자<input type="radio" name="gender" value="man"/>
-								여자<input type="radio" name="gender" value="woman"/></td></tr>
+			<tr align="center">
+				<td class="lgray">아이디</td>
+				<td><input type="text" name="id" /></td>
+			</tr>
+			<tr align="center">
+				<td class="lgray">비밀번호</td>
+				<td><input type="password" name="pw" /></td>
+			</tr>
+
+			<tr align="center">
+				<td class="lgray">성별</td>
+				<td>남자<input type="radio" name="gender" value="man" /> 여자<input
+					type="radio" name="gender" value="woman" /></td>
+			</tr>
 			<tr align="center">
 				<td class="lgray">거주 지역</td>
-				<td>
-					<select name="selLoc">
+				<td><select name="selLoc">
 						<option value="loc1">서울/경기</option>
 						<option value="loc2">강원도</option>
 						<option value="loc3">충청도</option>
 						<option value="loc4">경상도</option>
 						<option value="loc5">제주도</option>
-					</select>
-				</td>
+				</select></td>
 			</tr>
-			<tr align="center"><td class="lgray">취미</td>
-				<td>음악<input type="checkbox" name="hobby" value="music"/>
-				여행<input type="checkbox" name="hobby" value="travel"/>
-				game<input type="checkbox" name="hobby" value="game"/>
-				자전거<input type="checkbox" name="hobby" value="cycle"/>
-				기타<input type="checkbox" name="hobby" value="etc"/></td>
+			<tr align="center">
+				<td class="lgray">취미</td>
+				<td>음악<input type="checkbox" name="hobby" value="music" /> 여행<input
+					type="checkbox" name="hobby" value="travel" /> game<input
+					type="checkbox" name="hobby" value="game" /> 자전거<input
+					type="checkbox" name="hobby" value="cycle" /> 기타<input
+					type="checkbox" name="hobby" value="etc" /></td>
 			</tr>
-		</table><br><br>
+		</table>
+		<br>
+		<br>
 		<hr>
-<center>작성 완료시 오른쪽 버튼 클릭 
-<input type="button" name="confirm" value="가입하기" onclick="javascript:alert('가입 완료')"/><br><br>
-입력한 내용 초기화 : <input type="reset" value="입력초기화"/></center><hr>
+		<center>
+			작성 완료시 오른쪽 버튼 클릭 <input type="button" name="confirm" value="가입하기"
+				onclick="javascript:alert('가입 완료')" /><br>
+			<br> 입력한 내용 초기화 : <input type="reset" value="입력초기화" />
+		</center>
+		<hr>
 
- </form>
+	</form>
 
 </body>
 </html>

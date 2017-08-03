@@ -1,27 +1,32 @@
-body{
-	margin:0;
-	background-color:black;
+body {
+	margin: 0;
+	background-color: black;
 }
+
 .status {
 	display: none;
 	font-size: 120%;
 	background: gray;
 	border-radius: 15px 15px 15px 15px;
 }
-#game{
-	margin:0 auto;
+
+#game {
+	margin: 0 auto;
 }
-#game-container{
-	 position: relative;
-    text-align: center;
+
+#game-container {
+	position: relative;
+	text-align: center;
 }
-#menus{
-	position:absolute;
-	top:100px;
-	width:100%;
-	background-color:rgba(0, 0, 50, 0.5);
-	color:white;
+
+#menus {
+	position: absolute;
+	top: 100px;
+	width: 100%;
+	background-color: rgba(0, 0, 50, 0.5);
+	color: white;
 }
+
 input {
 	font-size: 1em;
 	width: 200px
@@ -30,28 +35,29 @@ input {
 th {
 	font-size: x-large;
 }
-#start-menu{
-	border-radius:10px 10px 10px 10px;
-	cursor:pointer;
-	line-height:50px;
-	font-size:1.5em;
-	margin:auto;	
-	background:gray;
-	border:10px solid #505050;
-	color:black;
-	height:50px;
-	width:200px;
+
+#start-menu {
+	border-radius: 10px 10px 10px 10px;
+	cursor: pointer;
+	line-height: 50px;
+	font-size: 1.5em;
+	margin: auto;
+	background: gray;
+	border: 10px solid #505050;
+	color: black;
+	height: 50px;
+	width: 200px;
 }
 
-.numberImg{
-	display:none;	
+.numberImg {
+	display: none;
 }
 
-#game-ing{
-	display:none;
-	position:absolute;
-	top:300px;
-	width:100%;
-	background-color:rgba(0, 0, 50, 0.5);
-	color:white;
+#game-ing {
+	display: none;
+	position: absolute;
+	top: 300px;
+	width: 100%;
+	background-color: rgba(0, 0, 50, 0.5);
+	color: white;
 }

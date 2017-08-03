@@ -1,0 +1,43 @@
+# -*- mode: ruby -*-
+# # vi: set ft=ruby :
+
+# We set the last octet in IPV4 address here
+nodes = {
+ 'master' => [1, 200],
+ 'slave1' => [1, 202],
+ 'slave2' => [1, 201],
+}
+
+Vagrant.configure("2") do |config| 
+  # Virtualbox
+#  config.vm.box = "trusty64"
+  config.vm.box = "centos/7" 
+  config.ssh.username = "vagrant"
+  
+  # Default is 2200..something, but port 2200 is used by forescout NAC agent.
+  config.vm.usable_port_range= 2800..2900
+
+  nodes.each do |prefix, (count, ip_start)|
+    count.times do |i|
+      hostname = "%s" % [prefix, (i+1)]
+
+      config.vm.define "#{hostname}" do |box|
+        box.vm.hostname = "#{hostname}.book"
+        box.vm.network :private_network, ip: "10.1.1.#{ip_start+i}", :netmask => "255.255.255.0"
+        #box.vm.network :hostonly, ip: "10.1.1.#{ip_start+i}", :netmask => "255.255.255.0", virtualbox__intnet: "vboxnet1"
+        box.vm.hostname = hostname 
+
+        # Otherwise using VirtualBox
+        box.vm.provider :virtualbox do |vbox|
+          # Defaults
+          vbox.customize ["modifyvm", :id, "--memory", 3074]
+          vbox.customize ["modifyvm", :id, "--cpus", 2]
+          $script = <<SCRIPT
+SCRIPT
+          #vbox.gui = true
+          config.vm.provision "shell", inline: $script
+        end # box.vm virtualbox
+      end # config.vm.define 
+    end # count.times
+  end # nodes.each
+end # Vagrant.configure("2")

@@ -1,17 +1,34 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="UTF-8">
-		<title>Homework Application</title>
-		<style type="text/css">
-			input[value$="하세요."]{color:gray;}
-			input[value$=".com"]{color:gray;}
-			input[value$="1234"]{color:gray;}
-			input[value$="94길 20"]{color:gray;}
-			input[value$="층"]{color:gray;}
-			input[value$="자리"]{color:gray;}	
-		</style>
-		<script type="text/javascript">
+<head>
+<meta charset="UTF-8">
+<title>Homework Application</title>
+<style type="text/css">
+input[value$="하세요."] {
+	color: gray;
+}
+
+input[value$=".com"] {
+	color: gray;
+}
+
+input[value$="1234"] {
+	color: gray;
+}
+
+input[value$="94길 20"] {
+	color: gray;
+}
+
+input[value$="층"] {
+	color: gray;
+}
+
+input[value$="자리"] {
+	color: gray;
+}
+</style>
+<script type="text/javascript">
 		var cnt=0;
 		var input=[];
 		var check=[];
@@ -61,22 +78,22 @@
 			alert("실명이 확인 되었습니다.");
 		}
 		</script>
-	</head>
-	<body>
+</head>
+<body>
 	<div align="center">
-		<form name="memApp" action="hw_form2.jsp" >
+		<form name="memApp" action="hw_form2.jsp">
 			<h1>회원가입 정보입력</h1>
 			<table>
 				<thead>
-				<tr>
-					<td colspan="2"><h3>기본 정보</h3></td>
-				</tr>
+					<tr>
+						<td colspan="2"><h3>기본 정보</h3></td>
+					</tr>
 				</thead>
 				<tr>
 					<td width="150">ID*</td>
 					<td><input type="text" name="inputId" value="ID를 입력하세요."
-						onclick="javascript:dataClear(this)" size="23">
-						<input type="button" name="checkId" value="중복 확인"
+						onclick="javascript:dataClear(this)" size="23"> <input
+						type="button" name="checkId" value="중복 확인"
 						onclick="javascript:id_Check();"></td>
 				</tr>
 				<tr>
@@ -97,24 +114,22 @@
 				<tr>
 					<td>주민번호*</td>
 					<td><input type="text" name="inputBirth" value="앞 6자리"
-						size="8" maxlength="6" onclick="javascript:dataClear(this)"/> - 
-					<input type="password" name="inputIdNum" size="8" maxlength="7"/>
-					<input type="button" name="inputCkId" value="실명 확인" 
-					onclick="javascript:name_Check()"/></td>
+						size="8" maxlength="6" onclick="javascript:dataClear(this)" /> - <input
+						type="password" name="inputIdNum" size="8" maxlength="7" /> <input
+						type="button" name="inputCkId" value="실명 확인"
+						onclick="javascript:name_Check()" /></td>
 				</tr>
 				<tr>
 					<td colspan="2" height="30"><hr></td>
 				</tr>
 				<tr>
 					<td>주소</td>
-					<td><input type="text" name="input_BigAdress" size="40" 
-						value="서울특별시 강남구 강남대로 94길 20"
-						onclick="javascript:dataClear(this)"></td>
+					<td><input type="text" name="input_BigAdress" size="40"
+						value="서울특별시 강남구 강남대로 94길 20" onclick="javascript:dataClear(this)"></td>
 				</tr>
 				<tr>
 					<td>상세 주소</td>
-					<td><input type="text" name="input_SmallAdress"
-						value="3, 4층"
+					<td><input type="text" name="input_SmallAdress" value="3, 4층"
 						onclick="javascript:dataClear(this)"></td>
 				</tr>
 				<tr>
@@ -122,15 +137,13 @@
 				</tr>
 				<tr>
 					<td>E-Mail 주소</td>
-					<td><input type="text" name="inputMailId" size="10"> @ 
-						<input type="text" name="inputMailAdr" value="acornacademy.com" size="15"
-						onclick="javascript:dataClear(this)"/>
-					</td>
+					<td><input type="text" name="inputMailId" size="10"> @
+						<input type="text" name="inputMailAdr" value="acornacademy.com"
+						size="15" onclick="javascript:dataClear(this)" /></td>
 				</tr>
 				<tr>
 					<td>전화번호</td>
-					<td>
-						<select name="inputPhoneNum">
+					<td><select name="inputPhoneNum">
 							<option value="Seoul">02</option>
 							<option value="Busan">051</option>
 							<option value="Daegu">053</option>
@@ -145,53 +158,47 @@
 							<option value="Chungnam">041</option>
 							<option value="Jeonbuk">063</option>
 							<option value="Jeonnam">061</option>
-							<option value="Kyungbuk">054</option>							
-							<option value="Kyungnam">055</option>							
-							<option value="Jeju">064</option>							
-						</select>
-						<input type="text" name="inputPNum01" value="1234"
-						size="2" maxlength="4" onclick="javascript:dataClear(this)"> - 
-						<input type="text" name="inputPNum02" value="1234"
-						size="2" maxlength="4" onclick="javascript:dataClear(this)">
-					</td>
+							<option value="Kyungbuk">054</option>
+							<option value="Kyungnam">055</option>
+							<option value="Jeju">064</option>
+					</select> <input type="text" name="inputPNum01" value="1234" size="2"
+						maxlength="4" onclick="javascript:dataClear(this)"> - <input
+						type="text" name="inputPNum02" value="1234" size="2" maxlength="4"
+						onclick="javascript:dataClear(this)"></td>
 				</tr>
 				<tr>
 					<td>핸드폰 번호*</td>
-					<td>
-						<select name="inputHNum">
+					<td><select name="inputHNum">
 							<option value="Hn10">010</option>
 							<option value="Hn11">011</option>
 							<option value="Hn16">016</option>
 							<option value="Hn17">017</option>
 							<option value="Hn18">018</option>
-							<option value="Hn19">019</option>							
-						</select>
-						<input type="text" name="inputHNum01" value="1234"
-						size="2" maxlength="4" onclick="javascript:dataClear(this)"> - 
-						<input type="text" name="inputHNum02" value="1234"
-						size="2" maxlength="4" onclick="javascript:dataClear(this)">
-					</td>
+							<option value="Hn19">019</option>
+					</select> <input type="text" name="inputHNum01" value="1234" size="2"
+						maxlength="4" onclick="javascript:dataClear(this)"> - <input
+						type="text" name="inputHNum02" value="1234" size="2" maxlength="4"
+						onclick="javascript:dataClear(this)"></td>
 				</tr>
 				<tr>
 					<td colspan="2" height="20"></td>
 				</tr>
 				<tr>
 					<td>SMS 수신 동의</td>
-					<td>
-						&nbsp;&nbsp;&nbsp;<input type="radio" name="inputSms" value="agreeSms"/> 예
+					<td>&nbsp;&nbsp;&nbsp;<input type="radio" name="inputSms"
+						value="agreeSms" /> 예 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-						<input type="radio" name="inputSms" value="disagreeSms"/> 아니오
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio"
+						name="inputSms" value="disagreeSms" /> 아니오
 					</td>
-				</tr><tr>
+				</tr>
+				<tr>
 					<td>이메일 수신 동의</td>
-					<td>
-						&nbsp;&nbsp;&nbsp;<input type="radio" name="inputEmail" value="agreeMail"/> 예
+					<td>&nbsp;&nbsp;&nbsp;<input type="radio" name="inputEmail"
+						value="agreeMail" /> 예 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-						<input type="radio" name="inputEmail" value="disagreeMail"/> 아니오
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio"
+						name="inputEmail" value="disagreeMail" /> 아니오
 					</td>
 				</tr>
 				<tr>
@@ -202,17 +209,17 @@
 				</tr>
 				<tr>
 					<td colspan="2">
-					<div align="center">
-						<input type="button" name="confirm" value="확인"
-						onclick="javascript:dataConfirm();" />
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-						<input type="reset" value="취소"/>
-					</div>
+						<div align="center">
+							<input type="button" name="confirm" value="확인"
+								onclick="javascript:dataConfirm();" />
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="reset"
+								value="취소" />
+						</div>
 					</td>
 				</tr>
 			</table>
 		</form>
 	</div>
 
-	</body>
+</body>
 </html>

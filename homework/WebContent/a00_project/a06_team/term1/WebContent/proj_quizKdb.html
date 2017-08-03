@@ -1,37 +1,72 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="UTF-8">
-		<title>Quiz Example</title>
-		<style type="text/css">
-			/* 좌측 메뉴창 관련 */
-			li:hover{border:1px solid #960000;border-radius:5px 5px 5px 5px;}
-			li:active{background-color:#C98500;border-radius:5px 5px 5px 5px;color:#BFFFB8;border:1px solid #ff0000;}
-			li{line-height:30px;font-size:0.8em;}
-			.boxbox{width:240px;background-color:#101010;border:2px solid #960000;} /* 분류 너비*/
-			
-			/* 메인 table */
-			.bgImgCk{height:480px;background-color:black;}
-			div{color:#1DDB16;background-image:none;}
-			
-			/* column 제목 */
-			.borderline
-			{
-				font-size:x-large;
-				border:2.5px solid #960000;
-				border-radius:8px 8px 8px 8px;
-			}
-			
-			/* quiz */
-			#quizSubject{width:580px;color:#1DDB16;}
-			
-			/* main contents */
-			#mainContents{border:none;width:480px;height:480px;padding:0%;}
-			/* 문제 박스 */
-			#question_3,#question_4,#question_5,#question_6,#question_7,#question_8,
-			#question_9,#question_10,#question_11,#question_12,#question_13,#question_14,
-			#question_100{padding:0%;text-align:center;}
-			/*#imgQ01
+<head>
+<meta charset="UTF-8">
+<title>Quiz Example</title>
+<style type="text/css">
+/* 좌측 메뉴창 관련 */
+li:hover {
+	border: 1px solid #960000;
+	border-radius: 5px 5px 5px 5px;
+}
+
+li:active {
+	background-color: #C98500;
+	border-radius: 5px 5px 5px 5px;
+	color: #BFFFB8;
+	border: 1px solid #ff0000;
+}
+
+li {
+	line-height: 30px;
+	font-size: 0.8em;
+}
+
+.boxbox {
+	width: 240px;
+	background-color: #101010;
+	border: 2px solid #960000;
+} /* 분류 너비*/
+
+/* 메인 table */
+.bgImgCk {
+	height: 480px;
+	background-color: black;
+}
+
+div {
+	color: #1DDB16;
+	background-image: none;
+}
+
+/* column 제목 */
+.borderline {
+	font-size: x-large;
+	border: 2.5px solid #960000;
+	border-radius: 8px 8px 8px 8px;
+}
+
+/* quiz */
+#quizSubject {
+	width: 580px;
+	color: #1DDB16;
+}
+
+/* main contents */
+#mainContents {
+	border: none;
+	width: 480px;
+	height: 480px;
+	padding: 0%;
+}
+/* 문제 박스 */
+#question_3, #question_4, #question_5, #question_6, #question_7,
+	#question_8, #question_9, #question_10, #question_11, #question_12,
+	#question_13, #question_14, #question_100 {
+	padding: 0%;
+	text-align: center;
+}
+/*#imgQ01
 			{
 				background-image: url("img/quest.PNG");
 				width:250px;height:130px;
@@ -47,27 +82,27 @@
 				background-position:50% 50%;
 				background-size:100%;
 			}*/
-			/* 제출 버튼 */
-			.sbBtn
-			{
-				width:150px;height:50px;
-				color:white;
-				font-size:large;
-				background-color:black;
-				background-image:url("img/submit_btn.jpg");
-				background-repeat:no-repeat;
-				background-position:50% 50%;
-				background-size:100% 100%;
-				border-width:thin;
-				border-color: rgba(255,255,255,0);
-			}
-			
-			.sbBtn:ACTIVE {
-			background-image: url('img/bnbutton3.jpg');
-			border-color: white;
+/* 제출 버튼 */
+.sbBtn {
+	width: 150px;
+	height: 50px;
+	color: white;
+	font-size: large;
+	background-color: black;
+	background-image: url("img/submit_btn.jpg");
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+	background-size: 100% 100%;
+	border-width: thin;
+	border-color: rgba(255, 255, 255, 0);
 }
-		</style>
-		<script type="text/javascript">
+
+.sbBtn:ACTIVE {
+	background-image: url('img/bnbutton3.jpg');
+	border-color: white;
+}
+</style>
+<script type="text/javascript">
 
 			var delay = "180";																	// 타이머
 			var localIdx = 0;																	// localStorage key 값용 idx
@@ -178,123 +213,270 @@
 				}
 			}
 		</script>
-	</head>
-	<body>
+</head>
+<body>
 	<div align="center">
-		<table class="bgImgCk" >
+		<table class="bgImgCk">
 			<tr bgColor="black">
-				<th class="borderline">
-					분류
-				</th>
-				<th id="quizSubject" class="borderline">
-					능력단위평가
-				</th>
+				<th class="borderline">분류</th>
+				<th id="quizSubject" class="borderline">능력단위평가</th>
 			</tr>
 			<tr>
-				<td class="boxbox" >
-					<ol id="olBox" style="margin:0px 0px 0px 0px; padding-left:30px;">
+				<td class="boxbox">
+					<ol id="olBox" style="margin: 0px 0px 0px 0px; padding-left: 30px;">
 						<li onclick="javascript:pageChange(1,'SQL 활용')">SQL 활용</li>
 						<li onclick="javascript:pageChange(2,'DB 구현')">DB 구현</li>
-						<li onclick="javascript:pageChange(3,'프로그래밍 언어 활용')">프로그래밍 언어 활용</li>
-						<li onclick="javascript:pageChange(4,'응용SW 기초기술 활용')">응용SW 기초기술 활용</li>
+						<li onclick="javascript:pageChange(3,'프로그래밍 언어 활용')">프로그래밍 언어
+							활용</li>
+						<li onclick="javascript:pageChange(4,'응용SW 기초기술 활용')">응용SW
+							기초기술 활용</li>
 						<li onclick="javascript:pageChange(5,'애플리케이션 배포')">애플리케이션 배포</li>
 						<li onclick="javascript:pageChange(6,'애플리케이션 구현')">애플리케이션 구현</li>
-						<li onclick="javascript:pageChange(7,'애플리케이션 테스트 수행')">애플리케이션 테스트 수행</li>
+						<li onclick="javascript:pageChange(7,'애플리케이션 테스트 수행')">애플리케이션
+							테스트 수행</li>
 						<li onclick="javascript:pageChange(8,'개발자 테스트')">개발자 테스트</li>
 						<li onclick="javascript:pageChange(9,'빅데이터 수집')">빅데이터 수집</li>
 						<li onclick="javascript:pageChange(10,'빅데이터 저장')">빅데이터 저장</li>
 					</ol>
 				</td>
 				<td id="quizMain" align="center">
-				<div style="width:500px;height:470px;overflow:auto;">
-					<table id="mainContents">
-						<tr>
-							<td align="left">
-								<div id="question_0" align="center">
-									<h1>능력단위평가</h1>
-									본 항목은 팀원들이 능력단위평가에서 우수한 성적으로<br>
-									평가를 통과하길 바라는 마음에서 제작되었음을 밝힙니다.<br>
-									시험 보기 전 Self check를 하는 기분으로 풀어보시길 바랍니다.<br>
-									<br><br><br><br><br><br><br>
-								</div>
-								<div id="question_1" style="display:none">
-								</div>
-								<div id="question_2" style="display:none">
-								</div>
-								<div id="question_3" style="display:none">
-									<h1 class="updateA"></h1>
-									<h1>업데이트 예정</h1>
-									<br><br><br><br><br><br><br><br><br><br><br><br><br>
-								</div>
-								<div id="question_4" style="display:none">
-									<h1 class="updateA"></h1>
-									<h1>업데이트 예정</h1>
-									<br><br><br><br><br><br><br><br><br><br><br><br><br>
-								</div>
-								<div id="question_5" style="display:none">
-									<h1 class="updateA"></h1>
-									<h1>업데이트 예정</h1>
-									<br><br><br><br><br><br><br><br><br><br><br><br><br>
-								</div>
-								<div id="question_6" style="display:none">
-									<h1 class="updateA"></h1>
-									<h1>업데이트 예정</h1>
-									<br><br><br><br><br><br><br><br><br><br><br><br><br>
-								</div>
-								<div id="question_7" style="display:none">
-									<h1 class="updateA"></h1>
-									<h1>업데이트 예정</h1>
-									<br><br><br><br><br><br><br><br><br><br><br><br><br>
-								</div>
-								<div id="question_8" style="display:none">
-									<h1 class="updateA"></h1>
-									<h1>업데이트 예정</h1>
-									<br><br><br><br><br><br><br><br><br><br><br><br><br>
-								</div>
-								<div id="question_9" style="display:none">
-									<h1 class="updateA"></h1>
-									<h1>업데이트 예정</h1>
-									<br><br><br><br><br><br><br><br><br><br><br><br><br>
-								</div>
-								<div id="question_10" style="display:none">
-									<h1 class="updateA"></h1>
-									<h1>업데이트 예정</h1>
-									<br><br><br><br><br><br><br><br><br><br><br><br><br>
-								</div>
-								<div id="question_11" style="display:none">
-									<h1 class="updateA"></h1>
-									<h1>업데이트 예정</h1>
-									<br><br><br><br><br><br><br><br><br><br><br><br><br>
-								</div>
-								<div id="question_12" style="display:none">
-									<h1 class="updateA"></h1>
-									<h1>업데이트 예정</h1>
-									<br><br><br><br><br><br><br><br><br><br><br><br><br>
-								</div>
-								<div id="question_13" style="display:none">
-									<h1 class="updateA"></h1>
-									<h1>업데이트 예정</h1>
-									<br><br><br><br><br><br><br><br><br><br><br><br><br>
-								</div>
-								<div id="question_14" style="display:none">
-									<h1 class="updateA"></h1>
-									<h1>업데이트 예정</h1>
-									<br><br><br><br><br><br><br><br><br><br><br><br><br>
-								</div>
-								<div id="question_100" align="center" style="display:none">
-								</div>
-							</td>
-						</tr>
-					</table>
-				</div>
+					<div style="width: 500px; height: 470px; overflow: auto;">
+						<table id="mainContents">
+							<tr>
+								<td align="left">
+									<div id="question_0" align="center">
+										<h1>능력단위평가</h1>
+										본 항목은 팀원들이 능력단위평가에서 우수한 성적으로<br> 평가를 통과하길 바라는 마음에서 제작되었음을
+										밝힙니다.<br> 시험 보기 전 Self check를 하는 기분으로 풀어보시길 바랍니다.<br>
+										<br>
+										<br>
+										<br>
+										<br>
+										<br>
+										<br>
+										<br>
+									</div>
+									<div id="question_1" style="display: none"></div>
+									<div id="question_2" style="display: none"></div>
+									<div id="question_3" style="display: none">
+										<h1 class="updateA"></h1>
+										<h1>업데이트 예정</h1>
+										<br>
+										<br>
+										<br>
+										<br>
+										<br>
+										<br>
+										<br>
+										<br>
+										<br>
+										<br>
+										<br>
+										<br>
+										<br>
+									</div>
+									<div id="question_4" style="display: none">
+										<h1 class="updateA"></h1>
+										<h1>업데이트 예정</h1>
+										<br>
+										<br>
+										<br>
+										<br>
+										<br>
+										<br>
+										<br>
+										<br>
+										<br>
+										<br>
+										<br>
+										<br>
+										<br>
+									</div>
+									<div id="question_5" style="display: none">
+										<h1 class="updateA"></h1>
+										<h1>업데이트 예정</h1>
+										<br>
+										<br>
+										<br>
+										<br>
+										<br>
+										<br>
+										<br>
+										<br>
+										<br>
+										<br>
+										<br>
+										<br>
+										<br>
+									</div>
+									<div id="question_6" style="display: none">
+										<h1 class="updateA"></h1>
+										<h1>업데이트 예정</h1>
+										<br>
+										<br>
+										<br>
+										<br>
+										<br>
+										<br>
+										<br>
+										<br>
+										<br>
+										<br>
+										<br>
+										<br>
+										<br>
+									</div>
+									<div id="question_7" style="display: none">
+										<h1 class="updateA"></h1>
+										<h1>업데이트 예정</h1>
+										<br>
+										<br>
+										<br>
+										<br>
+										<br>
+										<br>
+										<br>
+										<br>
+										<br>
+										<br>
+										<br>
+										<br>
+										<br>
+									</div>
+									<div id="question_8" style="display: none">
+										<h1 class="updateA"></h1>
+										<h1>업데이트 예정</h1>
+										<br>
+										<br>
+										<br>
+										<br>
+										<br>
+										<br>
+										<br>
+										<br>
+										<br>
+										<br>
+										<br>
+										<br>
+										<br>
+									</div>
+									<div id="question_9" style="display: none">
+										<h1 class="updateA"></h1>
+										<h1>업데이트 예정</h1>
+										<br>
+										<br>
+										<br>
+										<br>
+										<br>
+										<br>
+										<br>
+										<br>
+										<br>
+										<br>
+										<br>
+										<br>
+										<br>
+									</div>
+									<div id="question_10" style="display: none">
+										<h1 class="updateA"></h1>
+										<h1>업데이트 예정</h1>
+										<br>
+										<br>
+										<br>
+										<br>
+										<br>
+										<br>
+										<br>
+										<br>
+										<br>
+										<br>
+										<br>
+										<br>
+										<br>
+									</div>
+									<div id="question_11" style="display: none">
+										<h1 class="updateA"></h1>
+										<h1>업데이트 예정</h1>
+										<br>
+										<br>
+										<br>
+										<br>
+										<br>
+										<br>
+										<br>
+										<br>
+										<br>
+										<br>
+										<br>
+										<br>
+										<br>
+									</div>
+									<div id="question_12" style="display: none">
+										<h1 class="updateA"></h1>
+										<h1>업데이트 예정</h1>
+										<br>
+										<br>
+										<br>
+										<br>
+										<br>
+										<br>
+										<br>
+										<br>
+										<br>
+										<br>
+										<br>
+										<br>
+										<br>
+									</div>
+									<div id="question_13" style="display: none">
+										<h1 class="updateA"></h1>
+										<h1>업데이트 예정</h1>
+										<br>
+										<br>
+										<br>
+										<br>
+										<br>
+										<br>
+										<br>
+										<br>
+										<br>
+										<br>
+										<br>
+										<br>
+										<br>
+									</div>
+									<div id="question_14" style="display: none">
+										<h1 class="updateA"></h1>
+										<h1>업데이트 예정</h1>
+										<br>
+										<br>
+										<br>
+										<br>
+										<br>
+										<br>
+										<br>
+										<br>
+										<br>
+										<br>
+										<br>
+										<br>
+										<br>
+									</div>
+									<div id="question_100" align="center" style="display: none">
+									</div>
+								</td>
+							</tr>
+						</table>
+					</div>
 				</td>
 			</tr>
 			<tr>
 				<td align="center" bgcolor="black" colspan="2" class="borderline">
-					<input type="button" class="sbBtn" value="제 출" onclick="javascript:submitAns()" />
+					<input type="button" class="sbBtn" value="제 출"
+					onclick="javascript:submitAns()" />
 				</td>
 			</tr>
 		</table>
 	</div>
-	</body>
+</body>
 </html>

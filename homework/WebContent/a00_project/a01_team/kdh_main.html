@@ -5,37 +5,72 @@
 <title>Insert title here</title>
 
 <style type="text/css"> /* 자동 배경화면 변경 */
-	@import url('https://fonts.googleapis.com/css?family=Indie+Flower');
-	body {font-family: 'Indie Flower', cursive;}
-	
-	#container{height:1200px; background-size:cover; background-image:url("/homework/a00_project/a01_team/background/img_16.jpg");}
-	a{text-decoration:none}
+@import url('https://fonts.googleapis.com/css?family=Indie+Flower');
+
+body {
+	font-family: 'Indie Flower', cursive;
+}
+
+#container {
+	height: 1200px;
+	background-size: cover;
+	background-image:
+		url("/homework/a00_project/a01_team/background/img_16.jpg");
+}
+
+a {
+	text-decoration: none
+}
 </style>
 
 
-<style type="text/css"> 
+<style type="text/css">
+.frame {
+	width: 1000px;
+	margin: auto;
+}
 
-	.frame{width: 1000px; margin: auto;}
-	.frame{text-decoration:none;}
-	.menu{width:100%; display: inline-block; }
-	.uplist{ 
-				background-color:gray;
-				width:230PX;
-				height:100px;
-				float: left;
-				font-size:2em;
-				align-items:center;
-				justify-content: center;
-				display: flex;
-				color:#333366;
-				border-radius: 30px 30px 30px 30px;
-				margin :10px;
-			}
-	.uplist:hover { background-color : orange;}
-	#iFrame{width:100%; height:950px;}
-	#container{width:100%; display: inline-block;} 
-	/* #block{width: 1000px; margin: auto;} */
-	hr{border:none; border:2px solid gray;}
+.frame {
+	text-decoration: none;
+}
+
+.menu {
+	width: 100%;
+	display: inline-block;
+}
+
+.uplist {
+	background-color: gray;
+	width: 230PX;
+	height: 100px;
+	float: left;
+	font-size: 2em;
+	align-items: center;
+	justify-content: center;
+	display: flex;
+	color: #333366;
+	border-radius: 30px 30px 30px 30px;
+	margin: 10px;
+}
+
+.uplist:hover {
+	background-color: orange;
+}
+
+#iFrame {
+	width: 100%;
+	height: 950px;
+}
+
+#container {
+	width: 100%;
+	display: inline-block;
+}
+/* #block{width: 1000px; margin: auto;} */
+hr {
+	border: none;
+	border: 2px solid gray;
+}
 </style>
 
 
@@ -59,60 +94,64 @@
 		background_img += number + ".jpg";
 		container.style.backgroundImage = "url("+background_img+")";
 	}
-</script> 
+</script>
 
 </head>
-<body> 
-	<div id='container'> 
- 	<div class="frame" >
- 	<h1 align="center" "text-shadow:2px 2px 2px gray;" >
- 		<a href ="kdh_main.html" style="color:white;">
- 			DongHwi's WebPage</a></h1><hr>
-	 		<div class="menu"> <!-- 상단메뉴 공간할당-->
+<body>
+	<div id='container'>
+		<div class="frame">
+			<h1 align="center" "text-shadow:2px 2px 2pxgray;" >
+				<a href="kdh_main.html" style="color: white;"> DongHwi's WebPage</a>
+			</h1>
+			<hr>
+			<div class="menu">
+				<!-- 상단메뉴 공간할당-->
 				<div class="upper">
-						
-						<div id="aboutMe" class="uplist"> 
-							<a href="kdh_aboutme.html" target="bodyText" > About Me</a>
-						</div>
 
-						<div id="contactMe" class="uplist">
-							<a href="kdh_contactme2.html" target="bodyText">
-									Contact Me
-							</a>
-						</div>
-							
-						<div id="blogLink" class="uplist" onclick>
-							<a href ="https://nov6th.tistory.com/category/%ED%94%84%EB%9D%BC%EB%AA%A8%EB%8D%B8" target="bodyText">
-								My Hobby
-							</a> 
-						</div>
-						
-						<div id="toMain" class="uplist" onclick="goMain()"> Team members </div> <!-- 메인페이지 이동 --> 
-						
+					<div id="aboutMe" class="uplist">
+						<a href="kdh_aboutme.html" target="bodyText"> About Me</a>
+					</div>
+
+					<div id="contactMe" class="uplist">
+						<a href="kdh_contactme2.html" target="bodyText"> Contact Me </a>
+					</div>
+
+					<div id="blogLink" class="uplist" onclick>
+						<a
+							href="https://nov6th.tistory.com/category/%ED%94%84%EB%9D%BC%EB%AA%A8%EB%8D%B8"
+							target="bodyText"> My Hobby </a>
+					</div>
+
+					<div id="toMain" class="uplist" onclick="goMain()">Team
+						members</div>
+					<!-- 메인페이지 이동 -->
+
 				</div>
 			</div>
 			<hr>
-			
-			<div class="body" id="content"> <!-- 하단 공간 분할 // 본문내용 표시 공간 -->
-				<iframe id="iFrame" style="border:0px;" name="bodyText" src="kdh_main3.html">
+
+			<div class="body" id="content">
+				<!-- 하단 공간 분할 // 본문내용 표시 공간 -->
+				<iframe id="iFrame" style="border: 0px;" name="bodyText"
+					src="kdh_main3.html">
 					<!--<h1 style="color:white;"	align="center;"	>-->
 					<!--	이곳은 김동휘의 홈페이지 입니다 <br><br>-->
-						
+
 					<!--	이력이 궁금하시면 About me 를 눌러주세요 <br>-->
 					<!--	저에게 연락을 원하시면 Contact me 를 눌러주세요 <br>-->
- 				<!--		저의 취미가 궁금하시면 My hobby 를 눌러주세요 <br>-->
- 				<!--		저희의 다른 팀맴버의 홈페이지로 가시려면,<br> Team member를 눌러주세요<br>-->
- 					
- 				<!--		참고로 클릭할때마다 배경화면이 변경됩니다 <br>-->
+					<!--		저의 취미가 궁금하시면 My hobby 를 눌러주세요 <br>-->
+					<!--		저희의 다른 팀맴버의 홈페이지로 가시려면,<br> Team member를 눌러주세요<br>-->
+
+					<!--		참고로 클릭할때마다 배경화면이 변경됩니다 <br>-->
 					<!--</h1>-->
 				</iframe>
-						
-				
-				
-				
+
+
+
+
 			</div>
-	
-	</div>
+
+		</div>
 	</div>
 </body>
-</html> 
+</html>

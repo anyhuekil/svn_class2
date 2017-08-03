@@ -1,0 +1,46 @@
+/*
+연한 기본색 (112, 199, 206) #70c7ce
+진한 기본색 (47, 174, 183) #2faeb7
+연한 hover색 (191, 231, 234) #bfe7ea
+진한 hover색 (116, 213, 220) #74d5dc
+
+
+다
+#27b5b2
+#00a8a1
+연한 에메랄드 #78cdd0
+#46a994
+#7bc9a3
+
+ㅇ
+진한 녹색 #009889
+#21b7b4
+
+어두운 녹색 #05a443
+
+*/
+
+
+
+
+/* 공통 적용 부분 */
+
+	
+.footer{
+	text-align: center;
+	color: white;
+	position : fixed;
+	bottom:0;
+	left:0;
+	height:80px;
+	background-color:gray;
+	width: 100%;
+	line-height: 0%;
+}
+	
+
+		
+		
+
+		
+		

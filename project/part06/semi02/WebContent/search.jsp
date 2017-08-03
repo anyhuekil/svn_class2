@@ -1,6 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"
-	import="vo.*,dao.*,java.util.*"
-%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8" import="vo.*,dao.*,java.util.*"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%
@@ -24,14 +23,15 @@
 <link href="css/stylish-portfolio.css" rel="stylesheet">
 
 <!-- Custom Fonts -->
-<link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<link href="font-awesome/css/font-awesome.min.css" rel="stylesheet"
+	type="text/css">
 <link
 	href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic"
 	rel="stylesheet" type="text/css">
 <link rel="stylesheet" href="css/jquery-ui.css">
 <style type="text/css">
-body{
-background-color: rgb(200,200,200);
+body {
+	background-color: rgb(200, 200, 200);
 }
 </style>
 </head>
@@ -73,26 +73,19 @@ background-color: rgb(200,200,200);
 				</h1>
 				<br>
 				<form method="post">
-				<ul
-					class="nav nav-pills col-sm-offset-2 col-md-offset-2 col-xs-offset-4  col-md-6 col-sm-6 col-xs-4">
-					<li class="active"><a href="#">home</a></li>
-					<li id="prBtn">
-						<a href="#">플레이어 순위</a>
-					</li>
-					<li id="hrBtn">
-						<a href="#">경주마 순위</a>
-					</li>
-					<li id="hlBtn">
-						<a href="#">경주마 list</a>
-					</li>
-				</ul>
+					<ul
+						class="nav nav-pills col-sm-offset-2 col-md-offset-2 col-xs-offset-4  col-md-6 col-sm-6 col-xs-4">
+						<li class="active"><a href="#">home</a></li>
+						<li id="prBtn"><a href="#">플레이어 순위</a></li>
+						<li id="hrBtn"><a href="#">경주마 순위</a></li>
+						<li id="hlBtn"><a href="#">경주마 list</a></li>
+					</ul>
 				</form>
 			</div>
 		</div>
-		
-		<iframe src="" frameborder="0" width="100%" onload="autoResize(this)"
-			marginwidth="0" marginheight="0" scrolling="no" ></iframe>
 
+		<iframe src="" frameborder="0" width="100%" onload="autoResize(this)"
+			marginwidth="0" marginheight="0" scrolling="no"></iframe>
 </body>
 <script src="http://code.jquery.com/jquery-1.10.2.js?ver=1 "></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js?ver=1"></script>

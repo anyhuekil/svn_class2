@@ -1,53 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-	xmlns:p="http://www.springframework.org/schema/p"
-	xmlns:c="http://www.springframework.org/schema/c"
+	xmlns:p="http://www.springframework.org/schema/p" xmlns:c="http://www.springframework.org/schema/c"
 	xmlns:context="http://www.springframework.org/schema/context"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	 xmlns:util="http://www.springframework.org/schema/util"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans
        http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
        http://www.springframework.org/schema/context
-       http://www.springframework.org/schema/context/spring-context-4.0.xsd" >
-    <!-- Woman woman = new Woman("홍길순",25);
-    	 woman.setLoc("서울강남");
-    	 Man man = new Man();
-    	 man.setName("이정남");
-    	 man.setAge(29);
-    	 man.setWoman(woman);
-     -->  
-	<bean id="woman" class="springweb.z01_dto.Woman" 
-		c:name="홍길순" c:age="25" p:loc="서울강남" />
-	<bean id="man" class="springweb.z01_dto.Man" 
-		p:name="이정남" p:loc="서울용산" autowire="byName" />	
-	<!-- autowire 속성
-	1) byName은 해당 메서드의 setXXXX에 property가 선언된 클래스의
-		id값과 같을 때, 자동으로 할당된다.
-	  -->	
-		
+       http://www.springframework.org/schema/context/spring-context-4.0.xsd">
+	<!-- Woman woman = new Woman("홍길순",25); woman.setLoc("서울강남"); Man man = 
+		new Man(); man.setName("이정남"); man.setAge(29); man.setWoman(woman); -->
+	<bean id="woman" class="springweb.z01_dto.Woman" c:name="홍길순"
+		c:age="25" p:loc="서울강남" />
+	<bean id="man" class="springweb.z01_dto.Man" p:name="이정남" p:loc="서울용산"
+		autowire="byName" />
+	<!-- autowire 속성 1) byName은 해당 메서드의 setXXXX에 property가 선언된 클래스의 id값과 같을 
+		때, 자동으로 할당된다. -->
 
-<!-- 
-// springweb.z01_dto.Duck
-// springweb.z01_dto.Flyway
-// springweb.z01_dto.LakeFlying
-// springweb.z01_dto.SeaFlying
-	2) byType으로 해당 클래스와 입력 parameter의 type이 같은 메서드를 찾아서 자동 할당한다.
-	Duck d = new Duck();
-	d.setType("청둥오리");
-	LakeFlying flyway01 = new LakeFlying();
-	d.setFly(flyway01); // autowire에 byType으로 선언하면, 해당 코드 내용을 생략
-	                       하여도 type이 할당 될 수 있는 곳을 찾아서 할당이 된다.
- -->
 
-	<bean id="flyway01" class="springweb.z01_dto.LakeFlying"/>
-	<bean id="flyway02" class="springweb.z01_dto.SeaFlying"/>
-	<bean id="d1" class="springweb.z01_dto.Duck"
-		p:type="청둥" autowire="byType"/>	
-	<!-- 메서드에  type이 같은 것이 있으면 할당 -->		
-		
-	<bean id="d2" class="springweb.z01_dto.Duck"
-		p:type="흰색" autowire="constructor"/>
-	<!-- 생성자에 type이 같은 것이 있으면 할당 -->	
+	<!-- // springweb.z01_dto.Duck // springweb.z01_dto.Flyway // springweb.z01_dto.LakeFlying 
+		// springweb.z01_dto.SeaFlying 2) byType으로 해당 클래스와 입력 parameter의 type이 같은 
+		메서드를 찾아서 자동 할당한다. Duck d = new Duck(); d.setType("청둥오리"); LakeFlying flyway01 
+		= new LakeFlying(); d.setFly(flyway01); // autowire에 byType으로 선언하면, 해당 코드 
+		내용을 생략 하여도 type이 할당 될 수 있는 곳을 찾아서 할당이 된다. -->
+
+	<bean id="flyway01" class="springweb.z01_dto.LakeFlying" />
+	<bean id="flyway02" class="springweb.z01_dto.SeaFlying" />
+	<bean id="d1" class="springweb.z01_dto.Duck" p:type="청둥" autowire="byType" />
+	<!-- 메서드에 type이 같은 것이 있으면 할당 -->
+
+	<bean id="d2" class="springweb.z01_dto.Duck" p:type="흰색" autowire="constructor" />
+	<!-- 생성자에 type이 같은 것이 있으면 할당 -->
 
 
 

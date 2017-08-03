@@ -28,21 +28,23 @@
 /* 게임이 이루어지는 공간의 절대 크기 및 스타일 설*/
 table {
 	align: "center";
-	
 }
-table, td, th { 
+
+table, td, th {
 	border: 1px solid black;
-	border-collapse: collapse; 
+	border-collapse: collapse;
 	width: 490px;
 }
+
 td, th {
 	height: 50px;
 	width: 60px;
 	text-align: center;
 }
+
 table th {
-		background-color: black;
-		color: white;
+	background-color: black;
+	color: white;
 }
 
 /* 사용되는 공의 크기 */
@@ -58,6 +60,7 @@ div {
 	background-color: red;
 	z-index: 10;
 }
+
 #cheBall {
 	top: 460px;
 	left: 80px;
@@ -99,25 +102,66 @@ div {
 <body>
 	<img src="league.jpg" height="100px" width="150px">
 	<table>
-		<tr><th>구단</th><th>진영</th><th>Attack</th></tr>
 		<tr>
-			<td>Man</td><td>Home</td><td>
-			<img src="ball.png" height="30px" width="30px" name="man" onclick="attack(this);"/>
+			<th>구단</th>
+			<th>진영</th>
+			<th>Attack</th>
 		</tr>
 		<tr>
-			<td>Che</td><td>Away</td><td>
-			<img src="ball.png" height="30px" width="30px" name="che" onclick="attack(this);"/>
-			</td>
+			<td>Man</td>
+			<td>Home</td>
+			<td><img src="ball.png" height="30px" width="30px" name="man"
+				onclick="attack(this);" />
+		</tr>
+		<tr>
+			<td>Che</td>
+			<td>Away</td>
+			<td><img src="ball.png" height="30px" width="30px" name="che"
+				onclick="attack(this);" /></td>
 		</tr>
 	</table>
-	<br><br><br><br>
+	<br>
+	<br>
+	<br>
+	<br>
 	<table>
-		<tr><th>구단</th><th>0</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th></tr>
-		<tr><td>Man</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-		<tr><td>che</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+		<tr>
+			<th>구단</th>
+			<th>0</th>
+			<th>1</th>
+			<th>2</th>
+			<th>3</th>
+			<th>4</th>
+			<th>5</th>
+			<th>6</th>
+		</tr>
+		<tr>
+			<td>Man</td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>che</td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
 	</table>
-	<div id="manBall"><img src="man.png" height="40px" width="40px"></div>
-	<div id="cheBall"><img src="che.png" height="40px" width="40px"></div>
+	<div id="manBall">
+		<img src="man.png" height="40px" width="40px">
+	</div>
+	<div id="cheBall">
+		<img src="che.png" height="40px" width="40px">
+	</div>
 	<h1>경기 기록</h1>
 	<p id="matchRecord"></p>
 </body>

@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -12,11 +12,10 @@
 	});
 </script>
 <style type="text/css">
-
 </style>
 </head>
 <body>
-<!--  
+	<!--  
 	숙제 0426
 	데이터가 나오는 곳은 java변수로 출력
 					Daily Schedule!!
@@ -33,15 +32,20 @@
 						  };
 	%>
 	<table>
-	<% 
+		<% 
 		for(int i=0; i<list.length/4; i++){
 	%>
-		<tr><th><%=list[i*4] %></th><th><%=list[i*4+1] %></th><th><%=list[i*4+2] %></th><th><%=list[i*4+3] %></th></tr>
-	<%
+		<tr>
+			<th><%=list[i*4] %></th>
+			<th><%=list[i*4+1] %></th>
+			<th><%=list[i*4+2] %></th>
+			<th><%=list[i*4+3] %></th>
+		</tr>
+		<%
 		}
 	%>
 	</table>
-	
+
 	<%
 		String [][] player={
 				{"NAME", "TEAM", "AGE", "LOC"},
@@ -51,19 +55,19 @@
 		};
 	%>
 	<table>
-	<% 
+		<% 
 		for(int i=0; i<player.length; i++){
 	%>
 		<tr>
-	<%	
+			<%	
 		for(int j=0; j<4; j++){
 	%>
 			<th><%=player[i][j]%></th>
-	<% 		
+			<% 		
 		}
 	%>
 		</tr>
-	<%
+		<%
 		}
 	%>
 	</table>

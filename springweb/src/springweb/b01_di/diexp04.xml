@@ -1,34 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:context="http://www.springframework.org/schema/context" xmlns:p="http://www.springframework.org/schema/p"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	 xmlns:util="http://www.springframework.org/schema/util"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans
        http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
        http://www.springframework.org/schema/context
-       http://www.springframework.org/schema/context/spring-context-4.0.xsd" >
-       <bean id="prod01" class="springweb.z01_dto.Product">
-       		<constructor-arg value="수박(7KG)"/>
-       		<constructor-arg value="11000"/>
-       </bean>
-        <bean id="prod02" class="springweb.z01_dto.Product">
-       		<constructor-arg value="바나나"/>
-       		<constructor-arg value="4000"/>
-       </bean>
-        <bean id="prod03" class="springweb.z01_dto.Product">
-       		<constructor-arg value="딸기"/>
-       		<constructor-arg value="12000"/>
-       </bean>            
-       <bean id="mart01" class="springweb.z01_dto.Mart">
-       		<property name="name" value="Happy day"/>
-       		<property name="product" ref="prod01"/>
-       		<property name="productList">
-       			<list>
-					<ref bean="prod01"/>       			
-					<ref bean="prod02"/>       			
-					<ref bean="prod03"/>       			
-       			</list>
-       		</property>
-       </bean>
+       http://www.springframework.org/schema/context/spring-context-4.0.xsd">
+	<bean id="prod01" class="springweb.z01_dto.Product">
+		<constructor-arg value="수박(7KG)" />
+		<constructor-arg value="11000" />
+	</bean>
+	<bean id="prod02" class="springweb.z01_dto.Product">
+		<constructor-arg value="바나나" />
+		<constructor-arg value="4000" />
+	</bean>
+	<bean id="prod03" class="springweb.z01_dto.Product">
+		<constructor-arg value="딸기" />
+		<constructor-arg value="12000" />
+	</bean>
+	<bean id="mart01" class="springweb.z01_dto.Mart">
+		<property name="name" value="Happy day" />
+		<property name="product" ref="prod01" />
+		<property name="productList">
+			<list>
+				<ref bean="prod01" />
+				<ref bean="prod02" />
+				<ref bean="prod03" />
+			</list>
+		</property>
+	</bean>
 
 </beans>

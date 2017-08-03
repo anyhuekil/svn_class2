@@ -5,200 +5,217 @@
 <title>구매 회원가입</title>
 
 <style type="text/css">
+h2 {
+	color: white;
+	background-color: blue;
+	font-size: 10pt;
+	margin: 50;
+	padding: 50;
+	border: 1px solid red;
+}
 
-  h2{color: white; background-color:blue;
-	font-size:10pt;margin:50;padding:50; border:1px solid red;}
+span {
+	color: red;
+}
 
-	span{color:red;}
-	.title03{color:black;}
-	
-
+.title03 {
+	color: black;
+}
 </style>
 
 </head>
 <body>
 
-<h4>회원가입</h4>
-<h2 >회원정보를 입력해주세요 모두 입력하셔야 가입이 가능합니다.</h2>
-<ul type ="square"><li>기본입력정보</li><span>*</span>
-<span class ="title03">표시는 필수 항목이므로 반드시 기입바랍니다.</span>
-<table border>
-	<tr><td width ="150" align ="right">아이디 <span>*</span></td>
-	<td width ="600" height = "25"><input type ="text"/>
-					<input type ="submit" value ="중복검사"/>
-					영문</td></tr>
-	
-	<tr><td align ="right" >비밀번호 <span>*</span></td>
-	<td width ="600" height = "25"><input type ="password"/>
-	</td></tr>
-	<tr><td align ="right">비밀번호확인 <span>*</span></td>
-	<td width ="600" height = "25"><input type ="password"/>
-	</td></tr>
-	<tr><td align ="right">비밀번호 힌트 <span>*</span></td>
-	<td width ="600" height = "25"><input type ="text"/>
-	비번 분실- 조회시 참고할 내용</td></tr>	
-	<tr><td align ="right">이름(본명)<span>*</span></td>
-	<td width ="600" height = "25"><input type ="text"/>
-	한글</td></tr>
-	<tr><td align ="right">닉네임(별명)<span>*</span></td>
-	<td width ="600" height = "25"><input type ="text"/>
-	<input type ="submit" value ="중복검사"/>
-					한글,영문</td></tr>
-	<tr><td align ="right">전자메일 주소<span>*</span></td>
-	<td width ="600" height = "25"><input type ="text"/>
-	<input type ="checkbox">비공개</td></tr>
-	<tr><td align ="right">주민등록번호<span>*</span></td>
-	<td width ="600" height = "25"><input type ="text"/>
-	- <input type ="password"/> 암호 변환후 안전 저장됨
-	</td></tr>
-	<tr><td align ="right">생년월일<span>*</span></td>
-	<td width ="600" height = "25">
-	
+	<h4>회원가입</h4>
+	<h2>회원정보를 입력해주세요 모두 입력하셔야 가입이 가능합니다.</h2>
+	<ul type="square">
+		<li>기본입력정보</li>
+		<span>*</span>
+		<span class="title03">표시는 필수 항목이므로 반드시 기입바랍니다.</span>
+		<table border>
+			<tr>
+				<td width="150" align="right">아이디 <span>*</span></td>
+				<td width="600" height="25"><input type="text" /> <input
+					type="submit" value="중복검사" /> 영문</td>
+			</tr>
 
-	<select name = "selLoc1" >
-	<option value = "" >년도</option>
-    <option value = "loc1">1993</option>
-    <option value = "loc2">1994</option>  
-    <option value = "loc3">1995</option>
-    <option value = "loc4">1996</option>
-    </select>
-    
-    <select name = "selLoc2" >
-   	<option value = "" >월</option>
-    <option value = "loc1">1월</option>
-    <option value = "loc2">2월</option>
-    <option value = "loc3">3월</option>
-    <option value = "loc4">4월</option>
-    <option value = "loc5">5월</option>
-    <option value = "loc6">6월</option>
-    <option value = "loc7">7월</option>
-    <option value = "loc8">8월</option>
-    <option value = "loc9">9월</option>
-    <option value = "loc10">10월</option>
-    <option value = "loc11">11월</option>
-    <option value = "loc12">12월</option>
-    </select>
-    
-    <select name = "selLoc3" >
-   	<option value = "" >일</option>
-    <option value = "loc1">1일</option>
-    <option value = "loc2">2일</option>
-    <option value = "loc3">3일</option>  
-    <option value = "loc4">4일</option>
-    <option value = "loc5">5일</option>
-    </select>
-   
-    <input type ="radio"/>음
-    <input type ="radio"/>양
-   
-	</td></tr>
-	<tr><td align ="right">성별<span>*</span></td>
-	<td width ="600" height = "25">
-	<input type ="radio"/>남
-    <input type ="radio"/>여
-	</td></tr>
-	<tr><td align ="right">우편번호</td>
-	<td width ="600" height = "25">
-	<input type ="text"/> - <input type ="text"/>
-	<input type ="submit" value ="찾아보기"/>
-	</td></tr>
-	<tr><td align ="right"> 주소</td>
-	<td width ="600" height = "50"><input type ="text"/>
-	<br><input type ="text"/>나머지 주소
-	
-	</td></tr>
-	<tr><td align ="right">일반전화</td>
-	<td width ="600" height = "25">
-	<select name = "selLoc4" >
-	<option value = "" >국번</option>
-    <option value = "loc1">032</option>
-    <option value = "loc2">02</option>  
-    <option value = "loc3">054</option>
-    <option value = "loc4">031</option>
-    </select>
-	-<input type ="text"/>-<input type ="text"/>
-	</td></tr>
-	<tr><td align ="right">휴대전화</td>
-	<td width ="600" height = "25">
-		<select name = "selLoc5" >
-	<option value = "" >국번</option>
-    <option value = "loc1">010</option>
-    <option value = "loc2">019</option>  
-    <option value = "loc3">018</option>
-    <option value = "loc4">011</option>
-    </select>
-	-<input type ="text"/>-<input type ="text"/>
-	</td></tr>
-	<tr><td align ="right">추천인 아이디</td>
-	<td width ="600" height = "25"><input type ="text"/>
-	</td></tr>
-</table>
-<br>
-<li>추가정보</li>
-<br>
+			<tr>
+				<td align="right">비밀번호 <span>*</span></td>
+				<td width="600" height="25"><input type="password" /></td>
+			</tr>
+			<tr>
+				<td align="right">비밀번호확인 <span>*</span></td>
+				<td width="600" height="25"><input type="password" /></td>
+			</tr>
+			<tr>
+				<td align="right">비밀번호 힌트 <span>*</span></td>
+				<td width="600" height="25"><input type="text" /> 비번 분실- 조회시
+					참고할 내용</td>
+			</tr>
+			<tr>
+				<td align="right">이름(본명)<span>*</span></td>
+				<td width="600" height="25"><input type="text" /> 한글</td>
+			</tr>
+			<tr>
+				<td align="right">닉네임(별명)<span>*</span></td>
+				<td width="600" height="25"><input type="text" /> <input
+					type="submit" value="중복검사" /> 한글,영문</td>
+			</tr>
+			<tr>
+				<td align="right">전자메일 주소<span>*</span></td>
+				<td width="600" height="25"><input type="text" /> <input
+					type="checkbox">비공개</td>
+			</tr>
+			<tr>
+				<td align="right">주민등록번호<span>*</span></td>
+				<td width="600" height="25"><input type="text" /> - <input
+					type="password" /> 암호 변환후 안전 저장됨</td>
+			</tr>
+			<tr>
+				<td align="right">생년월일<span>*</span></td>
+				<td width="600" height="25"><select name="selLoc1">
+						<option value="">년도</option>
+						<option value="loc1">1993</option>
+						<option value="loc2">1994</option>
+						<option value="loc3">1995</option>
+						<option value="loc4">1996</option>
+				</select> <select name="selLoc2">
+						<option value="">월</option>
+						<option value="loc1">1월</option>
+						<option value="loc2">2월</option>
+						<option value="loc3">3월</option>
+						<option value="loc4">4월</option>
+						<option value="loc5">5월</option>
+						<option value="loc6">6월</option>
+						<option value="loc7">7월</option>
+						<option value="loc8">8월</option>
+						<option value="loc9">9월</option>
+						<option value="loc10">10월</option>
+						<option value="loc11">11월</option>
+						<option value="loc12">12월</option>
+				</select> <select name="selLoc3">
+						<option value="">일</option>
+						<option value="loc1">1일</option>
+						<option value="loc2">2일</option>
+						<option value="loc3">3일</option>
+						<option value="loc4">4일</option>
+						<option value="loc5">5일</option>
+				</select> <input type="radio" />음 <input type="radio" />양</td>
+			</tr>
+			<tr>
+				<td align="right">성별<span>*</span></td>
+				<td width="600" height="25"><input type="radio" />남 <input
+					type="radio" />여</td>
+			</tr>
+			<tr>
+				<td align="right">우편번호</td>
+				<td width="600" height="25"><input type="text" /> - <input
+					type="text" /> <input type="submit" value="찾아보기" /></td>
+			</tr>
+			<tr>
+				<td align="right">주소</td>
+				<td width="600" height="50"><input type="text" /> <br>
+				<input type="text" />나머지 주소</td>
+			</tr>
+			<tr>
+				<td align="right">일반전화</td>
+				<td width="600" height="25"><select name="selLoc4">
+						<option value="">국번</option>
+						<option value="loc1">032</option>
+						<option value="loc2">02</option>
+						<option value="loc3">054</option>
+						<option value="loc4">031</option>
+				</select> -<input type="text" />-<input type="text" /></td>
+			</tr>
+			<tr>
+				<td align="right">휴대전화</td>
+				<td width="600" height="25"><select name="selLoc5">
+						<option value="">국번</option>
+						<option value="loc1">010</option>
+						<option value="loc2">019</option>
+						<option value="loc3">018</option>
+						<option value="loc4">011</option>
+				</select> -<input type="text" />-<input type="text" /></td>
+			</tr>
+			<tr>
+				<td align="right">추천인 아이디</td>
+				<td width="600" height="25"><input type="text" /></td>
+			</tr>
+		</table>
+		<br>
+		<li>추가정보</li>
+		<br>
 
-<table border>
-	<tr><td width ="150" align ="right">홈페이지</td>
-	<td width ="600" height = "25">
-	<input type ="text" value ="http://"/></td></tr>
-	<tr><td align ="right" >블로그,미니홈 </td>
-	<td width ="600" height = "25" >
-	<input type ="text" value ="http://"/> </td></tr>
-	<tr><td align ="right">혼인여부 </td>
-	<td width ="600" height = "25">
-	<input type ="radio"/>기혼
-    <input type ="radio"/>미혼
-    <input type ="radio"/>이혼
-    <input type ="radio"/>교제중
-    </td></tr>
-	<tr><td align ="right">관심분야</td>
-	<td width ="600" height = "25">
-		<select name = "selLoc1" >
-    <option value = "loc1">컴퓨터</option>
-    <option value = "loc2">영화</option>  
-    <option value = "loc3">읽기</option>
-    <option value = "loc4">쓰기</option>
-    </select>
-    
-	</td></tr>	
-	<tr><td align ="right">사진첨부</td>
-	<td width ="600" height = "25"><input type ="text"/>
-	<input type ="submit" value ="찾아보기"/>
-	200x200 픽셀이하 크기만 허용
-	</td></tr>
-	<tr><td align ="right">이름표시아이콘</td>
-	<td width ="600" height = "25"><input type ="text"/>
-	<input type ="submit" value ="찾아보기"/>
-	20x20 픽셀이하 크기만 허용
-	</td></tr>
-	<tr><td align ="right">캐릭터선택</td>
-	<td width ="600" height = "25"><input type ="text"/>
-	<input type ="submit" value ="찾아보기"/>
-	</td></tr>
-	
-	<tr><td align ="right">소개인사말</td>
-	<td width ="600" height = "60"><input type ="text"  width ="600" height = "60"value ="반갑습니다.">
-	</td></tr>
-	<tr><td align ="right">메일링수신거부</td>
-	<td width ="600" height = "25">메일링 수신거부시 체크
-	<input type ="checkbox"></td></tr>
-		<tr><td align ="right">쪽지수신거부</td>
-	<td width ="600" height = "25">쪽지수신거부시 체크
-	<input type ="checkbox"></td></tr>
-	<tr><td align ="right">문자수신거부</td>
-	<td width ="600" height = "25">문자(SMS)수신거부시 체크
-	<input type ="checkbox"></td>
-	</tr>
-	<tr><td align ="right">전체비공개</td>
-	<td width ="600" height = "25">회원등록정보 전체 비공개시 체크
-	<input type ="checkbox"></td>
-	</tr>
+		<table border>
+			<tr>
+				<td width="150" align="right">홈페이지</td>
+				<td width="600" height="25"><input type="text" value="http://" /></td>
+			</tr>
+			<tr>
+				<td align="right">블로그,미니홈</td>
+				<td width="600" height="25"><input type="text" value="http://" />
+				</td>
+			</tr>
+			<tr>
+				<td align="right">혼인여부</td>
+				<td width="600" height="25"><input type="radio" />기혼 <input
+					type="radio" />미혼 <input type="radio" />이혼 <input type="radio" />교제중
+				</td>
+			</tr>
+			<tr>
+				<td align="right">관심분야</td>
+				<td width="600" height="25"><select name="selLoc1">
+						<option value="loc1">컴퓨터</option>
+						<option value="loc2">영화</option>
+						<option value="loc3">읽기</option>
+						<option value="loc4">쓰기</option>
+				</select></td>
+			</tr>
+			<tr>
+				<td align="right">사진첨부</td>
+				<td width="600" height="25"><input type="text" /> <input
+					type="submit" value="찾아보기" /> 200x200 픽셀이하 크기만 허용</td>
+			</tr>
+			<tr>
+				<td align="right">이름표시아이콘</td>
+				<td width="600" height="25"><input type="text" /> <input
+					type="submit" value="찾아보기" /> 20x20 픽셀이하 크기만 허용</td>
+			</tr>
+			<tr>
+				<td align="right">캐릭터선택</td>
+				<td width="600" height="25"><input type="text" /> <input
+					type="submit" value="찾아보기" /></td>
+			</tr>
+
+			<tr>
+				<td align="right">소개인사말</td>
+				<td width="600" height="60"><input type="text" width="600"
+					height="60" value="반갑습니다."></td>
+			</tr>
+			<tr>
+				<td align="right">메일링수신거부</td>
+				<td width="600" height="25">메일링 수신거부시 체크 <input type="checkbox"></td>
+			</tr>
+			<tr>
+				<td align="right">쪽지수신거부</td>
+				<td width="600" height="25">쪽지수신거부시 체크 <input type="checkbox"></td>
+			</tr>
+			<tr>
+				<td align="right">문자수신거부</td>
+				<td width="600" height="25">문자(SMS)수신거부시 체크 <input
+					type="checkbox"></td>
+			</tr>
+			<tr>
+				<td align="right">전체비공개</td>
+				<td width="600" height="25">회원등록정보 전체 비공개시 체크 <input
+					type="checkbox"></td>
+			</tr>
 
 
-</table>
-</ul>
-<input type ="submit" value ="입력완료 - 전송"/>
-<input type ="submit" value ="다시입력"/>
+		</table>
+	</ul>
+	<input type="submit" value="입력완료 - 전송" />
+	<input type="submit" value="다시입력" />
 
 </body>
 </html>

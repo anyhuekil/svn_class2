@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <style type="text/css">
-	/*
+/*
 	font에 관련된 속성
 	1. size : 글자 크기 설정
 		1) px단위 설정 - 절대
@@ -16,88 +16,140 @@
 			<html>
 				<p class="cls01">새로운 주간시간</p>
 	*/
-	.cls01{font-size:50px;}
-	.cls02{font-size:2em;} /* 원래 크기보다 2배 */
-	.cls03{font-size:250%;} /* 원래 크기의 250% */
-	.cls04{font-size:large;} /* larger라는 크기에 한당한 크기*/
-	.cls05{font-size:small;} /* larger라는 크기에 한당한 크기*/
-	
-	/*
+.cls01 {
+	font-size: 50px;
+}
+
+.cls02 {
+	font-size: 2em;
+} /* 원래 크기보다 2배 */
+.cls03 {
+	font-size: 250%;
+} /* 원래 크기의 250% */
+.cls04 {
+	font-size: large;
+} /* larger라는 크기에 한당한 크기*/
+.cls05 {
+	font-size: small;
+} /* larger라는 크기에 한당한 크기*/
+
+/*
 	2. family : 사용자 컴퓨터에 설치된 폰트형태를 사용한 것을 말한다.
 	ex. font_serif 이라는 클래스에 해당하는 tag를 font-family로
 		sans-serif 등 형태로 설정
 	*/
-	.font_01{font-family:sans-serif;};
-	.font_02{font-family:serif;};
-	.font_03{font-family:cursive;};
-	.font_04{font-family:fantasy;};
+.font_01 {
+	font-family: sans-serif;
+}
 
-	/*
+;
+.font_02 {
+	font-family: serif;
+}
+
+;
+.font_03 {
+	font-family: cursive;
+}
+
+;
+.font_04 {
+	font-family: fantasy;
+}
+
+;
+
+/*
 	3. font-style : 폰트의 기울기
 		ex.	클래스명으로 font_italic를 정하고font-style을 italic으로 설정
 	*/
-	.font_italic{ font-style : italic; }
-	
-	
-	
-	/*
+.font_italic {
+	font-style: italic;
+}
+
+/*
 	4. font-weight : 폰트의 두께 조정
 		ex. 클래스명으로 font-bold로 설정하고 font-weight bold로 설정
 	*/
-	.font_bold{font-weight:bold;}
-	
-	/*
+.font_bold {
+	font-weight: bold;
+}
+
+/*
 	글자의 크기를 원래 설정값보다 2배 더 크게 설정
 	*/
-	.font_big{font-size:6em;}
-	/*
+.font_big {
+	font-size: 6em;
+}
+/*
 	html body에 tag <p>에 class가 font_italic, font_bold, font_big을 한꺼번에 설정하려면..?
 	<p class="정의된 클래스1[한칸띄우기]정의된 클래스2.."
 	*/
-	
-	/*
+
+/*
 	5. line-height : 
 		글자의 높이를 지정하는 옵션
 		속성값:px
 		ex) h1~h6까지 line-height를 10~60px단위로 다르게 처리
 	*/
-	.clsh01{line-height:10px;color:red;}
-	.clsh02{line-height:20px;color:orange;}
-	.clsh03{line-height:30px;color:yellow;}
-	.clsh04{line-height:40px;color:green;}
-	.clsh05{line-height:50px;color:blue;}
-	.clsh06{line-height:60px;color:purple;}
-	
-	
+.clsh01 {
+	line-height: 10px;
+	color: red;
+}
+
+.clsh02 {
+	line-height: 20px;
+	color: orange;
+}
+
+.clsh03 {
+	line-height: 30px;
+	color: yellow;
+}
+
+.clsh04 {
+	line-height: 40px;
+	color: green;
+}
+
+.clsh05 {
+	line-height: 50px;
+	color: blue;
+}
+
+.clsh06 {
+	line-height: 60px;
+	color: purple;
+}
 </style>
 <script type="text/javascript">
 
 </script>
 </head>
 <body>
-	<h1 class="font_italic">글자크기에 대한 설정입니다.</h1>	
+	<h1 class="font_italic">글자크기에 대한 설정입니다.</h1>
 	<p>휴일이 있는 주간 시작입니다.</p>
-	<p class="cls01">휴일이 있는 주간 시작입니다.</p>	
-	<p class="cls02">휴일이 있는 주간 시작입니다.</p>	
-	<p class="cls03">휴일이 있는 주간 시작입니다.</p>	
-	<p class="cls04">휴일이 있는 주간 시작입니다.</p>	
-	<p class="cls05">휴일이 있는 주간 시작입니다.</p>	
-	
+	<p class="cls01">휴일이 있는 주간 시작입니다.</p>
+	<p class="cls02">휴일이 있는 주간 시작입니다.</p>
+	<p class="cls03">휴일이 있는 주간 시작입니다.</p>
+	<p class="cls04">휴일이 있는 주간 시작입니다.</p>
+	<p class="cls05">휴일이 있는 주간 시작입니다.</p>
+
 	<h1>글자 family를 설정한 값이다.</h1>
 	<p class="font_01">월요일 좋아요.</p>
 	<p class="font_02">월요일 좋아요.</p>
 	<p class="font_03">월요일 좋아요.</p>
 	<p class="font_04">월요일 좋아요.</p>
-		
+
 	<p class="font_italic">다중으로 font class 적용된 경우</p>
 
-		
+
 	<h1 class="clsh01">빨</h1>
 	<h2 class="clsh02">주</h2>
 	<h3 class="clsh03">노</h3>
 	<h4 class="clsh04">초</h4>
 	<h5 class="clsh05">파</h5>
 	<h6 class="clsh06">남</h6>
-	
+
 </body>
 </html>

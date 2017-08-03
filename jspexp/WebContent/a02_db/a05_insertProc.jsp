@@ -1,8 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"
-    import="jspexp.z01_database.A01_EmpDB"
-    import="jspexp.z02_vo.Emp"
-    %>
+	pageEncoding="UTF-8" import="jspexp.z01_database.A01_EmpDB"
+	import="jspexp.z02_vo.Emp"%>
 <% request.setCharacterEncoding("UTF-8");
 A01_EmpDB dao = new A01_EmpDB();
 /*요청값들 Emp에 할당하기..*/
@@ -24,7 +22,7 @@ dao.insertEmp(dto); // 등록 처리..
 
 
 
-%>    
+%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -48,9 +46,9 @@ $(document).ready(function(){
 </script>
 </head>
 <body>
-<%
+	<%
 //response.sendRedirect("a03_schEmpList.jsp"); // 초기 조회 page 이동
 %>
-<h1 align="center">등록완료!!</h1>
+	<h1 align="center">등록완료!!</h1>
 </body>
 </html>

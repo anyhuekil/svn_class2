@@ -81,8 +81,7 @@ body {
 			<td>
 				<%
 					if (i < 3) {
-				%> <img src="img/<%=i%>.png" class="medal">
-				<%
+				%> <img src="img/<%=i%>.png" class="medal"> <%
 					}
 				%><%=playerObject.get("id")%></td>
 			<td><%=playerObject.get("curMoney")%></td>

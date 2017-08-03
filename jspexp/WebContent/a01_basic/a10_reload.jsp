@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -31,10 +31,10 @@ $(document).ready(function(){
 	}
 %>
 <body>
-	<form><!-- form에 action의 속성을 지정하지 않으면 현재  page를 호출한다. -->
-		좋아하는 과일 :<input type="text" name="favFruit"
-						value="<%=favFruit%>"/><br>
-		<input type="submit"/><br>		
+	<form>
+		<!-- form에 action의 속성을 지정하지 않으면 현재  page를 호출한다. -->
+		좋아하는 과일 :<input type="text" name="favFruit" value="<%=favFruit%>" /><br>
+		<input type="submit" /><br>
 	</form>
 	입력한 과일:<%= favFruit%>
 </body>

@@ -41,9 +41,10 @@
 
 <body>
 	<div id="game-container" class="container-fluid">
-	<div class="row">
+		<div class="row">
 			<div id="finalResult" class=" table-responsive">
-			<br><br>
+				<br>
+				<br>
 			</div>
 		</div>
 		<div class="row" id="canvas-container">

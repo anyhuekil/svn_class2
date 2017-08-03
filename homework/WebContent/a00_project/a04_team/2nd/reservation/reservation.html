@@ -6,98 +6,166 @@
 <link href="../css/initLayout.css" rel="stylesheet">
 <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
 <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
-<link rel='stylesheet' href='http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css'/>
+<link rel='stylesheet'
+	href='http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css' />
 <style type="text/css">
-#content {overflow: hidden;}
-#content #section1, #content #section2, #content #section3{	float:left; padding: 5px; }
-#content #section1{	width:400px;}
-#content #section2{	width:200px; }
-#content #section3{	width:360px; }
+#content {
+	overflow: hidden;
+}
+
+#content #section1, #content #section2, #content #section3 {
+	float: left;
+	padding: 5px;
+}
+
+#content #section1 {
+	width: 400px;
+}
+
+#content #section2 {
+	width: 200px;
+}
+
+#content #section3 {
+	width: 360px;
+}
+
 #content .dSelect, .bSelect, .tSelect, .nSelect, .sSelect, .pSelect {
-		width: 100%;
-		border: 1px solid #dddddd;
-		margin: 10px 5px;
-		text-align: center;
-	}
-#content .dSelect #datepicker{margin-left: 50px;}
-.bSelect table{width: 100%;}
+	width: 100%;
+	border: 1px solid #dddddd;
+	margin: 10px 5px;
+	text-align: center;
+}
+
+#content .dSelect #datepicker {
+	margin-left: 50px;
+}
+
+.bSelect table {
+	width: 100%;
+}
+
 .bSelect table td select, .bSelect table td {
-	text-align: center;font-size: 1.1em;
+	text-align: center;
+	font-size: 1.1em;
 }
-.bSelect select{
-	width:150px;
+
+.bSelect select {
+	width: 150px;
 }
+
 ul {
 	padding: 3px;
 	margin: 0 auto;
 }
+
 ul li {
 	list-style: none;
 }
+
 #loc ul li:hover {
 	background-color: #D6C7ED;
 	cursor: pointer;
 }
+
 #section2 input[type=button] {
-	background-color:#FFFFD2;
-	margin:0 5px;
-	padding:3px 10px;
+	background-color: #FFFFD2;
+	margin: 0 5px;
+	padding: 3px 10px;
 }
-#section2 input[type=button]:hover{
+
+#section2 input[type=button]:hover {
 	background-color: #E6FFFF;
 	cursor: pointer;
 }
-#section2 #time1{
+
+#section2 #time1 {
 	margin: 6px;
 }
-input[type=image]{
+
+input[type=image] {
 	background-image: url('image/reserve_line.jpg');
-	background-size:100%;
-	display:inline-block;
-    height:24px; 
-    padding-left:18.5px;margin-right: 10px;
+	background-size: 100%;
+	display: inline-block;
+	height: 24px;
+	padding-left: 18.5px;
+	margin-right: 10px;
 }
+
 input[type=checkbox] {
-    position:absolute;
-    left:0; top:0;
-    width:1px; height:1px;
-    visibility:hidden;
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 1px;
+	height: 1px;
+	visibility: hidden;
 }
-input[type=text]{
- 	border:0px; 
- 	/*size:10px;*/
- 	color:#2d1152;
+
+input[type=text] {
+	border: 0px;
+	/*size:10px;*/
+	color: #2d1152;
 }
+
 label.seat-checkbox {
-    display:inline-block;
-    height:24px;
-    padding-left:30px;
-    line-height:24px;
-    background:url(image/reserve_seat.jpg);margin-right: 10px;
+	display: inline-block;
+	height: 24px;
+	padding-left: 30px;
+	line-height: 24px;
+	background: url(image/reserve_seat.jpg);
+	margin-right: 10px;
 }
-input[type=checkbox]:checked + label.seat-checkbox {
-    background-image:url(image/reserved.jpg);
+
+input[type=checkbox]:checked+label.seat-checkbox {
+	background-image: url(image/reserved.jpg);
 }
-.nSelect table{margin:5px auto; width:80%;}
-.nSelect table td{margin: 50px;}
-.sSelect table{margin: 40px 40px 50px 40px;}
-.pSelect table{margin:15px 30px;}
-.pSelect table td{padding:2px 10px;}
-#result{
-	width:1000px; 
+
+.nSelect table {
+	margin: 5px auto;
+	width: 80%;
 }
-#result table{float:left;}
+
+.nSelect table td {
+	margin: 50px;
+}
+
+.sSelect table {
+	margin: 40px 40px 50px 40px;
+}
+
+.pSelect table {
+	margin: 15px 30px;
+}
+
+.pSelect table td {
+	padding: 2px 10px;
+}
+
+#result {
+	width: 1000px;
+}
+
+#result table {
+	float: left;
+}
+
 #result table td {
-	width:270px;
-	padding:10px; border:1px solid #3488d9; 
+	width: 270px;
+	padding: 10px;
+	border: 1px solid #3488d9;
 }
-#result input[type=button]{
-	width:110px; height:130px; margin-left:5px;
-	line-height:130px; font-size: 2em;
+
+#result input[type=button] {
+	width: 110px;
+	height: 130px;
+	margin-left: 5px;
+	line-height: 130px;
+	font-size: 2em;
 	background-color: #2d1152;
-	color: white; float:left;
+	color: white;
+	float: left;
 }
-</style> 
+</style>
 <script>
 	$(function() {
 		$("#datepicker").datepicker(
@@ -245,7 +313,7 @@ input[type=checkbox]:checked + label.seat-checkbox {
 		<div id="header_nav">
 			<div class="gnb">
 				<ul>
-					<li><img src="../img/home.png"/></li>
+					<li><img src="../img/home.png" /></li>
 					<li><a href="../reservation/main.html">NolJa Home</a></li>
 					<li><a href="#">두더지게임</a></li>
 					<li><a href="#">Game$</a></li>
@@ -256,235 +324,300 @@ input[type=checkbox]:checked + label.seat-checkbox {
 				</ul>
 			</div>
 			<div class="point">
-                <a href="#" >
-                    <img src="../img/point.jpg" alt="point" onclick="alert('당신의 가용포인트는 5500점입니다')"/>
-                    <span onclick="alert('당신의 가용포인트는 5500점입니다')">Upgrade to the Point>></span>
-                </a>
-            </div>
+				<a href="#"> <img src="../img/point.jpg" alt="point"
+					onclick="alert('당신의 가용포인트는 5500점입니다')" /> <span
+					onclick="alert('당신의 가용포인트는 5500점입니다')">Upgrade to the
+						Point>></span>
+				</a>
+			</div>
 		</div>
 		<div id="header_info">
 			<div class="logo" onclick="location.href='../reservation/main.html'">
-               <img src="../img/logo.jpg" alt="nolja" />
-            </div>
-            <div class="search">
-                <form action="#">
-                    <input type="text" class="queryword" />
-                    <input class="btn_search" type="button" value="search web"/>
-                </form>
-            </div>
-            <div class="service">
-                <ul>
-                    <li><a href="../reservation/main.html">Nol Ja</a></li>
-                    <li><a href="../reservation/join.html">Join</a></li>
-                    <li><a href="../reservation/login.html">Login</a></li>
-                </ul>
-            </div>
+				<img src="../img/logo.jpg" alt="nolja" />
+			</div>
+			<div class="search">
+				<form action="#">
+					<input type="text" class="queryword" /> <input class="btn_search"
+						type="button" value="search web" />
+				</form>
+			</div>
+			<div class="service">
+				<ul>
+					<li><a href="../reservation/main.html">Nol Ja</a></li>
+					<li><a href="../reservation/join.html">Join</a></li>
+					<li><a href="../reservation/login.html">Login</a></li>
+				</ul>
+			</div>
 		</div>
 	</header>
 	<div id="content">
-	
+
 		<div id="section1">
-		<div class="dSelect">
-			<span style="color:#2d1152; font-weight: bold;">날짜선택</span><hr>
-			<div id="datepicker"></div>
-		</div>
-		<div class="bSelect">
- 				<span style="color:#2d1152; font-weight: bold;">게임방선택</span><hr>
- 				<table>
- 					<tr>
- 						<td>
- 							<select id="loc" class="text" onChange="change()">
+			<div class="dSelect">
+				<span style="color: #2d1152; font-weight: bold;">날짜선택</span>
+				<hr>
+				<div id="datepicker"></div>
+			</div>
+			<div class="bSelect">
+				<span style="color: #2d1152; font-weight: bold;">게임방선택</span>
+				<hr>
+				<table>
+					<tr>
+						<td><select id="loc" class="text" onChange="change()">
 								<option value="loc1">서&nbsp;&nbsp;울</option>
 								<option value="loc2">부&nbsp;&nbsp;산</option>
 								<option value="loc3">강&nbsp;&nbsp;원</option>
-							</select>
- 						</td>
- 					</tr>
- 					<tr>
- 							<td id="loc">
-							<div id="loc1" >
-								<ul><li id="서울 강남점" value="서울 강남점">서울 강남점</li></ul>
-								<ul><li id="서울 용산점" value="서울 용산점">서울 용산점</li></ul>
-								<ul><li id="서울 강변점" value="서울 강변점">서울 강변점</li></ul>
-								<ul><li id="서울 구로점" value="서울 구로점">서울 구로점</li></ul>
-								<ul><li id="서울 명동점" value="서울 명동점">서울 명동점</li></ul>
-								<ul><li id="서울 목동점" value="서울 목동점">서울 목동점</li></ul>
+						</select></td>
+					</tr>
+					<tr>
+						<td id="loc">
+							<div id="loc1">
+								<ul>
+									<li id="서울 강남점" value="서울 강남점">서울 강남점</li>
+								</ul>
+								<ul>
+									<li id="서울 용산점" value="서울 용산점">서울 용산점</li>
+								</ul>
+								<ul>
+									<li id="서울 강변점" value="서울 강변점">서울 강변점</li>
+								</ul>
+								<ul>
+									<li id="서울 구로점" value="서울 구로점">서울 구로점</li>
+								</ul>
+								<ul>
+									<li id="서울 명동점" value="서울 명동점">서울 명동점</li>
+								</ul>
+								<ul>
+									<li id="서울 목동점" value="서울 목동점">서울 목동점</li>
+								</ul>
 							</div>
-							<div id="loc2" style="display:none;">
-								<ul><li id="부산 사상점" value="부산 사상점">부산 사상점</li></ul>
-								<ul><li id="부산 서면점" value="부산 서면점">부산 서면점</li></ul>
-								<ul><li id="부산 남포점" value="부산 남포점">부산 남포점</li></ul>										
-								<ul><li id="부산 동래점" value="부산 동래점">부산 동래점</li></ul>
-								<ul><li id="부산 해운대점" value="부산 해운대점">부산 해운대점</li></ul>
-								<ul><li id="부산 센텀시티점" value="부산 센텀시티점">부산 센텀시티점</li></ul>
+							<div id="loc2" style="display: none;">
+								<ul>
+									<li id="부산 사상점" value="부산 사상점">부산 사상점</li>
+								</ul>
+								<ul>
+									<li id="부산 서면점" value="부산 서면점">부산 서면점</li>
+								</ul>
+								<ul>
+									<li id="부산 남포점" value="부산 남포점">부산 남포점</li>
+								</ul>
+								<ul>
+									<li id="부산 동래점" value="부산 동래점">부산 동래점</li>
+								</ul>
+								<ul>
+									<li id="부산 해운대점" value="부산 해운대점">부산 해운대점</li>
+								</ul>
+								<ul>
+									<li id="부산 센텀시티점" value="부산 센텀시티점">부산 센텀시티점</li>
+								</ul>
 							</div>
-							<div id="loc3" style="display:none;">
-								<ul><li id="강원 속초점" value="강원 속초점">강원 속초점</li></ul>
-								<ul><li id="강원 고성점" value="강원 고성점">강원 고성점</li></ul>
-								<ul><li id="강원 평창점" value="강원 평창점">강원 평창점</li></ul>										
-								<ul><li id="강원 강릉점" value="강원 강릉점">강원 강릉점</li></ul>
-								<ul><li id="강원 삼척점" value="강원 삼척점">강원 삼척점</li></ul>
-								<ul><li id="강원 홍천점" value="강원 홍천점">강원 홍천점</li></ul>
+							<div id="loc3" style="display: none;">
+								<ul>
+									<li id="강원 속초점" value="강원 속초점">강원 속초점</li>
+								</ul>
+								<ul>
+									<li id="강원 고성점" value="강원 고성점">강원 고성점</li>
+								</ul>
+								<ul>
+									<li id="강원 평창점" value="강원 평창점">강원 평창점</li>
+								</ul>
+								<ul>
+									<li id="강원 강릉점" value="강원 강릉점">강원 강릉점</li>
+								</ul>
+								<ul>
+									<li id="강원 삼척점" value="강원 삼척점">강원 삼척점</li>
+								</ul>
+								<ul>
+									<li id="강원 홍천점" value="강원 홍천점">강원 홍천점</li>
+								</ul>
 							</div>
 						</td>
- 					</tr>
- 				</table>
- 			</div>
- 		</div>
- 		<div id="section2">
- 			<div class="tSelect">
- 					시간
- 					<hr>
- 					<table>
- 						<tr>
- 							<td>
- 							<div id="time1">
-							<label>오전</label><br>
-								<input type="button" id="06" value="06:00~07:00">
-								<input type="button" id="07" value="07:00~08:00">
-								<input type="button" id="08" value="08:00~09:00">
-								<input type="button" id="09" value="09:00~10:00">
-								<input type="button" id="10" value="10:00~11:00">
-								<input type="button" id="11" value="11:00~12:00">
+					</tr>
+				</table>
+			</div>
+		</div>
+		<div id="section2">
+			<div class="tSelect">
+				시간
+				<hr>
+				<table>
+					<tr>
+						<td>
+							<div id="time1">
+								<label>오전</label><br> <input type="button" id="06"
+									value="06:00~07:00"> <input type="button" id="07"
+									value="07:00~08:00"> <input type="button" id="08"
+									value="08:00~09:00"> <input type="button" id="09"
+									value="09:00~10:00"> <input type="button" id="10"
+									value="10:00~11:00"> <input type="button" id="11"
+									value="11:00~12:00">
 							</div>
- 							</td>				
- 							</tr>
- 							<tr>
- 							<td>
- 							<div id="time2">
-							<label>오후</label><br>
-								<input type="button" id="12" value="12:00~01:00">
-								<input type="button" id="01" value="01:00~02:00">
-								<input type="button" id="02" value="02:00~03:00">
-								<input type="button" id="03" value="03:00~04:00">
-								<input type="button" id="04" value="04:00~05:00">
-								<input type="button" id="05" value="05:00~06:00">
-								<input type="button" id="06" value="06:00~07:00">
-								<input type="button" id="07" value="07:00~08:00">
-								<input type="button" id="08" value="08:00~09:00">
-								<input type="button" id="09" value="09:00~10:00">
-								<input type="button" id="10" value="10:00~11:00">
-								<input type="button" id="11" value="11:00~12:00">
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<div id="time2">
+								<label>오후</label><br> <input type="button" id="12"
+									value="12:00~01:00"> <input type="button" id="01"
+									value="01:00~02:00"> <input type="button" id="02"
+									value="02:00~03:00"> <input type="button" id="03"
+									value="03:00~04:00"> <input type="button" id="04"
+									value="04:00~05:00"> <input type="button" id="05"
+									value="05:00~06:00"> <input type="button" id="06"
+									value="06:00~07:00"> <input type="button" id="07"
+									value="07:00~08:00"> <input type="button" id="08"
+									value="08:00~09:00"> <input type="button" id="09"
+									value="09:00~10:00"> <input type="button" id="10"
+									value="10:00~11:00"> <input type="button" id="11"
+									value="11:00~12:00">
 							</div>
- 							</td>
- 						</tr>
- 					</table>					
- 				</div>
- 		</div>
- 		<div id="section3">
- 		<div class="nSelect">
- 			인원선택<hr>
- 			<table>
- 			<tr>
-				<td><b>성&nbsp;인</b>
-					<select name="adultseats" class="adultseat">
-						<option selected="selected">0</option> 
-						<option value="1">1</option>
-						<option value="2">2</option>
-						<option value="3">3</option>
-						<option value="4">4</option>
-						<option value="5">5</option>
-						<option value="6">6</option>
-						<option value="7">7</option>
-						<option value="8">8</option>
-					</select>	
-				</td>
-				<td><b>청소년</b>
-						<select name="childseats" class="childseat">
-							<option selected="selected">0</option> 
-							<option value="1">1</option>
-							<option value="2">2</option>
-							<option value="3">3</option>
-							<option value="4">4</option>
-							<option value="5">5</option>
-							<option value="6">6</option>
-							<option value="7">7</option>
-							<option value="8">8</option>
-						</select>	
-					</td>
-				</tr>
- 			</table>
- 		</div>
- 		<div class="sSelect">
- 				좌석선택
- 				<hr>
- 					<table>
-						<tr>
-							<td colspan="4">
- <span style="color=blue;font-weight: blod;text-align: center;">입구</span><br><br> 
-		<input type="hidden" value=""> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-		<input type="image"  value="1" style="margin-bottom:10px;">
-		<input type="image"  value="2" style="margin-bottom:10px;">
-		<input type="image"  value="3" style="margin-bottom:10px;">
-		<input type="image"  value="4" style="margin-bottom:10px;">
-		<input type="image"  value="5" style="margin-bottom:10px;"><br>
-		<input type="image"  value="A">
-        <input type="checkbox" id="a1" name="seat" class="seat" value="A1" onclick="" ><label for="a1" class="seat-checkbox"></label>
-        <input type="checkbox" id="a2" name="seat" class="seat" value="A2" onclick="" ><label for="a2" class="seat-checkbox"></label>
-        <input type="checkbox" id="a3" name="seat" class="seat" value="A3" onclick="" ><label for="a3" class="seat-checkbox"></label>
-        <input type="checkbox" id="a4" name="seat" class="seat" value="A4" onclick="" ><label for="a4" class="seat-checkbox"></label>
-        <input type="checkbox" id="a5" name="seat" class="seat" value="A5" onclick="" ><label for="a5" class="seat-checkbox"></label><br>
-        <input type="image"  value="B">
-        <input type="checkbox" id="b1" name="seat" class="seat" value="B1" onclick="" ><label for="b1" class="seat-checkbox"></label>
-        <input type="checkbox" id="b2" name="seat" class="seat" value="B2" onclick="" ><label for="b2" class="seat-checkbox"></label>
-        <input type="checkbox" id="b3" name="seat" class="seat" value="B3" onclick="" ><label for="b3" class="seat-checkbox"></label>
-        <input type="checkbox" id="b4" name="seat" class="seat" value="B4" onclick="" ><label for="b4" class="seat-checkbox"></label>
-        <input type="checkbox" id="b5" name="seat" class="seat" value="B5" onclick="" ><label for="b5" class="seat-checkbox"></label><br>
-        <input type="image"  value="C">
-        <input type="checkbox" id="c1" name="seat" class="seat" value="C1" onclick="" ><label for="c1" class="seat-checkbox"></label>
-        <input type="checkbox" id="c2" name="seat" class="seat" value="C2" onclick="" ><label for="c2" class="seat-checkbox"></label>
-        <input type="checkbox" id="c3" name="seat" class="seat" value="C3" onclick="" ><label for="c3" class="seat-checkbox"></label>
-        <input type="checkbox" id="c4" name="seat" class="seat" value="C4" onclick="" ><label for="c4" class="seat-checkbox"></label>
-        <input type="checkbox" id="c5" name="seat" class="seat" value="C5" onclick="" ><label for="c5" class="seat-checkbox"></label><br>
-        <input type="image"  value="D">
-        <input type="checkbox" id="d1" name="seat" class="seat" value="D1" onclick="" ><label for="d1" class="seat-checkbox"></label>
-        <input type="checkbox" id="d2" name="seat" class="seat" value="D2" onclick="" ><label for="d2" class="seat-checkbox"></label>
-        <input type="checkbox" id="d3" name="seat" class="seat" value="D3" onclick="" ><label for="d3" class="seat-checkbox"></label>
-        <input type="checkbox" id="d4" name="seat" class="seat" value="D4" onclick="" ><label for="d4" class="seat-checkbox"></label>
-        <input type="checkbox" id="d5" name="seat" class="seat" value="D5" onclick="" ><label for="d5" class="seat-checkbox"></label><br>
-        <input type="image"  value="E">
-        <input type="checkbox" id="e1" name="seat" class="seat" value="E1" onclick="" ><label for="e1" class="seat-checkbox"></label>
-        <input type="checkbox" id="e2" name="seat" class="seat" value="E2" onclick="" ><label for="e2" class="seat-checkbox"></label>
-        <input type="checkbox" id="e3" name="seat" class="seat" value="E3" onclick="" ><label for="e3" class="seat-checkbox"></label>
-        <input type="checkbox" id="e4" name="seat" class="seat" value="E4" onclick="" ><label for="e4" class="seat-checkbox"></label>
-        <input type="checkbox" id="e5" name="seat" class="seat" value="E5" onclick="" ><label for="e5" class="seat-checkbox"></label><br>
-							</td>
-						</tr>
- 					</table> 												
- 			</div>
- 			<div class="pSelect">
- 				포인트 사용여부<hr>
- 				<table>
- 					<tr><td>가용포인트</td><td><input type="number" value="5500" disabled="disabled" style="width:120px;"></td></tr>
- 					<tr><td>사용포인트</td><td><input type="number" value="0" max="5500" min="0" style="width:120px;" class="pointCal"></td></tr>
- 				</table>
- 			</div>
- 		</div>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+		<div id="section3">
+			<div class="nSelect">
+				인원선택
+				<hr>
+				<table>
+					<tr>
+						<td><b>성&nbsp;인</b> <select name="adultseats"
+							class="adultseat">
+								<option selected="selected">0</option>
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+								<option value="5">5</option>
+								<option value="6">6</option>
+								<option value="7">7</option>
+								<option value="8">8</option>
+						</select></td>
+						<td><b>청소년</b> <select name="childseats" class="childseat">
+								<option selected="selected">0</option>
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+								<option value="5">5</option>
+								<option value="6">6</option>
+								<option value="7">7</option>
+								<option value="8">8</option>
+						</select></td>
+					</tr>
+				</table>
+			</div>
+			<div class="sSelect">
+				좌석선택
+				<hr>
+				<table>
+					<tr>
+						<td colspan="4"><span
+							style="font-weight: blod; text-align: center;">입구</span><br>
+						<br> <input type="hidden" value="">
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="image"
+							value="1" style="margin-bottom: 10px;"> <input
+							type="image" value="2" style="margin-bottom: 10px;"> <input
+							type="image" value="3" style="margin-bottom: 10px;"> <input
+							type="image" value="4" style="margin-bottom: 10px;"> <input
+							type="image" value="5" style="margin-bottom: 10px;"><br>
+							<input type="image" value="A"> <input type="checkbox"
+							id="a1" name="seat" class="seat" value="A1" onclick=""><label
+							for="a1" class="seat-checkbox"></label> <input type="checkbox"
+							id="a2" name="seat" class="seat" value="A2" onclick=""><label
+							for="a2" class="seat-checkbox"></label> <input type="checkbox"
+							id="a3" name="seat" class="seat" value="A3" onclick=""><label
+							for="a3" class="seat-checkbox"></label> <input type="checkbox"
+							id="a4" name="seat" class="seat" value="A4" onclick=""><label
+							for="a4" class="seat-checkbox"></label> <input type="checkbox"
+							id="a5" name="seat" class="seat" value="A5" onclick=""><label
+							for="a5" class="seat-checkbox"></label><br> <input
+							type="image" value="B"> <input type="checkbox" id="b1"
+							name="seat" class="seat" value="B1" onclick=""><label
+							for="b1" class="seat-checkbox"></label> <input type="checkbox"
+							id="b2" name="seat" class="seat" value="B2" onclick=""><label
+							for="b2" class="seat-checkbox"></label> <input type="checkbox"
+							id="b3" name="seat" class="seat" value="B3" onclick=""><label
+							for="b3" class="seat-checkbox"></label> <input type="checkbox"
+							id="b4" name="seat" class="seat" value="B4" onclick=""><label
+							for="b4" class="seat-checkbox"></label> <input type="checkbox"
+							id="b5" name="seat" class="seat" value="B5" onclick=""><label
+							for="b5" class="seat-checkbox"></label><br> <input
+							type="image" value="C"> <input type="checkbox" id="c1"
+							name="seat" class="seat" value="C1" onclick=""><label
+							for="c1" class="seat-checkbox"></label> <input type="checkbox"
+							id="c2" name="seat" class="seat" value="C2" onclick=""><label
+							for="c2" class="seat-checkbox"></label> <input type="checkbox"
+							id="c3" name="seat" class="seat" value="C3" onclick=""><label
+							for="c3" class="seat-checkbox"></label> <input type="checkbox"
+							id="c4" name="seat" class="seat" value="C4" onclick=""><label
+							for="c4" class="seat-checkbox"></label> <input type="checkbox"
+							id="c5" name="seat" class="seat" value="C5" onclick=""><label
+							for="c5" class="seat-checkbox"></label><br> <input
+							type="image" value="D"> <input type="checkbox" id="d1"
+							name="seat" class="seat" value="D1" onclick=""><label
+							for="d1" class="seat-checkbox"></label> <input type="checkbox"
+							id="d2" name="seat" class="seat" value="D2" onclick=""><label
+							for="d2" class="seat-checkbox"></label> <input type="checkbox"
+							id="d3" name="seat" class="seat" value="D3" onclick=""><label
+							for="d3" class="seat-checkbox"></label> <input type="checkbox"
+							id="d4" name="seat" class="seat" value="D4" onclick=""><label
+							for="d4" class="seat-checkbox"></label> <input type="checkbox"
+							id="d5" name="seat" class="seat" value="D5" onclick=""><label
+							for="d5" class="seat-checkbox"></label><br> <input
+							type="image" value="E"> <input type="checkbox" id="e1"
+							name="seat" class="seat" value="E1" onclick=""><label
+							for="e1" class="seat-checkbox"></label> <input type="checkbox"
+							id="e2" name="seat" class="seat" value="E2" onclick=""><label
+							for="e2" class="seat-checkbox"></label> <input type="checkbox"
+							id="e3" name="seat" class="seat" value="E3" onclick=""><label
+							for="e3" class="seat-checkbox"></label> <input type="checkbox"
+							id="e4" name="seat" class="seat" value="E4" onclick=""><label
+							for="e4" class="seat-checkbox"></label> <input type="checkbox"
+							id="e5" name="seat" class="seat" value="E5" onclick=""><label
+							for="e5" class="seat-checkbox"></label><br></td>
+					</tr>
+				</table>
+			</div>
+			<div class="pSelect">
+				포인트 사용여부
+				<hr>
+				<table>
+					<tr>
+						<td>가용포인트</td>
+						<td><input type="number" value="5500" disabled="disabled"
+							style="width: 120px;"></td>
+					</tr>
+					<tr>
+						<td>사용포인트</td>
+						<td><input type="number" value="0" max="5500" min="0"
+							style="width: 120px;" class="pointCal"></td>
+					</tr>
+				</table>
+			</div>
+		</div>
 		<div id="result">
 			<table>
 				<tr>
-				<td>
-				<span>일시:</span>&nbsp;&nbsp;
-	 		<input type=text size=10 class="reserveDate" id="reserveDate" style="border:0px;">
-				</td>
-				<td>
-				<span>지점:</span>&nbsp;&nbsp;
-	 		<input type=text size=10 class="reserveLoc" id="reserveLoc" style="border:0px;">
-				</td>
-				<td rowspan="2">
-				<span>좌석번호:</span>&nbsp;&nbsp;
- 					<input type=text size=20 class="reserveSeat" id="reserveSeat" ><br>
- 					<span>성&nbsp;&nbsp;&nbsp;인</span>&nbsp;&nbsp;<span class="adult"></span><br>
-        			<span>청소년</span>&nbsp;&nbsp;<span class="child"></span><br>
-        			인&nbsp;&nbsp;&nbsp;원&nbsp;&nbsp;<input type=text size=20 id="people" class="people"><br>
- 					<span>금액</span>&nbsp;&nbsp;
- 					<span class="money"></span>
+					<td><span>일시:</span>&nbsp;&nbsp; <input type=text size=10
+						class="reserveDate" id="reserveDate" style="border: 0px;">
+					</td>
+					<td><span>지점:</span>&nbsp;&nbsp; <input type=text size=10
+						class="reserveLoc" id="reserveLoc" style="border: 0px;"></td>
+					<td rowspan="2"><span>좌석번호:</span>&nbsp;&nbsp; <input
+						type=text size=20 class="reserveSeat" id="reserveSeat"><br>
+						<span>성&nbsp;&nbsp;&nbsp;인</span>&nbsp;&nbsp;<span class="adult"></span><br>
+						<span>청소년</span>&nbsp;&nbsp;<span class="child"></span><br>
+						인&nbsp;&nbsp;&nbsp;원&nbsp;&nbsp;<input type=text size=20
+						id="people" class="people"><br> <span>금액</span>&nbsp;&nbsp;
+						<span class="money"></span>
 				</tr>
 				<tr>
-				<td colspan="2">
-				<span>시간:</span>&nbsp;&nbsp;
-	 		<input type=text size=60 class="reserveTime" id="reserveTime" style="border:0px;" size="20"><br><br>
-				</td>
+					<td colspan="2"><span>시간:</span>&nbsp;&nbsp; <input type=text
+						size=60 class="reserveTime" id="reserveTime" style="border: 0px;"
+						size="20"><br>
+					<br></td>
 				</tr>
 			</table>
 			<input type="button" value="예약" onclick="reservationOk()">

@@ -1,36 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:context="http://www.springframework.org/schema/context" xmlns:p="http://www.springframework.org/schema/p"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	 xmlns:util="http://www.springframework.org/schema/util"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans
        http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
        http://www.springframework.org/schema/context
-       http://www.springframework.org/schema/context/spring-context-4.0.xsd" >
+       http://www.springframework.org/schema/context/spring-context-4.0.xsd">
 	<bean id="sc1" class="springweb.z01_dto.Schedule">
-		<constructor-arg value="6:30"/>
-		<constructor-arg value="기상"/>
+		<constructor-arg value="6:30" />
+		<constructor-arg value="기상" />
 	</bean>
 	<bean id="sc2" class="springweb.z01_dto.Schedule">
-		<property name="time" value="7:00"/>
-		<property name="content" value="아침식사"/>
+		<property name="time" value="7:00" />
+		<property name="content" value="아침식사" />
 	</bean>
 	<bean id="sc3" class="springweb.z01_dto.Schedule">
-		<constructor-arg value="8:00"/>
-		<constructor-arg value="출발"/>
+		<constructor-arg value="8:00" />
+		<constructor-arg value="출발" />
 	</bean>
 	<bean id="sc4" class="springweb.z01_dto.Schedule">
-		<constructor-arg value="6:30"/>
-		<constructor-arg value="집에 감"/>
+		<constructor-arg value="6:30" />
+		<constructor-arg value="집에 감" />
 	</bean>
 	<bean id="dailySchedule" class="springweb.z01_dto.DailySchedule">
-		<property name="date" value="2017년 06월 01일"/>
+		<property name="date" value="2017년 06월 01일" />
 		<property name="schList">
 			<list>
-				<ref bean="sc1"/>
-				<ref bean="sc2"/>
-				<ref bean="sc3"/>
-				<ref bean="sc4"/>
+				<ref bean="sc1" />
+				<ref bean="sc2" />
+				<ref bean="sc3" />
+				<ref bean="sc4" />
 			</list>
 		</property>
 	</bean>

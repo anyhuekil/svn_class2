@@ -4,8 +4,15 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <style type="text/css">
-	body {background-color: #ffffdd;}
-	#wrap {width:300px; margin: 0 auto;text-align: center;}
+body {
+	background-color: #ffffdd;
+}
+
+#wrap {
+	width: 300px;
+	margin: 0 auto;
+	text-align: center;
+}
 /*
 	과제 ..
 	keyword 등록 [     ]
@@ -18,7 +25,9 @@
 	C#
 	파이썬
 */
-	#keyword {visibility: hidden;}
+#keyword {
+	visibility: hidden;
+}
 </style>
 <script>
 	function showKeyword(obj){
@@ -35,15 +44,18 @@
 </head>
 <body>
 	<div id="wrap">
-		<p>keyword 등록 : 
-			<select id="keyword">
+		<p>
+			keyword 등록 : <select id="keyword">
 				<option>java</option>
 				<option>jsp</option>
 				<option>c#</option>
 				<option>파이썬</option>
 			</select>
 		</p>
-		<p><input type="button" value="보이기" onclick="javascript:showKeyword(this)"/></p>
+		<p>
+			<input type="button" value="보이기"
+				onclick="javascript:showKeyword(this)" />
+		</p>
 	</div>
 </body>
 </html>

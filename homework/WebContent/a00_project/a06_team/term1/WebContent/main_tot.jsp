@@ -19,13 +19,16 @@ html {
 	font-family: 'starcraft'; /* 폰트 패밀리 이름 주기*/
 	src: url('fonts/Starcraft.ttf'); /*폰트 파일 주소*/
 }
-@keyframes blink{
-	from{
-	opacity: 1;
-	}
-	to{
+
+@
+keyframes blink {from { opacity:1;
+	
+}
+
+to {
 	opacity: 0.1;
-	}
+}
+
 }
 body {
 	background: url('img/backgnd_space.jpg') top left;
@@ -57,11 +60,12 @@ body {
 	margin-left: 14%;
 	width: 1178px;
 	height: 118px;
-	border-color: rgba(255,255,255,0);
+	border-color: rgba(255, 255, 255, 0);
 	background-size: 100% 100%;
 }
-#imgRotator{
-border-color: rgba(255,255,255,0);
+
+#imgRotator {
+	border-color: rgba(255, 255, 255, 0);
 }
 
 #sidebarLeft {
@@ -71,13 +75,14 @@ border-color: rgba(255,255,255,0);
 }
 
 /* section right  */
-#sidebarRight {	
+#sidebarRight {
 	margin-left: 1.8%;
 	width: 28%;
 	height: auto;
 	float: left;
 	border-color: red;
 }
+
 #messageWindow {
 	margin-top: 1.3%;
 	width: 99%;
@@ -85,7 +90,7 @@ border-color: rgba(255,255,255,0);
 	background-color: black;
 	color: #1DDB16;
 	font-size: 1.3em;
-	border-color: rgba(255,255,255,0);
+	border-color: rgba(255, 255, 255, 0);
 
 	/*width:446px;  */
 }
@@ -153,12 +158,11 @@ border-color: rgba(255,255,255,0);
 	font-size: 1.4em;
 }
 /* Chatting headline */
-#welcomeTag{
-color:white;
-margin-top: 6%;
-margin-left: 20%;
-animation: blink 1.5s 2s infinite ease-in-out alternate;
-
+#welcomeTag {
+	color: white;
+	margin-top: 6%;
+	margin-left: 20%;
+	animation: blink 1.5s 2s infinite ease-in-out alternate;
 }
 /* Animation 구현  */
 .leftBtn:ACTIVE {
@@ -222,48 +226,281 @@ animation: blink 1.5s 2s infinite ease-in-out alternate;
 	border-color: rgba(255, 255, 255, 0);
 	background-color: black;
 	position: relative;
-    perspective: 80000px;
+	perspective: 80000px;
 }
 
 #cube {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  transform-style: preserve-3d;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	transform-style: preserve-3d;
 }
 
 #cube iframe {
-	 margin: 0;
-  margin-left: 20px;
-  width: 750px;
-  height: 590px;
-  display: block;
-  position: absolute;
-  border: 2px solid black;
-  backface-visibility: hidden;
+	margin: 0;
+	margin-left: 20px;
+	width: 750px;
+	height: 590px;
+	display: block;
+	position: absolute;
+	border: 2px solid black;
+	backface-visibility: hidden;
 }
 
-#front  {transform: rotateY(0deg ) translateZ( 360px );}
-#right  {transform: rotateY(90deg ) translateZ( 360px );}
-#back   {transform: rotateY(180deg ) translateZ( 360px );}
-#left   {transform: rotateY(270deg ) translateZ( 360px );}
+#front {
+	transform: rotateY(0deg) translateZ(360px);
+}
 
-@keyframes cube1{0% { opacity:1;       transform: scale(1,1) rotateY( 0deg ) translateZ( 360px );}
-50% { transform: scale(0.75,0.75) rotateY( 45deg ) translateZ( 360px );}
-100% { opacity:0;  transform: scale(1,1) rotateY( 90deg ) translateZ( 360px );}}
+#right {
+	transform: rotateY(90deg) translateZ(360px);
+}
 
-@keyframes cube2{0% { transform: scale(1,1) rotateY( 90deg ) translateZ( 360px );}
-50% { transform: scale(0.75,0.75) rotateY( 135deg ) translateZ( 360px );}
-100% {  transform: scale(1,1) rotateY( 180deg ) translateZ( 360px );}}
+#back {
+	transform: rotateY(180deg) translateZ(360px);
+}
 
-@keyframes cube3{0% { transform: scale(1,1) rotateY( 180deg ) translateZ( 360px );}
-50% { transform: scale(0.75,0.75) rotateY( 225deg ) translateZ( 360px );}
-100% {  transform: scale(1,1) rotateY( 270deg ) translateZ( 360px );}}
+#left {
+	transform: rotateY(270deg) translateZ(360px);
+}
 
-@keyframes cube4{0% {opacity:0; transform: scale(1,1) rotateY( 270deg ) translateZ( 360px );}
-50% { transform: scale(0.75,0.75) rotateY(315deg ) translateZ( 360px );}
-100% { opacity:1; transform: scale(1,1) rotateY( 360deg ) translateZ( 360px );}}
+@
+keyframes cube1 { 0% {
+	opacity: 1;
+	transform: scale(1, 1) rotateY(0deg) translateZ(360px);
+}
 
+50%
+{
+transform
+:
+ 
+scale
+(0
+.75
+,
+0
+.75
+)
+ 
+rotateY
+(
+ 
+45
+deg
+ 
+)
+translateZ
+(
+ 
+360
+px
+ 
+);
+}
+100%
+{
+opacity
+:
+0;
+  
+transform
+:
+ 
+scale
+(1
+,
+1)
+rotateY
+(
+ 
+90
+deg
+ 
+)
+translateZ
+(
+ 
+360
+px
+ 
+);
+}
+}
+@
+keyframes cube2 { 0% {
+	transform: scale(1, 1) rotateY(90deg) translateZ(360px);
+}
+
+50%
+{
+transform
+:
+ 
+scale
+(0
+.75
+,
+0
+.75
+)
+ 
+rotateY
+(
+ 
+135
+deg
+ 
+)
+translateZ
+(
+ 
+360
+px
+ 
+);
+}
+100%
+{
+transform
+:
+ 
+scale
+(1
+,
+1)
+rotateY
+(
+ 
+180
+deg
+ 
+)
+translateZ
+(
+ 
+360
+px
+ 
+);
+}
+}
+@
+keyframes cube3 { 0% {
+	transform: scale(1, 1) rotateY(180deg) translateZ(360px);
+}
+
+50%
+{
+transform
+:
+ 
+scale
+(0
+.75
+,
+0
+.75
+)
+ 
+rotateY
+(
+ 
+225
+deg
+ 
+)
+translateZ
+(
+ 
+360
+px
+ 
+);
+}
+100%
+{
+transform
+:
+ 
+scale
+(1
+,
+1)
+rotateY
+(
+ 
+270
+deg
+ 
+)
+translateZ
+(
+ 
+360
+px
+ 
+);
+}
+}
+@
+keyframes cube4 { 0% {
+	opacity: 0;
+	transform: scale(1, 1) rotateY(270deg) translateZ(360px);
+}
+50%
+{
+transform
+:
+ 
+scale
+(0
+.75
+,
+0
+.75
+)
+ 
+rotateY
+(315deg
+ 
+)
+translateZ
+(
+ 
+360
+px
+ 
+);
+}
+100%
+{
+opacity
+:
+1;
+ 
+transform
+:
+ 
+scale
+(1
+,
+1)
+rotateY
+(
+ 
+360
+deg
+ 
+)
+translateZ
+(
+ 
+360
+px
+ 
+);
+}
+}
 </style>
 </head>
 <body>
@@ -272,53 +509,59 @@ animation: blink 1.5s 2s infinite ease-in-out alternate;
 	%>
 	<div id="view">
 		<div id="header">
-        	<div id="batLogo"><iframe src="image_rotator.html" width=100% id="imgRotator"></iframe></div>            
+			<div id="batLogo">
+				<iframe src="image_rotator.html" width=100% id="imgRotator"></iframe>
+			</div>
 		</div>
 		<div id="container">
-				<div id="sidebarLeft">
-					<table>
-						<tr>
-							<td><button type="button" class="leftBtn" id="btn01"
-									onclick="pushBtn1()">Home</button></td>
-						</tr>
-						<tr>
-							<td><button type="button" class="leftBtn" id="btn02"
-									onclick="pushBtn2()">PentA Board</button></td>
-						</tr>
-						<tr>
-							<td><button type="button" class="leftBtn" id="btn03"
-									onclick="pushBtn3()">일정관리</button></td>
-						</tr>
-						<tr>
-							<td><button type="button" class="leftBtn" id="btn04"
-									onclick="pushBtn4()">가로세로 낱말퍼즐</button></td>
-						</tr>
-						<tr>
-							<td><button type="button" class="leftBtn" id="btn05"
-									onclick="pushBtn5()">능력단위평가</button></td>
-						</tr>
-					</table>
-				</div>
+			<div id="sidebarLeft">
+				<table>
+					<tr>
+						<td><button type="button" class="leftBtn" id="btn01"
+								onclick="pushBtn1()">Home</button></td>
+					</tr>
+					<tr>
+						<td><button type="button" class="leftBtn" id="btn02"
+								onclick="pushBtn2()">PentA Board</button></td>
+					</tr>
+					<tr>
+						<td><button type="button" class="leftBtn" id="btn03"
+								onclick="pushBtn3()">일정관리</button></td>
+					</tr>
+					<tr>
+						<td><button type="button" class="leftBtn" id="btn04"
+								onclick="pushBtn4()">가로세로 낱말퍼즐</button></td>
+					</tr>
+					<tr>
+						<td><button type="button" class="leftBtn" id="btn05"
+								onclick="pushBtn5()">능력단위평가</button></td>
+					</tr>
+				</table>
+			</div>
 
-				<div class="center">		<!-- center  -->
-					<div id="cube">
-				<iframe id="front" src="localstorage_ans.html"></iframe>
-				<iframe id="left" src="proj_quizKdb.html"></iframe>
-				<iframe id="right" src="hwBoard1.html"></iframe>
-				<iframe id="back" src="puzzle.html"></iframe>
-					</div>
+			<div class="center">
+				<!-- center  -->
+				<div id="cube">
+					<iframe id="front" src="localstorage_ans.html"></iframe>
+					<iframe id="left" src="proj_quizKdb.html"></iframe>
+					<iframe id="right" src="hwBoard1.html"></iframe>
+					<iframe id="back" src="puzzle.html"></iframe>
 				</div>
-				
-				<div id="sidebarRight">
-				<h1 id="welcomeTag">Welcome! <%=pid%>!!</h1>
-					<textarea id="messageWindow" readonly="readonly"></textarea>
-					<input type="text" id="inputMessage"
-						onkeypress="if(event.keyCode==13)send();" />
-					<div id="rightBtnArea">
-						<button type="button" onclick="send()" id="sendBtn">Send</button>
-						<button type="button" onclick="reset()" id="resetBtn">Reset</button>
-					</div>
+			</div>
+
+			<div id="sidebarRight">
+				<h1 id="welcomeTag">
+					Welcome!
+					<%=pid%>!!
+				</h1>
+				<textarea id="messageWindow" readonly="readonly"></textarea>
+				<input type="text" id="inputMessage"
+					onkeypress="if(event.keyCode==13)send();" />
+				<div id="rightBtnArea">
+					<button type="button" onclick="send()" id="sendBtn">Send</button>
+					<button type="button" onclick="reset()" id="resetBtn">Reset</button>
 				</div>
+			</div>
 		</div>
 	</div>
 </body>

@@ -1,7 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"
-import="jspexp.z02_vo.Emp"
-import="jspexp.z01_database.A01_EmpDB"
-%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8" import="jspexp.z02_vo.Emp"
+	import="jspexp.z01_database.A01_EmpDB"%>
 <% request.setCharacterEncoding("UTF-8");
 // proc 구분하는 요청값 받기.(upt/del)
 String proc = request.getParameter("proc")!=null?request.getParameter("proc"):"";
@@ -45,13 +44,13 @@ if(proc.equals("del")){ //DB 삭제 메서드에 전달.
 %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<title>17.05.</title>
-		<style type="text/css">
-		</style>
-		<script src="/jspexp/com/jquery-1.10.2.js"></script>
-		<script type="text/javascript">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>17.05.</title>
+<style type="text/css">
+</style>
+<script src="/jspexp/com/jquery-1.10.2.js"></script>
+<script type="text/javascript">
 			// 이전 page에서 넘겨온 proc에 따라서, msg와 이동할 페이지 다른 경우
 			var proc="<%=proc%>";
 			if(proc=="upt"){
@@ -68,8 +67,8 @@ if(proc.equals("del")){ //DB 삭제 메서드에 전달.
 				
 			})
 		</script>
-	</head>
-	<body>
+</head>
+<body>
 
-	</body>
+</body>
 </html>

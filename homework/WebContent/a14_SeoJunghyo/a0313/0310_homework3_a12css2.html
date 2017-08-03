@@ -56,15 +56,29 @@
 	}
 </script>
 <style type="text/css">
-	li:nth-child(1){visibility:hidden;}
-	li:nth-child(2){visibility:hidden;}
-	li:nth-child(3){visibility:hidden;}
-	li:nth-child(4){visibility:hidden;}
-    pre{visibility:hidden;}
+li:nth-child(1) {
+	visibility: hidden;
+}
+
+li:nth-child(2) {
+	visibility: hidden;
+}
+
+li:nth-child(3) {
+	visibility: hidden;
+}
+
+li:nth-child(4) {
+	visibility: hidden;
+}
+
+pre {
+	visibility: hidden;
+}
 </style>
 </head>
 <body>
-<!-- 
+	<!-- 
  과제(homework)
  keyword 등록 [     ]
  등록할 수 있는 keyword[보이기]    -- 초기에는 등록가능 keywords 보이지 않다가 보이기 버튼을 클릭하는 순간 보이기 처리
@@ -73,27 +87,54 @@
  jsp
  c#
  파이썬
--->	
-<table border align="center">
-	<tr><th>keyword 등록</th><th><input id="a" type="text"></th></tr>
-	<tr><th>등록할 수 있는 keyword</th><th><input id="b" type="button" value="보이기" onclick="javascript:see1()"></th></tr>
-	<tr><th colspan="2">등록할 수 있는 keyword</th></tr>
-	<tr><th colspan="2">
-		<ul>
-			<li>java</li>
-			<li>jsp</li>
-			<li>c#</li>
-			<li>파이썬</li>
-		</ul>
-	</th></tr>
-</table>
-<br><br><br><br>
+-->
+	<table border align="center">
+		<tr>
+			<th>keyword 등록</th>
+			<th><input id="a" type="text"></th>
+		</tr>
+		<tr>
+			<th>등록할 수 있는 keyword</th>
+			<th><input id="b" type="button" value="보이기"
+				onclick="javascript:see1()"></th>
+		</tr>
+		<tr>
+			<th colspan="2">등록할 수 있는 keyword</th>
+		</tr>
+		<tr>
+			<th colspan="2">
+				<ul>
+					<li>java</li>
+					<li>jsp</li>
+					<li>c#</li>
+					<li>파이썬</li>
+				</ul>
+			</th>
+		</tr>
+	</table>
+	<br>
+	<br>
+	<br>
+	<br>
 
 	<table border>
-		<tr><th>keyword 등록</th><th><input id="c" type="text"></th><th><input type="button" value="등록" onclick="javascript:key()"></th></tr>
-		<tr><th colspan="2">등록된 keyword</th><th><input id="d" type="button" value="보이기" onclick="javascript:see2(this)"></th></tr>
-		<tr><th colspan="3">등록된 keyword 목록</th></tr>
-		<tr><td colspan="3" height="500"><pre>● java<br>● jsp<br>● c#<br>● 파이썬<br></pre></td></tr>
+		<tr>
+			<th>keyword 등록</th>
+			<th><input id="c" type="text"></th>
+			<th><input type="button" value="등록" onclick="javascript:key()"></th>
+		</tr>
+		<tr>
+			<th colspan="2">등록된 keyword</th>
+			<th><input id="d" type="button" value="보이기"
+				onclick="javascript:see2(this)"></th>
+		</tr>
+		<tr>
+			<th colspan="3">등록된 keyword 목록</th>
+		</tr>
+		<tr>
+			<td colspan="3" height="500"><pre>● java<br>● jsp<br>● c#<br>● 파이썬<br>
+				</pre></td>
+		</tr>
 	</table>
 
 

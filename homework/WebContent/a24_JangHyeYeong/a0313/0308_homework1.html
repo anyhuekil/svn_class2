@@ -25,89 +25,98 @@
 </script>
 
 <style type="text/css">
-	div{width:350px; position:absolute;}
-	form{visibility:hidden;}
-	#login{ height:200px; left:200px;}
-	#basicInfo{ height:300px; left:200px; top:200px;}
-	#addInfo{ height:150px;left:580px; top:150px;  }
+div {
+	width: 350px;
+	position: absolute;
+}
+
+form {
+	visibility: hidden;
+}
+
+#login {
+	height: 200px;
+	left: 200px;
+}
+
+#basicInfo {
+	height: 300px;
+	left: 200px;
+	top: 200px;
+}
+
+#addInfo {
+	height: 150px;
+	left: 580px;
+	top: 150px;
+}
 </style>
 </head>
 <body>
-<div id="login">
-<!-- 로그인 정보 부분 -->
-<h3>로그인정보</h3>
-아이디: <input type="text" /><br>
-비밀번호: <input type="password" /><br>
-비밀번호 확인: <input type="password"/><br>
-비밀번호 재발급 질문: <select>
-<option value="question">어머니 성함은?</option>
-<option value="question">초등학교 이름은?</option>
-<option value="question">나의 보물 1호는?</option>
-</select><br>
-비밀번호 재발급 답변: <input type="text" /><br><br>
-</div>
+	<div id="login">
+		<!-- 로그인 정보 부분 -->
+		<h3>로그인정보</h3>
+		아이디: <input type="text" /><br> 비밀번호: <input type="password" /><br>
+		비밀번호 확인: <input type="password" /><br> 비밀번호 재발급 질문: <select>
+			<option value="question">어머니 성함은?</option>
+			<option value="question">초등학교 이름은?</option>
+			<option value="question">나의 보물 1호는?</option>
+		</select><br> 비밀번호 재발급 답변: <input type="text" /><br>
+		<br>
+	</div>
 
 
-<!-- 기본 정보 입력 -->
-<div id="basicInfo">
-<h3>기본 정보 입력</h3>
-성명: <input type="text" /><br>
-생년월일: 
-<!-- 년도 for문으로 정리 -->
-<select id="years">
-	<script>
+	<!-- 기본 정보 입력 -->
+	<div id="basicInfo">
+		<h3>기본 정보 입력</h3>
+		성명: <input type="text" /><br> 생년월일:
+		<!-- 년도 for문으로 정리 -->
+		<select id="years">
+			<script>
 		for(var i=1970; i<=2016; i++)
 			document.write("<option value="+i+">"+i+"</option>");
 	</script>
-</select>년 
-<!-- 월 -->
-<select id="month">
-	<script>
+		</select>년
+		<!-- 월 -->
+		<select id="month">
+			<script>
 		for(var i=1; i<=12; i++)
 			document.write("<option value="+i+">"+i+"</option>");
 	</script>
-</select>월 
+		</select>월
 
-<!-- 일 -->
-<input type="text" size="1%">일<br>
-성별: 
-<input type="radio" name="gender" value="male"/>남성
-<input type="radio" name="gender" value="female"/>여성<br>
-연락처: <select>
-<option value="phone">02</option>
-<option value="phone">010</option>
-<option value="phone">011</option>
-<option value="phone">033</option>
-</select>
-<input size="1" type="tel"/> - <input size="1" type="text"/><br>
-이메일: <input type="text"/>@
-<select>
-<option value="email">naver.com</option>
-<option value="email">gmail.com</option>
-<option value="email">hanmail.net</option>
-</select><br>
-주소: <input type="text"/><br>
-메일링서비스: <br>
-뉴스레터: <input type="radio" name="news" value="yes"/>수신허용 
-<input type="radio" name="news" value="no"/>수신거부<br>
-sms: <input type="radio" name="sms" value="yes"/>수신허용 
-<input type="radio" name="sms" value="no"/>수신거부<br>
-<br>
-</div>
+		<!-- 일 -->
+		<input type="text" size="1%">일<br> 성별: <input
+			type="radio" name="gender" value="male" />남성 <input type="radio"
+			name="gender" value="female" />여성<br> 연락처: <select>
+			<option value="phone">02</option>
+			<option value="phone">010</option>
+			<option value="phone">011</option>
+			<option value="phone">033</option>
+		</select> <input size="1" type="tel" /> - <input size="1" type="text" /><br>
+		이메일: <input type="text" />@ <select>
+			<option value="email">naver.com</option>
+			<option value="email">gmail.com</option>
+			<option value="email">hanmail.net</option>
+		</select><br> 주소: <input type="text" /><br> 메일링서비스: <br> 뉴스레터: <input
+			type="radio" name="news" value="yes" />수신허용 <input type="radio"
+			name="news" value="no" />수신거부<br> sms: <input type="radio"
+			name="sms" value="yes" />수신허용 <input type="radio" name="sms"
+			value="no" />수신거부<br> <br>
+	</div>
 
 
-<!-- 부가정보입력 -->
-<div id="addInfo">
-<h3 onclick="javascript:show(this);">부가정보입력 ▲</h3>
-<form>
-직업: <input /><br>
-관심사: 
-음악/공연/영화 <input type="checkbox" name="interest" value="music"/>
- 운동 <input type="checkbox" name="interest" value="sports"/>
- 미용/헤어 <input type="checkbox" name="interest" value="beauty"/>
- 가전제품 <input type="checkbox" name="interest" value="appliances"/>
- 게임/컴퓨터<input type="checkbox" name="interest" value="programming"/><br>
- </form>
-</div>
+	<!-- 부가정보입력 -->
+	<div id="addInfo">
+		<h3 onclick="javascript:show(this);">부가정보입력 ▲</h3>
+		<form>
+			직업: <input /><br> 관심사: 음악/공연/영화 <input type="checkbox"
+				name="interest" value="music" /> 운동 <input type="checkbox"
+				name="interest" value="sports" /> 미용/헤어 <input type="checkbox"
+				name="interest" value="beauty" /> 가전제품 <input type="checkbox"
+				name="interest" value="appliances" /> 게임/컴퓨터<input type="checkbox"
+				name="interest" value="programming" /><br>
+		</form>
+	</div>
 </body>
 </html>

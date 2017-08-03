@@ -4,10 +4,21 @@
 <meta charset="UTF-8">
 <title>Form Tag Exercise</title>
 <style type="text/css">
-	input[type=text]:focus{background:gold;}
-	input[type=password]:focus{background:tomato;}
-	input[type=button]{background:green;}
-	#title{background:green;}
+input[type=text]:focus {
+	background: gold;
+}
+
+input[type=password]:focus {
+	background: tomato;
+}
+
+input[type=button] {
+	background: green;
+}
+
+#title {
+	background: green;
+}
 </style>
 <script type="text/javascript">
 	window.onload=function(){
@@ -30,85 +41,77 @@
 </script>
 </head>
 <body>
-<!-- 과제 :
+	<!-- 과제 :
 	쇼핑몰 / 게임사이트 등에서 회원가입란을 확인하고, 
 	위에서 배운 form 객체 하위내용을 table로 함께 정렬 효과 적용하여 회원가입화면 만들기. 
  -->
- <form>
- <table border=1 width="400" height="200">
- 	<tr><th id="title">NAVER 회원가입</th></tr>
- 	<tr>
- 		<td>
- 			아이디 <input type="text" placeholder="아이디를 입력하시오"> @naver.com
- 		</td>
- 	</tr>
- 	<tr>
- 		<td>
- 			비밀번호 <input type="password"" placeholder="8~12자로 입력하시오"> 
- 		</td>
- 	</tr>
- 	<tr>
- 		<td>
- 			비밀번호 확인<input type="password" placeholder="비밀번호를 한번 더 입력하시오"> 
- 		</td>
- 	</tr>
- 	<tr>
- 		<td>
- 			이름 <input type="text" placeholder="예) 김과장"> 
- 		</td>
- 	</tr>
- 	<tr>
- 		<td>
- 			성별: 
- 			<input type="radio" name="inGender" id="male"><label for="male">남성</label>
- 			<input type="radio" name="inGender" id="female"><label for="female">여성</label> 
- 		</td>
- 	</tr>
- 	<tr>
- 		<td>
- 			생일: 
-			<select id="inYear">
-		<!-- 	  	  <script>
+	<form>
+		<table border=1 width="400" height="200">
+			<tr>
+				<th id="title">NAVER 회원가입</th>
+			</tr>
+			<tr>
+				<td>아이디 <input type="text" placeholder="아이디를 입력하시오">
+					@naver.com
+				</td>
+			</tr>
+			<tr>
+				<td>비밀번호 <input type="password" " placeholder="8~12자로 입력하시오">
+				</td>
+			</tr>
+			<tr>
+				<td>비밀번호 확인<input type="password"
+					placeholder="비밀번호를 한번 더 입력하시오">
+				</td>
+			</tr>
+			<tr>
+				<td>이름 <input type="text" placeholder="예) 김과장">
+				</td>
+			</tr>
+			<tr>
+				<td>성별: <input type="radio" name="inGender" id="male"><label
+					for="male">남성</label> <input type="radio" name="inGender"
+					id="female"><label for="female">여성</label>
+				</td>
+			</tr>
+			<tr>
+				<td>생일: <select id="inYear">
+						<!-- 	  	  <script>
 					    for(var i=1920; i<=2017; i++){
 					        document.write("<option value="+i+">"+i+"</option>");
 					    }
   				  </script> -->
-			</select>년
-			<select id="inMonth">
-			<!-- 	  	  <script>
+				</select>년 <select id="inMonth">
+						<!-- 	  	  <script>
 					    for(var i=1; i<=12; i++){
 					        document.write("<option value="+i+">"+i+"</option>");
 					    }
   				  </script> -->
-			</select>월
-			<select id="inDay">
-			<!-- 	  	  <script>
+				</select>월 <select id="inDay">
+						<!-- 	  	  <script>
 					    for(var i=1; i<=31; i++){
 					        document.write("<option value="+i+">"+i+"</option>");
 					    }
   				  </script> -->
-			</select>일
- 		</td>
- 	</tr>
- 	<tr>
- 		<td>
- 			본인확인 이메일 <input type="text" placeholder="example@naver.com"> 
- 		</td>
- 	</tr>
- 	<tr>
- 		<td>
- 			전화번호 <input type="text" placeholder="031-123-4567"> 
- 		</td>
- 	</tr>
- 	<tr>
- 		<td>
- 			인증번호 <input type="text" placeholder="6자리 숫자"> 
- 		</td>
- 	</tr>
-  </table>
- 	<input type="button" value="가입" onclick="javascript:alert('가입 완료!')">
- 	<input type="reset" value="입력 초기화">
-  </form>
-  
+				</select>일
+				</td>
+			</tr>
+			<tr>
+				<td>본인확인 이메일 <input type="text" placeholder="example@naver.com">
+				</td>
+			</tr>
+			<tr>
+				<td>전화번호 <input type="text" placeholder="031-123-4567">
+				</td>
+			</tr>
+			<tr>
+				<td>인증번호 <input type="text" placeholder="6자리 숫자">
+				</td>
+			</tr>
+		</table>
+		<input type="button" value="가입" onclick="javascript:alert('가입 완료!')">
+		<input type="reset" value="입력 초기화">
+	</form>
+
 </body>
 </html>

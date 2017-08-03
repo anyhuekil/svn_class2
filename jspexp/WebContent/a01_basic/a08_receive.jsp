@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -24,6 +24,7 @@ $(document).ready(function(){
 String id=request.getParameter("id");
 %>
 <body>
-<h1 align="center">받은 데이터:<%=id%></h1>
+	<h1 align="center">
+		받은 데이터:<%=id%></h1>
 </body>
 </html>

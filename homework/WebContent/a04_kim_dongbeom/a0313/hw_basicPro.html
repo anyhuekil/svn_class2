@@ -1,18 +1,32 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="UTF-8">
-		<title>Homework Basic Properties</title>
-		<style type="text/css">
-		/*
+<head>
+<meta charset="UTF-8">
+<title>Homework Basic Properties</title>
+<style type="text/css">
+/*
 		
 		*/
-			caption{font-size:300%;background-color:pink;}
-			th{width:300px;font-size:200%;}
-			td{width:200px;}
-			input{font-size:120%;width:50px;}
-		</style>
-		<script type="text/javascript">
+caption {
+	font-size: 300%;
+	background-color: pink;
+}
+
+th {
+	width: 300px;
+	font-size: 200%;
+}
+
+td {
+	width: 200px;
+}
+
+input {
+	font-size: 120%;
+	width: 50px;
+}
+</style>
+<script type="text/javascript">
 		/*
 		
 		*/
@@ -30,8 +44,8 @@
 				else  idx.style.backgroundColor = "black";
 			}
 		</script>
-	</head>
-	<body>
+</head>
+<body>
 	<!-- 과제
 		아래와 같이 점수를 만들고 해당 속성값을 체크를 해서 나타내세요.
 		60 - 빨간 배경
@@ -44,29 +58,26 @@
 	[영어]		[80]
 	[수학]		[60]
 	-->
-		<div align="center">
-			<table>
-				<caption>점수 표(0 ~ 100점)</caption>
-				<tr id="col_Kor">
-					<th>국어 :</th>
-					<td>
-						<input id="score_Kor" type="text" value="0" onclick="javascript:score_Check(this,col_Kor);"/>
-					</td>
-				</tr>
-				<tr id="col_Eng">
-					<th>영어 :</th>
-					<td>
-						<input id="score_Eng" type="text" value="0" onclick="javascript:score_Check(this,col_Eng);"/>
-					</td>
-				</tr>
-				<tr id="col_Math">
-					<th>수학 :</th>
-					<td>
-						<input id="score_Math" type="text" value="0" onclick="javascript:score_Check(this,col_Math);"/>
-					</td>
-				</tr>
-			</table>
-		</div>
+	<div align="center">
+		<table>
+			<caption>점수 표(0 ~ 100점)</caption>
+			<tr id="col_Kor">
+				<th>국어 :</th>
+				<td><input id="score_Kor" type="text" value="0"
+					onclick="javascript:score_Check(this,col_Kor);" /></td>
+			</tr>
+			<tr id="col_Eng">
+				<th>영어 :</th>
+				<td><input id="score_Eng" type="text" value="0"
+					onclick="javascript:score_Check(this,col_Eng);" /></td>
+			</tr>
+			<tr id="col_Math">
+				<th>수학 :</th>
+				<td><input id="score_Math" type="text" value="0"
+					onclick="javascript:score_Check(this,col_Math);" /></td>
+			</tr>
+		</table>
+	</div>
 
-	</body>
+</body>
 </html>

@@ -5,10 +5,8 @@
 
 
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"
-    import = "java.util.*, java.text.*"
-    import = "z02_vo.Item, z01_database.ItemDB"
-    %>
+	pageEncoding="UTF-8" import="java.util.*, java.text.*"
+	import="z02_vo.Item, z01_database.ItemDB"%>
 <%
 request.setCharacterEncoding("UTF-8"); 
   String path=request.getContextPath();	
@@ -21,7 +19,7 @@ request.setCharacterEncoding("UTF-8");
   SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");   //####
   String day = sdf.format(dao.when(dto).getJdday());
   
-%>    
+%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -62,7 +60,6 @@ request.setCharacterEncoding("UTF-8");
 	var count = setInterval(setTime,1000);
 </script>
 <style type="text/css">
-
 </style>
 </head>
 <body>

@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<% request.setCharacterEncoding("UTF-8");%>    
+	pageEncoding="UTF-8"%>
+<% request.setCharacterEncoding("UTF-8");%>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -27,22 +27,20 @@ $(document).ready(function(){
 </script>
 </head>
 <body>
-<%  // .getParameterValues("name값이 다수")
+	<%  // .getParameterValues("name값이 다수")
 	String []revFruits=request.getParameterValues("fruits");
 %>
-<form method="post">
-좋아하는 과일을 입력하세요!!<br>
-1.<input type="text" name="fruits"/><br>
-2.<input type="text" name="fruits"/><br>
-3.<input type="text" name="fruits"/><br>
-4.<input type="text" name="fruits"/><br>
-	<input type="button" value="입력"/>
-</form>
-<h3>전송된 값</h3>
-<%if(revFruits!=null && revFruits.length>0){
+	<form method="post">
+		좋아하는 과일을 입력하세요!!<br> 1.<input type="text" name="fruits" /><br>
+		2.<input type="text" name="fruits" /><br> 3.<input type="text"
+			name="fruits" /><br> 4.<input type="text" name="fruits" /><br>
+		<input type="button" value="입력" />
+	</form>
+	<h3>전송된 값</h3>
+	<%if(revFruits!=null && revFruits.length>0){
   	for(String fruit:revFruits){ %>
-  		<%=fruit%>,
-<%	}
+	<%=fruit%>,
+	<%	}
   }%>
 </body>
 </html>

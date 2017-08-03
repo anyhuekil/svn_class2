@@ -4,21 +4,44 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <style type="text/css">
-	.alignR{text-align: right;}
-	.alignC{text-align: center;}
-	.alignL{text-align: left;}
-	
-	.hoverTable tr:hover{background-color:green; color: orange; font-size: 30px; font-weight: bold;}
-	
-	tr:nth-child(2n){background-color:#ff0003;}
-	tr:nth-child(2n+1){background-color:#800000;}
-	
-	a:link::after{content: '-' attr(href)}
-	a{text-decoration:none;}
+.alignR {
+	text-align: right;
+}
+
+.alignC {
+	text-align: center;
+}
+
+.alignL {
+	text-align: left;
+}
+
+.hoverTable tr:hover {
+	background-color: green;
+	color: orange;
+	font-size: 30px;
+	font-weight: bold;
+}
+
+tr:nth-child(2n) {
+	background-color: #ff0003;
+}
+
+tr:nth-child(2n+1) {
+	background-color: #800000;
+}
+
+a:link::after {
+	content: '-' attr(href)
+}
+
+a {
+	text-decoration: none;
+}
 </style>
 </head>
 <body>
-<!--
+	<!--
 확인예제/과제
 아래와 같은 화면을 list형태로 구현하세요..
 	사원 정보 List(테이블 list) : 데이터 홀/짝 배경색상 처리,
@@ -29,31 +52,31 @@
 7711		신길동	5,000만원	다음-http://www.daum.net
 중앙		왼쪽 	오른쪽		왼쪽 line 없이
  -->
- 	<table class="hoverTable" width="1000" height="300">
- 		<tr>
- 			<td>사원번호</td>
- 			<td>사원명</td>
- 			<td>연봉</td>
- 			<td>주업무홈피(link)</td>
- 		</tr>
- 		<tr>
- 			<td><input type="text" class="alignC" value="7709"/></td>
- 			<td><input type="text" class="alignL" value="홍길동"/></td>
- 			<td><input type="text" class="alignR" value="3,000만원"/></td>
- 			<td><a class="alignL" href="http://www.google.com">구글</a></td>
- 		</tr>
- 		<tr>
- 			<td><input type="text" class="alignC" value="7710"/></td>
- 			<td><input type="text" class="alignL" value="김길동"/></td>
- 			<td><input type="text" class="alignR" value="4,000만원"/></td>
- 			<td><a class="alignL" href="http://www.naver.com">네이버</a></td>
- 		</tr>
- 		<tr>
- 			<td><input type="text" class="alignC" value="7711"/></td>
- 			<td><input type="text" class="alignL" value="신길동"/></td>
- 			<td><input type="text" class="alignR" value="5,000만원"/></td>
- 			<td><a class="alignL" href="http://www.daum.net">다음</a></td>
- 		</tr>
- 	</table>
+	<table class="hoverTable" width="1000" height="300">
+		<tr>
+			<td>사원번호</td>
+			<td>사원명</td>
+			<td>연봉</td>
+			<td>주업무홈피(link)</td>
+		</tr>
+		<tr>
+			<td><input type="text" class="alignC" value="7709" /></td>
+			<td><input type="text" class="alignL" value="홍길동" /></td>
+			<td><input type="text" class="alignR" value="3,000만원" /></td>
+			<td><a class="alignL" href="http://www.google.com">구글</a></td>
+		</tr>
+		<tr>
+			<td><input type="text" class="alignC" value="7710" /></td>
+			<td><input type="text" class="alignL" value="김길동" /></td>
+			<td><input type="text" class="alignR" value="4,000만원" /></td>
+			<td><a class="alignL" href="http://www.naver.com">네이버</a></td>
+		</tr>
+		<tr>
+			<td><input type="text" class="alignC" value="7711" /></td>
+			<td><input type="text" class="alignL" value="신길동" /></td>
+			<td><input type="text" class="alignR" value="5,000만원" /></td>
+			<td><a class="alignL" href="http://www.daum.net">다음</a></td>
+		</tr>
+	</table>
 </body>
 </html>

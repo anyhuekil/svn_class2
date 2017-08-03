@@ -33,7 +33,7 @@ body {
 	height: 1000px;
 	background: url('img/login_bkg2.jpg') top no-repeat;
 	background-size: contain;
-	border: 1px solid rgba(255,255,255,0) ;
+	border: 1px solid rgba(255, 255, 255, 0);
 }
 
 #loginForm {
@@ -67,7 +67,7 @@ body {
 	width: 535px;
 	height: 55px;
 	background-image: url('img/input_text.jpg');
-d	font-size: 1.5em;
+	d font-size: 1.5em;
 	border-color: rgba(255, 255, 255, 0);
 	color: white;
 }
@@ -135,18 +135,21 @@ d	font-size: 1.5em;
 	color: white;
 	font-size: 1.5em;
 }
+
 #batLogo {
 	float: left;
 	margin-top: 7.6%;
 	margin-left: 14%;
 	width: 1178px;
 	height: 118px;
-	border-color: rgba(255,255,255,0);
+	border-color: rgba(255, 255, 255, 0);
 	background-size: 100% 100%;
 }
-#imgRotator{
-border-color: rgba(255,255,255,0);
+
+#imgRotator {
+	border-color: rgba(255, 255, 255, 0);
 }
+
 button:ACTIVE {
 	background-image: url('img/bnbutton3.jpg');
 	border-color: white;
@@ -185,14 +188,17 @@ button:ACTIVE {
 </head>
 <body>
 	<div id="jb-container">
-	<div id="batLogo"><iframe src="image_rotator.html" width=100% id="imgRotator"></iframe></div>            
+		<div id="batLogo">
+			<iframe src="image_rotator.html" width=100% id="imgRotator"></iframe>
+		</div>
 		<form id="loginForm" method="post">
 			<div id="left">
 				<div id="input_area">
 					<font id="name_font">Name:</font> <input type="text"
-						class="input_area" id="id_input" name="id" onkeypress="if(event.keyCode==13)login();"/> <font
-						id="pass_font">Password:</font> <input type="password"
-						class="input_area" id="password_input" name="pw" onkeypress="if(event.keyCode==13)login();" />
+						class="input_area" id="id_input" name="id"
+						onkeypress="if(event.keyCode==13)login();" /> <font id="pass_font">Password:</font>
+					<input type="password" class="input_area" id="password_input"
+						name="pw" onkeypress="if(event.keyCode==13)login();" />
 					<table id="btn_left_table">
 						<tr>
 							<td><button class="btn_left">New Account</button></td>
@@ -211,13 +217,11 @@ button:ACTIVE {
 
 			</div>
 			<div id="right">
-				<div id="status">
-				
-				</div>
+				<div id="status"></div>
 				<table id="btn_right_table">
 					<tr>
 						<td><button type="submit" class="btn_right"
-							onclick="login();">OK</button></td>
+								onclick="login();">OK</button></td>
 						<td><button type="reset" class="btn_right">Cancel</button></td>
 					</tr>
 				</table>

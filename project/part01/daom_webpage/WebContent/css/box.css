@@ -1,0 +1,32 @@
+
+
+/* hospital 페이지 박스 이팩 */
+.mbox{
+	display:block;
+	border:1px solid;
+	margin: 10px;
+	padding:10px;
+	
+	
+	text-align: center;
+
+
+	width:23%;
+	height:350px;
+	float:left;
+
+
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+    
+    border-radius: 15px;
+}
+
+.cbox{
+	margin: 10px;
+	padding:10px;
+	
+}
+

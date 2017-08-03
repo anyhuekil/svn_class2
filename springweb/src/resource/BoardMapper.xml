@@ -1,19 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper
 	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
-	"http://mybatis.org/dtd/mybatis-3-mapper.dtd" >	
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 
 <mapper namespace="springweb.d01_board.repository.A01_BoardDao">
-	<resultMap type="board" id="boardResult"/>
+	<resultMap type="board" id="boardResult" />
 	<insert id="insertBoard" parameterType="board">
-		insert into board values(board_seq.nextval,#{refno},
-			#{subject},#{content}, #{pass}, #{writer},0,sysdate,#{email} )
+		insert into board
+		values(board_seq.nextval,#{refno},
+		#{subject},#{content}, #{pass}, #{writer},0,sysdate,#{email} )
 	</insert>
-	<!-- ArrayList<Board> listBoard(Board_Sch sch) -->
-	<select id="listBoard" resultMap="boardResult"
-		 parameterType="schboard">
-		select rownum cnt, a.* from board a
-		where 1=1 
+	<!-- public int totCnt(Board_Sch sch); -->
+	<select id="totCnt" parameterType="schboard" resultType="int">
+		select count(*)
+		from board
+		where 1=1
 		<if test="subject!=null and subject!=''">
 			and subject like '%'|| #{subject} ||'%'
 		</if>
@@ -22,23 +23,39 @@
 		</if>
 		<if test="content!=null and content!=''">
 			and content like '%'|| #{content} ||'%'
-		</if>		
-		start with refno=0     
-		connect by prior no=refno	
-		order siblings by no desc	
+		</if>
+	</select>
+
+	<!-- ArrayList<Board> listBoard(Board_Sch sch) -->
+	<select id="listBoard" resultMap="boardResult" parameterType="schboard">
+		select * from(
+		select rownum cnt, level lv, a.*
+		from board a
+		where 1=1
+		<if test="subject!=null and subject!=''">
+			and subject like '%'|| #{subject} ||'%'
+		</if>
+		<if test="writer!=null and writer!=''">
+			and writer like '%'|| #{writer} ||'%'
+		</if>
+		<if test="content!=null and content!=''">
+			and content like '%'|| #{content} ||'%'
+		</if>
+		start with refno=0
+		connect by prior no=refno
+		order siblings by no desc )
+		where cnt between #{start} and #{end}
 	</select>
 	<!-- Board getBoard(int no) -->
-	<select id="getBoard" 
-	         parameterType="int"
-			resultType="board">
-		select * from board
+	<select id="getBoard" parameterType="int" resultType="board">
+		select *
+		from board
 		where no=#{no}
 	</select>
-	<update id="uptBoardCnt"
-		parameterType="int">
+	<update id="uptBoardCnt" parameterType="int">
 		update board
-   			set readcount=readcount+1
-		 where no=#{no}	
+		set readcount=readcount+1
+		where no=#{no}
 	</update>
 
 </mapper>

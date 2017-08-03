@@ -4,13 +4,30 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <style type="text/css">
-	input[type="text"]:focus { background-color: lightblue; color: red; }
-	input[type="button"]{ height: 50px; border-radius: 10px; background-color: lightgray; }
-	
-	input[value="로그인 완료"]{background-color: lightgreen;}
-	
-	#id_status{ background-color: black; color:white;}
-	#id_success{ background-color:red; color:white;}
+input[type="text"]:focus {
+	background-color: lightblue;
+	color: red;
+}
+
+input[type="button"] {
+	height: 50px;
+	border-radius: 10px;
+	background-color: lightgray;
+}
+
+input[value="로그인 완료"] {
+	background-color: lightgreen;
+}
+
+#id_status {
+	background-color: black;
+	color: white;
+}
+
+#id_success {
+	background-color: red;
+	color: white;
+}
 </style>
 
 <script type="text/javascript">
@@ -65,27 +82,52 @@
 		<h1>로그인</h1>
 		<h3>ID : future / PW : 7777</h3>
 		<h3>1단계 : dream / 2단계 : hope</h3>
-		
+
 		<table align="center" border>
 			<tr>
-				<td bgcolor="lightgray">ID</td> <td><input name="id"  type="text" ></td> 
-				<td rowspan="2"><input type="button" value="로그인" onclick="javascript:bt_login()"/></td>
+				<td bgcolor="lightgray">ID</td>
+				<td><input name="id" type="text"></td>
+				<td rowspan="2"><input type="button" value="로그인"
+					onclick="javascript:bt_login()" /></td>
 			</tr>
-			
+
 			<tr>
-				<td bgcolor="lightgray">Password</td> <td><input name="pw" type="password"></td>
+				<td bgcolor="lightgray">Password</td>
+				<td><input name="pw" type="password"></td>
 			</tr>
-		</table><br>
+		</table>
+		<br>
 
-<table align="center" border> <tr align="center"> <td>Status</td> <td><input id="id_status" name="status" type="text" value="로그인 미완료" /></td> </tr></table><br/>
-<table align="center" border> 
-	<tr align="center"> <td>1단계</td> <td rowspan="2">주제를 입력하세요</td> <td><input type="text" name="sub1" disabled="disabled"/></td> <td rowspan="2">
-						<input type="button" value="확인" onclick="javascript:bt_check()"/></td>
-	<tr align="center"> <td>2단계</td> <td><input type="text" name="sub2" disabled="disabled"/></td> </table><br>
+		<table align="center" border>
+			<tr align="center">
+				<td>Status</td>
+				<td><input id="id_status" name="status" type="text"
+					value="로그인 미완료" /></td>
+			</tr>
+		</table>
+		<br />
+		<table align="center" border>
+			<tr align="center">
+				<td>1단계</td>
+				<td rowspan="2">주제를 입력하세요</td>
+				<td><input type="text" name="sub1" disabled="disabled" /></td>
+				<td rowspan="2"><input type="button" value="확인"
+					onclick="javascript:bt_check()" /></td>
+			<tr align="center">
+				<td>2단계</td>
+				<td><input type="text" name="sub2" disabled="disabled" /></td>
+		</table>
+		<br>
 
-<table align="center" border> <tr align="center"> <td>완료여부</td> <td><input id="id_success" type="text"/></td> </tr></table><br/>
+		<table align="center" border>
+			<tr align="center">
+				<td>완료여부</td>
+				<td><input id="id_success" type="text" /></td>
+			</tr>
+		</table>
+		<br />
 
 
-</form>
+	</form>
 </body>
 </html>

@@ -15,19 +15,23 @@
 </script>
 </head>
 <body>
-<% session.invalidate(); %>
+	<% session.invalidate(); %>
 	<img src="./img/intro.jpg" class="introImg"
 		style="width: 100%; height: 100%;" />
-	 <form action="gameProc.jsp" method="post"> 
-	 	<input type="hidden" name="hdPageChoice" value="first"/>
+	<form action="gameProc.jsp" method="post">
+		<input type="hidden" name="hdPageChoice" value="first" />
 		<div class="modal-container">
 			<div class="modal-wrapper">
-				<div class="ui-modal-content" onclick="javascript:playerNameCall(1);"></div>
-				<div class="ui-modal-content" onclick="javascript:playerNameCall(2);"></div>
-				<div class="ui-modal-content" onclick="javascript:playerNameCall(3);"></div>
-				<div class="ui-modal-content" onclick="javascript:playerNameCall(4);"></div>
+				<div class="ui-modal-content"
+					onclick="javascript:playerNameCall(1);"></div>
+				<div class="ui-modal-content"
+					onclick="javascript:playerNameCall(2);"></div>
+				<div class="ui-modal-content"
+					onclick="javascript:playerNameCall(3);"></div>
+				<div class="ui-modal-content"
+					onclick="javascript:playerNameCall(4);"></div>
 			</div>
 		</div>
-	 </form> 
+	</form>
 </body>
 </html>

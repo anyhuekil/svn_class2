@@ -42,8 +42,9 @@
 body {
 	background-color: rgb(80, 80, 80);
 }
-li{
-cursor:pointer;
+
+li {
+	cursor: pointer;
 }
 </style>
 </head>
@@ -81,7 +82,8 @@ cursor:pointer;
 </script>
 <body>
 	<div class="row">
-		<br><br>
+		<br>
+		<br>
 		<form method="post">
 			<input type="hidden" name="type" />
 			<div

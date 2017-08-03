@@ -5,9 +5,8 @@
  */
 
 /* Global Styles */
-
 html, body {
-	min-width:400px;
+	min-width: 400px;
 	height: 100%;
 }
 
@@ -15,23 +14,24 @@ body {
 	font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial,
 		sans-serif;
 }
+
 @media screen and (min-width: 980px) /* Desktop */ {
-  body {
-    background: red;
-  }
+	body {
+		background: red;
+	}
 }
 
-@media screen  and (max-width: 979px) /* Tablet */ {
-  body {
-    background: blue;
-  }
+@media screen and (max-width: 979px) /* Tablet */ {
+	body {
+		background: blue;
+	}
 }
 
 @media screen and (max-width: 500px) /* Mobile */ {
-  body {
-    background: green;
-    min-width:400px;
-  }
+	body {
+		background: green;
+		min-width: 400px;
+	}
 }
 
 .text-vertical-center {
@@ -156,6 +156,7 @@ hr.small {
 .toggle {
 	margin: 5px 5px 0 0;
 }
+
 .guestheader {
 	display: table;
 	position: relative;

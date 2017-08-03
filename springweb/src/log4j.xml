@@ -1,140 +1,138 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
 
- 
 
-<log4j:configuration
 
-    xmlns:log4j="http://jakarta.apache.org/log4j/">
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
 
-     
 
-    <!-- 콘솔 로그 -->
 
-    <appender name="console" class="org.apache.log4j.ConsoleAppender">
+	<!-- 콘솔 로그 -->
 
-         <layout class="org.apache.log4j.PatternLayout">
+	<appender name="console" class="org.apache.log4j.ConsoleAppender">
 
-              <param name="ConversionPattern" value="%d %p [%c{5}] %m [%X{userId}]%n" />
+		<layout class="org.apache.log4j.PatternLayout">
 
-         </layout>   
+			<param name="ConversionPattern" value="%d %p [%c{5}] %m [%X{userId}]%n" />
 
-    </appender>
+		</layout>
 
-     
+	</appender>
 
-    <!-- 날짜별 로그 파일 생성 -->
 
-    <appender name="rollingFile" class="org.apache.log4j.DailyRollingFileAppender">
 
-        <param name="File" value="/LOG/all.log"/>
+	<!-- 날짜별 로그 파일 생성 -->
 
-        <param name="Append" value="true"/>
+	<appender name="rollingFile" class="org.apache.log4j.DailyRollingFileAppender">
 
-        <!-- param name="MaxFileSize" value="100MB"/ -->
+		<param name="File" value="/LOG/all.log" />
 
-        <!-- param name="MaxBackupIndex" value="2"></param -->
+		<param name="Append" value="true" />
 
-        <param name="DatePattern" value="'.'yyyy-MM-dd"/> 
+		<!-- param name="MaxFileSize" value="100MB"/ -->
 
-        <layout class="org.apache.log4j.PatternLayout">
+		<!-- param name="MaxBackupIndex" value="2"></param -->
 
-            <param name="ConversionPattern" value="%d %p [%C{10}] %m [%X{userId}]%n" />
+		<param name="DatePattern" value="'.'yyyy-MM-dd" />
 
-        </layout>   
+		<layout class="org.apache.log4j.PatternLayout">
 
-    </appender>
+			<param name="ConversionPattern" value="%d %p [%C{10}] %m [%X{userId}]%n" />
 
-     
+		</layout>
 
-    <!-- 날짜별 로그 파일 생성 -->
+	</appender>
 
-    <appender name="springFile" class="org.apache.log4j.DailyRollingFileAppender">
 
-        <param name="File" value="/LOG/spring.log"/>
 
-        <param name="Append" value="true"/>
+	<!-- 날짜별 로그 파일 생성 -->
 
-        <!-- param name="MaxFileSize" value="100MB"/ -->
+	<appender name="springFile" class="org.apache.log4j.DailyRollingFileAppender">
 
-        <!-- param name="MaxBackupIndex" value="2"></param -->
+		<param name="File" value="/LOG/spring.log" />
 
-        <param name="DatePattern" value="'.'yyyy-MM-dd"/> 
+		<param name="Append" value="true" />
 
-        <layout class="org.apache.log4j.PatternLayout">
+		<!-- param name="MaxFileSize" value="100MB"/ -->
 
-            <param name="ConversionPattern" value="%d %p [%C{10}] %m [%X{userId}]%n" />
+		<!-- param name="MaxBackupIndex" value="2"></param -->
 
-        </layout>   
+		<param name="DatePattern" value="'.'yyyy-MM-dd" />
 
-    </appender>
+		<layout class="org.apache.log4j.PatternLayout">
 
-     
+			<param name="ConversionPattern" value="%d %p [%C{10}] %m [%X{userId}]%n" />
 
-    <!-- 날짜별 로그 파일 생성(에러만) -->
+		</layout>
 
-    <appender name="errFile" class="org.apache.log4j.DailyRollingFileAppender">
+	</appender>
 
-        <param name="Threshold" value="ERROR"/>
 
-        <param name="File" value="/LOG/error.log"/>
 
-        <param name="Append" value="true"/>
+	<!-- 날짜별 로그 파일 생성(에러만) -->
 
-        <!-- param name="MaxFileSize" value="100MB"/ -->
+	<appender name="errFile" class="org.apache.log4j.DailyRollingFileAppender">
 
-        <!-- param name="MaxBackupIndex" value="2"></param -->
+		<param name="Threshold" value="ERROR" />
 
-        <param name="DatePattern" value="'.'yyyy-MM-dd"/> 
+		<param name="File" value="/LOG/error.log" />
 
-        <layout class="org.apache.log4j.PatternLayout">
+		<param name="Append" value="true" />
 
-            <param name="ConversionPattern" value="%d %5p [%C{1}] %m [%X{userId}]%n" />
+		<!-- param name="MaxFileSize" value="100MB"/ -->
 
-        </layout>   
+		<!-- param name="MaxBackupIndex" value="2"></param -->
 
-    </appender>
+		<param name="DatePattern" value="'.'yyyy-MM-dd" />
 
-     
+		<layout class="org.apache.log4j.PatternLayout">
 
-    <!-- 특정 패키지 출력 설정 -->
+			<param name="ConversionPattern" value="%d %5p [%C{1}] %m [%X{userId}]%n" />
 
-    <logger name="org.apache.ibatis">
+		</layout>
 
-        <level value="DEBUG"/>
+	</appender>
 
-    </logger>
 
-    <logger name="org.springframework">
 
-        <level value="DEBUG"/>
+	<!-- 특정 패키지 출력 설정 -->
 
-        <appender-ref ref="springFile" />
+	<logger name="org.apache.ibatis">
 
-    </logger>
+		<level value="DEBUG" />
 
-    <logger name="java.sql">
+	</logger>
 
-        <level value="DEBUG"/>
+	<logger name="org.springframework">
 
-    </logger>
+		<level value="DEBUG" />
 
- 
+		<appender-ref ref="springFile" />
 
-    <!-- 기본 출력 설정 -->
+	</logger>
 
-    <root>
+	<logger name="java.sql">
 
-        <level value="DEBUG" />
+		<level value="DEBUG" />
 
-        <appender-ref ref="console" />
+	</logger>
 
-        <appender-ref ref="errFile"/>
 
-        <appender-ref ref="rollingFile"/>
 
-    </root> 
+	<!-- 기본 출력 설정 -->
 
-     
+	<root>
+
+		<level value="DEBUG" />
+
+		<appender-ref ref="console" />
+
+		<appender-ref ref="errFile" />
+
+		<appender-ref ref="rollingFile" />
+
+	</root>
+
+
 
 </log4j:configuration>

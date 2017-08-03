@@ -1,11 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <%!
 	// declaration 메서드 선언과 활용.
 	public int plus(int num01, int num02){
 		return num01+num02;
 	}
-%>    
+%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -31,7 +31,10 @@ $(document).ready(function(){
 	int num02=70;
 %>
 <body>
-<h1 align="center"><%=num01%> + <%=num02 %>
-					 = <%=plus(num01,num02)%></h1>
+	<h1 align="center"><%=num01%>
+		+
+		<%=num02 %>
+		=
+		<%=plus(num01,num02)%></h1>
 </body>
 </html>

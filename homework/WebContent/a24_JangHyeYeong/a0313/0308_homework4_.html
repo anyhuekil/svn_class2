@@ -59,26 +59,60 @@
 	}
 </script>
 <style type="text/css">
-caption{color:blue; background-color:yellow;}
-tr{text-align:center;}
-input[type=number]{background:yellow; text-align:right;}
-.product{background-color:pink;}
+caption {
+	color: blue;
+	background-color: yellow;
+}
+
+tr {
+	text-align: center;
+}
+
+input[type=number] {
+	background: yellow;
+	text-align: right;
+}
+
+.product {
+	background-color: pink;
+}
 </style>
 </head>
 <body>
-<center>
-	어서오세요..<br>
-	즐거운 쇼핑 되시길..<br><br>
-	<form name="shop">
-	<table>
-		<caption>판매물품현황</caption>
-		<tr><th>ch</th><th>물건명</th><th>가격</th><th>개수</th></tr>
-		<tr><td><input type="checkbox" name="fruits" value="apple"/></td><td class="product">사과</td><td>3000</td><td><input type="number" name="appleNum" value="0"/></td></tr>
-		<tr><td><input type="checkbox" name="fruits" value="banana"/></td><td class="product">바나나</td><td>5000</td><td><input type="number" name="bananaNum" value="0"/></td></tr>
-		<tr><td><input type="checkbox" name="fruits" value="stroberry"/></td><td class="product">딸기</td><td>8000</td><td><input type="number" name="stroNum" value="0" /></td></tr>
-	</table><br>
-	</form>
-	<input type="button" value="구매" onclick="javascript:send();"/><br>
-</center>
+	<center>
+		어서오세요..<br> 즐거운 쇼핑 되시길..<br>
+		<br>
+		<form name="shop">
+			<table>
+				<caption>판매물품현황</caption>
+				<tr>
+					<th>ch</th>
+					<th>물건명</th>
+					<th>가격</th>
+					<th>개수</th>
+				</tr>
+				<tr>
+					<td><input type="checkbox" name="fruits" value="apple" /></td>
+					<td class="product">사과</td>
+					<td>3000</td>
+					<td><input type="number" name="appleNum" value="0" /></td>
+				</tr>
+				<tr>
+					<td><input type="checkbox" name="fruits" value="banana" /></td>
+					<td class="product">바나나</td>
+					<td>5000</td>
+					<td><input type="number" name="bananaNum" value="0" /></td>
+				</tr>
+				<tr>
+					<td><input type="checkbox" name="fruits" value="stroberry" /></td>
+					<td class="product">딸기</td>
+					<td>8000</td>
+					<td><input type="number" name="stroNum" value="0" /></td>
+				</tr>
+			</table>
+			<br>
+		</form>
+		<input type="button" value="구매" onclick="javascript:send();" /><br>
+	</center>
 </body>
 </html>

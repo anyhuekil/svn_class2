@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -24,25 +24,25 @@
 
 </script>
 <style type="text/css">
-
 </style>
 </head>
 <body>
-<%
+	<%
    String name="홍길동";
    
 %>
-   <h1>jsp!!!<%=name%></h1>
-<%   for(int idx3=0; idx3<4; idx3++){
+	<h1>
+		jsp!!!<%=name%></h1>
+	<%   for(int idx3=0; idx3<4; idx3++){
 %>
-      <div class="tr">
-   <%   for(int idx2=0; idx2<4; idx2++){
+	<div class="tr">
+		<%   for(int idx2=0; idx2<4; idx2++){
    %>
-         <div class="td"></div>
-   <%   }
+		<div class="td"></div>
+		<%   }
    %>
-      </div>   
-<%   }
+	</div>
+	<%   }
 %>
 </body>
 </html>

@@ -281,11 +281,12 @@
 		<h1>Wellcome, ${user.pid eq null ? "guset" : user.pid }</h1>
 		<label> <c:if test="${logonState }">
 				<h3>현재 순위: ??</h3>
-				<h3>현재 소지금: ${user.curMoney}</h3><br>
-				<a href="#search" class="btn btn-primary btn-lg">내 전적
-			확인하기</a> 
+				<h3>현재 소지금: ${user.curMoney}</h3>
+				<br>
+				<a href="#search" class="btn btn-primary btn-lg">내 전적 확인하기</a>
+			</c:if> <c:if test="${!logonState }">
+				<h2>로그인을 해주세요.</h2>
 			</c:if>
-			<c:if test="${!logonState }"><h2>로그인을 해주세요.</h2></c:if>
 		</label>
 	</div>
 	</section>

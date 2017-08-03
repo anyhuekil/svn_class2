@@ -1,7 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"
-	import ="jspexp.z01_database.A04_MemeberDao"
-	import ="jspexp.z02_vo.Member"
-%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8" import="jspexp.z01_database.A04_MemeberDao"
+	import="jspexp.z02_vo.Member"%>
 <% request.setCharacterEncoding("UTF-8");
 String path=request.getContextPath();
 
@@ -35,13 +34,13 @@ if(proc!=null&&proc.equals("logout")){
 %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<title>웹페이지 연습</title>
-		<style type="text/css">
-		</style>
-		<script src="<%=path%>/com/jquery-1.10.2.js"></script>
-		<script type="text/javascript">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>웹페이지 연습</title>
+<style type="text/css">
+</style>
+<script src="<%=path%>/com/jquery-1.10.2.js"></script>
+<script type="text/javascript">
 			var hasData = <%=hasData%>;
 			if(hasData){
 				// 메인페이지 이동
@@ -60,8 +59,8 @@ if(proc!=null&&proc.equals("logout")){
 			$(document).ready(function(){
 			})
 		</script>
-	</head>
-	<body>
+</head>
+<body>
 
-	</body>
+</body>
 </html>

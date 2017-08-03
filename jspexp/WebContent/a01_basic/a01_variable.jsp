@@ -1,7 +1,5 @@
-<%@ page language="java" 
-         contentType="text/html; charset=UTF-8"
-         pageEncoding="UTF-8"
-         import="java.util.ArrayList" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8" import="java.util.ArrayList"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -28,13 +26,17 @@ $(document).ready(function(){
 	int sum = num01+num02;
 %>
 <body>
-<h1 align="center"><%=num01%> + <%=num02%> = <%=sum%></h1>
-<%
+	<h1 align="center"><%=num01%>
+		+
+		<%=num02%>
+		=
+		<%=sum%></h1>
+	<%
   for(int cnt=0;cnt<=100;cnt++){
-%>	
-<!-- 화면.. -->	
+%>
+	<!-- 화면.. -->
 	<h1 align="center">Ich liebe dich!!♥</h1>
-<%	
+	<%	
   } 
 %>
 

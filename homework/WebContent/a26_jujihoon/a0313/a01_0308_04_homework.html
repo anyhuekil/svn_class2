@@ -4,9 +4,19 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <style type="text/css">
-	caption{background-color:yellow;color:blue;}
-	.prod{background-color: pink;}
-	.cnt{background-color: yellow;text-align: right;}
+caption {
+	background-color: yellow;
+	color: blue;
+}
+
+.prod {
+	background-color: pink;
+}
+
+.cnt {
+	background-color: yellow;
+	text-align: right;
+}
 </style>
 <script type="text/javascript">
 	function sendBuy() {
@@ -15,12 +25,12 @@
 </script>
 </head>
 <body>
-<!--
+	<!--
 css란?
 기본 html의 tag의 고유 속성에서 지원하지 않는 정적인
 페이지에 대한 확장 속성을 지원처리한다.
   -->
-<!--
+	<!--
 과제
 	어서오세요..
 	즐거운 쇼핑되시길..
@@ -37,37 +47,38 @@ ch	물건명	가격	갯수
 	오른쪽(text-align활용)
 ** 가능하면 javascript도 활용해볼것
  -->
-<h1>어서오세요!</h1>
-<h2>즐거운 쇼핑되시길..</h2>
-<table>
-	<caption>판매물품현황</caption>
-	<tr>
-		<td>ch</td>
-		<td>물건명</td>
-		<td>가격</td>
-		<td>갯수</td>
-	</tr>
-	<tr>
-		<td><input type="checkbox"/></td>
-		<td><input type="text" value="사과" class="prod"></td>
-		<td><input type="text" value="3000"></td>
-		<td><input type="text" class="cnt"></td>
-	</tr>
-	<tr>
-		<td><input type="checkbox"/></td>
-		<td><input type="text" value="바나나" class="prod"></td>
-		<td><input type="text" value="5000"></td>
-		<td><input type="text" class="cnt"></td>
-	</tr>
-	<tr>
-		<td><input type="checkbox"/></td>
-		<td><input type="text" value="딸기" class="prod"></td>
-		<td><input type="text" value="8000"></td>
-		<td><input type="text" class="cnt"></td>
-	</tr>
-	<tr>
-		<td align="center" colspan="4"><input type="button" value="구매" onclick="javascript:sendBuy();"/></td>
-	</tr>
-</table>
+	<h1>어서오세요!</h1>
+	<h2>즐거운 쇼핑되시길..</h2>
+	<table>
+		<caption>판매물품현황</caption>
+		<tr>
+			<td>ch</td>
+			<td>물건명</td>
+			<td>가격</td>
+			<td>갯수</td>
+		</tr>
+		<tr>
+			<td><input type="checkbox" /></td>
+			<td><input type="text" value="사과" class="prod"></td>
+			<td><input type="text" value="3000"></td>
+			<td><input type="text" class="cnt"></td>
+		</tr>
+		<tr>
+			<td><input type="checkbox" /></td>
+			<td><input type="text" value="바나나" class="prod"></td>
+			<td><input type="text" value="5000"></td>
+			<td><input type="text" class="cnt"></td>
+		</tr>
+		<tr>
+			<td><input type="checkbox" /></td>
+			<td><input type="text" value="딸기" class="prod"></td>
+			<td><input type="text" value="8000"></td>
+			<td><input type="text" class="cnt"></td>
+		</tr>
+		<tr>
+			<td align="center" colspan="4"><input type="button" value="구매"
+				onclick="javascript:sendBuy();" /></td>
+		</tr>
+	</table>
 </body>
 </html>

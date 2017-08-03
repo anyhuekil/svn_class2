@@ -1,29 +1,31 @@
 <html lang="en">
- <head>
-  <meta charset="UTF-8">
-  <meta name="Generator" content="EditPlus짰">
-  <meta name="Author" content="">
-  <meta name="Keywords" content="">
-  <meta name="Description" content="">
-  <title>Document</title>
-  <style>
-  	body{
-		background-image : url();
-		background-size : 100%;
-	}
-  </style>
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-  <script type='text/javascript'>
+<head>
+<meta charset="UTF-8">
+<meta name="Generator" content="EditPlus짰">
+<meta name="Author" content="">
+<meta name="Keywords" content="">
+<meta name="Description" content="">
+<title>Document</title>
+<style>
+body {
+	background-image: url();
+	background-size: 100%;
+}
+</style>
+<script
+	src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+<script type='text/javascript'>
  function init() {
   var getval = $('#my_iframe').contents().find('#someID').html();
   $("h1").html(getval);  
  }
 </script>
- </head>
+</head>
 <body>
-<a onclick="init()">test</a>
-<h1></h1>
-<iframe id="my_iframe" NAME='my_iframe' SRC='test.html'></iframe><br>
+	<a onclick="init()">test</a>
+	<h1></h1>
+	<iframe id="my_iframe" NAME='my_iframe' SRC='test.html'></iframe>
+	<br>
 
- </body>
+</body>
 </html>

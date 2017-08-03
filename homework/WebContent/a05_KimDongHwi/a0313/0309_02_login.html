@@ -5,9 +5,9 @@
 <title>Insert title here</title>
 
 <style type="text/css">
-
-input:focus{background-color: yellow;}
-
+input:focus {
+	background-color: yellow;
+}
 </style>
 
 
@@ -36,38 +36,40 @@ function logIn(){
  
  </script>
 </head>
-<body> <center>
+<body>
+	<center>
 
-<h1> 로그인 화면 </h1>
+		<h1>로그인 화면</h1>
 
-<form name="check" class="inPut"> 
+		<form name="check" class="inPut">
 
-아이디 입력 : <input type="text" name="id"/><br>
-비  번 입력 : <input type="password" name="pw"/><br>
-<input type="button" value="로그인버튼" onclick="javascript:logIn(this);"/><hr>
+			아이디 입력 : <input type="text" name="id" /><br> 비 번 입력 : <input
+				type="password" name="pw" /><br> <input type="button"
+				value="로그인버튼" onclick="javascript:logIn(this);" />
+			<hr>
 
-</form> <br><br><br>  
-
-
-<form name="state">
- 
-주제 입력: <input type="text" name="title" disabled/><br>
-세부 주제 입력: <input type="text" name="subTitle" disabled/><br>
-
-</form>
+		</form>
+		<br>
+		<br>
+		<br>
 
 
+		<form name="state">
 
-<!-- 
+			주제 입력: <input type="text" name="title" disabled /><br> 세부 주제 입력:
+			<input type="text" name="subTitle" disabled /><br>
+
+		</form>
+
+
+
+		<!-- 
   status :[    ] -- 상태여부  (로그인성공/1단계/2단계)
 1단계:  주제 입력 : [       ]
 document.form01.input01.disabled=false;
 2단계:  세부주제 입력: [       ]
 documemt.form이름.element이름.value
  -->
-
-
-
 </body>
 </html>
 

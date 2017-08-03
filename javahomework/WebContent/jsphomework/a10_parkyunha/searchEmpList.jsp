@@ -1,8 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="utf-8"
-    import = "javahomework.a10_parkyunha.com.emp.EmpDAO"
-    import = "javahomework.a10_parkyunha.com.emp.EmpDTO, java.util.*"
-    %>
+	pageEncoding="utf-8" import="javahomework.a10_parkyunha.com.emp.EmpDAO"
+	import="javahomework.a10_parkyunha.com.emp.EmpDTO, java.util.*"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -34,12 +32,11 @@
 	%>
 	<form method="post" align="center">
 		<select name="entityName">
-		  <option value="empno">EMPLOYEE NO</option>
-		  <option value="ename">EMPLOYEE NAME</option>
-		  <option value="sal">SAL</option>
-		  <option value="job">JOB</option>
-		</select>
-		<input  type="text" name="search" value="<%=searchWord%>"/>
+			<option value="empno">EMPLOYEE NO</option>
+			<option value="ename">EMPLOYEE NAME</option>
+			<option value="sal">SAL</option>
+			<option value="job">JOB</option>
+		</select> <input type="text" name="search" value="<%=searchWord%>" />
 		<button>Search</button>
 	</form>
 	<br>

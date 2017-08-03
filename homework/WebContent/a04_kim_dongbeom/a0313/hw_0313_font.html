@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="UTF-8">
-		<title>HomeWork Font!</title>
-		<style type="text/css">
-		/*과제
+<head>
+<meta charset="UTF-8">
+<title>HomeWork Font!</title>
+<style type="text/css">
+/*과제
 			아래와 같은 list 작성
 			
 			사원 정보 list(데이터 홀/짝 배경색상처리, 마우스 커서 올라왔을 시 배경색, 글자굵기, 크기 변경 )
@@ -14,79 +14,76 @@
 		7711		신길동	5,000		다음 http://www.daum.com
 		중앙			왼쪽		오른쪽		왼쪽, line 없음
 		*/
-			.t_Left{text-align:left;min-width:500px;height:150px}
-			.t_Right{text-align:Right;}
-			.t_Center{text-align:Center;}
-			.a_None{text-decoration:none;}
-			tr:nth-child(2n){background-color:pink;}
-			tr:nth-child(2n+1){background-color:yellow;}
-			tr:hover{background-color:aqua;font-weight:bold;font-size:150%}
-			.none_Hover:hover{background-color:yellow;font-weight:normal;font-size:100%}
-		</style>
-		<script type="text/javascript">
+.t_Left {
+	text-align: left;
+	min-width: 500px;
+	height: 150px
+}
+
+.t_Right {
+	text-align: Right;
+}
+
+.t_Center {
+	text-align: Center;
+}
+
+.a_None {
+	text-decoration: none;
+}
+
+tr:nth-child(2n) {
+	background-color: pink;
+}
+
+tr:nth-child(2n+1) {
+	background-color: yellow;
+}
+
+tr:hover {
+	background-color: aqua;
+	font-weight: bold;
+	font-size: 150%
+}
+
+.none_Hover:hover {
+	background-color: yellow;
+	font-weight: normal;
+	font-size: 100%
+}
+</style>
+<script type="text/javascript">
 		/*
 		*/
 		</script>
-	</head>
-	<body>
+</head>
+<body>
 	<table class="t_Left" border>
 		<tr class="none_Hover">
-			<th class="t_Center">
-				사원번호
-			</th>
-			<th width="100">
-				이름
-			</th>
-			<th class="t_Right">
-				급여(만 원)
-			</th>
-			<th>
-				주 업무 홈피(Link)
-			</th>
+			<th class="t_Center">사원번호</th>
+			<th width="100">이름</th>
+			<th class="t_Right">급여(만 원)</th>
+			<th>주 업무 홈피(Link)</th>
 		</tr>
 		<tr>
-			<th class="t_Center">
-				7709
-			</th>
-			<th>
-				홍길동
-			</th>
-			<th class="t_Right">
-				3,000
-			</th>
-			<th>
-				<a class="a_None" href="http://www.google.com">구글</a>
-			</th>
+			<th class="t_Center">7709</th>
+			<th>홍길동</th>
+			<th class="t_Right">3,000</th>
+			<th><a class="a_None" href="http://www.google.com">구글</a></th>
 		</tr>
 		<tr>
-			<th class="t_Center">
-				7710
-			</th>
-			<th>
-				김길동
-			</th>
-			<th class="t_Right">
-				4,000
-			</th>
-			<th>
-				<a class="a_None" href="http://www.naver.com">네이버</a>
-			</th>
+			<th class="t_Center">7710</th>
+			<th>김길동</th>
+			<th class="t_Right">4,000</th>
+			<th><a class="a_None" href="http://www.naver.com">네이버</a></th>
 		</tr>
 		<tr>
-			<th class="t_Center">
-				7711
-			</th>
-			<th>
-				신길동
-			</th>
-			<th class="t_Right">
-				5,000
-			</th>
-			<th>
-				<a class="a_None" href="http://www.daum.com">다음</a>
-			</th>
+			<th class="t_Center">7711</th>
+			<th>신길동</th>
+			<th class="t_Right">5,000</th>
+			<th><a class="a_None" href="http://www.daum.com">다음</a></th>
 		</tr>
-		
+
 	</table>
-	</body>
+</body>
 </html>

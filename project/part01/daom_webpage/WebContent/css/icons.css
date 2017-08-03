@@ -1,0 +1,96 @@
+/*
+연한 기본색 (112, 199, 206) #70c7ce
+진한 기본색 (47, 174, 183) #2faeb7
+연한 hover색 (191, 231, 234) #bfe7ea
+진한 hover색 (116, 213, 220) #74d5dc
+
+
+다
+#27b5b2
+#00a8a1
+연한 에메랄드 #78cdd0
+#46a994
+#7bc9a3
+
+ㅇ
+진한 녹색 #009889
+#21b7b4
+
+어두운 녹색 #05a443
+*/
+
+
+/* 페이지 상단 텍스트 적용 css  */
+		.reTitle{
+			margin: 50px;
+			font-size: 2em;
+		}
+		
+		.rHeaderP{
+			padding-top: 100px;
+			paading-bottom:0px;
+			
+		}
+
+
+/* 병원 파트 */
+
+.hicon{
+	width:200px;
+	height:200px;
+}
+
+/* 기업파트 */ 
+
+.cicon{
+	width:200px;
+	height:200px;
+	
+}
+
+
+	
+	
+/* 아이콘 css 예약파트 */
+
+			
+		.listHover:hover{
+			text-shadow: 0.1em 0.1em 0.2em black;
+			}
+			
+		.icons{
+			width:25%;
+		}
+		
+		.block{
+		vertical-align: middle;
+		display:block;
+		}
+		
+		.iconText{
+			margin-top: 20px;
+			margin-bottom: 80px;
+		}
+
+			
+		
+		.medicon:hover{
+			width: 100px;
+			height: 100px;
+			-webkit-border-radius:25px;
+			-moz-border-radius:25px;
+			background-color: #78cdd0;
+			box-shadow: 10px 10px 5px #888888;
+		}
+				
+		.medicon{
+			width:100px;
+			height:100px;
+		}
+		
+		.icons{
+			float: left;
+			display: inline;
+			width:25%;
+		}
+		

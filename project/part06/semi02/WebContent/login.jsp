@@ -109,7 +109,8 @@
 <script type="text/javascript">
 	$(document).ready(function() {
 		var isIdValid =<%=isIdValid%>;
-		var proc ="<%=proc%>";
+		var proc ="<%=proc%>
+	";
 		var pname = "";
 		if (proc == "login") {
 			if (isIdValid) {
@@ -122,26 +123,36 @@
 			alert(pname + "로그아웃 되었습니다.");
 			$(location).attr("href", "index_guest.jsp");
 		} else if (proc == "register") {
-			var isRegSuccess =<%=isRegSuccess%>;
+			var isRegSuccess =
+<%=isRegSuccess%>
+	;
 			if (isRegSuccess) {
 				alert("회원가입이 완료되었습니다. ");
 			} else {
-				if(<%=isNotEqualPassword%>){
+				if (
+<%=isNotEqualPassword%>
+	) {
 					alert("비밀번호가 같지 않습니다. 다시 시도하여 주십시오.");
-					}
-				else if(<%=isDuplicatedId%>){
+				} else if (
+<%=isDuplicatedId%>
+	) {
 					alert("중복된 id입니다. 다시 시도하여 주십시오.");
 				}
 			}
-		}else if(proc=="modify"){
-			if(<%=isWrongPassword%>){
+		} else if (proc == "modify") {
+			if (
+<%=isWrongPassword%>
+	) {
 				alert("잘못된 비밀번호입니다. 다시 시도하여 주십시오.")
-			}else if(<%=isNotEqualPassword%>){
+			} else if (
+<%=isNotEqualPassword%>
+	) {
 				alert("비밀번호가 같지 않습니다. 다시 시도하여 주십시오.");
-			}
-			else if(<%=isModSuccess%>){
+			} else if (
+<%=isModSuccess%>
+	) {
 				alert("변경 완료!");
-			}else{
+			} else {
 				alert("변경 실패!");
 			}
 		}

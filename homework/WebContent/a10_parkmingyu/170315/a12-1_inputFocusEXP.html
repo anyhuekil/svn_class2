@@ -24,9 +24,20 @@ TO DO
 3. 2단계 입력되면 상태여부 2단계 완료 로 넘어가도록 설정
 
 */
-	input[type=text]:focus{background:gold;color:white;}
-	input[type=password]:focus{background:tomato;color:white;}
-	div{background:yellow;display:inline;}
+input[type=text]:focus {
+	background: gold;
+	color: white;
+}
+
+input[type=password]:focus {
+	background: tomato;
+	color: white;
+}
+
+div {
+	background: yellow;
+	display: inline;
+}
 </style>
 <script type="text/javascript">
 	function login(){
@@ -51,20 +62,19 @@ TO DO
 </script>
 </head>
 <body>
- <form>
- 로그인<br>
- <span>ID:</span>
- <input type="text" id="inputID" placeholder="아이디 입력"/><br>
- <span>PW:</span>
- <input type="password" id="inputPW" placeholder="비밀번호 입력"/><br>
- <input type="button" value="로그인"/ onclick="javascript:login()"><br><br>
- 
- status:<div id="status">로그인 전</div><br><br>
- 1단계 주제를 입력하세요:
- <input type="text" id="text01" placeholder="1단계 입력" onchange="javascript:inputText01()"/><br>
-2단계 주제를 입력하세요:
- <input type="text" id="text02" placeholder="2단계 입력" onchange="javascript:inputText02()"/><br>
- <input type="reset" value="입력 초기화" onclick="javascript:res()"/>
- </form>
+	<form>
+		로그인<br> <span>ID:</span> <input type="text" id="inputID"
+			placeholder="아이디 입력" /><br> <span>PW:</span> <input
+			type="password" id="inputPW" placeholder="비밀번호 입력" /><br> <input
+			type="button" value="로그인" / onclick="javascript:login()"><br>
+		<br> status:
+		<div id="status">로그인 전</div>
+		<br>
+		<br> 1단계 주제를 입력하세요: <input type="text" id="text01"
+			placeholder="1단계 입력" onchange="javascript:inputText01()" /><br>
+		2단계 주제를 입력하세요: <input type="text" id="text02" placeholder="2단계 입력"
+			onchange="javascript:inputText02()" /><br> <input type="reset"
+			value="입력 초기화" onclick="javascript:res()" />
+	</form>
 </body>
 </html>

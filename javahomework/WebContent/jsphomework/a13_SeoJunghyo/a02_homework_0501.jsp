@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%request.setCharacterEncoding("UTF-8"); %>    
+	pageEncoding="UTF-8"%>
+<%request.setCharacterEncoding("UTF-8"); %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -37,22 +37,26 @@
 <body>
 	<h1>What to do in May</h1>
 	<form>
-		1. <input name="plan"><br>
-		2. <input name="plan"><br>
+		1. <input name="plan"><br> 2. <input name="plan"><br>
 		3. <input name="plan"><br>
 		<button>Add List!</button>
 	</form>
-	<table border=1 style="border-collapse:collapse; width:300px; height:300px;">
-	<caption>May Schedule</caption>
+	<table border=1
+		style="border-collapse: collapse; width: 300px; height: 300px;">
+		<caption>May Schedule</caption>
 		<%if(planList!=null && planList.length>0){
 			for(String plan : planList){%>
-			<tr><th><%=plan %></th></tr>
-			<%}
+		<tr>
+			<th><%=plan %></th>
+		</tr>
+		<%}
 		}%>
 	</table>
-	
+
 	<table>
-		<tr><td></td></tr>
+		<tr>
+			<td></td>
+		</tr>
 	</table>
 </body>
 

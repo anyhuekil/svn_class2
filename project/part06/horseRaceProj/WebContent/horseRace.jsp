@@ -49,8 +49,7 @@
 <body>
 	<div id="game-container" class="container-fluid">
 		<div class="row">
-			<div id="finalResult" class=" table-responsive">
-			</div>
+			<div id="finalResult" class=" table-responsive"></div>
 		</div>
 		<div class="row" id="canvas-container">
 			<div class="col-sm-10 col-sm-offset-1">
@@ -82,19 +81,18 @@
 								<td>5번 말</td>
 							</tr>
 							<tr align="center">
-							<c:set var="cntt" value="0" />
-							<c:forEach var="hl" items="${flist}">
-							
-								<td class="horseExplain" onclick="alloc('${hl.hname}','${hl.hnum }');"><img src="img/Horse__${cntt}.png"
-									class="horseImg img-responsive"><br>
-									마명 : ${hl.hname}<br>
-									누적 상금 : ${hl.totprize }<br><br>
-									1등 / 2등 / 3등<br>
-									${hl.first} / ${hl.second} / ${hl.third}
-								</td>
-							
-							<c:set var="cntt" value="${cntt+1}" />
-							</c:forEach>
+								<c:set var="cntt" value="0" />
+								<c:forEach var="hl" items="${flist}">
+
+									<td class="horseExplain"
+										onclick="alloc('${hl.hname}','${hl.hnum }');"><img
+										src="img/Horse__${cntt}.png" class="horseImg img-responsive"><br>
+										마명 : ${hl.hname}<br> 누적 상금 : ${hl.totprize }<br>
+									<br> 1등 / 2등 / 3등<br> ${hl.first} / ${hl.second} /
+										${hl.third}</td>
+
+									<c:set var="cntt" value="${cntt+1}" />
+								</c:forEach>
 							</tr>
 						</table>
 					</div>
@@ -163,7 +161,7 @@
 		<input type="hidden" id="gameState" />
 	</div>
 
-<%
+	<%
 for (int i=0; i<playerList.size(); i++) {
 	if (playerList.get(i).getPid().equals(vo.getPid())) {
 		playerList.remove(i);

@@ -1,9 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"
-	import = "javahomework.a10_parkyunha.Schedule"
-    import = "java.util.ArrayList" 
-    import = "java.util.Iterator"
-%>
+	pageEncoding="UTF-8" import="javahomework.a10_parkyunha.Schedule"
+	import="java.util.ArrayList" import="java.util.Iterator"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -55,11 +52,11 @@
 		<% for(int j = 0; j < list.length; j++) { %>
 		<tr>
 			<% for(int i = 0; i < list[j].length; i++) { %>
-				<td><%=list[j][i]%></td>
+			<td><%=list[j][i]%></td>
 			<%} %>
-		</tr>	
+		</tr>
 		<%} %>
-		
+
 		<tr>
 			<td><%=s1.getClock()%></td>
 			<td><%=s1.getPlan()%></td>
@@ -84,16 +81,16 @@
 			<td><%=s4.getStatus()%></td>
 			<td><%=s4.getEtc()%></td>
 		</tr>
-		
+
 		<% for(Schedule s: scheduleList) { %>
 		<tr>
 			<td><%=s.getClock()%></td>
 			<td><%=s.getPlan()%></td>
 			<td><%=s.getStatus()%></td>
 			<td><%=s.getEtc()%></td>
-		</tr>	
+		</tr>
 		<%} %>
-		
+
 		<% while(iter.hasNext()) { 
 			Schedule s = iter.next();
 		%>
@@ -102,7 +99,7 @@
 			<td><%=s.getPlan()%></td>
 			<td><%=s.getStatus()%></td>
 			<td>Iterator <%=s.getEtc()%></td>
-		</tr>	
+		</tr>
 		<%} %>
 	</table>
 </body>

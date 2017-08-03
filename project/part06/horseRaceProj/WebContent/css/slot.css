@@ -2,12 +2,15 @@
 	margin: 0;
 	padding: 0;
 }
+
 body {
 	background-color: #333;
 }
+
 a {
 	outline: none;
 }
+
 #slotMachine {
 	position: absolute;
 	width: 289px;
@@ -17,6 +20,7 @@ a {
 	left: 250px;
 	overflow: hidden;
 }
+
 #slotSplash {
 	position: absolute;
 	top: 0;
@@ -36,6 +40,7 @@ a {
 	text-indent: -1000px;
 	position: absolute;
 }
+
 div.wheel {
 	position: absolute;
 	width: 32px;
@@ -43,25 +48,31 @@ div.wheel {
 	overflow: hidden;
 	top: 24px;
 }
+
 div.wheel img {
 	position: absolute;
 	top: -4px;
 	left: 0px;
 }
+
 #wheelOverlay {
 	position: absolute;
 	top: 24px;
 	left: 14px;
 }
+
 #wheel1 {
 	left: 15px;
 }
+
 #wheel2 {
 	left: 48px;
 }
+
 #wheel3 {
 	left: 81px;
 }
+
 #slotCredits {
 	position: absolute;
 	top: 6px;
@@ -72,6 +83,7 @@ div.wheel img {
 	text-align: right;
 	color: #78ff00;
 }
+
 #slotTrigger {
 	display: block;
 	position: absolute;
@@ -84,13 +96,16 @@ div.wheel img {
 	background: url(../images/button.jpg) top no-repeat;
 	cursor: default;
 }
+
 #slotTrigger.slotTriggerDown {
 	background-position: 0px -17px;
 }
+
 #slotTrigger.slotTriggerDisabled {
 	background-position: 0px -34px;
 	display: none;
 }
+
 .slotSpinAnimation {
 	display: none;
 }

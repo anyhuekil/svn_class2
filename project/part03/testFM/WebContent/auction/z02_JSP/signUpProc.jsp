@@ -1,9 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8" import="z01_database.AuctionUserDAO"
-	import="z01_database.SignUpDAO"
-	import="z01_database.CntTime"
-	 import="z02_vo.AuctionUserVO"
-	%>
+	import="z01_database.SignUpDAO" import="z01_database.CntTime"
+	import="z02_vo.AuctionUserVO"%>
 <%
 	request.setCharacterEncoding("UTF-8");
 %>

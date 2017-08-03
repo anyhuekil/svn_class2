@@ -1,24 +1,23 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"
-import = "java.util.Enumeration"
-%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8" import="java.util.Enumeration"%>
 <% request.setCharacterEncoding("UTF-8");
 String path=request.getContextPath();%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<title>17.05.</title>
-		<style type="text/css">
-		</style>
-		<script src="/<%=path%>/com/jquery-1.10.2.js"></script>
-		<script type="text/javascript">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>17.05.</title>
+<style type="text/css">
+</style>
+<script src="/<%=path%>/com/jquery-1.10.2.js"></script>
+<script type="text/javascript">
 			$(document).ready(function(){
 				
 			})
 		</script>
-	</head>
-	<body>
-<!-- 
+</head>
+<body>
+	<!-- 
 pageContext 기본 객체
 하나의 jsp 페이지와 매핑되는 객체
 1. 다른 기본 객체 구하기.
@@ -33,12 +32,13 @@ pageContext 기본 객체
 
 request 객체와 pageContext.getRequest()와 동일 여부 check
  -->
-<%
+	<%
 HttpServletRequest httpRequest = (HttpServletRequest)pageContext.getRequest();
 %>
-<h1>pageContext.getRequest()와 request 동일 여부 확인!!</h1> 
-<h2>동일?<%=(httpRequest==request)%></h2>
- 
- 
-	</body>
+	<h1>pageContext.getRequest()와 request 동일 여부 확인!!</h1>
+	<h2>
+		동일?<%=(httpRequest==request)%></h2>
+
+
+</body>
 </html>

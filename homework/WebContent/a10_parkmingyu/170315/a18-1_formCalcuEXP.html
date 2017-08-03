@@ -19,12 +19,13 @@
 </script>
 </head>
 <body>
-<h2>영화관람 이벤트</h2>
-<form name="movienight">
-	영화제목<input type="text" name="title"/><br>
-	티켓비용<input type="text" name="cost"/><br>
-	관람인원<input type="text" name="count"/><br><br>
-	<input type="button" value="영수증 출력" onclick="javascript:totalcost()"/><br><br>
+	<h2>영화관람 이벤트</h2>
+	<form name="movienight">
+		영화제목<input type="text" name="title" /><br> 티켓비용<input type="text"
+			name="cost" /><br> 관람인원<input type="text" name="count" /><br>
+		<br> <input type="button" value="영수증 출력"
+			onclick="javascript:totalcost()" /><br>
+		<br>
 
 		<table border=1 align="left" width="200">
 			<tr height="50">
@@ -32,27 +33,23 @@
 			</tr>
 			<tr height="50" align="center">
 				<td width="70">제목</td>
-				<td id="movieTitle">
-				</td>
+				<td id="movieTitle"></td>
 			</tr>
 			<tr height="50" align="center">
 				<td width="70">금액</td>
-				<td id="movieCost">
-				</td>
+				<td id="movieCost"></td>
 			</tr>
 			<tr height="50" align="center">
 				<td width="70">인원</td>
-				<td id="headCount">
-				</td>
+				<td id="headCount"></td>
 			</tr>
 			<tr height="100" align="center">
 				<td width="70">총금액</td>
-				<td  id="totalCost">
-				</td>
+				<td id="totalCost"></td>
 			</tr>
 		</table>
-</form>
-<!-- 과제 :
+	</form>
+	<!-- 과제 :
 	영화관에서..
 		제목 : [   ]
 		관람료 : [   ]s
@@ -61,6 +58,6 @@
 		영수증 --textarea
 			제목 : @@@
 			계산 : @@@ * @@@ = @@@
- --> 
+ -->
 </body>
 </html>

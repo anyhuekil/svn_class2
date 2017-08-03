@@ -12,12 +12,22 @@ ex) <input type="text" name="name01" value="himan"/>
 input[value=0]{background-color:yellow;}
 td[align=center]{font-size:10pt;}   
 */
-	/* input중에 속성이 type text인 것은 배경색상을 빨강색으로 처리*/
-	input[type=text]{background:red;}
-	input[value='60']{background:blue;}
-	input[value='70']{background:pink;}
-	/* input중에 속성이 type password인 것은 배경색상을 파랑색으로 처리*/
-	input[type=password]{background:green;}
+/* input중에 속성이 type text인 것은 배경색상을 빨강색으로 처리*/
+input[type=text] {
+	background: red;
+}
+
+input[value='60'] {
+	background: blue;
+}
+
+input[value='70'] {
+	background: pink;
+}
+/* input중에 속성이 type password인 것은 배경색상을 파랑색으로 처리*/
+input[type=password] {
+	background: green;
+}
 
 /*
 과제
@@ -37,21 +47,35 @@ td[align=center]{font-size:10pt;}
 /*	img태그의 속성값 src에서 마지막으로 들어가는 키워드가 png, jpg, gif일때,
 	다른 border색상을 지정한다..
 		boder의 속성 한꺼번에 지정하기..{border:굵기 형태 색상}
-*/	
-	img[src$=png]{border: 13px solid red;}
-	img[src$=jpg]{border: 13px solid blue;}
-	img[src$=gif]{border: 13px solid green;}
+*/
+img[src$=png] {
+	border: 13px solid red;
+}
+
+img[src$=jpg] {
+	border: 13px solid blue;
+}
+
+img[src$=gif] {
+	border: 13px solid green;
+}
 /* 속성의 시작값을 확인해서 데이터를 처리(^) */
-	input[type^=pass]{border: 13px solid pink;}
+input[type^=pass] {
+	border: 13px solid pink;
+}
 </style>
 </head>
 <body>
-	입력하세요!!:<input type="text" value="70"/><br>
-	password?<input type="password"/><br>
-	<img src="img01.png" width="200" height="200"/>
-	<img src="img02.jpg" width="200" height="200"/>
-	<img src="img03.gif" width="200" height="200"/><br>
-	
+	입력하세요!!:
+	<input type="text" value="70" />
+	<br> password?
+	<input type="password" />
+	<br>
+	<img src="img01.png" width="200" height="200" />
+	<img src="img02.jpg" width="200" height="200" />
+	<img src="img03.gif" width="200" height="200" />
+	<br>
+
 </body>
 
 

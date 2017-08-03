@@ -3,6 +3,7 @@ package springweb.d01_board.vo;
 import java.util.Date;
 // data list 모델  클래스
 public class Board {
+	private int lv;
 	private int cnt;
 	private int no;
 	private int refno;
@@ -14,6 +15,12 @@ public class Board {
 	private Date regdate;
 	private String email;
 	
+	public int getLv() {
+		return lv;
+	}
+	public void setLv(int lv) {
+		this.lv = lv;
+	}
 	public int getCnt() {
 		return cnt;
 	}

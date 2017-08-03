@@ -1,35 +1,47 @@
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<title>Betting</title>
-		<style type="text/css">
-			 .status{
-			 	display:none;
-			 	font-size:large;
-			 	background:gray;
-			 	border-radius:15px 15px 15px 15px;
-			 }
-			 input{height:30px;font-size:1em;width:200px}
-			 *{background:black;color:white;}
-			 th{font-size:x-large;}
-			 #betBtn{
-			 	margin:auto;
-			 	line-height:60px;
-			 	font-size:xx-large;
-			 	font-weight:bolder;
-			 	text-align:center;
-			 	color:black;
-			 	background:gray;
-			 	border:10px solid #505050;
-			 	height:60px;
-			 	width:200px;
-			 }
-			 
-		</style>
-		<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-		<script>
+<head>
+<meta charset="utf-8">
+<title>Betting</title>
+<style type="text/css">
+.status {
+	display: none;
+	font-size: large;
+	background: gray;
+	border-radius: 15px 15px 15px 15px;
+}
+
+input {
+	height: 30px;
+	font-size: 1em;
+	width: 200px
+}
+
+* {
+	background: black;
+	color: white;
+}
+
+th {
+	font-size: x-large;
+}
+
+#betBtn {
+	margin: auto;
+	line-height: 60px;
+	font-size: xx-large;
+	font-weight: bolder;
+	text-align: center;
+	color: black;
+	background: gray;
+	border: 10px solid #505050;
+	height: 60px;
+	width: 200px;
+}
+</style>
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script>
 		/* $( function() {
 			$( ".horseSelect" ).accordion({
 				collapsible: true});
@@ -87,55 +99,67 @@
 			}
 			
   		</script>
-  		
-	</head>
-	<body>
-		<div align="center">
-			<div>
-				<h1>pent A corn 경마장</h1>
-			</div>
-			<br><br>
-			<h3>1등할 말을 골라주세요.</h3>
-			<table>
-				<tr>
-					<th>1번 말</th><th>2번 말</th><th>3번 말</th>
-				</tr>
-				<tr align="center">
-					<td class="horseSelect">
-						<img src="img/blackHorse.png" height="50%" class="horseImg">
-						<div class="status">속도 : 5555<br>배당률 : 1.5 배</div>
-					</td>
-					<td class="horseSelect">
-						<img src="img/brownHorse.png" height="50%" class="horseImg">
-						<div class="status">속도 : 5555<br>배당률 : 1.5 배</div>
-					</td>
-					<td class="horseSelect">
-						<img src="img/goldenHorse.png" height="50%" class="horseImg">
-						<div class="status">속도 : 5555<br>배당률 : 1.5 배</div>
-					</td>
-				</tr>
-				<tr>
-					<th>4번 말</th><th>5번 말</th><th></th>
-				</tr>
-				<tr align="center">
-					<td class="horseSelect">
-						<img src="img/grayHorse.png" height="50%" class="horseImg">
-						<div class="status">속도 : 5555<br>배당률 : 1.5 배</div>
-					</td>
-					<td class="horseSelect">
-						<img src="img/whiteHorse.png" height="50%" class="horseImg">
-						<div class="status">속도 : 5555<br>배당률 : 1.5 배</div>
-					</td>
-					<td id="statusBoard"></td>
-				</tr>
-			</table>
+
+</head>
+<body>
+	<div align="center">
+		<div>
+			<h1>pent A corn 경마장</h1>
 		</div>
-		
-	</body>
-	<footer align="center">
-		<h1>금액 : <input type="text" id="inMoney" value="100"/></h1>
-		<div id="betBtn" onclick="">Bet!!</div>
-	</footer>
-	<script type="text/javascript" src="js/clientMenu.js" charset="utf-8"></script>
-	
+		<br>
+		<br>
+		<h3>1등할 말을 골라주세요.</h3>
+		<table>
+			<tr>
+				<th>1번 말</th>
+				<th>2번 말</th>
+				<th>3번 말</th>
+			</tr>
+			<tr align="center">
+				<td class="horseSelect"><img src="img/blackHorse.png"
+					height="50%" class="horseImg">
+					<div class="status">
+						속도 : 5555<br>배당률 : 1.5 배
+					</div></td>
+				<td class="horseSelect"><img src="img/brownHorse.png"
+					height="50%" class="horseImg">
+					<div class="status">
+						속도 : 5555<br>배당률 : 1.5 배
+					</div></td>
+				<td class="horseSelect"><img src="img/goldenHorse.png"
+					height="50%" class="horseImg">
+					<div class="status">
+						속도 : 5555<br>배당률 : 1.5 배
+					</div></td>
+			</tr>
+			<tr>
+				<th>4번 말</th>
+				<th>5번 말</th>
+				<th></th>
+			</tr>
+			<tr align="center">
+				<td class="horseSelect"><img src="img/grayHorse.png"
+					height="50%" class="horseImg">
+					<div class="status">
+						속도 : 5555<br>배당률 : 1.5 배
+					</div></td>
+				<td class="horseSelect"><img src="img/whiteHorse.png"
+					height="50%" class="horseImg">
+					<div class="status">
+						속도 : 5555<br>배당률 : 1.5 배
+					</div></td>
+				<td id="statusBoard"></td>
+			</tr>
+		</table>
+	</div>
+
+</body>
+<footer align="center">
+	<h1>
+		금액 : <input type="text" id="inMoney" value="100" />
+	</h1>
+	<div id="betBtn" onclick="">Bet!!</div>
+</footer>
+<script type="text/javascript" src="js/clientMenu.js" charset="utf-8"></script>
+
 </html>

@@ -1,6 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"
-	buffer ="1kb" autoFlush="true"
-%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8" buffer="1kb" autoFlush="true"%>
 <% request.setCharacterEncoding("UTF-8");%>
 
 <!-- 
@@ -29,21 +28,21 @@ false : 버퍼가 다 찼을 경우 예외를 발생시키고 작업 중지 처�
  -->
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<title>17.05.</title>
-		<style type="text/css">
-		</style>
-		<script src="/jspExp/com/jquery-1.10.2.js"></script>
-		<script type="text/javascript">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>17.05.</title>
+<style type="text/css">
+</style>
+<script src="/jspExp/com/jquery-1.10.2.js"></script>
+<script type="text/javascript">
 			$(document).ready(function(){
 				
 			})
 		</script>
-	</head>
-	<body>
+</head>
+<body>
 	<%for(int cnt=0;cnt<1000;cnt++){ %>
-		홍길동!!
+	홍길동!!
 	<%}%>
-	</body>
+</body>
 </html>

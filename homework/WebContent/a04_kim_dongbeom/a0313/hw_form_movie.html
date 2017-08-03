@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="UTF-8">
-		<title>Homework Movie</title>
-		<script type="text/javascript">
+<head>
+<meta charset="UTF-8">
+<title>Homework Movie</title>
+<script type="text/javascript">
 			var movPrice="";
 			var movName="";
 			var movPeople=0
@@ -28,8 +28,8 @@
 				document.movie_Select.mov_Rec.value = msg;
 			}
 		</script>
-	</head>
-	<body>
+</head>
+<body>
 	<!-- 과제!!!
 	영화관에 가서..
 	제목 : [  ]
@@ -39,53 +39,41 @@
 	영수증 : [제목 : @@@
 	계산 : @@@@ * @@@ = @@@@    ] // textarea 이용하기
 	-->
-		<div align="center">
+	<div align="center">
 		<form name="movie_Select">
 			<h1>영화관에 가서..</h1>
 			<table>
 				<tr>
-					<td width="150">영화 제목 : </td>
-					<td>
-						<select name="movie_Name" onclick="javascript:mov_Price(this);">
+					<td width="150">영화 제목 :</td>
+					<td><select name="movie_Name"
+						onclick="javascript:mov_Price(this);">
 							<option value="0">영화를 선택하세요.</option>
 							<option value="5">최고의 영화</option>
 							<option value="4">재밌는 영화</option>
 							<option value="3">보통 영화</option>
 							<option value="2">재미없는 영화</option>
 							<option value="1">최악의 영화</option>
-						</select>
-					</td>
+					</select></td>
 				</tr>
 				<tr>
-					<td>
-						관람료 : 
-					</td>
-					<td>
-						<input disabled name="movie_Price" value="" />
-					</td>
+					<td>관람료 :</td>
+					<td><input disabled name="movie_Price" value="" /></td>
 				</tr>
 				<tr>
-					<td>
-						인원수 : 
-					</td>
-					<td>
-						<input type="text" name="movie_People" value="0" />
-					</td>
+					<td>인원수 :</td>
+					<td><input type="text" name="movie_People" value="0" /></td>
 				</tr>
 				<tr>
-					<th colspan="2">
-						<input type="button" name="movie_Cal" value="계산"
-						onclick="javascript:cal();"/>
-					</th>
+					<th colspan="2"><input type="button" name="movie_Cal"
+						value="계산" onclick="javascript:cal();" /></th>
 				</tr>
 				<tr>
-					<th colspan="2">
-						<textarea disabled name="mov_Rec" rows="10" cols="50">
-						</textarea>
-					</th>
+					<th colspan="2"><textarea disabled name="mov_Rec" rows="10"
+							cols="50">
+						</textarea></th>
 				</tr>
 			</table>
 		</form>
-		</div>
-	</body>
+	</div>
+</body>
 </html>

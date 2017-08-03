@@ -1,10 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8" import="project3.vo.Member" import="database.MemberDao"%>
+	pageEncoding="UTF-8" import="project3.vo.Member"
+	import="database.MemberDao"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <% request.setCharacterEncoding("UTF-8");%>
-<fmt:requestEncoding value="UTF-8"/>
-<c:set var="path" value="${pageContext.request.contextPath}"/>
+<fmt:requestEncoding value="UTF-8" />
+<c:set var="path" value="${pageContext.request.contextPath}" />
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -14,9 +15,9 @@
 </head>
 <style>
 </style>
-<script src = "${path}/com/jquery-1.10.2.js"></script>
+<script src="${path}/com/jquery-1.10.2.js"></script>
 <body>
-<%
+	<%
 String id = request.getParameter("id");
 String pwd = request.getParameter("pwd");
 String name = request.getParameter("name");
@@ -55,7 +56,7 @@ if(hdPageChoice!=null&&hdPageChoice.equals("reg")){
 	}
 }
 %>
-<script>
+	<script>
 var hasData = <%=hasData%>;
 var isLogout = <%=isLogout%>;
 var regSuc = <%=regSuc%>;

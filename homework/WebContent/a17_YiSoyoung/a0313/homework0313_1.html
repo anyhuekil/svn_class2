@@ -15,19 +15,62 @@
 	7711	신길동 	5,000만원 	다음-http://www.daum.net
 	중앙		왼쪽			오른쪽	왼쪽 line없이
 */
-	body { background-color: #FFF0B5; font-size: 12pt; }
-	table { background-color: yellow; margin: 0 auto;}
-	td {padding: 10px 2px; width:200px;}
-	tr:nth-child(2n) {background-color: #FFE271; }
-	tr:nth-child(2n+1) {background-color: #FFF786; }
-	tr:hover { font-weight: bold; background-color: orange; }
-	caption {font-size: 2em; }
-	a { text-decoration:none; }
-    a::after{content: '-' attr(href);}
-    .code {text-align: center;}
-    .name {text-align: left; }
-    .sal{text-align: right;  }
-    .url{text-align: left;   width:300px;}
+body {
+	background-color: #FFF0B5;
+	font-size: 12pt;
+}
+
+table {
+	background-color: yellow;
+	margin: 0 auto;
+}
+
+td {
+	padding: 10px 2px;
+	width: 200px;
+}
+
+tr:nth-child(2n) {
+	background-color: #FFE271;
+}
+
+tr:nth-child(2n+1) {
+	background-color: #FFF786;
+}
+
+tr:hover {
+	font-weight: bold;
+	background-color: orange;
+}
+
+caption {
+	font-size: 2em;
+}
+
+a {
+	text-decoration: none;
+}
+
+a::after {
+	content: '-' attr(href);
+}
+
+.code {
+	text-align: center;
+}
+
+.name {
+	text-align: left;
+}
+
+.sal {
+	text-align: right;
+}
+
+.url {
+	text-align: left;
+	width: 300px;
+}
 </style>
 <script type="text/javascript">
 </script>
@@ -35,7 +78,12 @@
 <body>
 	<table>
 		<caption>사원 정보 List</caption>
-		<tr><th>사원</th><th>사원명</th><th>연봉</th><th>주업무홈피(link)</th></tr>
+		<tr>
+			<th>사원</th>
+			<th>사원명</th>
+			<th>연봉</th>
+			<th>주업무홈피(link)</th>
+		</tr>
 		<tr>
 			<td class="code">7709</td>
 			<td class="name">홍길동</td>

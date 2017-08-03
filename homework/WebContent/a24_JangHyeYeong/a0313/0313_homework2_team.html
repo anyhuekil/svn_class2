@@ -72,52 +72,93 @@
 	
 </script>
 <style type="text/css">
-	tr{text-align:center;}
-	div{font-weight:bold; color:white; position:absolute;}
+tr {
+	text-align: center;
+}
+
+div {
+	font-weight: bold;
+	color: white;
+	position: absolute;
+}
 </style>
 </head>
 <body>
-<!-- 이동 테이블 -->
+	<!-- 이동 테이블 -->
 	<table>
 		<!-- 테이블 제목 -->
-		<tr><th>팀명</th><th>색상</th><th>이동</th></tr> 
-		
+		<tr>
+			<th>팀명</th>
+			<th>색상</th>
+			<th>이동</th>
+		</tr>
+
 		<!-- A팀 행 -->
-		<tr><td><input class="team" type="text" value="A팀"/></td>
-		<td><select class="color">
-			<option value="red">red</option>
-			<option value="orange">orange</option>
-			<option value="yellow">yellow</option>
-			<option value="green">green</option>
-			<option value="blue">blue</option>
-			<option value="navy">navy</option>
-			<option value="purple">purple</option>
-			</select>
-		</td>
-		<td><input id="team1Move" type="button" value="이동" onclick="javascript:movedTeam(0);"/></td></tr>
-		
+		<tr>
+			<td><input class="team" type="text" value="A팀" /></td>
+			<td><select class="color">
+					<option value="red">red</option>
+					<option value="orange">orange</option>
+					<option value="yellow">yellow</option>
+					<option value="green">green</option>
+					<option value="blue">blue</option>
+					<option value="navy">navy</option>
+					<option value="purple">purple</option>
+			</select></td>
+			<td><input id="team1Move" type="button" value="이동"
+				onclick="javascript:movedTeam(0);" /></td>
+		</tr>
+
 		<!-- B팀 행 -->
-		<tr><td><input class="team" type="text" value="B팀"/></td>
-		<td><select class="color">
-			<option value="red">red</option>
-			<option value="orange">orange</option>
-			<option value="yellow">yellow</option>
-			<option value="green">green</option>
-			<option value="blue">blue</option>
-			<option value="navy">navy</option>
-			<option value="purple">purple</option>
-			</select>
-		</td>
-		<td><input id="team2Move" type="button" value="이동" onclick="javascript:movedTeam(1);"/></td></tr>
-	</table><br>
-<!-- 결과 테이블 -->
+		<tr>
+			<td><input class="team" type="text" value="B팀" /></td>
+			<td><select class="color">
+					<option value="red">red</option>
+					<option value="orange">orange</option>
+					<option value="yellow">yellow</option>
+					<option value="green">green</option>
+					<option value="blue">blue</option>
+					<option value="navy">navy</option>
+					<option value="purple">purple</option>
+			</select></td>
+			<td><input id="team2Move" type="button" value="이동"
+				onclick="javascript:movedTeam(1);" /></td>
+		</tr>
+	</table>
+	<br>
+	<!-- 결과 테이블 -->
 	<table width="300">
 		<!-- 테이블 제목 -->
-		<tr><th>&nbsp</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th></tr>
+		<tr>
+			<th>&nbsp</th>
+			<th>1</th>
+			<th>2</th>
+			<th>3</th>
+			<th>4</th>
+			<th>5</th>
+		</tr>
 		<!-- A팀 결과 -->
-		<tr><td><div style="background:red; width:100; height:100; top:165px" class="teamHorse">test</div></td><td>&nbsp</td><td>&nbsp</td>&nbsp<td>&nbsp</td><td>&nbsp</td><td>&nbsp</td></tr>
+		<tr>
+			<td><div
+					style="background: red; width: 100; height: 100; top: 165px"
+					class="teamHorse">test</div></td>
+			<td>&nbsp</td>
+			<td>&nbsp</td>&nbsp
+			<td>&nbsp</td>
+			<td>&nbsp</td>
+			<td>&nbsp</td>
+		</tr>
 		<!-- B팀 결과 -->
-		<tr><td><div style="background:blue; width:100; height:100; top:193px" class="teamHorse">test</div></td><td>&nbsp</td><td>&nbsp</td>&nbsp<td>&nbsp</td><td>&nbsp</td><td>&nbsp</td></tr>
+		<tr>
+			<td><div
+					style="background: blue; width: 100; height: 100; top: 193px"
+					class="teamHorse">test</div></td>
+			<td>&nbsp</td>
+			<td>&nbsp</td>&nbsp
+			<td>&nbsp</td>
+			<td>&nbsp</td>
+			<td>&nbsp</td>
+		</tr>
 	</table>
 </body>
 </html>

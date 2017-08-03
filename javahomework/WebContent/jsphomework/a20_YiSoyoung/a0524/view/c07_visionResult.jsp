@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <%	request.setCharacterEncoding("UTF-8"); %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -9,11 +9,11 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 <style type="text/css">
-#result_wrap{
-	width:430px;
-	margin:20px auto;
-	border:1px solid #2d1152;
-	padding:20px;
+#result_wrap {
+	width: 430px;
+	margin: 20px auto;
+	border: 1px solid #2d1152;
+	padding: 20px;
 	text-align: center;
 }
 </style>
@@ -30,7 +30,7 @@
 </head>
 <body>
 	<div id="result_wrap">
-		<h2>${emp.ename }(${emp.empno })님 vision 솔루션</h2>
+		<h2>${emp.ename }(${emp.empno })님vision 솔루션</h2>
 		<h2>인트라넷에 오신 것을 환영합니다</h2>
 	</div>
 </body>

@@ -14,7 +14,9 @@
     제목 :@@@
     계산 : @@@ * @@@ = @@@ 
 */
-	#result { font-size: 2em;}
+#result {
+	font-size: 2em;
+}
 </style>
 <script type="text/javascript">
 	function cal() {
@@ -32,11 +34,24 @@
 <body>
 	<table>
 		<caption>영화관</caption>
-		<tr><th>제목</th><td><input type="text" id="title"/></td></tr>
-		<tr><th>관람료</th><td><input type="number" id="fee"/></td></tr>
-		<tr><th>인원</th><td><input type="number" id="person"/></td></tr>
-		<tr><td colspan="2"><button onclick="cal()">계산</button></td></tr>
-		<tr><td colspan="2"><textarea rows="5" cols="30" id="result"></textarea></td></tr>
+		<tr>
+			<th>제목</th>
+			<td><input type="text" id="title" /></td>
+		</tr>
+		<tr>
+			<th>관람료</th>
+			<td><input type="number" id="fee" /></td>
+		</tr>
+		<tr>
+			<th>인원</th>
+			<td><input type="number" id="person" /></td>
+		</tr>
+		<tr>
+			<td colspan="2"><button onclick="cal()">계산</button></td>
+		</tr>
+		<tr>
+			<td colspan="2"><textarea rows="5" cols="30" id="result"></textarea></td>
+		</tr>
 	</table>
 </body>
 </html>

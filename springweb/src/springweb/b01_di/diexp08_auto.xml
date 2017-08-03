@@ -1,19 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-	xmlns:p="http://www.springframework.org/schema/p"
-	xmlns:c="http://www.springframework.org/schema/c"
+	xmlns:p="http://www.springframework.org/schema/p" xmlns:c="http://www.springframework.org/schema/c"
 	xmlns:context="http://www.springframework.org/schema/context"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	 xmlns:util="http://www.springframework.org/schema/util"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans
        http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
        http://www.springframework.org/schema/context
-       http://www.springframework.org/schema/context/spring-context-4.0.xsd" >
+       http://www.springframework.org/schema/context/spring-context-4.0.xsd">
 
-	<bean id="product" class="springweb.z01_dto.Product" 
-		p:pname="사과" p:price="3000" p:cnt="3" />
-	<bean id="mart" class="springweb.z01_dto.Mart" 
-		p:name="기쁨"  autowire="byName" />	
-		
+	<bean id="product" class="springweb.z01_dto.Product" p:pname="사과"
+		p:price="3000" p:cnt="3" />
+	<bean id="mart" class="springweb.z01_dto.Mart" p:name="기쁨"
+		autowire="byName" />
+
 
 </beans>

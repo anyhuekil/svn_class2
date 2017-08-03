@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="UTF-8">
-		<title>Homework Visibility Script</title>
-		<style type="text/css">
-		/*
+<head>
+<meta charset="UTF-8">
+<title>Homework Visibility Script</title>
+<style type="text/css">
+/*
 		*/
-			#listAvail{visibility:hidden;}
-		</style>
-		<script type="text/javascript">
+#listAvail {
+	visibility: hidden;
+}
+</style>
+<script type="text/javascript">
 		/* 과제!!!
 		keyword 등록[      ]
 		등록할 수 있는 keyword[보이기]  〓〓> 초기에는 등록가능 keywords 보이지 않다가 보이기 버튼 누르면 보이기 <〓> 보이지 않기
@@ -52,14 +54,17 @@
 				}
 			}
 		</script>
-	</head>
-	<body>
+</head>
+<body>
 	<div align="center">
 		<h1>Keyword를 등록하세요</h1>
-		키워드 입력 : <input id="inKey" type="text" /> <input name="inBtn" type="button" value="등록" 
-														onclick="javascript:data01();"/><br><br>
-		등록할 수 있는 Keywords → <input id="inBtn" type="button" value="보이기"
-								onclick="javascript:dataVisi(this);" /><br><br><br><hr>
+		키워드 입력 : <input id="inKey" type="text" /> <input name="inBtn"
+			type="button" value="등록" onclick="javascript:data01();" /><br>
+		<br> 등록할 수 있는 Keywords → <input id="inBtn" type="button"
+			value="보이기" onclick="javascript:dataVisi(this);" /><br>
+		<br>
+		<br>
+		<hr>
 		<div id="listAvail" align="left">
 			<h3>등록 가능한 Keywords List</h3>
 			<ul>
@@ -70,5 +75,5 @@
 			</ul>
 		</div>
 	</div>
-	</body>
+</body>
 </html>

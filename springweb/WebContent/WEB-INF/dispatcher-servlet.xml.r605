@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:aop="http://www.springframework.org/schema/aop" 
+	xmlns:context="http://www.springframework.org/schema/context"
+		xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	 xmlns:util="http://www.springframework.org/schema/util"
+	 xmlns:websocket="http://www.springframework.org/schema/websocket"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+        http://www.springframework.org/schema/aop
+       http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context-4.0.xsd
+  		http://www.springframework.org/schema/mvc
+		http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd     
+        http://www.springframework.org/schema/util
+       http://www.springframework.org/schema/util/spring-util-4.0.xsd
+   		http://www.springframework.org/schema/websocket
+		http://www.springframework.org/schema/websocket/spring-websocket.xsd    
+       " >
+ <aop:aspectj-autoproxy />
+    <!-- 컨테이너에 filter 조건으로 해당 정의된 클래스들을 자동 객체 등록 처리 
+    	context:conponent-scan
+    		1) base-package : 대상 패키지 선언
+    		context:include-filter : filter 기준으로 설정하는 내용
+    			1) type : filter 대상에 대한 type ex) annotation,regex
+    			2) expression : 실제 쓰이는 클래스  ex) Controller, Service, Repository
+    -->
+ 	<context:component-scan base-package="springweb"  >
+		<context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>   
+		<context:include-filter type="annotation" expression="org.springframework.stereotype.Service"/>   
+		<context:include-filter type="annotation" expression="org.springframework.stereotype.Repository"/>   
+     </context:component-scan>
+  	<bean id="annotationUrlMapping" 
+	class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping" />
+	<bean id="controllerClassNameHandlerMapping" 
+	class="org.springframework.web.servlet.mvc.support.ControllerClassNameHandlerMapping" />
+	<bean id="annotationMethodHandlerAdapter" 
+	class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter" />   
+	<websocket:handlers>
+		<websocket:mapping handler="chatHandler" path="/chat-ws.do"/>
+	</websocket:handlers>
+	 <mvc:default-servlet-handler />	
+	      
+     <context:property-placeholder location="classpath:/resource/properties/info01"/>   
+     
+    <!-- DB연결 lib 추가 후..--> 
+    <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"
+    	destroy-method="close">
+    	<!-- driver, connection(url, port, sid, id, pass) -->
+    	<!-- driver : jdbc 
+    	
+    	driver=oracle.jdbc.driver.OracleDriver
+dbserver=jdbc:oracle:thin:@localhost:1521:xe
+name=scott
+pass=tiger
+    	-->
+    	<property name="driverClassName" value="${driver}"/>
+    	<!-- 접속 DB 서버 정보 port와 sid-->
+    	<property name="url" value="${dbserver}"/>
+    	<!-- 계정 정보 -->
+    	<property name="username" value="${name}"/>
+    	<property name="password" value="${pass}"/>
+    	
+    </bean> 
+    <!-- Mybatis연결 -->  
+    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+    	<property name="dataSource" ref="dataSource"/>
+    	<!-- mybatis 설정 xml -->
+    	<property name="configLocation" 
+    		value="classpath:resource/mybatis.Spring.xml"/>
+    </bean>
+    <!-- Repository interface 패키지 등록 
+    	default mybatis 연결 dao 인터페이스 패키지 위치 지정
+    	다수의 패키지 등록 시 ==> ,구분자로 등록 가능..@@,@@,@@@
+    -->  
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+    	<property name="basePackage" 
+    		value="springweb.c01_database.repository,springweb.d01_board.repository,springweb.i02_calen"/>
+    		
+    </bean>
+     <!-- 여러개의 ViewResolver 처리를 위해 bean이름 으로 선언 Resolver를 우선 순위로 처리-->
+     <bean id="bnViewResolver"
+     	class="org.springframework.web.servlet.view.BeanNameViewResolver">
+     	<property name="order" value="0"/><!-- bean이름(id)으로 호출하는 Resolver 최우선 -->
+     </bean>
+       
+     <bean id="viewResolver"
+     	class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+     	<property name="prefix" value=""/>
+     	<property name="suffix" value=".jsp"/><!-- view호출시, .jsp는 생략 
+     		setSuffix("view단"+".jsp")
+     	-->
+     	<property name="order" value="1"/><!-- jsp는 차순위.. -->   
+     </bean>
+     <!-- view를 호출하는데, 조립기에 선언된 id가 있으면 해당 id에 맞는 viewResolver를
+     	선택하고, 그외에는 .jsp가 붙어서 jsp해당 화면을 호출한다.
+      -->
+     <!-- 파일 업로드 ViewResolver 처리 -->
+     <bean id="multipartResolver"
+     	class="org.springframework.web.multipart.commons.CommonsMultipartResolver"/>
+  
+  	<!-- advice 선언 -->
+  	<bean id="profiler" class="springweb.g01_aop.A01_Profiler"/>
+  	<!-- aspect : pointcut + 호출시점 -->
+  	<aop:config>
+  		<aop:aspect id="traceAspect" ref="profiler">
+  			<aop:pointcut expression="execution(public * springweb.d01_board.repository..*(..))"
+  				id="publicMethod"/>
+  			<aop:around pointcut-ref="publicMethod" 
+  				 method="trace"/> <!--  method는 advise에 수행할 메서드 -->
+  		
+  		</aop:aspect>
+  	</aop:config>  
+  	<!-- json viewer 등록 -->
+  	<bean id="pageJsonReport" 
+  		class="org.springframework.web.servlet.view.json.MappingJacksonJsonView">
+		<property name="contentType" value="text/html;charset=UTF-8"/>	  		
+  	</bean> 
+	<!-- 파일 다운로드 모듈 View-->
+	<bean id="download" class="springweb.f01_file.B01_DownloadView"/>         
+
+	
+</beans>
+
+
+
+
+
+
+
+
+
+
+
+

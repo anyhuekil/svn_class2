@@ -3,17 +3,42 @@
 <head>
 <meta charset="UTF-8">
 <title>prac_a17</title>
-<style type = "text/css">
+<style type="text/css">
 /*
 */
-div{width:100px;height:100px;position:absolute;}
-.divRed{left: 10px; top: 10px; background-color: red; z-index: 10;}
-.divGreen{left: 100px; top: 200px; background-color: green; z-index: 5;}
-.divBlue{left: 300px; top: 300px; background-color: blue; z-index: 3;}
-td{ width:50px;height:50px; background-color: gray; border:3;}
+div {
+	width: 100px;
+	height: 100px;
+	position: absolute;
+}
 
+.divRed {
+	left: 10px;
+	top: 10px;
+	background-color: red;
+	z-index: 10;
+}
 
+.divGreen {
+	left: 100px;
+	top: 200px;
+	background-color: green;
+	z-index: 5;
+}
 
+.divBlue {
+	left: 300px;
+	top: 300px;
+	background-color: blue;
+	z-index: 3;
+}
+
+td {
+	width: 50px;
+	height: 50px;
+	background-color: gray;
+	border: 3;
+}
 </style>
 <script>
 /*
@@ -114,39 +139,41 @@ function clickDiv(obj){
 
 </head>
 <body>
-<!-- 
+	<!-- 
 -->
-<div class = divRed onclick = "clickDiv(this)" >red</div>
-<div class = divGreen onclick = "clickDiv(this)" >green</div>
-<div class = divBlue onclick = "clickDiv(this)">blue</div>
+	<div class=divRed onclick="clickDiv(this)">red</div>
+	<div class=divGreen onclick="clickDiv(this)">green</div>
+	<div class=divBlue onclick="clickDiv(this)">blue</div>
 
 
-<center>
-<input type = "radio" name = "colorC" value = "red" onclick = "colorSel(this)"/>빨
-<input type = "radio" name = "colorC" value = "green" onclick = "colorSel(this)"/>초
-<input type = "radio" name = "colorC" value = "blue" onclick = "colorSel(this)"/>파
-<br><input selected disabled type = "text" value = "박스를 클릭해도 움직여요!  문제는 relative여야하는데..ㅜㅜ"/>
-</center>
+	<center>
+		<input type="radio" name="colorC" value="red" onclick="colorSel(this)" />빨
+		<input type="radio" name="colorC" value="green"
+			onclick="colorSel(this)" />초 <input type="radio" name="colorC"
+			value="blue" onclick="colorSel(this)" />파 <br>
+		<input selected disabled type="text"
+			value="박스를 클릭해도 움직여요!  문제는 relative여야하는데..ㅜㅜ" />
+	</center>
 
-<table align = right border = "3">
-	<tr>
-		<td></td>
-		<td onclick = "gooUp()">위</td>
-		<td></td>
-	</tr>
-	<tr>
-		<td onclick = "gooLeft()">왼</td>
-		<td></td>
-		<td onclick = "gooRight()">오른</td>
-	</tr>
-	<tr>
-		<td></td>
-		<td onclick = "gooBottom()">아래</td>
-		<td></td>
-	</tr>
+	<table align=right border="3">
+		<tr>
+			<td></td>
+			<td onclick="gooUp()">위</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td onclick="gooLeft()">왼</td>
+			<td></td>
+			<td onclick="gooRight()">오른</td>
+		</tr>
+		<tr>
+			<td></td>
+			<td onclick="gooBottom()">아래</td>
+			<td></td>
+		</tr>
 
 
-</table>
+	</table>
 
 
 

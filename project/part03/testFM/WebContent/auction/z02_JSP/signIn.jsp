@@ -40,25 +40,25 @@
 </style>
 </head>
 <body>
-	<div style="margin-top:40vh" >
-	<form method="post" action="signInProc.jsp">
-		<input type="hidden" name="proc" value="login" />
-		<table align="center">
-			<tr>
-				<th>e-Mail :</th>
-				<th colspan="2"><input name="email"></th>
-			</tr>
-			<tr>
-				<th>&nbsp;&nbsp;PASS :</th>
-				<th colspan="2"><input type="password" name="pwd"></th>
-			</tr>
-			<tr>
-				<th></th>
-				<th><input type="button" id="logBtn" value="로그인"></th>
-				<th><input type="button" id="regBtn" value="회원가입"></th>
-			</tr>
-		</table>
-	</form>
+	<div style="margin-top: 40vh">
+		<form method="post" action="signInProc.jsp">
+			<input type="hidden" name="proc" value="login" />
+			<table align="center">
+				<tr>
+					<th>e-Mail :</th>
+					<th colspan="2"><input name="email"></th>
+				</tr>
+				<tr>
+					<th>&nbsp;&nbsp;PASS :</th>
+					<th colspan="2"><input type="password" name="pwd"></th>
+				</tr>
+				<tr>
+					<th></th>
+					<th><input type="button" id="logBtn" value="로그인"></th>
+					<th><input type="button" id="regBtn" value="회원가입"></th>
+				</tr>
+			</table>
+		</form>
 	</div>
 </body>
 </html>

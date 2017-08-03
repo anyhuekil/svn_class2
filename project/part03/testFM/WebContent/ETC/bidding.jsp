@@ -1,11 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"
-    import = "z02_vo.AuctionBidDTO"
-    import = "z01_database.AuctionBidDAO"
-    %>
+	pageEncoding="UTF-8" import="z02_vo.AuctionBidDTO"
+	import="z01_database.AuctionBidDAO"%>
 <%request.setCharacterEncoding("UTF-8"); 
   String path=request.getContextPath();	
-%>    
+%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -40,18 +38,23 @@ $(document).ready(function(){
 });
 </script>
 <style type="text/css">
-option{disabled:}
+option {
+	disabled:
+}
 </style>
 </head>
 <body>
-	<form method = post action = bidding_proc.jsp >
-	<h2><%=curBid %> </h2>
-	
-		추가가격 +<input type = text name = curr value = <%=nowBidPrice %> /> <br/>
-		입창가능가격 : <input type = text name = afterR value = <%=(curBid+nowBidPrice) %> /> <br/>
-		<button>입찰</button> <br/>
-		<input type = text name = hiddenBidderId value = <%=bidder.getAuctionID() %> style = "visibility:hidden;" /> 
-		
+	<form method=post action=bidding_proc.jsp>
+		<h2><%=curBid %>
+		</h2>
+
+		추가가격 +<input type=text name=curr value=<%=nowBidPrice %> /> <br />
+		입창가능가격 : <input type=text name=afterR value=<%=(curBid+nowBidPrice) %> />
+		<br />
+		<button>입찰</button>
+		<br /> <input type=text name=hiddenBidderId
+			value=<%=bidder.getAuctionID() %> style="visibility: hidden;" />
+
 	</form>
 </body>
 </html>

@@ -23,12 +23,39 @@ ex)  크기가 넓이:100px, 높이:100px 인 div 3개를
 	값이 많을 수로 나타나는 것이 더 먼저 보인다..
 	        
 */
-	div{width:100px;height:100px;position:absolute;}
-	.bgColorR{background-color:red;top:10px;left:10px;z-index:50;}
-	.bgColorG{background-color:green;top:20px;left:20px;z-index:40;}
-	.bgColorB{background-color:blue;top:30px;left:30px;z-index:30;}
+div {
+	width: 100px;
+	height: 100px;
+	position: absolute;
+}
+
+.bgColorR {
+	background-color: red;
+	top: 10px;
+	left: 10px;
+	z-index: 50;
+}
+
+.bgColorG {
+	background-color: green;
+	top: 20px;
+	left: 20px;
+	z-index: 40;
+}
+
+.bgColorB {
+	background-color: blue;
+	top: 30px;
+	left: 30px;
+	z-index: 30;
+}
 /**/
-	td{width:33%;height:33%;text-align:center;background-color:yellow;}
+td {
+	width: 33%;
+	height: 33%;
+	text-align: center;
+	background-color: yellow;
+}
 </style>
 <script type="text/javascript">
 	var topPos=10;
@@ -65,10 +92,21 @@ ex)  크기가 넓이:100px, 높이:100px 인 div 3개를
 </head>
 <body>
 	<table align="center" width="200pt" height="200pt" border>
-		<tr><td></td><td onclick="goUp()">위로</td><td></td></tr>
-		<tr><td onclick="goLeft()">왼쪽</td><td></td>
-			<td onclick="goRight()">오른쪽</td></tr>
-		<tr><td></td><td  onclick="goDown()">아래로</td><td></td></tr>
+		<tr>
+			<td></td>
+			<td onclick="goUp()">위로</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td onclick="goLeft()">왼쪽</td>
+			<td></td>
+			<td onclick="goRight()">오른쪽</td>
+		</tr>
+		<tr>
+			<td></td>
+			<td onclick="goDown()">아래로</td>
+			<td></td>
+		</tr>
 	</table>
 
 	<div class="bgColorR">빨강색Div</div>

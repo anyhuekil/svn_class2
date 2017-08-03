@@ -6,59 +6,113 @@
 <link href="../css/initLayout.css" rel="stylesheet">
 <style>
 /*img{opacity: 0.5;}*/
-#content #section_row1{height: 400px;}
-.slide ul, li, button{
+#content #section_row1 {
+	height: 400px;
+}
+
+.slide ul, li, button {
 	margin: 0;
 	padding: 0;
-	}
-	.slide img{
-		display: block;
-		border: 0;
-		
-	}
-	.slide ul li img { width: 1000px; height: 400px; }
-	.slide button {
+}
+
+.slide img {
+	display: block;
+	border: 0;
+}
+
+.slide ul li img {
+	width: 1000px;
+	height: 400px;
+}
+
+.slide button {
 	border: 0;
 	background: none;
-	}
-	.slide{
+}
+
+.slide {
 	width: 1000px;
 	overflow: hidden;
 	margin: 0 auto;
 	position: relative;
-	}
-	.slide ul{
-		width: 5000px;
-		list-style: none;
-		font-size: 0;
-	}
-	.slide ul li{
-		display: inline-block;
-	}
-	.slide button.prev {
-		position: absolute;
-		left: 0;
-		top:150px;
-	}
-	.slide button.next{
-		position: absolute;
-		right: 0;
-		top:150px;
-	}
-	button {
-		border: 0;
-		background: none;
-	}
-#content #section_row2{height: 150px; margin: 10px 0 5px; overflow: hidden;}
-#content #section_row2 .game{float: left; height:148px; width:242px; margin:0 5px;}
-#content #section_row2 .game:first-child{margin-left:0;}
-#content #section_row2 .game:last-child{margin-right:0;}
-#content #section_row2 .game img{width: 242px; height: 148px;}
-#content #section_row3{height: 150px; overflow: hidden;}
-#content #section_row3 .reservation{float: left; width:492px; height: 147px; margin: 0 5px 0 0;}
-#content #section_row3 .ad{float: left; width:492px; height: 147px; margin: 0 0 0 5px;}
-#content #section_row3 img{width:492px; height: 147px;}
+}
 
+.slide ul {
+	width: 5000px;
+	list-style: none;
+	font-size: 0;
+}
+
+.slide ul li {
+	display: inline-block;
+}
+
+.slide button.prev {
+	position: absolute;
+	left: 0;
+	top: 150px;
+}
+
+.slide button.next {
+	position: absolute;
+	right: 0;
+	top: 150px;
+}
+
+button {
+	border: 0;
+	background: none;
+}
+
+#content #section_row2 {
+	height: 150px;
+	margin: 10px 0 5px;
+	overflow: hidden;
+}
+
+#content #section_row2 .game {
+	float: left;
+	height: 148px;
+	width: 242px;
+	margin: 0 5px;
+}
+
+#content #section_row2 .game:first-child {
+	margin-left: 0;
+}
+
+#content #section_row2 .game:last-child {
+	margin-right: 0;
+}
+
+#content #section_row2 .game img {
+	width: 242px;
+	height: 148px;
+}
+
+#content #section_row3 {
+	height: 150px;
+	overflow: hidden;
+}
+
+#content #section_row3 .reservation {
+	float: left;
+	width: 492px;
+	height: 147px;
+	margin: 0 5px 0 0;
+}
+
+#content #section_row3 .ad {
+	float: left;
+	width: 492px;
+	height: 147px;
+	margin: 0 0 0 5px;
+}
+
+#content #section_row3 img {
+	width: 492px;
+	height: 147px;
+}
 </style>
 <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
 <script>
@@ -68,7 +122,8 @@
 		});
 	});
 </script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.5/TweenMax.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.5/TweenMax.min.js"></script>
 <script>
 (function() {
 	var current = 0;
@@ -124,7 +179,7 @@
 		<div id="header_nav">
 			<div class="gnb">
 				<ul>
-					<li><img src="image/home.png"/></li>
+					<li><img src="image/home.png" /></li>
 					<li><a href="../reservation/main.html">NolJa Home</a></li>
 					<li><a href="#">두더지게임</a></li>
 					<li><a href="#">Game$</a></li>
@@ -135,67 +190,74 @@
 				</ul>
 			</div>
 			<div class="point">
-                <a href="#" >
-                    <img src="image/point.jpg" alt="point" onclick="alert('당신의 가용포인트는 5500점입니다')"/>
-                    <span onclick="alert('당신의 가용포인트는 5500점입니다')">Upgrade to the Point>></span>
-                </a>
-            </div>
+				<a href="#"> <img src="image/point.jpg" alt="point"
+					onclick="alert('당신의 가용포인트는 5500점입니다')" /> <span
+					onclick="alert('당신의 가용포인트는 5500점입니다')">Upgrade to the
+						Point>></span>
+				</a>
+			</div>
 		</div>
 		<div id="header_info">
 			<div class="logo" onclick="location.href='../reservation/main.html'">
-               <img src="image/logo.jpg" alt="nolja" />
-            </div>
-            <div class="search">
-                <form action="#">
-                    <input type="text" class="queryword" />
-                    <input class="btn_search" type="button" value="search web"/>
-                </form>
-            </div>
-            <div class="service">
-                <ul>
-                    <li><a href="../reservation/main.html">Nol Ja</a></li>
-                    <li><a href="../reservation/join.html">Join</a></li>
-                    <li><a href="../reservation/login.html">Login</a></li>
-                </ul>
-            </div>
+				<img src="image/logo.jpg" alt="nolja" />
+			</div>
+			<div class="search">
+				<form action="#">
+					<input type="text" class="queryword" /> <input class="btn_search"
+						type="button" value="search web" />
+				</form>
+			</div>
+			<div class="service">
+				<ul>
+					<li><a href="../reservation/main.html">Nol Ja</a></li>
+					<li><a href="../reservation/join.html">Join</a></li>
+					<li><a href="../reservation/login.html">Login</a></li>
+				</ul>
+			</div>
 		</div>
 	</header>
 	<div id="content">
-	<div id="section_row1">
-		<div class="slide">
-	 	<button class="prev" type="button"><img src="image/prev.png" alt="" /></button>
-	 	<ul>
-	 		<li><a href="#"><img src="image/1.jpg" alt="두더지게임" /></a></li>
-	 		<li><a href="#"><img src="image/2.jpg" alt="색맞추기게임" /></a></li>
-	 		<li><a href="#"><img src="image/3.jpg" alt="틀린그림찾기게임" /></a></li>
-	 		<li><a href="#"><img src="image/4.jpg" alt="기억력게임" /></a></li>
-	 		<li><a href="reservation.html"><img src="image/5.jpg" alt="게임방예약" /></a></li>
-	 	</ul>
-	 	<button class="next" type="button"><img src="image/next.png" alt=""></button>
-	</div>
-	</div>
-	<div id="section_row2">
-		<div class="game">
-			<a href="#"><img src="image/small1.gif" alt="두더지게임" /></a>
+		<div id="section_row1">
+			<div class="slide">
+				<button class="prev" type="button">
+					<img src="image/prev.png" alt="" />
+				</button>
+				<ul>
+					<li><a href="#"><img src="image/1.jpg" alt="두더지게임" /></a></li>
+					<li><a href="#"><img src="image/2.jpg" alt="색맞추기게임" /></a></li>
+					<li><a href="#"><img src="image/3.jpg" alt="틀린그림찾기게임" /></a></li>
+					<li><a href="#"><img src="image/4.jpg" alt="기억력게임" /></a></li>
+					<li><a href="reservation.html"><img src="image/5.jpg"
+							alt="게임방예약" /></a></li>
+				</ul>
+				<button class="next" type="button">
+					<img src="image/next.png" alt="">
+				</button>
+			</div>
 		</div>
-		<div class="game">
-			<a href="#"><img src="image/small2.gif" alt="색맞추기게임" /></a>
+		<div id="section_row2">
+			<div class="game">
+				<a href="#"><img src="image/small1.gif" alt="두더지게임" /></a>
+			</div>
+			<div class="game">
+				<a href="#"><img src="image/small2.gif" alt="색맞추기게임" /></a>
+			</div>
+			<div class="game">
+				<a href="#"><img src="image/small3.gif" alt="틀린그림찾기게임" /></a>
+			</div>
+			<div class="game">
+				<a href="#"><img src="image/small4.gif" alt="기억력게임" /></a>
+			</div>
 		</div>
-		<div class="game">
-			<a href="#"><img src="image/small3.gif" alt="틀린그림찾기게임" /></a>
+		<div id="section_row3">
+			<div class="reservation">
+				<a href="../reservation/reservation.html"><img
+					src="image/small5.gif" alt="기억력게임" /></a>
+			</div>
+			<div class="ad">
+				<img src="image/ad.gif" alt="가맹점 광고" />
+			</div>
 		</div>
-		<div class="game">
-			<a href="#"><img src="image/small4.gif" alt="기억력게임" /></a>
-		</div>
-	</div>
-	<div id="section_row3">
-		<div class="reservation">
-			<a href="../reservation/reservation.html"><img src="image/small5.gif" alt="기억력게임" /></a>
-		</div>
-		<div class="ad">
-			<img src="image/ad.gif" alt="가맹점 광고" />
-		</div>
-	</div>
 	</div>
 	<footer>
 		<ul>

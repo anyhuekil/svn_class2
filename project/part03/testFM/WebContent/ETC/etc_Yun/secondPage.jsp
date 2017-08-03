@@ -1,8 +1,8 @@
 <%@page import="java.sql.*"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-    <%request.setCharacterEncoding("utf-8");%>
-	   <%!
+	pageEncoding="UTF-8"%>
+<%request.setCharacterEncoding("utf-8");%>
+<%!
 	Connection connection;
 	Statement statement;
 	ResultSet resultSet;
@@ -32,7 +32,7 @@ $(document).ready(function(){
 
 </head>
 <body>
-<%
+	<%
 	try{
 		Class.forName(driver);
 		connection = DriverManager.getConnection(url, uid, upw);
@@ -52,19 +52,40 @@ $(document).ready(function(){
 			
 			%>
 
-			
-			
-			
-			<form action= "bid_modify" method="post">
-       auction_id : <%=auction_id %><br/><input type="hidden" name="auction_id" value="<%=auction_id %>">
-       auctioneer_id : <%=auctioneer_id %> <br/><input type="hidden" name="auctioneer_id" value="<%=auctioneer_id %>">
-       item_name : <%=item_name %> <br/><input type="hidden" name="item_name" value="<%=item_name %>">
-       start_date : <%=start_date %> <br/><input type="hidden" name="start_date" value="<%=start_date %>">
-       end_date : <%=end_date %> <br/><input type="hidden" name="end_date" value="<%=end_date %>">
-       state : <%=state %> <br/><input type="hidden" name="state" value="<%=state %>">
-       cureent_bid_amount : <%=cureent_bid_amount %> <br/><input type="hidden" name="cureent_bid_amount" value="<%=cureent_bid_amount %>">
-					
-<%
+
+
+
+	<form action="bid_modify" method="post">
+		auction_id :
+		<%=auction_id %><br />
+		<input type="hidden" name="auction_id" value="<%=auction_id %>">
+		auctioneer_id :
+		<%=auctioneer_id %>
+		<br />
+		<input type="hidden" name="auctioneer_id" value="<%=auctioneer_id %>">
+		item_name :
+		<%=item_name %>
+		<br />
+		<input type="hidden" name="item_name" value="<%=item_name %>">
+		start_date :
+		<%=start_date %>
+		<br />
+		<input type="hidden" name="start_date" value="<%=start_date %>">
+		end_date :
+		<%=end_date %>
+		<br />
+		<input type="hidden" name="end_date" value="<%=end_date %>">
+		state :
+		<%=state %>
+		<br />
+		<input type="hidden" name="state" value="<%=state %>">
+		cureent_bid_amount :
+		<%=cureent_bid_amount %>
+		<br />
+		<input type="hidden" name="cureent_bid_amount"
+			value="<%=cureent_bid_amount %>">
+
+		<%
 	
 		}
 	}catch(Exception e){
@@ -78,7 +99,7 @@ $(document).ready(function(){
 	}
 
 	%>
-	<input type = "submit" value="비드 올리기">
-	</form>	
+		<input type="submit" value="비드 올리기">
+	</form>
 </body>
 </html>

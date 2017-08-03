@@ -16,15 +16,27 @@
 </script>
 </head>
 <body>
-<form name="cinema">
-	<h1>영화관에 가서</h1>
-	<table><tr><td>제목 : </td><td><input type="text" name="title" value="제목 입력"/></td></tr>
-	<tr><td>가격 : </td><td><input type="text" name="price1" width="20px" value="7000"/></td></tr>
-	<tr><td>인원 : </td><td><input type="text" name="people1" value="2"/></td></tr></table>
+	<form name="cinema">
+		<h1>영화관에 가서</h1>
+		<table>
+			<tr>
+				<td>제목 :</td>
+				<td><input type="text" name="title" value="제목 입력" /></td>
+			</tr>
+			<tr>
+				<td>가격 :</td>
+				<td><input type="text" name="price1" width="20px" value="7000" /></td>
+			</tr>
+			<tr>
+				<td>인원 :</td>
+				<td><input type="text" name="people1" value="2" /></td>
+			</tr>
+		</table>
 
-	<input type="button" value="계산" onclick="calc()"/><br><br>
-	영수증<br><textarea name="result" rows="5" cols="20">계산버튼을 누르세요!</textarea>
-</form>
+		<input type="button" value="계산" onclick="calc()" /><br>
+		<br> 영수증<br>
+		<textarea name="result" rows="5" cols="20">계산버튼을 누르세요!</textarea>
+	</form>
 
 </body>
 </html>

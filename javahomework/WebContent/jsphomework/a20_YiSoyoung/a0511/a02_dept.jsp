@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8" import="jspexp.z02_vo.Dept, java.util.ArrayList, java.sql.*"%>
+	pageEncoding="UTF-8"
+	import="jspexp.z02_vo.Dept, java.util.ArrayList, java.sql.*"%>
 <%	request.setCharacterEncoding("UTF-8"); %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -7,14 +8,34 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 <style type="text/css">
-table { width:700px; margin: 0 auto; background-color: white; }
-th { background-color: #43BDE6; color:white; padding: 10px; text-align: center;}
-td { background-color: #AFE0F0; padding: 10px; text-align: center; }
-caption{padding: 5px 5px 10px; font-size: 2em; font-weight: bold;}
+table {
+	width: 700px;
+	margin: 0 auto;
+	background-color: white;
+}
+
+th {
+	background-color: #43BDE6;
+	color: white;
+	padding: 10px;
+	text-align: center;
+}
+
+td {
+	background-color: #AFE0F0;
+	padding: 10px;
+	text-align: center;
+}
+
+caption {
+	padding: 5px 5px 10px;
+	font-size: 2em;
+	font-weight: bold;
+}
 </style>
 </head>
 <body>
-<%
+	<%
 	String driver = "oracle.jdbc.driver.OracleDriver";
 	String url = "jdbc:oracle:thin:@localhost:1521:xe";
 	String sql = "SELECT * FROM DEPT";
@@ -51,14 +72,24 @@ caption{padding: 5px 5px 10px; font-size: 2em; font-weight: bold;}
 	}
 %>
 	<table>
-		<caption>부서 명단</caption>	
-		<tr><th>부서번호</th><th>부서이름</th><th>위치</th></tr>
+		<caption>부서 명단</caption>
+		<tr>
+			<th>부서번호</th>
+			<th>부서이름</th>
+			<th>위치</th>
+		</tr>
 		<%if(!deptList.isEmpty()){
 			for(Dept d : deptList){%>
-			<tr><td><%=d.getDeptno()%></td><td><%=d.getDname()%></td><td><%=d.getLoc()%></td></tr>		
+		<tr>
+			<td><%=d.getDeptno()%></td>
+			<td><%=d.getDname()%></td>
+			<td><%=d.getLoc()%></td>
+		</tr>
 		<% 	}
 		}else{%>
-			<tr><td colspan="3">데이터가 한개도 없습니다</td></tr>
+		<tr>
+			<td colspan="3">데이터가 한개도 없습니다</td>
+		</tr>
 		<%}%>
 	</table>
 </body>

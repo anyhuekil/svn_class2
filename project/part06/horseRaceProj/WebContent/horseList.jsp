@@ -207,7 +207,7 @@ li {
 				</c:forEach>
 			</table>
 		</div>
-	<nav>
+		<nav>
 		<ul class="pager">
 			<c:if test="${pageIndex != 0 && fn:length(hlist) >= 20}">
 				<li><a href="horseList.jsp?pageIndex=${pageIndex-1 }">Previous</a></li>

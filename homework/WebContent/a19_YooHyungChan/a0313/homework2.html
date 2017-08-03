@@ -4,13 +4,25 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <style type="text/css">
-	input[value="classIsA"]{background-color:green;}
-	input[value="classIsB"]{background-color:yellow;}
-	input[value="classIsC"]{background-color:blue;}
-	input[value="classIsD"]{background-color:red;}
-	input[value="classIsF"]{background-color:white;}
-	
-	
+input[value="classIsA"] {
+	background-color: green;
+}
+
+input[value="classIsB"] {
+	background-color: yellow;
+}
+
+input[value="classIsC"] {
+	background-color: blue;
+}
+
+input[value="classIsD"] {
+	background-color: red;
+}
+
+input[value="classIsF"] {
+	background-color: white;
+}
 </style>
 <script type="text/javascript">
 	function plus(){
@@ -96,68 +108,68 @@
 </script>
 </head>
 <body>
-<p>네이버 사이트 참고<br>
-<h1 align="center">Naver</h1>
-<form name="join">
-아이디 : <input type="text" name="id" value="" />@naver.com<br>
-<font color="red">필수 정보입니다.</font><br>
-비밀번호 : <input type="password" name="password" value="" /><br>
-<font color="red">필수 정보입니다.</font><br>
-비밀번호 재확인 : <input type="password" name="passwordCheck" value="" /><br>
-<font color="red">필수 정보입니다.</font><br>
-이름 : <input type="text" name="name" value="" />
-<font color="red">필수 정보입니다.</font><br>
-남자<input type="radio" name="gender" value="남자"/>
-여자<input type="radio" name="gender" value="여자"/><br>
-생일 <input type="date"/><br>
-<font color="red">태어난 년도 4자리를 정확하게 입력하세요.</font><br>
-본인확인 이메일(선택) : <input type="email"/><br>
-휴대전화번호 : <input type="tel"/><input type="button" name="phonNumCheck" value="인증"/><br>
-<font color="red">필수 정보입니다.</font><br>
-인증번호 : <input type="number" name="checkNum" value=""/><input type="button" name="numCheck" value="확인"/>
-</form>
+	<p>
+		네이버 사이트 참고<br>
+	<h1 align="center">Naver</h1>
+	<form name="join">
+		아이디 : <input type="text" name="id" value="" />@naver.com<br> <font
+			color="red">필수 정보입니다.</font><br> 비밀번호 : <input type="password"
+			name="password" value="" /><br> <font color="red">필수
+			정보입니다.</font><br> 비밀번호 재확인 : <input type="password"
+			name="passwordCheck" value="" /><br> <font color="red">필수
+			정보입니다.</font><br> 이름 : <input type="text" name="name" value="" /> <font
+			color="red">필수 정보입니다.</font><br> 남자<input type="radio"
+			name="gender" value="남자" /> 여자<input type="radio" name="gender"
+			value="여자" /><br> 생일 <input type="date" /><br> <font
+			color="red">태어난 년도 4자리를 정확하게 입력하세요.</font><br> 본인확인 이메일(선택) : <input
+			type="email" /><br> 휴대전화번호 : <input type="tel" /><input
+			type="button" name="phonNumCheck" value="인증" /><br> <font
+			color="red">필수 정보입니다.</font><br> 인증번호 : <input type="number"
+			name="checkNum" value="" /><input type="button" name="numCheck"
+			value="확인" />
+	</form>
 
-<br>
-<br>
-<hr/>
-<h1 align="center">CGV</h1>
-<form name="movie">
-영화 선택 : <select name="title">
-			<option>선택</option>				
-			<option>콩:스컬 아일랜드</option>				
-			<option>로건</option>				
-			<option>파도가 지나간 자리</option>				
-			<option>문라이트</option>				
-			<option>해빙</option>				
-			<option>라라랜드</option>				
-			<option>23아이덴티티</option>				
-		 </select>
-<br>
-예매 날짜 : <input type="date" name="date"/><br>
-관람료<br> 
- 성인<input type="checkbox" name="adult" value="10000"/>인원 : <input type="number" name="adultcost"/><br>
- 청소년<input type="checkbox" name="teen" value="7000"/>인원 : <input type="number" name="teencost"/><br>
- 어린이<input type="checkbox" name="child" value="5000"/>인원 : <input type="number" name="childtcost"/><br>
+	<br>
+	<br>
+	<hr />
+	<h1 align="center">CGV</h1>
+	<form name="movie">
+		영화 선택 : <select name="title">
+			<option>선택</option>
+			<option>콩:스컬 아일랜드</option>
+			<option>로건</option>
+			<option>파도가 지나간 자리</option>
+			<option>문라이트</option>
+			<option>해빙</option>
+			<option>라라랜드</option>
+			<option>23아이덴티티</option>
+		</select> <br> 예매 날짜 : <input type="date" name="date" /><br> 관람료<br>
+		성인<input type="checkbox" name="adult" value="10000" />인원 : <input
+			type="number" name="adultcost" /><br> 청소년<input type="checkbox"
+			name="teen" value="7000" />인원 : <input type="number" name="teencost" /><br>
+		어린이<input type="checkbox" name="child" value="5000" />인원 : <input
+			type="number" name="childtcost" /><br> <br> 총 금액 확인하기 <input
+			type="button" value="클릭!" onclick="javascript:plus();" /><br> 총
+		금액 : <input type="text" name="sum"> <br> <br> <br>
+		<br> <input type="button" value="영수증 출력!"
+			onclick="javascript:send();" /><br>
+		<p align="center">영수증</p>
+		<br>
 
-<br>
-총 금액 확인하기 <input type="button" value="클릭!" onclick="javascript:plus();" /><br>
-총 금액 : <input type="text" name="sum">
-<br>
-<br>
-<br>
-<br>
-<input type="button" value="영수증 출력!" onclick="javascript:send();" /><br>
-<p align="center">영수증</p><br>
+		<textarea name="receipt" rows="10" cols="50"></textarea>
 
-<textarea name="receipt" rows="10" cols="50" ></textarea>
-
-</form>
-<br><br><br>
-<hr>
-<form name="myGrade">
-국어<input type="text" name="korean" value=""/><input type="button" value="배경변경!" onclick="javascript:kchange();" /><br>
-영어<input type="text" name="english" value=""/><input type="button" value="배경변경!" onclick="javascript:echange();" /><br>
-수학<input type="text" name="math" value=""/><input type="button" value="배경변경!" onclick="javascript:mchange();" /><br>
-</form>
+	</form>
+	<br>
+	<br>
+	<br>
+	<hr>
+	<form name="myGrade">
+		국어<input type="text" name="korean" value="" /><input type="button"
+			value="배경변경!" onclick="javascript:kchange();" /><br> 영어<input
+			type="text" name="english" value="" /><input type="button"
+			value="배경변경!" onclick="javascript:echange();" /><br> 수학<input
+			type="text" name="math" value="" /><input type="button" value="배경변경!"
+			onclick="javascript:mchange();" /><br>
+	</form>
 </body>
 </html>

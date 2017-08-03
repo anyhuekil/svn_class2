@@ -25,59 +25,68 @@ function renew(){
 
 	<div id="game-container" align="center">
 		<canvas id="game" width="1536px" height="1000px"></canvas>
-		<div align="center" id="menus"> 
+		<div align="center" id="menus">
 			<div>
-				
+
 				<h1>pent A corn 경마장</h1>
 			</div>
-			<br><br>
+			<br>
+			<br>
 			<h3>1등할 말을 골라주세요.</h3>
-			<img src="img/number1.png" height="50%" class="numberImg">
-			<img src="img/number2.png" height="50%" class="numberImg">
-			<img src="img/number3.png" height="50%" class="numberImg">
+			<img src="img/number1.png" height="50%" class="numberImg"> <img
+				src="img/number2.png" height="50%" class="numberImg"> <img
+				src="img/number3.png" height="50%" class="numberImg">
 			<table>
 				<tr>
-					<th>1번 말</th><th>2번 말</th><th>3번 말</th>
+					<th>1번 말</th>
+					<th>2번 말</th>
+					<th>3번 말</th>
 				</tr>
 				<tr align="center">
-					<td class="horseSelect">
-						<img src="img/blackHorse.png" height="50%" class="horseImg">
-						<div class="status">속도 : 고인<br>배당률 : 3.5 배</div>
-					</td>
-					<td class="horseSelect">
-						<img src="img/brownHorse.png" height="50%" class="horseImg">
-						<div class="status">속도 : 준수<br>배당률 : 2 배</div>
-					</td>
-					<td class="horseSelect">
-						<img src="img/goldenHorse.png" height="50%" class="horseImg">
-						<div class="status">속도 : 고인<br>배당률 : 3.5 배</div>
-					</td>
+					<td class="horseSelect"><img src="img/blackHorse.png"
+						height="50%" class="horseImg">
+						<div class="status">
+							속도 : 고인<br>배당률 : 3.5 배
+						</div></td>
+					<td class="horseSelect"><img src="img/brownHorse.png"
+						height="50%" class="horseImg">
+						<div class="status">
+							속도 : 준수<br>배당률 : 2 배
+						</div></td>
+					<td class="horseSelect"><img src="img/goldenHorse.png"
+						height="50%" class="horseImg">
+						<div class="status">
+							속도 : 고인<br>배당률 : 3.5 배
+						</div></td>
 				</tr>
 				<tr>
-					<th>4번 말</th><th>5번 말</th><th></th>
+					<th>4번 말</th>
+					<th>5번 말</th>
+					<th></th>
 				</tr>
 				<tr align="center">
-					<td class="horseSelect">
-						<img src="img/grayHorse.png" height="50%" class="horseImg">
-						<div class="status">속도 : 병신<br>배당률 : 3 배</div>
-					</td>
-					<td class="horseSelect">
-						<img src="img/whiteHorse.png" height="50%" class="horseImg">
-						<div class="status">속도 : 씹사기<br>배당률 : 1.1배</div>
-					</td>
+					<td class="horseSelect"><img src="img/grayHorse.png"
+						height="50%" class="horseImg">
+						<div class="status">
+							속도 : 병신<br>배당률 : 3 배
+						</div></td>
+					<td class="horseSelect"><img src="img/whiteHorse.png"
+						height="50%" class="horseImg">
+						<div class="status">
+							속도 : 씹사기<br>배당률 : 1.1배
+						</div></td>
 					<td id="statusBoard"></td>
 				</tr>
 			</table>
-			<input type="button" value="Total" onclick="renew()"> : <input type="text" id="totMoney" disabled/>
-			금액 : <input type="text" id="betMoney" class="betSys"/>
-			<input type="button" value="Betting!" id="betBtn" class="betSys"/><br><br>
-			<div id="start-menu">
-				R E A D Y
-			</div>
+			<input type="button" value="Total" onclick="renew()"> : <input
+				type="text" id="totMoney" disabled /> 금액 : <input type="text"
+				id="betMoney" class="betSys" /> <input type="button"
+				value="Betting!" id="betBtn" class="betSys" /><br>
+			<br>
+			<div id="start-menu">R E A D Y</div>
 		</div>
 	</div>
-	<div id="gameResult" align="center">
-	</div>
+	<div id="gameResult" align="center"></div>
 </body>
 <script type="text/javascript" src="js/game1.js" charset="utf-8"></script>
 <script type="text/javascript" src="js/menu.js" charset="utf-8"></script>

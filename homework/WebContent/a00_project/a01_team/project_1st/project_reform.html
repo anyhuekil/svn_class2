@@ -4,240 +4,295 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <style type="text/css">
-	@import url('https://fonts.googleapis.com/css?family=Jim+Nightshade');
-	@import url('https://fonts.googleapis.com/css?family=Jim+Nightshade|Orbitron|Satisfy');
-	@import url('https://fonts.googleapis.com/css?family=Advent+Pro|Alegreya|Cookie|La+Belle+Aurore|Satisfy|The+Girl+Next+Door');
-	#containerWhite{width:100%; height:1800px; display: inline-block;  background-image: url('/homework/a00_project/a01_team/background04.jpg');}
-	#blockWhite{width:1000px;height:1800px; margin: auto;}
-	
-	#container{width: 100%; height:400px; display: inline-block; background-color:;}
-	#blockBlue{width:1000px;height:400px; margin: auto;}
-	#name{
-		width: 100%; 
-		height: 100px; 
-		float: left;
-		font-size: 60px;
-		font-family: 'Jim Nightshade', cursive;
-		align-items:center;
-		justify-content: center;
-		display: flex;
-	}
-	#name strong{
-		position: relative;
-		color:	#E8D38B;
-		text-shadow: 2px 2px 2px #57918F;
-	}
-	#name:HOVER{
-		color:white;
-		background-color:#FFCCFF;
-	}
+@import url('https://fonts.googleapis.com/css?family=Jim+Nightshade');
 
-	#tag{
-		width: 100%; 
-		height: 150px; 
-		float: left;
-		font-size:3em;
-		color:#9BFDFF;
-		text-shadow: 2px 2px 2px #9999CC;
-		align-items:center;
-		justify-content: center;
-		display: flex;
-		font-family: 'Jim Nightshade', cursive;
-		font-family: 'Orbitron', sans-serif;
-		font-family: 'Satisfy', cursive;
-		}
-	
-	#home{
-		width: 20%; 
-		height: 100px; 
-		float: left;
-		font-size:2em;
-		align-items:center;
-		justify-content: center;
-		display: flex;
-	}
-	#home:HOVER{
-				color:white;
-				background-color:#FFCCFF;
-	}
-	#homeBlock{
-				width: 20%; 
-				height: 100px; 
-				float: right;
-				font-size:2em;
-				align-items:center;
-				justify-content: center;
-				display: flex;
-				color:#F7E7D6;
-	}
-	#homeBlock:HOVER{
-				color:white;
-				background-color:#FFCCFF;
-	}
-	#manual01{
-					width:20%;
-					height:100px;
-					float: right;
-					font-size:2em;
-			 		align-items:center;
-					justify-content: center;
-					display: flex;
-	}
-	#manual01:HOVER{
-					color:white;
-					background-color: #FFCCFF;
-	}
-	#manual02{
-					width:20%;
-					height:100px;
-					float: right;
-					font-size:2em;
-					align-items:center;
-					justify-content: center;
-					display: flex;
-	}
-	#manual02:HOVER{
-					color:white;
-					background-color: #FFCCFF;
-	}
-	#manual03{
-					width:20%;
-					height: 100px;
-					float: right;
-					font-size:2em;
-					align-items:center;
-					justify-content: center;
-					display: flex;
-					
-	}
-	#manual03:HOVER{
-					color:white;
-					background-color: #FFCCFF;
-	}
-	#intro{
-		width: 50%; 
-		height: 300px; 
-		float: left;
-		align-items:center;
-		justify-content: center;
-		display: flex;
-		color:black;
-		font-size:2em;
-		background-image:url('/homework/a00_project/a01_team/a03.jpg');
-	}
-	#introContent{
-		 width: 50%;
-		 height: 300px; 
-	 	 float: right;
-		 align-items:center;
-	}
-	#emptyBlock{
-		width:100%;
-		height: 30px;
-		float :left;
-		
-	
-	}
-	#contactBlock{
-				 width: 100%;
-				 height: 400px; 
-				 float: left;
-				 display:inline-block;			 
-	}
-	#place01{
-			width:50%;
-			height:400px;
-			
-			background-image: url('/homework/a00_project/a01_team/place1.JPG');
-	}
-	#frame{
-		width:100%;
-		height:1026px;
-		border-style: none;
-	}
-	#memoEmail{
-		width:100%;
-		height:50px;
-		font-size: 20pt;
-		align-items:center;
-		justify-content: center;
-		display: flex;
-	}
-	#contactbox{
-		width: 100%; 
-		height: 210px; 
-		float: left;
-		font-size: 30pt;
-		margin:auto;
-		
-	}
-	#contactName input{
-		position:relative;
-		left:100px;	
-		height:50px;
-		width:395px;
-	}
-	#contactEmail input{
-		position:relative;
-		left:100px;
-		height:50px;
-		width:395px;
-	}
-	#contactTitle input{
-		position:relative;
-		left:100px;
-		height:50px;
-		width:395px;
-	}
-	#contactName{
-				width:50%;
-				height:70px;
-				float:left;
-	}
-	#contactContent{
-				width: 40%; 
-				height: 210px; 
-				float: right;
-				margin-right:100px;
-				margin-top: 9px;
-	} 
-	#contactEmail{
-				width: 50%; 
-				height: 70px; 
-				float: left;
-	}
-	#contactTitle{
-				width: 50%; 
-				height: 70px; 
-				float: left;
-	}
-	#contactSendBlock{
-				width: 80%;
-				height: 50px;
-			    float: left;
-				color: orange;
-				font-size: 16pt; 
-	}
-	#contactSend{
-				width: 20%; 
-				height: 50px; 
-				float: right;
-	}
-	#contactSendButton{font-size:20px;}
-	
-	.bgBlue{
-			   background-color: #FFCCFF;}
-	.menu{
-			   	color:#F7E7D6;
-			   	text-shadow: 2px 2px 2px #57918F;
-			  	font-family: 'Satisfy', cursive;
-				font-family: 'Cookie', cursive;
-				font-family: 'Alegreya', serif;
-				font-family: 'The Girl Next Door', cursive;
-				font-family: 'La Belle Aurore', cursive;
-				font-family: 'Advent Pro', sans-serif;
-				
-	}
+@import
+	url('https://fonts.googleapis.com/css?family=Jim+Nightshade|Orbitron|Satisfy')
+	;
+
+@import
+	url('https://fonts.googleapis.com/css?family=Advent+Pro|Alegreya|Cookie|La+Belle+Aurore|Satisfy|The+Girl+Next+Door')
+	;
+
+#containerWhite {
+	width: 100%;
+	height: 1800px;
+	display: inline-block;
+	background-image: url('/homework/a00_project/a01_team/background04.jpg');
+}
+
+#blockWhite {
+	width: 1000px;
+	height: 1800px;
+	margin: auto;
+}
+
+#container {
+	width: 100%;
+	height: 400px;
+	display: inline-block;
+	background-color:;
+}
+
+#blockBlue {
+	width: 1000px;
+	height: 400px;
+	margin: auto;
+}
+
+#name {
+	width: 100%;
+	height: 100px;
+	float: left;
+	font-size: 60px;
+	font-family: 'Jim Nightshade', cursive;
+	align-items: center;
+	justify-content: center;
+	display: flex;
+}
+
+#name strong {
+	position: relative;
+	color: #E8D38B;
+	text-shadow: 2px 2px 2px #57918F;
+}
+
+#name:HOVER {
+	color: white;
+	background-color: #FFCCFF;
+}
+
+#tag {
+	width: 100%;
+	height: 150px;
+	float: left;
+	font-size: 3em;
+	color: #9BFDFF;
+	text-shadow: 2px 2px 2px #9999CC;
+	align-items: center;
+	justify-content: center;
+	display: flex;
+	font-family: 'Jim Nightshade', cursive;
+	font-family: 'Orbitron', sans-serif;
+	font-family: 'Satisfy', cursive;
+}
+
+#home {
+	width: 20%;
+	height: 100px;
+	float: left;
+	font-size: 2em;
+	align-items: center;
+	justify-content: center;
+	display: flex;
+}
+
+#home:HOVER {
+	color: white;
+	background-color: #FFCCFF;
+}
+
+#homeBlock {
+	width: 20%;
+	height: 100px;
+	float: right;
+	font-size: 2em;
+	align-items: center;
+	justify-content: center;
+	display: flex;
+	color: #F7E7D6;
+}
+
+#homeBlock:HOVER {
+	color: white;
+	background-color: #FFCCFF;
+}
+
+#manual01 {
+	width: 20%;
+	height: 100px;
+	float: right;
+	font-size: 2em;
+	align-items: center;
+	justify-content: center;
+	display: flex;
+}
+
+#manual01:HOVER {
+	color: white;
+	background-color: #FFCCFF;
+}
+
+#manual02 {
+	width: 20%;
+	height: 100px;
+	float: right;
+	font-size: 2em;
+	align-items: center;
+	justify-content: center;
+	display: flex;
+}
+
+#manual02:HOVER {
+	color: white;
+	background-color: #FFCCFF;
+}
+
+#manual03 {
+	width: 20%;
+	height: 100px;
+	float: right;
+	font-size: 2em;
+	align-items: center;
+	justify-content: center;
+	display: flex;
+}
+
+#manual03:HOVER {
+	color: white;
+	background-color: #FFCCFF;
+}
+
+#intro {
+	width: 50%;
+	height: 300px;
+	float: left;
+	align-items: center;
+	justify-content: center;
+	display: flex;
+	color: black;
+	font-size: 2em;
+	background-image: url('/homework/a00_project/a01_team/a03.jpg');
+}
+
+#introContent {
+	width: 50%;
+	height: 300px;
+	float: right;
+	align-items: center;
+}
+
+#emptyBlock {
+	width: 100%;
+	height: 30px;
+	float: left;
+}
+
+#contactBlock {
+	width: 100%;
+	height: 400px;
+	float: left;
+	display: inline-block;
+}
+
+#place01 {
+	width: 50%;
+	height: 400px;
+	background-image: url('/homework/a00_project/a01_team/place1.JPG');
+}
+
+#frame {
+	width: 100%;
+	height: 1026px;
+	border-style: none;
+}
+
+#memoEmail {
+	width: 100%;
+	height: 50px;
+	font-size: 20pt;
+	align-items: center;
+	justify-content: center;
+	display: flex;
+}
+
+#contactbox {
+	width: 100%;
+	height: 210px;
+	float: left;
+	font-size: 30pt;
+	margin: auto;
+}
+
+#contactName input {
+	position: relative;
+	left: 100px;
+	height: 50px;
+	width: 395px;
+}
+
+#contactEmail input {
+	position: relative;
+	left: 100px;
+	height: 50px;
+	width: 395px;
+}
+
+#contactTitle input {
+	position: relative;
+	left: 100px;
+	height: 50px;
+	width: 395px;
+}
+
+#contactName {
+	width: 50%;
+	height: 70px;
+	float: left;
+}
+
+#contactContent {
+	width: 40%;
+	height: 210px;
+	float: right;
+	margin-right: 100px;
+	margin-top: 9px;
+}
+
+#contactEmail {
+	width: 50%;
+	height: 70px;
+	float: left;
+}
+
+#contactTitle {
+	width: 50%;
+	height: 70px;
+	float: left;
+}
+
+#contactSendBlock {
+	width: 80%;
+	height: 50px;
+	float: left;
+	color: orange;
+	font-size: 16pt;
+}
+
+#contactSend {
+	width: 20%;
+	height: 50px;
+	float: right;
+}
+
+#contactSendButton {
+	font-size: 20px;
+}
+
+.bgBlue {
+	background-color: #FFCCFF;
+}
+
+.menu {
+	color: #F7E7D6;
+	text-shadow: 2px 2px 2px #57918F;
+	font-family: 'Satisfy', cursive;
+	font-family: 'Cookie', cursive;
+	font-family: 'Alegreya', serif;
+	font-family: 'The Girl Next Door', cursive;
+	font-family: 'La Belle Aurore', cursive;
+	font-family: 'Advent Pro', sans-serif;
+}
 </style>
 <script type="text/javascript">
 	function sendMail() {
@@ -256,56 +311,63 @@
 	<div id="containerWhite">
 		<div id="blockWhite">
 			<div id="name">
-				<strong id="namestr" onclick="window.location='main.html'">DAILY FOOD DAIRY</strong>		
+				<strong id="namestr" onclick="window.location='main.html'">DAILY
+					FOOD DAIRY</strong>
 			</div>
-			<div id="tag">"Your beginnings will seem humble, so prosperous will your future be"</div>
+			<div id="tag">"Your beginnings will seem humble, so prosperous
+				will your future be"</div>
 			<hr>
 			<div id="home" class="menu">
-            	<a href="http://m.blog.naver.com/vivi0713/220572671572" target="content">monday</a>
-         	</div>
+				<a href="http://m.blog.naver.com/vivi0713/220572671572"
+					target="content">monday</a>
+			</div>
 			<div id="manual03" class="menu">
-			<a href="http://blog.naver.com/white9576/220959426269" target="content">friday</a>
+				<a href="http://blog.naver.com/white9576/220959426269"
+					target="content">friday</a>
 			</div>
 			<div id="manual02" class="menu">
 				<a href="http://blog.daum.net/sub5053/1257" target="content">thursday</a>
 			</div>
-			<div id="manual01" class="menu" >
-				<a href="http://m.blog.naver.com/vivi0713/220620993420" target="content">wednesday</a>
+			<div id="manual01" class="menu">
+				<a href="http://m.blog.naver.com/vivi0713/220620993420"
+					target="content">wednesday</a>
 			</div>
-			<div id="homeBlock" class="menu" >
+			<div id="homeBlock" class="menu">
 				<a href="http://ccami.tistory.com/209" target="content">tuesday</a>
 			</div>
 			<hr>
 			<div id="content">
-			<iframe id="frame"  name="content"></iframe>
-			</div>							
+				<iframe id="frame" name="content"></iframe>
+			</div>
 			<div id="container">
-			<hr>
+				<hr>
 				<div id="memoEmail">즐겁게 보셨다면 후기를 이메일로 보내 주세요..</div>
-			<hr>
-				<div id="contactbox" >
-					<div id="contactName" >
-						<input type="text" placeholder="이름"/>
+				<hr>
+				<div id="contactbox">
+					<div id="contactName">
+						<input type="text" placeholder="이름" />
 					</div>
-					<div id="contactContent" >
-							<textarea rows="13" cols="54" placeholder="메세지">
+					<div id="contactContent">
+						<textarea rows="13" cols="54" placeholder="메세지">
 							</textarea>
-						</div>
-					<div id="contactEmail" >
-						<input type="text" placeholder="이메일"/>
 					</div>
-					<div id="contactTitle" >
-						<input type="text" placeholder="제목"/>
+					<div id="contactEmail">
+						<input type="text" placeholder="이메일" />
+					</div>
+					<div id="contactTitle">
+						<input type="text" placeholder="제목" />
 					</div>
 				</div>
-				
-			
-			
-				<div id="contactSendBlock" >® 2017by KANG WONMIN. The best homepage ever</div>
+
+
+
+				<div id="contactSendBlock">® 2017by KANG WONMIN. The best
+					homepage ever</div>
 				<div id="contactSend">
-				<input id="contactSendButton" type="button" value="Send" onclick="sendMail()">
+					<input id="contactSendButton" type="button" value="Send"
+						onclick="sendMail()">
+				</div>
 			</div>
 		</div>
-	</div>
 </body>
 </html>

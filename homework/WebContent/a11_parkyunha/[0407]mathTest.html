@@ -1,17 +1,14 @@
 <!doctype html>
 <html lang="ko">
 <head>
-    <meta charset="utf-8">
-    <title>
-        Math Test
-    </title>
-    <script
-        src="http://code.jquery.com/jquery-3.2.1.js"
-        integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
-        crossorigin="anonymous">
+<meta charset="utf-8">
+<title>Math Test</title>
+<script src="http://code.jquery.com/jquery-3.2.1.js"
+	integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+	crossorigin="anonymous">
         // http://code.jquery.com
     </script>
-    <script>
+<script>
         var reportCard = [];
         var problemNum = 1;
 
@@ -155,19 +152,29 @@
     </script>
 </head>
 <body>
-    <h1>Math Test</h1>
-    <div>Test Status : <span id="status">Before Start</span></div>
-    <div>Time : <span id="countdown">00 : 00</span></div>
-    <button id="start">Start</button>
-    <br><br>
-    <div>Problem <span id="problem">Ready</span></div>
-    <input type="text" name="operand01" value="5" disabled>
-    <span name="operator">+</span>
-    <input type="text" name="operand02" value="4"disabled>=
-    <input type="text" name="result" value="Enter the value" disabled>
-    <button id="check" disabled>Check</button>
-    <div id="record">cf. 나누기는 소수 2번째 자리까지 계산한다.<br><br></div>
-    <br>
-    <div id="testResult"></div>
+	<h1>Math Test</h1>
+	<div>
+		Test Status : <span id="status">Before Start</span>
+	</div>
+	<div>
+		Time : <span id="countdown">00 : 00</span>
+	</div>
+	<button id="start">Start</button>
+	<br>
+	<br>
+	<div>
+		Problem <span id="problem">Ready</span>
+	</div>
+	<input type="text" name="operand01" value="5" disabled>
+	<span name="operator">+</span>
+	<input type="text" name="operand02" value="4" disabled>=
+	<input type="text" name="result" value="Enter the value" disabled>
+	<button id="check" disabled>Check</button>
+	<div id="record">
+		cf. 나누기는 소수 2번째 자리까지 계산한다.<br>
+		<br>
+	</div>
+	<br>
+	<div id="testResult"></div>
 </body>
 </html>

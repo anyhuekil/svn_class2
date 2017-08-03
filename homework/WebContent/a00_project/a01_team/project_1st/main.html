@@ -4,65 +4,159 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <style type="text/css">
-	@import url(http://fonts.googleapis.com/earlyaccess/nanumpenscript.css);
-	
-	div{box-sizing: border-box;}
-	
-	#container{width: 100%; height: 1000px; display: inline-block;}
-	#block{width: 1000px; margin: auto;}
-	
-	#leftUp{width: 30%; height: 300px; float: left; background-color: #ffb3ba;
-			border-bottom: 5px solid; border-top: 5px solid;
-			border-left: 5px solid; border-color: #ff77aa; 
-			border-radius: 25% 0 0 0;}
-	#topMember{width: 40%; height: 300px; float: left; background-color: #ffb3ba;
-				border-bottom: 5px solid; border-top: 5px solid;
-				border-right: 5px solid; border-color: #ff77aa; 
-				background-image: url("/homework/a00_project/a01_team/KMG.jpg");
-				background-repeat: no-repeat; background-position: center;
-				background-size: 50%;}
-				
-	#rightUp{width: 30%; height: 300px; float: right; background-color: #baffc9;
-			border-right: 5px solid; border-top: 5px solid;
-			border-left: 5px solid; border-color: #aaff77; 
-			border-radius: 0 25% 0 0;}
-	#rightMember{width: 30%; height: 400px; float: left; background-color: #baffc9;
-				border-right: 5px solid; border-bottom: 5px solid;
-				border-left: 5px solid; border-color: #aaff77; 
-				background-image: url("/homework/a00_project/a01_team/M_Photo_First_View.jpg");
-				background-repeat: no-repeat; background-position: center;
-				background-size: 75%}
-				
-	#centerTitle{width: 40%; height: 400px; background-color: #326ada; float: left;
-				z-index: 5; position: relative; color: #bae1ff;	border:10px double #d2d2d2;
-				display: flex; justify-content: center; align-items: center;
-				font-size: 75px; font-family: 'Nanum Pen Script';}
-					
-	#leftMember{width: 30%; height: 400px; float: left; background-color: #ffdfba;
-				border-right: 5px solid; border-top: 5px solid;
-				border-left: 5px solid; border-color: #fc913a; 
-				background-image: url("/homework/a00_project/a01_team/KDH.jpg");
-				background-repeat: no-repeat; background-position: center;
-				background-size: 75%}
-	#leftDown{width: 30%; height: 300px; float: left; background-color: #ffdfba;
-				border-right: 5px solid; border-bottom: 5px solid;
-				border-left: 5px solid; border-color: #fc913a; 
-				border-radius: 0 0 0 25%;}
-					
-	#bottomMember{width: 40%; height: 300px; float: left; background-color: #bae1ff;
-				border-left: 5px solid; border-top: 5px solid;
-				border-bottom: 5px solid; border-color: #77aaff; 
-				background-image: url("/homework/a00_project/a01_team/KWM2.JPG");
-				background-repeat: no-repeat; background-position: center;
-				background-size: 50%}		
-	#rightDown{width: 30%; height: 300px; float: right; background-color: #bae1ff;
-				border-right: 5px solid; border-bottom: 5px solid;
-				border-top: 5px solid; border-color: #77aaff; 
-				border-radius: 0 0 25% 0;}
-				
-	.icon{text-align: center; list-style: none;padding-left: 0px; 
-		font-family: 'Nanum Pen Script'; font-size: 50px;}
-	.mousePointer{cursor: pointer;}
+@import url(http://fonts.googleapis.com/earlyaccess/nanumpenscript.css);
+
+div {
+	box-sizing: border-box;
+}
+
+#container {
+	width: 100%;
+	height: 1000px;
+	display: inline-block;
+}
+
+#block {
+	width: 1000px;
+	margin: auto;
+}
+
+#leftUp {
+	width: 30%;
+	height: 300px;
+	float: left;
+	background-color: #ffb3ba;
+	border-bottom: 5px solid;
+	border-top: 5px solid;
+	border-left: 5px solid;
+	border-color: #ff77aa;
+	border-radius: 25% 0 0 0;
+}
+
+#topMember {
+	width: 40%;
+	height: 300px;
+	float: left;
+	background-color: #ffb3ba;
+	border-bottom: 5px solid;
+	border-top: 5px solid;
+	border-right: 5px solid;
+	border-color: #ff77aa;
+	background-image: url("/homework/a00_project/a01_team/KMG.jpg");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 50%;
+}
+
+#rightUp {
+	width: 30%;
+	height: 300px;
+	float: right;
+	background-color: #baffc9;
+	border-right: 5px solid;
+	border-top: 5px solid;
+	border-left: 5px solid;
+	border-color: #aaff77;
+	border-radius: 0 25% 0 0;
+}
+
+#rightMember {
+	width: 30%;
+	height: 400px;
+	float: left;
+	background-color: #baffc9;
+	border-right: 5px solid;
+	border-bottom: 5px solid;
+	border-left: 5px solid;
+	border-color: #aaff77;
+	background-image:
+		url("/homework/a00_project/a01_team/M_Photo_First_View.jpg");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 75%
+}
+
+#centerTitle {
+	width: 40%;
+	height: 400px;
+	background-color: #326ada;
+	float: left;
+	z-index: 5;
+	position: relative;
+	color: #bae1ff;
+	border: 10px double #d2d2d2;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 75px;
+	font-family: 'Nanum Pen Script';
+}
+
+#leftMember {
+	width: 30%;
+	height: 400px;
+	float: left;
+	background-color: #ffdfba;
+	border-right: 5px solid;
+	border-top: 5px solid;
+	border-left: 5px solid;
+	border-color: #fc913a;
+	background-image: url("/homework/a00_project/a01_team/KDH.jpg");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 75%
+}
+
+#leftDown {
+	width: 30%;
+	height: 300px;
+	float: left;
+	background-color: #ffdfba;
+	border-right: 5px solid;
+	border-bottom: 5px solid;
+	border-left: 5px solid;
+	border-color: #fc913a;
+	border-radius: 0 0 0 25%;
+}
+
+#bottomMember {
+	width: 40%;
+	height: 300px;
+	float: left;
+	background-color: #bae1ff;
+	border-left: 5px solid;
+	border-top: 5px solid;
+	border-bottom: 5px solid;
+	border-color: #77aaff;
+	background-image: url("/homework/a00_project/a01_team/KWM2.JPG");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 50%
+}
+
+#rightDown {
+	width: 30%;
+	height: 300px;
+	float: right;
+	background-color: #bae1ff;
+	border-right: 5px solid;
+	border-bottom: 5px solid;
+	border-top: 5px solid;
+	border-color: #77aaff;
+	border-radius: 0 0 25% 0;
+}
+
+.icon {
+	text-align: center;
+	list-style: none;
+	padding-left: 0px;
+	font-family: 'Nanum Pen Script';
+	font-size: 50px;
+}
+
+.mousePointer {
+	cursor: pointer;
+}
 </style>
 <script type="text/javascript">
 	function iconOver(iconName)
@@ -79,66 +173,64 @@
 </script>
 </head>
 <body>
-<div id="container">
-	<div id="block">
-		<div id="leftUp" class="mousePointer"
+	<div id="container">
+		<div id="block">
+			<div id="leftUp" class="mousePointer"
 				onmouseover="iconOver('searchHomepage')"
 				onmouseout="iconOut('searchHomepage')"
 				onclick="window.location='project_MK.html'">
-			<ul class="icon">
-				<li><img id="searchHomepage" src="/homework/a00_project/a01_team/searchHomepage.png"></li>
-				<li>김민경</li>
-			</ul>
-		</div>
-		<div id="rightUp" class="mousePointer"
-				onmouseover="iconOver('idCard')"
-				onmouseout="iconOut('idCard')"
+				<ul class="icon">
+					<li><img id="searchHomepage"
+						src="/homework/a00_project/a01_team/searchHomepage.png"></li>
+					<li>김민경</li>
+				</ul>
+			</div>
+			<div id="rightUp" class="mousePointer"
+				onmouseover="iconOver('idCard')" onmouseout="iconOut('idCard')"
 				onclick="window.location='pageJihoon.html'">
-			<ul class="icon">
-				<li><img id="idCard" src="/homework/a00_project/a01_team/idCard.png"></li>
-				<li>주지훈</li>
-			</ul>
-		</div>
-		<div id="topMember" class="mousePointer"
+				<ul class="icon">
+					<li><img id="idCard"
+						src="/homework/a00_project/a01_team/idCard.png"></li>
+					<li>주지훈</li>
+				</ul>
+			</div>
+			<div id="topMember" class="mousePointer"
 				onmouseover="iconOver('searchHomepage')"
 				onmouseout="iconOut('searchHomepage')"
 				onclick="window.location='project_MK.html'"></div>
-		
-		<div id="leftMember" class="mousePointer"
+
+			<div id="leftMember" class="mousePointer"
 				onmouseover="iconOver('solarSystem')"
 				onmouseout="iconOut('solarSystem')"
 				onclick="window.location='kdh_main.html'"></div>
-		<div id="centerTitle">
-			외노자의 길
-		</div>
-		<div id="rightMember" class="mousePointer"
-				onmouseover="iconOver('idCard')"
-				onmouseout="iconOut('idCard')"
+			<div id="centerTitle">외노자의 길</div>
+			<div id="rightMember" class="mousePointer"
+				onmouseover="iconOver('idCard')" onmouseout="iconOut('idCard')"
 				onclick="window.location='pageJihoon.html'"></div>
-		
-		<div id="leftDown" class="mousePointer"
+
+			<div id="leftDown" class="mousePointer"
 				onmouseover="iconOver('solarSystem')"
 				onmouseout="iconOut('solarSystem')"
 				onclick="window.location='kdh_main.html'">
-			<ul class="icon">
-				<li><img id="solarSystem" src="/homework/a00_project/a01_team/solarSystem.png"></li>
-				<li>김동휘</li>
-			</ul>
-		</div>
-		<div id="bottomMember" class="mousePointer"
-				onmouseover="iconOver('cutlery')"
-				onmouseout="iconOut('cutlery')"
+				<ul class="icon">
+					<li><img id="solarSystem"
+						src="/homework/a00_project/a01_team/solarSystem.png"></li>
+					<li>김동휘</li>
+				</ul>
+			</div>
+			<div id="bottomMember" class="mousePointer"
+				onmouseover="iconOver('cutlery')" onmouseout="iconOut('cutlery')"
 				onclick="window.location='project_reform.html'"></div>
-		<div id="rightDown" class="mousePointer"
-				onmouseover="iconOver('cutlery')"
-				onmouseout="iconOut('cutlery')"
+			<div id="rightDown" class="mousePointer"
+				onmouseover="iconOver('cutlery')" onmouseout="iconOut('cutlery')"
 				onclick="window.location='project_reform.html'">
-			<ul class="icon">
-				<li><img id="cutlery" src="/homework/a00_project/a01_team/cutlery.png"></li>
-				<li>강원민</li>
-			</ul>
+				<ul class="icon">
+					<li><img id="cutlery"
+						src="/homework/a00_project/a01_team/cutlery.png"></li>
+					<li>강원민</li>
+				</ul>
+			</div>
 		</div>
 	</div>
-</div>
 </body>
 </html>

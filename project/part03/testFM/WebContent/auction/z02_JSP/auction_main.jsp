@@ -101,12 +101,12 @@ $(document).ready(function(){
 <body>
 	<div id="main_container" class="containner">
 		<div id="hello" align="right">
-				<h3><%=userInVO.getUserName()%>님 환영합니다.</h3>
-				<span>권한 : [<%=userInVO.getAuth()%> 등급]
-				<input type="button" value="로그아웃" id="logout" /></span>
+			<h3><%=userInVO.getUserName()%>님 환영합니다.
+			</h3>
+			<span>권한 : [<%=userInVO.getAuth()%> 등급] <input type="button"
+				value="로그아웃" id="logout" /></span>
 		</div>
-		<div id="item_picture">
-		</div>
+		<div id="item_picture"></div>
 		<div id="item_info">
 			<h2>
 				<b>Item Name</b>
@@ -126,18 +126,26 @@ $(document).ready(function(){
 			<p id=showTime></p>
 		</div>
 		<div id="bidding_info">
-		<form method="post" action="bidding_proc.jsp" >
-            <h2 id="current_bid">Current Bid: $<%=curBid %>  </h2>
-            <p id="bid_detail">Raise Bid +$<input type="text" name="curr" value="<%=nowBidPrice %>" /><br/>
-            Total Bid Price : $<input type="text" name ="afterR" value="<%=(curBid+nowBidPrice) %>" />
-            <button>Place Bid</button></p>
-            <input type="text" name="hiddenBidderId" value="<%=auctionId %>" style="visibility:hidden;" /> 
-         </form>
+			<form method="post" action="bidding_proc.jsp">
+				<h2 id="current_bid">
+					Current Bid: $<%=curBid %>
+				</h2>
+				<p id="bid_detail">
+					Raise Bid +$<input type="text" name="curr"
+						value="<%=nowBidPrice %>" /><br /> Total Bid Price : $<input
+						type="text" name="afterR" value="<%=(curBid+nowBidPrice) %>" />
+					<button>Place Bid</button>
+				</p>
+				<input type="text" name="hiddenBidderId" value="<%=auctionId %>"
+					style="visibility: hidden;" />
+			</form>
 		</div>
 		<div id="seller_info">
 			<h3>Seller Informaton</h3>
 			<h4>Name - > Auctioneer ID</h4>
-			<h4>→ <%=auctioneerId%></h4>
+			<h4>
+				→
+				<%=auctioneerId%></h4>
 			<h4>Phone Number222</h4>
 			<h4>→ 010-7777-7777(none DB)</h4>
 		</div>

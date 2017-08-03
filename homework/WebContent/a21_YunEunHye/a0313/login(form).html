@@ -4,7 +4,10 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <style type="text/css">
-input:focus{color: orange; background-color:green;}
+input:focus {
+	color: orange;
+	background-color: green;
+}
 </style>
 <script type="text/javascript">
  	function lock(){
@@ -29,16 +32,16 @@ input:focus{color: orange; background-color:green;}
 
 </head>
 <body>
-<center>
-<form name="login" border>
-로그인
-ID:<input type="text" name="id"><br>
-Pw:<input type = "password" name="pw"><br>
-1단계 주제를 입력하세요 :<input type="text" disabled="true" name="subject1"><br>
-2단계 세부 주제를 입력하세요 :<input type="text" disabled="true" name="subject2"><br>
-<input type ="button" name="confirm"  onclick="javascript:lock()" value="확인">
+	<center>
+		<form name="login" border>
+			로그인 ID:<input type="text" name="id"><br> Pw:<input
+				type="password" name="pw"><br> 1단계 주제를 입력하세요 :<input
+				type="text" disabled="true" name="subject1"><br> 2단계 세부
+			주제를 입력하세요 :<input type="text" disabled="true" name="subject2"><br>
+			<input type="button" name="confirm" onclick="javascript:lock()"
+				value="확인">
 
-</form>
-</center>
+		</form>
+	</center>
 </body>
 </html>

@@ -28,17 +28,19 @@
 </script>
 </head>
 <body>
-<form name="movieForm"><!--  parseInt()활용 -->
-	제목: <input type="text" name="title"/><br>
-	관람료: <input type="text" name="price"/><br>
-	인원: <input type="text" name="people"/><br>
-	<input type="button" value="계산" onclick="javascript:receipt()"/><br>
-	<center>
-	<h2 >영수증</h2><br>
-	<!--  form하위에 있으면, document.form이름.receipt.value="영수증" -->
-	<textarea name="bill" rows="20" cols="50">
+	<form name="movieForm">
+		<!--  parseInt()활용 -->
+		제목: <input type="text" name="title" /><br> 관람료: <input
+			type="text" name="price" /><br> 인원: <input type="text"
+			name="people" /><br> <input type="button" value="계산"
+			onclick="javascript:receipt()" /><br>
+		<center>
+			<h2>영수증</h2>
+			<br>
+			<!--  form하위에 있으면, document.form이름.receipt.value="영수증" -->
+			<textarea name="bill" rows="20" cols="50">
 	</textarea>
-	</center>
-</form>
+		</center>
+	</form>
 </body>
 </html>

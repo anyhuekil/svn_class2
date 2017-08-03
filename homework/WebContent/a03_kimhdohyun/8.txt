@@ -1,0 +1,36 @@
+1. JDK, ECLIPSE 하드웨어 설치 시, 유의점
+PC 운영체제 비트와 맞는 것을 설치. x32 x64
+
+2. DB 접속 시, 필요한 정보
+ID, Password, SID, PORT, IP
+
+3. JSP에서 session 범위와 설정 방법
+String id = “abc”;
+String pw= “123”;
+ 
+session.setAttribute(“id”,id) // (name, value)
+session.setAttribute(“pw”,pw) // (pw, pw)
+getAttribute
+String attrName = (String)attr.nextElement(); // 첫번째 name값("id")이 저장, 다운캐스팅
+String attrValue = (String)session.getAttribute(attrName); // 속성값
+out.println("세션의 속성명은 " + attrName + " 이고 ");
+out.println("세션의 속성값은 " + attrValue + "이다.<br><br>");
+
+4. Spring에서 요청 처리 방법
+uri 주소와 mapping 되는 @객체들
+http://localhost:7080/springweb/start.do?id
+@autowired
+데이터 값을 넘기는 @객체들
+
+5. 단위 테스트와 통합테스트 개념
+단위 테스트 : 프로그램의 기본 단위인 모듈을 테스트 하여 모듈 테스트라고도 함. 개별 모듈이 제대로 구현되어 정해진 기능을 정확히 수행하는지를 테스트하는 것.
+통합 테스트 : 단위 테스트가 끝난 모듈을 통합하는 과정에서 발생할 수 있는 오류를 찾는 테스트로 주로 모듈 간의 상호 작용이 정상적으로 수행되었는지를 테스트하는 것.
+
+6. Connection Pool 설정 방법
+server.xml
+<Resource auth = “Container” name = “jdbc/oracle”
+	type = “javax.sql.DataSource”
+	driverClassName = “oracle.jdbc.driver.OracleDriver”
+url = “jdbc:oracle:thin:@localhost:1521:Ora11” username=”오라클 ID “ 
+	password = “오라클 PW” maxActive = “10” maxIdle = “5” maxWait = “-1” />
+

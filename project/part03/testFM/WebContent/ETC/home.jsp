@@ -20,13 +20,13 @@
 </head>
 <body>
 	<div id="allCover">
-	<header>
-		<div id="titleLoc">home</div>
-		<div id="loginLoc"><jsp:include page="z02_JSP/signIn.jsp"></jsp:include></div>
-	</header>
-	<nav>nav</nav>
-	<section>section</section>
-	<footer>footer</footer>
+		<header>
+			<div id="titleLoc">home</div>
+			<div id="loginLoc"><jsp:include page="z02_JSP/signIn.jsp"></jsp:include></div>
+		</header>
+		<nav>nav</nav>
+		<section>section</section>
+		<footer>footer</footer>
 	</div>
 </body>
 </html>

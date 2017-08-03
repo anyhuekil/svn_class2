@@ -5,17 +5,24 @@
 <title>Insert title here</title>
 
 <style type="text/css">
-
-li{float:left; list-style:none; padding:15px; background-color:orange;}
+li {
+	float: left;
+	list-style: none;
+	padding: 15px;
+	background-color: orange;
+}
 /* li:nth-child(2n){background:gray;} */
+li:hover {
+	background: pink;
+}
 
-li:hover{background:pink;}
+li:first-child {
+	border-radius: 10px 0 0 10px;
+}
 
-li:first-child{border-radius: 10px 0 0 10px;}
-li:last-child{border-radius:0 10px 10px 0;}
-
-
-
+li:last-child {
+	border-radius: 0 10px 10px 0;
+}
 </style>
 
 <script type="text/javascript">
@@ -30,8 +37,8 @@ li:last-child{border-radius:0 10px 10px 0;}
 		<li>인사</li>
 		<li>총무</li>
 		<li>자재관리</li>
-		<li>관리자</li>	
-	</ul>	
+		<li>관리자</li>
+	</ul>
 
 
 

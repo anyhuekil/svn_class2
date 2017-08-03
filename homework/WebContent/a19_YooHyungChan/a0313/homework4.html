@@ -4,7 +4,9 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <style type="text/css">
-	#hi{visibility:hidden;}
+#hi {
+	visibility: hidden;
+}
 </style>
 <script type="text/javascript">
 	function call(num){
@@ -65,28 +67,30 @@
 </script>
 </head>
 <body>
-글자색을 선택해 주세요.	<input type="button" name="red" value="빨" onclick="call(1)"/>
-				<input type="button" name="orange" value="주" onclick="call(2)"/>
-				<input type="button" name="yellow" value="노" onclick="call(3)"/>
-				<input type="button" name="green" value="초" onclick="call(4)"/>
-				<input type="button" name="blue" value="파" onclick="call(5)"/>
-				<input type="button" name="navy" value="남" onclick="call(6)"/>
-				<input type="button" name="purple" value="보" onclick="call(7)"/>
-<br>				
-내용을 입력해 주세요. <input id="text" type="text" name="blank" />
-<br>
-<input type="button" name="cofirm" value="확인!" onclick="send()"/>
-<h1 id="final"></h1>
-<br><br>
-<hr>
-keyword <input id="write"type="text" name="keyword" value=""/>
-		<input type="button" name="registration" value="등록" onclick="reg()"/><br>
-등록할 수 있는 keywords<input type="button" name="swhich" value="보이기" onclick="change(this)"/><br>
-<h3 id="hi">keywords가 보이는 곳<br>
-			java<br>
- 			jsp<br>
-			c#<br>
- 			파이션<br>			
-</h3>
+	글자색을 선택해 주세요.
+	<input type="button" name="red" value="빨" onclick="call(1)" />
+	<input type="button" name="orange" value="주" onclick="call(2)" />
+	<input type="button" name="yellow" value="노" onclick="call(3)" />
+	<input type="button" name="green" value="초" onclick="call(4)" />
+	<input type="button" name="blue" value="파" onclick="call(5)" />
+	<input type="button" name="navy" value="남" onclick="call(6)" />
+	<input type="button" name="purple" value="보" onclick="call(7)" />
+	<br> 내용을 입력해 주세요.
+	<input id="text" type="text" name="blank" />
+	<br>
+	<input type="button" name="cofirm" value="확인!" onclick="send()" />
+	<h1 id="final"></h1>
+	<br>
+	<br>
+	<hr>
+	keyword
+	<input id="write" type="text" name="keyword" value="" />
+	<input type="button" name="registration" value="등록" onclick="reg()" />
+	<br> 등록할 수 있는 keywords
+	<input type="button" name="swhich" value="보이기" onclick="change(this)" />
+	<br>
+	<h3 id="hi">
+		keywords가 보이는 곳<br> java<br> jsp<br> c#<br> 파이션<br>
+	</h3>
 </body>
 </html>

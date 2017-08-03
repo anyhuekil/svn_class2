@@ -43,8 +43,6 @@
 
 */
 
-
-
 /*
 확인예제/과제
 	아래와 같은 화면을 구성하세요
@@ -62,9 +60,18 @@ hover, class를 활용하여 1,3,4번에 해당하는 line은 마우스를 올�
 	5
 
 */
-	.best:hover{background-color:yellow;}
-	.point01:hover,.point02:hover{color:red;}
-	.point02:active{color:blue;background-color:green;}
+.best:hover {
+	background-color: yellow;
+}
+
+.point01:hover, .point02:hover {
+	color: red;
+}
+
+.point02:active {
+	color: blue;
+	background-color: green;
+}
 
 /*
 확인예제 및 과제
@@ -80,12 +87,17 @@ status:[   ] -- 상태여부(비로그인/로그인성공/1단계/2단계)
 2단계 세부주제를 입력하세요:[   ] - 초기 비활성화 => 활성화
 document.form이름.element이름.value	
 */
+input:enabled {
+	background: #99ccff;
+}
 
-	
-	input:enabled{background:#99ccff;}
-	input:disabled{background:#ff6666;}
-	input:focus{background:#98e698;}
+input:disabled {
+	background: #ff6666;
+}
 
+input:focus {
+	background: #98e698;
+}
 
 /*
 	확인예제/과제
@@ -98,27 +110,61 @@ document.form이름.element이름.value
 	=> 메뉴항목은 radius를 활용하며 둥근 모양의 list가 나오게 처리
 	
 */
+li {
+	float: left;
+	list-style: none;
+	font-size: 40px;
+	padding: 10px;
+	color: white;
+	background: #000080;
+}
 
-	li{float:left;list-style:none;font-size:40px;padding:10px;color:white;background:#000080;}
-	li:first-child{border-radius:30px 0 0 30px;}
-	li:last-child{border-radius:0 30px 30px 0;}
-	li:active{color:#000080;background:white;}
-	/*li:hover{background:white;color:#000033;}*/
+li:first-child {
+	border-radius: 30px 0 0 30px;
+}
 
-	p{font-size:40px; padding:10px;}
-	p:first-child{border-radius:30px 0 0 30px;}
-	p:last-child{border-radius:0 30px 30px 0;}
+li:last-child {
+	border-radius: 0 30px 30px 0;
+}
+
+li:active {
+	color: #000080;
+	background: white;
+}
+/*li:hover{background:white;color:#000033;}*/
+p {
+	font-size: 40px;
+	padding: 10px;
+}
+
+p:first-child {
+	border-radius: 30px 0 0 30px;
+}
+
+p:last-child {
+	border-radius: 0 30px 30px 0;
+}
 /*	a{font-size:40px; padding:10px;} */
-	a:active{color:#000080;background:white;}
-	a{text-decoration:none;}
-	a:link{color:white;background:#000080;}
-	a:VISITED{color:white;background:#000080;}
+a:active {
+	color: #000080;
+	background: white;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:link {
+	color: white;
+	background: #000080;
+}
+
+a:VISITED {
+	color: white;
+	background: #000080;
+}
 /*	a:link{color:white;background:#000033;}*/
 /*	a:VISITED:hover{color:#000033;background:white;}*/
-
-
-
-
 </style>
 
 <script type="text/javascript">
@@ -162,78 +208,95 @@ document.form이름.element이름.value
 </head>
 <body>
 	<center>
-	<h1>Best food list!!!</h1>
-	<table width="300" height="400" border>
-		<tr>
-			<td>No</td>
-			<td>햄버거</td>
-			<td>1000</td>
-		</tr>
-		<tr class="best">
-			<td>1</td>
-			<td class="point01">불백</td>
-			<td class="point02">1000</td>
-		</tr>	
-		<tr>
-			<td>2</td>
-			<td>피자</td>
-			<td>1000</td>
-		</tr>	
-		<tr class="best">
-			<td>3</td>
-			<td class="point01">고기</td>
-			<td class="point02">1000</td>
-		</tr>
-		<tr class="best">
-			<td>4</td>
-			<td class="point01">뭐먹지</td>
-			<td class="point02">1000</td>
-		</tr>
-		<tr>
-			<td>5</td>
-			<td>냉면</td>
-			<td>1000</td>
-		</tr>	
-	
-	</table>
+		<h1>Best food list!!!</h1>
+		<table width="300" height="400" border>
+			<tr>
+				<td>No</td>
+				<td>햄버거</td>
+				<td>1000</td>
+			</tr>
+			<tr class="best">
+				<td>1</td>
+				<td class="point01">불백</td>
+				<td class="point02">1000</td>
+			</tr>
+			<tr>
+				<td>2</td>
+				<td>피자</td>
+				<td>1000</td>
+			</tr>
+			<tr class="best">
+				<td>3</td>
+				<td class="point01">고기</td>
+				<td class="point02">1000</td>
+			</tr>
+			<tr class="best">
+				<td>4</td>
+				<td class="point01">뭐먹지</td>
+				<td class="point02">1000</td>
+			</tr>
+			<tr>
+				<td>5</td>
+				<td>냉면</td>
+				<td>1000</td>
+			</tr>
 
-	</center><br><br><hr><br><br><br><br>
+		</table>
+
+	</center>
+	<br>
+	<br>
+	<hr>
+	<br>
+	<br>
+	<br>
+	<br>
 
 
 
-<form name="login01">
-	<h1>로그인</h1>
-	<table width="400" height="400" border>
-		<tr>
-			<td>id</td>
-			<td><input type="text" name="id01" value="id를 입력하세요" onclick="javascript:changeId(this)"/></td>
-		</tr>
-		<tr>
-			<td>password</td>
-			<td><input type="password" name="pass01" value=""/></td>
-		</tr>
-		<tr>
-			<td colspan="2"><input type="button" value="로그인" onclick="javascript:login()" ></td>
-		</tr>	
-		<tr>
-			<td>status</td>
-			<td><input type="text" name="stat" value="비로그인" ></td>
-		</tr>	
-		<tr>
-			<td>1단계 주제입력</td>
-			<td><input type="text" name="title01" onclick="javascript:titleClick01()" disabled/></td>
-		</tr>
-		<tr>
-			<td>2단계 주제입력</td>
-			<td><input type="text" name="title02" onclick="javascript:titleClick02()" disabled/></td>
-		</tr>
-		<tr>
-			<td colspan="2"><input type="button" onclick="javascript:lastOk()" value="확인"></td>
-		</tr>	
-	
-	</table>
-</form>
-<br><br><br><hr><br><br>
+	<form name="login01">
+		<h1>로그인</h1>
+		<table width="400" height="400" border>
+			<tr>
+				<td>id</td>
+				<td><input type="text" name="id01" value="id를 입력하세요"
+					onclick="javascript:changeId(this)" /></td>
+			</tr>
+			<tr>
+				<td>password</td>
+				<td><input type="password" name="pass01" value="" /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><input type="button" value="로그인"
+					onclick="javascript:login()"></td>
+			</tr>
+			<tr>
+				<td>status</td>
+				<td><input type="text" name="stat" value="비로그인"></td>
+			</tr>
+			<tr>
+				<td>1단계 주제입력</td>
+				<td><input type="text" name="title01"
+					onclick="javascript:titleClick01()" disabled /></td>
+			</tr>
+			<tr>
+				<td>2단계 주제입력</td>
+				<td><input type="text" name="title02"
+					onclick="javascript:titleClick02()" disabled /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><input type="button"
+					onclick="javascript:lastOk()" value="확인"></td>
+			</tr>
+
+		</table>
+	</form>
+	<br>
+	<br>
+	<br>
+	<hr>
+	<br>
+	<br>
 
 
 	<ul>
@@ -244,14 +307,16 @@ document.form이름.element이름.value
 		<li><a href="http://www.naver.com">관리자</a></li>
 	</ul>
 
-<br><br><br><br>
-<p>
-	<a href="http://www.naver.com"> Home </a>
-	<a href="http://www.naver.com"> 인사 </a>
-	<a href="http://www.naver.com"> 총무 </a>
-	<a href="http://www.naver.com"> 자재관리 </a>
-	<a href="http://www.naver.com"> 관리자 </a>
-</p>
+	<br>
+	<br>
+	<br>
+	<br>
+	<p>
+		<a href="http://www.naver.com"> Home </a> <a
+			href="http://www.naver.com"> 인사 </a> <a href="http://www.naver.com">
+			총무 </a> <a href="http://www.naver.com"> 자재관리 </a> <a
+			href="http://www.naver.com"> 관리자 </a>
+	</p>
 
 
 

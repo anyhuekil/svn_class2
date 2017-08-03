@@ -5,111 +5,113 @@
 <title>Insert title here</title>
 </head>
 <body>
-<!-- 
+	<!-- 
 과제
 쇼핑몰이나 게임사이트 등에서 회원가입란을 확인하시고, 지금 배운 form 객체 하위내용을 table과 함께
 정렬을 효과적으로 해서, 회원가입처리화면을 구성하세요. 
 -->
 
 
-<h1 align="center">회원가입</h1>
+	<h1 align="center">회원가입</h1>
 
-<form>
-<table border="1">
+	<form>
+		<table border="1">
 
-<tr>
-<td>1) 아이디 : </td> <td><input type="text" name="inid" /></td>
-</tr>
+			<tr>
+				<td>1) 아이디 :</td>
+				<td><input type="text" name="inid" /></td>
+			</tr>
 
-<tr>
-<td>2) 비밀번호 : </td> <td><input type="text" name="inpassword" /></td>
-</tr> 
+			<tr>
+				<td>2) 비밀번호 :</td>
+				<td><input type="text" name="inpassword" /></td>
+			</tr>
 
-<tr>
-<td>3) 비밀번호 재확인 : </td><td> <input type="text" name="inpassword" /></td>
-</tr>
+			<tr>
+				<td>3) 비밀번호 재확인 :</td>
+				<td><input type="text" name="inpassword" /></td>
+			</tr>
 
-<tr>
-<td>4) 이름 : </td><td><input type="text" name="inname" /></td>
-</tr>
+			<tr>
+				<td>4) 이름 :</td>
+				<td><input type="text" name="inname" /></td>
+			</tr>
 
-<tr>
-<td>5) 성별 : </td> <td>남자<input type="radio" name="gender" value="man"/>
-여자<input type="radio" name="gender" value="woman"/> </td>
-</tr>
+			<tr>
+				<td>5) 성별 :</td>
+				<td>남자<input type="radio" name="gender" value="man" /> 여자<input
+					type="radio" name="gender" value="woman" />
+				</td>
+			</tr>
 
-<tr>
-<td>6) 생년월일 :</td><td> <input type="Birth year" />
+			<tr>
+				<td>6) 생년월일 :</td>
+				<td><input type="Birth year" /> <select name="month">
+						<option value="loc1">1월</option>
+						<option value="loc2">2월</option>
+						<option value="loc3">3월</option>
+						<option value="loc4">4월</option>
+						<option value="loc5">5월</option>
+						<option value="loc5">6월</option>
+						<option value="loc5">7월</option>
+						<option value="loc5">8월</option>
+						<option value="loc5">9월</option>
+						<option value="loc5">10월</option>
+						<option value="loc5">11월</option>
+						<option value="loc5">12월</option>
+				</select> <select name="day">
+						<option value="loc1">1일</option>
+						<option value="loc2">2일</option>
+						<option value="loc3">3일</option>
+						<option value="loc4">4일</option>
+						<option value="loc5">5일</option>
+						<option value="loc5">6일</option>
+						<option value="loc5">7일</option>
+						<option value="loc5">8일</option>
+						<option value="loc5">9일</option>
+						<option value="loc5">10일</option>
+						<option value="loc5">11일</option>
+						<option value="loc5">12일</option>
+						<option value="loc5">13일</option>
+						<option value="loc5">14일</option>
+						<option value="loc5">15일</option>
+						<option value="loc5">16일</option>
+						<option value="loc5">17일</option>
+						<option value="loc5">18일</option>
+						<option value="loc5">19일</option>
+						<option value="loc5">20일</option>
+						<option value="loc5">21일</option>
+						<option value="loc5">22일</option>
+						<option value="loc5">23일</option>
+						<option value="loc5">25일</option>
+						<option value="loc5">26일</option>
+						<option value="loc5">27일</option>
+						<option value="loc5">28일</option>
+						<option value="loc5">29일</option>
+						<option value="loc5">30일</option>
+						<option value="loc5">31일</option>
+				</select></td>
+			</tr>
+			<tr>
+				<td>7) 이메일 :</td>
+				<td><input type="text" name="inemail" /></td>
+			</tr>
 
+			<tr>
+				<td>8) 휴대전화번호 :</td>
+				<td><input type="text" name="inphonnumber" /></td>
+			</tr>
 
-<select name="month"> 
-<option value="loc1"> 1월 </option>
-<option value="loc2"> 2월 </option>
-<option value="loc3"> 3월 </option>
-<option value="loc4"> 4월 </option>
-<option value="loc5"> 5월 </option>
-<option value="loc5"> 6월 </option>
-<option value="loc5"> 7월 </option>
-<option value="loc5"> 8월 </option>
-<option value="loc5"> 9월 </option>
-<option value="loc5"> 10월 </option>
-<option value="loc5"> 11월 </option>
-<option value="loc5"> 12월 </option>
-</select>
-
-<select name="day">
-<option value="loc1"> 1일 </option>
-<option value="loc2"> 2일 </option>
-<option value="loc3"> 3일 </option>
-<option value="loc4"> 4일</option>
-<option value="loc5"> 5일</option>
-<option value="loc5"> 6일</option>
-<option value="loc5"> 7일</option>
-<option value="loc5"> 8일</option>
-<option value="loc5"> 9일 </option>
-<option value="loc5"> 10일 </option>
-<option value="loc5"> 11일</option>
-<option value="loc5"> 12일</option>
-<option value="loc5"> 13일</option>
-<option value="loc5"> 14일</option>
-<option value="loc5"> 15일</option>
-<option value="loc5"> 16일</option>
-<option value="loc5"> 17일</option>
-<option value="loc5"> 18일</option>
-<option value="loc5"> 19일</option>
-<option value="loc5"> 20일</option>
-<option value="loc5"> 21일</option>
-<option value="loc5"> 22일</option>
-<option value="loc5"> 23일</option>
-<option value="loc5"> 25일</option>
-<option value="loc5"> 26일</option>
-<option value="loc5"> 27일</option>
-<option value="loc5"> 28일</option>
-<option value="loc5"> 29일</option>
-<option value="loc5"> 30일</option>
-<option value="loc5"> 31일</option>
-</select> 
-</td>
-</tr>
-<tr>
-<td> 7) 이메일 : </td> <td><input type="text" name="inemail" /></td>
-</tr>
-
-<tr>
-<td> 8) 휴대전화번호 : </td><td> <input type="text" name="inphonnumber" /></td>
-</tr>
-
-<tr>
-<td colspan="2"><input type="button" value="가입하기"/>
-</td>
-</tr>
-</table>
-
-
-
+			<tr>
+				<td colspan="2"><input type="button" value="가입하기" /></td>
+			</tr>
+		</table>
 
 
-</form>
+
+
+
+	</form>
 
 
 </body>

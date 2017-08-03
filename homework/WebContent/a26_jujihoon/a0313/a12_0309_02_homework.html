@@ -4,7 +4,10 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <style type="text/css">
-	.login:focus{background-color: yellow;color: blue;}
+.login:focus {
+	background-color: yellow;
+	color: blue;
+}
 </style>
 <script type="text/javascript">
 	function sendLogin() 
@@ -59,14 +62,16 @@
 </script>
 </head>
 <body>
-<form name="form01">
-	<h1>로그인</h1><br>
-	ID:<input type="text" name="inputId" class="login"/><br>
-	PASS:<input type="text" name="inputPass" class="login"/><br>
-	<input type="button" value="로그인" onclick="javascript:sendLogin()" /><br>
-	status:<input type="text" name="inputStatus" value="로그인전"/><br>
-	1단계 주제를 입력하세요:<input type="text" name="inputSubj" oninput="javascript:typeSubj()" disabled/><br>
-	2단계 세부주제를 입력하세요:<input type="text" name="inputSubjDetail" oninput="javascript:typeSubjDetail()" disabled/>
-</form>
+	<form name="form01">
+		<h1>로그인</h1>
+		<br> ID:<input type="text" name="inputId" class="login" /><br>
+		PASS:<input type="text" name="inputPass" class="login" /><br> <input
+			type="button" value="로그인" onclick="javascript:sendLogin()" /><br>
+		status:<input type="text" name="inputStatus" value="로그인전" /><br>
+		1단계 주제를 입력하세요:<input type="text" name="inputSubj"
+			oninput="javascript:typeSubj()" disabled /><br> 2단계 세부주제를 입력하세요:<input
+			type="text" name="inputSubjDetail"
+			oninput="javascript:typeSubjDetail()" disabled />
+	</form>
 </body>
 </html>

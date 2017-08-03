@@ -135,16 +135,16 @@
 									<input type="text" class="form-control" id="idReg" name="idReg"
 										placeholder="ID">
 								</div>
-<<<<<<< .mine
+								<<<<<<< .mine
 								<button class="btn btn-default col-md-2" type="button">중복
 									확인</button>
-||||||| .r193
-								<button class="btn btn-default col-md-2" type="button">�ߺ�
-									Ȯ��</button>
-=======
+								||||||| .r193
+								<button class="btn btn-default col-md-2" type="button">�ߺ�
+									Ȯ��</button>
+								=======
 								<button class="btn btn-default col-md-2" type="button"
 									onclick="">중복 확인</button>
->>>>>>> .r256
+								>>>>>>> .r256
 							</div>
 						</div>
 						<div class="row">
@@ -156,64 +156,52 @@
 						</div>
 						<div class="row">
 							<div class="form-group col-md-offset-2 col-md-7">
-<<<<<<< .mine
-								<label for="comfirmPassReg">Password 확인</label> <input
-									type="password" class="form-control" id="comfirmPassReg" name="comfirmPassReg"
-									placeholder="Password 확인">
-||||||| .r193
-								<label for="comfirmPassReg">Password Ȯ��</label> <input
-									type="password" class="form-control" id="comfirmPassReg" name="comfirmPassReg"
-									placeholder="Password Ȯ��">
-=======
-								<label for="comfirmPassReg">Password 확인</label> <input
+								<<<<<<< .mine <label for="comfirmPassReg">Password 확인</label> <input
+									type="password" class="form-control" id="comfirmPassReg"
+									name="comfirmPassReg" placeholder="Password 확인">
+								||||||| .r193 <label for="comfirmPassReg">Password Ȯ��</label> <input
+									type="password" class="form-control" id="comfirmPassReg"
+									name="comfirmPassReg" placeholder="Password Ȯ��">
+								======= <label for="comfirmPassReg">Password 확인</label> <input
 									type="password" class="form-control" id="confirmPassReg"
 									name="confirmPassReg" placeholder="Password 확인">
->>>>>>> .r256
+								>>>>>>> .r256
 							</div>
 						</div>
 						<div class="row">
 							<div class="form-group col-md-offset-2 col-md-7">
-<<<<<<< .mine
-								<label for="nameReg">이름</label> <input type="text"
-									class="form-control" id="nameReg" name="nameReg" placeholder="이름">
-||||||| .r193
-								<label for="nameReg">�̸�</label> <input type="text"
-									class="form-control" id="nameReg" name="nameReg" placeholder="�̸�">
-=======
-								<label for="nameReg">이름</label> <input type="text"
+								<<<<<<< .mine <label for="nameReg">이름</label> <input type="text"
 									class="form-control" id="nameReg" name="nameReg"
-									placeholder="이름">
->>>>>>> .r256
+									placeholder="이름"> ||||||| .r193 <label for="nameReg">�̸�</label>
+								<input type="text" class="form-control" id="nameReg"
+									name="nameReg" placeholder="�̸�"> ======= <label
+									for="nameReg">이름</label> <input type="text"
+									class="form-control" id="nameReg" name="nameReg"
+									placeholder="이름"> >>>>>>> .r256
 							</div>
 						</div>
 						<div class="row">
 							<div class="form-group col-md-offset-2 col-md-7">
-<<<<<<< .mine
-								<label for="emailReg">주소</label> <input type="text"
-									class="form-control" id="emailReg" name="emailReg" placeholder="주소">
-||||||| .r193
-								<label for="emailReg">�ּ�</label> <input type="text"
-									class="form-control" id="emailReg" name="emailReg" placeholder="�ּ�">
-=======
-								<label for="emailReg">e-mail</label> <input type="email"
+								<<<<<<< .mine <label for="emailReg">주소</label> <input
+									type="text" class="form-control" id="emailReg" name="emailReg"
+									placeholder="주소"> ||||||| .r193 <label for="emailReg">�ּ�</label>
+								<input type="text" class="form-control" id="emailReg"
+									name="emailReg" placeholder="�ּ�"> ======= <label
+									for="emailReg">e-mail</label> <input type="email"
 									class="form-control" id="emailReg" name="emailReg"
-									placeholder="주소">
->>>>>>> .r256
+									placeholder="주소"> >>>>>>> .r256
 							</div>
 						</div>
 						<div class="row">
 							<div class="form-group col-md-offset-2 col-md-7">
-<<<<<<< .mine
-								<label for="telReg">연락처</label> <input type="text"
-									class="form-control" id="telReg" name="telReg" placeholder="연락처">
-||||||| .r193
-								<label for="telReg">����ó</label> <input type="text"
-									class="form-control" id="telReg" name="telReg" placeholder="����ó">
-=======
-								<label for="telReg">연락처</label> <input type="text"
+								<<<<<<< .mine <label for="telReg">연락처</label> <input type="text"
 									class="form-control" id="telReg" name="telReg"
-									placeholder="연락처">
->>>>>>> .r256
+									placeholder="연락처"> ||||||| .r193 <label for="telReg">����ó</label>
+								<input type="text" class="form-control" id="telReg"
+									name="telReg" placeholder="����ó"> ======= <label
+									for="telReg">연락처</label> <input type="text"
+									class="form-control" id="telReg" name="telReg"
+									placeholder="연락처"> >>>>>>> .r256
 							</div>
 						</div>
 						<button type="submit" class="btn btn-primary col-md-offset-5">Register</button>
@@ -258,57 +246,46 @@
 								placeholder="Password">
 						</div>
 						<div class="form-group col-md-offset-2 col-md-7">
-<<<<<<< .mine
-							<label for="inputConfirmPassMod">Password 확인</label> <input
-								type="password" class="form-control" id="inputConfirmPassMod"
-								placeholder="Password 확인">
-||||||| .r193
-							<label for="inputConfirmPassMod">Password Ȯ��</label> <input
-								type="password" class="form-control" id="inputConfirmPassMod"
-								placeholder="Password Ȯ��">
-=======
-							<label for="confirmPassMod">Password 확인</label> <input
+							<<<<<<< .mine <label for="inputConfirmPassMod">Password
+								확인</label> <input type="password" class="form-control"
+								id="inputConfirmPassMod" placeholder="Password 확인">
+							||||||| .r193 <label for="inputConfirmPassMod">Password
+								Ȯ��</label> <input type="password" class="form-control"
+								id="inputConfirmPassMod" placeholder="Password Ȯ��">
+							======= <label for="confirmPassMod">Password 확인</label> <input
 								type="password" class="form-control" id="confirmPassMod"
-								name="confirmPassMod" placeholder="Password 확인">
->>>>>>> .r256
+								name="confirmPassMod" placeholder="Password 확인"> >>>>>>>
+							.r256
 						</div>
 						<div class="form-group col-md-offset-2 col-md-7">
-<<<<<<< .mine
-							<label for="inputNameMod">이름</label> <input type="text"
-								class="form-control" id="inputNameMod" placeholder="이름">
-||||||| .r193
-							<label for="inputNameMod">�̸�</label> <input type="text"
-								class="form-control" id="inputNameMod" placeholder="�̸�">
-=======
-							<label for="nameMod">이름</label> <input type="text"
+							<<<<<<< .mine <label for="inputNameMod">이름</label> <input
+								type="text" class="form-control" id="inputNameMod"
+								placeholder="이름"> ||||||| .r193 <label
+								for="inputNameMod">�̸�</label> <input type="text"
+								class="form-control" id="inputNameMod" placeholder="�̸�">
+							======= <label for="nameMod">이름</label> <input type="text"
 								class="form-control" id="nameMod" name="nameMod"
-								placeholder="이름">
->>>>>>> .r256
+								placeholder="이름"> >>>>>>> .r256
 						</div>
 						<div class="form-group col-md-offset-2 col-md-7">
-<<<<<<< .mine
-							<label for="inputAddrMod">주소</label> <input type="text"
-								class="form-control" id="inputAddrMod" placeholder="주소">
-||||||| .r193
-							<label for="inputAddrMod">�ּ�</label> <input type="text"
-								class="form-control" id="inputAddrMod" placeholder="�ּ�">
-=======
-							<label for="emailMod">e-mail</label> <input type="text"
+							<<<<<<< .mine <label for="inputAddrMod">주소</label> <input
+								type="text" class="form-control" id="inputAddrMod"
+								placeholder="주소"> ||||||| .r193 <label
+								for="inputAddrMod">�ּ�</label> <input type="text"
+								class="form-control" id="inputAddrMod" placeholder="�ּ�">
+							======= <label for="emailMod">e-mail</label> <input type="text"
 								class="form-control" id="emailMod" name="emailMod"
-								placeholder="주소">
->>>>>>> .r256
+								placeholder="주소"> >>>>>>> .r256
 						</div>
 						<div class="form-group col-md-offset-2 col-md-7">
-<<<<<<< .mine
-							<label for="inputTelMod">연락처</label> <input type="text"
-								class="form-control" id="inputTelMod" placeholder="연락처">
-||||||| .r193
-							<label for="inputTelMod">����ó</label> <input type="text"
-								class="form-control" id="inputTelMod" placeholder="����ó">
-=======
-							<label for="telMod">연락처</label> <input type="text"
+							<<<<<<< .mine <label for="inputTelMod">연락처</label> <input
+								type="text" class="form-control" id="inputTelMod"
+								placeholder="연락처"> ||||||| .r193 <label
+								for="inputTelMod">����ó</label> <input type="text"
+								class="form-control" id="inputTelMod" placeholder="����ó">
+							======= <label for="telMod">연락처</label> <input type="text"
 								class="form-control" id="telMod" name="telMod" placeholder="연락처">
->>>>>>> .r256
+							>>>>>>> .r256
 						</div>
 						<button type="submit" class="btn btn-primary col-md-offset-5">회원정보
 							수정</button>
@@ -331,10 +308,9 @@
 			class="fa fa-times"></i></a>
 		<!-- TODO: 로그인 시 id출력, 로그아웃 시 '로그인 해주세요' 메세지 출력  -->
 		<li class="sidebar-brand"><a href="#top" onclick=$("#menu-close").click();>Wellcome,
-<<<<<<< .mine
-				${user.pid }</a></li>
+				<<<<<<< .mine ${user.pid }</a></li>
 		<!-- 로그아웃 상태일 시 hidden -->
-		<li><a onclick=$(location).attr("href","login.jsp?proc=logout");>로그아웃</a>
+		<li><a onclick=$(location).attr( "href","login.jsp?proc=logout");>로그아웃</a>
 		</li>
 		<!-- TODO: 로그인이 되어 있을시 hidden  -->
 		<li><a onclick=$("#loginModal").modal("show");>로그인</a></li>
@@ -342,19 +318,21 @@
 		<li><a onclick=$("#regModal").modal("show");>회원가입</a></li>
 		<!-- TODO: 로그아웃이 되어 있을시 hidden  -->
 		<li><a onclick=$("#modifyModal").modal("show");>회원정보 수정</a></li>
-||||||| .r193
-				${user.pid }</a></li>
-		<!-- �α׾ƿ� ������ �� hidden -->
-		<li><a onclick=$(location).attr("href","login.jsp?proc=logout");>�α׾ƿ�</a>
+		||||||| .r193 ${user.pid }
+		</a>
 		</li>
-		<!-- TODO: �α����� �Ǿ� ������ hidden  -->
-		<li><a onclick=$("#loginModal").modal("show");>�α���</a></li>
-		<!-- TODO: �α����� �Ǿ� ������ hidden  -->
-		<li><a onclick=$("#regModal").modal("show");>ȸ������</a></li>
-		<!-- TODO: �α׾ƿ��� �Ǿ� ������ hidden  -->
-		<li><a onclick=$("#modifyModal").modal("show");>ȸ������ ����</a></li>
-=======
-				${user.pid eq null ? "guset" : user.pid } </a></li>
+		<!-- �α׾ƿ� ������ �� hidden -->
+		<li><a onclick=$(location).attr( "href","login.jsp?proc=logout");>�α׾ƿ�</a>
+		</li>
+		<!-- TODO: �α����� �Ǿ� ������ hidden  -->
+		<li><a onclick=$("#loginModal").modal("show");>�α���</a></li>
+		<!-- TODO: �α����� �Ǿ� ������ hidden  -->
+		<li><a onclick=$("#regModal").modal("show");>ȸ������</a></li>
+		<!-- TODO: �α׾ƿ��� �Ǿ� ������ hidden  -->
+		<li><a onclick=$("#modifyModal").modal("show");>ȸ������ ����</a></li>
+		======= ${user.pid eq null ? "guset" : user.pid }
+		</a>
+		</li>
 		<!-- 로그아웃 상태일 시 hidden -->
 		<li style="display: <c:if test="${!logonState }">none</c:if>"><a
 			href="login.jsp?proc=logout">로그아웃</a></li>
@@ -366,63 +344,47 @@
 			onclick=$("#modifyModal").modal("show");>회원정보 수정</a></li>
 		<!-- TODO: 로그인이 되어 있을시 hidden  -->
 		<li style="display: <c:if test="${logonState }">none</c:if>"><a
-			onclick=$("#regModal").modal("show");>회원가입</a></li>
->>>>>>> .r256
+			onclick=$("#regModal").modal("show");>회원가입</a></li> >>>>>>> .r256
 		<li><br> <br></li>
 		<li><a href="#top" onclick=$("#menu-close").click();>Home</a></li>
 		<li><a href="#search" onclick=$("#menu-close").click();>전적 검색</a>
-		</li>
-<<<<<<< .mine
+		</li> <<<<<<< .mine
 		<!-- 로그아웃 상태일 시 먼저 로그인 창을 띄운다. -->
 		<li><a href="#game03" onclick=$("#menu-close").click();>경마 시작</a></li>
-||||||| .r193
-		<!-- �α׾ƿ� ������ �� ���� �α��� â�� ����. -->
-		<li><a href="#game03" onclick=$("#menu-close").click();>�渶 ����</a></li>
-=======
+		||||||| .r193
+		<!-- �α׾ƿ� ������ �� ���� �α��� â�� ����. -->
+		<li><a href="#game03" onclick=$("#menu-close").click();>�渶
+				����</a></li> =======
 		<!-- 로그아웃 상태일 시 먼저 로그인 창을 띄운다. -->
 		<li style="display: <c:if test="${!logonState }">none</c:if>"><a
-			href="#game03" onclick=$("#menu-close").click();>경마 시작</a></li>
->>>>>>> .r256
+			href="#game03" onclick=$("#menu-close").click();>경마 시작</a></li> >>>>>>>
+		.r256
 	</ul>
 	</nav>
 
 	<section id="top" class="guestheader">
 	<div class="text-vertical-center">
-<<<<<<< .mine
-		<h1>
-			Wellcome,
-			${user.pid}</h1>
-		<h3>
-			현재 순위:
-			??</h3>
-		<h3>
-			현재 소지금:
-			${user.curMoney}</h3>
+		<<<<<<< .mine
+		<h1>Wellcome, ${user.pid}</h1>
+		<h3>현재 순위: ??</h3>
+		<h3>현재 소지금: ${user.curMoney}</h3>
 		<br> <a href="#search" class="btn btn-primary btn-lg">내 전적
-			확인하기</a> <br>
-||||||| .r193
-		<h1>
-			Wellcome,
-			${user.pid}</h1>
-		<h3>
-			���� ����:
-			??</h3>
-		<h3>
-			���� ������:
-			${user.curMoney}</h3>
-		<br> <a href="#search" class="btn btn-primary btn-lg">�� ����
-			Ȯ���ϱ�</a> <br>
-=======
+			확인하기</a> <br> ||||||| .r193
+		<h1>Wellcome, ${user.pid}</h1>
+		<h3>���� ����: ??</h3>
+		<h3>���� ������: ${user.curMoney}</h3>
+		<br> <a href="#search" class="btn btn-primary btn-lg">�� ����
+			Ȯ���ϱ�</a> <br> =======
 		<h1>Wellcome, ${user.pid eq null ? "guset" : user.pid }</h1>
 		<label> <c:if test="${logonState }">
 				<h3>현재 순위: ??</h3>
-				<h3>현재 소지금: ${user.curMoney}</h3><br>
-				<a href="#search" class="btn btn-primary btn-lg">내 전적
-			확인하기</a> 
+				<h3>현재 소지금: ${user.curMoney}</h3>
+				<br>
+				<a href="#search" class="btn btn-primary btn-lg">내 전적 확인하기</a>
+			</c:if> <c:if test="${!logonState }">
+				<h2>로그인을 해주세요.</h2>
 			</c:if>
-			<c:if test="${!logonState }"><h2>로그인을 해주세요.</h2></c:if>
-		</label>
->>>>>>> .r256
+		</label> >>>>>>> .r256
 	</div>
 	</section>
 	<section id="search"> <iframe width="100%" height="1400px"

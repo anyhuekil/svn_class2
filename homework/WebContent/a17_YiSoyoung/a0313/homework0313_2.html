@@ -5,14 +5,33 @@
 <title>Insert title here</title>
 <style type="text/css">
 @font-face {
-	font-family : 'journal';
+	font-family: 'journal';
 	src: url('journal.ttf');
 }
-	body { font-size: 12pt; font-family: journal;}
-	table { background-color: #cccccc; margin: 0 auto;}
-	td {padding: 10px 2px; width:150px;text-align: center;}
-	tr {background-color: #FFFFFF; }
-	caption {font-size: 2em; }
+
+body {
+	font-size: 12pt;
+	font-family: journal;
+}
+
+table {
+	background-color: #cccccc;
+	margin: 0 auto;
+}
+
+td {
+	padding: 10px 2px;
+	width: 150px;
+	text-align: center;
+}
+
+tr {
+	background-color: #FFFFFF;
+}
+
+caption {
+	font-size: 2em;
+}
 </style>
 <script type="text/javascript">
 	var aPos = 0;
@@ -51,35 +70,67 @@
 </head>
 <body>
 	<table>
-		<tr><th>Team Name</th><th>Color</th><th>Action</th></tr>
+		<tr>
+			<th>Team Name</th>
+			<th>Color</th>
+			<th>Action</th>
+		</tr>
 		<tr>
 			<td><input type="text" class="aTeam"></td>
 			<td><select class="aSelect">
-					<option selected="selected">red</option><option>orange</option>
-					<option>yellow</option><option>green</option>
-					<option>blue</option><option>navy</option>
+					<option selected="selected">red</option>
+					<option>orange</option>
+					<option>yellow</option>
+					<option>green</option>
+					<option>blue</option>
+					<option>navy</option>
 					<option>purple</option>
-				</select>
-			</td>
+			</select></td>
 			<td><button onclick="aGo()">이동</button></td>
 		</tr>
 		<tr>
-			<td><input type="text"  class="bTeam"></td>
+			<td><input type="text" class="bTeam"></td>
 			<td><select class="bSelect">
-					<option selected="selected">red</option><option>orange</option>
-					<option>yellow</option><option>green</option>
-					<option>blue</option><option>navy</option>
+					<option selected="selected">red</option>
+					<option>orange</option>
+					<option>yellow</option>
+					<option>green</option>
+					<option>blue</option>
+					<option>navy</option>
 					<option>purple</option>
-				</select>
-			</td>
+			</select></td>
 			<td><button onclick="bGo()">이동</button></td>
 		</tr>
-	</table><br><br><br>
+	</table>
+	<br>
+	<br>
+	<br>
 	<table id="result">
 		<caption>RESULT</caption>
-		<tr><td></td><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th></tr>
-		<tr><td class="aName"></td><td class="a1"></td><td class="a2"></td><td class="a3"></td><td class="a4"></td><td class="a5"></td></tr>
-		<tr><td class="bName"></td><td class="b1"></td><td class="b2"></td><td class="b3"></td><td  class="b4"></td><td class="b5"></td></tr>
+		<tr>
+			<td></td>
+			<th>1</th>
+			<th>2</th>
+			<th>3</th>
+			<th>4</th>
+			<th>5</th>
+		</tr>
+		<tr>
+			<td class="aName"></td>
+			<td class="a1"></td>
+			<td class="a2"></td>
+			<td class="a3"></td>
+			<td class="a4"></td>
+			<td class="a5"></td>
+		</tr>
+		<tr>
+			<td class="bName"></td>
+			<td class="b1"></td>
+			<td class="b2"></td>
+			<td class="b3"></td>
+			<td class="b4"></td>
+			<td class="b5"></td>
+		</tr>
 	</table>
 </body>
 </html>

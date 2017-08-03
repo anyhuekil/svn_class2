@@ -58,27 +58,27 @@ $(document).ready(function() {
 <body>
 	<div align="center">
 		<h2>MEMBER SHIP</h2>
-	<form method="post" name="memberShip" action="signUpProc.jsp">
-		<input type="hidden" name="proc" value="singUp" />
-		<table border=1>
-			<tr>
-				<th>e-Mail</th>
-				<th><input name="newEmail"></th>
-				<th><input type="button" id="checkEmail" value="중복확인"></th>
-			</tr>
-			<tr>
-				<th>Password</th>
-				<th><input type="password" name="newPwd"></th>
-			</tr>
-			<tr>
-				<th>Again Pass</th>
-				<th><input type="password" name="newPwd2"></th>
-			</tr>
-			<tr>
-				<th colspan="3"><input type="button" id="insBtn" value="회원가입"></th>
-			</tr>
-		</table>
-	</form>
+		<form method="post" name="memberShip" action="signUpProc.jsp">
+			<input type="hidden" name="proc" value="singUp" />
+			<table border=1>
+				<tr>
+					<th>e-Mail</th>
+					<th><input name="newEmail"></th>
+					<th><input type="button" id="checkEmail" value="중복확인"></th>
+				</tr>
+				<tr>
+					<th>Password</th>
+					<th><input type="password" name="newPwd"></th>
+				</tr>
+				<tr>
+					<th>Again Pass</th>
+					<th><input type="password" name="newPwd2"></th>
+				</tr>
+				<tr>
+					<th colspan="3"><input type="button" id="insBtn" value="회원가입"></th>
+				</tr>
+			</table>
+		</form>
 	</div>
 </body>
 </html>
